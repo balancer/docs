@@ -1,6 +1,6 @@
-import { defaultTheme } from './defaultTheme.js';
+import { balancerTheme } from './balancerTheme.js';
 
 export * from '../shared/index.js';
-export * from './defaultTheme.js';
+export * from './balancerTheme.js';
 export * from './utils/index.js';
-export default defaultTheme;
+export default balancerTheme;

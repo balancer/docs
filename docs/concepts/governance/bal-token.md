@@ -44,7 +44,7 @@ This chart outlines the allocation amounts. More details below.
 | Ecosystem Fund | 5M |
 | Fundraising Fund | 5M |
 
-![](../../.gitbook/assets/bal_tokens_distribution.png)
+![](/images/bal_tokens_distribution.png)
 
 #### Liquidity Providers
 

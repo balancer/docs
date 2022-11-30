@@ -4,8 +4,6 @@
 
 The easiest way is to query `getPoolGauge(poolAddress)` on the [`LiquidityGaugeFactory`](https://etherscan.io/address/0x4E7bBd911cf1EFa442BC1b2e9Ea01ffE785412EC#code).
 
-![Example query for bb-b-USD](<../../.gitbook/assets/Screen Shot 2022-04-27 at 11.07.35 AM.png>)
-
 ## How do I get a Gauge for a Given Pool on an alternate chain?
 
 To get a gauge, query `getPoolGauge(poolAddress)` on the given network's `ChildChainLiquidityGaugeFactory`**.**
@@ -14,8 +12,6 @@ To get a gauge, query `getPoolGauge(poolAddress)` on the given network's `ChildC
 | -------- | ----------------------------------------------------------------------------------------------------------------------------------- |
 | Polygon  | ``[`0x3b8cA519122CdD8efb272b0D3085453404B25bD0`](https://polygonscan.com/address/0x3b8cA519122CdD8efb272b0D3085453404B25bD0#code)`` |
 | Arbitrum | ``[`0xb08E16cFc07C684dAA2f93C70323BAdb2A6CBFd2`](https://arbiscan.io/address/0xb08E16cFc07C684dAA2f93C70323BAdb2A6CBFd2#code)``     |
-
-![Example Call on Polygon](<../../.gitbook/assets/Screen Shot 2022-04-27 at 11.25.09 AM.png>)
 
 ## How to Query Pending Tokens for a Given Pool?
 

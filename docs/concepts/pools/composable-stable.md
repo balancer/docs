@@ -41,4 +41,3 @@ Balancer Composable Stable Pools are ideal for the wstETH-WETH pair as the stETH
 
 Note: To make stETH compatible with Balancer's streaming/rebasing tokens, stETH must be wrapped into wstETH. This is done through a relayer contract.
 
-<figure><img src="../../.gitbook/assets/Screenshot 2022-11-10 at 01.48.10.png" alt=""><figcaption></figcaption></figure>

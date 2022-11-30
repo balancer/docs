@@ -1,7 +1,8 @@
 import process from 'node:process';
 import { defineUserConfig } from '@vuepress/cli';
 import { mdEnhancePlugin } from 'vuepress-plugin-md-enhance';
-import { defaultTheme } from '../../theme/lib/node';
+// import { docsearchPlugin } from '@vuepress/plugin-docsearch';
+import { balancerTheme } from '../../theme/lib/node';
 import { navbar, sidebar } from './configs/index.js';
 
 const isProd = process.env.NODE_ENV === 'production';
@@ -20,7 +21,7 @@ export default defineUserConfig({
   },
 
   // configure default theme
-  theme: defaultTheme({
+  theme: balancerTheme({
     logo: '/images/logo-light.svg',
     logoDark: '/images/logo-dark.svg',
     repo: 'vuepress/vuepress-next',

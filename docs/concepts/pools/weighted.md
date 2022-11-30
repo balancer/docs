@@ -24,8 +24,6 @@ Some people find the word "Impermanent" misleading and prefer to call it "Diverg
 
 For pools that heavily weight one token over another, there is far less impermanent loss, but this doesn't come for free; very asymmetric pools do have higher slippage when making trades due to the fact that one side has much less liquidity. 80/20 pools have emerged as a happy medium when balancing liquidity an Impermanent Loss mitigation.
 
-![](../../.gitbook/assets/1\_riTMWg3dE3ewaL3A3Hko_Q@2x.png)
-
 ### Trading Pairs
 
 Since each token in a pool can be traded with any other token in a pool, the number of trading pairs grows significantly with each additional token. By providing more trading pairs, pools are able to facilitate more swaps, giving them more opportunities to collect fees. 
@@ -36,8 +34,6 @@ _nC_r = \frac{n!}{r!(n-r)!}
 $$
 
 Where $$n$$​ is 2 and $$r$$​is the number of tokens in the pool.
-
-![](<../../.gitbook/assets/Screen Shot 2021-10-08 at 2.16.03 PM.png>)
 
 ## Use Cases
 

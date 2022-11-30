@@ -28,8 +28,6 @@ One of the key features that makes trades through Boosted Pools so simple is the
 
 In pools that use Phantom BPT, however, **all pool tokens are minted at the time of pool creation** and are **held by the pool itself**. With Phantom BPT, Liquidity Providers use a **`swap`** (or more likely a **`batchSwap`**) to trade to or from a pool token to join or exit, respectively.&#x20;
 
-![](<../../.gitbook/assets/Screen Shot 2021-12-15 at 9.51.57 AM.png>)
-
 ## Use Cases
 
 The Balancer Boosted Aave USD Pool (bb-a-USD) demonstrates how nesting Linear Pools with Phantom BPT inside a Stable Pool with Phantom BPT can consolidate stablecoin liquidity while improving the Liquidity Provider experience. The architecture of the pool is outlined below.
@@ -38,15 +36,13 @@ The Balancer Boosted Aave USD Pool (bb-a-USD) demonstrates how nesting Linear Po
 
 Our building blocks are Aave Linear Pools for DAI, USDC, and USDT:
 
-![](../../.gitbook/assets/linearPools.png)
+![](/images/linearPools.png)
 
 As explained above, these pools have Phantom BPT (the `bb-a-*` tokens) and maintain target balances for base tokens and their aToken counterparts.
 
 #### Put the Linear Pool Tokens into a Stable Pool
 
 By adding the Linear Pool Tokens into a Stable Pool, we are effectively putting the pools inside another pool.
-
-![](<../../.gitbook/assets/Screen Shot 2021-12-15 at 9.41.34 AM.png>)
 
 ### How do I swap between stablecoins?
 
@@ -61,13 +57,11 @@ For example, consider the following swap steps:
 3. Trade DAI Linear Pool Token for DAI
    1. bb-a-DAI -> DAI
 
-![](../../.gitbook/assets/stablecoinBatchSwap.png)
+![](/images/stablecoinBatchSwap.png)
 
 #### Design other pools with the Stable Pool Token as you would any stablecoin
 
 Why have a WETH/DAI pool with idle DAI when you could have a WETH/bb-a-USD pool? By pairing with the Boosted Pool Token, you make a direct link between WETH and all of the stablecoins in bb-a-USD (DAI, USDC, USDT) **AND** Liquidity Providers get the extra boost from the underlying tokens being on Aave.
-
-![](<../../.gitbook/assets/Screen Shot 2021-12-15 at 9.45.56 AM.png>)
 
 Now, this pool can trade between any of the following tokens:
 

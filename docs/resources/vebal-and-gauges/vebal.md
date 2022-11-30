@@ -27,5 +27,3 @@ The process is identical to [querying as above](vebal.md#how-to-query-pending-to
 ## How do I Know Which Tokens to Query/Claim?
 
 At the time of this writing, there is no subgraph tracking tokens added to the `FeeDistributor`. For now, an easy way you can find the available tokens for claiming is checking what the contract holds on Etherscan
-
-![](<../../.gitbook/assets/Screen Shot 2022-04-21 at 3.31.52 PM.png>)

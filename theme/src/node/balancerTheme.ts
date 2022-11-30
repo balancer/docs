@@ -30,14 +30,14 @@ export interface DefaultThemeOptions extends DefaultThemeLocaleOptions {
   themePlugins?: DefaultThemePluginsOptions;
 }
 
-export const defaultTheme = ({
+export const balancerTheme = ({
   themePlugins = {},
   ...localeOptions
 }: DefaultThemeOptions = {}): Theme => {
   assignDefaultLocaleOptions(localeOptions);
 
   return {
-    name: '@vuepress/theme-default',
+    name: 'balancer-theme',
 
     templateBuild: path.resolve(__dirname, '../../templates/build.html'),
 

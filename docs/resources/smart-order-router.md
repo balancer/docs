@@ -80,8 +80,6 @@ $$
 
 To help the visualization, this is what we are looking to achieve:
 
-<img src="../.gitbook/assets/spotpriceaftertrade.png" alt="" data-size="original">
-
 To calculate a candidate for `targetSP` we need to use the derivatives of $$SPaS_1$$ and $$SPaS_2$$ at $$A_1$$ and $$A_2$$ respectively.
 
 Using simple trigonometry we can say that:

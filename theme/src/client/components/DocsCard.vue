@@ -11,14 +11,13 @@ export default defineComponent({
     title: { type: String, default: '' },
     titleTag: { type: String, default: 'h4' },
     icon: { type: String, default: '' },
-    href: { type: String },
     details: { type: String, default: '' },
   },
 });
 </script>
 
 <template>
-  <a v-href="href" class="card-link">
+  <a class="card-link">
     <div :class="['docs-card']">
       <div :class="['card-container']">
         <div v-if="icon" class="card-icon-row">

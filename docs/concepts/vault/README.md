@@ -10,13 +10,13 @@ The Vault architecture separates the token accounting and management from the po
 
 This architecture brings different pool designs under the same umbrella; the Vault is agnostic to pool math and can accommodate any system that satisfies a few requirements. Anyone who comes up with a novel idea for a trading system can make a custom pool plugged directly into Balancer's existing liquidity instead of needing to build their own Decentralized Exchange.
 
-![](../.gitbook/assets/vault.png)
+![](/images/vault.png)
 
 ## Gas Efficient Batch Swaps
 
 In other Decentralized Exchanges where token accounting is paired with pool logic, multi-hop trading (A->B->C) can become costly since ERC20 tokens must be transferred at each hop. Balancer's advantage here is that all the tokens are stored in the same contract, The Vault. This powerful difference allows for far greater swap efficiency. Instead of transferring tokens on each step of a multi-hop trade, The Vault simply keeps internal records of which pool is holding what, transferring tokens only at the input and output step. This reduction in token transfers ultimately saves a considerable amount of gas.
 
-![](../.gitbook/assets/gascomparisonbatchswap.png)
+![](/images/gascomparisonbatchswap.png)
 
 #### Internal Balances
 
