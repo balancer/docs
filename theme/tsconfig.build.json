@@ -1,0 +1,20 @@
+{
+  "compilerOptions": {
+    "rootDir": "./src",
+    "outDir": "./lib",
+    "baseUrl": ".",
+    "allowSyntheticDefaultImports": true,
+    "lib": ["DOM", "ES2020"],
+    "module": "ESNext",
+    "moduleResolution": "NodeNext",
+    "noEmitOnError": true,
+    "noImplicitAny": false,
+    "skipLibCheck": true,
+    "target": "ES2020",
+    "paths": {
+      "@theme/*": ["./src/client/components/*"]
+    },
+    "types": ["@vuepress/client/types"]
+  },
+  "include": ["./src"],
+}

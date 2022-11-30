@@ -1,0 +1,3 @@
+!/docs/.vuepress
+node_modules/
+package-lock.json
