@@ -1,76 +1,83 @@
 @import '_variables';
 
+.home-hero {
+  padding-left: var(--sidebar-width);
+  padding-top: var(--navbar-height);
+  padding-bottom: calc(var(--navbar-height) / 2);
+  width: calc(100% - var(--sidebar-width));
+  background-image: url(/images/background.svg);
+  background-size: cover;
+  text-align: center;
+
+  img {
+    max-width: 100%;
+    max-height: 280px;
+    display: block;
+    margin: 0;
+  }
+
+  h1 {
+    font-size: 3rem;
+    color: #fff;
+  }
+
+  h1,
+  .description,
+  .actions {
+    margin: 1.8rem auto;
+  }
+
+  .actions {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 1rem;
+    justify-content: center;
+  }
+
+  .description {
+    max-width: 20rem;
+    font-size: 1.2rem;
+    line-height: 1.3;
+    color: #fff;
+  }
+
+  .action-button {
+    display: inline-block;
+    font-size: 1.2rem;
+    padding: 0.8rem 1.6rem;
+    border-width: 2px;
+    border-style: solid;
+    border-radius: 4px;
+    transition: background-color var(--t-color);
+    box-sizing: border-box;
+
+    &.primary {
+      color: var(--c-bg);
+      background-color: var(--c-brand);
+      border-color: var(--c-brand);
+      &:hover {
+        background-color: var(--c-brand-light);
+      }
+    }
+
+    &.secondary {
+      color: var(--c-brand);
+      background-color: var(--c-bg);
+      border-color: var(--c-brand);
+      &:hover {
+        color: var(--c-bg);
+        background-color: var(--c-brand-light);
+      }
+    }
+  }
+}
+
 .home {
   padding-top: var(--navbar-height);
   padding-left: var(--sidebar-width);
   max-width: var(--homepage-width);
   margin: 0px auto;
   display: block;
-
-  .hero {
-    text-align: center;
-
-    img {
-      max-width: 100%;
-      max-height: 280px;
-      display: block;
-      margin: 3rem auto 1.5rem;
-    }
-
-    h1 {
-      font-size: 3rem;
-    }
-
-    h1,
-    .description,
-    .actions {
-      margin: 1.8rem auto;
-    }
-
-    .actions {
-      display: flex;
-      flex-wrap: wrap;
-      gap: 1rem;
-      justify-content: center;
-    }
-
-    .description {
-      max-width: 35rem;
-      font-size: 1.6rem;
-      line-height: 1.3;
-      color: var(--c-text-lightest);
-    }
-
-    .action-button {
-      display: inline-block;
-      font-size: 1.2rem;
-      padding: 0.8rem 1.6rem;
-      border-width: 2px;
-      border-style: solid;
-      border-radius: 4px;
-      transition: background-color var(--t-color);
-      box-sizing: border-box;
-
-      &.primary {
-        color: var(--c-bg);
-        background-color: var(--c-brand);
-        border-color: var(--c-brand);
-        &:hover {
-          background-color: var(--c-brand-light);
-        }
-      }
-
-      &.secondary {
-        color: var(--c-brand);
-        background-color: var(--c-bg);
-        border-color: var(--c-brand);
-        &:hover {
-          color: var(--c-bg);
-          background-color: var(--c-brand-light);
-        }
-      }
-    }
-  }
 
   .features {
     border-top: 1px solid var(--c-border);

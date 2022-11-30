@@ -56,27 +56,10 @@ const actions = computed(() => {
     type,
   }));
 });
-
-const HomeHeroImage: FunctionalComponent = () => {
-  if (!heroImage.value) return null;
-  const img = h('img', {
-    src: withBase(heroImage.value),
-    alt: heroAlt.value,
-    height: heroHeight.value,
-  });
-  if (frontmatter.value.heroImageDark === undefined) {
-    return img;
-  }
-  // wrap hero image with <ClientOnly> to avoid ssr-mismatch
-  // when using a different hero image in dark mode
-  return h(ClientOnly, () => img);
-};
 </script>
 
 <template>
-  <header class="hero">
-    <HomeHeroImage />
-
+  <header class="home-hero">
     <h1 v-if="heroText" id="main-title">
       {{ heroText }}
     </h1>

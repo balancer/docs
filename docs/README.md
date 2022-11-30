@@ -1,6 +1,7 @@
 ---
 home: true
 title: Home
+heroText: Balancer Docs
 heroImage: /images/background.svg
 features:
   - title: Basics

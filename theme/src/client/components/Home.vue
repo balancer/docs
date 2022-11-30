@@ -7,8 +7,8 @@ import HomeSearch from './HomeSearch.vue';
 </script>
 
 <template>
+  <HomeHero />
   <main class="home">
-    <HomeHero />
     <HomeSearch />
     <HomeFeatures />
     <HomeContent />
