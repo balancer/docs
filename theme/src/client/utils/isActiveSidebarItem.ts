@@ -1,4 +1,5 @@
 import type { RouteLocationNormalizedLoaded } from 'vue-router';
+import type { PageHeader } from '@vuepress/client';
 import type { ResolvedSidebarItem } from '../../shared/index.js';
 
 const normalizePath = (path: string): string =>
@@ -28,6 +29,23 @@ export const isActiveSidebarItem = (
 
   if (item.children) {
     return item.children.some(child => isActiveSidebarItem(child, route));
+  }
+
+  return false;
+};
+
+export const isActiveRightAnchorItem = (
+  item: PageHeader,
+  route: RouteLocationNormalizedLoaded
+): boolean => {
+  console.log(`item.link ${item.link}`);
+  console.log(`route ${route.hash}`);
+  if (item.link && isActiveLink(item.link, route)) {
+    return true;
+  }
+
+  if (item.children) {
+    return item.children.some(child => isActiveRightAnchorItem(child, route));
   }
 
   return false;

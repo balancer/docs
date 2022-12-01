@@ -45,7 +45,7 @@ onMounted(() => {
 
 .search-box {
   width: 600px;
-  margin: 20px auto;
+  margin: 40px auto;
 }
 
 .search-input-wrapper .search-icon.search {

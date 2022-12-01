@@ -1,4 +1,8 @@
-# The Vault
+---
+title: Vault
+order: 10
+---
+# Vault
 
 ## Overview
 

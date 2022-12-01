@@ -50,6 +50,37 @@
   }
 }
 
+.right-anchor {
+  ul {
+    list-style-type: none;
+    line-height: 1.5rem;
+    padding-left: 0.5rem;
+  }
+
+  .right-anchor-content {
+    color: #445b78;
+    font-size: 0.7rem;
+    font-weight: 600;
+    text-transform: uppercase;
+  }
+
+  a {
+    text-decoration: none;
+    color: #445b78;
+    font-size: 0.8rem;
+    font-weight: 400;
+    line-height: 1.5rem;
+  }
+
+  a.active {
+    color: var(--c-brand);
+  }
+
+  .right-anchor-children {
+    padding-left: 1em;
+  }
+}
+
 @media (max-width: $MQMobile) {
   .sidebar {
     .navbar-items {
@@ -100,6 +131,7 @@
     }
 
     &.collapsible {
+      padding-left: 10px;
       cursor: pointer;
 
       .arrow {

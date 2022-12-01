@@ -2,8 +2,14 @@
 @import '_variables';
 
 .page {
+  display: flex;
   padding-top: var(--navbar-height);
   padding-left: var(--sidebar-width);
+}
+
+.row {
+  display: flex;
+  flex-direction: row;
 }
 
 .navbar {
@@ -17,6 +23,17 @@
   border-bottom: 1px solid var(--c-border);
   background-color: var(--c-bg-navbar);
   transition: background-color var(--t-color), border-color var(--t-color);
+}
+
+.right-anchor {
+  width: var(--right-anchor-width);
+  max-height: calc(100vh - var(--navbar-height) - 16px);
+  position: sticky;
+  overflow: auto;
+  top: calc(var(--navbar-height) + 16px);
+  margin-block-start: 7rem;
+  padding-block-end: 2rem;
+  padding-inline-end: 2rem;
 }
 
 .sidebar {
@@ -157,6 +174,10 @@
   .sidebar {
     font-size: 15px;
     width: var(--sidebar-width-mobile);
+  }
+
+  .rightbar {
+    display: none;
   }
 
   .page {

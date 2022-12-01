@@ -1,8 +1,11 @@
 import type { SidebarConfig } from '@vuepress/theme-default';
 import glob from 'glob';
 import { join, normalize, sep, basename } from 'path';
-import { lstatSync, readdirSync } from 'fs';
+import { lstatSync, readFileSync, readdirSync, existsSync } from 'fs';
+import sortBy from 'lodash/sortBy.js';
 import titleize from 'titleize';
+import markdownIt from 'markdown-it';
+import meta from 'markdown-it-meta';
 
 const isDirectory = source => lstatSync(source).isDirectory();
 const getDirectories = source =>
@@ -19,6 +22,12 @@ function getChildren(parent_path, dir) {
   const files = glob
     .sync(parent_path + (dir ? `/${dir}` : '') + pattern)
     .map(path => {
+      const md = new markdownIt();
+      md.use(meta);
+      const file = readFileSync(path, 'utf8');
+      md.render(file);
+
+      const order = md.meta.order;
       // Remove "parent_path" and ".md"
       path = '/' + path.slice(parent_path.length + 1, -3);
       // Remove "README", making it the de facto index page
@@ -27,11 +36,14 @@ function getChildren(parent_path, dir) {
         path = path.slice(0, -6);
       }
 
-      return path;
+      return {
+        path,
+        order: path === '' && order === undefined ? 0 : order, // README is first if it hasn't order
+      };
     })
     .filter(obj => obj !== undefined);
 
-  return files;
+  return sortBy(files, ['order', 'path']).map(file => file.path);
 }
 
 function getName(path) {
@@ -44,66 +56,44 @@ function getName(path) {
   return titleize(name.replace('-', ' '));
 }
 
-function parseSidebarParameters(dirname) {
-  const index = dirname.lastIndexOf('--');
-  if (index === -1) {
-    return {};
-  }
-
-  const args = dirname.substring(index + 2).split(',');
-  const parameters = {};
-
-  args.forEach(arg => {
-    if (arg === 'nc') {
-      parameters.collapsable = false;
-    } else if (arg.match(/d\d+/)) {
-      parameters.sidebarDepth = Number(arg.substring(1));
-    }
-  });
-
-  return parameters;
-}
-
 function side(baseDir, relativeDir = '', currentLevel = 1) {
   const fileLinks = getChildren(baseDir, relativeDir);
+  const onlyFiles = fileLinks.length;
+
+  let order;
+  const filepath = join(baseDir, 'README.md');
+  if (existsSync(filepath)) {
+    const md = new markdownIt();
+    md.use(meta);
+    const file = readFileSync(filepath, 'utf8');
+    md.render(file);
+    order = md.meta.sidebarOrder;
+  }
+
+  const folderLinks = [];
 
   getDirectories(join(baseDir, relativeDir)).forEach(subDir => {
     const children = side(baseDir, join(relativeDir, subDir), currentLevel + 1);
 
     if (children.length > 0) {
-      // Where to put '02-folder' in ['01-file', { title: 'Other Folder', children: ['03-folder/file'] }]
-      const sortedFolderPosition = fileLinks.findIndex(link => {
-        let linkLabel = link;
+      const insertPosition = order ? order.indexOf(subDir) : children.length;
 
-        // if (link.children) {
-        //   let childrenTitle = '';
-        //   if (typeof link.children[0] == 'string')
-        //     childrenTitle = link.children[0];
-        //   else if (typeof link.children[0] == 'object')
-        //     childrenTitle = link.children[0].title;
-        //   linkLabel = childrenTitle.split(sep)[0];
-        // }
+      if (subDir == 'governance' || subDir == 'pools') {
+        console.log(`${subDir} fileLinks ${fileLinks.length}`);
+        console.log(`${subDir} insertPosition ${insertPosition}`);
+        console.log(`length ${folderLinks.length}`);
+      }
 
-        // Solution below is ugly, but could not find a better way.
-        // Previously, subdirs in root level has been compared against dir name, whereas deep subdirs are compared against relative path.
-        // Ugly patch below fixes that.
-        return '/' + baseDir + linkLabel + 'test';
-      });
-
-      const insertPosition =
-        sortedFolderPosition > -1 ? sortedFolderPosition : fileLinks.length;
-
-      fileLinks.splice(insertPosition, 0, {
+      folderLinks.splice(insertPosition, 0, {
         text: getName(subDir),
         collapsible: true,
         children,
       });
+      // eslint-disable-next-line prettier-vue/prettier
     }
   });
 
-  console.log(fileLinks);
-
-  return fileLinks;
+  return [...fileLinks, ...folderLinks];
 }
 
 // export const sidebar = getConfig('./', {});

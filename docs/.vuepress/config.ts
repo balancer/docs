@@ -1,7 +1,7 @@
 import process from 'node:process';
 import { defineUserConfig } from '@vuepress/cli';
 import { mdEnhancePlugin } from 'vuepress-plugin-md-enhance';
-// import { docsearchPlugin } from '@vuepress/plugin-docsearch';
+import { activeHeaderLinksPlugin } from '@vuepress/plugin-active-header-links';
 import { balancerTheme } from '../../theme/lib/node';
 import { navbar, sidebar } from './configs/index.js';
 
@@ -57,6 +57,9 @@ export default defineUserConfig({
   plugins: [
     mdEnhancePlugin({
       mathjax: true,
+    }),
+    activeHeaderLinksPlugin({
+      headerLinkSelector: 'a.right-anchor-item',
     }),
   ],
 });
