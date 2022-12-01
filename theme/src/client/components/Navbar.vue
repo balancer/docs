@@ -68,6 +68,8 @@ function getCssValue(el: HTMLElement | null, property: string): number {
       <slot name="before" />
       <NavbarItems class="can-hide" />
       <slot name="after" />
+    </div>
+    <div class="navbar-items-right" :style="linksWrapperStyle">
       <ToggleColorModeButton v-if="themeLocale.colorModeSwitch" />
       <NavbarSearch />
     </div>
