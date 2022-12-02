@@ -34,6 +34,18 @@
     position: absolute;
     box-sizing: border-box;
     top: var(--navbar-padding-v);
+    left: calc(var(--sidebar-width) + var(--navbar-padding-h));
+    height: var(--navbar-line-height);
+    padding-left: var(--navbar-padding-h);
+    white-space: nowrap;
+    font-size: 0.9rem;
+  }
+
+  .navbar-items-right {
+    display: flex;
+    position: absolute;
+    box-sizing: border-box;
+    top: var(--navbar-padding-v);
     right: var(--navbar-padding-h);
     height: var(--navbar-line-height);
     padding-left: var(--navbar-padding-h);

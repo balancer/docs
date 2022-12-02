@@ -1,6 +1,13 @@
 ---
 title: Vault
 order: 10
+tutorial:
+  - title: Dive Into the Vault
+    details: Deep dive walkthrough of the vault
+    link: /reference
+references:
+  - details: Deployment addresses
+    link: /concepts/basics
 ---
 # Vault
 

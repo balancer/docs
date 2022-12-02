@@ -14,15 +14,15 @@ import RightAnchor from '@theme/RightAnchor.vue';
         <Content />
 
         <slot name="content-bottom" />
+
+        <PageMeta />
+
+        <PageNav />
       </div>
       <div class="rightbar col">
         <RightAnchor />
       </div>
     </div>
-
-    <PageMeta />
-
-    <PageNav />
 
     <slot name="bottom" />
   </main>

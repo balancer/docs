@@ -20,6 +20,7 @@ const features = computed(() => {
       v-for="card in features"
       :key="card.title"
       :title="card.title"
+      :link="card.link"
       :details="card.details"
       :icon="card.icon"
     />
@@ -31,5 +32,6 @@ const features = computed(() => {
   grid-gap: 1.35rem;
   display: grid;
   grid-template-columns: repeat(auto-fit, minmax(240px, 1fr));
+  padding-bottom: 2em;
 }
 </style>
