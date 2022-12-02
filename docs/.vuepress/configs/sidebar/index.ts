@@ -13,26 +13,35 @@ const getDirectories = source =>
     name => !(name === '.vuepress') && isDirectory(join(source, name))
   );
 
-function getChildren(parent_path, dir) {
+function getName(path) {
+  const name = path.split(sep).pop();
+  return titleize(name.replace(/-/g, ' '));
+}
+
+function getChildren(parent_path, dir, recursive = true) {
+  // CREDITS: https://github.com/benjivm (from: https://github.com/vuejs/vuepress/issues/613#issuecomment-495751473)
   parent_path = normalize(parent_path);
   parent_path = parent_path.endsWith(sep)
     ? parent_path.slice(0, -1)
     : parent_path; // Remove last / if exists.
-  const pattern = '/*.md';
+  const pattern = recursive ? '/**/*.md' : '/*.md';
   const files = glob
     .sync(parent_path + (dir ? `/${dir}` : '') + pattern)
     .map(path => {
+      // Instantiate MarkdownIt
       const md = new markdownIt();
+      // Add markdown-it-meta
       md.use(meta);
+      // Get the order value
       const file = readFileSync(path, 'utf8');
       md.render(file);
 
       const order = md.meta.order;
       // Remove "parent_path" and ".md"
-      path = '/' + path.slice(parent_path.length + 1, -3);
+      path = path.slice(4, -3);
       // Remove "README", making it the de facto index page
       if (basename(path.toLowerCase()) === 'readme') {
-        // if (path.toLowerCase().endsWith("readme")) {
+        if (dir == '') return;
         path = path.slice(0, -6);
       }
 
@@ -43,62 +52,57 @@ function getChildren(parent_path, dir) {
     })
     .filter(obj => obj !== undefined);
 
+  // Return the ordered list of files, sort by 'order' then 'path'
   return sortBy(files, ['order', 'path']).map(file => file.path);
 }
 
-function getName(path) {
-  let name = path.split(sep).pop();
-  const argsIndex = name.lastIndexOf('--');
-  if (argsIndex > -1) {
-    name = name.substring(0, argsIndex);
-  }
-
-  return titleize(name.replace('-', ' '));
-}
-
+/**
+ * Return sidebar config for given baseDir.
+ *
+ * @param   {String} baseDir        - Absolute path of directory to get sidebar config for.
+ * @param   {Object} options        - Options
+ * @param   {String} relativeDir    - Relative directory to add to baseDir
+ * @param   {Number} currentLevel   - Current level of items.
+ * @returns {Array.<String|Object>} - Recursion level
+ */
 function side(baseDir, relativeDir = '', currentLevel = 1) {
-  const fileLinks = getChildren(baseDir, relativeDir);
-  const onlyFiles = fileLinks.length;
+  const fileLinks = getChildren(baseDir, relativeDir, currentLevel > 2);
+  if (currentLevel <= 2) {
+    getDirectories(join(baseDir, relativeDir)).forEach(subDir => {
+      const children = side(
+        baseDir,
+        join(relativeDir, subDir),
+        currentLevel + 1
+      );
 
-  let order;
-  const filepath = join(baseDir, 'README.md');
-  if (existsSync(filepath)) {
-    const md = new markdownIt();
-    md.use(meta);
-    const file = readFileSync(filepath, 'utf8');
-    md.render(file);
-    order = md.meta.sidebarOrder;
+      let insertPosition =
+        getDirectories(join(baseDir, relativeDir)).length + fileLinks.length;
+
+      if (children.length > 0) {
+        const orderPath = join(baseDir, relativeDir, subDir, '.order');
+        if (existsSync(orderPath)) {
+          const file = readFileSync(orderPath, 'utf8');
+          insertPosition = Number(file);
+        }
+
+        fileLinks.push({
+          text: getName(subDir),
+          order: insertPosition,
+          collapsible: true,
+          children,
+        });
+      }
+    });
   }
 
-  const folderLinks = [];
-
-  getDirectories(join(baseDir, relativeDir)).forEach(subDir => {
-    const children = side(baseDir, join(relativeDir, subDir), currentLevel + 1);
-
-    if (children.length > 0) {
-      const insertPosition = order ? order.indexOf(subDir) : children.length;
-
-      if (subDir == 'governance' || subDir == 'pools') {
-        console.log(`${subDir} fileLinks ${fileLinks.length}`);
-        console.log(`${subDir} insertPosition ${insertPosition}`);
-        console.log(`length ${folderLinks.length}`);
-      }
-
-      folderLinks.splice(insertPosition, 0, {
-        text: getName(subDir),
-        collapsible: true,
-        children,
-      });
-      // eslint-disable-next-line prettier-vue/prettier
-    }
-  });
-
-  return [...fileLinks, ...folderLinks];
+  return sortBy(fileLinks, ['order']);
 }
 
 // export const sidebar = getConfig('./', {});
 export const sidebar: SidebarConfig = {
-  '/concepts/': side('docs/', 'concepts/'),
-  '/reference': side('docs/', 'reference/'),
-  '/': side('docs/', 'concepts/'),
+  '/concepts/': side('docs/concepts/', ''),
+  '/guides/': side('docs/guides/', ''),
+  '/reference/': side('docs/reference/', ''),
+  '/sdk/': side('docs/sdk/', ''),
+  '/': side('docs/concepts/', ''),
 };

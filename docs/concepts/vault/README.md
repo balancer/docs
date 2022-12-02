@@ -6,8 +6,10 @@ tutorial:
     details: Deep dive walkthrough of the vault
     link: /reference
 references:
-  - details: Deployment addresses
-    link: /concepts/basics
+  - details: Deployment address
+    link: /reference/contracts/addresses
+  - details: APIs
+    link: /reference/contracts/apis/vault
 ---
 # Vault
 
@@ -31,7 +33,7 @@ In other Decentralized Exchanges where token accounting is paired with pool logi
 
 #### Internal Balances
 
-Taking the concept of minimizing token transfers one step further, it's actually possible to execute swaps with no token transfers whatsoever. Similar to how the Vault maintains token balances for pools, it can also maintain balances for arbitrary Ethereum addresses. Users can hold **Internal Balances** in the Vault and execute trades to/from these balances.&#x20;
+Taking the concept of minimizing token transfers one step further, it's actually possible to execute swaps with no token transfers whatsoever. Similar to how the Vault maintains token balances for pools, it can also maintain balances for arbitrary Ethereum addresses. Users can hold **Internal Balances** in the Vault and execute trades to/from these balances.
 
 ## Security
 

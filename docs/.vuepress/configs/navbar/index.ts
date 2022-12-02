@@ -10,19 +10,19 @@ export const navbar: NavbarConfig = [
     link: '/sdk/',
   },
   {
-    text: 'Developer Tutorials',
-    link: '/tutorials',
+    text: 'Developer Guides',
+    link: '/guides',
   },
   {
     text: 'Reference',
     children: [
       {
         text: 'Contracts',
-        children: ['/reference/contracts/addresses/'],
+        children: ['/reference/general/addresses/'],
       },
       {
-        text: 'Bundlers',
-        link: '/reference/error-codes',
+        text: 'Error Codes',
+        link: '/reference/general/error-codes',
       },
     ],
   },

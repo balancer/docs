@@ -10,22 +10,18 @@ As Balancer Protocol moves to decentralize and diversify its governance, it will
 
 ## Contract Address
 
-| BAL contract Address | Network |
+| BAL Token Address | Network |
 | :--- | :--- |
-| Ethereum | [0xba100000625a3754423978a60c9317c58a424e3d](https://etherscan.io/address/0xba100000625a3754423978a60c9317c58a424e3d) |
-| Kovan | [0x41286Bb1D3E870f3F750eB7E1C25d7E48c8A1Ac7](https://kovan.etherscan.io/address/0x41286Bb1D3E870f3F750eB7E1C25d7E48c8A1Ac7) |
-| Polygon | [0x9a71012b13ca4d3d0cdc72a177df3ef03b0e76a3](https://polygonscan.com/address/0x9a71012b13ca4d3d0cdc72a177df3ef03b0e76a3) |
-| Arbitrum | [0x040d1EdC9569d4Bab2D15287Dc5A4F10F56a56B8](https://explorer.arbitrum.io/address/0x040d1EdC9569d4Bab2D15287Dc5A4F10F56a56B8) |
+| Ethereum | <span class="address-link">[0xba100000625a3754423978a60c9317c58a424e3d](https://etherscan.io/address/0xba100000625a3754423978a60c9317c58a424e3d)</span> |
+| Kovan | <span class="address-link">[0x41286Bb1D3E870f3F750eB7E1C25d7E48c8A1Ac7](https://kovan.etherscan.io/address/0x41286Bb1D3E870f3F750eB7E1C25d7E48c8A1Ac7)</span> |
+| Polygon | <span class="address-link">[0x9a71012b13ca4d3d0cdc72a177df3ef03b0e76a3](https://polygonscan.com/address/0x9a71012b13ca4d3d0cdc72a177df3ef03b0e76a3)</span> |
+| Arbitrum | <span class="address-link">[0x040d1EdC9569d4Bab2D15287Dc5A4F10F56a56B8](https://explorer.arbitrum.io/address/0x040d1EdC9569d4Bab2D15287Dc5A4F10F56a56B8)</span> |
 
 ## Liquidity Providers
 
 Liquidity Providers \(LPs\) are the cornerstone of the Balancer Protocol. Liquidity attracts traders, trading generates fees, and pool profitability attracts more liquidity. 
 
 Early LPs take on more risk and opportunity cost, including contract risk and low initial pool profitability. We believe that these protocol users should get to participate early on in deciding how the protocol evolves. To this end, Balancer Labs proposed and implemented the Liquidity Mining program, in which Balancer governance tokens are distributed to LPs.
-
-{% hint style="info" %}
-The details of V2 liquidity mining are still being hashed out by the Balancer Community and developers. At present, liquidity mining has transitioned to V2 entirely, except for the V1 AAVE Safety Module, which is expected to follow.
-{% endhint %}
 
 ## BAL Token Supply and Distribution
 
@@ -44,7 +40,38 @@ This chart outlines the allocation amounts. More details below.
 | Ecosystem Fund | 5M |
 | Fundraising Fund | 5M |
 
-![](/images/bal_tokens_distribution.png)
+::: chart BAL Token Distribution
+
+```json
+{
+  "type": "pie",
+  "data": {
+    "labels": ["Community", "Founders, Options, Advisors, Investors", "Ecosystem", "Fundraising"],
+    "datasets": [
+      {
+        "label": "%",
+        "data": [65, 25, 5, 5],
+        "backgroundColor": [
+          "rgba(255, 99, 132, 0.2)",
+          "rgba(54, 162, 235, 0.2)",
+          "rgba(255, 206, 86, 0.2)",
+          "rgba(75, 192, 192, 0.2)"
+        ],
+        "borderColor": [
+          "rgba(255, 99, 132, 1)",
+          "rgba(54, 162, 235, 1)",
+          "rgba(255, 206, 86, 1)",
+          "rgba(75, 192, 192, 1)"
+        ],
+        "borderWidth": 1
+      }
+    ]
+  },
+  "options": {}
+}
+```
+
+:::
 
 #### Liquidity Providers
 
@@ -58,7 +85,7 @@ Every week 145,000 BAL tokens, or approximately 7.5M per year, are distributed t
 
 5M were allocated for the Ecosystem Fund. This fund will be deployed to attract and incentivize strategic partners who will help the Balancer ecosystem grow and thrive. BAL holders will ultimately decide how this fund is used over the coming years.
 
-Address: 0xb618F903ad1d00d6F7b92f5b0954DcdC056fC533
+<span class="address-link">[0xb618F903ad1d00d6F7b92f5b0954DcdC056fC533](https://etherscan.io/address/0xb618F903ad1d00d6F7b92f5b0954DcdC056fC533)</span>
 
 #### Fundraising Fund
 
@@ -66,7 +93,7 @@ Address: 0xb618F903ad1d00d6F7b92f5b0954DcdC056fC533
 
 For full transparency, the [seed series](https://medium.com/balancer-protocol/balancer-labs-raises-3m-to-supercharge-programmable-liquidity-8f1a42323c78) price of one BAL token was $0.60.
 
-Address: 0xB129F73f1AFd3A49C701241F374dB17AE63B20Eb
+<span class="address-link">[0xB129F73f1AFd3A49C701241F374dB17AE63B20Eb](https://etherscan.io/address/0xB129F73f1AFd3A49C701241F374dB17AE63B20Eb)</span>
 
 
 

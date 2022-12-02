@@ -20,13 +20,13 @@ for(i=0, i<balances.length, i++){
 return(tokens,yourUnderlyingBalances);
 ```
 
-{% hint style="warning" %}
+::: warning
 ### **Note about pre-minted BPT**
 
 Some pools (like bb-a-USD) have pre-minted BPT. This means all LP tokens are minted at the time of pool creation so that you can use a swap to effectively join/exit the pool. Because of this, when querying the supply, you should **NOT** use `bpt.getSupply()`, but rather use `bpt.getVirtualSupply()`.
-{% endhint %}
+:::
 
-{% hint style="warning" %}
+::: warning
 The above assumes you have your BPT in your wallet. If you have staked your BPT in a gauge, you'll need to calculate your BPT holdings as:\
 `myBpt = bpt.balanceOf(yourAddress) + bptGaugeDeposit.balanceOf(yourAddress);`
-{% endhint %}
+:::

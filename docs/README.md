@@ -2,7 +2,6 @@
 home: true
 title: Home
 heroText: Balancer Docs
-sidebarOrder: ['vault','pools','governance']
 heroImage: /images/background.svg
 homeImage: /images/hero-circles.png
 features:

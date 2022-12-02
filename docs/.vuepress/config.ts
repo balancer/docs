@@ -57,9 +57,8 @@ export default defineUserConfig({
   plugins: [
     mdEnhancePlugin({
       mathjax: true,
-    }),
-    activeHeaderLinksPlugin({
-      headerLinkSelector: 'a.right-anchor-item',
+      container: true,
+      chart: true,
     }),
   ],
 });

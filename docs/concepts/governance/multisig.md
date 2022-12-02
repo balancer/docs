@@ -4,9 +4,9 @@
 
 | Network | Address |
 | :--- | :--- |
-| Ethereum | 0x10A19e7eE7d7F8a52822f6817de8ea18204F2e4f |
-| Polygon | 0xd2bD536ADB0198f74D5f4f2Bd4Fe68Bae1e1Ba80 |
-| Arbitrum | 0x6207ed574152496c9B072C24FD87cE9cd9E17320 |
+| Ethereum | <span class="address-link">[0x10A19e7eE7d7F8a52822f6817de8ea18204F2e4f](https://etherscan.io/address/0x10A19e7eE7d7F8a52822f6817de8ea18204F2e4f)</span> |
+| Polygon | <span class="address-link">[0xd2bD536ADB0198f74D5f4f2Bd4Fe68Bae1e1Ba80](https://etherscan.io/address/0xd2bD536ADB0198f74D5f4f2Bd4Fe68Bae1e1Ba80)</span> |
+| Arbitrum | <span class="address-link">[0x6207ed574152496c9B072C24FD87cE9cd9E17320](https://etherscan.io/address/0x6207ed574152496c9B072C24FD87cE9cd9E17320)</span> |
 
 The bulk of this page refers to the Ethereum multisig. The Polygon and Arbitrum deployments are 3 of 5 multisigs with signers from the community. 
 

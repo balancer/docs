@@ -57,6 +57,7 @@ const references = computed(() => {
 .reference-card ul {
   list-style-type: circle;
   margin-top: 0.25em;
+  margin-bottom: 0;
   padding-left: 1.5em;
 }
 

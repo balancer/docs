@@ -38,8 +38,6 @@ export const isActiveRightAnchorItem = (
   item: PageHeader,
   route: RouteLocationNormalizedLoaded
 ): boolean => {
-  console.log(`item.link ${item.link}`);
-  console.log(`route ${route.hash}`);
   if (item.link && isActiveLink(item.link, route)) {
     return true;
   }

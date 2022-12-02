@@ -4,9 +4,7 @@
 
 This page outlines the Balancer Governance Process from Request for Comment \[RFC\] through executing a result. 
 
-**tl;dr:**
-
-1. Post a Request for Comment to the forum \([template](rfc-proposal-forum-post-template.md)\)
+1. Post a Request for Comment to the forum
 2. Facilitate preliminary discussion
 3. Update and refine RFC to become a Proposal
 4. Snapshot vote
@@ -14,7 +12,7 @@ This page outlines the Balancer Governance Process from Request for Comment \[RF
 
 ## Outline
 
-### Step 1: **Request For Comment \(RFC\)**
+### Step 1: Request For Comment \(RFC\)
 
 Start a new conversation on the [Governance section of the forum](https://forum.balancer.fi/c/governance/7) with the \[RFC\] tag. The message should contain the following sections. Click [here](rfc-proposal-forum-post-template.md) for a forum post template.
 
@@ -52,9 +50,7 @@ Now that we have a proposal, we can move into a [Snapshot](https://vote.balancer
 
 If the vote fails in an approve/reject vote, the guideline for a re-vote is to wait at least 30 days. 
 
-If the vote succeeds or a result has been chosen, follow through to make sure that it is properly executed. Depending on what the vote is about, it may require an action by the Multisig
-
-{% page-ref page="../multisig.md" %}
+If the vote succeeds or a result has been chosen, follow through to make sure that it is properly executed. Depending on what the vote is about, it may require an action by the [Multisig](./multisig.md)
 
 
 
