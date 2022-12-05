@@ -70,27 +70,9 @@ const useLastUpdated = (): ComputedRef<null | string> => {
   });
 };
 
-const useContributors = (): ComputedRef<
-  null | Required<DefaultThemePageData['git']>['contributors']
-> => {
-  const themeLocale = useThemeLocaleData();
-  const page = usePageData<DefaultThemePageData>();
-  const frontmatter = usePageFrontmatter<DefaultThemeNormalPageFrontmatter>();
-
-  return computed(() => {
-    const showContributors =
-      frontmatter.value.contributors ?? themeLocale.value.contributors ?? true;
-
-    if (!showContributors) return null;
-
-    return page.value.git?.contributors ?? null;
-  });
-};
-
 const themeLocale = useThemeLocaleData();
 const editNavLink = useEditNavLink();
 const lastUpdated = useLastUpdated();
-const contributors = useContributors();
 </script>
 
 <template>
@@ -104,21 +86,6 @@ const contributors = useContributors();
       <ClientOnly>
         <span class="meta-item-info">{{ lastUpdated }}</span>
       </ClientOnly>
-    </div>
-
-    <div
-      v-if="contributors && contributors.length"
-      class="meta-item contributors"
-    >
-      <span class="meta-item-label">{{ themeLocale.contributorsText }}: </span>
-      <span class="meta-item-info">
-        <template v-for="(contributor, index) in contributors" :key="index">
-          <span class="contributor" :title="`email: ${contributor.email}`">
-            {{ contributor.name }}
-          </span>
-          <template v-if="index !== contributors.length - 1">, </template>
-        </template>
-      </span>
     </div>
   </footer>
 </template>
