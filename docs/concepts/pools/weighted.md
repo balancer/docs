@@ -33,7 +33,7 @@ $$
 _nC_r = \frac{n!}{r!(n-r)!}
 $$
 
-Where $$n$$​ is 2 and $$r$$​is the number of tokens in the pool.
+Where $n$​ is 2 and $r$ ​is the number of tokens in the pool.
 
 ## Use Cases
 

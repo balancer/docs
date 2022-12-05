@@ -7,7 +7,7 @@ Composable Stable Pools are designed for assets that are either expected to cons
 ### Ideal For
 
 * **Pegged Tokens** - tokens that trade near 1:1, such as two stablecoins of the same currency (eg: DAI, USDC, USDT), or synthetic assets (eg: renBTC, sBTC, WBTC)
-* **Correlated Tokens** - tokens that trade near 1:$$R$$ with some slowly changing exchange rate $$R$$, like derivatives (eg: wstETH, wETH)
+* **Correlated Tokens** - tokens that trade near 1:$R$ with some slowly changing exchange rate $R$, like derivatives (eg: wstETH, wETH)
 
 ### Stable Swaps Under the Balancer Umbrella
 

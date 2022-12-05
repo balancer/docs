@@ -21,7 +21,7 @@ There are also Python implementations in progress
 
 ## Invariant
 
-Since the Stable Math equation is quite complex, determining the invariant, $$D$$, is typically done iteratively. For an example of how to do this, please refer to [this function](https://github.com/georgeroman/balancer-v2-pools/blob/main/src/pools/stable/math.ts#L16).
+Since the Stable Math equation is quite complex, determining the invariant, $D$, is typically done iteratively. For an example of how to do this, please refer to [this function](https://github.com/georgeroman/balancer-v2-pools/blob/main/src/pools/stable/math.ts#L16).
 
 $$
 A \cdot n^n \cdot \sum{x_i} +D = A \cdot D \cdot n^n + { \frac{D^{n+1}}{{n}^{n}\cdot \prod{x_i} } }
@@ -29,9 +29,9 @@ $$
 
 Where:
 
-* $$n$$ is the number of tokens
-* $$x_i$$ is is balance of token $$i$$
-* $$A$$ is the amplification parameter
+* $n$ is the number of tokens
+* $x_i$ is is balance of token $i$
+* $A$ is the amplification parameter
 
 ## Trade Equations
 
@@ -49,13 +49,13 @@ $$
 
 Where:
 
-* $$x'_i$$ is the **ending** amount of each token
-* $$a_{out}$$is the amount out
-* $$x_{out}$$is the **starting** amount of the output token
-* $$y = x'_{out}$$is the **ending** amount of the output token
-* $$D$$ is the pool invariant
-* $$A$$ is the amplification parameter
-* $$n$$ is the number of tokens
+* $x'_i$ is the **ending** amount of each token
+* $a_{out}$is the amount out
+* $x_{out}$is the **starting** amount of the output token
+* $y = x'_{out}$is the **ending** amount of the output token
+* $D$ is the pool invariant
+* $A$ is the amplification parameter
+* $n$ is the number of tokens
 
 ### inGivenOut
 
@@ -69,10 +69,10 @@ $$
 
 Where:
 
-* $$x'_i$$ is the **ending** amount of each token
-* $$a_{in}$$is the amount in
-* $$x_{in}$$is the **starting** amount of the input token
-* $$y = x'_{in}$$is the **ending** amount of the input token
-* $$D$$ is the pool invariant
-* $$A$$ is the amplification parameter
-* $$n$$ is the number of tokens
+* $x'_i$ is the **ending** amount of each token
+* $a_{in}$is the amount in
+* $x_{in}$is the **starting** amount of the input token
+* $y = x'_{in}$is the **ending** amount of the input token
+* $D$ is the pool invariant
+* $A$ is the amplification parameter
+* $n$ is the number of tokens

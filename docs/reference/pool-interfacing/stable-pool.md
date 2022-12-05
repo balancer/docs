@@ -34,4 +34,4 @@ isUpdating :  False
 precision :  1000
 ```
 
-where the amplification parameter is $$\frac{value}{precision} = \frac{620000}{1000}=620$$ in this case.
+where the amplification parameter is $\frac{value}{precision} = \frac{620000}{1000}=620$ in this case.

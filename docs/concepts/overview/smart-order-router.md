@@ -91,13 +91,13 @@ $$
 targetSP = \frac{\frac{SPaS_1(A_1)}{SPaS_1'(A_1)}+\frac{SPaS_2(A_2)}{SPaS_2'(A_2)}}{\frac{1}{SPaS_1'(A_1)}+\frac{1}{SPaS_1'(A_1)}}
 $$
 
-In other words, the target spot price is the average of the spot prices after swap weighted by the inverse of their derivatives. The derivatives of $$SPaS$$ can be seen as the slippage of that path. Generalizing for any number of paths we have:
+In other words, the target spot price is the average of the spot prices after swap weighted by the inverse of their derivatives. The derivatives of $SPaS$ can be seen as the slippage of that path. Generalizing for any number of paths we have:
 
 $$
 targetSP = \frac{\sum_i{\frac{SPaS_i(A_i)}{SPaS'_i(A_i)}}} {\sum_i{\frac{1}{SPaS'_i(A_i)}}}
 $$
 
-After calculating `targetSP` it's easy to replace it in the equations above to find each $$A'_i$$ :
+After calculating `targetSP` it's easy to replace it in the equations above to find each $A'_i$ :
 
 $$
 A'_i = \frac{SPaS_i(Ai) - targetSP}{SPaS'_i(Ai)}+A_i
