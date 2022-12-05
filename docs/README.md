@@ -13,7 +13,7 @@ features:
     link: /sdk
   - title: Smart Contracts
     details: Deployment addresses, ABIs, helpful walthroughs, and more
-    link: /reference
+    link: /reference/general/addresses.html
   - title: Dev Guides
     details: Follow along helpful guides with example code
     link: /guides
