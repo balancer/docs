@@ -9,9 +9,9 @@ Balancer introduced a new tokenomics system for the Balancer Governance Token (B
 * The overall gauge vote percentage directs the weekly BAL emissions. If the weekly total amount is 145,000 BAL per week, a pool gauge with 1% of the vote will net in 1,450 BAL towards that gauge
 * Emissions are set based on the previous weeks voting round which concludes each Thursday 00:00 UTC
 
-To estimate the BAL liquidity mining APR for a certain gauge, various endpoints have to be read. Currently, there is not an API to obtain the APRs as they have to be calculated on the fly.&#x20;
+To estimate the BAL liquidity mining APR for a certain gauge, various endpoints have to be read. Currently, there is not an API to obtain the APRs as they have to be calculated on the fly.
 
-Follow the steps below to calculate the liquidity mining APR for a certain gauge (explained in more detail in [data fetching](data-fetching.md)):
+Follow the steps below to calculate the liquidity mining APR for a certain gauge:
 
 1. Obtain the current gauge whitelist from the front-end repo
 2. Obtain the working supply for each gauge by reading gauge vyper contracts

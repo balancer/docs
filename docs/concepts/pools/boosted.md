@@ -24,9 +24,9 @@ Linear Pools are the base component of Boosted Pools. They use Linear Math to fa
 
 ### Phantom Pool Tokens ("Phantom BPT")
 
-One of the key features that makes trades through Boosted Pools so simple is the use of **Phantom BPT**. Normally when a Liquidity Provider joins/exits a pool, the pool mints/burns pool tokens as needed. This is gas intensive and requires users to execute a `join` or `exit`.&#x20;
+One of the key features that makes trades through Boosted Pools so simple is the use of **Phantom BPT**. Normally when a Liquidity Provider joins/exits a pool, the pool mints/burns pool tokens as needed. This is gas intensive and requires users to execute a `join` or `exit`.
 
-In pools that use Phantom BPT, however, **all pool tokens are minted at the time of pool creation** and are **held by the pool itself**. With Phantom BPT, Liquidity Providers use a **`swap`** (or more likely a **`batchSwap`**) to trade to or from a pool token to join or exit, respectively.&#x20;
+In pools that use Phantom BPT, however, **all pool tokens are minted at the time of pool creation** and are **held by the pool itself**. With Phantom BPT, Liquidity Providers use a **`swap`** (or more likely a **`batchSwap`**) to trade to or from a pool token to join or exit, respectively.
 
 ## Use Cases
 

@@ -1,8 +1,8 @@
 # Pool Exits
 
-{% hint style="info" %}
+::: info
 Calls to `exitPool()` are made on the Vault contract! You cannot send this command directly to a pool.
-{% endhint %}
+:::
 
 ## API
 
@@ -39,9 +39,9 @@ When providing your assets, you must ensure that the tokens are sorted numerical
 
 ### `minAmountsOut`
 
-In the exitPool call, you have to provide `minAmountsOut`, the lower limits for the tokens to receive. In short, what are the minimum amounts you would find acceptable, given the amount of BPT you are providing?&#x20;
+In the exitPool call, you have to provide `minAmountsOut`, the lower limits for the tokens to receive. In short, what are the minimum amounts you would find acceptable, given the amount of BPT you are providing?
 
-A good practice would be to user [`queryExit` in `BalancerHelpers`](../query-batchswap-join-exit.md#queryexit) to find the current amounts of tokens you would get for your BPT, and then account for some possible slippage.&#x20;
+A good practice would be to user [`queryExit` in `BalancerHelpers`](../general/query-batchswap-join-exit.md#queryexit) to find the current amounts of tokens you would get for your BPT, and then account for some possible slippage.
 
 Let's say that you want to allow a 1% slippage. After computing how many tokens you expect for a given amount of BPT, you'd apply a factor of 0.99 to all the amounts. These thresholds are important because it's possible for token amounts to change in the pool between the time you send your transaction and the when your transaction executes.
 
@@ -49,7 +49,7 @@ Let's say that you want to allow a 1% slippage. After computing how many tokens 
 
 userData is a highly versatile field; as such, it needs to be encoded for its specific use case. For exits, userData encodes a `ExitKind` to tell the pool what style of exit you're performing. Since pool types are customizable, not every pool necessarily uses the same `ExitKind`, so it's important to keep track of what each pool type can handle.
 
-#### [WeightedPool](https://github.com/balancer-labs/balancer-v2-monorepo/blob/master/pkg/pool-weighted/contracts/BaseWeightedPool.sol#L40) ExitKinds&#x20;
+#### [WeightedPool](https://github.com/balancer-labs/balancer-v2-monorepo/blob/master/pkg/pool-weighted/contracts/BaseWeightedPool.sol#L40) ExitKinds
 
 ```solidity
 enum ExitKind {
@@ -69,7 +69,7 @@ The **first three** types of`ExitKind` apply to the following pools:
 
 As noted in the comment, only the InvestmentPool has a fourth:`MANAGEMENT_FEE_TOKENS_OUT`. This is used as an `internal` function only, so it is out of the scope of this page.
 
-#### [StablePool](https://github.com/balancer-labs/balancer-v2-monorepo/blob/master/pkg/pool-stable/contracts/StablePool.sol#L79) ExitKinds&#x20;
+#### [StablePool](https://github.com/balancer-labs/balancer-v2-monorepo/blob/master/pkg/pool-stable/contracts/StablePool.sol#L79) ExitKinds
 
 ```solidity
 enum ExitKind { 
@@ -100,12 +100,12 @@ Applies to:
     * `['uint256', 'uint256', 'uint256']`
   * userData
     * `[EXACT_BPT_IN_FOR_ONE_TOKEN_OUT, bptAmountIn, exitTokenIndex]`
-* Proportional Exit&#x20;
+* Proportional Exit
   * userData ABI
     * `['uint256', 'uint256']`
   * userData
     * `[EXACT_BPT_IN_FOR_TOKENS_OUT, bptAmountIn]`
-* Custom Exit&#x20;
+* Custom Exit
   * userData ABI
     * `['uint256', 'uint256[]', 'uint256']`
   * userData

@@ -2,7 +2,7 @@
 
 ## Overview
 
-Weighted Pools are highly versatile and configurable pools. Weighted Pools use [Weighted Math](../../concepts/math/weighted-math.md), which makes them great for general cases, including tokens that don't necessarily have any price correlation (ex. DAI/WETH). Unlike pools in other DeFi protocols that only provide 50/50 weightings, Balancer Weighted Pools enable users to build pools with different token counts and weightings, such as pools with 80/20 or 60/20/20 weightings.
+Weighted Pools are highly versatile and configurable pools. Weighted Pools use [Weighted Math](/reference/math/weighted-math.md), which makes them great for general cases, including tokens that don't necessarily have any price correlation (ex. DAI/WETH). Unlike pools in other DeFi protocols that only provide 50/50 weightings, Balancer Weighted Pools enable users to build pools with different token counts and weightings, such as pools with 80/20 or 60/20/20 weightings.
 
 ![](/images/weighted-pool-pie.svg)
 
@@ -15,7 +15,7 @@ Weighted Pools allow users to choose their levels of exposure to certain assets 
 For example if a user wants to provide liquidity for WBTC and WETH, they can choose the weight that most aligns with their strategy. A pool more heavily favoring WBTC implies they expect bigger gains for WBTC, while a pool more heavily favoring WETH implies bigger gains for WETH. An evenly balanced pool is a good choice for assets that are expected to remain proportional in value in the long run.
 
 ![Variable pool weight allows for fine-tuned exposure to assets](https://lh4.googleusercontent.com/VwAkBtoNQLfuRFb3Wmb6YdEJwFyyR2WNXcEAkZGgJ7teCaYHeFK-ZEwC7kLYPiTdFWSjjRQA2y550pFkMqimjS5CZW2IKQ6A-RNPKzG27Ja2xK_efAZkU63ZC5vq29EyCUaEVDzo=s0)
-[label](../../reference/contracts/addresses/README.md)
+[label](/reference/general/addresses)
 #### Impermanent Loss
 
 Impermanent Loss is the difference in value between holding a set of assets and providing liquidity for those same assets.

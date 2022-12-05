@@ -37,11 +37,11 @@ struct BatchSwapStep {
   * `GIVEN_OUT`: The amount of tokens we want to receive from the pool in this step.
 * `userData`: Any additional data which the pool requires to perform the swap. This allows pools to have more flexible swapping logic in future - for all current Balancer pools this can be left empty.
 
-{% hint style="info" %}
+::: info
 When performing multi-hop trades, it's not always possible to know the value of `amount`exactly. For example, consider a case where we want to trade USDC for ETH but the trade is being routed through a DAI-USDC pool and then a ETH-DAI pool. It's not possible to know exactly how much DAI we'll receive from this first step so we can't set `amount` to that value at the time we send the transaction.
 
 For this reason setting `amount` to 0 will be interpreted to use the full output of the previous trade. We can then trade USDC for DAI and then all of the DAI we receive will be traded for ETH.
-{% endhint %}
+:::
 
 ### FundManagement struct
 
@@ -76,21 +76,21 @@ batchSwap(SwapKind kind,
 
 * `kind`: The type of batch swap we want to perform - either "Out Given In" or "In Given Out." We either know the amount of tokens we're sending to the pool and want to know how many we'll receive, or vice versa.
 * `assets`: An array of tokens which are used in the batch swap. This is referenced from within `swaps`
-* `limits`: An array of maximum amounts of each `asset` to be transferred. For tokens going **in** to the Vault, the `limit` shall be a positive number. For tokens going **out** of the Vault, the `limit` shall be a negative number. If the `amount` to be transferred for a given asset is greater than its `limit`, the trade will fail with error `BAL#507: SWAP_LIMIT`.&#x20;
+* `limits`: An array of maximum amounts of each `asset` to be transferred. For tokens going **in** to the Vault, the `limit` shall be a positive number. For tokens going **out** of the Vault, the `limit` shall be a negative number. If the `amount` to be transferred for a given asset is greater than its `limit`, the trade will fail with error `BAL#507: SWAP_LIMIT`.
   * **How do you determine what your `limits` should be?** If you want to compute `limits`, it is recommended to use `queryBatchSwap` and then [add a slippage tolerance](batch-swaps.md#adding-a-slippage-tolerance).
 * `deadline`: The UNIX timestamp at which our trade must be completed by - if the transaction is confirmed after this time, the transaction will fail.
 
 ## `queryBatchSwap`
 
-`queryBatchSwap` is an extremely useful function in the `Vault` contract. With `queryBatchSwap`, you can get the exact amounts for a given swap with the on-chain state. You can use these amounts to calculate input/output limits based on a slippage tolerance.&#x20;
+`queryBatchSwap` is an extremely useful function in the `Vault` contract. With `queryBatchSwap`, you can get the exact amounts for a given swap with the on-chain state. You can use these amounts to calculate input/output limits based on a slippage tolerance.
 
-{% hint style="warning" %}
+::: danger
 You should **NOT** use `queryBatchSwap` to calculate limits from a smart contract that is executing a swap. **This will leave you vulnerable to sandwich attacks.**
 
 You should only use `queryBatchSwap` **before** sending a `batchSwap` transaction, when calculating your `batchSwap` arguments off-chain.
-{% endhint %}
+:::
 
-Calling `queryBatchSwap` is very similar to calling [`batchSwap`](batch-swaps.md#batchswap-function) itself, just without the `limit` and `deadline` arguments.&#x20;
+Calling `queryBatchSwap` is very similar to calling [`batchSwap`](batch-swaps.md#batchswap-function) itself, just without the `limit` and `deadline` arguments.
 
 ```
 queryBatchSwap(SwapKind kind,
@@ -100,15 +100,15 @@ queryBatchSwap(SwapKind kind,
           returns (int256[] assetDeltas)
 ```
 
-{% hint style="info" %}
-To use `queryBatchSwap`, you must use `eth_call`.&#x20;
+::: info
+To use `queryBatchSwap`, you must use `eth_call`.
 
 You may notice that `queryBatchSwap` shows up on Etherscan as a `write` function, but this is simply due to the fact that the function fully executes a `batchSwap` before reverting.
-{% endhint %}
+:::
 
 ### Adding a Slippage Tolerance
 
-Once you have received your `assetDeltas` from calling [`queryBatchSwap`](batch-swaps.md#querybatchswap), you can calculate `limits` for a `batchSwap` by applying your slippage tolerance.&#x20;
+Once you have received your `assetDeltas` from calling [`queryBatchSwap`](batch-swaps.md#querybatchswap), you can calculate `limits` for a `batchSwap` by applying your slippage tolerance.
 
 #### `GIVEN_IN`
 

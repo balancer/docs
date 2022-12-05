@@ -14,7 +14,7 @@ This page outlines the Balancer Governance Process from Request for Comment \[RF
 
 ### Step 1: Request For Comment \(RFC\)
 
-Start a new conversation on the [Governance section of the forum](https://forum.balancer.fi/c/governance/7) with the \[RFC\] tag. The message should contain the following sections. Click [here](rfc-proposal-forum-post-template.md) for a forum post template.
+Start a new conversation on the [Governance section of the forum](https://forum.balancer.fi/c/governance/7) with the \[RFC\] tag. The message should contain the following sections.
 
 * **Background**
   * _What is the current state or what you're addressing? Is there any relevant information that the common reader might not know?_

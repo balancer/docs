@@ -2,9 +2,9 @@
 
 ## Overview
 
-{% hint style="info" %}
+::: info
 To understand Flash Swaps, make sure you understand [Batch Swaps](batch-swaps.md) first.
-{% endhint %}
+:::
 
 Anyone who identifies a price discrepancy in two Balancer Pools can execute a **Flash Swap**. **** An arbitrageur who makes a flash swap **does not need to hold any** of the input **tokens** that one would normally need to make a trade. Instead, the trader identifies the imbalance, tells the Vault to make the swap, and is rewarded with the profit.
 

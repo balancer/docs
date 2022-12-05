@@ -4,9 +4,9 @@
 
 In many scenarios, you might want to know how much X of TokenA you'll receive for Y of TokenB. Fortunately, Balancer has query functions to simulate transactions.
 
-{% hint style="warning" %}
+::: warning
 If you look on Etherscan (or similar), all three of the query functions will show up as "Write" functions. That is ok! You can still call these with `eth_call` to get numerical results without spending any gas.
-{% endhint %}
+:::
 
 ## !⚠️! WARNING !⚠️!
 
@@ -22,15 +22,15 @@ Calculating these values ahead of time is useful for enforcing slippage toleranc
 
 ## Queries
 
-{% hint style="info" %}
+::: info
 ### Are you trying to calculate amounts for a pool that uses Phantom BPT?
 
-**\*LinearPools** and **StablePhantomPools** do not have join or exit functionality since those are handled as swaps! For example, if you want to figure out how much `bb-a-USD` you'll get for an amount of `DAI`, you'll need to use `queryBatchSwap` on a trade route that swaps `DAI` for `bb-a-DAI` and then swaps `bb-a-DAI` for `bb-a-USD`.&#x20;
-{% endhint %}
+**\*LinearPools** and **StablePhantomPools** do not have join or exit functionality since those are handled as swaps! For example, if you want to figure out how much `bb-a-USD` you'll get for an amount of `DAI`, you'll need to use `queryBatchSwap` on a trade route that swaps `DAI` for `bb-a-DAI` and then swaps `bb-a-DAI` for `bb-a-USD`.
+:::
 
 ### `queryBatchSwap`
 
-To calculate the inputs/outputs for a trade (you can specify given-in or given-out), you will use the `queryBatchSwap` function in the [`Vault`](../references/contracts/apis/the-vault.md#querybatchswap). This functionality is important if not crucial for calculating your limits when constructing your `batchSwap` arguments.
+To calculate the inputs/outputs for a trade (you can specify given-in or given-out), you will use the `queryBatchSwap` function in the [`Vault`](/reference/general/apis/vault.md#querybatchswap). This functionality is important if not crucial for calculating your limits when constructing your `batchSwap` arguments.
 
 ```
 queryBatchSwap(
@@ -43,7 +43,7 @@ returns (int256[] assetDeltas)
 
 ### `queryJoin`
 
-To calculate amounts of BPT out and tokens in, you will use `queryJoin` in [`BalancerHelpers`](../references/valuing-balancer-lp-tokens/balancerhelpers.md#queryjoin). This functionality is important for calculating `maxAmountsIn` and/or `minBptOut` on joins
+To calculate amounts of BPT out and tokens in, you will use `queryJoin` in [`BalancerHelpers`](/reference/general/apis/balancer-helpers.md#queryjoin). This functionality is important for calculating `maxAmountsIn` and/or `minBptOut` on joins
 
 ```
 queryJoin(
@@ -56,7 +56,7 @@ returns (uint256 bptOut, uint256[] amountsIn)
 
 ### `queryExit`
 
-To calculate amounts of BPT in and tokens out, you will use `queryExit` in [`BalancerHelpers`](../references/valuing-balancer-lp-tokens/balancerhelpers.md#queryexit). This functionality is important for calculating `minAmountsOut` and/or `maxBptIn` on exits.
+To calculate amounts of BPT in and tokens out, you will use `queryExit` in [`BalancerHelpers`](/reference/general/apis/balancer-helpers.md#queryexit). This functionality is important for calculating `minAmountsOut` and/or `maxBptIn` on exits.
 
 ```
 queryExit(

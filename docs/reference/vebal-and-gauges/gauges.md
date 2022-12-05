@@ -17,7 +17,7 @@ To get a gauge, query `getPoolGauge(poolAddress)` on the given network's `ChildC
 
 The process differs slightly depending on if we're on Ethereum mainnet or an alternate network (ie Polygon, Arbitrum). No matter the network though, we need to first start at the relevant subgraph:
 
-* [Ethereum Gauges Subgraph](https://thegraph.com/hosted-service/subgraph/balancer-labs/balancer-gauges)&#x20;
+* [Ethereum Gauges Subgraph](https://thegraph.com/hosted-service/subgraph/balancer-labs/balancer-gauges)
 * [Polygon Gauges Subgraph](https://thegraph.com/hosted-service/subgraph/balancer-labs/balancer-gauges-polygon)
 * [Arbitrum Gauges Subgraph](https://thegraph.com/hosted-service/subgraph/balancer-labs/balancer-gauges-arbitrum)
 
@@ -70,9 +70,9 @@ tokenAddress=<someTokenAddress>;
 pendingToken = gauge.claimable_rewards(userAddress, tokenAddress).call();
 ```
 
-{% hint style="warning" %}
+::: warning
 On Polygon and Arbitrum, the Gauges treat BAL the same as any other "reward" token, therefore instead of calling `claimable_tokens` __ on those networks, you will use `claimable_rewards` __ and pass in that network's BAL address.
-{% endhint %}
+:::
 
 ## How to Claim Pending Tokens for a Given Pool?
 
@@ -154,6 +154,6 @@ liquidityGauges(where:{
 }
 ```
 
-{% hint style="warning" %}
+::: warning
 Be aware that if there are no tokens other than BAL for a given Gauge, the tokens array will come back empty.
-{% endhint %}
+:::

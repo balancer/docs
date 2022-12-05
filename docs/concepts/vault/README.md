@@ -4,7 +4,7 @@ order: 10
 heroImage: /images/backgrounds/blue.png
 guides:
   - details: Using batch swaps
-    link: /guides/trading/batch-swaps.html
+    link: /guides/swaps/batch-swaps.html
 references:
   - details: Deployment address
     link: /reference/general/addresses

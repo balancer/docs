@@ -2,7 +2,7 @@
 
 ## Overview
 
-Composable Stable Pools are designed for assets that are either expected to consistently trade at near parity, or at a known exchange rate. Composable Stable Pools use [Stable Math](../../concepts/math/stable-math.md) (based on StableSwap, popularized by Curve) which allows for trades of significant size before encountering substantial price impact, vastly increasing capital efficiency for like-kind and correlated-kind swaps.&#x20;
+Composable Stable Pools are designed for assets that are either expected to consistently trade at near parity, or at a known exchange rate. Composable Stable Pools use [Stable Math](/reference/math/stable-math.md) (based on StableSwap, popularized by Curve) which allows for trades of significant size before encountering substantial price impact, vastly increasing capital efficiency for like-kind and correlated-kind swaps.
 
 ### Ideal For
 
@@ -23,7 +23,7 @@ With `ComposableStablePool[DAI, USDC, USDT]`, we can directly pair the LP token,
 
 ### Pre-minting
 
-These pools mint an effectively infinite amount of their LP tokens at the time of pool creation. This help reduce gas costs because instead of using the mint/burn mechanism to join a pool, it uses a transfer on a join/exit, which is more efficient.&#x20;
+These pools mint an effectively infinite amount of their LP tokens at the time of pool creation. This help reduce gas costs because instead of using the mint/burn mechanism to join a pool, it uses a transfer on a join/exit, which is more efficient.
 
 ## Predecessors
 

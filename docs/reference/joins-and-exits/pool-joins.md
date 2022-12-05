@@ -1,8 +1,8 @@
 # Pool Joins
 
-{% hint style="info" %}
+::: info
 Calls to `joinPool()` are made on the Vault contract! You cannot send this command directly to a pool.
-{% endhint %}
+:::
 
 ## API
 
@@ -39,9 +39,9 @@ When providing your assets, you must ensure that the tokens are sorted numerical
 
 ### `maxAmountsIn`
 
-In the joinPool call, you have to provide `maxAmountsIn`, the upper limits for the tokens to send. In short, what are the maximum amounts you would find acceptable to send, given the amount of BPT you are receiving?&#x20;
+In the joinPool call, you have to provide `maxAmountsIn`, the upper limits for the tokens to send. In short, what are the maximum amounts you would find acceptable to send, given the amount of BPT you are receiving?
 
-A good practice is to use [`queryJoin` in `BalancerHelpers`](../query-batchswap-join-exit.md#queryjoin) to find the current amount of BPT you would get for your tokens, and then account for some possible slippage.&#x20;
+A good practice is to use [`queryJoin` in `BalancerHelpers`](/reference/general/apis/balancer-helpers.md#queryjoin) to find the current amount of BPT you would get for your tokens, and then account for some possible slippage.
 
 Let's say that you want to allow a 1% slippage. After computing how many tokens you expect to provide for a given amount of BPT, you'd apply a factor of 1.01 to all the amounts. These thresholds are important because it's possible for token amounts to change in the pool between the time you send your transaction and when your transaction executes.
 
@@ -49,7 +49,7 @@ Let's say that you want to allow a 1% slippage. After computing how many tokens 
 
 userData is a highly versatile field; as such, it needs to be encoded for its specific use case. For joins, userData encodes a `JoinKind` to tell the pool what style of join you're performing. Not every pool uses every `JoinKind`, so it's important to keep track of what each pool type can handle.
 
-#### [WeightedPool](https://github.com/balancer-labs/balancer-v2-monorepo/blob/master/pkg/pool-weighted/contracts/BaseWeightedPool.sol#L39) JoinKinds&#x20;
+#### [WeightedPool](https://github.com/balancer-labs/balancer-v2-monorepo/blob/master/pkg/pool-weighted/contracts/BaseWeightedPool.sol#L39) JoinKinds
 
 ```cpp
 enum JoinKind { 
@@ -67,7 +67,7 @@ Applies to:
 * LiquidityBootstrappingPool
 * InvestmentPool
 
-#### [StablePool](https://github.com/balancer-labs/balancer-v2-monorepo/blob/master/pkg/pool-stable/contracts/StablePool.sol#L78) JoinKinds&#x20;
+#### [StablePool](https://github.com/balancer-labs/balancer-v2-monorepo/blob/master/pkg/pool-stable/contracts/StablePool.sol#L78) JoinKinds
 
 ```cpp
 enum JoinKind { 
@@ -114,4 +114,4 @@ Applies to:
   * userData ABI
     * `['uint256', 'uint256']`
   * userData
-    * `[ALL_TOKENS_IN_FOR_EXACT_BPT_OUT, bptAmountOut]`   &#x20;
+    * `[ALL_TOKENS_IN_FOR_EXACT_BPT_OUT, bptAmountOut]`

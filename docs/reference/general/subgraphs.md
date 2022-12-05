@@ -15,12 +15,6 @@ The schema of GraphQL elements available is defined in [`/schema.graphql` ](http
 
 The data included in this subgraph data layer is the data that is most applicable to the front-end. It aims at the very least to keep track of all the resources in the  `Vault` contract, and keep track of basic pool data.
 
-### Querying
-
-::: info
-For an in-depth explanation of how to query the Subgraph, check out the [Balancer Subgraph](../guides/data/balancer-subgraph.md) article in Guides.
-:::
-
 #### Examples
 
 Pools with > $100k liquidity

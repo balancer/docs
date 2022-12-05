@@ -30,7 +30,7 @@ hasApprovedRelayer(
 returns(bool)
 ```
 
-&#x20;Returns true if `user` has allowed `relayer` to act as a relayer for them. Implemented in `VaultAuthorization`
+Returns true if `user` has allowed `relayer` to act as a relayer for them. Implemented in `VaultAuthorization`
 
 ### `setRelayerApproval`
 
@@ -63,7 +63,7 @@ Get a user's internal balances. This is called UserBalance in external interface
 ### `manageUserBalance`
 
 ::: info
-For a more in-depth explanation check out [Internal User Balances](../../../resources/internal-user-balances.md) in the Resources.
+For a more in-depth explanation check out [Internal User Balances](/reference/general/internal-user-balances.md) in the Resources.
 :::
 
 ```
@@ -162,7 +162,7 @@ Returns a Pool's registered tokens, the total balance for each, and the most rec
 ## Joins and Exits
 
 ::: info
-For a more in-depth explanation check out [Joins and Exits](../../../resources/joins-and-exits/) in the Resources.
+For a more in-depth explanation check out [Joins and Exits](/reference/joins-and-exits/) in the Resources.
 :::
 
 ::: warning
@@ -229,7 +229,7 @@ Implemented in `Swaps`.
 For a more in-depth explanation check out the [Batch Swaps](../../../guides/swaps/batch-swaps.md) page in Guides.
 :::
 
-Batch swap "steps" specify the assets involved, "many-to-many" sources and destinations, and min/max token limits to guard against slippage. There is also an optional deadline, after which the swap will timeout and revert. These return the token "deltas" - the net result of executing each swap sequentially.&#x20;
+Batch swap "steps" specify the assets involved, "many-to-many" sources and destinations, and min/max token limits to guard against slippage. There is also an optional deadline, after which the swap will timeout and revert. These return the token "deltas" - the net result of executing each swap sequentially.
 
 ### **`batchSwap`**
 
@@ -312,11 +312,11 @@ emits PoolBalanceManaged(
         int256 managedDelta)
 ```
 
-&#x20;Deposit or withdraw funds from the pool (i.e., move funds between _cash_ and _managed_ balances), or update the total balance (i.e., reporting a gain or loss from management activities). Implemented in `AssetManagers`. Each `PoolBalanceOp` describes the type of operation (deposit/withdraw/update), the pool ID, the token, and the amount.
+Deposit or withdraw funds from the pool (i.e., move funds between _cash_ and _managed_ balances), or update the total balance (i.e., reporting a gain or loss from management activities). Implemented in `AssetManagers`. Each `PoolBalanceOp` describes the type of operation (deposit/withdraw/update), the pool ID, the token, and the amount.
 
 ## Miscellaneous
 
-### **`getProtocolFeesCollector`**&#x20;
+### **`getProtocolFeesCollector`**
 
 ```
 getProtocolFeesCollector() 
@@ -325,7 +325,7 @@ returns (ProtocolFeesCollector)
 
 The external contract authorized to collect protocol fees. Implemented by `Fees`.
 
-### **`setPaused`**&#x20;
+### **`setPaused`**
 
 ```
 setPaused(bool paused)
@@ -335,7 +335,7 @@ emits PausedStateChanged(bool paused)
 
 Safety mechanism to halt most Vault operations in the event of an emergency. The only functions allowed involve withdrawing funds (e.g., from internal balances, or proportional pool exits). Implemented by `Vault`.
 
-### **`WETH`**&#x20;
+### **`WETH`**
 
 ```
 WETH()  

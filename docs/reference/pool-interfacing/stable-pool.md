@@ -4,13 +4,13 @@
 
 For advantages and use cases of Stable Pools, please refer to [the standard documentation](https://docs.balancer.fi/products/balancer-pools/stable-pools).
 
-For more interfaces, such as updating the `amplificationParameter`, see the [StablePool API](../../references/valuing-balancer-lp-tokens/pools/stablepools.md#api).
+For more interfaces, such as updating the `amplificationParameter`, see the [StablePool API](/reference/general/apis/pools/stablepools.md#api).
 
 ## Interfacing
 
 Some elements to consider when interfacing with Stable Pools:
 
-* Using [Stable Math](../pool-math/stable-math.md)
+* Using [Stable Math](../math/stable-math.md)
 * Pools have between 2 and 5 tokens
 * Pools rely on the `amplificationParameter`, which is defined at pool creation and can be gradually updated later.
 

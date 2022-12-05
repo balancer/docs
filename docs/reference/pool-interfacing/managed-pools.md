@@ -1,16 +1,10 @@
 # Managed Pools
 
-## Overview
-
-For advantages and use cases of Managed Pools, please refer to [the standard documentation](https://docs.balancer.fi/products/balancer-pools/managed-pools).
-
-For more interfaces, such as updating pool weights, see the [Managed Pools API](../../references/valuing-balancer-lp-tokens/pools/investmentpools.md).
-
 ## Interfacing
 
 Some elements to consider when interfacing with Managed Pools:
 
-* Using [Weighted Math](../pool-math/weighted-math.md)
+* Using [Weighted Math](../math/weighted-math.md)
 * Pool weights can be dynamic
 * Pool swaps may be disabled by the pool owner. Typically this is to prevent swaps before the weight shifting occurs, but this can technically happen at any time.
 * Pool weights range from 1% to 99%
@@ -64,4 +58,4 @@ Pool owners may choose to enable/disable swaps based on what they're doing with 
 pool.getSwapEnabled()
 ```
 
-returns `True` or `False`.&#x20;
+returns `True` or `False`.
