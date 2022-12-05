@@ -1,0 +1,137 @@
+$input-color: #333;
+$input-background: #f6f9fc;
+$icon-color: darken($input-background, 30%);
+$active-color: #1ea7fd;
+
+.search-input-wrapper {
+  position: relative;
+
+  input[data-search-input='true'] {
+    display: block;
+    font-family: 'Inter', system-ui, BlinkMacSystemFont, 'Segoe UI', Roboto, 'Helvetica Neue', Arial, sans-serif;
+    width: 100%;
+    padding: 6px 30px 6px 32px;
+    font-size: 16px;
+    font-weight: normal;
+    height: 38px;
+    color: $input-color;
+    background-color: $input-background;
+    border: 1px solid $input-background;
+    border-radius: 0.35rem;
+    transition: border-color 0.15s ease-in-out;
+    &:focus {
+      background-color: lighten($input-background, 25%);
+      border-color: $active-color;
+      outline: 0;
+      box-shadow: none;
+    }
+  }
+
+  .search-icon {
+    color: $icon-color;
+    position: absolute;
+    &.search {
+      left: 12px;
+      bottom: 12px;
+      box-sizing: border-box;
+      display: block;
+      width: 16px;
+      height: 16px;
+      border: 2px solid;
+      border-radius: 100%;
+      margin-left: -4px;
+      margin-top: -4px;
+    }
+    &.search::after {
+      content: '';
+      display: block;
+      box-sizing: border-box;
+      position: absolute;
+      border-radius: 3px;
+      width: 2px;
+      height: 7px;
+      background: $icon-color;
+      transform: rotate(-45deg);
+      top: 11px;
+      left: 12px;
+    }
+    &.shortcut {
+      width: 22px;
+      height: 24px;
+      cursor: text;
+      right: 8px;
+      bottom: 7px;
+      background-color: darken($input-background, 4%);
+      border-radius: 3px;
+      z-index: 50;
+    }
+    &.shortcut::after {
+      content: '';
+      display: block;
+      box-sizing: border-box;
+      position: absolute;
+      border-radius: 2px;
+      transform: rotate(25deg);
+      width: 2px;
+      height: 16px;
+      top: 4px;
+      left: 10px;
+      z-index: 51;
+      background-color: lighten($icon-color, 5%);
+    }
+    &.clear {
+      right: 5px;
+      bottom: 7px;
+      cursor: pointer;
+      z-index: 10;
+      box-sizing: border-box;
+      display: block;
+      width: 24px;
+      height: 24px;
+      border: 2px solid transparent;
+      border-radius: 40px;
+      background: none;
+      padding: 0px;
+      outline: none;
+      &:focus {
+        background: darken($input-background, 4%);
+      }
+    }
+    &.clear::after,
+    &.clear::before {
+      content: '';
+      display: block;
+      box-sizing: border-box;
+      position: absolute;
+      width: 16px;
+      height: 2px;
+      background: $icon-color;
+      transform: rotate(45deg);
+      border-radius: 5px;
+      top: 9px;
+      left: 2px;
+    }
+    &.clear::after {
+      transform: rotate(-45deg);
+    }
+  }
+}
+
+/* Fix the X appearing in search field on Chrome and IE */
+input[type='search']::-ms-clear {
+  display: none;
+  width: 0;
+  height: 0;
+}
+input[type='search']::-ms-reveal {
+  display: none;
+  width: 0;
+  height: 0;
+}
+
+input[type='search']::-webkit-search-decoration,
+input[type='search']::-webkit-search-cancel-button,
+input[type='search']::-webkit-search-results-button,
+input[type='search']::-webkit-search-results-decoration {
+  display: none;
+}

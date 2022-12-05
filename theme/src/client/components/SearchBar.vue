@@ -1,7 +1,7 @@
 <script setup lang="ts">
 import { computed, onMounted, ref } from 'vue';
 import { useRouter } from 'vue-router';
-import SearchInput from 'vue-search-input';
+import SearchInput from '@theme/SearchInput.vue';
 
 const router = useRouter();
 
@@ -41,8 +41,6 @@ onMounted(() => {
 </template>
 
 <style>
-@import 'vue-search-input/dist/styles.css';
-
 .search-input-wrapper .search-icon.search {
   z-index: 10;
 }
