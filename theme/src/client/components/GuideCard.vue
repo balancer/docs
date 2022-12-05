@@ -4,21 +4,21 @@ import { usePageFrontmatter } from '@vuepress/client';
 import { isArray } from '@vuepress/shared';
 
 const frontmatter = usePageFrontmatter();
-const tutorials = computed(() => {
-  if (isArray(frontmatter.value.tutorials)) {
-    return frontmatter.value.tutorials;
+const guides = computed(() => {
+  if (isArray(frontmatter.value.guides)) {
+    return frontmatter.value.guides;
   }
   return [];
 });
 </script>
 
 <template>
-  <div v-if="tutorials.length" :class="['guides-card']">
+  <div v-if="guides.length" :class="['guides-card']">
     <div :class="['card-container']">
       <div :class="['card-header']">Guides</div>
       <div :class="['content']">
         <ul>
-          <li v-for="ref in tutorials" :key="ref.details">
+          <li v-for="ref in guides" :key="ref.details">
             <RouterLink :to="ref.link" class="card-link">{{
               ref.details
             }}</RouterLink>

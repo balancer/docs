@@ -4,6 +4,10 @@
 .navbar-dropdown-wrapper {
   cursor: pointer;
 
+  ul {
+    list-style-type: none;
+  }
+
   .navbar-dropdown-title {
     display: block;
     font-size: 0.9rem;
@@ -162,6 +166,7 @@
 
     .navbar-dropdown {
       display: none;
+      width: 20rem;
       // Avoid height shaked by clicking
       height: auto !important;
       box-sizing: border-box;
@@ -169,7 +174,7 @@
       overflow-y: auto;
       position: absolute;
       top: 100%;
-      right: 0;
+      left: 0;
       background-color: var(--c-bg-navbar);
       padding: 0.6rem 0;
       border: 1px solid var(--c-border);

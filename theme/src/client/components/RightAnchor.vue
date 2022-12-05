@@ -4,7 +4,7 @@ import { useRoute } from 'vue-router';
 import { usePageData } from '@vuepress/client';
 import RightAnchorItem from '@theme/RightAnchorItem.vue';
 import ReferenceCard from '@theme/ReferenceCard.vue';
-import TutorialCard from '@theme/TutorialCard.vue';
+import GuideCard from '@theme/GuideCard.vue';
 
 const route = useRoute();
 const page = usePageData();
@@ -51,7 +51,7 @@ onMounted(() => {
 <template>
   <aside class="right-anchor">
     <ReferenceCard />
-    <TutorialCard />
+    <GuideCard />
     <span class="right-anchor-content">Contents</span>
     <ul v-if="page.headers.length" class="right-anchor-items">
       <RightAnchorItem

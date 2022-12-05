@@ -3,6 +3,9 @@ order: 1
 ---
 # Deployment Addresses
 
+::: tabs
+
+@tab Mainnet
 ## Core
 | Contract                                       | Address                                                                                                                                                 |
 | ---------------------------------------------- | ------------------------------------------------------------------------------------------------------------------------------------------------------- |
@@ -62,6 +65,7 @@ order: 1
 | MerkleOrchard                                  | <span class="address-link">[0xdAE7e32ADc5d490a43cCba1f0c736033F2b4eFca](https://etherscan.io/address/0xdAE7e32ADc5d490a43cCba1f0c736033F2b4eFca)</span> |
 :::
 
+:::
 
 <style scoped>
 table {

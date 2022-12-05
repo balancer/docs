@@ -1,15 +1,14 @@
 ---
 title: Vault
 order: 10
-tutorial:
-  - title: Dive Into the Vault
-    details: Deep dive walkthrough of the vault
-    link: /reference
+guides:
+  - details: Using batch swaps
+    link: /guides/trading/batch-swaps.html
 references:
   - details: Deployment address
-    link: /reference/contracts/addresses
+    link: /reference/general/addresses
   - details: APIs
-    link: /reference/contracts/apis/vault
+    link: /reference/general/apis/vault
 ---
 # Vault
 

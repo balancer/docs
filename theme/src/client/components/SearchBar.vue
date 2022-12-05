@@ -43,30 +43,33 @@ onMounted(() => {
 <style>
 @import 'vue-search-input/dist/styles.css';
 
-.search-box {
+.search-input-wrapper .search-icon.search {
+  z-index: 10;
+}
+
+.home .search-box {
   width: 600px;
   margin: 40px auto;
 }
 
-.search-input-wrapper .search-icon.search {
-  z-index: 10;
+.home .search-input-wrapper .search-icon.search {
   left: 15px;
   bottom: 25px;
 }
 
-.search-input-wrapper .search-icon.shortcut {
+.home .search-input-wrapper .search-icon.shortcut {
   height: 45px;
   width: 30px;
 }
 
-.search-input-wrapper .search-icon.shortcut::after {
+.home .search-input-wrapper .search-icon.shortcut::after {
   width: 3px;
   height: 30px;
   top: 8px;
   left: 13px;
 }
 
-.search-input-wrapper input[data-search-input='true'] {
+.home .search-input-wrapper input[data-search-input='true'] {
   font-size: 20px;
   height: 60px;
   padding: 15px 30px 15px 35px;

@@ -37,6 +37,7 @@ export default defineUserConfig({
        */
       '/': {
         navbar: navbar,
+        navbarDepth: 2,
         // sidebar
         sidebar: sidebar,
         sidebarDepth: 0,
@@ -58,6 +59,7 @@ export default defineUserConfig({
     mdEnhancePlugin({
       mathjax: true,
       container: true,
+      tabs: true,
       chart: true,
     }),
   ],

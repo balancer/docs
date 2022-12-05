@@ -1,14 +1,17 @@
 <script setup lang="ts">
+import { usePageFrontmatter } from '@vuepress/client';
 import NavbarBrand from '@theme/NavbarBrand.vue';
 import NavbarItems from '@theme/NavbarItems.vue';
 import ToggleColorModeButton from '@theme/ToggleColorModeButton.vue';
 import ToggleSidebarButton from '@theme/ToggleSidebarButton.vue';
+import SearchBar from './SearchBar.vue';
 import { computed, onMounted, ref } from 'vue';
 import { useThemeLocaleData } from '../composables/index.js';
 
 defineEmits(['toggle-sidebar']);
 
 const themeLocale = useThemeLocaleData();
+const frontmatter = usePageFrontmatter();
 
 const navbar = ref<HTMLElement | null>(null);
 const navbarBrand = ref<HTMLElement | null>(null);
@@ -70,8 +73,8 @@ function getCssValue(el: HTMLElement | null, property: string): number {
       <slot name="after" />
     </div>
     <div class="navbar-items-right" :style="linksWrapperStyle">
+      <SearchBar v-if="!frontmatter.home" />
       <ToggleColorModeButton v-if="themeLocale.colorModeSwitch" />
-      <NavbarSearch />
     </div>
   </header>
 </template>

@@ -107,6 +107,22 @@ const isLastItemOfArray = (item: unknown, arr: unknown[]): boolean =>
                       (open = false)
                   "
                 />
+                <ul v-if="grandchild.children">
+                  <li
+                    v-for="finalchild in grandchild.children"
+                    :key="finalchild.link"
+                    class="navbar-dropdown-subitem"
+                  >
+                    <AutoLink
+                    :item="finalchild"
+                    @focusout="
+                      isLastItemOfArray(grandchild, child.children) &&
+                        isLastItemOfArray(child, item.children) &&
+                        (open = false)
+                    "
+                  />
+                </li>
+                </ul>
               </li>
             </ul>
           </template>

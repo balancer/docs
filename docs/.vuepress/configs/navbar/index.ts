@@ -18,11 +18,23 @@ export const navbar: NavbarConfig = [
     children: [
       {
         text: 'Contracts',
-        children: ['/reference/general/addresses/'],
-      },
-      {
-        text: 'Error Codes',
-        link: '/reference/general/error-codes',
+        children: [
+          {
+            text: 'Deployment Addresses',
+            link: '/reference/general/addresses/',
+            children: [
+              {
+                text: 'Mainnet',
+                link: '/reference/general/addresses/',
+              },
+              {
+                text: 'Arbitrum',
+                link: '/reference/general/addresses/#arbitrum',
+              },
+            ],
+          },
+          '/reference/general/error-codes',
+        ],
       },
     ],
   },
