@@ -11,6 +11,16 @@
   }
 }
 
+.page-hero {
+  min-height: 5rem;
+  padding-left: var(--sidebar-width);
+  padding-top: var(--navbar-height);
+  padding-bottom: calc(var(--navbar-height) / 2);
+  width: calc(100% - var(--sidebar-width));
+  background-size: cover;
+  text-align: center;
+}
+
 .page-meta {
   @include content_wrapper;
   padding-top: 1rem;

@@ -205,7 +205,7 @@ export default defineComponent({
     });
 
     onBeforeUnmount(() => {
-      removeDocumentKeydown();
+      window.document.removeEventListener('keydown', onDocumentKeydown);
     });
 
     return {

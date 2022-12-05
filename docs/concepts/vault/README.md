@@ -1,6 +1,7 @@
 ---
 title: Vault
 order: 10
+heroImage: /images/backgrounds/blue.png
 guides:
   - details: Using batch swaps
     link: /guides/trading/batch-swaps.html

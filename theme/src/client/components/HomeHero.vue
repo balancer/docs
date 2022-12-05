@@ -34,6 +34,13 @@ const heroText = computed(() => {
   return frontmatter.value.heroText || siteLocale.value.title || 'Hello';
 });
 
+const heroStyle = computed(() => {
+  if (frontmatter.value.heroImage === null) {
+    return '';
+  }
+  return `background-image: url(${frontmatter.value.heroImage})`;
+});
+
 const tagline = computed(() => {
   if (frontmatter.value.tagline === null) {
     return null;
@@ -59,7 +66,7 @@ const actions = computed(() => {
 </script>
 
 <template>
-  <header class="home-hero">
+  <header class="home-hero" :style="heroStyle">
     <h1 v-if="heroText" id="main-title">
       {{ heroText }}
     </h1>
