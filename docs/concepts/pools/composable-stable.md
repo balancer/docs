@@ -1,4 +1,5 @@
 ---
+order: 2
 references:
   - details: Stable Math
     link: /reference/math/stable-math

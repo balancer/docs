@@ -1,4 +1,5 @@
 ---
+order: 4
 references:
   - details: Weighted Math
     link: /reference/math/weighted-math

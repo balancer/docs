@@ -113,8 +113,6 @@ const navbarLinks = computed(() => [
 
 // avoid overlapping of long title and long navbar links
 onMounted(() => {
-  // TODO: migrate to css var
-  // refer to _variables.scss
   const MOBILE_DESKTOP_BREAKPOINT = 719;
 
   const handleMobile = (): void => {

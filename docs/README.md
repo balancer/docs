@@ -10,7 +10,7 @@ features:
     link: /concepts/overview/basics
   - title: Integrate
     details: Jump into the SDK, APIs, and ways to integrate Balancer
-    link: /sdk
+    link: /sdk/overview
   - title: Smart Contracts
     details: Deployment addresses, ABIs, helpful walthroughs, and more
     link: /reference/general/addresses.html

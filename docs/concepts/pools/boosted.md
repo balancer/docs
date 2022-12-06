@@ -1,3 +1,6 @@
+---
+order: 3
+---
 # Boosted Pools
 
 ## Overview
