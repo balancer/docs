@@ -1,19 +1,19 @@
 # Gauges
 
-## How do I get a Gauge for a Given Mainnet Pool?
+## Query Gauge by Mainnet Pool
 
 The easiest way is to query `getPoolGauge(poolAddress)` on the [`LiquidityGaugeFactory`](https://etherscan.io/address/0x4E7bBd911cf1EFa442BC1b2e9Ea01ffE785412EC#code).
 
-## How do I get a Gauge for a Given Pool on an alternate chain?
+## Query Gauge by L2/Sidechain Pool
 
 To get a gauge, query `getPoolGauge(poolAddress)` on the given network's `ChildChainLiquidityGaugeFactory`**.**
 
 | Network  | ChildChainLiquidityGaugeFactory                                                                                                     |
 | -------- | ----------------------------------------------------------------------------------------------------------------------------------- |
-| Polygon  | ``[`0x3b8cA519122CdD8efb272b0D3085453404B25bD0`](https://polygonscan.com/address/0x3b8cA519122CdD8efb272b0D3085453404B25bD0#code)`` |
-| Arbitrum | ``[`0xb08E16cFc07C684dAA2f93C70323BAdb2A6CBFd2`](https://arbiscan.io/address/0xb08E16cFc07C684dAA2f93C70323BAdb2A6CBFd2#code)``     |
+| Polygon  | <span class="address-link">[`0x3b8cA519122CdD8efb272b0D3085453404B25bD0`](https://polygonscan.com/address/0x3b8cA519122CdD8efb272b0D3085453404B25bD0#code)</span> |
+| Arbitrum | <span class="address-link">[`0xb08E16cFc07C684dAA2f93C70323BAdb2A6CBFd2`](https://arbiscan.io/address/0xb08E16cFc07C684dAA2f93C70323BAdb2A6CBFd2#code)</span>     |
 
-## How to Query Pending Tokens for a Given Pool?
+## Query Pending Tokens for a Given Pool
 
 The process differs slightly depending on if we're on Ethereum mainnet or an alternate network (ie Polygon, Arbitrum). No matter the network though, we need to first start at the relevant subgraph:
 
@@ -74,44 +74,17 @@ pendingToken = gauge.claimable_rewards(userAddress, tokenAddress).call();
 On Polygon and Arbitrum, the Gauges treat BAL the same as any other "reward" token, therefore instead of calling `claimable_tokens` __ on those networks, you will use `claimable_rewards` __ and pass in that network's BAL address.
 :::
 
-## How to Claim Pending Tokens for a Given Pool?
+## Claim Pending Tokens for a Pool
 
 ### Mainnet Ethereum
 
 Use the [`claim_rewards()`](https://github.com/balancer-labs/balancer-v2-monorepo/blob/master/pkg/liquidity-mining/contracts/gauges/ethereum/LiquidityGaugeV5.vy#L440-L450) function on the pool's gauge contract.
 
-```python
-def claim_rewards(_addr: address = msg.sender, _receiver: address = ZERO_ADDRESS):
-    """
-    @notice Claim available reward tokens for `_addr`
-    @param _addr Address to claim for
-    @param _receiver Address to transfer rewards to - if set to
-                     ZERO_ADDRESS, uses the default reward receiver
-                     for the caller
-    """
-    if _receiver != ZERO_ADDRESS:
-        assert _addr == msg.sender  # dev: cannot redirect when claiming for another user
-    self._checkpoint_rewards(_addr, self.totalSupply, True, _receiver)
-```
-
 ### Child Chains (L2, Sidechains, etc)
 
 Use the [`get_rewards()`](https://github.com/balancer-labs/balancer-v2-monorepo/blob/master/pkg/liquidity-mining/contracts/gauges/ChildChainStreamer.vy#L139-L148) function on the pool's streamer contract.
 
-```python
-def get_reward():
-    """
-    @notice Claim pending rewards for `reward_receiver`
-    """
-    last_update: uint256 = self.last_update_time
-    for token in self.reward_tokens:
-        if token == ZERO_ADDRESS:
-            break
-        self._update_reward(token, last_update)
-    self.last_update_time = block.timestamp
-```
-
-## What Tokens Exist for a Certain Gauge?
+## Query Tokens for a Gauge
 
 ### Sample Query
 

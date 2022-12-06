@@ -1,10 +1,10 @@
 # veBAL
 
-::: note
+::: info
 The `FeeDistributor` address is [`0x26743984e3357efc59f2fd6c1afdc310335a61c9`](https://etherscan.io/address/0x26743984e3357efc59f2fd6c1afdc310335a61c9#code)
 :::
 
-## How to Query Pending Tokens for a veBAL Holders
+## Query Pending Tokens for a veBAL Holder
 
 You can query pending tokens for a given veBAL holder by using `eth_call` to simulate a claim transaction. Below is some simple pseudocode that outlines the process:
 
@@ -20,10 +20,11 @@ feeDistributorContract = contract(feeDistributorAddress, feeDistributorAbi);
 claimableTokens = feeDistributorContract.claimTokens(userAddress,tokens).call();
 ```
 
-## How to Claim Pending Tokens for a veBAL Holders
+## Claim Pending Tokens for a veBAL Holder
 
 The process is identical to [querying as above](vebal.md#how-to-query-pending-tokens-for-a-vebal-holders), except instead of `eth_call`, you will use `eth_sendTransaction`.
 
-## How do I Know Which Tokens to Query/Claim?
+::: warning How do I Know Which Tokens to Query/Claim?
 
 At the time of this writing, there is no subgraph tracking tokens added to the `FeeDistributor`. For now, an easy way you can find the available tokens for claiming is checking what the contract holds on Etherscan
+:::

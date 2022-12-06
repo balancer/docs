@@ -1,3 +1,10 @@
+---
+references:
+  - details: Weighted Math
+    link: /reference/math/weighted-math
+  - details: LBP Interfacing
+    link: /reference/pool-interfacing/liquidity-bootstrapping-pool
+---
 # Liquidity Bootstrapping Pools (LBPs)
 
 ## Overview

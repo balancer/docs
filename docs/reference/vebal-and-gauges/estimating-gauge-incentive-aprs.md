@@ -1,7 +1,5 @@
 # Estimating Gauge Incentive APRs
 
-## How can I obtain/calculate the liquidity mining APR for a certain gauge?
-
 Balancer introduced a new tokenomics system for the Balancer Governance Token (BAL) based on Curve's _ve_ model. The system revolves around following concepts:
 
 * A new token “veBAL” is obtained by locking 80:20 BAL:WETH BPTs for a certain duration. This token allows a user to participate in governance, determine where liquidity mining incentives go, and collect a share of protocol fees

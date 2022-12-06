@@ -52,13 +52,15 @@ onMounted(() => {
   <aside class="right-anchor">
     <ReferenceCard />
     <GuideCard />
-    <span class="right-anchor-content">Contents</span>
-    <ul v-if="page.headers.length" class="right-anchor-items">
-      <RightAnchorItem
-        v-for="item in page.headers"
-        :key="`${item.title}${item.link}`"
-        :item="item"
-      />
-    </ul>
+    <div v-if="page.headers.length">
+      <span class="right-anchor-content">Contents</span>
+      <ul class="right-anchor-items">
+        <RightAnchorItem
+          v-for="item in page.headers"
+          :key="`${item.title}${item.link}`"
+          :item="item"
+        />
+      </ul>
+    </div>
   </aside>
 </template>

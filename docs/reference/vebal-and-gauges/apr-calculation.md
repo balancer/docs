@@ -4,7 +4,9 @@ description: Formula to calculate the annual percentage rate (APR) of gauge ince
 
 # APR Calculation
 
-Congratulations, you now obtained all relevant data to calculate the gauge APR. Please note that for mainnet liquidity mining APRs are boostable, therefore a range of 1x to 2.5x of the calculated APR is possible.
+::: info
+Please note that for mainnet liquidity mining APRs are boostable, therefore a range of 1x to 2.5x of the calculated APR is possible.
+:::
 
 $$
 minAPR(1x) = \frac{\frac{0.4}{ (workingSupply + 0.4) }* gaugeRelWeight * weeklyBALemission * 52 * priceOfBAL}{ pricePerBPT} * 100

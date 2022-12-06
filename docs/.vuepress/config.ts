@@ -59,6 +59,7 @@ export default defineUserConfig({
     mdEnhancePlugin({
       mathjax: true,
       container: true,
+      codetabs: true,
       tabs: true,
       chart: true,
     }),

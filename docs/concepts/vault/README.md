@@ -1,5 +1,5 @@
 ---
-title: Vault
+title: Overview
 order: 10
 heroImage: /images/backgrounds/blue.png
 guides:

@@ -1,2 +1,0 @@
-# veBAL and Gauges
-

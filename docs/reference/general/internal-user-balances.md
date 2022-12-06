@@ -40,8 +40,6 @@ enum UserBalanceOpKind {
 
 ### Enums Explained
 
-This explanation is copied for convenience from the original [UserBalanceOpKind definition in IVault.sol](https://github.com/balancer-labs/balancer-v2-monorepo/blob/master/pkg/vault/contracts/interfaces/IVault.sol#L181).
-
 * `DEPOSIT_INTERNAL`
   * Increases the Internal Balance of the `recipient` account by transferring tokens from the corresponding`sender`. The sender must have allowed the Vault to use their tokens via `IERC20.approve()`. ETH can be used by passing the ETH sentinel value (the zero address) as the asset and forwarding ETH in the call: it will be wrapped and deposited as WETH. Any ETH amount remaining will be sent back to the caller (not the sender, which is relevant for relayers). Emits an `InternalBalanceChanged` event.
 * `WITHDRAW_INTERNAL`

@@ -1,10 +1,10 @@
-# The Vault
+# Vault
 
 ## Authorization
 
 ### `getAuthorizer`
 
-```
+```solidity
 getAuthorizer() 
 returns (IAuthorizer) 
 ```
@@ -13,7 +13,7 @@ Returns the Vault's Authorizer (Balancer governance contract). Implemented in `V
 
 ### `setAuthorizer`
 
-```
+```solidity
 setAuthorizer(IAuthorizer newAuthorizer)
 
 emits AuthorizerSet(IAuthorizer indexed newAuthorizer)
@@ -23,7 +23,7 @@ Sets a new Authorizer for the Vault. The caller must be allowed by the current A
 
 ### `hasApprovedRelayer`
 
-```
+```solidity
 hasApprovedRelayer(
     address user, 
     address relayer) 
@@ -34,7 +34,7 @@ Returns true if `user` has allowed `relayer` to act as a relayer for them. Imple
 
 ### `setRelayerApproval`
 
-```
+```solidity
 setRelayerApproval(
     address sender, 
     address relayer,
@@ -51,7 +51,7 @@ Grants or revokes approval for the given `relayer` to call Authorizer-approved f
 
 ### **`getInternalBalance`**
 
-```
+```solidity
 getInternalBalance(
     address user, 
     IERC20[] tokens) 
@@ -66,7 +66,7 @@ Get a user's internal balances. This is called UserBalance in external interface
 For a more in-depth explanation check out [Internal User Balances](/reference/general/internal-user-balances.md) in the Resources.
 :::
 
-```
+```solidity
 manageUserBalance(UserBalanceOp[] ops)
 
 emits one of:
@@ -87,7 +87,7 @@ There are four possible operations in `manageUserBalance`: each designates a sen
 
 ### **`registerPool`**
 
-```
+```solidity
 registerPool(PoolSpecialization specialization) 
 returns(bytes32)
 
@@ -100,7 +100,7 @@ Called from the pool contract to generate a  Pool ID, and enter it in the Vault'
 
 ### **`getPool`**
 
-```
+```solidity
 getPool(bytes32 poolId) 
 returns (address, 
     PoolSpecialization)
@@ -110,7 +110,7 @@ Returns a Pool's contract address and specialization setting. Implemented in `Po
 
 ### **`registerTokens`**
 
-```
+```solidity
 registerTokens(
     bytes32 poolId, 
     IERC20[] tokens, 
@@ -125,7 +125,7 @@ Called from the pool contract to tell the Vault which tokens are valid for this 
 
 ### **`deregisterTokens`**
 
-```
+```solidity
 deregisterTokens(
     bytes32 poolId, 
     IERC20[] tokens)
@@ -137,7 +137,7 @@ Remove tokens from the pool (must have zero balance). Implemented in `PoolTokens
 
 ### **`getPoolTokenInfo`**
 
-```
+```solidity
 getPoolTokenInfo(bytes32 poolId, 
     IERC20 token) 
 returns (uint256 cash, 
@@ -150,7 +150,7 @@ Return details of a particular token. While `getPoolTokens` gives the total bala
 
 ### `getPoolTokens`
 
-```
+```solidity
 getPoolTokens(bytes32 poolId)
 returns (IERC20[] tokens, 
     uint256[] balances,
@@ -171,7 +171,7 @@ Note that any functions that take a token array always expect input "parallel" t
 
 ### `joinPool`
 
-```
+```solidity
 joinPool(
     bytes32 poolId, 
     address sender, 
@@ -181,7 +181,7 @@ joinPool(
 
 ### `exitPool`
 
-```
+```solidity
 exitPool(
     bytes32 poolId, 
     address sender, 
@@ -193,7 +193,7 @@ exitPool(
 
 Both joins and exits emit the `PoolBalanceChanged` event.
 
-```
+```solidity
 emits PoolBalanceChanged(
         bytes32 indexed poolId,
         address indexed liquidityProvider,
@@ -212,7 +212,7 @@ The vault supports "single swaps," a way to perform exactly one trade directly a
 
 ### **`swap`**
 
-```
+```solidity
 swap(
     SingleSwap request, 
     FundManagement funds, 
@@ -233,7 +233,7 @@ Batch swap "steps" specify the assets involved, "many-to-many" sources and desti
 
 ### **`batchSwap`**
 
-```
+```solidity
 batchSwap(
     SwapKind kind,
     BatchSwapStep[] swaps, 
@@ -246,7 +246,7 @@ returns (int256[] assetDeltas)
 
 Implemented in `Swaps.`Both single and batch swaps emit a `Swap` event for each swap.
 
-```
+```solidity
 event Swap(
         bytes32 indexed poolId,
         IERC20 indexed tokenIn,
@@ -257,7 +257,7 @@ event Swap(
 
 ### `queryBatchSwap`
 
-```
+```solidity
 queryBatchSwap(
     SwapKind kind, 
     BatchSwapStep[] swaps, 
@@ -279,7 +279,7 @@ For example in `ethers.js`, the command would look something like:\
 
 ### **`flashLoan`**
 
-```
+```solidity
 flashLoan(
     IFlashLoanRecipient recipient, 
     IERC20[] tokens, 
@@ -300,7 +300,7 @@ This can only be called by the asset manager of a token in a pool.
 
 ### `managePoolBalance`
 
-```
+```solidity
 managePoolBalance(
     PoolBalanceOp[] ops)
     
@@ -318,7 +318,7 @@ Deposit or withdraw funds from the pool (i.e., move funds between _cash_ and _ma
 
 ### **`getProtocolFeesCollector`**
 
-```
+```solidity
 getProtocolFeesCollector() 
 returns (ProtocolFeesCollector) 
 ```
@@ -327,7 +327,7 @@ The external contract authorized to collect protocol fees. Implemented by `Fees`
 
 ### **`setPaused`**
 
-```
+```solidity
 setPaused(bool paused)
 
 emits PausedStateChanged(bool paused)
@@ -337,7 +337,7 @@ Safety mechanism to halt most Vault operations in the event of an emergency. The
 
 ### **`WETH`**
 
-```
+```solidity
 WETH()  
 returns (IWETH)
 ```

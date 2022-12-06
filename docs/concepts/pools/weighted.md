@@ -1,3 +1,10 @@
+---
+references:
+  - details: Weighted Math
+    link: /reference/math/weighted-math
+  - details: Weighted Pool Interfacing
+    link: /reference/pool-interfacing/weighted-pool
+---
 # Weighted Pools
 
 ## Overview
