@@ -8,9 +8,10 @@ heroImage: /images/backgrounds/blue.png
 - [Get Spot Price of a Pool]()
 - [Execute a batch swap]()
 - [Deposit internal balances and swap for minimal gas]()
+- [Create paths through bb-a-usd and other yield pools]()
 ## Aggregators
 - [Use the SOR to find the best swap path]()
-- [Calculate swap outputs through common yield pools]()
+- [Calculate swap outputs for yield pools]()
 
 ## Integrators
 - [Get the APR for a pool]()

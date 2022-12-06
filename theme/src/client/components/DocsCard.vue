@@ -50,6 +50,13 @@ export default defineComponent({
   width: 100%;
 }
 
+@media (hover: hover) {
+  .card-link[href]:hover {
+    box-shadow: var(--c-docs-card-shadow);
+    text-decoration: none;
+  }
+}
+
 .card-link img {
   height: 6em;
   width: 6em;
