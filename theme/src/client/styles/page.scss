@@ -42,11 +42,6 @@
     }
   }
 
-  .edit-link {
-    display: inline-block;
-    margin-right: 0.25rem;
-  }
-
   .last-updated {
     float: right;
   }
@@ -67,8 +62,7 @@
 
 .page-nav {
   @include content_wrapper;
-  padding-top: 1rem;
-  padding-bottom: 0;
+  padding: 1rem 0 0 0;
 
   .inner {
     min-height: 2rem;

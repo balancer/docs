@@ -1,6 +1,11 @@
 import { defineClientConfig } from '@vuepress/client';
 import { h } from 'vue';
-import { Badge, CodeGroup, CodeGroupItem } from './components/global/index.js';
+import {
+  Badge,
+  CodeGroup,
+  CodeGroupItem,
+  RunCode,
+} from './components/global/index.js';
 import {
   setupDarkMode,
   setupSidebarItems,
@@ -15,6 +20,7 @@ export default defineClientConfig({
   enhance({ app, router }) {
     app.component('Badge', Badge);
     app.component('CodeGroup', CodeGroup);
+    app.component('RunCode', RunCode);
     app.component('CodeGroupItem', CodeGroupItem);
 
     // compat with @vuepress/plugin-external-link-icon

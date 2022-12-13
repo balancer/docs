@@ -1,4 +1,5 @@
 import process from 'node:process';
+import { viteBundler } from '@vuepress/bundler-vite'
 import { defineUserConfig } from '@vuepress/cli';
 import { mdEnhancePlugin } from 'vuepress-plugin-md-enhance';
 import { activeHeaderLinksPlugin } from '@vuepress/plugin-active-header-links';
@@ -19,6 +20,15 @@ export default defineUserConfig({
       description: 'Learn, integrate, and build on a programmable AMM',
     },
   },
+
+  bundler: viteBundler({
+    viteOptions: {
+      define: {
+        'process.env': process.env,
+      },
+    },
+    vuePluginOptions: {},
+  }),
 
   // configure default theme
   theme: balancerTheme({
@@ -60,6 +70,7 @@ export default defineUserConfig({
       mathjax: true,
       container: true,
       codetabs: true,
+      include: true,
       tabs: true,
       chart: true,
     }),
