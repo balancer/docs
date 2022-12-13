@@ -16,8 +16,7 @@ Spot price is used as a broader term and it's important to distinguish between t
 
 :::
 
-```typescript
-@include(code/sdk-spot-price.ts{11-24})
-```
+
+@[code{11-24} ts](code/sdk-spot-price.ts)
 
 <RunCode />

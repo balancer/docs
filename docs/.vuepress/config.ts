@@ -1,5 +1,5 @@
 import process from 'node:process';
-import { viteBundler } from '@vuepress/bundler-vite'
+import { viteBundler } from '@vuepress/bundler-vite';
 import { defineUserConfig } from '@vuepress/cli';
 import { mdEnhancePlugin } from 'vuepress-plugin-md-enhance';
 import { activeHeaderLinksPlugin } from '@vuepress/plugin-active-header-links';
@@ -60,7 +60,7 @@ export default defineUserConfig({
       // only enable git plugin in production mode
       git: isProd,
       // use shiki plugin in production mode instead
-      prismjs: !isProd,
+      prismjs: true,
     },
   }),
 
