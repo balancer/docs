@@ -1,5 +1,6 @@
 ---
 title: Basics
+heroImage: /images/backgrounds/red.png
 order: 10
 ---
 

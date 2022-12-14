@@ -57,6 +57,24 @@
       vertical-align: top;
     }
   }
+
+  .social-icon {
+    fill: var(--c-social-icon-fill);
+    margin: 0 3px;
+    @apply transition-all;
+  }
+  
+  .social-icon:hover {
+    transform-origin: center;
+    transform: scale(1.05);
+  }
+  
+  .social-icon {
+    fill: var(--c-social-icon-bg);
+  
+    @apply transition-all;
+  }
+
 }
 
 @media (max-width: $MQMobile) {

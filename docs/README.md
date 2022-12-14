@@ -22,6 +22,10 @@ footer: Footer text
 
 ## More Resources
 
-- Example
-- Example
-- Example
+**Github Repos**
+
+- [Smart Contracts](https://github.com/balancer-labs/balancer-v2-monorepo)
+- [SDK](https://github.com/balancer-labs/balancer-sdk)
+- [Smart Order Router](https://github.com/balancer-labs/balancer-sor)
+- [Frontend](https://github.com/balancer-labs/frontend-v2)
+- [Subgraph](https://github.com/balancer-labs/balancer-subgraph-v2)

@@ -29,7 +29,7 @@ export const navbar: NavbarConfig = [
               },
               {
                 text: 'Arbitrum',
-                link: '/reference/general/addresses/#arbitrum',
+                link: '/reference/general/addresses.html#arbitrum',
               },
             ],
           },

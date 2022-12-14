@@ -4,6 +4,8 @@ import NavbarBrand from '@theme/NavbarBrand.vue';
 import NavbarItems from '@theme/NavbarItems.vue';
 import ToggleColorModeButton from '@theme/ToggleColorModeButton.vue';
 import ToggleSidebarButton from '@theme/ToggleSidebarButton.vue';
+import DiscordIcon from './icons/brands/DiscordIcon.vue';
+import GithubIcon from './icons/brands/GithubIcon.vue';
 import SearchBar from './SearchBar.vue';
 import { computed, onMounted, ref } from 'vue';
 import { useThemeLocaleData } from '../composables/index.js';
@@ -75,6 +77,10 @@ function getCssValue(el: HTMLElement | null, property: string): number {
     <div class="navbar-items-right" :style="linksWrapperStyle">
       <SearchBar v-if="!frontmatter.home" />
       <ToggleColorModeButton v-if="themeLocale.colorModeSwitch" />
+      <a href="https://discord.balancer.fi/" target="_blank"><DiscordIcon /></a>
+      <a href="https://github.com/balancer-labs/" target="_blank"
+        ><GithubIcon
+      /></a>
     </div>
   </header>
 </template>
