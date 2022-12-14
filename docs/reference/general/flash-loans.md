@@ -6,7 +6,7 @@ Since the Vault holds all tokens for all pools, the consolidated token balances 
 
 ## Example Code
 
-```clike
+```solidity
 pragma solidity ^0.7.0;
 
 import "@balancer-labs/v2-vault/contracts/interfaces/IVault.sol";

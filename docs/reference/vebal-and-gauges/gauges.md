@@ -29,7 +29,7 @@ Let's start with the [bb-a-USD pool](https://app.balancer.fi/#/pool/0x7b50775383
 
 #### Query the Gauges Subgraph:
 
-```
+```graphql
 {
 liquidityGauges(where:{
     poolId: "0x7b50775383d3d6f0215a8f290f2c9e2eebbeceb20000000000000000000000fe"
@@ -42,7 +42,7 @@ liquidityGauges(where:{
 
 #### Result:
 
-```
+```json
 {
   "data": {
     "liquidityGauges": [
@@ -70,7 +70,7 @@ tokenAddress=<someTokenAddress>;
 pendingToken = gauge.claimable_rewards(userAddress, tokenAddress).call();
 ```
 
-::: warning
+::: warning L2 Gauges
 On Polygon and Arbitrum, the Gauges treat BAL the same as any other "reward" token, therefore instead of calling `claimable_tokens` __ on those networks, you will use `claimable_rewards` __ and pass in that network's BAL address.
 :::
 

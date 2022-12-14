@@ -6,7 +6,7 @@ Balancer V2 allows powerful multi-hop trades, or "batch swaps", which pull the b
 
 The Vault exposes the `batchSwap` function to allow multi-hop trades with the the interface below.
 
-```
+```solidity
 batchSwap(SwapKind kind,
           BatchSwapStep[] swaps,
           IAsset[] assets,
@@ -19,7 +19,7 @@ To simplify the inputs to this function, we have grouped related fields into a n
 
 ### BatchSwapStep struct
 
-```
+```solidity
 struct BatchSwapStep {
     bytes32 poolId;
     uint256 assetInIndex;
@@ -47,7 +47,7 @@ For this reason setting `amount` to 0 will be interpreted to use the full output
 
 The `FundManagement` struct defines where the input tokens for the first swap are coming from and where any tokens received from swaps should be sent. The `FundManagement` struct is defined as below.
 
-```
+```solidity
 struct FundManagement {
     address sender;
     bool fromInternalBalance;
@@ -65,7 +65,7 @@ For more information on internal balances see [Core Concepts](broken-reference/)
 
 ### BatchSwap function
 
-```
+```solidity
 batchSwap(SwapKind kind,
           BatchSwapStep[] swaps,
           IAsset[] assets,
@@ -92,7 +92,7 @@ You should only use `queryBatchSwap` **before** sending a `batchSwap` transactio
 
 Calling `queryBatchSwap` is very similar to calling [`batchSwap`](batch-swaps.md#batchswap-function) itself, just without the `limit` and `deadline` arguments.
 
-```
+```solidity
 queryBatchSwap(SwapKind kind,
           BatchSwapStep[] swaps,
           IAsset[] assets,

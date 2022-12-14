@@ -13,12 +13,6 @@ Developers can use the TypeScript math implementations used by the Smart Order r
 * [stableMath.ts](https://github.com/balancer-labs/balancer-sor/blob/john/v2-package-linear/src/pools/stablePool/stableMath.ts)
 * [metaStableMath.ts](https://github.com/balancer-labs/balancer-sor/blob/john/v2-package-linear/src/pools/metaStablePool/metaStableMath.ts)
 
-### Python
-
-There are also Python implementations in progress
-
-* ~~~~[~~stableMath.py~~](https://github.com/officialnico/balancerv2cad/blob/main/src/balancerv2cad/StableMath.py) There are known bugs in this implementation. This warning will be removed when they are fixed.
-
 ## Invariant
 
 Since the Stable Math equation is quite complex, determining the invariant, $D$, is typically done iteratively. For an example of how to do this, please refer to [this function](https://github.com/georgeroman/balancer-v2-pools/blob/main/src/pools/stable/math.ts#L16).

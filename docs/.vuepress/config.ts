@@ -34,8 +34,9 @@ export default defineUserConfig({
   theme: balancerTheme({
     logo: '/images/logo-light.svg',
     logoDark: '/images/logo-dark.svg',
-    repo: 'vuepress/vuepress-next',
+    repo: 'balancer-labs/docs',
     docsDir: 'docs',
+    lastUpdated: false,
 
     // theme-level locales config
     locales: {

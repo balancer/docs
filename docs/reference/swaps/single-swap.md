@@ -4,7 +4,7 @@
 
 ### Swap function
 
-```
+```solidity
 swap(SingleSwap singleSwap,
      FundManagement funds,
      uint256 limit,
@@ -22,7 +22,7 @@ swap(SingleSwap singleSwap,
 
 The `SingleSwap` struct defines which pool we're trading with and what kind of swap we want to perform. The `SingleSwap` struct is defined as below.
 
-```
+```solidity
 enum SwapKind { GIVEN_IN, GIVEN_OUT }
 
 struct SingleSwap {
@@ -48,7 +48,7 @@ struct SingleSwap {
 
 The `FundManagement` struct defines where the input tokens for the swap are coming from and where the output tokens should be sent. The `FundManagement` struct is defined as below.
 
-```
+```solidity
 struct FundManagement {
     address sender;
     bool fromInternalBalance;

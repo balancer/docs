@@ -6,7 +6,7 @@ Similar to how the Vault keeps track of what tokens are in a pool, the Vault can
 
 ## API
 
-```cpp
+```solidity
 // Vault function
 manageUserBalance(
     UserBalanceOp[] ops

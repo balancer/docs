@@ -18,7 +18,7 @@ $$
 
 #### Pseudocode
 
-```
+```ts
 (tokens, balances, lastChangeBlock) = vault.getPoolTokens(poolId);
 prices = fetchPricesFromPriceProvider(tokens); //ex. CoinGecko
 poolValueUsd = sum(balances[i]*price[i]);
