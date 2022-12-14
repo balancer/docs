@@ -2,8 +2,7 @@ import process from 'node:process';
 import { viteBundler } from '@vuepress/bundler-vite';
 import { defineUserConfig } from '@vuepress/cli';
 import { mdEnhancePlugin } from 'vuepress-plugin-md-enhance';
-import { activeHeaderLinksPlugin } from '@vuepress/plugin-active-header-links';
-import { balancerTheme } from '../../theme/lib/node';
+import { balancerTheme } from '../../theme/';
 import { navbar, sidebar } from './configs/index.js';
 
 const isProd = process.env.NODE_ENV === 'production';
@@ -48,12 +47,11 @@ export default defineUserConfig({
        */
       '/': {
         navbar: navbar,
-        navbarDepth: 2,
         // sidebar
         sidebar: sidebar,
         sidebarDepth: 0,
         // page meta
-        editLinkText: 'Edit this page on GitHub',
+        editLinkText: 'Edit page on GitHub',
       },
     },
 

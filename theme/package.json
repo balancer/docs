@@ -1,23 +1,8 @@
 {
-  "name": "@vuepress/theme-default",
-  "version": "2.0.0-beta.53",
-  "description": "Default theme of VuePress",
-  "keywords": [
-    "vuepress-theme",
-    "vuepress",
-    "theme",
-    "default"
-  ],
-  "homepage": "https://github.com/vuepress",
-  "bugs": {
-    "url": "https://github.com/vuepress/vuepress-next/issues"
-  },
-  "repository": {
-    "type": "git",
-    "url": "git+https://github.com/vuepress/vuepress-next.git"
-  },
+  "name": "@balancer-labs/docs-theme",
+  "version": "1.0.0",
+  "description": "Extension of default vuepress theme",
   "license": "MIT",
-  "author": "meteorlxy",
   "type": "module",
   "exports": {
     ".": "./lib/node/index.js",
@@ -41,35 +26,9 @@
     "copy": "cpx \"src/**/*.{d.ts,vue,scss}\" lib"
   },
   "dependencies": {
-    "@balancer-labs/sdk": "workspace:*",
-    "@vuepress/client": "workspace:*",
-    "@vuepress/core": "workspace:*",
-    "@vuepress/plugin-active-header-links": "workspace:*",
-    "@vuepress/plugin-back-to-top": "workspace:*",
-    "@vuepress/plugin-container": "workspace:*",
-    "@vuepress/plugin-external-link-icon": "workspace:*",
-    "@vuepress/plugin-git": "workspace:*",
-    "@vuepress/plugin-medium-zoom": "workspace:*",
-    "@vuepress/plugin-nprogress": "workspace:*",
-    "@vuepress/plugin-palette": "workspace:*",
-    "@vuepress/plugin-prismjs": "workspace:*",
-    "@vuepress/plugin-theme-data": "workspace:*",
-    "@vuepress/shared": "workspace:*",
-    "@vuepress/utils": "workspace:*",
     "@vueuse/core": "^9.3.1",
     "sass": "^1.55.0",
     "vue": "^3.2.41",
     "vue-router": "^4.1.6"
-  },
-  "peerDependencies": {
-    "sass-loader": "^13.0.2"
-  },
-  "peerDependenciesMeta": {
-    "sass-loader": {
-      "optional": true
-    }
-  },
-  "publishConfig": {
-    "access": "public"
   }
 }

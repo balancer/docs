@@ -13,13 +13,13 @@ const getDirectories = source =>
     name => !(name === '.vuepress') && isDirectory(join(source, name))
   );
 
-function getName(path) {
+const getName = (path: string) => {
   const name = path.split(sep).pop();
+  if (!name) return;
   return titleize(name.replace(/-/g, ' '));
-}
+};
 
-function getChildren(parent_path, dir, recursive = true) {
-  // CREDITS: https://github.com/benjivm (from: https://github.com/vuejs/vuepress/issues/613#issuecomment-495751473)
+const getChildren = (parent_path, dir, recursive = true) => {
   parent_path = normalize(parent_path);
   parent_path = parent_path.endsWith(sep)
     ? parent_path.slice(0, -1)
@@ -54,7 +54,7 @@ function getChildren(parent_path, dir, recursive = true) {
 
   // Return the ordered list of files, sort by 'order' then 'path'
   return sortBy(files, ['order', 'path']).map(file => file.path);
-}
+};
 
 /**
  * Return sidebar config for given baseDir.
@@ -65,7 +65,7 @@ function getChildren(parent_path, dir, recursive = true) {
  * @param   {Number} currentLevel   - Current level of items.
  * @returns {Array.<String|Object>} - Recursion level
  */
-function side(baseDir, relativeDir = '', currentLevel = 1) {
+const side = (baseDir, relativeDir = '', currentLevel = 1) => {
   const fileLinks = getChildren(baseDir, relativeDir, currentLevel > 2);
   if (currentLevel <= 2) {
     getDirectories(join(baseDir, relativeDir)).forEach(subDir => {
@@ -96,7 +96,7 @@ function side(baseDir, relativeDir = '', currentLevel = 1) {
   }
 
   return sortBy(fileLinks, ['order']);
-}
+};
 
 // export const sidebar = getConfig('./', {});
 export const sidebar: SidebarConfig = {
