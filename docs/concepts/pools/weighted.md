@@ -32,29 +32,4 @@ Some people find the word "Impermanent" misleading and prefer to call it "Diverg
 
 For pools that heavily weight one token over another, there is far less impermanent loss, but this doesn't come for free; very asymmetric pools do have higher slippage when making trades due to the fact that one side has much less liquidity. 80/20 pools have emerged as a happy medium when balancing liquidity an Impermanent Loss mitigation.
 
-### Trading Pairs
 
-Since each token in a pool can be traded with any other token in a pool, the number of trading pairs grows significantly with each additional token. By providing more trading pairs, pools are able to facilitate more swaps, giving them more opportunities to collect fees. 
-
-The number of trading pairs in a pool follows the combinations equation
-$$
-_nC_r = \frac{n!}{r!(n-r)!}
-$$
-
-Where $n$​ is 2 and $r$ ​is the number of tokens in the pool.
-
-## Use Cases
-
-### Aave Safety Module
-
-Aave is a decentralized non-custodial liquidity protocol where users can participate as depositors or borrowers. Aave uses pool tokens from the **80/20 AAVE/WETH Weighted Pool** to lock funds in their [Safety Module](https://docs.aave.com/aavenomics/safety-module) (SM) while still providing liquidity for the AAVE token.
-
-> **The Safety Module solves the issues with traditional staking systems and market liquidity**: Tokens with locking/reward schemes tend to suffer from low market liquidity and extreme volatility when high percentages of the total supply are being locked. With the ability of contributing to the SM not only by locking AAVE, but also by contributing with liquidity \[on Balancer], stakers create a trustless and decentralized market with deep liquidity for trading AAVE against ETH.
->
-> _Source_: Aave Docs \[[Safety Module in Detail](https://docs.aave.com/aavenomics/safety-module#safety-module-in-detail)]
-
-### **mStable Staking**
-
-mStable is a decentralized stablecoin protocol whose flagship product, mUSD, represents a basket of underlying stablecoins: DAI, sUSD, USDC and USDT. 
-
-Similar to how Aave's Safety Module works, staked pool tokens from the **80/20 MTA/WETH Weighted Pool** can be used in the mStable protocol as a backstop in case of a re-collateralization event to protect users from peg failures. By allowing users to stake pool tokens, mStable gains a more robust backstop and decreases the volatility of the MTA token.

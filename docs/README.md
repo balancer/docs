@@ -29,3 +29,7 @@ footer: Footer text
 - [Smart Order Router](https://github.com/balancer-labs/balancer-sor)
 - [Frontend](https://github.com/balancer-labs/frontend-v2)
 - [Subgraph](https://github.com/balancer-labs/balancer-subgraph-v2)
+
+**Community Tools**
+
+- []

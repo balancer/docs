@@ -4,27 +4,38 @@ heroImage: /images/backgrounds/red.png
 order: 10
 ---
 
-# What is Balancer?
+# Basics
 
-Balancer is a decentralized protocol that provides DeFi liquidity infrastructure.
+::: info
+All docs on this site refer to Balancer V2 which is currently live on Ethereum, Polygon, Arbitrum, and specific testnets.
+:::
+## What is Balancer?
 
-Balancer’s mission is to accelerate innovation in DeFi by providing access to **secure infrastructure for liquidity applications**. Projects build on Balancer to create new, innovative types of pools and financial dApps.
+Balancer is a decentralized automated market maker (AMM) protocol built on Ethereum that represents a flexible building block for programmable liquidity.
 
-Balancer Pools contain two or more tokens that traders can swap between. Liquidity Providers put their tokens in the pools in order to collect swap fees.
+By separating the AMM curve logic and math from the core swapping functionality, Balancer becomes an extensible AMM that can incorporate any number of trading curves and pool types. This includes:
+- Traditional 50/50 $x*y=k$ weighted pools
+- Custom weights like 80/20 for controlled exposure
+- Stable swap curves
+- Nested pools (ex: [Boosted Pools](/concepts/pools/boosted))
+- Pools with changing weights (ex: [Liquidity Bootstrapping Pools](/concepts/pools/liquidity-bootstrapping))
+- Concentrated liquidity pools
+- Managed pools that allow customizable parameters
+- Entire protocols to be built on top (ex: Gyroscope)
 
-Balancer adopts powerful features to slash gas costs, super-charge capital efficiency, unlock arbitrage with zero-token starting capital, and open the door to custom AMMs.
+All of the aggregate liquidity is then easily accessilbe for traders, aggregators, and arbitraugers. The Balancer [Vault](/concepts/vault) optimizes batching and path logic so that gas costs and capital requirements remain extremely low.
 
-## Revolutionary DeFi Liquidity Pools
+## Who uses Balancer?
 
-Pools with high token counts are conceptually similar to Index Funds in traditional finance. They allow users to have access to broad exposure to a variety of tokens. Where Balancer differs from the traditional notion of an index fund, however, is in the fees.
+Balancer is an incredibly useful tool for a diverse set of actors in the Defi space.
 
-**Instead of paying fees** to have a broker rebalance the pool, the **pools collect fees** as they're continuously rebalanced by traders making swaps. Furthermore, high token-count pools have the advantage of having many token pairs, creating additional opportunities to collect trading fees.
+Traders can swap between any two ERC20 tokens. This can be done through https://app.balancer.fi/#/ethereum/trade or aggregators like 1inch, Matcha, or Paraswap.
 
-Balancer's WeightedPools are based on an [N-dimensional invariant surface](https://balancer.finance/whitepaper/), a generalization of the constant product formula described by Vitalik Buterin.
+Liquidity Providers (LPs) can add liquidity to pools to earn swap fees, liquidity incentives, and other forms of yield
+  - Passive LPs can utilize boosted pools to earn on top of their already compounding Aave tokens
 
-## Serving Everyone
+Arbitrageurs can swap against pools using things like batch swaps and flash loans
 
-With this mechanism, the needs of both Liquidity Providers and Traders are served:
+BAL Token holders can lock their token into veBAL and participate in the goverenance of evolving the Balancer protocol
 
-* Liquidity Providers collect trading fees, while their portfolio is continuously rebalanced
-* Traders gain access to an open, decentralized exchange that never closes, allowing them to swap what and when they like for low fees
+## Helpful Articles to Learn More

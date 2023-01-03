@@ -14,6 +14,7 @@ heroImage: /images/backgrounds/blue.png
 - [Calculate swap outputs for yield pools]()
 
 ## Integrators
+- [Format Data for Joins & Exits]()
 - [Get the APR for a pool]()
 - [Get pool and swaps data from the subgraph]()
 ## Builders
@@ -21,3 +22,4 @@ heroImage: /images/backgrounds/blue.png
 - [Deploy a pool from a factory]()
 - [Verify a pool on Etherscan]()
 - [Build a protocol on top of Balancer]()
+- [Join a pool from another smart contract]()
