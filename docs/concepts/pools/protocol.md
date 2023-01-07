@@ -4,7 +4,7 @@ Unlike any of the other pool categories where the pool can be thought of as an i
 
 ## The case to build on top of Balancer
 
-Over the last few years there have been hundreds of experiments in AMM & Dex design. One of the biggest hurdles new AMMs have faced is underestimating the importance of having each of the actors neccessary to create healthy trading ecosystem. These actors are: retail traders, dex aggregators, arbitrauegers, and liquidity providers. If a single one of those actors is missing on an AMM it breaks the liquidity flywheel and leads to dimishing trade volume and poor returns.
+Over the last few years there have been hundreds of experiments in AMM & Dex design. One of the biggest hurdles new AMMs have faced is underestimating the importance of having each of the actors neccessary to create a healthy trading ecosystem. These actors are: retail traders, dex aggregators, arbitrauegers, and liquidity providers. If a single one of those actors is missing on an AMM it breaks the liquidity flywheel and leads to dimishing trade volume and poor returns.
 
 Even with strong technical teams and innovative iterations on Uniswap's concentrated liquidity (meaning TVL is less important), there have been notable AMMs launched in the last 6 months that have already failed.
 
