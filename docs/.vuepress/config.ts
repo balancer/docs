@@ -2,6 +2,7 @@ import process from 'node:process';
 import { viteBundler } from '@vuepress/bundler-vite';
 import { defineUserConfig } from '@vuepress/cli';
 import { mdEnhancePlugin } from 'vuepress-plugin-md-enhance';
+import { copyCodePlugin } from 'vuepress-plugin-copy-code2';
 import { balancerTheme } from '../../theme/';
 import { navbar, sidebar } from './configs/index.js';
 
@@ -65,6 +66,7 @@ export default defineUserConfig({
 
   // use plugins
   plugins: [
+    copyCodePlugin({}),
     mdEnhancePlugin({
       mathjax: true,
       container: true,

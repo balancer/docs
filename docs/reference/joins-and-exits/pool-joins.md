@@ -6,7 +6,7 @@ Calls to `joinPool()` are made on the Vault contract! You cannot send this comma
 
 ## API
 
-```cpp
+```solidity
 joinPool(
     bytes32 poolId, 
     address sender, 

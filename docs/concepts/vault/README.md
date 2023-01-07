@@ -29,8 +29,6 @@ This architecture brings different pool designs under the same umbrella; the Vau
 
 In other Decentralized Exchanges where token accounting is paired with pool logic, multi-hop trading (A->B->C) can become costly since ERC20 tokens must be transferred at each hop. Balancer's advantage here is that all the tokens are stored in the same contract, The Vault. This powerful difference allows for far greater swap efficiency. Instead of transferring tokens on each step of a multi-hop trade, The Vault simply keeps internal records of which pool is holding what, transferring tokens only at the input and output step. This reduction in token transfers ultimately saves a considerable amount of gas.
 
-![](/images/gascomparisonbatchswap.png)
-
 #### Internal Balances
 
 Taking the concept of minimizing token transfers one step further, it's actually possible to execute swaps with no token transfers whatsoever. Similar to how the Vault maintains token balances for pools, it can also maintain balances for arbitrary Ethereum addresses. Users can hold **Internal Balances** in the Vault and execute trades to/from these balances.
