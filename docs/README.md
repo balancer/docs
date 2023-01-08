@@ -17,7 +17,7 @@ features:
   - title: Dev Guides
     details: Follow along helpful guides with example code
     link: /guides
-footer: Footer text
+footer: 
 ---
 
 ## More Resources
@@ -32,4 +32,4 @@ footer: Footer text
 
 **Community Tools**
 
-- []
+- [Analytics](https://balancer-analytics-prototype.web.app/)

@@ -1,0 +1,13 @@
+{
+  "index_name": "dev_balancer",
+  "start_urls": ["https://balancer-docs.pages.dev/"],
+  "selectors": {
+    "lvl0": "#app header h1",
+    "lvl1": ".page h1",
+    "lvl2": ".page h2",
+    "lvl3": ".page h3",
+    "lvl4": ".page h4",
+    "lvl5": ".page h5",
+    "text": ".page .theme-default-content p"
+  }
+}
