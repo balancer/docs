@@ -1,5 +1,5 @@
 ---
-order: 3
+order: 4
 guides:
   - details: Get Spot Price of Pool
     link: /guides/swaps/get-spot-price.md

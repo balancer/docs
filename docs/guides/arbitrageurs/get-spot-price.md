@@ -56,7 +56,7 @@ There are few different ways to go about getting the spot price. For example, if
 
 ### Weighted Pool Spot Price Using the SDK
 
-@[code{11-24} ts](code/sdk-spot-price.ts)
+@[code{11-22} ts](code/sdk-spot-price.ts)
 
 <RunCode />
 

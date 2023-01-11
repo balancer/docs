@@ -22,8 +22,6 @@ Weighted Pools allow users to choose their levels of exposure to certain assets 
 
 For example if a user wants to provide liquidity for WBTC and WETH, they can choose the weight that most aligns with their strategy. A pool more heavily favoring WBTC implies they expect bigger gains for WBTC, while a pool more heavily favoring WETH implies bigger gains for WETH. An evenly balanced pool is a good choice for assets that are expected to remain proportional in value in the long run.
 
-![Variable pool weight allows for fine-tuned exposure to assets](https://lh4.googleusercontent.com/VwAkBtoNQLfuRFb3Wmb6YdEJwFyyR2WNXcEAkZGgJ7teCaYHeFK-ZEwC7kLYPiTdFWSjjRQA2y550pFkMqimjS5CZW2IKQ6A-RNPKzG27Ja2xK_efAZkU63ZC5vq29EyCUaEVDzo=s0)
-[label](/reference/general/addresses)
 #### Impermanent Loss
 
 Impermanent Loss is the difference in value between holding a set of assets and providing liquidity for those same assets.

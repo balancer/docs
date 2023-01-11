@@ -1,36 +1,8 @@
 ---
-order: 1
+order: 2
 ---
 
 # Swaps
-
-Exposes functionality for token swampping.
-
-```ts
-// Uses SOR to find optimal route for a trading pair and amount
-const route = balancer.swaps.findRouteGivenIn({
-  tokenIn,
-  tokenOut,
-  amount,
-  gasPrice,
-  maxPools,
-});
-
-// Prepares transaction attributes based on the route
-const transactionAttributes = balancer.swaps.buildSwap({
-  userAddress,
-  swapInfo: route,
-  kind: 0, // 0 - givenIn, 1 - givenOut
-  deadline,
-  maxSlippage,
-});
-
-// Extract parameters required for sendTransaction
-const { to, data, value } = transactionAttributes;
-
-// Execution with ethers.js
-const transactionResponse = await signer.sendTransaction({ to, data, value });
-```
 
 ## Methods
 

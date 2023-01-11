@@ -1,0 +1,16 @@
+# Pool Types & Composition
+
+## Overview
+
+Balancer is a flexibile protocol and as such there are many choices an user or project has to make when creating a new pool. This page will walk through the different tradeoffs when it comes to pool types, token composition, fees, and more to best optimize liquidity and trading volume.
+
+## Pool Types
+
+TODO
+
+## Token Composition
+
+### Weighted Pools
+One of the frequent mistakes in new weighted pools has to do with the token composition. A common example is an user creating a 33/33/33 weighted pool with XYZ / WETH / USDC (where XYZ represents any arbitrary token). The thinking behind this is by adding both WETH & USDC to the pool it makes it easier to trade XYZ into either. In a vacuum this may be true, but by doing so this actually hurts slippage for this pool and also is not ideal for overall platform liquidity. Instead a better option is to pair XYZ with a WETH/USDC pool BPT (or even more ideally a bb-a-USDC/(wstETH/weth) pool BPT). Now if a trader wanted to go from WETH->XYZ, for the same dollar amounts the 50/50 pool will have more liquidity and therefore better slippage than 33/33. All of the frontends, aggregators, and arbitrageurs can automatically see the underlying tokens of the BPT paired and create direct paths from WETH->XYZ and USDC->XYZ with minimal gas costs.
+
+In general weighted token pools should stick to 2 tokens and pair with a "core routing" Balancer pool like bb-a-usd, (wstETH/weth), or (bb-a-usd/wst-ETH). More than 2 tokens in a pool can be useful for stable pools or managed pools where the pool is viewed more as an ETF.
