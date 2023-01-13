@@ -46,7 +46,7 @@ onMounted(() => {
 }
 
 .home .search-box {
-  width: 600px;
+  width: 75%;
   margin: 40px auto;
 }
 

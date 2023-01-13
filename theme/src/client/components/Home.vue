@@ -9,9 +9,11 @@ import HomeSearch from './SearchBar.vue';
 <template>
   <HomeHero />
   <main class="home">
-    <HomeSearch />
-    <HomeFeatures />
-    <HomeContent />
-    <HomeFooter />
+    <div class="theme-default-content">
+      <HomeSearch />
+      <HomeFeatures />
+      <HomeContent />
+      <HomeFooter />
+    </div>
   </main>
 </template>
