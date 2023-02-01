@@ -33,7 +33,9 @@ const itemClass = computed(() => ({
   collapsible: item.value.collapsible,
 }));
 
-const isOpenDefault = computed(() => true);
+const isOpenDefault = computed(() =>
+  depth.value === 0 || isActive.value ? true : false
+);
 const [isOpen, toggleIsOpen] = useToggle(isOpenDefault.value);
 const onClick = (e: Event): void => {
   if (item.value.collapsible) {

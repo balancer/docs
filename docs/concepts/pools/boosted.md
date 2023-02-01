@@ -1,6 +1,7 @@
 ---
-order: 3
+order: 5
 ---
+
 # Boosted Pools
 
 ## Overview
@@ -68,10 +69,10 @@ Why have a WETH/DAI pool with idle DAI when you could have a WETH/bb-a-USD pool?
 
 Now, this pool can trade between any of the following tokens:
 
-* WETH
-* DAI
-* USDC
-* USDT
-* aDAI
-* aUSDC
-* aUSDT
+- WETH
+- DAI
+- USDC
+- USDT
+- aDAI
+- aUSDC
+- aUSDT

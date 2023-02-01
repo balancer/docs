@@ -1,25 +1,27 @@
 ---
-order: 2
+order: 4
 references:
   - details: Stable Math
     link: /reference/math/stable-math
   - details: Composable Pool Interfacing
     link: /reference/pool-interfacing/stable-pool
 ---
+
 # Composable Stable Pools
 
 ::: info Predecessors
 
 **Composable Stable Pools** are a superset of all previous Stable-type pools (Stable Pools, MetaStable Pools, StablePhantom Pools, and StablePool v2) and therefore obsolete all previous pools.
 :::
+
 ## Overview
 
 Composable Stable Pools are designed for assets that are either expected to consistently trade at near parity, or at a known exchange rate. Composable Stable Pools use [Stable Math](/reference/math/stable-math.md) (based on StableSwap, popularized by Curve) which allows for trades of significant size before encountering substantial price impact, vastly increasing capital efficiency for like-kind and correlated-kind swaps.
 
 ### Ideal For
 
-* **Pegged Tokens** - tokens that trade near 1:1, such as two stablecoins of the same currency (eg: DAI, USDC, USDT), or synthetic assets (eg: renBTC, sBTC, WBTC)
-* **Correlated Tokens** - tokens that trade near 1:$R$ with some slowly changing exchange rate $R$, like derivatives (eg: wstETH, wETH)
+- **Pegged Tokens** - tokens that trade near 1:1, such as two stablecoins of the same currency (eg: DAI, USDC, USDT), or synthetic assets (eg: renBTC, sBTC, WBTC)
+- **Correlated Tokens** - tokens that trade near 1:$R$ with some slowly changing exchange rate $R$, like derivatives (eg: wstETH, wETH)
 
 ### Stable Swaps Under the Balancer Umbrella
 
@@ -48,4 +50,3 @@ stETH is a token that represents **Staked Ether**, combining the value of deposi
 Balancer Composable Stable Pools are ideal for the wstETH-WETH pair as the stETH asset is highly correlated but not pegged 1:1 to ETH as it accrues staking returns.
 
 Note: To make stETH compatible with Balancer's streaming/rebasing tokens, stETH must be wrapped into wstETH. This is done through a relayer contract.
-

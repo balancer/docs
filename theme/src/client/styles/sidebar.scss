@@ -156,11 +156,17 @@
     }
 
     .sidebar-item-children .sidebar-item-children & {
-      padding: 0.25rem 1rem 0.25rem 1.75rem;
+      padding: 0.25rem 1rem 0.25rem 1rem;
 
       &.active {
         font-weight: 500;
       }
+    }
+
+    &.collapsible {
+      line-height: 1.5rem;
+      padding-bottom: 0rem;
+      margin-inline-start: calc(var(--dropdown-icon-width)*-1 + var(--dropdown-icon-gap)*-1);
     }
 
     &:not(.collapsible) {

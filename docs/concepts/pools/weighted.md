@@ -1,11 +1,12 @@
 ---
-order: 1
+order: 3
 references:
   - details: Weighted Math
     link: /reference/math/weighted-math
   - details: Weighted Pool Interfacing
     link: /reference/pool-interfacing/weighted-pool
 ---
+
 # Weighted Pools
 
 ## Overview
@@ -29,5 +30,3 @@ Impermanent Loss is the difference in value between holding a set of assets and 
 Some people find the word "Impermanent" misleading and prefer to call it "Divergence Loss" or "Rebalancing Loss" because one token may perpetually out-value another token, and the loss may become... permanent.
 
 For pools that heavily weight one token over another, there is far less impermanent loss, but this doesn't come for free; very asymmetric pools do have higher slippage when making trades due to the fact that one side has much less liquidity. 80/20 pools have emerged as a happy medium when balancing liquidity an Impermanent Loss mitigation.
-
-

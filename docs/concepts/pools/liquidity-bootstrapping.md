@@ -1,11 +1,12 @@
 ---
-order: 4
+order: 6
 references:
   - details: Weighted Math
     link: /reference/math/weighted-math
   - details: LBP Interfacing
     link: /reference/pool-interfacing/liquidity-bootstrapping-pool
 ---
+
 # Liquidity Bootstrapping Pools (LBPs)
 
 ## Overview
@@ -30,11 +31,11 @@ LBPs often start with intentionally high prices. This strongly disincentivizes w
 
 ### Starting Capital Can Be Small
 
-Teams who use LBPs to kickstart the liquidity of a token that has not been well distributed yet can do so with minimal starting capital. For a team running an LBP with their TOKEN and DAI, starting with 10% or 20% DAI, as opposed to 50% DAI __ like they might need on another platform, significantly reduces their starting capital requirements. Shifting from 80/20 TOKEN/DAI __ to 20/80 would look like this:
+Teams who use LBPs to kickstart the liquidity of a token that has not been well distributed yet can do so with minimal starting capital. For a team running an LBP with their TOKEN and DAI, starting with 10% or 20% DAI, as opposed to 50% DAI ** like they might need on another platform, significantly reduces their starting capital requirements. Shifting from 80/20 TOKEN/DAI ** to 20/80 would look like this:
 
-![](https://lh3.googleusercontent.com/jJSoUvPnPwQFAEemsJlKZctFspEJrRQhRIncmoaaq5a6\_CzyXssVwokti4HQQyIBqVcv5GG9bMKDplrAaDIC3MkdFoVJAprLHu\_NhTSWW4GEoMRe3mUhFnB0lG3kVqIGvjK7aGJD=s0)
+![](https://lh3.googleusercontent.com/jJSoUvPnPwQFAEemsJlKZctFspEJrRQhRIncmoaaq5a6_CzyXssVwokti4HQQyIBqVcv5GG9bMKDplrAaDIC3MkdFoVJAprLHu_NhTSWW4GEoMRe3mUhFnB0lG3kVqIGvjK7aGJD=s0)
 
-and would ultimately result in the team holding far more DAI __ at the end of their LBP while reducing the (sometimes extreme) price volatility that teams experience when just launching a 50/50 pool.
+and would ultimately result in the team holding far more DAI \_\_ at the end of their LBP while reducing the (sometimes extreme) price volatility that teams experience when just launching a 50/50 pool.
 
 ## Use Cases
 

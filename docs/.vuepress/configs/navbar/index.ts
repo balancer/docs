@@ -42,6 +42,25 @@ export const navbar: NavbarConfig = [
         ],
       },
       {
+        text: 'Subgraph',
+        children: [
+          {
+            text: 'Overview',
+            link: '/reference/subgraph/',
+            children: [
+              {
+                text: 'Core',
+                link: '/reference/subgraph/core/',
+              },
+              {
+                text: 'Gauges',
+                link: '/reference/subgraph/gauges/',
+              },
+            ],
+          },
+        ],
+      },
+      {
         text: 'Swaps',
         children: [
           '/reference/swaps/batch-swaps',
