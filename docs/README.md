@@ -30,6 +30,8 @@ footer:
 - [Frontend](https://github.com/balancer-labs/frontend-v2)
 - [Subgraph](https://github.com/balancer-labs/balancer-subgraph-v2)
 
-**Community Tools**
+**Analytics & Dashboards**
 
+- [DefiLlama](https://defillama.com/protocol/balancer)
 - [Analytics](https://balancer-analytics-prototype.web.app/)
+- [Analytics](https://info.balancer.xeonus.io/)

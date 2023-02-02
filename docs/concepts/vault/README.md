@@ -4,13 +4,14 @@ order: 10
 heroImage: /images/backgrounds/blue.png
 guides:
   - details: Using batch swaps
-    link: /guides/swaps/batch-swaps.html
+    link: /guides/arbitrageurs/execute-a-batch-swap.html
 references:
-  - details: Deployment address
-    link: /reference/general/addresses
+  - details: Deployment addresses
+    link: /reference/contracts/deployment-addresses/mainnet.html
   - details: APIs
-    link: /reference/general/apis/vault
+    link: /reference/contracts/apis/vault
 ---
+
 # Vault
 
 ## Overview
@@ -41,4 +42,4 @@ It's crucial to note that the Vault is designed to keep pool balances strictly i
 
 While the consolidated liquidity in the Vault does not change price impact on a per-pool basis, it does enable Balancer Protocol to leverage that combined liquidity by offering Flash Loans. Flash Loans are uncollateralized loans that must be repaid (with interest) in the same transaction as it is borrowed. Since everything must be completed in a single transaction, there are codified guarantees that make it impossible for borrowers to run away with the tokens.
 
-Further, anyone who identifies a price discrepancy in two Balancer Pools can execute a **Flash Swap**. **** An arbitrageur who makes a flash swap does not need to hold any of the input tokens that one would normally need to make a trade. Instead, the trader identifies the imbalance, tells the Vault to make the swap, and is rewarded with the profit.
+Further, anyone who identifies a price discrepancy in two Balancer Pools can execute a **Flash Swap**. \*\*\*\* An arbitrageur who makes a flash swap does not need to hold any of the input tokens that one would normally need to make a trade. Instead, the trader identifies the imbalance, tells the Vault to make the swap, and is rewarded with the profit.

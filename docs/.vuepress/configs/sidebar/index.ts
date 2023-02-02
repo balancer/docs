@@ -16,6 +16,7 @@ const getDirectories = source =>
 const getName = (path: string) => {
   const name = path.split(sep).pop();
   if (!name) return;
+  if (name === 'veBAL') return name;
   return titleize(name.replace(/-/g, ' '));
 };
 
