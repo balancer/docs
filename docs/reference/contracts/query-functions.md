@@ -10,7 +10,7 @@ If you look on Etherscan (or similar), all three of the query functions will sho
 
 ::: danger Be very careful if you call a query function from a contract!!!
 
-If you are using `queryBatchSwap`, `queryJoin`, or `queryExit` to calculate `limits`,  `maxAmountsIn`, or `minAmountsOut`, this is ONLY useful if you simulate these calls OUTSIDE of the transaction you end up making. You SHOULD NOT call these functions to calculate limits from a smart contract at transaction time.
+If you are using `queryBatchSwap`, `queryJoin`, or `queryExit` to calculate `limits`, `maxAmountsIn`, or `minAmountsOut`, this is ONLY useful if you simulate these calls OUTSIDE of the transaction you end up making. You SHOULD NOT call these functions to calculate limits from a smart contract at transaction time.
 
 There are valid use cases for calling these functions on chain, but **do not use them to determine limits**.
 :::
@@ -28,39 +28,39 @@ Calculating these values ahead of time is useful for enforcing slippage toleranc
 
 ### `queryBatchSwap`
 
-To calculate the inputs/outputs for a trade (you can specify given-in or given-out), you will use the `queryBatchSwap` function in the [`Vault`](/reference/general/apis/vault.md#querybatchswap). This functionality is important if not crucial for calculating your limits when constructing your `batchSwap` arguments.
+To calculate the inputs/outputs for a trade (you can specify given-in or given-out), you will use the `queryBatchSwap` function in the [`Vault`](/reference/contracts/apis/vault.md#querybatchswap). This functionality is important if not crucial for calculating your limits when constructing your `batchSwap` arguments.
 
 ```solidity
 queryBatchSwap(
-    SwapKind kind, 
-    BatchSwapStep[] swaps, 
-    IAsset[] assets, 
-    FundManagement funds) 
+    SwapKind kind,
+    BatchSwapStep[] swaps,
+    IAsset[] assets,
+    FundManagement funds)
 returns (int256[] assetDeltas)
 ```
 
 ### `queryJoin`
 
-To calculate amounts of BPT out and tokens in, you will use `queryJoin` in [`BalancerHelpers`](/reference/general/apis/balancer-helpers.md#queryjoin). This functionality is important for calculating `maxAmountsIn` and/or `minBptOut` on joins
+To calculate amounts of BPT out and tokens in, you will use `queryJoin` in [`BalancerHelpers`](/reference/contracts/apis/balancer-helpers.md#queryjoin). This functionality is important for calculating `maxAmountsIn` and/or `minBptOut` on joins
 
 ```solidity
 queryJoin(
-    bytes32 poolId, 
-    address sender, 
-    address recipient, 
+    bytes32 poolId,
+    address sender,
+    address recipient,
     JoinPoolRequest request)
 returns (uint256 bptOut, uint256[] amountsIn)
 ```
 
 ### `queryExit`
 
-To calculate amounts of BPT in and tokens out, you will use `queryExit` in [`BalancerHelpers`](/reference/general/apis/balancer-helpers.md#queryexit). This functionality is important for calculating `minAmountsOut` and/or `maxBptIn` on exits.
+To calculate amounts of BPT in and tokens out, you will use `queryExit` in [`BalancerHelpers`](/reference/contracts/apis/balancer-helpers.md#queryexit). This functionality is important for calculating `minAmountsOut` and/or `maxBptIn` on exits.
 
 ```solidity
 queryExit(
-    bytes32 poolId, 
-    address sender, 
-    address recipient, 
+    bytes32 poolId,
+    address sender,
+    address recipient,
     ExitPoolRequest request)
 returns (uint256 bptIn, uint256[] amountsOut)
 ```

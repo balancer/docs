@@ -57,7 +57,7 @@ Promise<QueryWithSorOutput {
 
 ### encodeBatchSwap
 
-Static method to encode a [batch swap](/reference/general/apis/vault.md#batchswap).
+Static method to encode a [batch swap](/reference/contracts/apis/vault.md#batchswap).
 
 ::: info
 This method doesn't execute a batchSwap -- it returns an [ABI byte string](https://docs.soliditylang.org/en/latest/abi-spec.html) containing the data of the function call on a contract, which can then be sent to the network (ex. [sendTransaction](https://web3js.readthedocs.io/en/v1.2.11/web3-eth.html#sendtransaction)). to be executed.

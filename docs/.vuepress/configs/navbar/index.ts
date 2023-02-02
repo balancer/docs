@@ -21,24 +21,24 @@ export const navbar: NavbarConfig = [
         children: [
           {
             text: 'Deployment Addresses',
-            link: '/reference/general/addresses/',
+            link: '',
             children: [
               {
                 text: 'Mainnet',
-                link: '/reference/general/addresses/',
+                link: '/reference/contracts/deployment-addresses/mainnet.html',
               },
               {
                 text: 'Arbitrum',
-                link: '/reference/general/addresses.html#arbitrum',
+                link: '/reference/contracts/deployment-addresses/arbitrum.html',
               },
               {
                 text: 'Polygon',
-                link: '/reference/general/addresses.html#polygon',
+                link: '/reference/contracts/deployment-addresses/polygon.html',
               },
             ],
           },
-          '/reference/general/error-codes',
-          '/reference/general/query-functions',
+          '/reference/contracts/error-codes',
+          '/reference/contracts/query-functions',
         ],
       },
       {

@@ -5,8 +5,8 @@
 ### `getAuthorizer`
 
 ```solidity
-getAuthorizer() 
-returns (IAuthorizer) 
+getAuthorizer()
+returns (IAuthorizer)
 ```
 
 Returns the Vault's Authorizer (Balancer governance contract). Implemented in `VaultAuthorization`
@@ -25,8 +25,8 @@ Sets a new Authorizer for the Vault. The caller must be allowed by the current A
 
 ```solidity
 hasApprovedRelayer(
-    address user, 
-    address relayer) 
+    address user,
+    address relayer)
 returns(bool)
 ```
 
@@ -36,16 +36,16 @@ Returns true if `user` has allowed `relayer` to act as a relayer for them. Imple
 
 ```solidity
 setRelayerApproval(
-    address sender, 
+    address sender,
     address relayer,
     bool approved)
-    
+
 emits RelayerApprovalChanged(address indexed relayer,
                              address indexed sender,
                              bool approved)
 ```
 
-Grants or revokes approval for the given `relayer` to call Authorizer-approved functions on behalf of `user`.  Implemented in `VaultAuthorization`
+Grants or revokes approval for the given `relayer` to call Authorizer-approved functions on behalf of `user`. Implemented in `VaultAuthorization`
 
 ## Internal Balances
 
@@ -53,8 +53,8 @@ Grants or revokes approval for the given `relayer` to call Authorizer-approved f
 
 ```solidity
 getInternalBalance(
-    address user, 
-    IERC20[] tokens) 
+    address user,
+    IERC20[] tokens)
 returns (uint256[])
 ```
 
@@ -63,7 +63,7 @@ Get a user's internal balances. This is called UserBalance in external interface
 ### `manageUserBalance`
 
 ::: info
-For a more in-depth explanation check out [Internal User Balances](/reference/general/internal-user-balances.md) in the Resources.
+For a more in-depth explanation check out [Internal User Balances](/reference/contracts/internal-user-balances.md) in the Resources.
 :::
 
 ```solidity
@@ -74,7 +74,7 @@ emits one of:
 InternalBalanceChanged(address indexed user,
                        IERC20 indexed token,
                        int256 delta)
-                       
+
 ExternalBalanceTransfer(IERC20 indexed token,
                         address indexed sender,
                         address recipient,
@@ -88,7 +88,7 @@ There are four possible operations in `manageUserBalance`: each designates a sen
 ### **`registerPool`**
 
 ```solidity
-registerPool(PoolSpecialization specialization) 
+registerPool(PoolSpecialization specialization)
 returns(bytes32)
 
 emits PoolRegistered(bytes32 indexed poolId,
@@ -96,13 +96,13 @@ emits PoolRegistered(bytes32 indexed poolId,
                      PoolSpecialization specialization)
 ```
 
-Called from the pool contract to generate a  Pool ID, and enter it in the Vault's pool data structures. Implemented in `PoolRegistry`.
+Called from the pool contract to generate a Pool ID, and enter it in the Vault's pool data structures. Implemented in `PoolRegistry`.
 
 ### **`getPool`**
 
 ```solidity
-getPool(bytes32 poolId) 
-returns (address, 
+getPool(bytes32 poolId)
+returns (address,
     PoolSpecialization)
 ```
 
@@ -112,10 +112,10 @@ Returns a Pool's contract address and specialization setting. Implemented in `Po
 
 ```solidity
 registerTokens(
-    bytes32 poolId, 
-    IERC20[] tokens, 
+    bytes32 poolId,
+    IERC20[] tokens,
     address[] assetManagers)
-    
+
 emits TokensRegistered(indexed bytes32 poolId,
                        IERC20[] tokens,
                        address[] assetManagers)
@@ -127,9 +127,9 @@ Called from the pool contract to tell the Vault which tokens are valid for this 
 
 ```solidity
 deregisterTokens(
-    bytes32 poolId, 
+    bytes32 poolId,
     IERC20[] tokens)
-    
+
 emits TokensDeregistered(indexed bytes32 poolId, IERC20[] tokens)
 ```
 
@@ -138,11 +138,11 @@ Remove tokens from the pool (must have zero balance). Implemented in `PoolTokens
 ### **`getPoolTokenInfo`**
 
 ```solidity
-getPoolTokenInfo(bytes32 poolId, 
-    IERC20 token) 
-returns (uint256 cash, 
-    uint256 managed, 
-    uint256 blockNumber, 
+getPoolTokenInfo(bytes32 poolId,
+    IERC20 token)
+returns (uint256 cash,
+    uint256 managed,
+    uint256 blockNumber,
     address assetManager)
 ```
 
@@ -152,7 +152,7 @@ Return details of a particular token. While `getPoolTokens` gives the total bala
 
 ```solidity
 getPoolTokens(bytes32 poolId)
-returns (IERC20[] tokens, 
+returns (IERC20[] tokens,
     uint256[] balances,
     uint256 lastChangeBlock)
 ```
@@ -173,9 +173,9 @@ Note that any functions that take a token array always expect input "parallel" t
 
 ```solidity
 joinPool(
-    bytes32 poolId, 
-    address sender, 
-    address recipient, 
+    bytes32 poolId,
+    address sender,
+    address recipient,
     JoinPoolRequest request)
 ```
 
@@ -183,9 +183,9 @@ joinPool(
 
 ```solidity
 exitPool(
-    bytes32 poolId, 
-    address sender, 
-    address recipient, 
+    bytes32 poolId,
+    address sender,
+    address recipient,
     ExitPoolRequest request)
 ```
 
@@ -204,20 +204,16 @@ emits PoolBalanceChanged(
 
 ## Single Swaps
 
-::: info
-For a more in-depth explanation check out the [Single Swaps](../../../guides/swaps/single-swaps.md) page in Guides.
-:::
-
 The vault supports "single swaps," a way to perform exactly one trade directly and gas-efficiently with a particular pool (e.g., for token sale GUIs). You can still use the internal balance.
 
 ### **`swap`**
 
 ```solidity
 swap(
-    SingleSwap request, 
-    FundManagement funds, 
-    uint256 limit, 
-    uint256 deadline) 
+    SingleSwap request,
+    FundManagement funds,
+    uint256 limit,
+    uint256 deadline)
 returns (uint256 assetDelta)
 ```
 
@@ -226,7 +222,7 @@ Implemented in `Swaps`.
 ## Batch Swaps
 
 ::: info
-For a more in-depth explanation check out the [Batch Swaps](../../../guides/swaps/batch-swaps.md) page in Guides.
+For a more in-depth explanation check out the [Batch Swaps](../../../guides/arbitrageurs/execute-a-batch-swap.md) page in Guides.
 :::
 
 Batch swap "steps" specify the assets involved, "many-to-many" sources and destinations, and min/max token limits to guard against slippage. There is also an optional deadline, after which the swap will timeout and revert. These return the token "deltas" - the net result of executing each swap sequentially.
@@ -236,11 +232,11 @@ Batch swap "steps" specify the assets involved, "many-to-many" sources and desti
 ```solidity
 batchSwap(
     SwapKind kind,
-    BatchSwapStep[] swaps, 
-    IAsset[] assets, 
-    FundManagement funds, 
-    int256[] limits, 
-    uint256 deadline) 
+    BatchSwapStep[] swaps,
+    IAsset[] assets,
+    FundManagement funds,
+    int256[] limits,
+    uint256 deadline)
 returns (int256[] assetDeltas)
 ```
 
@@ -259,10 +255,10 @@ event Swap(
 
 ```solidity
 queryBatchSwap(
-    SwapKind kind, 
-    BatchSwapStep[] swaps, 
-    IAsset[] assets, 
-    FundManagement funds) 
+    SwapKind kind,
+    BatchSwapStep[] swaps,
+    IAsset[] assets,
+    FundManagement funds)
 returns (int256[] assetDeltas)
 ```
 
@@ -281,11 +277,11 @@ For example in `ethers.js`, the command would look something like:\
 
 ```solidity
 flashLoan(
-    IFlashLoanRecipient recipient, 
-    IERC20[] tokens, 
-    uint256[] amounts, 
+    IFlashLoanRecipient recipient,
+    IERC20[] tokens,
+    uint256[] amounts,
     bytes userData)
-    
+
 emits FlashLoan(IFlashLoanRecipient indexed recipient,
                 IERC20 indexed token,
                 uint256 amount,
@@ -303,7 +299,7 @@ This can only be called by the asset manager of a token in a pool.
 ```solidity
 managePoolBalance(
     PoolBalanceOp[] ops)
-    
+
 emits PoolBalanceManaged(
         bytes32 indexed poolId,
         address indexed assetManager,
@@ -319,8 +315,8 @@ Deposit or withdraw funds from the pool (i.e., move funds between _cash_ and _ma
 ### **`getProtocolFeesCollector`**
 
 ```solidity
-getProtocolFeesCollector() 
-returns (ProtocolFeesCollector) 
+getProtocolFeesCollector()
+returns (ProtocolFeesCollector)
 ```
 
 The external contract authorized to collect protocol fees. Implemented by `Fees`.
@@ -338,7 +334,7 @@ Safety mechanism to halt most Vault operations in the event of an emergency. The
 ### **`WETH`**
 
 ```solidity
-WETH()  
+WETH()
 returns (IWETH)
 ```
 

@@ -2,18 +2,16 @@
 
 ## Overview
 
-For advantages and use cases of Weighted Pools, please refer to [the standard documentation](https://docs.balancer.fi/products/balancer-pools/weighted-pools).
-
-For more interfaces, see the [WeightedPool API](/reference/valuing-balancer-lp-tokens/pools/weightedpool.md#api) and [WeightedPool2Tokens API](/reference/valuing-balancer-lp-tokens/pools/weightedpool2tokens.md#api).
+For advantages and use cases of Weighted Pools, please refer to [the standard documentation](/concepts/pools/weighted).
 
 ## Interfacing
 
 Some elements to consider when interfacing with Weighted Pools:
 
-* Using [Weighted Math](../math/weighted-math.md)
-* Pool weights are static, defined at pool creation
-* Pools have between 2 and 8 tokens
-* Pool weights range from 1% to 99%
+- Using [Weighted Math](../math/weighted-math.md)
+- Pool weights are static, defined at pool creation
+- Pools have between 2 and 8 tokens
+- Pool weights range from 1% to 99%
 
 ## Getting Pool Data
 
@@ -34,4 +32,3 @@ returns something resembling
 ```
 
 which are the weights represented with 18 decimals. A pool with 80%/20% weights corresponds to \[0.8, 0.2] after scaling for decimals.
-

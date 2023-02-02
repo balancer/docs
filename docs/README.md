@@ -13,11 +13,11 @@ features:
     link: /sdk/overview
   - title: Smart Contracts
     details: Deployment addresses, ABIs, helpful walthroughs, and more
-    link: /reference/general/addresses.html
+    link: /reference/contracts/deployment-addresses/mainnet.html
   - title: Dev Guides
     details: Follow along helpful guides with example code
     link: /guides
-footer: 
+footer:
 ---
 
 ## More Resources

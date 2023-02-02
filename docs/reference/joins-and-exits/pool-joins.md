@@ -8,9 +8,9 @@ Calls to `joinPool()` are made on the Vault contract! You cannot send this comma
 
 ```solidity
 joinPool(
-    bytes32 poolId, 
-    address sender, 
-    address recipient, 
+    bytes32 poolId,
+    address sender,
+    address recipient,
     JoinPoolRequest request
 )
 
@@ -24,14 +24,14 @@ JoinPoolRequest(
 
 ### Arguments Explained
 
-* `poolId` - ID of the pool you're interacting with
-* `sender` - Address sending tokens to the pool
-* `recipient` - Address receiving BPT (usually the same as sender)
-* `request` - JoinPoolRequest tuple made up of the following:
-  * `assets` - Sorted list of all tokens in pool (see below)
-  * `maxAmountsIn` - Maximum token send amounts (see below)
-  * `userData` - Custom bytes field (see below)
-  * `fromInternalBalance` - `True` if sending from internal token balances. `False` if sending ERC20.
+- `poolId` - ID of the pool you're interacting with
+- `sender` - Address sending tokens to the pool
+- `recipient` - Address receiving BPT (usually the same as sender)
+- `request` - JoinPoolRequest tuple made up of the following:
+  - `assets` - Sorted list of all tokens in pool (see below)
+  - `maxAmountsIn` - Maximum token send amounts (see below)
+  - `userData` - Custom bytes field (see below)
+  - `fromInternalBalance` - `True` if sending from internal token balances. `False` if sending ERC20.
 
 ### Token Ordering
 
@@ -41,7 +41,7 @@ When providing your assets, you must ensure that the tokens are sorted numerical
 
 In the joinPool call, you have to provide `maxAmountsIn`, the upper limits for the tokens to send. In short, what are the maximum amounts you would find acceptable to send, given the amount of BPT you are receiving?
 
-A good practice is to use [`queryJoin` in `BalancerHelpers`](/reference/general/apis/balancer-helpers.md#queryjoin) to find the current amount of BPT you would get for your tokens, and then account for some possible slippage.
+A good practice is to use [`queryJoin` in `BalancerHelpers`](/reference/contracts/apis/balancer-helpers.md#queryjoin) to find the current amount of BPT you would get for your tokens, and then account for some possible slippage.
 
 Let's say that you want to allow a 1% slippage. After computing how many tokens you expect to provide for a given amount of BPT, you'd apply a factor of 1.01 to all the amounts. These thresholds are important because it's possible for token amounts to change in the pool between the time you send your transaction and when your transaction executes.
 
@@ -49,69 +49,69 @@ Let's say that you want to allow a 1% slippage. After computing how many tokens 
 
 userData is a highly versatile field; as such, it needs to be encoded for its specific use case. For joins, userData encodes a `JoinKind` to tell the pool what style of join you're performing. Not every pool uses every `JoinKind`, so it's important to keep track of what each pool type can handle.
 
-#### [WeightedPool](https://github.com/balancer-labs/balancer-v2-monorepo/blob/master/pkg/pool-weighted/contracts/BaseWeightedPool.sol#L39) JoinKinds
+#### WeightedPool JoinKinds
 
-```cpp
-enum JoinKind { 
-    INIT, 
-    EXACT_TOKENS_IN_FOR_BPT_OUT, 
-    TOKEN_IN_FOR_EXACT_BPT_OUT, 
-    ALL_TOKENS_IN_FOR_EXACT_BPT_OUT 
+```solidity
+enum JoinKind {
+    INIT,
+    EXACT_TOKENS_IN_FOR_BPT_OUT,
+    TOKEN_IN_FOR_EXACT_BPT_OUT,
+    ALL_TOKENS_IN_FOR_EXACT_BPT_OUT
 }
 ```
 
 Applies to:
 
-* WeightedPool
-* WeightedPool2Tokens
-* LiquidityBootstrappingPool
-* InvestmentPool
+- WeightedPool
+- WeightedPool2Tokens
+- LiquidityBootstrappingPool
+- InvestmentPool
 
-#### [StablePool](https://github.com/balancer-labs/balancer-v2-monorepo/blob/master/pkg/pool-stable/contracts/StablePool.sol#L78) JoinKinds
+#### StablePool JoinKinds
 
-```cpp
-enum JoinKind { 
-    INIT, 
-    EXACT_TOKENS_IN_FOR_BPT_OUT, 
+```solidity
+enum JoinKind {
+    INIT,
+    EXACT_TOKENS_IN_FOR_BPT_OUT,
     TOKEN_IN_FOR_EXACT_BPT_OUT
  }
 ```
 
 Applies to:
 
-* StablePool
-* MetaStablePool
+- StablePool
+- MetaStablePool
 
 #### JoinKinds Explained
 
-* **Initial Join** (`INIT`)
-  * User sends the precise initial tokens to seed a pool. This can be done only once.
-* **Exact Tokens Join** (`EXACT_TOKENS_IN_FOR_BPT_OUT`)
-  * User sends precise quantities of tokens, and receives an estimated but unknown (computed at run time) quantity of BPT.
-* **Single Token Join** (`TOKEN_IN_FOR_EXACT_BPT_OUT`)
-  * User sends an estimated but unknown (computed at run time) quantity of a single token, and receives a precise quantity of BPT.
-* **Proportional Join** (`ALL_TOKENS_IN_FOR_EXACT_BPT_OUT`)
-  * User sends estimated but unknown (computed at run time) quantities of tokens, and receives precise quantity of BPT.
+- **Initial Join** (`INIT`)
+  - User sends the precise initial tokens to seed a pool. This can be done only once.
+- **Exact Tokens Join** (`EXACT_TOKENS_IN_FOR_BPT_OUT`)
+  - User sends precise quantities of tokens, and receives an estimated but unknown (computed at run time) quantity of BPT.
+- **Single Token Join** (`TOKEN_IN_FOR_EXACT_BPT_OUT`)
+  - User sends an estimated but unknown (computed at run time) quantity of a single token, and receives a precise quantity of BPT.
+- **Proportional Join** (`ALL_TOKENS_IN_FOR_EXACT_BPT_OUT`)
+  - User sends estimated but unknown (computed at run time) quantities of tokens, and receives precise quantity of BPT.
 
-#### Encoding ([How do I encode?](../../helpers/encoding.md))
+#### Encoding
 
-* **Initial Join**
-  * userData ABI
-    * `['uint256', 'uint256[]']`
-  * userData
-    * `[INIT, amountsIn]`
-* **Exact Tokens Join**
-  * userData ABI
-    * `['uint256', 'uint256[]', 'uint256']`
-  * userData
-    * `[EXACT_TOKENS_IN_FOR_BPT_OUT, amountsIn, minimumBPT]`
-* **Single Token Join**
-  * userData ABI
-    * `['uint256', 'uint256', 'uint256']`
-  * userData
-    * `[TOKEN_IN_FOR_EXACT_BPT_OUT, bptAmountOut, enterTokenIndex]`
-* **Proportional Join**
-  * userData ABI
-    * `['uint256', 'uint256']`
-  * userData
-    * `[ALL_TOKENS_IN_FOR_EXACT_BPT_OUT, bptAmountOut]`
+- **Initial Join**
+  - userData ABI
+    - `['uint256', 'uint256[]']`
+  - userData
+    - `[INIT, amountsIn]`
+- **Exact Tokens Join**
+  - userData ABI
+    - `['uint256', 'uint256[]', 'uint256']`
+  - userData
+    - `[EXACT_TOKENS_IN_FOR_BPT_OUT, amountsIn, minimumBPT]`
+- **Single Token Join**
+  - userData ABI
+    - `['uint256', 'uint256', 'uint256']`
+  - userData
+    - `[TOKEN_IN_FOR_EXACT_BPT_OUT, bptAmountOut, enterTokenIndex]`
+- **Proportional Join**
+  - userData ABI
+    - `['uint256', 'uint256']`
+  - userData
+    - `[ALL_TOKENS_IN_FOR_EXACT_BPT_OUT, bptAmountOut]`

@@ -2,8 +2,6 @@
 
 Below are some sample queries you can use to gather information from the Balancer contracts.
 
-For an in-depth explanation of how to query the Subgraph, check out the [Balancer Subgraph](../guides/data/balancer-subgraph.md) article in Guides.
-
 You can build your own queries using a [GraphQL Explorer](https://graphiql-online.com/graphiql) and enter your endpoint to limit the data to exactly what you need.
 
 ## Pools with >$100k liquidity
