@@ -9,17 +9,21 @@ html.dark {
   --c-bg-lighter: #262c34;
 
   // text colors
-  --c-text: #adbac7;
+  --c-text: #eee;
   --c-text-light: #96a7b7;
   --c-text-lighter: #8b9eb0;
   --c-text-lightest: #8094a8;
+  --c-text-code: #f08d49;
+
+  // link colors
+  --c-link: #D6A46F;
 
   // border colors
   --c-border: #3e4c5a;
   --c-border-dark: #34404c;
 
   --c-docs-card-shadow: 0px 1px 2px rgba(255, 255, 255, 0.05), 0px 2px 8px rgba(255, 255, 255, 0.1),
-      0px -1px 2px rgba(255, 255, 255, 0.05), 0px -2px 8px rgba(255, 255, 255, 0.1);
+    0px -1px 2px rgba(255, 255, 255, 0.05), 0px -2px 8px rgba(255, 255, 255, 0.1);
 
   --c-sidebar-heading: #fff;
 
@@ -41,4 +45,3 @@ html.dark {
   --c-social-icon-fill: #0f172a;
   --c-social-icon-bg: #fff;
 }
-

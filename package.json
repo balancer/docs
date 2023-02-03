@@ -9,6 +9,7 @@
   "scripts": {
     "dev": "vuepress dev docs",
     "build": "vuepress build docs",
+    "build-theme": "(cd theme; npm run build; npm run copy)",
     "lint": "eslint . --ext .js,.ts,.vue --max-warnings 0"
   },
   "license": "MIT",

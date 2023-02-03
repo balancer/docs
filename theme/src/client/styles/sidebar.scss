@@ -50,26 +50,32 @@
   ul {
     list-style-type: none;
     line-height: 1.5rem;
-    padding-left: 0.5rem;
+    padding-left: 0rem;
   }
 
   .right-anchor-content {
-    color: #445b78;
+    color: var(--c-sidebar-heading);
     font-size: 0.7rem;
     font-weight: 600;
     text-transform: uppercase;
   }
 
   a {
-    text-decoration: none;
-    color: #445b78;
+    color: var(--c-link);
+    filter: brightness(0.8);
     font-size: 0.8rem;
     font-weight: 400;
     line-height: 1.5rem;
+    transition: all 0.1s cubic-bezier(1, 0.5, 0.8, 1);
+  }
+
+  a:hover,
+  a.active:hover {
+    filter: brightness(1.2);
   }
 
   a.active {
-    color: var(--c-brand);
+    filter: brightness(1.1);
   }
 
   .right-anchor-children {
