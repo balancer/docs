@@ -103,13 +103,15 @@ This results in the following emissions schedule:
 
 This chart outlines the allocation amounts. More details below.
 
-| BAL Recipient/Fund                                                                                                                                                      | BAL Amounts                |
-|:------------------------------------------------------------------------------------------------------------------------------------------------------------------------|:---------------------------|
-| Community                                                                                                                                                               | Originally: 65M, 6M remain | 
-| Liquidity Providers(veBAL) - [allocated by community](https://snapshot.org/#/balancer.eth/proposal/0xc93aa02ea7153a53d124189567ba19aa28663c499cdbfa60fe9bf35bf574d2a7 ) | 47.5M                      |
- | Founders, Options, Advisors, Investors                                                                                                                                  | 25M                        |
-| Ecosystem Fund                                                                                                                                                          | 5M                         |
-| Fundraising Fund                                                                                                                                                        | 5M                         |
+
+ | BAL Recipient/Fund                                                                                                                                                      | Original Allocation                    | State as of Feb 2023                         |
+ |-------------------------------------------------------------------------------------------------------------------------------------------------------------------------|----------------------------------------|----------------------------------------------|
+ | Community                                                                                                                                                               | 65M                                    | 6M remain                                    |
+ | Liquidity Providers(veBAL) - [allocated by community](https://snapshot.org/#/balancer.eth/proposal/0xc93aa02ea7153a53d124189567ba19aa28663c499cdbfa60fe9bf35bf574d2a7 ) | N/A                                    | 47.5M From community fund allocated to veBAL |
+ | Founders, Options, Advisors, Investors                                                                                                                                  | 25M                                    | No Information Available                     |
+ | Ecosystem Fund                                                                                                                                                          | 5M                                     | Merged into Community Fund                   |
+ | Fundraising Fund                                                                                                                                                        | 5M                                     | Merged into Community Fund                   |
+
 
 ::: chart BAL Token Distribution
 
