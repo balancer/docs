@@ -14,7 +14,7 @@ ranging from which pools to enable BAL incentivize for to how treasury funds are
 
 ## [BAL Token](./bal-token)
 The BAL token is the primary component of veBAL.  Due to the fact that veBAL allows for trading between BAL and ETH, 
-BAL liquidty scales with Governance.  Due to the fact that veBAL liquidty is locked, the market can be easily understand
+BAL liquidty scales with Governance.  Due to the fact that veBAL liquidty is locked, the market can easily understand
 how BAL liquidty depth will scale over time by analyizing the unlock schedule of veBAL. 
 
 ## [Governable Protocol Fees](./protocol-fees)
