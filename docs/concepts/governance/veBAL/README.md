@@ -1,3 +1,10 @@
+---
+title: Overview
+---
+---
+title: Overview
+---
+
 # veBAL Overview
 
 By locking the BAL WETH 80/20 BPT holders are given veBAL in exchange for governance and implied financial purposes and benefits. The longer the length of the time lock a user agrees to the higher their multiplier got governance. In short if I lock 1 BPT for 52 weeks I will receive the same amount of “vote escrowed” strength as someone who locks 2 BPT for 26 weeks. Quite simply voting strength is a function of the amount of pool tokens locked multiplied by the length of locking time.

@@ -1,3 +1,7 @@
+---
+title: FAQ
+---
+
 # veBAL FAQ
 
 ### Will voters vote on how much emissions go to each network or is that locked?
