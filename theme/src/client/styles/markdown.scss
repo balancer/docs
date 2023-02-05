@@ -10,3 +10,9 @@ table {
     background: none;
   }
 }
+
+.pills-box {
+  display: grid;
+  grid-gap: 1.35rem;
+  grid-template-columns: repeat(auto-fit, minmax(180px, 1fr));
+}

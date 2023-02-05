@@ -1,6 +1,6 @@
 import Badge from './Badge.vue';
 import { CodeGroup } from './CodeGroup.js';
 import CodeGroupItem from './CodeGroupItem.vue';
-import RunCode from './RunCode.vue';
+import PillLink from './PillLink.vue';
 
-export { Badge, CodeGroup, CodeGroupItem, RunCode };
+export { Badge, CodeGroup, CodeGroupItem, PillLink };

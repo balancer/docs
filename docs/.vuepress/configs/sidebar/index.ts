@@ -86,7 +86,7 @@ const side = (baseDir, relativeDir = '', currentLevel = 1) => {
           insertPosition = Number(file);
         }
 
-        fileLinks.push({
+        fileLinks.splice(insertPosition, 0, {
           text: getName(subDir),
           order: insertPosition,
           collapsible: true,
@@ -96,7 +96,11 @@ const side = (baseDir, relativeDir = '', currentLevel = 1) => {
     });
   }
 
-  return sortBy(fileLinks, ['order']);
+  if (currentLevel === 2) {
+    return fileLinks;
+  } else {
+    return sortBy(fileLinks, ['order']);
+  }
 };
 
 // export const sidebar = getConfig('./', {});
