@@ -18,17 +18,16 @@ The boost depends on what fraction of the gauge staked liquidity you hold and wh
 
 ### Is the veBAL vote on-chain, and does it require gas fees?
 
-Yes, gauge votes are on-chain and cost a fee.
+Yes, gauge votes are on-chain and cost a fee. They can be cast in the [Balancer DAPP](https://app.balancer.fi/#/ethereum/vebal)
 
-If the same pools will be selected each week, no additional vote, transaction, or gas is needed. Users only have to vote once, unless they want to change their allocation.
+Other governance is done by [snapshot](https://snapshot.org/#/balancer.eth) and costs no gas.
 
-### In the transitioning to veBAL, will I personally need to do any migration from the current pool I have invested?
+If the same pools will be selected each week, no additional vote, transaction, or gas is needed. Users only have to vote
+once, unless they want to change their allocation.
 
-On mainnet, yes if your LP pool is eligible for gauge voting, you have to stake your LP for incentives.
+### Can I delegate my votes?
 
-On Polygon and Arbitrum, not in the initial launch period, but you will need to stake them in the near future.
-
-The only lock-up necessary is to lock the BAL 80 - ETH 20 LP to receive veBAL.
+veBAL voting can not be delegated, however snapshot voting covering general DAO operations and management of gauges can be delegated [here](https://snapshot.org/#/delegate/balancer.eth). A list of delegates and more information about them and how/why they vote can be found on the [In the Delegate Citadel](https://forum.balancer.fi/c/delegate-citadel/14) on the Balancer Forum.
 
 ### Do veBAL holders receive a portion of the trading fees? How are the protocol fees paid?
 
@@ -66,8 +65,18 @@ Incentives on mainnet are now accrued each block. Protocol fees are distributed 
 
 ### Does veBAL support Gnosis Safe?
 
-It's normal for vote escrowed (ve) systems to not allow arbitrary contracts to lock as otherwise it's easy to tokenize the ve tokens which defeats the point. Users can lock up veBAL from an EOA and delegate it to your gnosis safe to earn boosts. Guide link.
+It's normal for vote escrowed (ve) systems to not allow arbitrary contracts to lock as otherwise it's easy to tokenize the ve tokens which defeats can the point if the tokenomics of said derivitive does not require appropriate locking. Users can lock up veBAL from an EOA and delegate it to your gnosis safe to earn boosts. Entities interested in making a large investment in veBAL may appeal to governance to have a multisig whitelisted for veBAL participation.
 
 ### Is there a repository for the contract addresses of all the new staking contracts and veBAL contracts?
 
-Link to the veBAL contracts:
+| Contract                                                                                                        | Purpose                                              |
+| --------------------------------------------------------------------------------------------------------------- | ---------------------------------------------------- |
+| [veBAL](https://etherscan.io/tx/0xaa29cd251cdb024c415b0e13f67a0ca74fe5abc3de9a9fedd1ae26fd39be4025)             | Locks BPTs and reports veBAL balances                |
+| [Gauge Controller](https://etherscan.io/address/0xC128468b7Ce63eA702C1f104D55A2566b13D3ABD)                     | Manages Gauges and emissions                         |
+| [Gauge Adder](https://etherscan.io/address/0x2fFB7B215Ae7F088eC2530C7aa8E1B24E398f26a)                          | Adds new gauges approved by governance to the system |
+| [Mainnet Uncapped Gauge Factory](https://etherscan.io/address/0x4e7bbd911cf1efa442bc1b2e9ea01ffe785412ec)       | Create gauges with no cap on Mainnet                 |
+| [Mainnet Capped Gauge Factory](https://etherscan.io/address/0xf1665e19bc105be4edd3739f88315cc699cc5b65)         | Create gauges with possible cap on Mainnet           |
+| [Polygon Capped Gauge Factory](https://etherscan.io/address/0xa98bce70c92ad2ef3288dbcd659bc0d6b62f8f13)         | Create gauges with a possible CAP on Polygon         |
+| [Polygon Child Chain Gauge Factory](https://polygonscan.com/address/0x3b8ca519122cdd8efb272b0d3085453404b25bd0) | Create child gauge to hold LP tokens on Polygon      |
+| [Arbitrum Capped Gauge Factory](https://etherscan.io/address/0x1c99324edc771c82a0dccb780cc7dda0045e50e7)        | Create gauges with a possible CAP on Arbitrum        |
+| [Arbitrum Child Chain Gauge Factory](https://arbiscan.io/address/0xb08e16cfc07c684daa2f93c70323badb2a6cbfd)     | Create child gauge to hold LP tokens on Arbitrum     |

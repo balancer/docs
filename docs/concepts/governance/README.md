@@ -5,9 +5,15 @@ title: Overview
 
 # Governance
 
+Various components of Balancer Governance are described in breif below. Click the link for each section for more details.
+
+## [veBAL](./veBAL)
+
+[veBAL](https://app.balancer.fi/#/ethereum/vebal) is a time-locked, non transferable derivative of the [80/20 BAL/ETH BPT on Mainnet](https://app.balancer.fi/#/ethereum/pool/0x5c6ee304399dbdb9c8ef030ab642b10820db8f56000200000000000000000014). veBAL holders, also called Balancer Governors, vote on proposals relevant to the protocol. These proposals are wide, ranging from which pools to enable BAL incentivize for to how treasury funds are allocated and managed.
+
 ## [BAL Token](./bal-token)
 
-Voting power for the Balancer Protocol is derived from the Balancer Governance Token \(BAL\). BAL holders, also called Balancer Governors, vote on proposals relevant to the protocol. These proposals are wide ranging, from Governable Protocol Fees to how BAL Tokens themselves are distributed into the future.
+The BAL token is the primary component of veBAL. Due to the fact that veBAL allows for trading between BAL and ETH, BAL liquidty scales with Governance. Due to the fact that veBAL liquidty is locked, the market can easily understandhow BAL liquidty depth will scale over time by analyizing the unlock schedule of veBAL.
 
 ## [Governable Protocol Fees](./protocol-fees)
 

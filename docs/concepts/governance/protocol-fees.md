@@ -33,3 +33,4 @@ We invite you to join our Discord and Forums to take part in the discussion over
 * Buy a decentralized insurance policy
 * Lend them on an external protocol
 * Pay them directly to Balancer Governors
+* Use them to incentivize deposits through vote markets. See [BIP-19](https://forum.balancer.fi/t/bip-19-incentivize-core-pools-l2-usage/3329)

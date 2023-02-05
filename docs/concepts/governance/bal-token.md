@@ -21,7 +21,19 @@ Balancer Governance Token \(BAL\) is the core token behind the Balancer protocol
 
 The maximum total supply of BAL tokens enforced at the smart contract is 100M; however, this does NOT necessarily mean that this cap will ever be reached. BAL token holders have the authority to decide if the distribution should end before hitting the cap.
 
-At the start of BAL token incentives 145,000 BAL is minted every week and this will decrease over time, halving every four years. The chart below outlines the supply schedule.
+At the start of BAL token incentives 145,000 BAL is minted every week. In Q1 2022, [veBAL was introduced](https://forum.balancer.fi/t/introducing-vebal-tokenomics/2512) to replace fixed weekly emissions. veBAL includes an annueal reduction in emissions rate such that the program should run until around 2050, leaving a total supply of around 94/100 million tokens upon completion and assuming no other governance is enacted to mint part of the remaining unallocated supply.
+
+TOTAL Tokens to be emitted by veBAL: 47,520,700
+
+The current emissions rate can be understood by looking at the [Balancer Token Admin Contract](https://etherscan.io/address/0xf302f9f50958c5593770fdf4d4812309ff77414f#readContract)
+
+You can see the emission rate (getInflationRate = 0.239 BAL/second = 145k BAL/week)
+
+And the RATE_REDUCTION_COEFFICIENT 1.189 = 2^(1/4)
+
+This is applied to the inflation rate every year so as to achieve the emission scheduled approved by governance
+
+This results in the following emissions schedule:
 
 ::: chart BAL Total Supply
 
@@ -88,12 +100,13 @@ At the start of BAL token incentives 145,000 BAL is minted every week and this w
 
 This chart outlines the allocation amounts. More details below.
 
-| BAL Recipient/Fund                     | BAL Amounts   |
-| :------------------------------------- | :------------ |
-| Liquidity Providers                    | \(Up to\) 65M |
-| Founders, Options, Advisors, Investors | 25M           |
-| Ecosystem Fund                         | 5M            |
-| Fundraising Fund                       | 5M            |
+| BAL Recipient/Fund                                                                                                                                                     | Original Allocation | State as of Feb 2023                         |
+| ---------------------------------------------------------------------------------------------------------------------------------------------------------------------- | ------------------- | -------------------------------------------- |
+| Community                                                                                                                                                              | 65M                 | 6M remain                                    |
+| Liquidity Providers(veBAL) - [allocated by community](https://snapshot.org/#/balancer.eth/proposal/0xc93aa02ea7153a53d124189567ba19aa28663c499cdbfa60fe9bf35bf574d2a7) | N/A                 | 47.5M From community fund allocated to veBAL |
+| Founders, Options, Advisors, Investors                                                                                                                                 | 25M                 | No Information Available                     |
+| Ecosystem Fund                                                                                                                                                         | 5M                  | Merged into Community Fund                   |
+| Fundraising Fund                                                                                                                                                       | 5M                  | Merged into Community Fund                   |
 
 ::: chart BAL Token Distribution
 
@@ -135,7 +148,7 @@ This chart outlines the allocation amounts. More details below.
 
 #### Liquidity Providers
 
-Every week 145,000 BAL tokens, or approximately 7.5M per year, are distributed to Liquidity Providers. At this rate, it would take a total of 8.666 years to distribute the remaining 65M BAL before reaching the 100M cap.
+Emissions to liquidty providers are decided by a combination of the emissions schedule described above, and [veBAL](./veBAL) voting to determine the rewards that flow to each authorized pool.
 
 #### Founders, Options, Advisors, Investors
 
@@ -145,12 +158,17 @@ Every week 145,000 BAL tokens, or approximately 7.5M per year, are distributed t
 
 5M were allocated for the Ecosystem Fund. This fund will be deployed to attract and incentivize strategic partners who will help the Balancer ecosystem grow and thrive. BAL holders will ultimately decide how this fund is used over the coming years.
 
-<span class="address-link">[0xb618F903ad1d00d6F7b92f5b0954DcdC056fC533](https://etherscan.io/address/0xb618F903ad1d00d6F7b92f5b0954DcdC056fC533)</span>
+Note that as part of the veBAL conversion, the entire ecosystem fund was transferred into the [DAO multisig](https://etherscan.io/address/0x10A19e7eE7d7F8a52822f6817de8ea18204F2e4f)
+
+There are currently over 5 million BAL in community control. Additionally, at the time of ths writing some additional BAL
+is staked on Aave on Polygon. All community BAL is held in the DAO Multisig of the chain which they reside.
+
+Original Ecosystem Fund: <span class="address-link">[0xb618F903ad1d00d6F7b92f5b0954DcdC056fC533](https://etherscan.io/address/0xb618F903ad1d00d6F7b92f5b0954DcdC056fC533)</span>
 
 #### Fundraising Fund
 
-5M were allocated for the Fundraising Fund. Balancer Labs raised a pre-seed and seed round. This fund will be used for future fundraising rounds to support Balancer Labs' operations and growth. BAL tokens will never be sold to retail investors.
+5M were allocated for the Fundraising Fund. Balancer Labs raised a pre-seed and seed round. This fund will be used for future fundraising rounds to support Balancer Labs' operations and growth. BAL tokens will never be sold to retail investors. As part of the transition to the [Operating Framework Enacted by Governance in Q2 2022](https://forum.balancer.fi/t/bip-1-operating-framework-for-balancer-dao/3237), 1.9M BAL was [transferred](https://etherscan.io/tx/0xaa29cd251cdb024c415b0e13f67a0ca74fe5abc3de9a9fedd1ae26fd39be4025) from the Fundraising Fund back to the DAO Multisig to supplement the community controlled supply.
 
 For full transparency, the [seed series](https://medium.com/balancer-protocol/balancer-labs-raises-3m-to-supercharge-programmable-liquidity-8f1a42323c78) price of one BAL token was $0.60.
 
-<span class="address-link">[0xB129F73f1AFd3A49C701241F374dB17AE63B20Eb](https://etherscan.io/address/0xB129F73f1AFd3A49C701241F374dB17AE63B20Eb)</span>
+Fundrasiing Fund <span class="address-link">[0xB129F73f1AFd3A49C701241F374dB17AE63B20Eb](https://etherscan.io/address/0xB129F73f1AFd3A49C701241F374dB17AE63B20Eb)</span>
