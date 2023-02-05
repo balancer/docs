@@ -1,14 +1,14 @@
 # Get the Spot Price of a Pool
 
-
 ## Overview
+
 This guide will walk through various examples of fetching pricing from a pool using the SDK or direct calls.
 
 ::: info Definitions
 
 Spot price is used as a broader term and it's important to distinguish between the types of pricing data a pool can provide.
 
-**Mid Price** - the direct price of one asset in terms of the other asset assuming zero fees. The price of the other is the direct inverse $1 / n$ 
+**Mid Price** - the direct price of one asset in terms of the other asset assuming zero fees. The price of the other is the direct inverse $1 / n$
 
 **Spot Price** - the price of one asset in terms of the other assuming an infinitesimally small amount is traded. In other words, the mid price plus or minus the swap fee depending on which direction the trade occurs
 
@@ -33,6 +33,7 @@ yarn install @balancer-labs/sdk
 ```bash
 npm install @balancer-labs/sdk
 ```
+
 :::
 
 And then initializing the SDK:
@@ -58,9 +59,8 @@ There are few different ways to go about getting the spot price. For example, if
 
 @[code{11-22} ts](code/sdk-spot-price.ts)
 
-<RunCode />
-
 ### All Pools Spot Price Using the SDK
+
 ### Boosted Pool Spot Price
 
 TODO

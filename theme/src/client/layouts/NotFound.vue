@@ -1,9 +1,12 @@
 <script setup lang="ts">
+import { captureException } from '@sentry/browser';
 import { useRouteLocale } from '@vuepress/client';
 import { useThemeLocaleData } from '../composables/index.js';
 
 const routeLocale = useRouteLocale();
 const themeLocale = useThemeLocaleData();
+
+captureException(new Error('404'));
 
 const messages = themeLocale.value.notFound ?? ['Not Found'];
 const getMsg = (): string =>
