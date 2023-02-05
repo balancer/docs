@@ -31,7 +31,7 @@ const features = computed(() => {
 .docs-cards {
   grid-gap: 1.35rem;
   display: grid;
-  grid-template-columns: repeat(auto-fit, minmax(240px, 1fr));
+  grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
   padding-bottom: 2em;
 }
 </style>

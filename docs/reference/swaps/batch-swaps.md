@@ -29,18 +29,18 @@ struct BatchSwapStep {
 }
 ```
 
-* `poolId`: The id of the pool to trade with.
-* `assetInIndex`: The index of the token within `assets` which to use as an input of this step.
-* `assetOutIndex`: The index of the token within `assets` which is the output of this step.
-* `amount`: The meaning of `amount` depends on the value of `kind` which passed to the `batchSwap` function.
-  * `GIVEN_IN`: The amount of tokens we are sending to the pool in this step.
-  * `GIVEN_OUT`: The amount of tokens we want to receive from the pool in this step.
-* `userData`: Any additional data which the pool requires to perform the swap. This allows pools to have more flexible swapping logic in future - for all current Balancer pools this can be left empty.
+- `poolId`: The id of the pool to trade with.
+- `assetInIndex`: The index of the token within `assets` which to use as an input of this step.
+- `assetOutIndex`: The index of the token within `assets` which is the output of this step.
+- `amount`: The meaning of `amount` depends on the value of `kind` which passed to the `batchSwap` function.
+  - `GIVEN_IN`: The amount of tokens we are sending to the pool in this step.
+  - `GIVEN_OUT`: The amount of tokens we want to receive from the pool in this step.
+- `userData`: Any additional data which the pool requires to perform the swap. This allows pools to have more flexible swapping logic in future - for all current Balancer pools this can be left empty.
 
-::: info
-When performing multi-hop trades, it's not always possible to know the value of `amount`exactly. For example, consider a case where we want to trade USDC for ETH but the trade is being routed through a DAI-USDC pool and then a ETH-DAI pool. It's not possible to know exactly how much DAI we'll receive from this first step so we can't set `amount` to that value at the time we send the transaction.
+::: tip Amounts for multi-hop trades
+When performing multi-hop trades, it's not always possible to know the value of `amount` for a given step.
 
-For this reason setting `amount` to 0 will be interpreted to use the full output of the previous trade. We can then trade USDC for DAI and then all of the DAI we receive will be traded for ETH.
+By setting `amount` to `0`, the vault will interpret this to use the full output of the previous hop.
 :::
 
 ### FundManagement struct
@@ -56,12 +56,12 @@ struct FundManagement {
 }
 ```
 
-* `sender`: The address from which tokens will be taken to perform the trade
-* `fromInternalBalance`: Whether the trade should use tokens owned by the `sender` which are already stored in the Vault.
-* `recipient`: The address to which tokens will be sent to after the trade.
-* `toInternalBalance`: Whether the tokens should be sent to the `recipient` or stored within their internal balance within the Vault.
+- `sender`: The address from which tokens will be taken to perform the trade
+- `fromInternalBalance`: Whether the trade should use tokens owned by the `sender` which are already stored in the Vault.
+- `recipient`: The address to which tokens will be sent to after the trade.
+- `toInternalBalance`: Whether the tokens should be sent to the `recipient` or stored within their internal balance within the Vault.
 
-For more information on internal balances see [Core Concepts](broken-reference/).
+For more information on internal balances see [Core Concepts](/concepts/vault/#internal-balances).
 
 ### BatchSwap function
 
@@ -74,11 +74,11 @@ batchSwap(SwapKind kind,
           uint256 deadline) returns (int256[] assetDeltas)
 ```
 
-* `kind`: The type of batch swap we want to perform - either "Out Given In" or "In Given Out." We either know the amount of tokens we're sending to the pool and want to know how many we'll receive, or vice versa.
-* `assets`: An array of tokens which are used in the batch swap. This is referenced from within `swaps`
-* `limits`: An array of maximum amounts of each `asset` to be transferred. For tokens going **in** to the Vault, the `limit` shall be a positive number. For tokens going **out** of the Vault, the `limit` shall be a negative number. If the `amount` to be transferred for a given asset is greater than its `limit`, the trade will fail with error `BAL#507: SWAP_LIMIT`.
-  * **How do you determine what your `limits` should be?** If you want to compute `limits`, it is recommended to use `queryBatchSwap` and then [add a slippage tolerance](batch-swaps.md#adding-a-slippage-tolerance).
-* `deadline`: The UNIX timestamp at which our trade must be completed by - if the transaction is confirmed after this time, the transaction will fail.
+- `kind`: The type of batch swap we want to perform - either "Out Given In" or "In Given Out." We either know the amount of tokens we're sending to the pool and want to know how many we'll receive, or vice versa.
+- `assets`: An array of tokens which are used in the batch swap. This is referenced from within `swaps`
+- `limits`: An array of maximum amounts of each `asset` to be transferred. For tokens going **in** to the Vault, the `limit` shall be a positive number. For tokens going **out** of the Vault, the `limit` shall be a negative number. If the `amount` to be transferred for a given asset is greater than its `limit`, the trade will fail with error `BAL#507: SWAP_LIMIT`.
+  - **How do you determine what your `limits` should be?** If you want to compute `limits`, it is recommended to use `queryBatchSwap` and then [add a slippage tolerance](batch-swaps.md#adding-a-slippage-tolerance).
+- `deadline`: The UNIX timestamp at which our trade must be completed by - if the transaction is confirmed after this time, the transaction will fail.
 
 ## `queryBatchSwap`
 
@@ -96,7 +96,7 @@ Calling `queryBatchSwap` is very similar to calling [`batchSwap`](batch-swaps.md
 queryBatchSwap(SwapKind kind,
           BatchSwapStep[] swaps,
           IAsset[] assets,
-          FundManagement funds) 
+          FundManagement funds)
           returns (int256[] assetDeltas)
 ```
 

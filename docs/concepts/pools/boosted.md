@@ -6,9 +6,9 @@ order: 5
 
 ## Overview
 
-Boosted Pools bring the best of both worlds to Liquidity Providers and Swappers. Swappers get access to deep stablecoin liquidity with near-parity exchange rates while Liquidity Providers get their liquidity positions sent to external protocols, such as [Aave](https://aave.com/).
+Boosted Pools are actually a subclass of [Composable Stable Pools](./composable-stable.md) but deserve their own page due to their powerful feature set. Boosted pools bring the best of both worlds to Liquidity Providers and Traders. Traders get access to deep stablecoin liquidity with near-parity exchange rates while Liquidity Providers get their liquidity positions sent to external protocols, such as [Aave](https://aave.com/).
 
-These versions of Stable Pools don't directly hold the stablecoins themselves, but rather hold the pool tokens of nested Linear Pools, which, for the Aave example, maintain proper balances of _TOKEN_ and _aTOKEN_.
+These versions of Stable Pools don't directly hold the stablecoins themselves, but rather hold the pool tokens (BPTs) of nested Linear Pools, which, for the Aave example, maintain proper balances of _TOKEN_ and _aTOKEN_.
 
 ## Advantages
 
@@ -24,17 +24,17 @@ Nesting pool tokens creates a powerful avenue to make swaps between any stableco
 
 ### Linear Pools
 
-Linear Pools are the base component of Boosted Pools. They use Linear Math to facilitate trades between two tokens at a known exchange rate. They also use a positive/negative fee mechanism to incentivize arbitrageurs to maintain a desired ratio between the two tokens. For example, the [Balancer Aave Boosted Pool (DAI)](https://etherscan.io/token/0x804cdb9116a10bb78768d3252355a1b18067bf8f) balances DAI with aDAI, facilitating DAI trades while maintaining a large aDAI balance for an extra boost to Liquidity Providers.
+[Linear Pools](./linear.md) are the base component of Boosted Pools. They use Linear Math to facilitate trades between two tokens at a known exchange rate. They also use a positive/negative fee mechanism to incentivize arbitrageurs to maintain a desired ratio between the two tokens. For example, the [Balancer Aave Boosted Pool (DAI)](https://etherscan.io/token/0xae37D54Ae477268B9997d4161B96b8200755935c) balances DAI with aDAI, facilitating DAI trades while maintaining a large aDAI balance for an extra boost to Liquidity Providers.
 
-### Phantom Pool Tokens ("Phantom BPT")
+### Preminted Pool Tokens ("Preminted BPT")
 
-One of the key features that makes trades through Boosted Pools so simple is the use of **Phantom BPT**. Normally when a Liquidity Provider joins/exits a pool, the pool mints/burns pool tokens as needed. This is gas intensive and requires users to execute a `join` or `exit`.
+One of the key features that makes trades through Boosted Pools so simple is the use of **Preminted BPT**. Normally when a Liquidity Provider joins/exits a pool, the pool mints/burns pool tokens as needed. This is gas intensive and requires users to execute a `join` or `exit`.
 
-In pools that use Phantom BPT, however, **all pool tokens are minted at the time of pool creation** and are **held by the pool itself**. With Phantom BPT, Liquidity Providers use a **`swap`** (or more likely a **`batchSwap`**) to trade to or from a pool token to join or exit, respectively.
+In pools that use Preminted BPT, however, **all pool tokens are minted at the time of pool creation** and are **held by the pool itself**. With Preminted BPT, Liquidity Providers use a **`swap`** (or more likely a **`batchSwap`**) to trade to or from a pool token to join or exit, respectively.
 
 ## Use Cases
 
-The Balancer Boosted Aave USD Pool (bb-a-USD) demonstrates how nesting Linear Pools with Phantom BPT inside a Stable Pool with Phantom BPT can consolidate stablecoin liquidity while improving the Liquidity Provider experience. The architecture of the pool is outlined below.
+The Balancer Boosted Aave USD Pool (bb-a-USD) demonstrates how nesting Linear Pools with Preminted BPT inside a Stable Pool with Preminted BPT can consolidate stablecoin liquidity while improving the Liquidity Provider experience. The architecture of the pool is outlined below.
 
 #### Start with three Aave Linear Pools
 
@@ -42,7 +42,7 @@ Our building blocks are Aave Linear Pools for DAI, USDC, and USDT:
 
 ![](/images/linearPools.png)
 
-As explained above, these pools have Phantom BPT (the `bb-a-*` tokens) and maintain target balances for base tokens and their aToken counterparts.
+As explained above, these pools have Preminted BPT (the `bb-a-*` tokens) and maintain target balances for base tokens and their aToken counterparts.
 
 #### Put the Linear Pool Tokens into a Stable Pool
 
@@ -50,7 +50,7 @@ By adding the Linear Pool Tokens into a Stable Pool, we are effectively putting 
 
 ### How do I swap between stablecoins?
 
-Since Linear Pools have Phantom BPT, we can craft a `batchSwap` call that goes from one stablecoin to another.
+Since Linear Pools have Preminted BPT, we can craft a `batchSwap` call that goes from one stablecoin to another.
 
 For example, consider the following swap steps:
 

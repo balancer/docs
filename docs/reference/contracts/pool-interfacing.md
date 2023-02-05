@@ -10,13 +10,13 @@ If you want to interface with a pool, you'll first need to know its `poolId`. Th
 
 You can get a `poolId` from:
 
-* A pool's URL: [https://app.balancer.fi/#/pool/0x5c6ee304399dbdb9c8ef030ab642b10820db8f56000200000000000000000014](https://app.balancer.fi/#/pool/0x5c6ee304399dbdb9c8ef030ab642b10820db8f56000200000000000000000014)
-* The [Subgraph](https://thegraph.com/hosted-service/subgraph/balancer-labs/balancer-v2)
-* Calling `getPoolId()` on the contract itself if you already have it
+- A pool's URL: [https://app.balancer.fi/#/pool/0x5c6ee304399dbdb9c8ef030ab642b10820db8f56000200000000000000000014](https://app.balancer.fi/#/pool/0x5c6ee304399dbdb9c8ef030ab642b10820db8f56000200000000000000000014)
+- The [Subgraph](https://thegraph.com/hosted-service/subgraph/balancer-labs/balancer-v2)
+- Calling `getPoolId()` on the contract itself if you already have it
 
 ## Getting Common Pool Data
 
-::: warning
+::: info
 Below are the data fields common to all pools; however, each pool will have data specific to its pool type.
 :::
 
@@ -33,7 +33,7 @@ returns something resembling:
 ```
 tokens:  [0xba100000625a3754423978a60c9317c58a424e3D,
                 0xC02aaA39b223FE8D0A0e5C4F27eAD9083C756Cc2]
-                
+
 balances:  [5720903090084350251216632,
                 7939247003721636150710]
 ```

@@ -11,4 +11,4 @@ underlyingBpt = veBAL.token();
 Don't use `balanceOf` on the veBAL contract if you're trying to calculate value associated with underlying tokens. `balanceOf` returns a time dependent value only useful for querying a user's current voting power.
 :::
 
-Now that you have the `underlyingBpt` address and the `amount` of those BPT that you have locked, you can now analyze, [value](broken-reference), or [determine underlying tokens](underlying.md).
+Now that you have the `underlyingBpt` address and the `amount` of those BPT that you have locked, you can now analyze, [value](valuing.md), or [determine underlying tokens](underlying.md).

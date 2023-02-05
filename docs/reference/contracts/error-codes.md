@@ -217,3 +217,10 @@ All error codes for the Balancer V2 core contracts are defined in the [`Balancer
 | ---- | ----------------- | ------- |
 | 998  | UNIMPLEMENTED     |         |
 | 999  | SHOULD_NOT_HAPPEN |         |
+
+<style scoped>
+table {
+    display: table;
+    width: 100%;
+}
+</style>

@@ -3,8 +3,6 @@ order: 4
 references:
   - details: Stable Math
     link: /reference/math/stable-math
-  - details: Composable Pool Interfacing
-    link: /reference/pool-interfacing/stable-pool
 ---
 
 # Composable Stable Pools
