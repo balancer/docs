@@ -1,10 +1,11 @@
 import { defineClientConfig } from '@vuepress/client';
 import { h } from 'vue';
+import { captureException, init, setTag } from '@sentry/browser';
 import {
   Badge,
   CodeGroup,
   CodeGroupItem,
-  RunCode,
+  PillLink,
 } from './components/global/index.js';
 import {
   setupDarkMode,
@@ -20,7 +21,7 @@ export default defineClientConfig({
   enhance({ app, router }) {
     app.component('Badge', Badge);
     app.component('CodeGroup', CodeGroup);
-    app.component('RunCode', RunCode);
+    app.component('PillLink', PillLink);
     app.component('CodeGroupItem', CodeGroupItem);
 
     // compat with @vuepress/plugin-external-link-icon
@@ -40,6 +41,10 @@ export default defineClientConfig({
         return h(SearchComponent);
       }
       return null;
+    });
+
+    init({
+      dsn: 'https://d3b01ec4cb9942bc8f1c8549646d2a3b@o574636.ingest.sentry.io/4504623555870720',
     });
 
     // handle scrollBehavior with transition
