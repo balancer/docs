@@ -7,10 +7,16 @@ title: Overview
 
 Balancer is infinitely extendible to allow for any conceivable pool type with custom curves, logic, parameters, and more.
 
+## Pool Types
+
 <div class="pills-box">
 <PillLink title="Weighted" link="/concepts/pools/weighted" />
 <PillLink title="Composable Stable" link="/concepts/pools/composable-stable" />
+<PillLink title="Linear" link="/concepts/pools/linear" />
 <PillLink title="Boosted" link="/concepts/pools/boosted" />
+<PillLink title="Liquidity Bootstrapping" link="/concepts/pools/liquidity-bootstrapping" />
+<PillLink title="Managed" link="/concepts/pools/managed" />
+<PillLink title="Protocol" link="/concepts/pools/protocol" />
 </div>
 
 ## Pool Composability

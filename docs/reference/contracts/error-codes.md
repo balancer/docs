@@ -1,9 +1,10 @@
 ---
+order: 10
 ---
 
 # Error Codes
 
-All error codes for the Balancer V2 core contracts are defined in the [`BalancerErrors.sol`](https://github.com/balancer-labs/balancer-v2-monorepo/blob/master/pkg/interfaces/contracts/solidity-utils/helpers/BalancerErrors.sol) contract.
+All error codes for the Balancer V2 core contracts are defined in the [`BalancerErrors.sol`](https://github.com/balancer-labs/balancer-v2-monorepo/blob/master/pkg/interfaces/contracts/solidity-utils/helpers/BalancerErrors.sol) contract. Comments and context for the specific errors can be found in the tables below.
 
 ## Math
 
@@ -29,6 +30,7 @@ All error codes for the Balancer V2 core contracts are defined in the [`Balancer
 | 102  | UNSORTED_TOKENS       | Tokens must be sorted in address order on pool registration              |
 | 103  | INPUT_LENGTH_MISMATCH | Used to ensure array inputs intended to be parallel have the same length |
 | 104  | ZERO_TOKEN            | Address to be interpreted as a token cannot be 0                         |
+| 105  | INSUFFICIENT_DATA     | Used to ensure minimum bytes length                                      |
 
 ## Shared pools
 
@@ -45,6 +47,7 @@ All error codes for the Balancer V2 core contracts are defined in the [`Balancer
 | 208  | BPT_OUT_MIN_AMOUNT      | Slippage/front-running protection check failed on a pool join                                                                                                       |
 | 209  | EXPIRED_PERMIT          |                                                                                                                                                                     |
 | 210  | NOT_TWO_TOKENS          | Pools with oracles are limited to two tokens (e.g., WeightedPool2Tokens and MetastablePools). A pool with the TWO_TOKEN specialization must have exactly two tokens |
+| 211  | DISABLED                | Pool factories can be disabled to prevent new pools being created                                                                                                   |
 
 ## Pools
 
@@ -89,7 +92,26 @@ All error codes for the Balancer V2 core contracts are defined in the [`Balancer
 | 336  | UNHANDLED_EXIT_KIND                         | Some exits are pool type-specific                                                                                  |
 | 337  | UNAUTHORIZED_EXIT                           | Management fees can only be collected by the pool owner                                                            |
 | 338  | MAX_MANAGEMENT_SWAP_FEE_PERCENTAGE          |                                                                                                                    |
-| 339  | UNHANDLED_BY_INVESTMENT_POOL                | Some joins/exits are pool type-specific                                                                            |
+| 339  | UNHANDLED_BY_MANAGED_POOL                   | Some joins/exits are pool type-specific                                                                            |
+| 340  | UNHANDLED_BY_PHANTOM_POOL                   | Some joins/exits are pool type-specific                                                                            |
+| 341  | TOKEN_DOES_NOT_HAVE_RATE_PROVIDER           |                                                                                                                    |
+| 342  | INVALID_INITIALIZATION                      |                                                                                                                    |
+| 343  | OUT_OF_NEW_TARGET_RANGE                     |                                                                                                                    |
+| 344  | FEATURE_DISABLED                            |                                                                                                                    |
+| 345  | UNINITIALIZED_POOL_CONTROLLER               |                                                                                                                    |
+| 346  | SET_SWAP_FEE_DURING_FEE_CHANGE              |                                                                                                                    |
+| 347  | SET_SWAP_FEE_PENDING_FEE_CHANGE             |                                                                                                                    |
+| 348  | CHANGE_TOKENS_DURING_WEIGHT_CHANGE          |                                                                                                                    |
+| 349  | CHANGE_TOKENS_PENDING_WEIGHT_CHANGE         |                                                                                                                    |
+| 350  | MAX_WEIGHT                                  |                                                                                                                    |
+| 351  | UNAUTHORIZED_JOIN                           |                                                                                                                    |
+| 352  | MAX_MANAGEMENT_AUM_FEE_PERCENTAGE           |                                                                                                                    |
+| 353  | FRACTIONAL_TARGET                           |                                                                                                                    |
+| 354  | ADD_OR_REMOVE_BPT                           |                                                                                                                    |
+| 355  | INVALID_CIRCUIT_BREAKER_BOUNDS              |                                                                                                                    |
+| 356  | CIRCUIT_BREAKER_TRIPPED                     |                                                                                                                    |
+| 357  | MALICIOUS_QUERY_REVERT                      |                                                                                                                    |
+| 358  | JOINS_EXITS_DISABLED                        |                                                                                                                    |
 
 ## Lib
 
@@ -126,6 +148,20 @@ All error codes for the Balancer V2 core contracts are defined in the [`Balancer
 | 428  | CODE_DEPLOYMENT_FAILED               |                                                                        |
 | 429  | CALL_TO_NON_CONTRACT                 |                                                                        |
 | 430  | LOW_LEVEL_CALL_FAILED                |                                                                        |
+| 431  | NOT_PAUSED                           |                                                                        |
+| 432  | ADDRESS_ALREADY_ALLOWLISTED          |                                                                        |
+| 433  | ADDRESS_NOT_ALLOWLISTED              |                                                                        |
+| 434  | ERC20_BURN_EXCEEDS_BALANCE           |                                                                        |
+| 435  | INVALID_OPERATION                    |                                                                        |
+| 436  | CODEC_OVERFLOW                       |                                                                        |
+| 437  | IN_RECOVERY_MODE                     |                                                                        |
+| 438  | NOT_IN_RECOVERY_MODE                 |                                                                        |
+| 439  | INDUCED_FAILURE                      |                                                                        |
+| 440  | EXPIRED_SIGNATURE                    |                                                                        |
+| 441  | MALFORMED_SIGNATURE                  |                                                                        |
+| 442  | SAFE_CAST_VALUE_CANT_FIT_UINT64      |                                                                        |
+| 443  | UNHANDLED_FEE_TYPE                   |                                                                        |
+| 444  | BURN_FROM_ZERO                       |                                                                        |
 
 ## Vault
 
@@ -168,3 +204,16 @@ All error codes for the Balancer V2 core contracts are defined in the [`Balancer
 | 600  | SWAP_FEE_PERCENTAGE_TOO_HIGH       |         |
 | 601  | FLASH_LOAN_FEE_PERCENTAGE_TOO_HIGH |         |
 | 602  | INSUFFICIENT_FLASH_LOAN_FEE_AMOUNT |         |
+
+## FeeSplitter
+
+| Code | Error                            | Comment |
+| ---- | -------------------------------- | ------- |
+| 700  | SPLITTER_FEE_PERCENTAGE_TOO_HIGH |         |
+
+## Misc
+
+| Code | Error             | Comment |
+| ---- | ----------------- | ------- |
+| 998  | UNIMPLEMENTED     |         |
+| 999  | SHOULD_NOT_HAPPEN |         |

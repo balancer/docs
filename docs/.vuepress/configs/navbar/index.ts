@@ -25,17 +25,25 @@ export const navbar: NavbarConfig = [
             children: [
               {
                 text: 'Mainnet',
-                link: '/reference/contracts/deployment-addresses/mainnet.html',
+                link: '/reference/contracts/deployment-addresses/mainnet',
               },
               {
                 text: 'Arbitrum',
-                link: '/reference/contracts/deployment-addresses/arbitrum.html',
+                link: '/reference/contracts/deployment-addresses/arbitrum',
               },
               {
                 text: 'Polygon',
-                link: '/reference/contracts/deployment-addresses/polygon.html',
+                link: '/reference/contracts/deployment-addresses/polygon',
+              },
+              {
+                text: 'Goerli',
+                link: '/reference/contracts/deployment-addresses/goerli',
               },
             ],
+          },
+          {
+            text: 'APIs',
+            link: '/reference/contracts/apis/vault',
           },
           '/reference/contracts/error-codes',
           '/reference/contracts/query-functions',
@@ -50,11 +58,11 @@ export const navbar: NavbarConfig = [
             children: [
               {
                 text: 'Core',
-                link: '/reference/subgraph/core/',
+                link: '/reference/subgraph/core/entities',
               },
               {
                 text: 'Gauges',
-                link: '/reference/subgraph/gauges/',
+                link: '/reference/subgraph/gauges/entities',
               },
             ],
           },

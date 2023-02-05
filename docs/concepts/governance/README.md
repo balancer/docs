@@ -5,7 +5,7 @@ title: Overview
 
 # Governance
 
-Various components of Balancer Governance are described in breif below. Click the link for each section for more details.
+Various components of Balancer Governance are described in brief below.
 
 ## [veBAL](./veBAL)
 
