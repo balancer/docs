@@ -74,7 +74,7 @@
 
 .home {
   padding-left: var(--sidebar-width);
-  max-width: var(--homepage-width);
+  width: calc(80% - var(--sidebar-width));
   margin: 0px auto;
   display: block;
 
