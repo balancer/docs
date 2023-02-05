@@ -2,7 +2,7 @@
 order: 2
 ---
 
-# Pool Types & Composition
+# Pool Configuration
 
 ## Overview
 
