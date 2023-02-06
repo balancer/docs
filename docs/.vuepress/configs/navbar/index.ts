@@ -32,6 +32,10 @@ export const navbar: NavbarConfig = [
                 link: '/reference/contracts/deployment-addresses/arbitrum',
               },
               {
+                text: 'Optimism',
+                link: '/reference/contracts/deployment-addresses/optimism',
+              },
+              {
                 text: 'Polygon',
                 link: '/reference/contracts/deployment-addresses/polygon',
               },

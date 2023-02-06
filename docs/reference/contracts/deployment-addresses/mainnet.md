@@ -5,68 +5,78 @@ order: 1
 
 # Mainnet Deployment Addresses
 
+::: info More Details
+For more information on specific deployments as well as changelogs for different contract versions, please see the [deployment tasks](https://github.com/balancer-labs/balancer-v2-monorepo/tree/master/pkg/deployments/tasks) section of the monorepo.
+:::
+
 ## Core
 
-| Contract            | Address                                                                                                                                                 |
-| ------------------- | ------------------------------------------------------------------------------------------------------------------------------------------------------- |
-| Vault               | <span class="address-link">[0xBA12222222228d8Ba445958a75a0704d566BF2C8](https://etherscan.io/address/0xBA12222222228d8Ba445958a75a0704d566BF2C8)</span> |
-| Authorizer          | <span class="address-link">[0xA331D84eC860Bf466b4CdCcFb4aC09a1B43F3aE6](https://etherscan.io/address/0xA331D84eC860Bf466b4CdCcFb4aC09a1B43F3aE6)</span> |
-| AuthorizerAdaptor   | <span class="address-link">[0x8F42aDBbA1B16EaAE3BB5754915E0D06059aDd75](https://etherscan.io/address/0x8F42aDBbA1B16EaAE3BB5754915E0D06059aDd75)</span> |
-| BalancerRelayer     | <span class="address-link">[0xAc9f49eF3ab0BbC929f7b1bb0A17E1Fca5786251](https://etherscan.io/address/0xAc9f49eF3ab0BbC929f7b1bb0A17E1Fca5786251)</span> |
-| BatchRelayerLibrary | <span class="address-link">[0x41B953164995c11C81DA73D212ED8Af25741b7Ac](https://etherscan.io/address/0x41B953164995c11C81DA73D212ED8Af25741b7Ac)</span> |
-| BalancerHelpers     | <span class="address-link">[0x5aDDCCa35b7A0D07C74063c48700C8590E87864E](https://etherscan.io/address/0x5aDDCCa35b7A0D07C74063c48700C8590E87864E)</span> |
+| Contract                                                                                                                                                              | Address                                                                                                                                                 |
+| --------------------------------------------------------------------------------------------------------------------------------------------------------------------- | ------------------------------------------------------------------------------------------------------------------------------------------------------- |
+| [Vault](https://github.com/balancer-labs/balancer-v2-monorepo/blob/master/pkg/vault/contracts/Vault.sol)                                                              | <span class="address-link">[0xBA12222222228d8Ba445958a75a0704d566BF2C8](https://etherscan.io/address/0xBA12222222228d8Ba445958a75a0704d566BF2C8)</span> |
+| [BalancerRelayer](https://github.com/balancer-labs/balancer-v2-monorepo/blob/master/pkg/standalone-utils/contracts/relayer/BalancerRelayer.sol) (v4)                  | <span class="address-link">[0xAc9f49eF3ab0BbC929f7b1bb0A17E1Fca5786251](https://etherscan.io/address/0xAc9f49eF3ab0BbC929f7b1bb0A17E1Fca5786251)</span> |
+| [BatchRelayerLibrary](https://github.com/balancer-labs/balancer-v2-monorepo/blob/master/pkg/standalone-utils/contracts/BatchRelayerLibrary.sol) (v4)                  | <span class="address-link">[0x41B953164995c11C81DA73D212ED8Af25741b7Ac](https://etherscan.io/address/0x41B953164995c11C81DA73D212ED8Af25741b7Ac)</span> |
+| [BalancerQueries](https://github.com/balancer-labs/balancer-v2-monorepo/blob/master/pkg/standalone-utils/contracts/BalancerQueries.sol)                               | <span class="address-link">[0xE39B5e3B6D74016b2F6A9673D7d7493B6DF549d5](https://etherscan.io/address/0xE39B5e3B6D74016b2F6A9673D7d7493B6DF549d5)</span> |
+| [ProtocolFeePercentagesProvider](https://github.com/balancer-labs/balancer-v2-monorepo/blob/master/pkg/standalone-utils/contracts/ProtocolFeePercentagesProvider.sol) | <span class="address-link">[0x97207B095e4D5C9a6e4cfbfcd2C3358E03B90c4A](https://etherscan.io/address/0x97207B095e4D5C9a6e4cfbfcd2C3358E03B90c4A)</span> |
+
+## Authorization
+
+| Contract                                                                                                                                                              | Address                                                                                                                                                 |
+| --------------------------------------------------------------------------------------------------------------------------------------------------------------------- | ------------------------------------------------------------------------------------------------------------------------------------------------------- |
+| Authorizer                                                                                                                                                            | <span class="address-link">[0xA331D84eC860Bf466b4CdCcFb4aC09a1B43F3aE6](https://etherscan.io/address/0xA331D84eC860Bf466b4CdCcFb4aC09a1B43F3aE6)</span> |
+| [AuthorizerAdaptor](https://github.com/balancer-labs/balancer-v2-monorepo/blob/master/pkg/liquidity-mining/contracts/admin/AuthorizerAdaptor.sol)                     | <span class="address-link">[0x8F42aDBbA1B16EaAE3BB5754915E0D06059aDd75](https://etherscan.io/address/0x8F42aDBbA1B16EaAE3BB5754915E0D06059aDd75)</span> |
+| [AuthorizerAdaptorEntrypoint](https://github.com/balancer-labs/balancer-v2-monorepo/blob/master/pkg/liquidity-mining/contracts/admin/AuthorizerAdaptorEntrypoint.sol) | <span class="address-link">[0xf5dECDB1f3d1ee384908Fbe16D2F0348AE43a9eA](https://etherscan.io/address/0xf5dECDB1f3d1ee384908Fbe16D2F0348AE43a9eA)</span> |
+| [TimelockAuthorizer](https://github.com/balancer-labs/balancer-v2-monorepo/blob/master/pkg/vault/contracts/authorizer/TimelockAuthorizer.sol)                         | <span class="address-link">[0x9E3cD0606Db55ac68845bB60121847823712ae05](https://etherscan.io/address/0x9E3cD0606Db55ac68845bB60121847823712ae05)</span> |
 
 ## Pool Factories
 
-| Contract                                       | Address                                                                                                                                                 |
-| ---------------------------------------------- | ------------------------------------------------------------------------------------------------------------------------------------------------------- |
-| WeightedPoolFactory                            | <span class="address-link">[0x8E9aa87E45e92bad84D5F8DD1bff34Fb92637dE9](https://etherscan.io/address/0x8E9aa87E45e92bad84D5F8DD1bff34Fb92637dE9)</span> |
-| WeightedPool2TokensFactory                     | <span class="address-link">[0xA5bf2ddF098bb0Ef6d120C98217dD6B141c74EE0](https://etherscan.io/address/0xA5bf2ddF098bb0Ef6d120C98217dD6B141c74EE0)</span> |
-| Composable Stable Pool                         | <span class="address-link">[0xf9ac7B9dF2b3454E841110CcE5550bD5AC6f875F](https://etherscan.io/address/0xf9ac7B9dF2b3454E841110CcE5550bD5AC6f875F)</span> |
-| LiquidityBootstrappingPoolFactory              | <span class="address-link">[0x751A0bC0e3f75b38e01Cf25bFCE7fF36DE1C87DE](https://etherscan.io/address/0x751A0bC0e3f75b38e01Cf25bFCE7fF36DE1C87DE)</span> |
-| InvestmentPoolFactory                          | <span class="address-link">[0x48767F9F868a4A7b86A90736632F6E44C2df7fa9](https://etherscan.io/address/0x48767F9F868a4A7b86A90736632F6E44C2df7fa9)</span> |
-| AaveLinearPoolFactory                          | <span class="address-link">[0xD7FAD3bd59D6477cbe1BE7f646F7f1BA25b230f8](https://etherscan.io/address/0xD7FAD3bd59D6477cbe1BE7f646F7f1BA25b230f8)</span> |
-| ERC4626LinearPoolFactory                       | <span class="address-link">[0xE061bF85648e9FA7b59394668CfEef980aEc4c66](https://etherscan.io/address/0xE061bF85648e9FA7b59394668CfEef980aEc4c66)</span> |
-| NoProtocolFeeLiquidityBootstrappingPoolFactory | <span class="address-link">[0x0F3e0c4218b7b0108a3643cFe9D3ec0d4F57c54e](https://etherscan.io/address/0x0F3e0c4218b7b0108a3643cFe9D3ec0d4F57c54e)</span> |
+| Contract                                                                                                                                                                     | Address                                                  |
+| ---------------------------------------------------------------------------------------------------------------------------------------------------------------------------- | -------------------------------------------------------- |
+| [WeightedPoolFactory](https://github.com/balancer-labs/balancer-v2-monorepo/blob/master/pkg/pool-weighted/contracts/WeightedPoolFactory.sol) (v3)                            | <span class="address-link">To be deployed shortly</span> |
+| [ComposableStablePoolFactory](https://github.com/balancer-labs/balancer-v2-monorepo/blob/master/pkg/pool-stable/contracts/ComposableStablePoolFactory.sol) (v3)              | <span class="address-link">To be deployed shortly</span> |
+| [LiquidityBootstrappingPoolFactory](https://github.com/balancer-labs/balancer-v2-monorepo/blob/master/pkg/pool-weighted/contracts/lbp/LiquidityBootstrappingPoolFactory.sol) | <span class="address-link"></span>                       |
 
-## BAL & veBAL
+## BAL / veBAL / Liquidity Mining
 
-| Contract                      | Address                                                                                                                                                 |
-| ----------------------------- | ------------------------------------------------------------------------------------------------------------------------------------------------------- |
-| BAL Governance Token          | <span class="address-link">[0xba100000625a3754423978a60c9317c58a424e3D](https://etherscan.io/address/0xba100000625a3754423978a60c9317c58a424e3D)</span> |
-| BALTokenHolderFactory         | <span class="address-link">[0xB848f50141F3D4255b37aC288C25C109104F2158](https://etherscan.io/address/0xB848f50141F3D4255b37aC288C25C109104F2158)</span> |
-| BalancerTokenAdmin            | <span class="address-link">[0xf302f9F50958c5593770FDf4d4812309fF77414f](https://etherscan.io/address/0xf302f9F50958c5593770FDf4d4812309fF77414f)</span> |
-| GaugeAdder                    | <span class="address-link">[0xEd5ba579bB5D516263ff6E1C10fcAc1040075Fe2](https://etherscan.io/address/0xEd5ba579bB5D516263ff6E1C10fcAc1040075Fe2)</span> |
-| VotingEscrow                  | <span class="address-link">[0xC128a9954e6c874eA3d62ce62B468bA073093F25](https://etherscan.io/address/0xC128a9954e6c874eA3d62ce62B468bA073093F25)</span> |
-| GaugeController               | <span class="address-link">[0xC128468b7Ce63eA702C1f104D55A2566b13D3ABD](https://etherscan.io/address/0xC128468b7Ce63eA702C1f104D55A2566b13D3ABD)</span> |
-| BalancerMinter                | <span class="address-link">[0x239e55F427D44C3cc793f49bFB507ebe76638a2b](https://etherscan.io/address/0x239e55F427D44C3cc793f49bFB507ebe76638a2b)</span> |
-| LiquidityGaugeFactory         | <span class="address-link">[0x4E7bBd911cf1EFa442BC1b2e9Ea01ffE785412EC](https://etherscan.io/address/0x4E7bBd911cf1EFa442BC1b2e9Ea01ffE785412EC)</span> |
-| SingleRecipientGaugeFactory   | <span class="address-link">[0x94f68b54191F62f781Fe8298A8A5Fa3ed772d227](https://etherscan.io/address/0x94f68b54191F62f781Fe8298A8A5Fa3ed772d227)</span> |
-| VotingEscrowDelegationProxy   | <span class="address-link">[0x6f5a2eE11E7a772AeB5114A20d0D7c0ff61EB8A0](https://etherscan.io/address/0x6f5a2eE11E7a772AeB5114A20d0D7c0ff61EB8A0)</span> |
-| veBALDeploymentCoordinator    | <span class="address-link">[0xeb151668006CD04DAdD098AFd0a82e78F77076c3](https://etherscan.io/address/0xeb151668006CD04DAdD098AFd0a82e78F77076c3)</span> |
-| ArbitrumRootGaugeFactory      | <span class="address-link">[0xad901309d9e9DbC5Df19c84f729f429F0189a633](https://etherscan.io/address/0xad901309d9e9DbC5Df19c84f729f429F0189a633)</span> |
-| PolygonRootGaugeFactory       | <span class="address-link">[0x4C4287b07d293E361281bCeEe8715c8CDeB64E34](https://etherscan.io/address/0x4C4287b07d293E361281bCeEe8715c8CDeB64E34)</span> |
-| veBALL2GaugeSetupCoordinator  | <span class="address-link">[0xd13AFc362F619b840C8f4AaC1D957cE219eF37Ca](https://etherscan.io/address/0xd13AFc362F619b840C8f4AaC1D957cE219eF37Ca)</span> |
-| veBALGaugeFixCoordinator      | <span class="address-link">[0xee47ef369CDa5a65639D7794b70a4d247826DdF3](https://etherscan.io/address/0xee47ef369CDa5a65639D7794b70a4d247826DdF3)</span> |
-| FeeDistributor                | <span class="address-link">[0x26743984e3357eFC59f2fd6C1aFDC310335a61c9](https://etherscan.io/address/0x26743984e3357eFC59f2fd6C1aFDC310335a61c9)</span> |
-| SmartWalletChecker            | <span class="address-link">[0x7869296Efd0a76872fEE62A058C8fBca5c1c826C](https://etherscan.io/address/0x7869296Efd0a76872fEE62A058C8fBca5c1c826C)</span> |
-| SmartWalletCheckerCoordinator | <span class="address-link">[0x26575A44755E0aaa969FDda1E4291Df22C5624Ea](https://etherscan.io/address/0x26575A44755E0aaa969FDda1E4291Df22C5624Ea)</span> |
-| DistributionScheduler         | <span class="address-link">[0xbfD9769b061E57e478690299011A028194D66e3C](https://etherscan.io/address/0xbfD9769b061E57e478690299011A028194D66e3C)</span> |
+| Contract                                                                                                                                                                        | Address                                                                                                                                                 |
+| ------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- | ------------------------------------------------------------------------------------------------------------------------------------------------------- |
+| BAL Governance Token                                                                                                                                                            | <span class="address-link">[0xba100000625a3754423978a60c9317c58a424e3D](https://etherscan.io/address/0xba100000625a3754423978a60c9317c58a424e3D)</span> |
+| [BALTokenHolderFactory](https://github.com/balancer-labs/balancer-v2-monorepo/blob/master/pkg/standalone-utils/contracts/BALTokenHolderFactory.sol)                             | <span class="address-link">[0xB848f50141F3D4255b37aC288C25C109104F2158](https://etherscan.io/address/0xB848f50141F3D4255b37aC288C25C109104F2158)</span> |
+| [BalancerTokenAdmin](https://github.com/balancer-labs/balancer-v2-monorepo/blob/master/pkg/liquidity-mining/contracts/BalancerTokenAdmin.sol)                                   | <span class="address-link">[0xf302f9F50958c5593770FDf4d4812309fF77414f](https://etherscan.io/address/0xf302f9F50958c5593770FDf4d4812309fF77414f)</span> |
+| [BalancerMinter](https://github.com/balancer-labs/balancer-v2-monorepo/blob/master/pkg/liquidity-mining/contracts/BalancerMinter.sol)                                           | <span class="address-link">[0x239e55F427D44C3cc793f49bFB507ebe76638a2b](https://etherscan.io/address/0x239e55F427D44C3cc793f49bFB507ebe76638a2b)</span> |
+| [GaugeAdder](https://github.com/balancer-labs/balancer-v2-monorepo/blob/master/pkg/liquidity-mining/contracts/admin/GaugeAdder.sol) (v2)                                        | <span class="address-link">[0x2fFB7B215Ae7F088eC2530C7aa8E1B24E398f26a](https://etherscan.io/address/0x2fFB7B215Ae7F088eC2530C7aa8E1B24E398f26a)</span> |
+| [VeBoost](https://github.com/balancer-labs/balancer-v2-monorepo/blob/master/pkg/liquidity-mining/contracts/VeBoostV2.vy) (v2)                                                   | <span class="address-link">[0x67F8DF125B796B05895a6dc8Ecf944b9556ecb0B](https://etherscan.io/address/0x67F8DF125B796B05895a6dc8Ecf944b9556ecb0B)</span> |
+| [VotingEscrow](https://github.com/balancer-labs/balancer-v2-monorepo/blob/master/pkg/liquidity-mining/contracts/VotingEscrow.vy)                                                | <span class="address-link">[0xC128a9954e6c874eA3d62ce62B468bA073093F25](https://etherscan.io/address/0xC128a9954e6c874eA3d62ce62B468bA073093F25)</span> |
+| [GaugeController](https://github.com/balancer-labs/balancer-v2-monorepo/blob/master/pkg/liquidity-mining/contracts/GaugeController.vy)                                          | <span class="address-link">[0xC128468b7Ce63eA702C1f104D55A2566b13D3ABD](https://etherscan.io/address/0xC128468b7Ce63eA702C1f104D55A2566b13D3ABD)</span> |
+| [DistributionScheduler](https://github.com/balancer-labs/balancer-v2-monorepo/blob/master/pkg/liquidity-mining/contracts/admin/DistributionScheduler.sol)                       | <span class="address-link">[0xBd35248F8325DD1cB2bBf9D01E80A6bb99a792Dd](https://etherscan.io/address/0xBd35248F8325DD1cB2bBf9D01E80A6bb99a792Dd)</span> |
+| [FeeDistributor](https://github.com/balancer-labs/balancer-v2-monorepo/blob/master/pkg/liquidity-mining/contracts/fee-distribution/FeeDistributor.sol) (v2)                     | <span class="address-link">[0xD3cf852898b21fc233251427c2DC93d3d604F3BB](https://etherscan.io/address/0xD3cf852898b21fc233251427c2DC93d3d604F3BB)</span> |
+| [SingleRecipientGaugeFactory](https://github.com/balancer-labs/balancer-v2-monorepo/blob/master/pkg/liquidity-mining/contracts/gauges/ethereum/SingleRecipientGaugeFactory.sol) | <span class="address-link">[0x94f68b54191F62f781Fe8298A8A5Fa3ed772d227](https://etherscan.io/address/0x94f68b54191F62f781Fe8298A8A5Fa3ed772d227)</span> |
+| [LiquidityGaugeFactory](https://github.com/balancer-labs/balancer-v2-monorepo/blob/master/pkg/liquidity-mining/contracts/gauges/ethereum/LiquidityGaugeFactory.sol) (v2)        | <span class="address-link">[0xf1665E19bc105BE4EDD3739F88315cC699cc5b65](https://etherscan.io/address/0xf1665E19bc105BE4EDD3739F88315cC699cc5b65)</span> |
+| [ArbitrumRootGaugeFactory](https://github.com/balancer-labs/balancer-v2-monorepo/blob/master/pkg/liquidity-mining/contracts/gauges/arbitrum/ArbitrumRootGaugeFactory.sol) (v2)  | <span class="address-link">[0x1c99324EDC771c82A0DCCB780CC7DDA0045E50e7](https://etherscan.io/address/0x1c99324EDC771c82A0DCCB780CC7DDA0045E50e7)</span> |
+| [OptimismRootGaugeFactory](https://github.com/balancer-labs/balancer-v2-monorepo/blob/master/pkg/liquidity-mining/contracts/gauges/optimism/OptimismRootGaugeFactory.sol) (v2)  | <span class="address-link">[0x866D4B65694c66fbFD15Dd6fa933D0A6b3940A36](https://etherscan.io/address/0x866D4B65694c66fbFD15Dd6fa933D0A6b3940A36)</span> |
+| [PolygonRootGaugeFactory](https://github.com/balancer-labs/balancer-v2-monorepo/blob/master/pkg/liquidity-mining/contracts/gauges/polygon/PolygonRootGaugeFactory.sol) (v2)     | <span class="address-link">[0xa98Bce70c92aD2ef3288dbcd659bC0d6b62f8F13](https://etherscan.io/address/0xa98Bce70c92aD2ef3288dbcd659bC0d6b62f8F13)</span> |
+| [L2GaugeCheckpointer](https://github.com/balancer-labs/balancer-v2-monorepo/blob/master/pkg/liquidity-mining/contracts/gauges/L2GaugeCheckpointer.sol)                          | <span class="address-link">[0xf23b4DB826DbA14c0e857029dfF076b1c0264843](https://etherscan.io/address/0xf23b4DB826DbA14c0e857029dfF076b1c0264843)</span> |
+| [SmartWalletChecker](https://github.com/balancer-labs/balancer-v2-monorepo/blob/master/pkg/liquidity-mining/contracts/SmartWalletChecker.sol)                                   | <span class="address-link">[0x7869296Efd0a76872fEE62A058C8fBca5c1c826C](https://etherscan.io/address/0x7869296Efd0a76872fEE62A058C8fBca5c1c826C)</span> |
 
 ## Misc
 
 | Contract           | Address                                                                                                                                                 |
 | ------------------ | ------------------------------------------------------------------------------------------------------------------------------------------------------- |
 | WstETHRateProvider | <span class="address-link">[0x72D07D7DcA67b8A406aD1Ec34ce969c90bFEE768](https://etherscan.io/address/0x72D07D7DcA67b8A406aD1Ec34ce969c90bFEE768)</span> |
-| LidoRelayer        | <span class="address-link">[0xdcdbf71A870cc60C6F9B621E28a7D3Ffd6Dd4965](https://etherscan.io/address/0xdcdbf71A870cc60C6F9B621E28a7D3Ffd6Dd4965)</span> |
 
-## Archive
+## Deprecated
 
 ::: details
-| Contract | Address |
-| ---------------------------------------------- | ------------------------------------------------------------------------------------------------------------------------------------------------------- |
-| MerkleRedeem | <span class="address-link">[0x884226c9f7b7205f607922E0431419276a64CF8f](https://etherscan.io/address/0x884226c9f7b7205f607922E0431419276a64CF8f)</span> |
-| MerkleOrchard | <span class="address-link">[0xdAE7e32ADc5d490a43cCba1f0c736033F2b4eFca](https://etherscan.io/address/0xdAE7e32ADc5d490a43cCba1f0c736033F2b4eFca)</span> |
+
+| Contract                   | Address                                                                                                                                                 |
+| -------------------------- | ------------------------------------------------------------------------------------------------------------------------------------------------------- |
+| MerkleRedeem               | <span class="address-link">[0x884226c9f7b7205f607922E0431419276a64CF8f](https://etherscan.io/address/0x884226c9f7b7205f607922E0431419276a64CF8f)</span> |
+| MerkleOrchard              | <span class="address-link">[0xdAE7e32ADc5d490a43cCba1f0c736033F2b4eFca](https://etherscan.io/address/0xdAE7e32ADc5d490a43cCba1f0c736033F2b4eFca)</span> |
+| WeightedPool2TokensFactory | <span class="address-link">[0xA5bf2ddF098bb0Ef6d120C98217dD6B141c74EE0](https://etherscan.io/address/0xA5bf2ddF098bb0Ef6d120C98217dD6B141c74EE0)</span> |
+| AuthorizerAdaptor          | <span class="address-link">[0x8F42aDBbA1B16EaAE3BB5754915E0D06059aDd75](https://etherscan.io/address/0x8F42aDBbA1B16EaAE3BB5754915E0D06059aDd75)</span> |
+| LidoRelayer                | <span class="address-link">[0xdcdbf71A870cc60C6F9B621E28a7D3Ffd6Dd4965](https://etherscan.io/address/0xdcdbf71A870cc60C6F9B621E28a7D3Ffd6Dd4965)</span> |
+| AaveLinearPoolFactory      | <span class="address-link">[0xD7FAD3bd59D6477cbe1BE7f646F7f1BA25b230f8](https://etherscan.io/address/0xD7FAD3bd59D6477cbe1BE7f646F7f1BA25b230f8)</span> |
+| ERC4626LinearPoolFactory   | <span class="address-link">[0xE061bF85648e9FA7b59394668CfEef980aEc4c66](https://etherscan.io/address/0xE061bF85648e9FA7b59394668CfEef980aEc4c66)</span> |
 
 <style scoped>
 table {
