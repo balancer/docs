@@ -14,16 +14,14 @@ The Protocol Fees for trades can be collected as a percentage of the trade fees 
 
 Upon launch, Balancer V2's **Protocol Fees for trades are turned off by default**. They can be turned on only by a vote of the Balancer Governors (BAL token holders). The governors have the power to activate and determine the amount of these fees.
 
-As of [BIP-163](https://forum.balancer.fi/t/bip-19-incentivize-core-pools-l2-usage/3329#specification-4)  in January 2023,
-the protocol takes 50% of the trade fees.
+As of [BIP-163](https://forum.balancer.fi/t/bip-19-incentivize-core-pools-l2-usage/3329#specification-4)  in January 2023, the protocol takes 50% of the trade fees.
 - 100% of all BAL fees collected are emitted as fee sharing to veBAL holders.  See this [Governance Proposal](https://forum.balancer.fi/t/proposal-distribute-protocol-fees-in-bal-where-appropriate/2933)
 - All other tokens are sold for USDC, of which 
   - 35% are paid to the DAO 
   - 65% are emitted to BAL holders in the form of bb-a-USD (a boosted USD balancer pool)
 
 ### Core Pool Fees
-[BIP-19] Introduced Core Pools which earn 50% protocol fees on the increasing value of derivitive tokens like wstETH and aUSDC.
-These fees are handled as follows:
+[BIP-19] Introduced Core Pools which earn 50% protocol fees on the increasing value of derivitive tokens like wstETH and aUSDC. These fees are handled as follows:
 - All tokens except BAL are sold for USDC
 - 35% of the BAL and USDC are taken as fees for the DAO
 - the remaining BAL and USDC are used to place bribes for votes on the pools that generated said fees as described by [BIP-19](https://forum.balancer.fi/t/bip-19-incentivize-core-pools-l2-usage/3329)
