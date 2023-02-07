@@ -6,7 +6,7 @@ The Balancer Govenrance process has evolved through a number of BIPs as balancer
 
 Balancer governance submissions consist of 2 items, an english proposal and a multisig payload that executes the changes described onchain.  The Balancer Maxis, who can be found on the [Balancer Discord](https://discord.balancer.fi/) or contacted through an issue in the [Balancer Multisig Ops Repo](https://github.com/BalancerMaxis/multisig-ops/issues) are tasked with supporting community members in putting together proposals when required, and with the final evaluation and execution of approved proposals.  Below are more details on the governance process as of BIP-163.
 
-![img.png](images/govProcess.png)
+![img.png](./images/govProcess.png)
 
 
 ## Outline
