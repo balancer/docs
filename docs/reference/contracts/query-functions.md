@@ -2,33 +2,74 @@
 
 ## Overview
 
-In many scenarios, you might want to know how much X of TokenA you'll receive for Y of TokenB. Fortunately, Balancer has query functions to simulate transactions.
+`BalancerQueries` is a helper contract to provide quotes for common interactions like swaps / joins / exits without submitting a transaction.
 
-::: warning
-If you look on Etherscan (or similar), all three of the query functions will show up as "Write" functions. That is ok! You can still call these with `eth_call` to get numerical results without spending any gas.
+Deployed at <span class="address-link">0xE39B5e3B6D74016b2F6A9673D7d7493B6DF549d5</span> on all chains.
+
+::: warning Etherscan
+Even though Etherscan labels the query functions as write methods, they can be read through a static `eth_call`. This is due to nuances in how the query is crafted.
 :::
 
-::: danger Be very careful if you call a query function from a contract!!!
+::: danger Don't use onchain queries
 
 If you are using `queryBatchSwap`, `queryJoin`, or `queryExit` to calculate `limits`, `maxAmountsIn`, or `minAmountsOut`, this is ONLY useful if you simulate these calls OUTSIDE of the transaction you end up making. You SHOULD NOT call these functions to calculate limits from a smart contract at transaction time.
 
 There are valid use cases for calling these functions on chain, but **do not use them to determine limits**.
 :::
 
-### Why?
+Each query method has a section below. For reference, this snippet contains common structs / types used.
 
-Calculating these values ahead of time is useful for enforcing slippage tolerances to mitigate losses due to sandwich attacks. **If you are querying these values at execution time, you end up getting your values mid-sandwich!** This leaves you entirely vulnerable to the attacker's manipulation, and is as foolish as using a 100% slippage tolerance.
+```solidity
+enum SwapKind { GIVEN_IN, GIVEN_OUT }
+
+struct SingleSwap {
+    bytes32 poolId;
+    SwapKind kind;
+    IAsset assetIn;
+    IAsset assetOut;
+    uint256 amount;
+    bytes userData; // 0x for most swaps
+}
+
+struct FundManagement {
+    address sender;
+    bool fromInternalBalance;
+    address payable recipient;
+    bool toInternalBalance;
+}
+
+struct JoinPoolRequest {
+    address[] assets,
+    uint256[] maxAmountsIn,
+    bytes userData,
+    bool fromInternalBalance
+}
+
+struct ExitPoolRequest {
+    address[] assets,
+    uint256[] minAmountsOut,
+    bytes userData,
+    bool toInternalBalance
+}
+```
 
 ## Queries
 
-::: info Calculate amounts for a nested
+::: info Nested Pools
 
 **Composable Stable Pools** or **Boosted Pools** do not have join or exit functionality since those are handled as swaps! For example, if you want to figure out how much `bb-a-USD` you'll get for an amount of `DAI`, you'll need to use `queryBatchSwap` on a trade route that swaps `DAI` for `bb-a-DAI` and then swaps `bb-a-DAI` for `bb-a-USD`.
 :::
 
-### `queryBatchSwap`
+### `querySwap`
 
-To calculate the inputs/outputs for a trade (you can specify given-in or given-out), you will use the `queryBatchSwap` function in the [`Vault`](/reference/contracts/apis/vault.md#querybatchswap). This functionality is important if not crucial for calculating your limits when constructing your `batchSwap` arguments.
+```solidity
+querySwap(
+    IVault.SingleSwap memory singleSwap,
+    IVault.FundManagement memory funds)
+returns (uint256)
+```
+
+### `queryBatchSwap`
 
 ```solidity
 queryBatchSwap(
@@ -41,8 +82,6 @@ returns (int256[] assetDeltas)
 
 ### `queryJoin`
 
-To calculate amounts of BPT out and tokens in, you will use `queryJoin` in [`BalancerHelpers`](/reference/contracts/apis/balancer-helpers.md#queryjoin). This functionality is important for calculating `maxAmountsIn` and/or `minBptOut` on joins
-
 ```solidity
 queryJoin(
     bytes32 poolId,
@@ -53,8 +92,6 @@ returns (uint256 bptOut, uint256[] amountsIn)
 ```
 
 ### `queryExit`
-
-To calculate amounts of BPT in and tokens out, you will use `queryExit` in [`BalancerHelpers`](/reference/contracts/apis/balancer-helpers.md#queryexit). This functionality is important for calculating `minAmountsOut` and/or `maxBptIn` on exits.
 
 ```solidity
 queryExit(

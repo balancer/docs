@@ -87,7 +87,7 @@ The chart below highlights the results of these design decisions.
       "x": {
         "title": {
           "display": true,
-          "text": "Number of Swaps in Path"
+          "text": "Number of hops in swap path"
         },
         "grid": {
           "display": false
