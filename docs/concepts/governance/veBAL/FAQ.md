@@ -31,15 +31,15 @@ veBAL voting can not be delegated, however snapshot voting covering general DAO 
 
 ### Do veBAL holders receive a portion of the trading fees? How are the protocol fees paid?
 
-veBAL holders are receive protocol fees distributed in bbaUSD (Boosted Aave Stable Pool LP Tokens) see Protocol Revenue Distribution.
+veBAL holders are receive protocol fees distributed in bbaUSD (Boosted Aave Stable Pool LP Tokens) see [Protocol Revenue Distribution](../protocol-fees.md#uses).
 
 ### Is there a way to view how much total veBAL there is?
 
-Yes that information is in the following link: https://dune.xyz/balancerlabs/veBAL
+Yes that information can be found on the [veBAL Dune Dashbaord](https://dune.xyz/balancerlabs/veBAL)
 
 ### How do I make a pool eligible for gauge voting?
 
-Need to make a governance proposal, https://forum.balancer.fi/c/vebal/13
+Need to make a governance proposal. See [Governance Process](../process.md) and [The instructions for a Gauge request on the Forum](https://forum.balancer.fi/t/instructions-overview/2674).
 
 ### How much BAL/WETH BPT do I stake to maximize my multiplier? What amount do you need to stake at 1 year to hit the 2.5x boost for liquidity incentives?
 
@@ -57,7 +57,7 @@ veBAL is a non-standard ERC-20 token and cannot be transferred.
 
 ### How do I extend my veBAL lock up?
 
-Just go to the veBAL site, see "Lock until" , click "+", choose the time desired, and confirm.
+Just go to the [veBAL site](https://app.balancer.fi/vebal#/ethereum/vebal), see "Lock until" , click "+", choose the time desired, and confirm.
 
 ### Are incentives paid daily?
 
