@@ -8,21 +8,13 @@ By locking the BAL WETH 80/20 BPT holders are given veBAL in exchange for govern
 
 Financial implications:
 
-- veBAL equates to boosted liquidity mining incentives for all incentivized pools. The share of a given staked pool, and
-  the lock multiplier, or boost, are both factors in a user’s liquidity BAL rewards “APR”.
+- veBAL equates to boosted liquidity mining incentives for all incentivized pools. The share of a given staked pool, and the lock multiplier, or boost, are both factors in a user’s liquidity BAL rewards “APR”.
 
-- Lockers receive 75% of protocol fees. 50% of the swap fees accumulated on Balancer Protocol are collected as protocol
-  fees. So, of all fees 75% of 50% are distributed to the veBAL holders, more veBAL equates to a larger portion of the
-  protocol revenue distribution.
+- Lockers receive 75% of protocol fees. 50% of the swap fees accumulated on Balancer Protocol are collected as protocol fees. So, of all fees 75% of 50% are distributed to the veBAL holders, more veBAL equates to a larger portion of the protocol revenue distribution.
 
-- veBAL is the governance token of Balancer, used for a governance gauge voting mechanism to decide which pools receive
-  BAL liquidity mining incentives. Users can direct liquidity mining incentives to the pools of their choice. veBAL is
-  also used in snapshot voting to authorize changes to the DAO including the management (adding/removing) of gauges and
-  funding of service providers.
+- veBAL is the governance token of Balancer, used for a governance gauge voting mechanism to decide which pools receive BAL liquidity mining incentives. Users can direct liquidity mining incentives to the pools of their choice. veBAL is also used in snapshot voting to authorize changes to the DAO including the management (adding/removing) of gauges and funding of service providers.
 
-  - veBAL does have a gauge to direct rewards to the holders if chosen. This option is capped at 10% of total emissions
-    of BAL at a given time in the inflation schedule. The overflow, if a vote goes over 10%, will go to the DAO treasury,
-    where governance will have ownership of it.
+  - veBAL does have a gauge to direct rewards to the holders if chosen. This option is capped at 10% of total emissions of BAL at a given time in the inflation schedule. The overflow, if a vote goes over 10%, will go to the DAO treasury, where governance will have ownership of it.
 
 This gives veBAL holders the option to choose pools they have liquidity positions in for increased incentives or a potential for bribing battles can ensue. Numerious vote markets including Hiddenhand, Tetu, and Paladin allow projects to provide veBAL holders a compensation or incentivize to vote in a direction they prefer, hence the term “bribe”.
 

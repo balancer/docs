@@ -5,7 +5,7 @@ title: Overview
 
 # Governance
 
-Various components of Balancer Governance are described in brief below.
+Various components of Balancer Governance are described in brief below.  Click on the headings for more details on each topic.
 
 ## [veBAL](./veBAL)
 
@@ -18,6 +18,11 @@ The BAL token is the primary component of veBAL. Due to the fact that veBAL allo
 ## [Governable Protocol Fees](./protocol-fees)
 
 Balancer Governors have the power to enable and modify Governable Protocol Fees. These can be collected from trading fees and flash loan fees and stored in the Vault. The Governors themselves also get to decide what becomes of these fees, and how to best spend them to support the health and progress of the protocol.
+
+## [Governance Process](./process.md)
+
+Changes to the Balancer Protocol and allocations of community funds are made through a governance process, which includes:  A proposal, a prepaird transaction payload for onchain execution via gnosis-safe, and a snapshot vote validating the proposal with a quorum that currently stands at at least 2 million veBAL voting.
+
 
 ## [Snapshot](./snapshot)
 

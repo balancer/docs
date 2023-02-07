@@ -18,13 +18,9 @@ Here is a list of the currently active Balancer Multisigs as of February 2023:
 
 ## Context
 
-Since its inception, the long term vision for the Balancer Protocol is to be fully governed by BAL token holders, 
-while token ownership is aimed to be widely spread across the Balancer community.
+Since its inception, the long term vision for the Balancer Protocol is to be fully governed by BAL token holders, while token ownership is aimed to be widely spread across the Balancer community.
 
-But getting to that ideal, long-term vision of a truly decentralized and effective governance is no easy task. 
-Protocol governance is a highly complex and rapidly evolving topic. The whole crypto ecosystem is still in the very 
-early days of trying to figure out:
-
+But getting to that ideal, long-term vision of a truly decentralized and effective governance is no easy task. Protocol governance is a highly complex and rapidly evolving topic. The whole crypto ecosystem is still in the very early days of trying to figure out:
 * which mechanisms and processes work best
 * the necessary infrastructure, tooling, and user interfaces
 * the risks and concerns associated with each approach
@@ -48,53 +44,30 @@ Experimentation has been running wild in all directions:
 * incentivized off-chain engagement \(e.g. forum participation\)
 * and so on…
 
-While also actively experimenting with governance-related initiatives, the Balancer community has leaned towards the more 
-cautious and thoughtful approach of not trying to rush the path to full decentralization, so each step towards a mature 
-on-chain governance will be taken with due care, having learned from others’ experiences.
+While also actively experimenting with governance-related initiatives, the Balancer community has leaned towards the more cautious and thoughtful approach of not trying to rush the path to full decentralization, so each step towards a mature on-chain governance will be taken with due care, having learned from others’ experiences.
 
-Balancer V1 contracts are immutable, so up until now, there have been no core protocol parameters to tweak/change. 
-Instead, our governance has focused on a fair, inclusive BAL token distribution, which is carried out mainly through 
-the protocol’s liquidity mining. BAL holders have tweaked liquidity mining via off-chain voting. And to make that possible, 
-Balancer Labs proudly developed in-house an open-source tool called Snapshot, which became the widely popular gold 
-standard for off-chain voting in blockchain land. [Snapshot](https://snapshot.org/#/) was so successful that was as its 
-own initiative.  It has become a standard for DeFi governance.
+Balancer V1 contracts are immutable, so up until now, there have been no core protocol parameters to tweak/change. Instead, our governance has focused on a fair, inclusive BAL token distribution, which is carried out mainly through the protocol’s liquidity mining. BAL holders have tweaked liquidity mining via off-chain voting. And to make that possible, Balancer Labs proudly developed in-house an open-source tool called Snapshot, which became the widely popular gold standard for off-chain voting in blockchain land. [Snapshot](https://snapshot.org/#/) was so successful that was as its own initiative.  It has become a standard for DeFi governance.
 
-Balancer V2 contracts, on the other hand, do allow for some tweaking of core protocol parameters, for instance, in 
-turning on protocol fees. As a placeholder for a future on-chain DAO, such limited admin powers has been initially 
-granted to a Multisig.
+Balancer V2 contracts, on the other hand, do allow for some tweaking of core protocol parameters, for instance, in turning on protocol fees. As a placeholder for a future on-chain DAO, such limited admin powers has been initially granted to a Multisig.
 
-Balancer strives to continue to automate operations and governance execution.  While the eventual goal is still to move 
-the entire governance and execution on-chain, the current Multisigs have proven themselves as reliable executors of the 
-wishes of veBAL voters. In the long run, BAL holders are expected to retire the Multisig in favor of a full-fledged 
-Balancer DAO.
+Balancer strives to continue to automate operations and governance execution.  While the eventual goal is still to move the entire governance and execution on-chain, the current Multisigs have proven themselves as reliable executors of the wishes of veBAL voters. In the long run, BAL holders are expected to retire the Multisig in favor of a full-fledged Balancer DAO.
 
 ## Current state of Multisig Operations
-Balancer Governance has grown to into a system managed by a collection of Multisigs, which are activated by 2 different signer sets.
-First of all, a very important point: the Multisigs do NOT have decision making power, as their role is to simply enact 
-and operate on-chain the decisions BAL holders make via off-chain voting and assist community members in the governance process. 
+Balancer Governance has grown to into a system managed by a collection of Multisigs, which are activated by 2 different signer sets. First of all, a very important point: the Multisigs do NOT have decision making power, as their role is to simply enact and operate on-chain the decisions BAL holders make via off-chain voting and assist community members in the governance process. 
 
-Further, fee collection and processing requires tokens to be swept from the vault and traded for dollars.  This
-is an example of an operational pratice, defined by governance, that requires regular onchain intevention.
-The Balancer Maxis currently operate these processes through Multisigs, with a goal to automate as much as possible.
+Further, fee collection and processing requires tokens to be swept from the vault and traded for dollars.  This is an example of an operational pratice, defined by governance, that requires regular onchain intevention. The Balancer Maxis currently operate these processes through Multisigs, with a goal to automate as much as possible.
 
-All Balancer Multisigs are deployed using [Gnosis Safe](https://gnosis-safe.io/), the most battle-tested Multisig contract 
-on Ethereum. The DAO and Treasury Multisigs with the ability to change protocol operations or access to treasury funds 
-are require 6-of-11 singers to process transactions. The signer structure of the Multisigs may change if voted
-on through the governance process.
+All Balancer Multisigs are deployed using [Gnosis Safe](https://gnosis-safe.io/), the most battle-tested Multisig contract on Ethereum. The DAO and Treasury Multisigs with the ability to change protocol operations or access to treasury funds are require 6-of-11 singers to process transactions. The signer structure of the Multisigs may change if voted on through the governance process.
 
-Over time, various functions have been delegated to different Multisigs.  The Balancer Maxis working group is responsible
-for ensuring the application of governance on chain.  The [Balancer Multisig Ops Repo](https://github.com/BalancerMaxis/Multisig-ops) 
-describes all Multisigs and operations as well as the external touch-points available.  
+Over time, various functions have been delegated to different Multisigs.  The Balancer Maxis working group is responsible for ensuring the application of governance on chain.  The [Balancer Multisig Ops Repo](https://github.com/BalancerMaxis/Multisig-ops) describes all Multisigs and operations as well as the external touch-points available.  
 
 ## The Signers
 Balancer’s Multisig signers are a diverse set of widely respected community members. These are the  current signers as of February 2023:
 
-**Note that the list below was last updated in February 2023.  The Maxi's keep an up-to-date list of their signers and 
-Multisigs [here](https://github.com/BalancerMaxis/Multisig-ops)**
+**Note that the list below was last updated in February 2023.  The Maxi's keep an up-to-date list of their signers and Multisigs [here](https://github.com/BalancerMaxis/Multisig-ops)**
 
 ### DAO Multisig Signer Set
-The DAO Multisig Signer Set and associated Multisigs is reserved for major changes to protcool operations, and management
-of treasury funds.
+The DAO Multisig Signer Set and associated Multisigs is reserved for major changes to protcool operations, and management of treasury funds.
 
 | Signer                                             | Association              | Address                                     |
 |----------------------------------------------------|--------------------------|---------------------------------------------|
@@ -112,15 +85,12 @@ of treasury funds.
 
 **DAO Multisigs always require 6/11 signers to execute a transaction.**
 
-Beyond those current signers, [BIP-16](https://forum.balancer.fi/t/bip-16-update-dao-Multisig-replacement-list/3361) laid
-out a group of backup signers who could replace current signers without further governance.  Note that since BIP-16,
-Moniur has become an active member of the DAO Multisig.
+Beyond those current signers, [BIP-16](https://forum.balancer.fi/t/bip-16-update-dao-Multisig-replacement-list/3361) laid out a group of backup signers who could replace current signers without further governance.  Note that since BIP-16, Moniur has become an active member of the DAO Multisig.
 
 
 
 ### Operational Multisigs Signer Set AKA Balancer Maxis
-The Balancer Maxis operate a number of Multisigs with a reduced signer requirement, which are used for the regular operation of 
-the protocol, as well as adding gauges to veBAL.
+The Balancer Maxis operate a number of Multisigs with a reduced signer requirement, which are used for the regular operation of the protocol, as well as adding gauges to veBAL.
 
 
 | Signer       | Discord Handle  | Address                                     |
@@ -135,15 +105,12 @@ the protocol, as well as adding gauges to veBAL.
 
 **The Balancer Maxi Multisig set requires 2 or 3 out of 7 signers to execute, depending on the security level of the Multisig.**
 
-The Balancer Maxi's are ratified by a BIP each quarter.  [BIP-145](https://forum.balancer.fi/t/bip-145-fund-the-balancer-maxis-for-q1-2023/)
-is a recent example of such governance.
+The Balancer Maxi's are ratified by a BIP each quarter.  [BIP-145](https://forum.balancer.fi/t/bip-145-fund-the-balancer-maxis-for-q1-2023/) is a recent example of such governance.
 
 
 ## Signer Duties
 
-All signers are expected to sign an Ethereum transaction ratifying each decision made by BAL holders through snapshot votes. 
-This signature is expected to be done within the two weeks after the snapshot vote was concluded.  Signers are encouraged
-to sign open requests even if they have already reached a quorum in order to signal their liveliness.
+All signers are expected to sign an Ethereum transaction ratifying each decision made by BAL holders through snapshot votes. This signature is expected to be done within the two weeks after the snapshot vote was concluded.  Signers are encouraged to sign open requests even if they have already reached a quorum in order to signal their liveliness.
 
 A signer shall lose his/her role \(by action of the remaining Multisig signers excluding him/her\) in case he/she:
 
@@ -169,7 +136,5 @@ created by the dynamic-fee pool factory that will be deployed by Balancer Labs
 
 ## Access to User Deposits
 
-It’s worth highlighting that the Multisig does **not** have custody of, nor control over, funds from liquidity 
-providers that lie inside Balancer Protocol contracts. Balancer V2 was designed so that even if the Multisig goes rogue,
-all the liquidity is safe and can be withdrawn by their rightful owners.
+It’s worth highlighting that the Multisig does **not** have custody of, nor control over, funds from liquidity providers that lie inside Balancer Protocol contracts. Balancer V2 was designed so that even if the Multisig goes rogue, all the liquidity is safe and can be withdrawn by their rightful owners.
 

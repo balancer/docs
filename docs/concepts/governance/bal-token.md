@@ -160,8 +160,7 @@ Emissions to liquidty providers are decided by a combination of the emissions sc
 
 Note that as part of the veBAL conversion, the entire ecosystem fund was transferred into the [DAO multisig](https://etherscan.io/address/0x10A19e7eE7d7F8a52822f6817de8ea18204F2e4f)
 
-There are currently over 5 million BAL in community control. Additionally, at the time of ths writing some additional BAL
-is staked on Aave on Polygon. All community BAL is held in the DAO Multisig of the chain which they reside.
+There are currently over 5 million BAL in community control. Additionally, at the time of ths writing some additional BAL is staked on Aave on Polygon. All community BAL is held in the DAO Multisig of the chain which they reside.
 
 Original Ecosystem Fund: <span class="address-link">[0xb618F903ad1d00d6F7b92f5b0954DcdC056fC533](https://etherscan.io/address/0xb618F903ad1d00d6F7b92f5b0954DcdC056fC533)</span>
 
