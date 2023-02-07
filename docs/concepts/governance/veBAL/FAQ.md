@@ -70,7 +70,7 @@ It's normal for vote escrowed (ve) systems to not allow arbitrary contracts to l
 ### Is there a repository for the contract addresses of all the new staking contracts and veBAL contracts?
 
 | Contract                                                                                                        | Purpose                                              |
-| --------------------------------------------------------------------------------------------------------------- | ---------------------------------------------------- |
+|:----------------------------------------------------------------------------------------------------------------|:-----------------------------------------------------|
 | [veBAL](https://etherscan.io/tx/0xaa29cd251cdb024c415b0e13f67a0ca74fe5abc3de9a9fedd1ae26fd39be4025)             | Locks BPTs and reports veBAL balances                |
 | [Gauge Controller](https://etherscan.io/address/0xC128468b7Ce63eA702C1f104D55A2566b13D3ABD)                     | Manages Gauges and emissions                         |
 | [Gauge Adder](https://etherscan.io/address/0x2fFB7B215Ae7F088eC2530C7aa8E1B24E398f26a)                          | Adds new gauges approved by governance to the system |
