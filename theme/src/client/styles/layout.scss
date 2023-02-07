@@ -30,8 +30,8 @@
   max-height: calc(100vh - var(--navbar-height) - 16px);
   position: sticky;
   overflow: auto;
-  top: calc(var(--navbar-height) + 16px);
-  margin-block-start: 7rem;
+  top: calc(var(--navbar-height) + 24px);
+  margin-block-start: calc(6rem + 5px);
   padding-block-end: 2rem;
   padding-inline-end: 2rem;
 }

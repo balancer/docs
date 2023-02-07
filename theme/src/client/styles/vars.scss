@@ -18,8 +18,12 @@
   --c-text-lighter: #4e6e8e;
   --c-text-lightest: #6a8bad;
   --c-text-quote: #999999;
+  --c-text-code: #f08d49;
 
   --c-sidebar-heading: #141414;
+
+  // link colors
+  --c-link: var(--c-brand);
 
   // border colors
   --c-border: #eaecef;
