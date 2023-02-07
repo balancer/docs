@@ -25,8 +25,8 @@ the protocol takes 50% of the trade fees.
   - 35% are paid to the DAO 
   - 65% are emitted to BAL holders in the form of bb-a-USD (a boosted USD balancer pool)
 
-### Boosted Pool Fees
-[BIP-19] Introduced [Boosted Pools](veBAL/boosted-pools.md) which earn 50% protocol fees on the increasing value of derivitive tokens like wstETH and aUSDC.
+### Core Pool Fees
+[BIP-19] Introduced Core Pools which earn 50% protocol fees on the increasing value of derivitive tokens like wstETH and aUSDC.
 These fees are handled as follows:
 - All tokens except BAL are sold for USDC
 - 35% of the BAL and USDC are taken as fees for the DAO
@@ -47,7 +47,7 @@ are paid to the DAO treasury where they are used primarily to fund the operation
 which allocate funds to Balancer DAOs [Service Providers](https://forum.balancer.fi/c/service-provider/15). 
 
 **65% of all collected Protocol Fees**
-are paid out to veBAL holders, either in the form of direct emissions, or bribes that can be earned on vote markets
+are paid out to veBAL holders, either in the form of passive fees, or bribes that can be earned on vote markets
 for directing their votes towards pools which generate revenue for the DAO through fees on their underlying staked assets.
 
 
@@ -63,16 +63,3 @@ We invite you to join our Discord and Forums to take part in the discussion over
 * Lend them on an external protocol
 * Pay them directly to Balancer Governors
 * Use them to incentivize deposits through vote markets. See [BIP-19](https://forum.balancer.fi/t/bip-19-incentivize-core-pools-l2-usage/3329)
-
-## Fee processing and handling
-The [Balancer Maxis](https://forum.balancer.fi/t/bip-145-fund-the-balancer-maxis-for-q1-2023/4208) are tasked by Balancer Governance 
-with sweeping fees from the vault and processing them into their final destination.  Due to the need to swap whatever 
-tokens happen to be collected across a number of chains and bridge them, this is still a manual process conducted 
-bi-weekly by the Maxis.
-
-Currently, efforts are underway to improve automation including:
-
-- [BIP-115](https://forum.balancer.fi/t/bip-115-balancer-smart-vaults-fee-collector/3966) provides Mimic with the opertunity to 
-automoate the process of collecting.  The Mimic Smart Valuts Fee Collecter is expected to come online in Q1, 2023.
-- The Balancer Maxis track core bribes on this [Google Sheet](https://docs.google.com/spreadsheets/d/1xwUPpbYq7woVOU9vQ8EB8MY75I-1mauTLyDVwvKUDKo/edit#gid=0)
-- Automation tooling is being built to automate bribe payments and handling of the resulting outputs from Mimic in the [multisig-ops repo](https://github.com/BalancerMaxis/multisig-ops)
