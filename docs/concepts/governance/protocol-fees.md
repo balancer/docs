@@ -21,7 +21,7 @@ As of [BIP-163](https://forum.balancer.fi/t/bip-19-incentivize-core-pools-l2-usa
   - 65% are emitted to BAL holders in the form of bb-a-USD (a boosted USD balancer pool)
 
 ### Core Pool Fees
-[BIP-19] Introduced Core Pools which earn 50% protocol fees on the increasing value of derivitive tokens like wstETH and aUSDC. These fees are handled as follows:
+Balancer applies the protocol fee of 50% not only to swaps but also to any yield earned. [BIP-19](https://forum.balancer.fi/t/bip-19-incentivize-core-pools-l2-usage/3329) introduces the idea of core pools which are typically pools that are at least 50% yield bearing. Fees earned from core pools are handled as follows:
 - All tokens except BAL are sold for USDC
 - 35% of the BAL and USDC are taken as fees for the DAO
 - the remaining BAL and USDC are used to place bribes for votes on the pools that generated said fees as described by [BIP-19](https://forum.balancer.fi/t/bip-19-incentivize-core-pools-l2-usage/3329)
