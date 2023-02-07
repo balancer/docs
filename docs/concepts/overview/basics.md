@@ -31,7 +31,7 @@ All of the aggregate liquidity is then easily accessilbe for traders, aggregator
 
 Balancer is an incredibly useful tool for a diverse set of actors in the Defi space.
 
-Traders can swap between any two ERC20 tokens. This can be done through the [Balancer Dapp](https://app.balancer.fi/#/ethereum/trade) or aggregators like 1inch, Matcha, or Paraswap.
+Traders can swap between any two ERC20 tokens. This can be done through the [Balancer Dapp](https://app.balancer.fi/#/ethereum/trade) or aggregators like [1inch](https://app.1inch.io), [Matcha](https://www.matcha.xyz), or [Paraswap](https://app.paraswap.io).
 
 Liquidity Providers (LPs) can add liquidity to pools to earn swap fees, liquidity incentives, and other forms of yield
 

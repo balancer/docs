@@ -41,7 +41,7 @@ When providing your assets, you must ensure that the tokens are sorted numerical
 
 In the joinPool call, you have to provide `maxAmountsIn`, the upper limits for the tokens to send. In short, what are the maximum amounts you would find acceptable to send, given the amount of BPT you are receiving?
 
-A good practice is to use [`queryJoin` in `BalancerHelpers`](/reference/contracts/apis/balancer-helpers.md#queryjoin) to find the current amount of BPT you would get for your tokens, and then account for some possible slippage.
+A good practice is to use [`queryJoin` in `BalancerQueries`](/reference/contracts/query-functions.md#queryjoin) to find the current amount of BPT you would get for your tokens, and then account for some possible slippage.
 
 Let's say that you want to allow a 1% slippage. After computing how many tokens you expect to provide for a given amount of BPT, you'd apply a factor of 1.01 to all the amounts. These thresholds are important because it's possible for token amounts to change in the pool between the time you send your transaction and when your transaction executes.
 

@@ -74,6 +74,7 @@ export default defineUserConfig({
       include: true,
       tabs: true,
       chart: true,
+      mermaid: true,
     }),
   ],
 });
