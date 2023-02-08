@@ -14,17 +14,34 @@ The Protocol Fees for trades can be collected as a percentage of the trade fees 
 
 Upon launch, Balancer V2's **Protocol Fees for trades are turned off by default**. They can be turned on only by a vote of the Balancer Governors (BAL token holders). The governors have the power to activate and determine the amount of these fees.
 
+As of [BIP-163](https://forum.balancer.fi/t/bip-19-incentivize-core-pools-l2-usage/3329#specification-4)  in January 2023, the protocol takes 50% of the trade fees.
+- 100% of all BAL fees collected are emitted as fee sharing to veBAL holders.  See this [Governance Proposal](https://forum.balancer.fi/t/proposal-distribute-protocol-fees-in-bal-where-appropriate/2933)
+- All other tokens are sold for USDC, of which 
+  - 35% are paid to the DAO 
+  - 65% are emitted to BAL holders in the form of bb-a-USD (a boosted USD balancer pool)
+
+### Core Pool Fees
+Balancer applies the protocol fee of 50% not only to swaps but also to any yield earned. [BIP-19](https://forum.balancer.fi/t/bip-19-incentivize-core-pools-l2-usage/3329) introduces the idea of core pools which are typically pools that are at least 50% yield bearing. Fees earned from core pools are handled as follows:
+- All tokens except BAL are sold for USDC
+- 35% of the BAL and USDC are taken as fees for the DAO
+- the remaining BAL and USDC are used to place bribes for votes on the pools that generated said fees as described by [BIP-19](https://forum.balancer.fi/t/bip-19-incentivize-core-pools-l2-usage/3329)
+
 ### Flash Loan Fees
 
-Another source of Protocol Fees is from interest on Flash Loans. Further reading for Flash Loans on Balancer:
+Another potential source of Protocol Fees is from interest on Flash Loans. They are currently disabled to encourage developers to build on Balancer.
 
 ## Uses
 
-Protocol Fees are to be used according to proposals and votes by the Balancer Governors. There are endless possibilities for what the Balancer Protocol could do with these fees, some of which may not even exist yet. This list of example uses is not meant to be recommendations for what to do with them, but is instead meant to start the conversation on how to use this incredible power.
+The distribution of protocol fees can be adjusted by governance.  Currently:
+
+**35% of all collected Protocol Fees** are paid to the DAO treasury where they are used primarily to fund the operations of the DAO as allocated by regular governance BIPS which allocate funds to Balancer DAOs [Service Providers](https://forum.balancer.fi/c/service-provider/15). 
+
+**65% of all collected Protocol Fees** are paid out to veBAL holders, either in the form of passive fees, or bribes that can be earned on vote markets for directing their votes towards pools which generate revenue for the DAO through fees on their underlying staked assets.
+
 
 We invite you to join our Discord and Forums to take part in the discussion over how to use these fees.
 
-#### Possible uses of Balancer Protocol Fees
+#### Possible additional uses of Balancer Protocol Fees
 
 * Put them into a Balancer Pool
 * Fund Gitcoin Grants for protocol improvements

@@ -6,12 +6,12 @@ order: 1
 
 ## Overview
 
-Balancer Governance Token \(BAL\) is the core token behind the Balancer protocol. Alignment between governance token holders and protocol stakeholders is crucial for successful decentralized governance, and BAL tokens are the vehicle to drive this alignment. [veBAL](/concepts/governance/vebal/) is an extension of BAL and is used for voting in decentralized governance.
+Balancer Governance Token \(BAL\) is the core token behind the Balancer protocol. Alignment between governance token holders and protocol stakeholders is crucial for successful decentralized governance, and BAL tokens are the vehicle to drive this alignment. [veBAL](./veBAL) is an extension of BAL and is used for voting in decentralized governance.
 
 ## Contract Address
 
 | Network  | BAL Token Address                                                                                                                                              |
-| :------- | :------------------------------------------------------------------------------------------------------------------------------------------------------------- |
+|:---------|:---------------------------------------------------------------------------------------------------------------------------------------------------------------|
 | Ethereum | <span class="address-link">[0xba100000625a3754423978a60c9317c58a424e3d](https://etherscan.io/address/0xba100000625a3754423978a60c9317c58a424e3d)</span>        |
 | Polygon  | <span class="address-link">[0x9a71012b13ca4d3d0cdc72a177df3ef03b0e76a3](https://polygonscan.com/address/0x9a71012b13ca4d3d0cdc72a177df3ef03b0e76a3)</span>     |
 | Arbitrum | <span class="address-link">[0x040d1EdC9569d4Bab2D15287Dc5A4F10F56a56B8](https://arbiscan.io/address/0x040d1EdC9569d4Bab2D15287Dc5A4F10F56a56B8)</span>         |
@@ -100,13 +100,13 @@ This results in the following emissions schedule:
 
 This chart outlines the allocation amounts. More details below.
 
-| BAL Recipient/Fund                                                                                                                                                     | Original Allocation | State as of Feb 2023                         |
-| ---------------------------------------------------------------------------------------------------------------------------------------------------------------------- | ------------------- | -------------------------------------------- |
-| Community                                                                                                                                                              | 65M                 | 6M remain                                    |
-| Liquidity Providers(veBAL) - [allocated by community](https://snapshot.org/#/balancer.eth/proposal/0xc93aa02ea7153a53d124189567ba19aa28663c499cdbfa60fe9bf35bf574d2a7) | N/A                 | 47.5M From community fund allocated to veBAL |
-| Founders, Options, Advisors, Investors                                                                                                                                 | 25M                 | No Information Available                     |
-| Ecosystem Fund                                                                                                                                                         | 5M                  | Merged into Community Fund                   |
-| Fundraising Fund                                                                                                                                                       | 5M                  | Merged into Community Fund                   |
+| BAL Recipient/Fund                                                                                                                                                     | Original Allocation | State as of Feb 2023                          |
+|:-----------------------------------------------------------------------------------------------------------------------------------------------------------------------|:--------------------|:----------------------------------------------|
+| Community                                                                                                                                                              | 65M                 | 6M remain                                     |
+| Liquidity Providers(veBAL) - [allocated by community](https://snapshot.org/#/balancer.eth/proposal/0xc93aa02ea7153a53d124189567ba19aa28663c499cdbfa60fe9bf35bf574d2a7) | N/A                 | 47.5M From community fund allocated to veBAL  |
+| Founders, Options, Advisors, Investors                                                                                                                                 | 25M                 | No Information Available                      |
+| Ecosystem Fund                                                                                                                                                         | 5M                  | Merged into Community Fund                    |
+| Fundraising Fund                                                                                                                                                       | 5M                  | Merged into Community Fund                    |
 
 ::: chart BAL Token Distribution
 
@@ -160,8 +160,7 @@ Emissions to liquidty providers are decided by a combination of the emissions sc
 
 Note that as part of the veBAL conversion, the entire ecosystem fund was transferred into the [DAO multisig](https://etherscan.io/address/0x10A19e7eE7d7F8a52822f6817de8ea18204F2e4f)
 
-There are currently over 5 million BAL in community control. Additionally, at the time of ths writing some additional BAL
-is staked on Aave on Polygon. All community BAL is held in the DAO Multisig of the chain which they reside.
+There are currently over 5 million BAL in community control. Additionally, at the time of ths writing some additional BAL is staked on Aave on Polygon. All community BAL is held in the DAO Multisig of the chain which they reside.
 
 Original Ecosystem Fund: <span class="address-link">[0xb618F903ad1d00d6F7b92f5b0954DcdC056fC533](https://etherscan.io/address/0xb618F903ad1d00d6F7b92f5b0954DcdC056fC533)</span>
 

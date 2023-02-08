@@ -5,7 +5,7 @@ title: Overview
 
 # Governance
 
-Various components of Balancer Governance are described in brief below.
+Various components of Balancer Governance are described in brief below.  Click on the headings for more details on each topic.
 
 ## [veBAL](./veBAL)
 
@@ -19,6 +19,11 @@ The BAL token is the primary component of veBAL. Due to the fact that veBAL allo
 
 Balancer Governors have the power to enable and modify Governable Protocol Fees. These can be collected from trading fees and flash loan fees and stored in the Vault. The Governors themselves also get to decide what becomes of these fees, and how to best spend them to support the health and progress of the protocol.
 
+## [Governance Process](./process.md)
+
+Changes to the Balancer Protocol and allocations of community funds are made through a governance process, which includes:  A proposal, a prepaird transaction payload for onchain execution via gnosis-safe, and a snapshot vote validating the proposal with a quorum that currently stands at at least 2 million veBAL voting.
+
+
 ## [Snapshot](./snapshot)
 
 Snapshot, a spinoff of Balancer, is an off-chain gasless multi-governance client with easy to verify and hard to contest results. Balancer Governance Votes take place on Snapshot.
@@ -26,3 +31,7 @@ Snapshot, a spinoff of Balancer, is an off-chain gasless multi-governance client
 ## [Multisig](./multisig)
 
 To enact the off-chain votes on Snapshot, Balancer Protocol uses a Multisig to solidify these changes on-chain. Balancer’s Multisig signers are a diverse set of widely respected community members. The multisig does NOT have decision making power, as its role is to simply enact on-chain the decisions BAL holders make via off-chain voting.
+
+## [Emergency subDAO](./emergency)
+
+In order to protect veBAL from bad actors by killing gauges and pool factories, the emergency subdao was established with bounded authority to manage the protocol.
