@@ -31,3 +31,7 @@ Snapshot, a spinoff of Balancer, is an off-chain gasless multi-governance client
 ## [Multisig](./multisig)
 
 To enact the off-chain votes on Snapshot, Balancer Protocol uses a Multisig to solidify these changes on-chain. Balancer’s Multisig signers are a diverse set of widely respected community members. The multisig does NOT have decision making power, as its role is to simply enact on-chain the decisions BAL holders make via off-chain voting.
+
+## [Emergency subDAO](./emergency)
+
+In order to protect veBAL from bad actors by killing gauges and pool factories, the emergency subdao was established with bounded authority to manage the protocol.
