@@ -4,7 +4,7 @@
 The [Emergency DAO](https://dao.curve.fi/emergencymembers) is an idea pioneered by Curve that empowers a small group to “kill” pools and gauges in the event of malicious activity and/or potential loss of funds. The Balancer emergency subDAO was established after the following [vote](https://vote.balancer.fi/#/proposal/0x63fab7ab9ef5b9579dabb82058b8ea309e39c766d435438b55fff8db7c1f69fd).
 
 ## Members
-The Balancer Emergency subDAO is a 4-of-7 multisig with the following members:
+aThe Balancer Emergency subDAO is a 4-of-7 multisig with the following members as appointed by [this vote](https://forum.balancer.fi/t/form-the-emergency-subdao/3197):
 
 | Person     | Address                                       |
 |:-----------|:----------------------------------------------|

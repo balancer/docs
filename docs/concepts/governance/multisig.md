@@ -64,7 +64,7 @@ Over time, various functions have been delegated to different Multisigs.  The Ba
 ## The Signers
 Balancer’s Multisig signers are a diverse set of widely respected community members. These are the  current signers as of February 2023:
 
-**Note that the list below was last updated in February 2023.  The Maxi's keep an up-to-date list of their signers and Multisigs [here](https://github.com/BalancerMaxis/Multisig-ops)**
+**Note that the list below was last updated in February 2023.  The Maxis keep an up-to-date list of their signers and Multisigs [here](https://github.com/BalancerMaxis/Multisig-ops)**
 
 ### DAO Multisig Signer Set
 The DAO Multisig Signer Set and associated Multisigs is reserved for major changes to protcool operations, and management of treasury funds.
@@ -105,7 +105,7 @@ The Balancer Maxis operate a number of Multisigs with a reduced signer requireme
 
 **The Balancer Maxi Multisig set requires 2 or 3 out of 7 signers to execute, depending on the security level of the Multisig.**
 
-The Balancer Maxi's are ratified by a BIP each quarter.  [BIP-145](https://forum.balancer.fi/t/bip-145-fund-the-balancer-maxis-for-q1-2023/) is a recent example of such governance.
+The Balancer Maxis are ratified by a BIP each quarter.  [BIP-145](https://forum.balancer.fi/t/bip-145-fund-the-balancer-maxis-for-q1-2023/) is a recent example of such governance.
 
 
 ## Signer Duties
