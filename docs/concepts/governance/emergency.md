@@ -28,11 +28,18 @@ The Balancer Emergency subDAO operates through the following multsigs which are 
 
 ## Specifications
 As per [this vote](https://forum.balancer.fi/t/form-the-emergency-subdao/3197)   
-- killGauge - To stop all distribution of BAL to a gauge.
-- denylistToken - Instructs the ProtocolFeeWithdrawer to blacklist fee collection of a specific token.
+
+| Call            | Contract(s)                                                                                      | Purpose                                                                                  |
+|:----------------|:-------------------------------------------------------------------------------------------------|:-----------------------------------------------------------------------------------------|
+| killGauge       | Gauge contracts                                                                                  | To stop all distribution of BAL to a gauge.                                              | 
+| denylistToken   | [ProtocolFeeWithdrawer](https://etherscan.io/address/0x5ef4c5352882b10893b70DbcaA0C000965bd23c5) | Instructs the ProtocolFeeWithdrawer to blacklist fee collection of a specific token.     |
+
 As per [BIP-139](https://forum.balancer.fi/t/bip-139-update-emergency-subdao-permissions/4174)
 The Emergency DAO Multsigis are authorized to make the following calls to protocol contracts:
-- enableRecoveryMode - for Pools to provide a simple way to exit pools proportionally at the cost of disabling protocol fees(swaps, joins, etc. still work).
-- disable - to shutdown pool factories. This is to prevent further pools from being created, existing pools remain unaffected.
+
+| Call               | Contract(s)            | Purpose                                                                                                                               |
+|:-------------------|:-----------------------|:--------------------------------------------------------------------------------------------------------------------------------------|
+| enableRecoveryMode | Pool contracts         | for Pools to provide a simple way to exit pools proportionally at the cost of disabling protocol fees(swaps, joins, etc. still work). |
+| disable            | Pool factory contracts | to shutdown pool factories. This is to prevent further pools from being created, existing pools remain unaffected.                    |
 
 
