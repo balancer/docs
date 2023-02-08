@@ -33,11 +33,11 @@ The Optimism deployment is a joint venture between Balancer and Beethoven teams.
 
 ## Pool Factories
 
-| Contract                                                                                                                                                                     | Address                                                  |
-| ---------------------------------------------------------------------------------------------------------------------------------------------------------------------------- | -------------------------------------------------------- |
-| [WeightedPoolFactory](https://github.com/balancer-labs/balancer-v2-monorepo/blob/master/pkg/pool-weighted/contracts/WeightedPoolFactory.sol) (v3)                            | <span class="address-link">To be deployed shortly</span> |
-| [ComposableStablePoolFactory](https://github.com/balancer-labs/balancer-v2-monorepo/blob/master/pkg/pool-stable/contracts/ComposableStablePoolFactory.sol) (v3)              | <span class="address-link">To be deployed shortly</span> |
-| [LiquidityBootstrappingPoolFactory](https://github.com/balancer-labs/balancer-v2-monorepo/blob/master/pkg/pool-weighted/contracts/lbp/LiquidityBootstrappingPoolFactory.sol) | <span class="address-link"></span>                       |
+| Contract                                                                                                                                                                     | Address                                                                                                                                                            |
+| ---------------------------------------------------------------------------------------------------------------------------------------------------------------------------- | ------------------------------------------------------------------------------------------------------------------------------------------------------------------ |
+| [WeightedPoolFactory](https://github.com/balancer-labs/balancer-v2-monorepo/blob/master/pkg/pool-weighted/contracts/WeightedPoolFactory.sol) (v3)                            | <span class="address-link">[0xA0DAbEBAAd1b243BBb243f933013d560819eB66f](https://optimistic.etherscan.io/address/0xA0DAbEBAAd1b243BBb243f933013d560819eB66f)</span> |
+| [ComposableStablePoolFactory](https://github.com/balancer-labs/balancer-v2-monorepo/blob/master/pkg/pool-stable/contracts/ComposableStablePoolFactory.sol) (v3)              | <span class="address-link">[0xe2E901AB09f37884BA31622dF3Ca7FC19AA443Be](https://optimistic.etherscan.io/address/0xe2E901AB09f37884BA31622dF3Ca7FC19AA443Be)</span> |
+| [LiquidityBootstrappingPoolFactory](https://github.com/balancer-labs/balancer-v2-monorepo/blob/master/pkg/pool-weighted/contracts/lbp/LiquidityBootstrappingPoolFactory.sol) | <span class="address-link"></span>                                                                                                                                 |
 
 ## BAL / veBAL / Liquidity Mining
 

@@ -49,6 +49,7 @@ export const navbar: NavbarConfig = [
             text: 'APIs',
             link: '/reference/contracts/apis/vault',
           },
+          '/reference/contracts/security',
           '/reference/contracts/error-codes',
           '/reference/contracts/query-functions',
         ],
@@ -85,6 +86,7 @@ export const navbar: NavbarConfig = [
         children: [
           '/reference/math/weighted-math',
           '/reference/math/stable-math',
+          '/reference/math/linear-math',
         ],
       },
       {

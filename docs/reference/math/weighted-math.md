@@ -1,3 +1,7 @@
+---
+order: 1
+---
+
 # Weighted Math
 
 ## Overview
@@ -14,13 +18,13 @@ For more formulas and derivations of the below formulas, please refer to the [Ba
 
 Developers can use the TypeScript math implementations used by the Smart Order router
 
-* [weightedMath.ts](https://github.com/balancer-labs/balancer-sor/blob/john/v2-package-linear/src/pools/weightedPool/weightedMath.ts)
+- [weightedMath.ts](https://github.com/balancer-labs/balancer-sor/blob/john/v2-package-linear/src/pools/weightedPool/weightedMath.ts)
 
 ### Python
 
 There are also Python implementations in progress
 
-* [weightedMath.py](https://github.com/officialnico/balancerv2cad/blob/main/src/balancerv2cad/WeightedMath.py)
+- [weightedMath.py](https://github.com/officialnico/balancerv2cad/blob/main/src/balancerv2cad/WeightedMath.py)
 
 ## Invariant
 
@@ -32,9 +36,9 @@ $$
 
 Where
 
-* $t$ ranges over the tokens in the pool
-* $B_t$ is the balance of the token in the pool
-* $W_t$​is the normalized weight of the tokens, such that the sum of all normalized weights is 1.
+- $t$ ranges over the tokens in the pool
+- $B_t$ is the balance of the token in the pool
+- $W_t$​is the normalized weight of the tokens, such that the sum of all normalized weights is 1.
 
 ## Spot Price
 
@@ -44,10 +48,10 @@ $$
 SP^o_i = \frac{\frac{B_i}{W_i}}{\frac{B_o}{W_o}}
 $$
 
-* $B_i$ is the balance of token $i$, the token being sold by the trader which is going into the pool
-* $B_o$ is the balance of token $o$, the token being bought by the trader which is going out of the pool
-* $W_i$ is the weight of token $i$
-* $W_o$ is the weight of token $o$
+- $B_i$ is the balance of token $i$, the token being sold by the trader which is going into the pool
+- $B_o$ is the balance of token $o$, the token being bought by the trader which is going out of the pool
+- $W_i$ is the weight of token $i$
+- $W_o$ is the weight of token $o$
 
 ### Spot Price with Swap Fees
 
