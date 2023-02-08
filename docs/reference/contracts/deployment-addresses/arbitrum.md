@@ -29,11 +29,11 @@ For more information on specific deployments as well as changelogs for different
 
 ## Pool Factories
 
-| Contract                                                                                                                                                                     | Address                                                  |
-| ---------------------------------------------------------------------------------------------------------------------------------------------------------------------------- | -------------------------------------------------------- |
-| [WeightedPoolFactory](https://github.com/balancer-labs/balancer-v2-monorepo/blob/master/pkg/pool-weighted/contracts/WeightedPoolFactory.sol) (v3)                            | <span class="address-link">To be deployed shortly</span> |
-| [ComposableStablePoolFactory](https://github.com/balancer-labs/balancer-v2-monorepo/blob/master/pkg/pool-stable/contracts/ComposableStablePoolFactory.sol) (v3)              | <span class="address-link">To be deployed shortly</span> |
-| [LiquidityBootstrappingPoolFactory](https://github.com/balancer-labs/balancer-v2-monorepo/blob/master/pkg/pool-weighted/contracts/lbp/LiquidityBootstrappingPoolFactory.sol) | <span class="address-link"></span>                       |
+| Contract                                                                                                                                                                     | Address                                                                                                                                                |
+| ---------------------------------------------------------------------------------------------------------------------------------------------------------------------------- | ------------------------------------------------------------------------------------------------------------------------------------------------------ |
+| [WeightedPoolFactory](https://github.com/balancer-labs/balancer-v2-monorepo/blob/master/pkg/pool-weighted/contracts/WeightedPoolFactory.sol) (v3)                            | <span class="address-link">[0xf1665E19bc105BE4EDD3739F88315cC699cc5b65](https://arbiscan.io/address/0xf1665E19bc105BE4EDD3739F88315cC699cc5b65)</span> |
+| [ComposableStablePoolFactory](https://github.com/balancer-labs/balancer-v2-monorepo/blob/master/pkg/pool-stable/contracts/ComposableStablePoolFactory.sol) (v3)              | <span class="address-link">[0x1c99324EDC771c82A0DCCB780CC7DDA0045E50e7](https://arbiscan.io/address/0x1c99324EDC771c82A0DCCB780CC7DDA0045E50e7)</span> |
+| [LiquidityBootstrappingPoolFactory](https://github.com/balancer-labs/balancer-v2-monorepo/blob/master/pkg/pool-weighted/contracts/lbp/LiquidityBootstrappingPoolFactory.sol) | <span class="address-link"></span>                                                                                                                     |
 
 ## BAL / veBAL / Liquidity Mining
 

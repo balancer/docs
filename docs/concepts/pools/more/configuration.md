@@ -10,7 +10,9 @@ Balancer is a flexibile protocol and as such there are many choices an user or p
 
 ## Pool Types
 
-TODO
+Choosing the type of pool to use is straightforward based on a few simple factors. The primary being the expected price variations between the tokens in the pool. For most non-stable assets a [Weighted Pool](/concepts/pools/weighted.md) is the right choice. For assets that are stable like stablecoins or assets that are stable against each other with a known price rate (ex: wstETH/weth), a [Composable Stable Pool](/concepts/pools/stable.md) allows for much deeper liquidity.
+
+The Balancer Dapp has a [pool creation interface](https://app.balancer.fi/#/ethereum/pool/create) for weighted pools. For stable pool creation, reach out to our devs on [Discord](https://discord.balancer.fi/) for assistance.
 
 ## Token Composition
 
@@ -22,4 +24,14 @@ In general weighted pools should stick to 2 tokens and pair with a "core routing
 
 ## Fees
 
-TODO
+There a few choices to make when setting the swap fees for a new pool:
+
+1. Should the fee be permanently fixed?
+2. If variable who should control the updates?
+   - Balancer Governance
+   - A set address or contract
+3. What should the swap fee amount be?
+
+To set a permanent fee, an `owner` of `0x0000000000000000000000000000000000000000` is set upon pool creation. However in general the recommendation is to allow Balancer governance (and delegated addresses) to dynamically adjust the fees. This is done by setting an owner of `0xba1ba1ba1ba1ba1ba1ba1ba1ba1ba1ba1ba1ba1b`.
+
+There are lots of discussion and research around how to best set a swap fee amount, but a general rule of thumb is for stable assets it should be lower (ex: `0.1%`) and non-stable pairs should be higher (ex: `0.3%`).
