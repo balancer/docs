@@ -33,5 +33,5 @@ footer:
 **Analytics & Dashboards**
 
 - [DefiLlama](https://defillama.com/protocol/balancer)
-- [Analytics](https://balancer-analytics-prototype.web.app/)
-- [Analytics](https://info.balancer.xeonus.io/)
+- [Analytics](https://balancer.defilytica.com/)
+- [Dune veBAL](https://dune.com/balancerlabs/veBAL)
