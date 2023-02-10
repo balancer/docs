@@ -40,6 +40,10 @@ export const navbar: NavbarConfig = [
                 link: '/reference/contracts/deployment-addresses/polygon',
               },
               {
+                text: 'Gnosis',
+                link: '/reference/contracts/deployment-addresses/gnosis',
+              },
+              {
                 text: 'Goerli',
                 link: '/reference/contracts/deployment-addresses/goerli',
               },
