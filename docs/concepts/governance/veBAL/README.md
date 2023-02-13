@@ -4,7 +4,7 @@ title: Overview
 
 # veBAL Overview
 
-veBAL (vote-escrow BAL) is a vesting and yield system based on [Curve's veCRB mechanism](https://curve.readthedocs.io/dao-vecrv.html) which locks 80/20 BAL/WETH Balancer Pool Tokens for a maximum of 1 year. The veBAL and Gauge system is designed to promote long-term token-holder alignment and facilitate fair protocol revenue distribution.
+veBAL (vote-escrow BAL) is a vesting and yield system based on [Curve's veCRV mechanism](https://curve.readthedocs.io/dao-vecrv.html) which locks 80/20 BAL/WETH Balancer Pool Tokens for a maximum of 1 year. The veBAL and Gauge system is designed to promote long-term token-holder alignment and facilitate fair protocol revenue distribution.
 
 By locking the BAL WETH 80/20 BPT holders are given veBAL in exchange for governance and implied financial purposes and benefits. The longer the length of the time lock a user agrees to the higher their multiplier got governance. In short if I lock 1 BPT for 52 weeks I will receive the same amount of “vote escrowed” strength as someone who locks 2 BPT for 26 weeks. Quite simply voting strength is a function of the amount of pool tokens locked multiplied by the length of locking time.
 
