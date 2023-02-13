@@ -1,3 +1,5 @@
+@import '_variables';
+
 $input-color: #333;
 $input-background: #f6f9fc;
 $icon-color: darken($input-background, 30%);
@@ -116,6 +118,14 @@ $active-color: #1ea7fd;
     }
   }
 }
+
+@media screen and (max-width: $MQMobile) {
+    .search-input-wrapper {
+        input[data-search-input='true'] {
+            width: 200px;
+        }
+    }
+  }
 
 /* Fix the X appearing in search field on Chrome and IE */
 input[type='search']::-ms-clear {

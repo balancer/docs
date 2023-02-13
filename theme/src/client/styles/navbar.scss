@@ -80,9 +80,14 @@
 @media (max-width: $MQMobile) {
   .navbar {
     padding-left: 4rem;
+    padding-right: 2rem;
 
     .can-hide {
       display: none;
+    }
+
+    .social-icon {
+        display: none;
     }
 
     .site-name {
@@ -189,12 +194,6 @@
   }
 }
 
-@media screen and (max-width: $MQMobile) {
-  .toggle-sidebar-button {
-    display: block;
-  }
-}
-
 /**
  * toggle color mode button
  */
@@ -218,4 +217,14 @@
 
 .DocSearch {
   transition: background-color var(--t-color);
+}
+
+@media screen and (max-width: $MQMobile) {
+    .toggle-sidebar-button {
+      display: block;
+    }
+
+    .toggle-color-mode-button {
+        margin-left: 0.5rem;
+    }
 }
