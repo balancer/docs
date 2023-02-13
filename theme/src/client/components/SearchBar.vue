@@ -42,7 +42,7 @@ onMounted(() => {
 
 <style>
 .search-input-wrapper .search-icon.search {
-  z-index: 10;
+  z-index: 5;
 }
 
 .home .search-box {
