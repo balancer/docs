@@ -125,6 +125,14 @@ $active-color: #1ea7fd;
             width: 175px;
         }
     }
+
+    .home {
+        .search-input-wrapper {
+            input[data-search-input='true'] {
+                width: 100%;
+            }
+        }
+    }
   }
 
 /* Fix the X appearing in search field on Chrome and IE */
