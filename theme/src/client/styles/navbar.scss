@@ -80,7 +80,11 @@
 @media (max-width: $MQMobile) {
   .navbar {
     padding-left: 4rem;
-    padding-right: 2rem;
+    padding-right: 0rem;
+
+    .logo {
+      margin-right: 0rem;
+    }
 
     .can-hide {
       display: none;
