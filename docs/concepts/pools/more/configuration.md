@@ -10,7 +10,7 @@ Balancer is a flexibile protocol and as such there are many choices an user or p
 
 ## Pool Types
 
-Choosing the type of pool to use is straightforward based on a few simple factors. The primary being the expected price variations between the tokens in the pool. For most non-stable assets a [Weighted Pool](/concepts/pools/weighted.md) is the right choice. For assets that are stable like stablecoins or assets that are stable against each other with a known price rate (ex: wstETH/weth), a [Composable Stable Pool](/concepts/pools/stable.md) allows for much deeper liquidity.
+Choosing the type of pool to use is straightforward based on a few simple factors. The primary being the expected price variations between the tokens in the pool. For most non-stable assets a [Weighted Pool](/concepts/pools/weighted.md) is the right choice. For assets that are stable like stablecoins or assets that are stable against each other with a known price rate (ex: wstETH/weth), a [Composable Stable Pool](/concepts/pools/composable-stable.md) allows for much deeper liquidity.
 
 The Balancer Dapp has a [pool creation interface](https://app.balancer.fi/#/ethereum/pool/create) for weighted pools. For stable pool creation, reach out to our devs on [Discord](https://discord.balancer.fi/) for assistance.
 

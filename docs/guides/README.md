@@ -5,21 +5,14 @@ heroImage: /images/backgrounds/blue.png
 # Developer Guides
 
 ## Arbitrageurs
-- [Get Spot Price of a Pool](/guides/arbitrageurs/get-spot-price.html)
-- [Execute a batch swap](/guides/arbitrageurs/execute-a-batch-swap.md)
-- [Deposit internal balances and swap for minimal gas]()
-- [Create paths through bb-a-usd and other yield pools]()
-## Aggregators
-- [Use the SOR to find the best swap path]()
-- [Calculate swap outputs for yield pools]()
 
-## Integrators
-- [Format Data for Joins & Exits]()
-- [Get the APR for a pool]()
-- [Get pool and swaps data from the subgraph]()
+- [Get Spot Price of a Pool](/guides/arbitrageurs/get-spot-price.md)
+
+## Aggregators
+
+- [Use the SOR to find the best swap path](/guides/aggregators/sor-basics.md)
+
 ## Builders
 
-- [Deploy a pool from a factory]()
-- [Verify a pool on Etherscan]()
-- [Build a protocol on top of Balancer]()
-- [Join a pool from another smart contract]()
+- [Join a pool using the SDK](/guides/builders/join-pool.md)
+- [Exit a pool using the SDK](/guides/builders/exit-pool.md)

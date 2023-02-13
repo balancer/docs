@@ -1,1 +1,0 @@
-# Verify a pool on Etherscan
