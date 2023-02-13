@@ -58,13 +58,3 @@ There are few different ways to go about getting the spot price. For example, if
 ### Weighted Pool Spot Price Using the SDK
 
 @[code{11-22} ts](code/sdk-spot-price.ts)
-
-### All Pools Spot Price Using the SDK
-
-### Boosted Pool Spot Price
-
-TODO
-
-### Spot Price of Complex Path
-
-TODO

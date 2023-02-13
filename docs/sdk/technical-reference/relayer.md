@@ -9,7 +9,7 @@ const relayer = new relayerService(
 );
 ```
 
-### #swapUnwrapAaveStaticExactIn
+### `swapUnwrapAaveStaticExactIn`
 
 Finds swaps for tokenIn>wrapped Aave static tokens and chains with unwrap to underlying stable. ExactIn - Exact amount of tokenIn to use in swap.
 
@@ -37,9 +37,7 @@ async relayer.swapUnwrapAaveStaticExactIn(
 ): Promise<TransactionData>
 ```
 
-[Example](./examples/relayerSwapUnwrap.ts)
-
-### #swapUnwrapAaveStaticExactOut
+### `swapUnwrapAaveStaticExactOut`
 
 Finds swaps for tokenIn>wrapped Aave static tokens and chains with unwrap to underlying stable. ExactOut - Exact amount of tokens out are used for swaps.
 
@@ -67,9 +65,7 @@ async relayer.swapUnwrapAaveStaticExactOut(
 ): Promise<TransactionData>
 ```
 
-[Example](./examples/relayerSwapUnwrap.ts)
-
-### #exitPoolAndBatchSwap
+### `exitPoolAndBatchSwap`
 
 Chains poolExit with batchSwap to final tokens.
 

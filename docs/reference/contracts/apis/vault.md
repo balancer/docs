@@ -221,10 +221,6 @@ Implemented in `Swaps`.
 
 ## Batch Swaps
 
-::: info
-For a more in-depth explanation check out the [Batch Swaps](../../../guides/arbitrageurs/execute-a-batch-swap.md) page in Guides.
-:::
-
 Batch swap "steps" specify the assets involved, "many-to-many" sources and destinations, and min/max token limits to guard against slippage. There is also an optional deadline, after which the swap will timeout and revert. These return the token "deltas" - the net result of executing each swap sequentially.
 
 ### **`batchSwap`**

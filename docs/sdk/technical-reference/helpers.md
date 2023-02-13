@@ -3,6 +3,7 @@
 ## Pool IDs
 
 ### splitPoolId
+
 ```js
 /**
  * Splits a poolId into its components, i.e. pool address, pool specialization and its nonce
@@ -12,9 +13,9 @@
 export const splitPoolId = (
   poolId: string
 ): {
-  address: string;
-  specialization: PoolSpecialization;
-  nonce: BigNumber;
+  address: string,
+  specialization: PoolSpecialization,
+  nonce: BigNumber,
 } => {
   return {
     address: getPoolAddress(poolId),
@@ -25,6 +26,7 @@ export const splitPoolId = (
 ```
 
 ### getPoolAddress
+
 ```js
 /**
  * Extracts a pool's address from its poolId
@@ -38,6 +40,7 @@ export const getPoolAddress = (poolId: string): string => {
 ```
 
 ### getPoolSpecialization
+
 ```js
 /**
  * Extracts a pool's specialization from its poolId
@@ -56,7 +59,8 @@ export const getPoolSpecialization = (poolId: string): PoolSpecialization => {
 ```
 
 ### getPoolNonce
-```
+
+```js
 /**
  * Extracts a pool's nonce from its poolId
  * @param poolId - a bytes32 string of the pool's ID
