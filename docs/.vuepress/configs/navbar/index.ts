@@ -78,11 +78,13 @@ export const navbar: NavbarConfig = [
         ],
       },
       {
-        text: 'Swaps',
+        text: 'Swaps / Joins / Exits',
         children: [
           '/reference/swaps/batch-swaps',
           '/reference/swaps/flash-swaps',
           '/reference/swaps/single-swap',
+          'reference/joins-and-exits/pool-joins',
+          'reference/joins-and-exits/pool-exits',
         ],
       },
       {

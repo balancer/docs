@@ -1,3 +1,7 @@
+---
+order: 1
+---
+
 # Batch Swaps
 
 ## Batch Swap Overview
