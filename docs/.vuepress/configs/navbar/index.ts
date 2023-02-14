@@ -83,8 +83,8 @@ export const navbar: NavbarConfig = [
           '/reference/swaps/batch-swaps',
           '/reference/swaps/flash-swaps',
           '/reference/swaps/single-swap',
-          'reference/joins-and-exits/pool-joins',
-          'reference/joins-and-exits/pool-exits',
+          '/reference/joins-and-exits/pool-joins',
+          '/reference/joins-and-exits/pool-exits',
         ],
       },
       {
