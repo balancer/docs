@@ -42,6 +42,56 @@ const swapInfo = await swaps.findRouteGivenIn({
 ```
 The SOR returns the trade information, including the optimal trade route, the expected slippage and gas cost, and the estimated trade outcome as `swapInfo`.
 
+```js
+{
+  tokenAddresses: string[]      // tokens used in swaps
+  swaps: SwapV2[]               // swaps calldata
+  swapAmount: BigNumber
+  swapAmountForSwaps: BigNumber // used for wrapped assets, eg: stETH / wstETH
+  returnAmount: BigNumber
+  returnAmountFromSwaps: BigNumber // used for wrapped assets, eg: stETH/wstETH
+  returnAmountConsideringFees: BigNumber
+  tokenIn: string
+  tokenInForSwaps: string // Used with stETH/wstETH
+  tokenOut: string
+  tokenOutFromSwaps: string // Used with stETH/wstETH
+  marketSp: string
+}
+```
+
+::: details Example response for ETH to wBTC swap
+
+```js
+{
+  tokenAddresses: [
+    '0x0000000000000000000000000000000000000000',
+    '0x2260fac5e5542a773aa44fbcfedf7c193bc2c599'
+  ],
+  swaps: [
+    {
+      poolId: '0xa6f548df93de924d73be7d25dc02554c6bd66db500020000000000000000000e',
+      assetInIndex: 0,
+      assetOutIndex: 1,
+      amount: '1000000000000000000',
+      userData: '0x',
+      returnAmount: '7677860'
+    }
+  ],
+  swapAmount: BigNumber { _hex: '0x0de0b6b3a7640000', _isBigNumber: true },
+  swapAmountForSwaps: BigNumber { _hex: '0x0de0b6b3a7640000', _isBigNumber: true },
+  returnAmount: BigNumber { _hex: '0x7527a4', _isBigNumber: true },
+  returnAmountFromSwaps: BigNumber { _hex: '0x7527a4', _isBigNumber: true },
+  returnAmountConsideringFees: BigNumber { _hex: '0x752543', _isBigNumber: true },
+  tokenIn: '0x0000000000000000000000000000000000000000',
+  tokenInForSwaps: '0xc02aaa39b223fe8d0a0e5c4f27ead9083c756cc2',
+  tokenOut: '0x2260fac5e5542a773aa44fbcfedf7c193bc2c599',
+  tokenOutFromSwaps: '0x2260fac5e5542a773aa44fbcfedf7c193bc2c599'
+  marketSp: '13.022594322651878',
+}
+```
+
+:::
+
 ### Step 3. Transaction encoding
 To execute the trade, the returned `swapInfo` must be encoded into a transaction, which requires the following information:
 ```javascript
