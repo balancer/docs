@@ -15,7 +15,7 @@ batchSwap(SwapKind kind,
           uint256 deadline) returns (int256[] assetDeltas)
 ```
 
-To simplify the inputs to this function, we have grouped related fields into a number of structs which are explained below.
+Each struct which is explained below.
 
 ### BatchSwapStep struct
 
@@ -33,8 +33,8 @@ struct BatchSwapStep {
 - `assetInIndex`: The index of the token within `assets` which to use as an input of this step.
 - `assetOutIndex`: The index of the token within `assets` which is the output of this step.
 - `amount`: The meaning of `amount` depends on the value of `kind` which passed to the `batchSwap` function.
-  - `GIVEN_IN`: The amount of tokens we are sending to the pool in this step.
-  - `GIVEN_OUT`: The amount of tokens we want to receive from the pool in this step.
+  - `GIVEN_IN`: The amount of tokens swapped into the pool in this step
+  - `GIVEN_OUT`: The amount of tokens received from the pool in this step
 - `userData`: Any additional data which the pool requires to perform the swap. This allows pools to have more flexible swapping logic in future - for all current Balancer pools this can be left empty.
 
 ::: tip Amounts for multi-hop trades
@@ -74,7 +74,7 @@ batchSwap(SwapKind kind,
           uint256 deadline) returns (int256[] assetDeltas)
 ```
 
-- `kind`: The type of batch swap we want to perform - either "Out Given In" or "In Given Out." We either know the amount of tokens we're sending to the pool and want to know how many we'll receive, or vice versa.
+- `kind`: The type of batch swap to perform - either "Out Given Exact In" or "In Given Exact Out."
 - `assets`: An array of tokens which are used in the batch swap. This is referenced from within `swaps`
 - `limits`: An array of maximum amounts of each `asset` to be transferred. For tokens going **in** to the Vault, the `limit` shall be a positive number. For tokens going **out** of the Vault, the `limit` shall be a negative number. If the `amount` to be transferred for a given asset is greater than its `limit`, the trade will fail with error `BAL#507: SWAP_LIMIT`.
   - **How do you determine what your `limits` should be?** If you want to compute `limits`, it is recommended to use `queryBatchSwap` and then [add a slippage tolerance](batch-swaps.md#adding-a-slippage-tolerance).
@@ -112,25 +112,25 @@ Once you have received your `assetDeltas` from calling [`queryBatchSwap`](batch-
 
 #### `GIVEN_IN`
 
-If we are performing a `GIVEN_IN` `batchSwap` and wanted to apply a 1% slippage tolerance, we would multiple our negative `assetDeltas` by 0.99. We do not need to modify our positive amounts because we know the exact amount we are putting in.
+To perform a `GIVEN_IN` `batchSwap` and apply a 1% slippage tolerance, multiply the negative `assetDeltas` by 0.99. Positive amounts do not need to be modified since the amount going into the pool is known.
 
 #### `GIVEN_OUT`
 
-If we are performing a `GIVEN_OUT` `batchSwap` and wanted to apply a 1% slippage tolerance, we would multiple our positive `assetDeltas` by 1.01. We do not need to modify our negative amounts because we know the exact amount we are getting out.
+To perform a `GIVEN_OUT` `batchSwap` and apply a 1% slippage tolerance, multiply the positive `assetDeltas` by 1.01. Negative amounts do not need to be modified since the amount being received from the pool is known.
 
 ## Multi-hop Examples
 
-In these examples, we’re trading token A for token C, through the intermediate token B (we could illustrate this as A->B->C). Tokens A, B, and C could be in different pools, or in the same pool.
+In these examples, token A is being traded for token C, through the intermediate token B (illustrated as A->B->C). Tokens A, B, and C could be in different pools, or in the same pool.
 
 "Given In" means the caller knows the exact amount of the incoming token, and is asking the pool to calculate the tokenOut amount. The opposite is true of "Given Out."
 
 ### Example 1 ("Given In")
 
-The first case is a "Given In" Batch Swap: say we have 10 A and want to know how much C we can get for it. We can accomplish this with a two-step multi-hop swap: A for B, then B for C.
+The first case is a "Given In" Batch Swap: an user has 10 A and wants to know how much C they can get for it. This can be accomplished with a two-step multi-hop swap: A for B, then B for C.
 
-Since we know we have 10 A to start, the swap kind is `GIVEN_IN`, and the amount for the first swap is 10. The first swap will produce some output amount of B, but we don’t know in advance how much.
+Since 10 A to start is known, the swap kind is `GIVEN_IN`, and the amount for the first swap is 10. The first swap will produce some output amount of B, but the exact amount of B isn't known in advance.
 
-Since we don’t know the amount of B when constructing the multi-hop, we initialize the amount in the second swap to 0, which instructs the multi-hop logic to use the calculated output amount from the first swap as input to the second.
+Since B is unknown when constructing the multi-hop, the amount in the second swap is set to 0, which instructs the multi-hop logic to use the calculated output amount from the first swap as input to the second.
 
 | Parameter | Swap 1 | Swap 2 |
 | --------- | ------ | ------ |
@@ -138,13 +138,13 @@ Since we don’t know the amount of B when constructing the multi-hop, we initia
 | Token In  | A      | B      |
 | Token Out | B      | C      |
 
-Say we get 5 B from the first swap. The amount of the second swap is then set to 5 in the Vault logic, and the second swap produces some output amount of C. (The caller would then validate the overall swap by comparing this value to the minimum amountOut of C.)
+If the result of the first swap is 5 B. The amount of the second swap is then set to 5 in the Vault logic, and the second swap produces some output amount of C. (The caller would then validate the overall swap by comparing this value to the minimum amountOut of C.)
 
 ### Example 2 ("Given Out")
 
-The second case is a “Given Out” Batch Swap: say we want 20 C, and want to know how much A that will cost. Here we need to do the swaps “backwards,” first trading C for B, then B for A.
+The second case is a “Given Out” Batch Swap: an user wants to receive 20 C, and wants to know how much A that will cost. Here the swaps happen “backwards,” first trading C for B, then B for A.
 
-Since we know we want to get 20 C out, the swap kind is `GIVEN_OUT`, and the amount for the first swap is 20. The first swap will produce some require input amount of token B, but as before, we don’t know how much in advance. So again we set the amount of the second swap to zero.
+Since a 20 C output is known, the swap kind is `GIVEN_OUT`, and the amount for the first swap is 20. The first swap will produce some require input amount of token B, but as before, the exact amount is not known in advance. So again, the amount of the second swap is set to zero.
 
 After the first swap, the amount of B will be known, and the zero amount in the second swap instructs the multi-hop logic to substitute the calculated amount from the first swap. Since this is a “Given In” Batch Swap, the result will be the required input amount of token A. (The caller would then validate the overall swap by comparing this value to the maximum amountIn of A.)
 
