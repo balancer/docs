@@ -1,6 +1,6 @@
 # Use the Smart Order Router
 
-The Smart Order Router (SOR) is a library for order routing optimzation across Balancer pools for best price execution. It is a component of the SDK but also exists as a standalone package for integrators who only need swap routing logic. The example code and reference shown in the docs will use the SDK, but it should be straightforward to infer the changes required for the standalone SOR package.
+The Smart Order Router (SOR) is a library for order routing optimzation across Balancer pools for best price execution. It is a component of the SDK but also exists as a standalone package for integrators who only need swap routing logic. The example code and reference shown in the docs will use the SDK swaps module, but it should be straightforward to infer the changes required for the standalone SOR package.
 
 [![npm version](https://img.shields.io/npm/v/@balancer-labs/sor/latest.svg)](https://www.npmjs.com/package/@balancer-labs/sor/v/latest)
 
@@ -14,42 +14,87 @@ const balancer = new BalancerSDK({
   rpcUrl: 'https://rpc.ankr.com/eth' // rpc endpoint
 })
 
-const { sor } = balancer // SOR module
+const { swaps } = balancer // Swaps module
 ```
 
-The general flow for finding a trade route using SOR (Smart Order Router) includes the following steps:
+Swaps module abstracts the SOR and the general flow for finding a trade route includes the following steps:
 
 ### Step 1. Pool data fetching
 The SOR requires information about the available pools and their current status, including the prices of tokens and the liquidity of the pools. It is essential to use the SOR based on up-to-date information, as outdated information can lead to incorrect slippage predictions and potentially result in failed swaps.
 ```javascript
-await sor.fetchPools()
+await swaps.fetchPools()
 ```
+Function is fetching pool data from subgraph and updates it with onchain balances then caches them internally.
 
 ### Step 2. Route proposal
 The SOR determines the optimal trade route based on the available pool data and the desired trade, taking into account factors such as trade size, gas costs, and slippage. When searching for swaps, developers have to choose between two types of swaps:
 
-* `SwapTypes.SwapExactIn` where the amount of tokens in (sent to the Pool) is known or
-* `SwapTypes.SwapExactOut` where the amount of tokens out (received from the Pool) is known.
+* `findRouteGivenIn`, where the amount of tokens being sent to the pool is known, or
+* `findRouteGivenOut`, where the amount of tokens received from the pool is known.
 
-
-```typescript
-sor.getSwaps(
-  tokenIn: string,     // address of tokenIn
-  tokenOut: string,    // address of tokenOut
-  swapType: SwapTypes, // SwapExactIn or SwapExactOut - see above
-  swapAmount: string,  // amountIn or amountOut depending on the `swapType`; number as a string with 18 decimals
-  swapOptions: {
-    gasPrice: string   // current gas price; number as a string with 18 decimals
-    swapGas: string
-    timestamp: number
-    maxPools: number   // number of pool included in path, above 4 is usually a high gas price
-    poolTypeFilter: PoolFilter
-    forceRefresh: boolean
-  },
-  useBpts: boolean     // include join / exits in the path. transaction needs to be sent via Relayer contract
-): Promise<SwapInfo>;
+```javascript
+const swapInfo = await swaps.findRouteGivenIn({
+  tokenIn: '0xstring',          // address of tokenIn
+  tokenOut: '0xstring',         // address of tokenOut
+  amount: parseEther('1'),      // BigNumber with a trade amount
+  gasPrice: parseFixed('1', 9), // BigNumber current gas price
+  maxPools,                     // number of pool included in path, above 4 is usually a high gas price
+});
 ```
+
 The SOR returns the trade information, including the optimal trade route, the expected slippage and gas cost, and the estimated trade outcome as `swapInfo`.
+
+```js
+{
+  tokenAddresses: string[]      // tokens used in swaps
+  swaps: SwapV2[]               // swaps calldata
+  swapAmount: BigNumber
+  swapAmountForSwaps: BigNumber // used for wrapped assets, eg: stETH / wstETH
+  returnAmount: BigNumber
+  returnAmountFromSwaps: BigNumber // used for wrapped assets, eg: stETH/wstETH
+  returnAmountConsideringFees: BigNumber
+  tokenIn: string
+  tokenInForSwaps: string // Used with stETH/wstETH
+  tokenOut: string
+  tokenOutFromSwaps: string // Used with stETH/wstETH
+  marketSp: string
+}
+```
+
+::: details Example response for ETH to wBTC swap
+
+```js
+{
+  tokenAddresses: [
+    '0x0000000000000000000000000000000000000000',
+    '0x2260fac5e5542a773aa44fbcfedf7c193bc2c599'
+  ],
+  swaps: [
+    {
+      poolId: '0xa6f548df93de924d73be7d25dc02554c6bd66db500020000000000000000000e',
+      assetInIndex: 0,
+      assetOutIndex: 1,
+      amount: '1000000000000000000',
+      userData: '0x',
+      returnAmount: '7677860'
+    }
+  ],
+  swapAmount: BigNumber { _hex: '0x0de0b6b3a7640000', _isBigNumber: true },
+  swapAmountForSwaps: BigNumber { _hex: '0x0de0b6b3a7640000', _isBigNumber: true },
+  returnAmount: BigNumber { _hex: '0x7527a4', _isBigNumber: true },
+  returnAmountFromSwaps: BigNumber { _hex: '0x7527a4', _isBigNumber: true },
+  returnAmountConsideringFees: BigNumber { _hex: '0x752543', _isBigNumber: true },
+  tokenIn: '0x0000000000000000000000000000000000000000',
+  tokenInForSwaps: '0xc02aaa39b223fe8d0a0e5c4f27ead9083c756cc2',
+  tokenOut: '0x2260fac5e5542a773aa44fbcfedf7c193bc2c599',
+  tokenOutFromSwaps: '0x2260fac5e5542a773aa44fbcfedf7c193bc2c599'
+  marketSp: '13.022594322651878',
+}
+```
+
+:::
+
+TODO: describe useBpts case
 
 ### Step 3. Transaction encoding
 To execute the trade, the returned `swapInfo` must be encoded into a transaction, which requires the following information:
@@ -62,8 +107,6 @@ const tx = swaps.buildSwap({
   maxSlippage,                // [bps], eg: 1 == 0.01%, 100 == 1%
 })
 ```
-
-TODO: describe useBpts case
 
 ### Step 4. Broadcast transaction
 ```javascript
