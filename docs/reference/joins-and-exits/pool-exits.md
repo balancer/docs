@@ -18,12 +18,12 @@ exitPool(
     ExitPoolRequest request
 )
 
-ExitPoolRequest(
+struct ExitPoolRequest {
     address[] assets,
     uint256[] minAmountsOut,
     bytes userData,
     bool toInternalBalance
-)
+}
 ```
 
 ### Arguments Explained
