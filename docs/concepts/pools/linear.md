@@ -8,18 +8,15 @@ references:
 
 ## Overview
 
-Linear pools are designed to facilitate swaps between assets and their yield bearing, wrapped counterparts. For example, DAI and aDAI from Aave. The pools use [Linear Math](/reference/math/linear-math.md) and are usually used as a component in a [Boosted Pool](./boosted.md). Linear pools have set ranges to decide how much of the native token should be kept available for swaps vs the yield bearing counterpart. They use a positive/negative fee mechanism to incentivize arbitrageurs to maintain a desired ratio between the two tokens.
+Linear Pools are Balancer pools that facilitate the exchange of an asset and its wrapped, yield bearing counterpart at a known (calculated or queried) exchange rate. For example, `DAI` and wrapped `aDAI` from Aave. Linear Pools have target ranges to incentivize how much of the native token should be kept available for swaps vs the yield bearing counterpart. They use a fee/reward mechanism to incentivize arbitrageurs to maintain a desired ratio between the two tokens (pay fees for leaving the target range, receive reward for returning to range). One additional critical feature of Linear Pools is that they allow users to trade directly to BPT; no joins or exits are needed. The pools use [Linear Math](/reference/math/linear-math.md) and are usually used as a component in a [Boosted Pool](./boosted.md).
 
 ## Subtypes
 
-Since there are lots of ways to generate yield in Defi there are different interfaces for yield bearing tokens. [ERC-4626](https://ethereum.org/en/developers/docs/standards/tokens/erc-4626/) is a standard to unify the API for tokenized yield-bearing vaults and is the primary Linear pool type. A complete list with links to the codebase:
+Since there are lots of ways to generate yield in DeFi there are different interfaces for yield bearing tokens. [ERC-4626](https://ethereum.org/en/developers/docs/standards/tokens/erc-4626/) is a standard to unify the API for tokenized yield-bearing vaults and is the primary Linear Pool type.
 
-- [ERC4626 Linear Pools](https://github.com/orbcollective/linear-pools/blob/master/packages/linear-pools/contracts/erc4626-linear-pool/ERC4626LinearPool.sol)
-- [Aave V2 Linear Pools](https://github.com/orbcollective/linear-pools/blob/master/packages/linear-pools/contracts/aave-v2-linear-pool/AaveLinearPool.sol)
-- [Euler Linear Pools](https://github.com/orbcollective/linear-pools/blob/master/packages/linear-pools/contracts/euler-linear-pool/EulerLinearPool.sol)
-- [Yearn Linear Pools](https://github.com/orbcollective/linear-pools/blob/master/packages/linear-pools/contracts/yearn-linear-pool/YearnLinearPool.sol)
-- [Beefy Linear Pools](https://github.com/orbcollective/linear-pools/blob/master/packages/linear-pools/contracts/beefy-linear-pool/BeefyLinearPool.sol)
-- [Gearbox Linear Pools](https://github.com/orbcollective/linear-pools/blob/master/packages/linear-pools/contracts/gearbox-linear-pool/GearboxLinearPool.sol)
-- [Silo Linear Pools](https://github.com/orbcollective/linear-pools/blob/master/packages/linear-pools/contracts/silo-linear-pool/SiloLinearPool.sol)
-- [Reaper Linear Pools](https://github.com/orbcollective/linear-pools/blob/master/packages/linear-pools/contracts/reaper-linear-pool/ReaperLinearPool.sol)
-- [Tetu Linear Pools](https://github.com/orbcollective/linear-pools/blob/master/packages/linear-pools/contracts/tetu-lineat-pool/TetuLinearPool.sol)
+A few sample Linear Pools (see all pools [in the repo](https://github.com/orbcollective/linear-pools/tree/master/pkg/linear-pools/contracts)):
+- [ERC4626 Linear Pool](https://github.com/orbcollective/linear-pools/blob/master/pkg/linear-pools/contracts/erc4626-linear-pool/ERC4626LinearPool.sol)
+- [Aave V2 Linear Pool](https://github.com/orbcollective/linear-pools/blob/master/pkg/linear-pools/contracts/aave-v2-linear-pool/AaveLinearPool.sol)
+- [Euler Linear Pool](https://github.com/orbcollective/linear-pools/blob/master/pkg/linear-pools/contracts/euler-linear-pool/EulerLinearPool.sol)
+- [Yearn Linear Pool](https://github.com/orbcollective/linear-pools/blob/master/pkg/linear-pools/contracts/yearn-linear-pool/YearnLinearPool.sol)
+- [Gearbox Linear Pool](https://github.com/orbcollective/linear-pools/blob/master/pkg/linear-pools/contracts/gearbox-linear-pool/GearboxLinearPool.sol)
