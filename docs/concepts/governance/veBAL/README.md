@@ -1,8 +1,13 @@
 ---
 title: Overview
+references:
+  - details: Querying Gauges
+    link: /reference/vebal-and-gauges/gauges.html
 ---
 
-# veBAL Overview
+# veBAL
+
+## Overview
 
 veBAL (vote-escrow BAL) is a vesting and yield system based on [Curve's veCRV mechanism](https://curve.readthedocs.io/dao-vecrv.html) which locks 80/20 BAL/WETH Balancer Pool Tokens for a maximum of 1 year. The veBAL and Gauge system is designed to promote long-term token-holder alignment and facilitate fair protocol revenue distribution.
 
@@ -25,7 +30,7 @@ This gives veBAL holders the option to choose pools they have liquidity position
 
 In the same breath, the emission schedule for BAL has been defined and will be set permanently. Before veBAL, 145,000 BAL was being emitted per week, which was unsustainable without a ceiling on emissions. The two key takeaways for the new inflation schedule will be a halving of the inflation rate every 4 years, and a total supply of BAL being capped at 94,000,000.
 
-# How is veBAL different from veCRV?
+### How is veBAL different from veCRV?
 
 There are a few modifications that set veBAL apart:
 
