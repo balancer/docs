@@ -76,10 +76,11 @@
   // layout vars
   --navbar-height: 3.6rem;
   --navbar-padding-v: 0.7rem;
-  --navbar-padding-h: 1.5rem;
+  --navbar-padding-h: 1rem;
   --sidebar-width: 20rem;
   --sidebar-width-mobile: calc(var(--sidebar-width) * 0.82);
   --content-width: 860px;
+  --max-content-width: 960px;
   --homepage-width: 960px;
   --right-anchor-width: 15rem;
 
@@ -140,6 +141,7 @@
 
 // plugin-search
 .search-box {
+  --search-box-max-width: 40rem;
   --search-bg-color: var(--c-bg);
   --search-accent-color: var(--c-brand);
   --search-text-color: var(--c-text);

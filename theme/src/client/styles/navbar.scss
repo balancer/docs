@@ -7,6 +7,9 @@
 
   padding: var(--navbar-padding-v) var(--navbar-padding-h);
   line-height: var(--navbar-line-height);
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
 
   .logo {
     height: var(--navbar-line-height);
@@ -31,12 +34,8 @@
 
   .navbar-items-wrapper {
     display: flex;
-    position: absolute;
-    box-sizing: border-box;
-    top: var(--navbar-padding-v);
-    left: calc(var(--sidebar-width) + var(--navbar-padding-h));
     height: var(--navbar-line-height);
-    padding-left: var(--navbar-padding-h);
+    padding-left: 7rem;
     white-space: nowrap;
     font-size: 0.9rem;
   }
@@ -59,28 +58,20 @@
   }
 
   .social-icon {
-    fill: var(--c-social-icon-fill);
     margin: 0 3px;
-    @apply transition-all;
+    transition: 0.2s all ease-in-out;
   }
   
   .social-icon:hover {
     transform-origin: center;
     transform: scale(1.05);
   }
-  
-  .social-icon {
-    fill: var(--c-social-icon-bg);
-  
-    @apply transition-all;
-  }
-
 }
 
 @media (max-width: $MQMobile) {
   .navbar {
-    padding-left: 4rem;
-    padding-right: 0rem;
+    padding-left: 0.5rem;
+    padding-right: 0.5rem;
 
     .logo {
       margin-right: 0rem;
@@ -106,6 +97,15 @@
     }
   }
 }
+
+@media (max-width: $MQNarrow) {
+  .navbar {
+    .navbar-items-wrapper {
+      padding-left: 1rem;
+    }
+  }
+}
+
 
 /**
  * navbar-items
@@ -171,9 +171,6 @@
  * toggle sidebar button
  */
 .toggle-sidebar-button {
-  position: absolute;
-  top: 0.6rem;
-  left: 1rem;
   display: none;
   padding: 0.6rem;
   cursor: pointer;

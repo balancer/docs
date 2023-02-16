@@ -13,10 +13,11 @@
 
 .page-hero {
   min-height: 5rem;
+  height: 10rem;
   padding-left: var(--sidebar-width);
   padding-top: var(--navbar-height);
   padding-bottom: calc(var(--navbar-height) / 2);
-  width: calc(100% - var(--sidebar-width));
+  width: 100%;
   background-size: cover;
   text-align: center;
 }

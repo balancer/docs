@@ -26,7 +26,8 @@
 }
 
 .right-anchor {
-  width: var(--right-anchor-width);
+  width: 100%;
+  max-width: var(--sidebar-width);
   max-height: calc(100vh - var(--navbar-height) - 16px);
   position: sticky;
   overflow: auto;
@@ -39,7 +40,7 @@
 .sidebar {
   font-size: 16px;
   width: var(--sidebar-width);
-  padding: 1.5rem;
+  padding: 1rem;
   position: fixed;
   z-index: 10;
   margin: 0;
@@ -187,9 +188,14 @@
     transform: translateX(-100%);
   }
 
-  .page, .home, .home-hero {
+  .page, .home-hero {
     padding-left: 0;
   }
+
+  .home {
+    padding-left: 1rem;
+  }
+  
 
   .theme-container {
     &.sidebar-open {
