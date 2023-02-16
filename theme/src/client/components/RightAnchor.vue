@@ -103,7 +103,7 @@ onMounted(() => {
     <ReferenceCard />
     <GuideCard />
     <div v-if="page.headers.length">
-      <span class="right-anchor-content">Contents</span>
+      <span class="right-anchor-content">Page contents</span>
       <ul class="right-anchor-items">
         <RightAnchorItem
           v-for="item in page.headers"

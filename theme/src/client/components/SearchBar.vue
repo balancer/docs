@@ -46,7 +46,8 @@ onMounted(() => {
 }
 
 .home .search-box {
-  width: 75%;
+  width: 100%;
+  max-width: var(--search-box-max-width);
   margin: 40px auto;
 }
 

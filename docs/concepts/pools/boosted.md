@@ -37,7 +37,9 @@ Since BPT are ERC-20 tokens themselves, Linear Pool BPT can be nested within ano
 ## Example
 
 Let's say there is a hypothetical new Weighted Pool with two tokens: 50% USDC and 50% WETH. One can expect that swaps on this pool will touch just a fraction of its depth (i.e. swaps typically won't use more than ~20% of the balances in the pool since trades of that scale would significantly change the price).
+
 ![](/images/idle-tokens.png)
+
 As the figure above illustrates, only a tiny amount of the pool would be touched by swaps. The remaining assets are in the pool to compose the price and reduce price impact, but are idle and therefore not generating yield or fees directly. **Boosted Pools aim to optimize assets usage of a pool.**
 
 If this were instead to be built as a Boosted Pool, the idle assets can become yield bearing versions on some hypothetical protocol, ProtocolX, with `xTokens` that are yield bearing versions of their base `tokens`. By boosting this pool with nested Linear Pools, the previously vanilla Weighted Pool becomes far more efficient.
@@ -68,4 +70,5 @@ When a protocol or organization has a new stablecoin for which they want to esta
 
 #### Weighted Pool Pairing
 A pool of `bb-a-USD` and `WETH`, for example, can facilitate swaps between all underlying tokens of `USDC`, `USDT`, `DAI`, their respective wrapped `aTokens`, and `WETH`.
+
 ![](/images/bb-a-USD-pairing.png)

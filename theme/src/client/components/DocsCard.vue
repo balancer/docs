@@ -24,7 +24,7 @@ export default defineComponent({
           <!-- eslint-disable-next-line vue/no-v-text-v-html-on-component -- Not sure if this is fine -->
           <component :is="titleTag" v-if="!!title" v-text="title" />
         </div>
-        <div :class="['content']">
+        <div class="details">
           {{ details }}
         </div>
       </div>
@@ -48,6 +48,7 @@ export default defineComponent({
   transition: box-shadow 0.15s ease-out, transform 0.15s ease-out,
     opacity 0.15s ease-out;
   width: 100%;
+  box-shadow: 0px 25px 50px -12px rgba(0, 0, 0, 0.1);
 }
 
 @media (hover: hover) {
@@ -58,13 +59,17 @@ export default defineComponent({
 }
 
 .card-link img {
-  height: 6em;
-  width: 6em;
-  position: absolute;
+  height: 3.75rem;
+  width: 3.75rem;
   top: 0px;
   right: 0px;
   border-top-right-radius: 12px;
 }
+
+.card-link :deep(h4) {
+  font-weight: 800;
+}
+
 
 .docs-card .header {
   color: var(--c-text);
@@ -72,6 +77,10 @@ export default defineComponent({
 
 .card-container {
   padding: 1.5rem;
+}
+.details {
+  color: var(--c-text-light);
+  font-size: 0.875rem;
 }
 .docs-card {
   @apply flex flex-col;
