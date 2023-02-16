@@ -53,7 +53,7 @@ This function will be used to calculate conversions between wrapped and unwrappe
 
 ### `LinearPoolRebalancer`
 `_wrapTokens`
-This is equivalent to the deposit function and will be used by the Rebalancer to insert tokens in the yield-bearing vault.
+This is equivalent to the `deposit` function and will be used by the Rebalancer to insert tokens in the yield-bearing vault.
 
 `_unwrapTokens`
 This is equivalent to the redeem function and will be used by the Rebalancer to remove tokens from yield-bearing vault.
