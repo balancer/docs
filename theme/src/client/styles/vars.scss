@@ -1,12 +1,13 @@
 :root {
   // brand colors
   --c-brand: #805AD5;
-  --c-brand-light: #4abf8a;
+  --c-brand-light: #2563EB;
+  --c-brand-hover-accent: #805AD5;
 
   // background colors
   --c-bg: #ffffff;
-  --c-bg-light: #f3f4f5;
-  --c-bg-lighter: #eeeeee;
+  --c-bg-light: #F8FAFC;
+  --c-bg-lighter: #EAF0F6;
   --c-bg-navbar: var(--c-bg);
   --c-bg-sidebar: var(--c-bg);
   --c-bg-arrow: #cccccc;
@@ -61,6 +62,7 @@
   // transition vars
   --t-color: 0.3s ease;
   --t-transform: 0.3s ease;
+  --t-transition: 0.2s all ease-out;
 
   // code blocks vars
   --code-bg-color: #282c34;
@@ -87,6 +89,9 @@
   --dropdown-icon-width: 0.625rem;
   --dropdown-icon-height: 16px;
   --dropdown-icon-gap: 0.688rem;
+
+  // box shadow vars
+  --box-shadow-standard: 0px 4px 6px -1px rgba(0, 0, 0, 0.05), 0px 2px 4px -1px rgba(0, 0, 0, 0.05);  
 }
 
 // plugin-back-to-top

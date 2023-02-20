@@ -1,12 +1,13 @@
 html.dark {
   // brand colors
   --c-brand: #805AD5;
-  --c-brand-light: #349469;
+  --c-brand-light: #0EA5E9;
+  --c-brand-hover-accent: rgba(254, 213, 51, 1);
 
   // background colors
   --c-bg: #0F172A;
-  --c-bg-light: #2b313a;
-  --c-bg-lighter: #262c34;
+  --c-bg-light: #1E293B;
+  --c-bg-lighter: #334155;
 
   // text colors
   --c-text: #eee;
@@ -45,4 +46,10 @@ html.dark {
 
   --c-social-icon-fill: #0f172a;
   --c-social-icon-bg: #fff;
+
+    // transition vars
+    --t-transition: 0.2s all ease-out;
+
+    // box shadow vars
+    --box-shadow-standard: 0px 2px 5px 0px rgba(78, 0, 255, 0.3), 0px 1px 2px 0px rgba(255, 255, 255, 0.2);
 }

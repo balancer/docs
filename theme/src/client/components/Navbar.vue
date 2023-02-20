@@ -76,11 +76,47 @@ function getCssValue(el: HTMLElement | null, property: string): number {
     </div>
     <div class="navbar-items-right" :style="linksWrapperStyle">
       <SearchBar v-if="!frontmatter.home" />
-      <ToggleColorModeButton v-if="themeLocale.colorModeSwitch" />
-      <a href="https://discord.balancer.fi/" target="_blank"><DiscordIcon /></a>
-      <a href="https://github.com/balancer-labs/" target="_blank"
+      <div class="dark-mode-container">
+        <ToggleColorModeButton v-if="themeLocale.colorModeSwitch" />
+      </div>
+      <a class="social-btn" href="https://discord.balancer.fi/" target="_blank"
+        ><DiscordIcon
+      /></a>
+      <a
+        class="social-btn"
+        href="https://github.com/balancer-labs/"
+        target="_blank"
         ><GithubIcon
       /></a>
     </div>
   </header>
 </template>
+
+<style lang="scss" scoped>
+.social-btn {
+  width: 2.25rem;
+  height: 2.25rem;
+  border-radius: 5px;
+  background: var(--c-bg-light);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  cursor: pointer;
+  margin-left: 0.5rem;
+  box-shadow: var(--box-shadow-standard);
+  transition: var(--t-transition);
+  &:hover {
+    background: var(--c-bg-lighter);
+    box-shadow: none;
+  }
+}
+.social-btn :deep(.social-icon) {
+  fill: var(--c-text);
+  width: 1.5rem;
+  height: 1.5rem;
+}
+.social-btn:hover :deep(.social-icon) {
+  transform-origin: center;
+  transform: scale(1.1);
+}
+</style>
