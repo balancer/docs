@@ -33,8 +33,8 @@ const references = computed(() => {
 
 <style scoped>
 .reference-card {
-  border: 2px solid rgba(58, 110, 255, 0.8);
-  border-radius: 12px;
+  border: 1px solid var(--c-brand-light);
+  border-radius: 8px;
   display: flex;
   font-size: 0.75rem;
   font-weight: 400;
@@ -50,6 +50,7 @@ const references = computed(() => {
 
 .card-header {
   text-transform: uppercase;
+  letter-spacing: 1.5px;
   font-size: 0.7rem;
   font-weight: 600;
 }
@@ -66,6 +67,6 @@ const references = computed(() => {
 }
 
 .card-container {
-  padding: 1.5em;
+  padding: 1em 1em 0.5em;
 }
 </style>

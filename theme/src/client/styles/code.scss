@@ -1,5 +1,12 @@
 @import '_variables';
 
+html {
+  box-sizing: border-box;
+}
+*, *:before, *:after {
+  box-sizing: inherit;
+}
+
 // ===============================
 // Forked and modified from prismjs/themes/prism-tomorrow.css
 

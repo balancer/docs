@@ -93,42 +93,44 @@ const onBeforeLeave = scrollPromise.pending;
 
     <div class="sidebar-mask" @click="toggleSidebar(false)" />
 
-    <slot name="sidebar">
-      <Sidebar>
-        <template #top>
-          <slot name="sidebar-top" />
-        </template>
-        <template #bottom>
-          <slot name="sidebar-bottom" />
-        </template>
-      </Sidebar>
-    </slot>
-
-    <slot name="page">
-      <Home v-if="frontmatter.home" />
-
-      <Transition
-        v-else
-        name="fade-slide-y"
-        mode="out-in"
-        @before-enter="onBeforeEnter"
-        @before-leave="onBeforeLeave"
-      >
-        <Page :key="page.path">
+    <div class="main-container">
+      <slot name="sidebar">
+        <Sidebar>
           <template #top>
-            <slot name="page-top" />
-          </template>
-          <template #content-top>
-            <slot name="page-content-top" />
-          </template>
-          <template #content-bottom>
-            <slot name="page-content-bottom" />
+            <slot name="sidebar-top" />
           </template>
           <template #bottom>
-            <slot name="page-bottom" />
+            <slot name="sidebar-bottom" />
           </template>
-        </Page>
-      </Transition>
-    </slot>
+        </Sidebar>
+      </slot>
+
+      <slot name="page">
+        <Home v-if="frontmatter.home" />
+
+        <Transition
+          v-else
+          name="fade-slide-y"
+          mode="out-in"
+          @before-enter="onBeforeEnter"
+          @before-leave="onBeforeLeave"
+        >
+          <Page :key="page.path">
+            <template #top>
+              <slot name="page-top" />
+            </template>
+            <template #content-top>
+              <slot name="page-content-top" />
+            </template>
+            <template #content-bottom>
+              <slot name="page-content-bottom" />
+            </template>
+            <template #bottom>
+              <slot name="page-bottom" />
+            </template>
+          </Page>
+        </Transition>
+      </slot>
+    </div>
   </div>
 </template>

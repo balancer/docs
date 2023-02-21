@@ -1,8 +1,8 @@
 <template>
   <svg
     class="social-icon"
-    width="32"
-    height="32"
+    width="24"
+    height="24"
     xmlns="http://www.w3.org/2000/svg"
     viewBox="0 0 640 512"
   >
@@ -15,9 +15,3 @@
 <script>
 export default {};
 </script>
-
-<style scoped>
-.social-icon:hover {
-  fill: #7289da;
-}
-</style>
