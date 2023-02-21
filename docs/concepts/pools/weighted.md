@@ -54,4 +54,4 @@ For example if a user wants to provide liquidity for WBTC and WETH, they can cho
 
 [Impermanent Loss](/concepts/advanced/impermanent-loss.md) is the difference in value between holding a set of assets and providing liquidity for those same assets.
 
-For pools that heavily weight one token over another, there is far less impermanent loss, but this doesn't come for free; very asymmetric pools do have higher slippage when making trades due to the fact that one side has much less liquidity. 80/20 pools have emerged as a happy medium when balancing liquidity an Impermanent Loss mitigation.
+For pools that heavily weight one token over another, there is far less impermanent loss, but this doesn't come for free; very asymmetric pools do have higher slippage when making trades due to the fact that one side has much less liquidity. 80/20 pools have emerged as a happy medium when balancing liquidity an Impermanent Loss mitigation. (I'd love to see some math and external sources. It is not clear what are exactly the tradeoffs in the 80/20 pools and how they relate to pools likes 70/30 and 90/10. Providing an external reference to the explanation would also work.)
