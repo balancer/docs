@@ -1,0 +1,20 @@
+name: Algolia Indexer
+
+on:
+  push:
+    branches:
+      - main
+
+jobs:
+  algolia_indexer:
+    runs-on: ubuntu-latest
+    env:
+      APPLICATION_ID: { { secrets.ALGOLIA_APP_ID } }
+      API_KEY: ${{secrets.ALGOLIA_API_KEY}}
+      INDEX_NAME: { { dev_balancer } }
+      CONFIG: '{ "index_name": "dev_balancer", "start_urls": ["https://docs.balancer.fi/"], "selectors": { "lvl0": "#app header h1", "lvl1": ".page h1", "lvl2": ".page h2", "lvl3": ".page h3", "lvl4": ".page h4", "lvl5": ".page h5", "text": ".page p, .page li, .page td" }}'
+    name: Index Algolia
+    steps:
+      - name: Algolia Docsearch Action
+        id: algolia
+        uses: adapttive/algolia-docsearch-action@1.1.1
