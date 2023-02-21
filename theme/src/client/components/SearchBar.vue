@@ -36,7 +36,7 @@ onMounted(() => {
     class="algolia-search-wrapper search-box"
     role="search"
   >
-    <SearchInput id="algolia-search-input" placeholder="" />
+    <SearchInput id="algolia-search-input" placeholder="Search docs" />
   </form>
 </template>
 
