@@ -95,7 +95,5 @@ table th:nth-of-type(2) {
 td {
     max-width: 0;
     overflow: hidden;
-    text-overflow: ellipsis;
-    white-space: nowrap;
 }
 </style>
