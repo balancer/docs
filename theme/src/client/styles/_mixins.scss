@@ -3,17 +3,15 @@
 @mixin content_wrapper {
   width: 100%;
   margin: 0 auto;
-  padding: 2rem;
+  padding: 1rem;
   max-width: var(--max-content-width);
 
-  @media (max-width: $MQNarrow) {
-    min-width: calc(100% - var(--sidebar-width-mobile));
+  @media (min-width: $MQNarrow) {
     padding: 2rem;
   }
-
   @media (max-width: $MQMobileNarrow) {
     min-width: calc(100% - 5rem);
-    padding: 1rem 0rem;
+    padding: 1.5rem;
   }
 }
 

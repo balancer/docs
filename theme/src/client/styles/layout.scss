@@ -1,6 +1,10 @@
 @import '_mixins';
 @import '_variables';
 
+html {
+	scroll-behavior: smooth;
+}
+
 .page {
   display: flex;
   padding-top: var(--navbar-height);
@@ -33,7 +37,7 @@
   overflow: auto;
   top: calc(var(--navbar-height) + 24px);
   margin-block-start: calc(6rem + 5px);
-  padding-block-end: 2rem;
+  padding-block-end: 0.5rem;
   padding-inline-end: 2rem;
 }
 
@@ -216,5 +220,11 @@
 @media (max-width: $MQMobileNarrow) {
   h1 {
     font-size: 1.9rem;
+  }
+}
+
+@media (min-width: 95rem) {
+  .rightbar {
+    width: 320px;
   }
 }

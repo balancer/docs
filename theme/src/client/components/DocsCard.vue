@@ -48,7 +48,7 @@ export default defineComponent({
   transition: box-shadow 0.15s ease-out, transform 0.15s ease-out,
     opacity 0.15s ease-out;
   width: 100%;
-  box-shadow: 0px 25px 50px -12px rgba(0, 0, 0, 0.1);
+  box-shadow: var(--box-shadow-large);
 }
 
 @media (hover: hover) {
@@ -69,7 +69,6 @@ export default defineComponent({
 .card-link :deep(h4) {
   font-weight: 800;
 }
-
 
 .docs-card .header {
   color: var(--c-text);

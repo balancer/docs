@@ -102,18 +102,19 @@ onMounted(() => {
   <aside class="right-anchor">
     <ReferenceCard />
     <GuideCard />
-    <div v-if="page.headers.length">
+    <div v-if="page.headers.length" class="right-anchor-container">
       <span class="right-anchor-content">Page contents</span>
       <ul class="right-anchor-items">
         <RightAnchorItem
           v-for="item in page.headers"
           :key="`${item.title}${item.link}`"
           :item="item"
+          class="right-anchor-subgroup"
         />
       </ul>
-    </div>
-    <div v-if="editNavLink" class="meta-item edit-link">
-      <AutoLink class="meta-item-label" :item="editNavLink" />
+      <div v-if="editNavLink" class="meta-item edit-link">
+        <AutoLink class="meta-item-label" :item="editNavLink" />
+      </div>
     </div>
   </aside>
 </template>

@@ -52,10 +52,31 @@
 }
 
 .right-anchor {
+  
+  .right-anchor-container {
+    padding-left: 1rem;
+    border-left: 1px solid var(--c-border);
+  }
   ul {
     list-style-type: none;
     line-height: 1.5rem;
     padding-left: 0rem;
+  }
+
+  .right-anchor-items {
+    margin: 0.5rem 0;
+
+    .right-anchor-subgroup {
+      margin-bottom: 0.5rem;
+    }
+
+    li {
+      line-height: 1.1;
+      margin: 0.25rem 0;
+    }
+  }
+  .right-anchor-item {
+    line-height: 1.1;
   }
 
   .right-anchor-content {
@@ -63,11 +84,11 @@
     font-size: 0.7rem;
     font-weight: 600;
     text-transform: uppercase;
+    letter-spacing: 1.5px;
   }
 
   a {
-    color: var(--c-link);
-    filter: brightness(0.8);
+    color: var(--c-link-secondary);
     font-size: 0.8rem;
     font-weight: 400;
     line-height: 1.5rem;
@@ -76,11 +97,17 @@
 
   a:hover,
   a.active:hover {
-    filter: brightness(1.2);
+    color: var(--c-brand-hover-accent);
   }
 
+  a.right-anchor-heading.active {
+    font-weight: 700;
+  }  
+  
+
   a.active {
-    filter: brightness(1.1);
+    color: var(--c-brand-light);
+    font-weight: 500;
   }
 
   .right-anchor-children {
@@ -88,7 +115,13 @@
   }
 
   .edit-link {
-    margin-top: 5em;
+    margin-top: 1.5rem;
+  }
+  .meta-item-label {
+    font-size: 0.75rem;
+    background-color: var(--c-bg-light);
+    padding: 6px;
+    border-radius: 5px;
   }
 }
 
