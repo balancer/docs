@@ -25,6 +25,8 @@ This architecture brings different pool designs under the same umbrella; the Vau
 
 It's crucial to note that the Vault is designed to keep pool balances strictly independent. This is critical for a permissionless system in which anyone can create their own tokens and pools. Maintaining this independence protects from malicious or negligently designed tokens or custom pools from draining funds from any other pools. As such, even though the Vault may hold consolidated liquidity of a certain token from multiple pools, the depth of that combined liquidity does not change price impact in the individual pools.
 
+**Explain how the Vault logic is separated from the Pool logic. High level diagram with interactions would work.
+
 ## Gas Efficient Batch Swaps
 
 In other AMMs where token accounting is paired with pool logic, multi-hop trading (A->B->C) can become costly since ERC20 tokens must be transferred at each hop. Balancer's advantage here is that all the tokens are stored in the same contract, the Vault. This powerful difference allows for far greater swap efficiency. Instead of transferring tokens on each step of a multi-hop trade, the Vault keeps track of the net balance changes (deltas) of a transaction and sends what is needed at the end. This reduction in token transfers ultimately saves a considerable amount of gas.
