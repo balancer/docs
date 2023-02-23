@@ -144,8 +144,7 @@ export const balancerTheme = ({
       // @vuepress/plugin-medium-zoom
       themePlugins.mediumZoom !== false
         ? mediumZoomPlugin({
-            selector:
-              '.theme-default-content > img, .theme-default-content :not(a) > img',
+            selector: '.theme-default-content :not(a, .card-icon-row) > img',
             zoomOptions: {},
             // should greater than page transition duration
             delay: 300,
