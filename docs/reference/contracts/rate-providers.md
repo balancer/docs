@@ -26,16 +26,16 @@ You will have no `rateProvider`s in your pool when your tokens are price-pegged 
 
 ### Direct Balance Query
 
-Wrapping rebasing tokens, such as `stETH`, makes them compatible with Balancer, but knowing the exchange rate between the underlying rebasing token and the wrapped token is necessary to facilitate Stableswap trades. As such, the `wstETH` `rateProvider` has a `getRate()` function that calls `wstETH`'s own `stEthPerToken()` function. [See the contract here](https://github.com/balancer-labs/metastable-rate-providers/blob/master/contracts/WstETHRateProvider.sol).
+Wrapping rebasing tokens, such as `stETH`, makes them compatible with Balancer, but knowing the exchange rate between the underlying rebasing token and the wrapped token is necessary to facilitate Stableswap trades. As such, the `wstETH` `rateProvider` has a `getRate()` function that calls `wstETH`'s own `stEthPerToken()` function. [See the contract here](https://github.com/balancer/metastable-rate-providers/blob/master/contracts/WstETHRateProvider.sol).
 
 ### Oracles
 
-Using oracles for price feeds is a simple way to determine an exchange rate. There are two example contracts for how to use Chainlink as a price source: [`ChainlinkRegistryRateProvider`](https://github.com/balancer-labs/metastable-rate-providers/blob/master/contracts/ChainlinkRegistryRateProvider.sol) and [`ChainlinkRateProvider`](https://github.com/balancer-labs/metastable-rate-providers/blob/master/contracts/ChainlinkRateProvider.sol).
+Using oracles for price feeds is a simple way to determine an exchange rate. There are two example contracts for how to use Chainlink as a price source: [`ChainlinkRegistryRateProvider`](https://github.com/balancer/metastable-rate-providers/blob/master/contracts/ChainlinkRegistryRateProvider.sol) and [`ChainlinkRateProvider`](https://github.com/balancer/metastable-rate-providers/blob/master/contracts/ChainlinkRateProvider.sol).
 
-#### [`ChainlinkRegistryRateProvider`](https://github.com/balancer-labs/metastable-rate-providers/blob/master/contracts/ChainlinkRegistryRateProvider.sol)
+#### [`ChainlinkRegistryRateProvider`](https://github.com/balancer/metastable-rate-providers/blob/master/contracts/ChainlinkRegistryRateProvider.sol)
 
 This contract makes use of Chainlink's registry contract so it can handle if Chainlink migrates to a new price feed for a given asset pair. Though there are increased gas costs for this, its a tradeoff for ensuring the pool doesn't get stuck on an abandoned price feed. While this is an unlikely scenario, it doesn't hurt to be careful.
 
-#### [`ChainlinkRateProvider`](https://github.com/balancer-labs/metastable-rate-providers/blob/master/contracts/ChainlinkRateProvider.sol)
+#### [`ChainlinkRateProvider`](https://github.com/balancer/metastable-rate-providers/blob/master/contracts/ChainlinkRateProvider.sol)
 
 If you're running on a network for which Chainlink doesn't have a registry and you think the risk of a deprecated price feed is low enough, then you can use the rateProvider that directly queries a given Chainlink oracle.

@@ -14,7 +14,7 @@ Linear math is designed to facilitate swaps between assets and their yield beari
 
 Developers can use the TypeScript math implementations used by the Smart Order router
 
-- [linearMath.ts](https://github.com/balancer-labs/balancer-sor/blob/john/v2-package-linear/src/pools/linearPool/linearMath.ts)
+- [linearMath.ts](https://github.com/balancer/balancer-sor/blob/john/v2-package-linear/src/pools/linearPool/linearMath.ts)
 
 ## Invariant
 

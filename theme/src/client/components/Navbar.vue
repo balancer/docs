@@ -84,7 +84,7 @@ function getCssValue(el: HTMLElement | null, property: string): number {
       /></a>
       <a
         class="social-btn"
-        href="https://github.com/balancer-labs/"
+        href="https://github.com/balancer/"
         target="_blank"
         ><GithubIcon
       /></a>

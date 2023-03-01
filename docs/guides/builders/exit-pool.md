@@ -15,7 +15,7 @@ Balancer Pool Tokens (BPT) grant you access to a share of the pool's underlying 
 
 ## Exit strategies
 
-Set up the SDK and get the pool with liquidity service methods as `pool` ([methods interface](https://github.com/balancer-labs/balancer-sdk/blob/master/balancer-js/src/types.ts/#L321))
+Set up the SDK and get the pool with liquidity service methods as `pool` ([methods interface](https://github.com/balancer/balancer-sdk/blob/master/balancer-js/src/types.ts/#L321))
 
 ```javascript
 import { BalancerSDK } from '@balancer-labs/sdk';
@@ -140,7 +140,7 @@ const userData = WeightedPoolEncoder.exitExactBPTInForOneTokenOut(amount, 0);
 // Build exit
 const exit = Relayer.encodeExitPool({
   poolId,
-  poolKind: 0, // 0 =  only Weighted Pool is supported, https://github.com/balancer-labs/balancer-v2-monorepo/blob/master/pkg/standalone-utils/contracts/relayer/VaultActions.sol/#L105
+  poolKind: 0, // 0 =  only Weighted Pool is supported, https://github.com/balancer/balancer-v2-monorepo/blob/master/pkg/standalone-utils/contracts/relayer/VaultActions.sol/#L105
   sender: address,
   recipient: address,
   exitPoolRequest: {

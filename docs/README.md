@@ -8,7 +8,7 @@ features:
   - title: Basics
     icon: /images/quick-link-basics.svg
     details: Learn how Balancer works under the hood
-    link: /concepts/overview/basics    
+    link: /concepts/overview/basics
   - title: Integrate
     icon: /images/quick-link-integrate.svg
     details: Jump into the SDK, APIs, and ways to integrate Balancer
@@ -16,7 +16,7 @@ features:
   - title: Smart Contracts
     icon: /images/quick-link-contracts.svg
     details: Deployment addresses, ABIs, helpful walthroughs, and more
-    link: /reference/contracts/deployment-addresses/mainnet.html    
+    link: /reference/contracts/deployment-addresses/mainnet.html
   - title: Dev Guides
     icon: /images/quick-link-guides.svg
     details: Follow along helpful guides with example code
@@ -24,7 +24,7 @@ features:
   - title: Boosted Pools
     icon: /images/quick-link-boosted.svg
     details: Learn how they work and how to contruct them
-    link: /concepts/pools/boosted.html 
+    link: /concepts/pools/boosted.html
   - title: Liquidity Bootstrapping Pools
     icon: /images/quick-link-lbp.svg
     details: For fair token launches and NFT drops
@@ -36,11 +36,11 @@ footer:
 
 **Github Repos**
 
-- [Smart Contracts](https://github.com/balancer-labs/balancer-v2-monorepo)
-- [SDK](https://github.com/balancer-labs/balancer-sdk)
-- [Smart Order Router](https://github.com/balancer-labs/balancer-sor)
-- [Frontend](https://github.com/balancer-labs/frontend-v2)
-- [Subgraph](https://github.com/balancer-labs/balancer-subgraph-v2)
+- [Smart Contracts](https://github.com/balancer/balancer-v2-monorepo)
+- [SDK](https://github.com/balancer/balancer-sdk)
+- [Smart Order Router](https://github.com/balancer/balancer-sor)
+- [Frontend](https://github.com/balancer/frontend-v2)
+- [Subgraph](https://github.com/balancer/balancer-subgraph-v2)
 
 **Analytics & Dashboards**
 
