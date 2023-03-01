@@ -7,7 +7,7 @@ export const navbar: NavbarConfig = [
   },
   {
     text: 'SDK',
-    link: '/sdk/overview',
+    link: '/sdk/reference',
   },
   {
     text: 'Developer Guides',
