@@ -18,7 +18,7 @@ For more formulas and derivations of the below formulas, please refer to the [Ba
 
 Developers can use the TypeScript math implementations used by the Smart Order router
 
-- [weightedMath.ts](https://github.com/balancer-labs/balancer-sor/blob/john/v2-package-linear/src/pools/weightedPool/weightedMath.ts)
+- [weightedMath.ts](https://github.com/balancer/balancer-sor/blob/john/v2-package-linear/src/pools/weightedPool/weightedMath.ts)
 
 ### Python
 

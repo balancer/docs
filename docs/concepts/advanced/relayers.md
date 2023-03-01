@@ -10,7 +10,7 @@ For security reasons, a Relayer has to be authorized by the Balancer DAO before 
 
 ### Contracts
 
-The Balancer Relayers are composed of two contracts, [BalancerRelayer](https://github.com/balancer-labs/balancer-v2-monorepo/blob/master/pkg/standalone-utils/contracts/relayer/BalancerRelayer.sol), which is the single point of entry via the multicall function, and a library contract, such as the [VaultActions](https://github.com/balancer-labs/balancer-v2-monorepo/blob/master/pkg/standalone-utils/contracts/relayer/VaultActions.sol), which defines the allowed behavior of the relayer, for example — [VaultActions](https://github.com/balancer-labs/balancer-v2-monorepo/blob/master/pkg/standalone-utils/contracts/relayer/VaultActions.sol), [LidoWrapping](https://github.com/balancer-labs/balancer-v2-monorepo/blob/master/pkg/standalone-utils/contracts/relayer/LidoWrapping.sol), [GaugeActions](https://github.com/balancer-labs/balancer-v2-monorepo/blob/master/pkg/standalone-utils/contracts/relayer/GaugeActions.sol).
+The Balancer Relayers are composed of two contracts, [BalancerRelayer](https://github.com/balancer/balancer-v2-monorepo/blob/master/pkg/standalone-utils/contracts/relayer/BalancerRelayer.sol), which is the single point of entry via the multicall function, and a library contract, such as the [VaultActions](https://github.com/balancer/balancer-v2-monorepo/blob/master/pkg/standalone-utils/contracts/relayer/VaultActions.sol), which defines the allowed behavior of the relayer, for example — [VaultActions](https://github.com/balancer/balancer-v2-monorepo/blob/master/pkg/standalone-utils/contracts/relayer/VaultActions.sol), [LidoWrapping](https://github.com/balancer/balancer-v2-monorepo/blob/master/pkg/standalone-utils/contracts/relayer/LidoWrapping.sol), [GaugeActions](https://github.com/balancer/balancer-v2-monorepo/blob/master/pkg/standalone-utils/contracts/relayer/GaugeActions.sol).
 
 Having the multicall single point of entry prevents reentrancy. The library contract cannot be called directly, but the multicall can repeatedly delegatecall into the library code to perform a chain of actions.
 
@@ -28,7 +28,7 @@ const tx = await relayer.multicall([approval, exitPoolCallData, swapCallData]);
 
 A user has to approve each Relayer before they can use it. To check if a Relayer is approved the [hasApprovedRelayer](/reference/contracts/apis/vault.md#hasapprovedrelayer) on the Vault can be used.
 
-A Relayer can also be approved by using the `setRelayerApproval` function from the [BaseRelayerLibrary](https://github.com/balancer-labs/balancer-v2-monorepo/blob/master/pkg/standalone-utils/contracts/relayer/BaseRelayerLibrary.sol) contract. Here a signed authorisation message from the user is passed as an input parameter. This allows the approval to be included at the start of a chain of actions so the user only needs to submit a single transaction creating a better UX.
+A Relayer can also be approved by using the `setRelayerApproval` function from the [BaseRelayerLibrary](https://github.com/balancer/balancer-v2-monorepo/blob/master/pkg/standalone-utils/contracts/relayer/BaseRelayerLibrary.sol) contract. Here a signed authorisation message from the user is passed as an input parameter. This allows the approval to be included at the start of a chain of actions so the user only needs to submit a single transaction creating a better UX.
 
 ### Chained References
 
@@ -36,7 +36,7 @@ Output References allow the Relayer to store output values from one action which
 
 ![Relayer Chained Call](/images/relayer-chained-call.webp)
 
-An [OutputReference](https://github.com/balancer-labs/balancer-v2-monorepo/blob/8ac66717502b00122a3fcdf78e6d555c54528c3c/pkg/standalone-utils/contracts/relayer/VaultActions.sol#L39) consists of an index and a key:
+An [OutputReference](https://github.com/balancer/balancer-v2-monorepo/blob/8ac66717502b00122a3fcdf78e6d555c54528c3c/pkg/standalone-utils/contracts/relayer/VaultActions.sol#L39) consists of an index and a key:
 
 ```solidity
 struct OutputReference {
@@ -65,4 +65,4 @@ Migrating between these pools would take multiple steps:
 
 This would be quite an ordeal for a user to do manually but the Relayer can be used to combine all these actions into a single transaction for the user.
 
-A full example of this can be found [here](https://github.com/balancer-labs/balancer-sdk/blob/develop/balancer-js/src/modules/zaps/bbausd2-migrations/stabal3.integration.spec.ts#L120-L183)
+A full example of this can be found [here](https://github.com/balancer/balancer-sdk/blob/develop/balancer-js/src/modules/zaps/bbausd2-migrations/stabal3.integration.spec.ts#L120-L183)
