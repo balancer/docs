@@ -9,7 +9,9 @@
   "scripts": {
     "dev": "vuepress dev docs",
     "build": "vuepress build docs",
+    "build:preview": "npx http-server docs/.vuepress/dist/",
     "build-theme": "(cd theme; npm run build; npm run copy)",
+    "build:all": "npm run build-theme && npm run build",
     "lint": "eslint . --ext .js,.ts,.vue --max-warnings 0"
   },
   "license": "MIT",
@@ -27,6 +29,7 @@
     "eslint-plugin-vue": "^9.6.0",
     "feather-icons": "^4.29.0",
     "glob": "^8.0.3",
+    "http-server": "^14.1.1",
     "lodash": "^4.17.21",
     "markdown-it-meta": "^0.0.1",
     "titleize": "^3.0.0",
