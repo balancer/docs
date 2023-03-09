@@ -15,7 +15,7 @@ features:
     link: /sdk/overview
   - title: Smart Contracts
     icon: /images/quick-link-contracts.svg
-    details: Deployment addresses, ABIs, helpful walthroughs, and more
+    details: Deployment addresses, ABIs, helpful walkthroughs, and more
     link: /reference/contracts/deployment-addresses/mainnet.html
   - title: Dev Guides
     icon: /images/quick-link-guides.svg
