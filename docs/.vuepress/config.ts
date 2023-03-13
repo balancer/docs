@@ -5,8 +5,55 @@ import { mdEnhancePlugin } from 'vuepress-plugin-md-enhance';
 import { copyCodePlugin } from 'vuepress-plugin-copy-code2';
 import { balancerTheme } from '../../theme/';
 import { navbar, sidebar } from './configs/index.js';
+import { typedocPlugin } from 'vuepress-plugin-typedoc/next';
+import fs from 'fs';
 
 const isProd = process.env.NODE_ENV === 'production';
+
+const useTypedoc = fs.existsSync('../balancer-sdk/balancer-js/src/index.ts');
+
+const typedocConfig = typedocPlugin({
+  // TypeDoc options
+  entryPoints: ['../balancer-sdk/balancer-js/src/index.ts'],
+  tsconfig: '../balancer-sdk/balancer-js/tsconfig.json',
+  compilerOptions: {
+    strictPropertyInitialization: false
+  },
+  cleanOutputDir: true,
+  excludeNotDocumented: true,
+  excludeNotDocumentedKinds: [
+    "Module",
+    "Namespace",
+    // "Enum",
+    // "EnumMember", // Not enabled by default
+    "Variable",
+    "Function",
+    "Class",
+    "Interface",
+    // "Constructor",
+    // "Property",
+    // "Method",
+    // "CallSignature",
+    // "IndexSignature",
+    // "ConstructorSignature",
+    "Accessor",
+    // "GetSignature",
+    // "SetSignature",
+    // "TypeAlias",
+    "Reference",
+  ],
+  excludeInternal: true,
+  excludePrivate: true,
+  gitRevision: "master",
+  // Plugin options
+  out: "sdk/reference",
+  hideInPageTOC: true,
+  sidebar: {
+    autoConfiguration: false,
+    // fullNames: true,
+    parentCategory: "Reference"
+  }
+});
 
 export default defineUserConfig({
   // set site base to default value
@@ -67,6 +114,7 @@ export default defineUserConfig({
   // use plugins
   plugins: [
     copyCodePlugin({}),
+    useTypedoc ? typedocConfig : null,
     mdEnhancePlugin({
       mathjax: true,
       container: true,
@@ -76,5 +124,5 @@ export default defineUserConfig({
       chart: true,
       mermaid: true,
     }),
-  ],
+  ].filter((p) => p !== null),
 });
