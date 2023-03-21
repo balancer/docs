@@ -14,8 +14,8 @@ Stable Math is designed to allow for swaps between any assets that have the same
 
 Developers can use the TypeScript math implementations used by the Smart Order router
 
-- [stableMath.ts](https://github.com/balancer-labs/balancer-sor/blob/john/v2-package-linear/src/pools/stablePool/stableMath.ts)
-- [metaStableMath.ts](https://github.com/balancer-labs/balancer-sor/blob/john/v2-package-linear/src/pools/metaStablePool/metaStableMath.ts)
+- [stableMath.ts](https://github.com/balancer/balancer-sor/blob/john/v2-package-linear/src/pools/stablePool/stableMath.ts)
+- [metaStableMath.ts](https://github.com/balancer/balancer-sor/blob/john/v2-package-linear/src/pools/metaStablePool/metaStableMath.ts)
 
 ## Invariant
 
