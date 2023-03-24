@@ -4,9 +4,10 @@ Impermanent Loss, sometimes referred to as divergent loss, can simply be put as 
 
 Impermanent loss occurs when the prices of two assets experience a divergence in price action. For example if two assets increase by 20% no impermanent loss is noticed. However if one asset increases in value by 20% then a divergence has taken place and some form of impermanent loss would be noticed in the position. This can be reversed by the other token in the pool also increasing 20% or both tokens converging on the same price movement relative to the original investment. A basic example of impermanent loss followed by reversal scenario are is outlined on the following page.
 
-$
+<!-- prettier-ignore -->
+$$
 IL ={\frac {PoolValue}{HodlValue}}-1
-$
+$$
 
 ![Impermanent Loss - Relationship shown based on a two token pool with one asset and one stable coin. ](/images/impermanent-loss.png)
 
@@ -21,6 +22,8 @@ We will start with a simple 50/50 pool featuring COMP/WETH. We take a time when 
 We check back out our position after a period of time and COMP has doubled, 100% gains straight to $500.00 USD. WETH has only made it up to $2300.00 at this point, gains of just 15%. We know at this point we will face some impermanent loss. We still have strictly gains but due to our liquidity position we are missing out on some of our investment in theory.
 
 _Here we calculate the invariant from the value function:_
+
+<!-- prettier-ignore-start -->
 
 $$ V= \prod_t B_t^{W_t} \\\$$
 
@@ -40,8 +43,7 @@ $$
 V = 2.5^{0.5} _ 20^{0.5} = 7.0710678 
 $$
 
-$$
-
+<!-- prettier-ignore -->
 $$ 
 After \ Arbitrage: 2.5 \ WETH \ and \ 20 \ COMP \ yields: 
 $$
@@ -72,6 +74,7 @@ $$
 
 For the new token balances we consider the invariant ratio compared to the price action of the individual asset. This proportion will yield the new balance of each token in relation to the initial investment.
 
+<!-- prettier-ignore -->
 $$ 
 New \ Token \ Balance: B*{t'}= B*{t} _{\frac{Ratio*{LP}}{Price \ Action*{t}}}
 $$
@@ -119,9 +122,7 @@ $$
 
 Therefore, because our invariant ratio matches our price action ratio, we have an indicator that there will be no impermanent loss.
 
-$$ 
-IL = {\frac{Invariant \ Ratio*{LP}}{Ratio*{HOD}}} = {\frac{1.5}{1.5}} - 1 = 0 \ or \ 0.00\%
-$$
+$$ IL = {\frac{Invariant \ Ratio*{LP}}{Ratio*{HOD}}} = {\frac{1.5}{1.5}} - 1 = 0 \ or \ 0.00\%$$
 
 This calculation will be done from the point where impermanent loss was experienced to the current state to prove the “loss” is indeed reversible under the proper conditions.
 
@@ -130,6 +131,7 @@ $$
 3.2969 \ WETH \ at \ 2300.00 \ each \ and \ 15.16575 \ COMP \ at \ 500.00 \ each 
 $$
 
+<!-- prettier-ignore -->
 $$ 
 V = 15.16575^{0.5}\* 3.2969^{0.5} = 7.071068 
 $$
@@ -145,7 +147,8 @@ $$
 
 New Token Balances can be calculated as follows:
 
-$$ New\ Token\ Balances:B*{t'}\*{\frac {Ratio*{LP}}{Price\ Action_t}} $$
+<!-- prettier-ignore -->
+$$ New\ Token\ Balances:B_{t'}*{\frac {Ratio_{LP}}{Price\ Action_t}} $$ 
 $$ WETH:3.2969*{\frac {0.9890703}{1.30435}}=2.5 $$
 $$ COMP: 15.16575*{\frac {0.9890703}{0.75}}=20 $$
 
@@ -166,14 +169,13 @@ $$ B*{i-WETH} = 1 \ \ W*{i-WETH} = 0.2 $$
 $$ B*{i-COMP}= 32 \ \ W*{i-COMP} = 0.8 $$
 
 
-$$
-
 $$ Initial \ Invariant \ = 1^{0,2} * 32^{0.8} = 16.00 $$
 $$ After \ Arbitrage: \ 1 \ WETH \ and \ 32 \ COMP \ yields: $$
 $$ (1*1.15)^{0.2} _ (32 _ 2)^{0.8} = 28.647290182 $$
 
 Our gains will then be determined by the invariant ratio. This can be used for our token balances as well.
 $$ Invariant \ Ratio\_{LP} = {\frac{28.647290182}{16}} = 1.7904556364 $$
+
 
 $$
 Ratio\_{HODL} = (1.15 _ 0.2) + (2 _ 0.8) = 1.83
@@ -200,22 +202,26 @@ $$ USDC \ at \ $1.00 = 2500 \ USDC \ \ \ WMATIC \ at \ $1.25 = 2000 \ WMATIC $$
 $$ BAL \ at \ $25.00 = 100 BAL \ \ \ WETH \ at \ $2500.00 = 1.0 \ WETH $$
 
 We will assume USDC stays at a constant value, BAL increase by 15% to $28.75, WMATIC decreases 4% to $1.20, and WETH increase 50% to $3750.00.
-$$ V*{initial} = 2500^{0.25} * 2000^{0.25} _ 100^{0.25} \* 1^{0.25} = 149.534878 $$
+<!-- prettier-ignore -->
+$$
+V_{initial} = 2500^{0.25} * 2000^{0.25} * 100^{0.25} * 1^{0.25} = 149.534878 
+$$
 $$ V_{2} = (2500)^{0.25} _ (2000 _ 0.96)^{0.25} _ (100 _ 1.15)^{0.25} _ (1 _ 1.5)^{0.25} = 169.631923 $$
+
 
 $$
 
 $$ Invariant \ Ratio = {\frac{V*{2}}{V*{initial}}} = {\frac{169.31923}{149.534878}} = 1.13439704 $$
 $$ Ratio\_{HODL} = (1 _ 0.25) + (0.96 _ 0.25) + (1.15 _ 0.25) + (1.5 _ 0.25) = 1.1525 $$
 
-
 $$
 
 $$ IL = {\frac{Invariant \ Ratio*{LP}}{Ratio*{HODL}}} = {\frac{1.13439704}{1.1525}} - 1 = 0.0157076 \ or \ 1.57076\% $$
 
 ##### New Token Balances can be calculated as follows:
+<!-- prettier-ignore -->
+$$ New \ Token \ Balances \ B_{t'} = B_{t} * {\frac{Ratio_{LP}}{Price \ Action_{t}}} $$
 
-$$ New \ Token \ Balances \ B*{t'} = B*{t} \* {\frac{Ratio*{LP}}{Price \ Action*{t}}} $$
 
 $$
 
@@ -230,22 +236,20 @@ Due to a stable coin (USDC) being a portion of the pool impermanent loss is near
 
 At any point where all prices revert to their initial investment arbitragers will bring the tokens back to their initial balances. With a stable token present this would mean no gains can be made without impermanent loss or swap fees being present. In turn the goal can be considered to have low IL and high swap or reward APY for a liquidity provider with these types of investments. Also, it can be viewed to manage exposure to volatile assets.
 
-
-
-$$ V*{current} = 2836^{0.25} * 2363.327^{0.25} _ 98.643^{0.25} \* 0.7562647^{0.25} = 149.53489 $$
-$$ V_{2}= (2836)^{0.25} _ (2363.327 _ 1.04167)^0.25 _ (98.643 _ 0.8696)^{0.25} _ $$
+<!-- prettier-ignore -->
+$$ V_{current} = 2836^{0.25} * 2363.327^{0.25} * 98.643^{0.25} * 0.7562647^{0.25} = 149.53489 $$
+$$ V_{2}= (2836)^{0.25} * (2363.327 * 1.04167)^0.25 * (98.643 * 0.8696)^{0.25} * $$
 $$(0.7562647 _ 0.67)^{0.25} = 131.8204$$
 $$ The \ values \ above \ were \ shortened \ for \ formatting $$
-
 
 $$ {\frac{131.8204}{149.53489}} = 0.881536$$
 
 The calculations below will yield the $initial$ token balances therefore $IL = 0\%$
 
-
-
 $$ USDC = 2836 _ {\frac{0.881536}{1}} = 2500 \ USDC $$
 $$ WMATIC = 2363.327 _ {\frac{0.881536}{1.04167}} = 2000 \ WMATIC $$
 $$ BAL = 98.643 _ {\frac{0.881536}{0.8696}} = 100 \ BAL $$
 $$ WETH = 0.7562647 _ {\frac{0.881536}{0.6667}} = 1 \ WETH $$
+
+:::
 

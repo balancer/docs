@@ -8,8 +8,8 @@ The easiest way is to query `getPoolGauge(poolAddress)` on the [`LiquidityGaugeF
 
 To get a gauge, query `getPoolGauge(poolAddress)` on the given network's `ChildChainLiquidityGaugeFactory`**.**
 
-| Network  | ChildChainLiquidityGaugeFactory                                                                                                     |
-| -------- | ----------------------------------------------------------------------------------------------------------------------------------- |
+| Network  | ChildChainLiquidityGaugeFactory                                                                                                                                   |
+| -------- | ----------------------------------------------------------------------------------------------------------------------------------------------------------------- |
 | Polygon  | <span class="address-link">[`0x3b8cA519122CdD8efb272b0D3085453404B25bD0`](https://polygonscan.com/address/0x3b8cA519122CdD8efb272b0D3085453404B25bD0#code)</span> |
 | Arbitrum | <span class="address-link">[`0xb08E16cFc07C684dAA2f93C70323BAdb2A6CBFd2`](https://arbiscan.io/address/0xb08E16cFc07C684dAA2f93C70323BAdb2A6CBFd2#code)</span>     |
 
@@ -17,9 +17,9 @@ To get a gauge, query `getPoolGauge(poolAddress)` on the given network's `ChildC
 
 The process differs slightly depending on if we're on Ethereum mainnet or an alternate network (ie Polygon, Arbitrum). No matter the network though, we need to first start at the relevant subgraph:
 
-* [Ethereum Gauges Subgraph](https://thegraph.com/hosted-service/subgraph/balancer-labs/balancer-gauges)
-* [Polygon Gauges Subgraph](https://thegraph.com/hosted-service/subgraph/balancer-labs/balancer-gauges-polygon)
-* [Arbitrum Gauges Subgraph](https://thegraph.com/hosted-service/subgraph/balancer-labs/balancer-gauges-arbitrum)
+- [Ethereum Gauges Subgraph](https://thegraph.com/hosted-service/subgraph/balancer-labs/balancer-gauges)
+- [Polygon Gauges Subgraph](https://thegraph.com/hosted-service/subgraph/balancer-labs/balancer-gauges-polygon)
+- [Arbitrum Gauges Subgraph](https://thegraph.com/hosted-service/subgraph/balancer-labs/balancer-gauges-arbitrum)
 
 ### Example
 
@@ -31,10 +31,11 @@ Let's start with the [bb-a-USD pool](https://app.balancer.fi/#/pool/0x7b50775383
 
 ```graphql
 {
-liquidityGauges(where:{
-    poolId: "0x7b50775383d3d6f0215a8f290f2c9e2eebbeceb20000000000000000000000fe"
-  })
-  {
+  liquidityGauges(
+    where: {
+      poolId: "0x7b50775383d3d6f0215a8f290f2c9e2eebbeceb20000000000000000000000fe"
+    }
+  ) {
     id
   }
 }
@@ -71,18 +72,18 @@ pendingToken = gauge.claimable_rewards(userAddress, tokenAddress).call();
 ```
 
 ::: warning L2 Gauges
-On Polygon and Arbitrum, the Gauges treat BAL the same as any other "reward" token, therefore instead of calling `claimable_tokens` __ on those networks, you will use `claimable_rewards` __ and pass in that network's BAL address.
+On Polygon and Arbitrum, the Gauges treat BAL the same as any other "reward" token, therefore instead of calling `claimable_tokens` ** on those networks, you will use `claimable_rewards` ** and pass in that network's BAL address.
 :::
 
 ## Claim Pending Tokens for a Pool
 
 ### Mainnet Ethereum
 
-Use the [`claim_rewards()`](https://github.com/balancer-labs/balancer-v2-monorepo/blob/master/pkg/liquidity-mining/contracts/gauges/ethereum/LiquidityGaugeV5.vy#L440-L450) function on the pool's gauge contract.
+Use the [`claim_rewards()`](https://github.com/balancer/balancer-v2-monorepo/blob/master/pkg/liquidity-mining/contracts/gauges/ethereum/LiquidityGaugeV5.vy#L440-L450) function on the pool's gauge contract.
 
 ### Child Chains (L2, Sidechains, etc)
 
-Use the [`get_rewards()`](https://github.com/balancer-labs/balancer-v2-monorepo/blob/master/pkg/liquidity-mining/contracts/gauges/ChildChainStreamer.vy#L139-L148) function on the pool's streamer contract.
+Use the [`get_rewards()`](https://github.com/balancer/balancer-v2-monorepo/blob/master/pkg/liquidity-mining/contracts/gauges/ChildChainStreamer.vy#L139-L148) function on the pool's streamer contract.
 
 ## Query Tokens for a Gauge
 

@@ -18,7 +18,7 @@ For more formulas and derivations of the below formulas, please refer to the [Ba
 
 Developers can use the TypeScript math implementations used by the Smart Order router
 
-- [weightedMath.ts](https://github.com/balancer-labs/balancer-sor/blob/john/v2-package-linear/src/pools/weightedPool/weightedMath.ts)
+- [weightedMath.ts](https://github.com/balancer/balancer-sor/blob/john/v2-package-linear/src/pools/weightedPool/weightedMath.ts)
 
 ### Python
 
@@ -30,6 +30,7 @@ There are also Python implementations in progress
 
 The value function $V$is defined as:
 
+<!-- prettier-ignore -->
 $$
 V= \prod_t B_t^{W_t}
 $$
@@ -44,6 +45,7 @@ Where
 
 Each pair of tokens in a pool has a spot price defined entirely by the weights and balances of just that pair of tokens. The spot price between any two tokens,$SpotPrice^o_i$, or in short $SP^o_i$, is the the ratio of the token balances normalized by their weights:
 
+<!-- prettier-ignore -->
 $$
 SP^o_i = \frac{\frac{B_i}{W_i}}{\frac{B_o}{W_o}}
 $$
@@ -57,6 +59,7 @@ $$
 
 When we consider swap fees, we do exactly the same calculations as without fees, but using $A_i \cdot (1-swapFee)$ instead of $A_i$ since fees are taken out of the input amount. The equation then becomes:
 
+<!-- prettier-ignore -->
 $$
 SP^o_i = \frac{\frac{B_i}{W_i}}{\frac{B_o}{W_o}} \cdot \frac{1}{1-swapFee}
 $$
@@ -67,6 +70,7 @@ $$
 
 When a user sends tokens $i$ to get tokens $o$, all other token balances remain the same. Therefore, if we define $A_i$ and $A_o$ as the amount of tokens $i$ and $o$ exchanged, and since the value function $V$ must be constant before and after the trade, we can calculate the amount $A_o$ a users gets when sending $A_i$.
 
+<!-- prettier-ignore -->
 $$
 A_o = B_o \cdot \left(1-\left(\frac{B_i}{B_i + A_i}\right)^{\frac{W_i}{W_o}}\right)
 $$
@@ -79,6 +83,7 @@ If you're computing this value yourself, remember that the pool collects swap fe
 
 It is also very useful for traders to know how much they need to send of the input token $A_i$ to get a desired amount of output token $A_o$:
 
+<!-- prettier-ignore -->
 $$
 A_i = B_i \cdot \left(\left(\frac{B_o}{B_o - A_o}\right)^{\frac{W_o}{W_i}}-1\right)
 $$

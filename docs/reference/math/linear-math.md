@@ -14,13 +14,14 @@ Linear math is designed to facilitate swaps between assets and their yield beari
 
 Developers can use the TypeScript math implementations used by the Smart Order router
 
-- [linearMath.ts](https://github.com/balancer-labs/balancer-sor/blob/john/v2-package-linear/src/pools/linearPool/linearMath.ts)
+- [linearMath.ts](https://github.com/balancer/balancer-sor/blob/john/v2-package-linear/src/pools/linearPool/linearMath.ts)
 
 ## Invariant
 
 The invariant of the linear math function is trivial in nature, similar to the constant sum invariant. The main difference being the exchange rate, or rate provider, being utilized for the wrapped tokens.
 
-$$ I = \sum*{t}({B*{t}\*R\_{t}}) $$
+<!-- prettier-ignore -->
+$$ I = \sum_{t}({B_{t}*R_{t}}) $$
 
 Where
 
@@ -31,6 +32,8 @@ Where
 ## Spot Price
 
 Spot price is independent of the balances, and will depend on the exchange rates between the underlying assets only. This is defined as:
+
+<!-- prettier-ignore -->
 $$ SP*{i}^{o} = {\frac{R*{i}}{R\_{o}}} $$
 
 - $R_i$ is the rate provider of token $i$ going into the pool
@@ -42,6 +45,7 @@ For linear pools, the unique factor of the trade equations is the swap fees. The
 
 ### outGivenIn
 
+<!-- prettier-ignore -->
 $$
 A_{o} =
     \begin{cases}
@@ -64,6 +68,7 @@ Where:
 
 ### inGivenOut
 
+<!-- prettier-ignore -->
 $$
 A_{i} =
     \begin{cases}

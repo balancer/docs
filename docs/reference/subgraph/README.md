@@ -16,7 +16,7 @@ The Balancer Subgraph indexes data on the Balancer smart contracts with a GraphQ
 
 ### GraphQL Schema
 
-The schema of GraphQL elements available is defined in [`/schema.graphql` ](https://github.com/balancer-labs/balancer-subgraph-v2/blob/master/schema.graphql)
+The schema of GraphQL elements available is defined in [`/schema.graphql` ](https://github.com/balancer/balancer-subgraph-v2/blob/master/schema.graphql)
 
 The data included in this subgraph data layer is the data that is most applicable to the front-end. It aims at the very least to keep track of all the resources in the `Vault` contract, and keep track of basic pool data.
 

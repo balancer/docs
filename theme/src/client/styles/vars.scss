@@ -1,12 +1,13 @@
 :root {
   // brand colors
   --c-brand: #805AD5;
-  --c-brand-light: #4abf8a;
+  --c-brand-light: #2563EB;
+  --c-brand-hover-accent: #805AD5;
 
   // background colors
   --c-bg: #ffffff;
-  --c-bg-light: #f3f4f5;
-  --c-bg-lighter: #eeeeee;
+  --c-bg-light: #F8FAFC;
+  --c-bg-lighter: #EAF0F6;
   --c-bg-navbar: var(--c-bg);
   --c-bg-sidebar: var(--c-bg);
   --c-bg-arrow: #cccccc;
@@ -24,6 +25,7 @@
 
   // link colors
   --c-link: var(--c-brand);
+  --c-link-secondary: var(--c-text-lighter);
 
   // border colors
   --c-border: #eaecef;
@@ -61,6 +63,7 @@
   // transition vars
   --t-color: 0.3s ease;
   --t-transform: 0.3s ease;
+  --t-transition: 0.2s all ease-out;
 
   // code blocks vars
   --code-bg-color: #282c34;
@@ -76,16 +79,21 @@
   // layout vars
   --navbar-height: 3.6rem;
   --navbar-padding-v: 0.7rem;
-  --navbar-padding-h: 1.5rem;
+  --navbar-padding-h: 1rem;
   --sidebar-width: 20rem;
   --sidebar-width-mobile: calc(var(--sidebar-width) * 0.82);
   --content-width: 860px;
+  --max-content-width: 960px;
   --homepage-width: 960px;
   --right-anchor-width: 15rem;
 
   --dropdown-icon-width: 0.625rem;
   --dropdown-icon-height: 16px;
   --dropdown-icon-gap: 0.688rem;
+
+  // box shadow vars
+  --box-shadow-standard: 0px 4px 6px -1px rgba(0, 0, 0, 0.05), 0px 2px 4px -1px rgba(0, 0, 0, 0.05);  
+  --box-shadow-large: 0px 20px 40px -12px rgb(0 0 0 / 10%);
 }
 
 // plugin-back-to-top
@@ -140,6 +148,7 @@
 
 // plugin-search
 .search-box {
+  --search-box-max-width: 40rem;
   --search-bg-color: var(--c-bg);
   --search-accent-color: var(--c-brand);
   --search-text-color: var(--c-text);

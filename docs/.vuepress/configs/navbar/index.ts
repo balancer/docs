@@ -21,7 +21,7 @@ export const navbar: NavbarConfig = [
         children: [
           {
             text: 'Deployment Addresses',
-            link: '',
+            link: '/reference/contracts/deployment-addresses/mainnet',
             children: [
               {
                 text: 'Mainnet',

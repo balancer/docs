@@ -26,7 +26,7 @@ Financial implications:
   - veBAL does have a gauge to direct rewards to the holders if chosen. This option is capped at 10% of total emissions of BAL at a given time in the inflation schedule. The overflow, if a vote goes over 10%, will go to the DAO treasury, where governance will have ownership of it.
   - As demonstrated by BIP-161 the handling and amount of protocol fees are subject to change based on [Balancer Govnernace Process](../process.md)
 
-This gives veBAL holders the option to choose pools they have liquidity positions in for increased incentives or a potential for bribing battles can ensue. Numerous vote markets including [Hiddenhand](https://hiddenhand.finance/balancer), [Wareden](https://app.warden.vote/dashboard/), and [votemarket](https://votemarket.stakedao.org/) allow projects to provide veBAL holders a compensation or incentivize to vote in a direction they prefer, hence the term “bribe”.
+This gives veBAL holders the option to choose pools they have liquidity positions in for increased incentives or a potential for bribing battles can ensue. Numerous vote markets including [Hiddenhand](https://hiddenhand.finance/balancer), [Warden](https://app.warden.vote/dashboard/), and [votemarket](https://votemarket.stakedao.org/) allow projects to provide veBAL holders a compensation or incentivize to vote in a direction they prefer, hence the term “bribe”.
 
 In the same breath, the emission schedule for BAL has been defined and will be set permanently. Before veBAL, 145,000 BAL was being emitted per week, which was unsustainable without a ceiling on emissions. The two key takeaways for the new inflation schedule will be a halving of the inflation rate every 4 years, and a total supply of BAL being capped at 94,000,000.
 

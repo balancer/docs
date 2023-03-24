@@ -5,8 +5,9 @@
   padding-left: var(--sidebar-width);
   padding-top: var(--navbar-height);
   padding-bottom: calc(var(--navbar-height) / 2);
-  width: calc(100% - var(--sidebar-width));
+  width: 100%;
   background-size: cover;
+  background-position: center;
   text-align: center;
 
   img {
@@ -74,12 +75,13 @@
 
 .home {
   padding-left: var(--sidebar-width);
-  width: calc(80% - var(--sidebar-width));
+  width: 100%;
   margin: 0px auto;
   display: block;
 
   .theme-default-content {
     @include content_wrapper;
+    max-width: 1240px;
     padding-top: 0;
   }
 
@@ -130,7 +132,7 @@
 
   .home {
     padding-left: 1.5rem;
-    padding-right: 1.5rem;
+    padding-right: 0rem;
     width: 100%;
 
     .features {
@@ -146,12 +148,12 @@
 
 @media (max-width: $MQMobileNarrow) {
   .home-hero {
-    padding-left: 1.5rem;
+    padding-left: 1.5rem;    
   }
 
   .home {
-    padding-left: 1.5rem;
-    padding-right: 1.5rem;
+    padding-left: 1rem;
+    padding-right: 1rem;
     width: 100%;
 
     .hero {
