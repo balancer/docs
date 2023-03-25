@@ -111,13 +111,13 @@ To emphasize the weighting of 80 / 20 as opposed to 50/50 we will observe imperm
 $$ B_{i-WETH} = 1 \ \ W_{i-WETH} = 0.2 $$
 $$ B_{i-COMP}= 32 \ \ W_{i-COMP} = 0.8 $$
 $$$$
-$$ Initial \ Invariant \ = 1^{0,2} * 32^{0.8} = 16.00 $$
+$$ Initial \ Invariant \ = 1^{0.2} * 32^{0.8} = 16.00 $$
 $$ After \ Arbitrage: \ 1 \ WETH \ and \ 32 \ COMP \ yields: $$
 $$ (1*1.15)^{0.2} * (32 * 2)^{0.8} = 28.647290182 $$
 $$$$
 Our gains will then be determined by the invariant ratio. This can be used for our token balances as well.
 $$ Invariant \ Ratio_{LP} = {\frac{28.647290182}{16}} = 1.7904556364 $$
-$$ Ratio_{HODL} = (1.15 * 0.2) + (2 * 0.8) = 1.83
+$$ Ratio_{HODL} = (1.15 * 0.2) + (2 * 0.8) = 1.83 $$
 $$$$
 Here we can consider the USD values to be the same in the numerator and denominator therefore not needed to determine the ratio between the two.
 $$ IL = {\frac{Invariant \ Ratio_{LP}}{Ratio_{HODL}}} = {\frac{1.17904556364}{1.83}} = -0.02160893 \ or \ 2.160894\%$$
@@ -156,7 +156,7 @@ Due to a stable coin (USDC) being a portion of the pool impermanent loss is near
 At any point where all prices revert to their initial investment arbitragers will bring the tokens back to their initial balances. With a stable token present this would mean no gains can be made without impermanent loss or swap fees being present. In turn the goal can be considered to have low IL and high swap or reward APY for a liquidity provider with these types of investments. Also, it can be viewed to manage exposure to volatile assets.
 $$$$
 $$ V_{current} = 2836^{0.25} * 2363.327^{0.25} * 98.643^{0.25} * 0.7562647^{0.25} = 149.53489 $$
-$$ V_{2}= (2836)^{0.25} * (2363.327 * 1.04167)^0.25 * (98.643 * 0.8696)^{0.25} * $$
+$$ V_{2}= (2836)^{0.25} * (2363.327 * 1.04167)^{0.25} * (98.643 * 0.8696)^{0.25} * $$
 $$(0.7562647 * 0.67)^{0.25} = 131.8204$$
 $$ The \ values \ above \ were \ shortened \ for \ formatting $$
 $$$$
