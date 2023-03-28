@@ -1,11 +1,10 @@
 # Impermanent Loss
 
-Impermanent Loss is an extremely hot topic within decentralized finance and rightfully so. Often liquidity providers are supplying funds to a pool with a surface level understanding of how impermanent loss can affect their position. While commonly discussed as potentially wipe out the value of an entire pool or slowly chip away at their potential gains the tradeoff of volatility harvesting is not often emphasized.
+Impermanent Loss, sometimes referred to as divergent loss, can simply be put as the opportunity cost of adding liquidity into an AMM pool vs holding the individual tokens.
 
-The reality of impermanent loss is that it is a dynamic and reversible occurrence which is only realized when a position is removed from a liquidity pool, at this point is becomes a permanent loss. The liquidity provided is an investment on either volatility or that both assets will show extremely similar price action while accumulating trading fees. The fees are a tax paid by traders and in some cases traders are called “arbitragers”. These fees are awarded to the liquidity provider and the market making platform (in most cases) in order to incentivize the holder of a liquidity position to continue to give them a trading source.
+Impermanent loss occurs when the prices of two assets experience a divergence in price action. For example if two assets increase by 20% no impermanent loss is noticed. However if one asset increases in value by 20% then a divergence has taken place and some form of impermanent loss would be noticed in the position. This can be reversed by the other token in the pool also increasing 20% or both tokens converging on the same price movement relative to the original investment. A basic example of impermanent loss followed by reversal scenario are is outlined on the following page.
 
-Impermanent loss occurs when the prices of two assets experience a divergence in price action. For example if two assets increase by 20% no impermanent loss is noticed. However if one asset increases in value by 20% then a divergence has taken place and some form of impermanent loss would be noticed in the position. This can be reversed by the other token in the pool also increasing 20% or both tokens converging on the same price movement relative to the original investment. A basic example of impermanent loss followed by reversal scenario are is outlined on the following page.&#x20;
-
+<!-- prettier-ignore -->
 $
 IL ={\frac {PoolValue}{HodlValue}}-1
 $
@@ -24,6 +23,7 @@ We check back out our position after a period of time and COMP has doubled, 100%
 
 _Here we calculate the invariant from the value function:_
 
+<!-- prettier-ignore-start -->
 $$ V= \prod_t B_t^{W_t} \\\$$
 $$$$
 $$ B_{i-WETH} = 2.5 \ W_{i-WETH}=0.5 $$
@@ -98,6 +98,8 @@ $$ WETH:3.2969*{\frac {0.9890703}{1.30435}}=2.5 $$
 $$ COMP: 15.16575*{\frac {0.9890703}{0.75}}=20 $$
 $$$$
 
+<!-- prettier-ignore-end -->
+
 These balances match our initial investment meaning overall we lost nothing impermanent loss. The price action is still in our favor by 50% for both assets as we hold the same initial number of each. Also, we would have likely earned swap fees for this from traders making our gains slightly larger.
 
 Through the price action regardless of how dramatic impermanent loss can be reversed as seen above. This can occur countless times as prices of assets in a pool fluctuate in price. The importance of this is understanding the assets you are holding and how comfortable you are with volatility. In theory great volatility will be coupled with large volumes of trading making the swap fees and gains for liquidity providers increase. Weighing the risk of impermanent loss with the reward of accumulating swap fees or “volatility farming” is the game of a liquidity provider long term.
@@ -106,6 +108,8 @@ Through the price action regardless of how dramatic impermanent loss can be reve
 
 # 80/20 Pools
 Here we will examine the same circumstance as shown in the 50/50 Pools example to compare what effect a change in pool weights can have on a liquidity provider's investment.
+
+<!-- prettier-ignore-start -->
 #### COMP WETH 80/20
 To emphasize the weighting of 80 / 20 as opposed to 50/50 we will observe impermanent loss under the COMP favoring pool conditions to display the benefits of uneven pool weightings. We will in turn hold 1 WETH @ $2000.00 each and 32 COMP @ $250.00 each. ($8000 in COMP and $2000 in WETH).
 $$ B_{i-WETH} = 1 \ \ W_{i-WETH} = 0.2 $$
@@ -124,12 +128,16 @@ $$ IL = {\frac{Invariant \ Ratio_{LP}}{Ratio_{HODL}}} = {\frac{1.17904556364}{1.
 $$$$
 While impermanent loss is still applicable in this scenario in comparison to the 50/50 pool the losses are nearly cut in half (a factor of 0.5825 more precisely). When dealing with very large investments these small amounts can make a large difference in value and ultimately weighting will protect or expose investors from impermanent loss depending on their choices. However if prices return to their initial state or follow the same price change at a certain point the “losses” will revert to zero regardless of weighting.
 
+<!-- prettier-ignore-end -->
+
 @tab Multi-token Pools
 
 # Multi-token Pools
 Balancer's multi-token pools are on of our unique features. Below is an example of how impermanent loss on one of these pools on the can occur. Inclusive of details on volatility and stable coins.
 #### Advanced Example – Multi Token Pool
 An example of a multi token pool and how impermanent loss would occur and then be reverted will be solved below. We will look at a polygon pool: 25% USDC, 25% WMATIC, 25% BAL, 25% WETH. Initially we will assume we invested $10,000 in USD evenly amongst the assets.
+
+<!-- prettier-ignore-start -->
 ##### Initial Conditions:
 $$ USDC \ at \ $1.00 = 2500 \ USDC \ \ \ WMATIC \ at \ $1.25 = 2000 \ WMATIC $$
 $$ BAL \ at \ $25.00 = 100 BAL \ \ \ WETH \ at \ $2500.00 = 1.0 \ WETH $$
@@ -167,5 +175,7 @@ $$ USDC = 2836 * {\frac{0.881536}{1}} = 2500 \ USDC $$
 $$ WMATIC = 2363.327 * {\frac{0.881536}{1.04167}} = 2000 \ WMATIC $$
 $$ BAL = 98.643 * {\frac{0.881536}{0.8696}} = 100 \ BAL $$
 $$ WETH = 0.7562647 * {\frac{0.881536}{0.6667}} = 1 \ WETH $$
+
+<!-- prettier-ignore-end -->
 
 :::
