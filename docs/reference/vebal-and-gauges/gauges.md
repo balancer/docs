@@ -1,4 +1,4 @@
-# Gauges
+# Interacting with Gauges
 
 ## Query Gauge by Mainnet Pool
 
