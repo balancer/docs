@@ -125,7 +125,11 @@ This results in the following emissions schedule:
          "scaleLabel": {
           "display": true,
           "labelString": "BAL Emitted Weekly"
-        }
+         },
+          "title": {
+            "display": true,
+            "text": "BAL Emitted Weekly"
+          }
       },
       "annual": {
         "min": 0,
@@ -133,6 +137,10 @@ This results in the following emissions schedule:
         "scaleLabel": {
           "display": true,
           "labelString": "Total BAL Supply"
+        },
+          "title": {
+            "display": true,
+            "text": "Total BAL Supply"
         }
       }
     },
