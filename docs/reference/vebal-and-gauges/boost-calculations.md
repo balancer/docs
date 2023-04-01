@@ -1,7 +1,3 @@
----
-description: Formulas to calculate the amount of boost in liquidity mining incentives a user will receive. This increases from holding veBAL, up to 2.5x. 
----
-
 # veBAL Boost Calculation
 
 ::: info
