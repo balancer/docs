@@ -1,12 +1,12 @@
 # veBAL Boost Calculation
 
 ::: info
-A range of 1x to 2.5x of the calculated APR is possible. A user may be interested in the minimum amount of veBAL for max boost, how their boost is caluclated, and the maximum boost they can receive in cases where 2.5x is not attainable. 
+A range of 1x to 2.5x of the calculated APR is possible. A user may be interested in the minimum amount of veBAL for max boost, how their boost is caluclated, and the maximum boost they can receive in cases where 2.5x is not attainable.
 :::
 
-For these calculations consider the following: 
+For these calculations consider the following:
 
-
+<!-- prettier-ignore-start -->
 * `l` = the liquidity a user will provide and stake in a gauge
 * `L` = the total liquidity which is staked in a pool before a user stakes their own
 * `L'` = The total liquidity staked in the gauge after a user stakes 
@@ -45,3 +45,4 @@ $$ max boost = 2.5 \ * \ \frac{ Non-boosted \ working \ supply_{user} \ + \ tota
 Similar to the user's boost above, if a user is adding more to their current position their current working supply must be subtracted to arrive at the correct result.
 
 $$ max boost = 2.5 \ * \ \frac { Non-boosted \ working \ supply_{user} + total working \ supply_{pool} \ - \ current \ working \ supply_{user} } { max \ working \ supply_{user} \ + \ total \ working \ supply_{pool}\  - \ current \ working \ supply_{user}} $$
+<!-- prettier-ignore-end -->

@@ -1,4 +1,4 @@
-# Interacting with veBAL
+# veBAL
 
 ::: info
 The `FeeDistributor` address is [`0x26743984e3357efc59f2fd6c1afdc310335a61c9`](https://etherscan.io/address/0x26743984e3357efc59f2fd6c1afdc310335a61c9#code)
