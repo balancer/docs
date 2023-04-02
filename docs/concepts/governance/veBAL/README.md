@@ -3,6 +3,9 @@ title: Overview
 references:
   - details: Querying Gauges
     link: /reference/vebal-and-gauges/gauges.html
+  - details: veBAL Boost Calculations
+    link: /reference/vebal-and-gauges/boost-calculations.html
+
 ---
 
 # veBAL
