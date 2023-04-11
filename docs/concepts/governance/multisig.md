@@ -31,32 +31,13 @@ But getting to that ideal, long-term vision of a truly decentralized and effecti
 - the necessary infrastructure, tooling, and user interfaces
 - the risks and concerns associated with each approach
 
-Experimentation has been running wild in all directions:
-
-- vote delegation
-- minimum quorum
-- specialized committees
-- continuous voting
-- augmented voting power via token lock
-- off-chain voting for signaling / polling
-- on-chain actions from off-chain voting by way of oracles
-- upgradeable smart contracts
-- time delays on sensitive actions
-- emergency actions via Multisig \(e.g. pause, shutdown\)
-- legal entities \(e.g. foundation\) providing support for the DAO
-- tools for DAO treasury management
-- token issuance to cover protocol expenses
-- incentivized voting
-- incentivized off-chain engagement \(e.g. forum participation\)
-- and so on…
-
 While also actively experimenting with governance-related initiatives, the Balancer community has leaned towards the more cautious and thoughtful approach of not trying to rush the path to full decentralization, so each step towards a mature on-chain governance will be taken with due care, having learned from others’ experiences.
 
 Balancer V1 contracts are immutable, so up until now, there have been no core protocol parameters to tweak/change. Instead, our governance has focused on a fair, inclusive BAL token distribution, which is carried out mainly through the protocol’s liquidity mining. BAL holders have tweaked liquidity mining via off-chain voting. And to make that possible, Balancer Labs proudly developed in-house an open-source tool called Snapshot, which became the widely popular gold standard for off-chain voting in blockchain land. [Snapshot](https://snapshot.org/#/) was so successful that was as its own initiative. It has become a standard for DeFi governance.
 
 Balancer V2 contracts, on the other hand, do allow for some tweaking of core protocol parameters, for instance, in turning on protocol fees. As a placeholder for a future on-chain DAO, such limited admin powers has been initially granted to a Multisig.
 
-Balancer strives to continue to automate operations and governance execution. While the eventual goal is still to move the entire governance and execution on-chain, the current Multisigs have proven themselves as reliable executors of the wishes of veBAL voters. In the long run, BAL holders are expected to retire the Multisig in favor of a full-fledged Balancer DAO.
+Balancer strives to continue to automate operations and governance execution. While the eventual goal is still to move the entire governance and execution on-chain, the current Multisigs have proven themselves as reliable executors of the wishes of veBAL voters. In the long run, BAL holders are expected to retire the Multisigners in favor of a full-fledged Balancer DAO.
 
 ## Current state of Multisig Operations
 
