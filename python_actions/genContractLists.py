@@ -8,7 +8,6 @@ from web3 import Web3
 
 GITHUB_MONOREPO_RAW="https://raw.githubusercontent.com/balancer-labs/balancer-v2-monorepo/master"
 GITHUB_MONOREPO_NICE="https://github.com/balancer/balancer-v2-monorepo/blob/master"
-INFURA_KEY = os.getenv('WEB3_INFURA_PROJECT_ID')
 OUTPUT_PATH = "docs/reference/contracts/deployment-addresses"
 
 
@@ -87,6 +86,34 @@ def genPoolFactories(r, chain):
                 result.loc[len(result)] = [contractText, f"[{contracts[contract]}]({al})", f"[{deployment}]({dl})"]
     return result
 
+def genNotInContractList(r, chain, contractList):
+    result = pd.DataFrame(columns=["Contract", "Address", "Deployment"])
+    r = r[chain] # go to chain
+    for deployment, contracts in r.items():
+        for contract, address in contracts.items():
+            if contract in contractList:
+                continue
+            if "-pool-"  in deployment:
+                continue
+
+            ### Check if versioned
+            t = deployment.split("-")
+            t = t[len(t) - 1]
+            if bool(re.search(r'^v\d', t)):
+                contractText = f"{contract} ({t})"
+            else:
+                contractText = contract
+            ###
+
+            dl = f'{GITHUB_MONOREPO_NICE}/pkg/deployments/tasks/{deployment}'
+            al = f"{SCANNERS_BY_CHAIN[chain]}/address/{contracts[contract]}#code"
+            addressText = f'[{contracts[contract]}]({al})'
+            ## TODO find github code links
+            result.loc[len(result)] = [contract, addressText, f"[{deployment}]({dl})"]
+    return result
+
+
+
 def genFromContractList(r, chain, contractList):
     result = pd.DataFrame(columns=["Contract", "Address", "Deployment"])
     r = r[chain] # go to chain
@@ -110,7 +137,9 @@ def genFromContractList(r, chain, contractList):
     return result
 
 def genChainMd(chain):
-
+    groupedContracts = []
+    for contracts in CONTRACTS_BY_HEADING.values():
+        groupedContracts += contracts
     output = f"""
 
 # {chain.capitalize()} Deployment Addresses
@@ -128,8 +157,14 @@ For more information on specific deployments as well as changelogs for different
     for heading, contracts in CONTRACTS_BY_HEADING.items():
         output += f"\n\n## {heading}\n\n"
         output += genFromContractList(r, chain, contracts).to_markdown(index=False)
-
     output += """
+
+## Ungrouped Active/Current Contracts
+    
+    """
+    output += genNotInContractList(r, chain, groupedContracts).to_markdown(index=False)
+    output += """
+    
 # Deprecated Contracts
 
 These deployments were in use at some point, and may still be in active operation, for example in the case of pools created with old factories.  In general it's better to interact with newer versions when possible.
