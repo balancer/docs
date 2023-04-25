@@ -1,7 +1,4 @@
 
----
-title: Goerli
----
 
 # Goerli Deployment Addresses
 
@@ -23,8 +20,8 @@ For more information on specific deployments as well as changelogs for different
 |:-------------------------------|:-----------------------------------------------------------------------------------------------------------------------------------|:----------------------------------------------------------------------------------------------------------------------------------------------------------------------------|
 | Vault                          | [0xBA12222222228d8Ba445958a75a0704d566BF2C8](https://goerli.etherscan.io//address/0xBA12222222228d8Ba445958a75a0704d566BF2C8#code) | [20210418-vault](https://github.com/balancer/balancer-v2-monorepo/blob/master/pkg/deployments/tasks/20210418-vault)                                                         |
 | ProtocolFeePercentagesProvider | [0x0F3e0c4218b7b0108a3643cFe9D3ec0d4F57c54e](https://goerli.etherscan.io//address/0x0F3e0c4218b7b0108a3643cFe9D3ec0d4F57c54e#code) | [20220725-protocol-fee-percentages-provider](https://github.com/balancer/balancer-v2-monorepo/blob/master/pkg/deployments/tasks/20220725-protocol-fee-percentages-provider) |
-| BalancerRelayer                | [0x03F1ab8b19bcE21EB06C364aEc9e40322572a1e9](https://goerli.etherscan.io//address/0x03F1ab8b19bcE21EB06C364aEc9e40322572a1e9#code) | [20230314-batch-relayer-v5](https://github.com/balancer/balancer-v2-monorepo/blob/master/pkg/deployments/tasks/20230314-batch-relayer-v5)                                   |
 | BatchRelayerLibrary            | [0x45fFd460cC6642B8D8Fb12373DFd77Ceb0f4932B](https://goerli.etherscan.io//address/0x45fFd460cC6642B8D8Fb12373DFd77Ceb0f4932B#code) | [20230314-batch-relayer-v5](https://github.com/balancer/balancer-v2-monorepo/blob/master/pkg/deployments/tasks/20230314-batch-relayer-v5)                                   |
+| BalancerRelayer                | [0x03F1ab8b19bcE21EB06C364aEc9e40322572a1e9](https://goerli.etherscan.io//address/0x03F1ab8b19bcE21EB06C364aEc9e40322572a1e9#code) | [20230314-batch-relayer-v5](https://github.com/balancer/balancer-v2-monorepo/blob/master/pkg/deployments/tasks/20230314-batch-relayer-v5)                                   |
 | BalancerQueries                | [0xE39B5e3B6D74016b2F6A9673D7d7493B6DF549d5](https://goerli.etherscan.io//address/0xE39B5e3B6D74016b2F6A9673D7d7493B6DF549d5#code) | [20220721-balancer-queries](https://github.com/balancer/balancer-v2-monorepo/blob/master/pkg/deployments/tasks/20220721-balancer-queries)                                   |
 
 ## Authorization
@@ -48,9 +45,9 @@ For more information on specific deployments as well as changelogs for different
 | LiquidityGaugeFactory       | [0x3b8cA519122CdD8efb272b0D3085453404B25bD0](https://goerli.etherscan.io//address/0x3b8cA519122CdD8efb272b0D3085453404B25bD0#code) | [20220822-mainnet-gauge-factory-v2](https://github.com/balancer/balancer-v2-monorepo/blob/master/pkg/deployments/tasks/20220822-mainnet-gauge-factory-v2)                   |
 | DistributionScheduler       | [0x05a0BF0540F346b6Dac25550738343BEb51C0f65](https://goerli.etherscan.io//address/0x05a0BF0540F346b6Dac25550738343BEb51C0f65#code) | [20220707-distribution-scheduler](https://github.com/balancer/balancer-v2-monorepo/blob/master/pkg/deployments/tasks/20220707-distribution-scheduler)                       |
 | SingleRecipientGaugeFactory | [0xE3881627B8DeeBCCF9c23B291430a549Fc0bE5F7](https://goerli.etherscan.io//address/0xE3881627B8DeeBCCF9c23B291430a549Fc0bE5F7#code) | [20230215-single-recipient-gauge-factory-v2](https://github.com/balancer/balancer-v2-monorepo/blob/master/pkg/deployments/tasks/20230215-single-recipient-gauge-factory-v2) |
-| VotingEscrow                | [0x33A99Dcc4C85C014cf12626959111D5898bbCAbF](https://goerli.etherscan.io//address/0x33A99Dcc4C85C014cf12626959111D5898bbCAbF#code) | [20220325-gauge-controller](https://github.com/balancer/balancer-v2-monorepo/blob/master/pkg/deployments/tasks/20220325-gauge-controller)                                   |
-| GaugeController             | [0xBB1CE49b16d55A1f2c6e88102f32144C7334B116](https://goerli.etherscan.io//address/0xBB1CE49b16d55A1f2c6e88102f32144C7334B116#code) | [20220325-gauge-controller](https://github.com/balancer/balancer-v2-monorepo/blob/master/pkg/deployments/tasks/20220325-gauge-controller)                                   |
 | BalancerMinter              | [0xdf0399539A72E2689B8B2DD53C3C2A0883879fDd](https://goerli.etherscan.io//address/0xdf0399539A72E2689B8B2DD53C3C2A0883879fDd#code) | [20220325-gauge-controller](https://github.com/balancer/balancer-v2-monorepo/blob/master/pkg/deployments/tasks/20220325-gauge-controller)                                   |
+| GaugeController             | [0xBB1CE49b16d55A1f2c6e88102f32144C7334B116](https://goerli.etherscan.io//address/0xBB1CE49b16d55A1f2c6e88102f32144C7334B116#code) | [20220325-gauge-controller](https://github.com/balancer/balancer-v2-monorepo/blob/master/pkg/deployments/tasks/20220325-gauge-controller)                                   |
+| VotingEscrow                | [0x33A99Dcc4C85C014cf12626959111D5898bbCAbF](https://goerli.etherscan.io//address/0x33A99Dcc4C85C014cf12626959111D5898bbCAbF#code) | [20220325-gauge-controller](https://github.com/balancer/balancer-v2-monorepo/blob/master/pkg/deployments/tasks/20220325-gauge-controller)                                   |
 | GaugeAdder                  | [0xBd35248F8325DD1cB2bBf9D01E80A6bb99a792Dd](https://goerli.etherscan.io//address/0xBd35248F8325DD1cB2bBf9D01E80A6bb99a792Dd#code) | [20230109-gauge-adder-v3](https://github.com/balancer/balancer-v2-monorepo/blob/master/pkg/deployments/tasks/20230109-gauge-adder-v3)                                       |
 # Deprecated Contracts
 

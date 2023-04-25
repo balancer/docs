@@ -30,3 +30,7 @@ pnpm-debug.log*
 # Vuepress
 .temp/
 .cache/
+
+
+# Python
+python_actions/venv

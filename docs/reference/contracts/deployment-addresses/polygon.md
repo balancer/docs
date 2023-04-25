@@ -1,7 +1,4 @@
 
----
-title: Polygon
----
 
 # Polygon Deployment Addresses
 
@@ -24,8 +21,8 @@ For more information on specific deployments as well as changelogs for different
 |:-------------------------------|:------------------------------------------------------------------------------------------------------------------------------|:----------------------------------------------------------------------------------------------------------------------------------------------------------------------------|
 | Vault                          | [0xBA12222222228d8Ba445958a75a0704d566BF2C8](https://polygonscan.com/address/0xBA12222222228d8Ba445958a75a0704d566BF2C8#code) | [20210418-vault](https://github.com/balancer/balancer-v2-monorepo/blob/master/pkg/deployments/tasks/20210418-vault)                                                         |
 | ProtocolFeePercentagesProvider | [0x42AC0e6FA47385D55Aff070d79eF0079868C48a6](https://polygonscan.com/address/0x42AC0e6FA47385D55Aff070d79eF0079868C48a6#code) | [20220725-protocol-fee-percentages-provider](https://github.com/balancer/balancer-v2-monorepo/blob/master/pkg/deployments/tasks/20220725-protocol-fee-percentages-provider) |
-| BalancerRelayer                | [0xd18d5D377eb23362e54Fa496597d7E962d56C554](https://polygonscan.com/address/0xd18d5D377eb23362e54Fa496597d7E962d56C554#code) | [20230314-batch-relayer-v5](https://github.com/balancer/balancer-v2-monorepo/blob/master/pkg/deployments/tasks/20230314-batch-relayer-v5)                                   |
 | BatchRelayerLibrary            | [0x4271de2595c3d85d2D455C5778adF2d7Ad54322C](https://polygonscan.com/address/0x4271de2595c3d85d2D455C5778adF2d7Ad54322C#code) | [20230314-batch-relayer-v5](https://github.com/balancer/balancer-v2-monorepo/blob/master/pkg/deployments/tasks/20230314-batch-relayer-v5)                                   |
+| BalancerRelayer                | [0xd18d5D377eb23362e54Fa496597d7E962d56C554](https://polygonscan.com/address/0xd18d5D377eb23362e54Fa496597d7E962d56C554#code) | [20230314-batch-relayer-v5](https://github.com/balancer/balancer-v2-monorepo/blob/master/pkg/deployments/tasks/20230314-batch-relayer-v5)                                   |
 | BalancerQueries                | [0xE39B5e3B6D74016b2F6A9673D7d7493B6DF549d5](https://polygonscan.com/address/0xE39B5e3B6D74016b2F6A9673D7d7493B6DF549d5#code) | [20220721-balancer-queries](https://github.com/balancer/balancer-v2-monorepo/blob/master/pkg/deployments/tasks/20220721-balancer-queries)                                   |
 
 ## Authorization

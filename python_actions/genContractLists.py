@@ -112,9 +112,6 @@ def genFromContractList(r, chain, contractList):
 def genChainMd(chain):
 
     output = f"""
----
-title: {chain.capitalize()}
----
 
 # {chain.capitalize()} Deployment Addresses
 

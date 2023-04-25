@@ -1,7 +1,4 @@
 
----
-title: Gnosis
----
 
 # Gnosis Deployment Addresses
 
@@ -23,8 +20,8 @@ For more information on specific deployments as well as changelogs for different
 |:-------------------------------|:----------------------------------------------------------------------------------------------------------------------------|:----------------------------------------------------------------------------------------------------------------------------------------------------------------------------|
 | Vault                          | [0xBA12222222228d8Ba445958a75a0704d566BF2C8](https://gnosisscan.io/address/0xBA12222222228d8Ba445958a75a0704d566BF2C8#code) | [20210418-vault](https://github.com/balancer/balancer-v2-monorepo/blob/master/pkg/deployments/tasks/20210418-vault)                                                         |
 | ProtocolFeePercentagesProvider | [0x41B953164995c11C81DA73D212ED8Af25741b7Ac](https://gnosisscan.io/address/0x41B953164995c11C81DA73D212ED8Af25741b7Ac#code) | [20220725-protocol-fee-percentages-provider](https://github.com/balancer/balancer-v2-monorepo/blob/master/pkg/deployments/tasks/20220725-protocol-fee-percentages-provider) |
-| BalancerRelayer                | [0x3536fD480CA495Ac91E698A703248A8915c137a3](https://gnosisscan.io/address/0x3536fD480CA495Ac91E698A703248A8915c137a3#code) | [20230314-batch-relayer-v5](https://github.com/balancer/balancer-v2-monorepo/blob/master/pkg/deployments/tasks/20230314-batch-relayer-v5)                                   |
 | BatchRelayerLibrary            | [0xb9aD3466cdd42015cc05d4804DC68D562b6a2065](https://gnosisscan.io/address/0xb9aD3466cdd42015cc05d4804DC68D562b6a2065#code) | [20230314-batch-relayer-v5](https://github.com/balancer/balancer-v2-monorepo/blob/master/pkg/deployments/tasks/20230314-batch-relayer-v5)                                   |
+| BalancerRelayer                | [0x3536fD480CA495Ac91E698A703248A8915c137a3](https://gnosisscan.io/address/0x3536fD480CA495Ac91E698A703248A8915c137a3#code) | [20230314-batch-relayer-v5](https://github.com/balancer/balancer-v2-monorepo/blob/master/pkg/deployments/tasks/20230314-batch-relayer-v5)                                   |
 | BalancerQueries                | [0x0F3e0c4218b7b0108a3643cFe9D3ec0d4F57c54e](https://gnosisscan.io/address/0x0F3e0c4218b7b0108a3643cFe9D3ec0d4F57c54e#code) | [20220721-balancer-queries](https://github.com/balancer/balancer-v2-monorepo/blob/master/pkg/deployments/tasks/20220721-balancer-queries)                                   |
 
 ## Authorization

@@ -1,7 +1,4 @@
 
----
-title: Optimism
----
 
 # Optimism Deployment Addresses
 
@@ -24,8 +21,8 @@ For more information on specific deployments as well as changelogs for different
 |:-------------------------------|:--------------------------------------------------------------------------------------------------------------------------------------|:----------------------------------------------------------------------------------------------------------------------------------------------------------------------------|
 | Vault                          | [0xBA12222222228d8Ba445958a75a0704d566BF2C8](https://optimistic.etherscan.io/address/0xBA12222222228d8Ba445958a75a0704d566BF2C8#code) | [20210418-vault](https://github.com/balancer/balancer-v2-monorepo/blob/master/pkg/deployments/tasks/20210418-vault)                                                         |
 | ProtocolFeePercentagesProvider | [0xacAaC3e6D6Df918Bf3c809DFC7d42de0e4a72d4C](https://optimistic.etherscan.io/address/0xacAaC3e6D6Df918Bf3c809DFC7d42de0e4a72d4C#code) | [20220725-protocol-fee-percentages-provider](https://github.com/balancer/balancer-v2-monorepo/blob/master/pkg/deployments/tasks/20220725-protocol-fee-percentages-provider) |
-| BalancerRelayer                | [0x03F1ab8b19bcE21EB06C364aEc9e40322572a1e9](https://optimistic.etherscan.io/address/0x03F1ab8b19bcE21EB06C364aEc9e40322572a1e9#code) | [20230314-batch-relayer-v5](https://github.com/balancer/balancer-v2-monorepo/blob/master/pkg/deployments/tasks/20230314-batch-relayer-v5)                                   |
 | BatchRelayerLibrary            | [0x45fFd460cC6642B8D8Fb12373DFd77Ceb0f4932B](https://optimistic.etherscan.io/address/0x45fFd460cC6642B8D8Fb12373DFd77Ceb0f4932B#code) | [20230314-batch-relayer-v5](https://github.com/balancer/balancer-v2-monorepo/blob/master/pkg/deployments/tasks/20230314-batch-relayer-v5)                                   |
+| BalancerRelayer                | [0x03F1ab8b19bcE21EB06C364aEc9e40322572a1e9](https://optimistic.etherscan.io/address/0x03F1ab8b19bcE21EB06C364aEc9e40322572a1e9#code) | [20230314-batch-relayer-v5](https://github.com/balancer/balancer-v2-monorepo/blob/master/pkg/deployments/tasks/20230314-batch-relayer-v5)                                   |
 | BalancerQueries                | [0xE39B5e3B6D74016b2F6A9673D7d7493B6DF549d5](https://optimistic.etherscan.io/address/0xE39B5e3B6D74016b2F6A9673D7d7493B6DF549d5#code) | [20220721-balancer-queries](https://github.com/balancer/balancer-v2-monorepo/blob/master/pkg/deployments/tasks/20220721-balancer-queries)                                   |
 
 ## Authorization
