@@ -23,11 +23,11 @@ SCANNERS_BY_CHAIN = {
 
 CONTRACTS_BY_HEADING = {
     "Core": ["Vault", "BalancerRelayer", "BatchRelayerLibrary", "BalancerQueries", "ProtocolFeePercentagesProvider"],
-    "Authorization": ["AuthorizerAdaptor", "AuthorizerAdaptorEntrypoint", "AuthorizerWithAdaptorValidation",  "TimelockAuthorizer"],
+    "Authorization": ["Authorizer", "AuthorizerAdaptor", "AuthorizerAdaptorEntrypoint", "AuthorizerWithAdaptorValidation",  "TimelockAuthorizer"],
     "Gauges and Governance": ["BALTokenHolderFactory", "BalancerTokenAdmin","BalancerMinter", "GaugeAdder", "VeBoost",
-                              "VotingEscrow","GaugeController", "DistributionScheduler", "FeeDistributor", "SingleRecipientGaugeFactory",
+                              "VotingEscrow","GaugeController", "DistributionScheduler", "FeeDistributor", "RewardsOnlyGauge", "SingleRecipientGaugeFactory",
                               "LiquidityGaugeFactory", "ChildChainGaugeFactory", "ChildChainStreamer", "ChildChainLiquidityGaugeFactory", "L2GaugeCheckpointer", "SmartWalletChecker",
-                              "ChildChainGaugeRewardHelper", "ChildChainGaugeTokenAdder", "L2LayerZeroBridgeForwarder","ChildChainGauge","VotingEscrowDelegation", "VotingEscrowDelegationProxy", "VeBoostV2", "ProtocolFeesCollector"]
+                              "ChildChainGaugeRewardHelper", "ChildChainGaugeTokenAdder", "L2LayerZeroBridgeForwarder","ChildChainGauge","VotingEscrowDelegation", "VotingEscrowDelegationProxy", "VeBoostV2", "ProtocolFeesCollector", "ProtocolFeesWithdrawer"]
 }
 
 
@@ -186,7 +186,7 @@ table {
     width: 100%;
 }
 table th:first-of-type, td:first-of-type {
-    width: 25%;
+    width: 30%;
 }
 table th:nth-of-type(2) {
     width: 40%;
