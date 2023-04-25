@@ -23,10 +23,11 @@ SCANNERS_BY_CHAIN = {
 
 CONTRACTS_BY_HEADING = {
     "Core": ["Vault", "BalancerRelayer", "BatchRelayerLibrary", "BalancerQueries", "ProtocolFeePercentagesProvider"],
-    "Authorization": ["AuthorizerAdaptor", "AuthorizerAdaptorEntrypoint", "TimelockAuthorizer"],
+    "Authorization": ["AuthorizerAdaptor", "AuthorizerAdaptorEntrypoint", "AuthorizerWithAdaptorValidation",  "TimelockAuthorizer"],
     "Gauges and Governance": ["BALTokenHolderFactory", "BalancerTokenAdmin","BalancerMinter", "GaugeAdder", "VeBoost",
                               "VotingEscrow","GaugeController", "DistributionScheduler", "FeeDistributor", "SingleRecipientGaugeFactory",
-                              "LiquidityGaugeFactory", "ChildChainGaugeFactory", "L2GaugeCheckpointer", "SmartWalletChecker"]
+                              "LiquidityGaugeFactory", "ChildChainGaugeFactory", "ChildChainStreamer", "ChildChainLiquidityGaugeFactory", "L2GaugeCheckpointer", "SmartWalletChecker",
+                              "ChildChainGaugeRewardHelper", "ChildChainGaugeTokenAdder", "L2LayerZeroBridgeForwarder","ChildChainGauge","VotingEscrowDelegation", "VotingEscrowDelegationProxy", "VeBoostV2", "ProtocolFeesCollector"]
 }
 
 
@@ -161,9 +162,11 @@ For more information on specific deployments as well as changelogs for different
 
 ## Ungrouped Active/Current Contracts
     
-    """
+    
+"""
     output += genNotInContractList(r, chain, groupedContracts).to_markdown(index=False)
     output += """
+    
     
 # Deprecated Contracts
 
@@ -176,6 +179,7 @@ These deployments were in use at some point, and may still be in active operatio
     r = address_directory()["old"]
     output += genFullTable(r, chain).to_markdown(index=False)
     output += """
+    
 <style scoped>
 table {
     display: table;
