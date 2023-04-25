@@ -69,7 +69,7 @@ def genPoolFactories(r, chain):
     print(f"Generating pools for {chain}")
     r = r[chain] # go to chain
     for deployment, contracts in r.items():
-        if "-pool-" not in deployment:
+        if "-pool" not in deployment:
             continue
         for contract, address in contracts.items():
             if "PoolFactory" in contract:
@@ -94,7 +94,7 @@ def genNotInContractList(r, chain, contractList):
         for contract, address in contracts.items():
             if contract in contractList:
                 continue
-            if "-pool-"  in deployment:
+            if "-pool"  in deployment:
                 continue
 
             ### Check if versioned
