@@ -58,7 +58,7 @@ def genFullTable(r, chain):
 
             dl = f'{GITHUB_MONOREPO_NICE}/pkg/deployments/tasks/{deployment}'
             al = f"{SCANNERS_BY_CHAIN[chain]}/address/{contracts[contract]}#code"
-            addressText = f'<span class="address-link">[{contracts[contract]}]({al})<span>'
+            addressText = f'[{contracts[contract]}]({al})'
             ## TODO find github code links
             result.loc[len(result)] = [contract, addressText, f"[{deployment}]({dl})"]
     return result
@@ -104,7 +104,7 @@ def genFromContractList(r, chain, contractList):
 
             dl = f'{GITHUB_MONOREPO_NICE}/pkg/deployments/tasks/{deployment}'
             al = f"{SCANNERS_BY_CHAIN[chain]}/address/{contracts[contract]}#code"
-            addressText = f'<span class="address-link">[{contracts[contract]}]({al})<span>'
+            addressText = f'[{contracts[contract]}]({al})'
             ## TODO find github code links
             result.loc[len(result)] = [contract, addressText, f"[{deployment}]({dl})"]
     return result
@@ -169,7 +169,6 @@ def main():
     r = address_directory()["active"]
     for chain in SCANNERS_BY_CHAIN.keys():
         output=genChainMd(chain)
-        print(output)
         with open(f"{OUTPUT_PATH}/{chain}.md", "w") as f:
             f.write(output)
 
