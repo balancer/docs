@@ -60,7 +60,7 @@ def genFullTable(r, chain):
             al = f"{SCANNERS_BY_CHAIN[chain]}/address/{contracts[contract]}#code"
             addressText = f'[{contracts[contract]}]({al})'
             ## TODO find github code links
-            result.loc[len(result)] = [contract, addressText, f"[{deployment}]({dl})"]
+            result.loc[len(result)] = [contractText, addressText, f"[{deployment}]({dl})"]
     return result
 
 
@@ -110,7 +110,7 @@ def genNotInContractList(r, chain, contractList):
             al = f"{SCANNERS_BY_CHAIN[chain]}/address/{contracts[contract]}#code"
             addressText = f'[{contracts[contract]}]({al})'
             ## TODO find github code links
-            result.loc[len(result)] = [contract, addressText, f"[{deployment}]({dl})"]
+            result.loc[len(result)] = [contractText, addressText, f"[{deployment}]({dl})"]
     return result
 
 
