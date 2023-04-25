@@ -25,8 +25,8 @@ CONTRACTS_BY_HEADING = {
     "Core": ["Vault", "BalancerRelayer", "BatchRelayerLibrary", "BalancerQueries", "ProtocolFeePercentagesProvider"],
     "Authorization": ["Authorizer", "AuthorizerAdaptor", "AuthorizerAdaptorEntrypoint", "AuthorizerWithAdaptorValidation",  "TimelockAuthorizer"],
     "Gauges and Governance": ["BALTokenHolderFactory", "BalancerTokenAdmin","BalancerMinter", "GaugeAdder", "VeBoost",
-                              "VotingEscrow","GaugeController", "DistributionScheduler", "FeeDistributor", "RewardsOnlyGauge", "SingleRecipientGaugeFactory",
-                              "LiquidityGaugeFactory", "ChildChainGaugeFactory", "ChildChainStreamer", "ChildChainLiquidityGaugeFactory", "L2GaugeCheckpointer", "SmartWalletChecker",
+                              "VotingEscrow","GaugeController", "DistributionScheduler", "FeeDistributor", "RewardsOnlyGauge", "SingleRecipientGaugeFactory", "OptimismRootGauge", "OptimismRootGaugeFactory", "PolygonRootGauge", "PolygonRootGaugeFactory", "GnosisRootGauge", "GnosisRootGaugeFactory", "ArbitrumRootGauge", "ArbitrumRootGaugeFactory"
+                              "LiquidityGaugeFactory", "ChildChainGaugeFactory", "ChildChainStreamer", "ChildChainLiquidityGaugeFactory", "L2GaugeCheckpointer", "SingleRecipientGauge", "SmartWalletChecker",
                               "ChildChainGaugeRewardHelper", "ChildChainGaugeTokenAdder", "L2LayerZeroBridgeForwarder","ChildChainGauge","VotingEscrowDelegation", "VotingEscrowDelegationProxy", "VeBoostV2", "ProtocolFeesCollector", "ProtocolFeesWithdrawer"]
 }
 
