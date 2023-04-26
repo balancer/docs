@@ -1,15 +1,11 @@
 import requests
-import json
 import pandas as pd
-import os
 import re
-#from helpers.addresses import get_registry_by_chain_id
-from web3 import Web3
 
 GITHUB_MONOREPO_RAW="https://raw.githubusercontent.com/balancer-labs/balancer-v2-monorepo/master"
 GITHUB_MONOREPO_NICE="https://github.com/balancer/balancer-v2-monorepo/blob/master"
 OUTPUT_PATH = "docs/reference/contracts/deployment-addresses"
-
+ADDRESSBOOK_URL = "https://raw.githubusercontent.com/BalancerMaxis/bal_addresses/main/outputs/addressbook.json"
 
 SCANNERS_BY_CHAIN = {
     "mainnet": "https://etherscan.io",
@@ -35,9 +31,9 @@ CONTRACTS_BY_HEADING = {
 def main():
     r = address_directory()
 
-def address_directory(addressbook="python_actions/addressbook.json"):
-   with open(addressbook, "r") as f:
-       return json.load(f)
+def address_directory(addressbook_url="pip3 /addressbook.json"):
+   r = requests.get(ADDRESSBOOK_URL)
+   return r.json()
 
 #def getContractUrl(deployment, contract):
 
@@ -61,7 +57,7 @@ def genFullTable(r, chain):
             addressText = f'[{contracts[contract]}]({al})'
             ## TODO find github code links
             result.loc[len(result)] = [contractText, addressText, f"[{deployment}]({dl})"]
-    result.sort_values(by=["Contract"], inplace=True)
+    result.sort_values(by=["Contract","Deployment"], inplace=True)
     return result
 
 
@@ -86,7 +82,7 @@ def genPoolFactories(r, chain):
                 dl = f"{GITHUB_MONOREPO_NICE}/pkg/deployments/tasks/{deployment}"
                 al = f"{SCANNERS_BY_CHAIN[chain]}/address/{contracts[contract]}#code"
                 result.loc[len(result)] = [contractText, f"[{contracts[contract]}]({al})", f"[{deployment}]({dl})"]
-    result.sort_values(by=["Contract"], inplace=True)
+    result.sort_values(by=["Contract","Deployment"], inplace=True)
     return result
 
 def genNotInContractList(r, chain, contractList):
@@ -113,7 +109,7 @@ def genNotInContractList(r, chain, contractList):
             addressText = f'[{contracts[contract]}]({al})'
             ## TODO find github code links
             result.loc[len(result)] = [contractText, addressText, f"[{deployment}]({dl})"]
-    result.sort_values(by=["Contract"], inplace=True)
+    result.sort_values(by=["Contract","Deployment"], inplace=True)
     return result
 
 
@@ -138,7 +134,7 @@ def genFromContractList(r, chain, contractList):
             addressText = f'[{contracts[contract]}]({al})'
             ## TODO find github code links
             result.loc[len(result)] = [contract, addressText, f"[{deployment}]({dl})"]
-    result.sort_values(by=["Contract"], inplace=True)
+    result.sort_values(by=["Contract","Deployment"], inplace=True)
     return result
 
 def genChainMd(chain):
