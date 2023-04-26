@@ -61,6 +61,7 @@ def genFullTable(r, chain):
             addressText = f'[{contracts[contract]}]({al})'
             ## TODO find github code links
             result.loc[len(result)] = [contractText, addressText, f"[{deployment}]({dl})"]
+    result.sort_values(by=["Contract"], inplace=True)
     return result
 
 
@@ -72,7 +73,7 @@ def genPoolFactories(r, chain):
         if "-pool" not in deployment:
             continue
         for contract, address in contracts.items():
-            if "PoolFactory" in contract:
+            if "Factory" in contract:
                 ### Check if versioned
                 t = deployment.split("-")
                 t = t[len(t)-1]
@@ -85,6 +86,7 @@ def genPoolFactories(r, chain):
                 dl = f"{GITHUB_MONOREPO_NICE}/pkg/deployments/tasks/{deployment}"
                 al = f"{SCANNERS_BY_CHAIN[chain]}/address/{contracts[contract]}#code"
                 result.loc[len(result)] = [contractText, f"[{contracts[contract]}]({al})", f"[{deployment}]({dl})"]
+    result.sort_values(by=["Contract"], inplace=True)
     return result
 
 def genNotInContractList(r, chain, contractList):
@@ -111,6 +113,7 @@ def genNotInContractList(r, chain, contractList):
             addressText = f'[{contracts[contract]}]({al})'
             ## TODO find github code links
             result.loc[len(result)] = [contractText, addressText, f"[{deployment}]({dl})"]
+    result.sort_values(by=["Contract"], inplace=True)
     return result
 
 
@@ -135,6 +138,7 @@ def genFromContractList(r, chain, contractList):
             addressText = f'[{contracts[contract]}]({al})'
             ## TODO find github code links
             result.loc[len(result)] = [contract, addressText, f"[{deployment}]({dl})"]
+    result.sort_values(by=["Contract"], inplace=True)
     return result
 
 def genChainMd(chain):
