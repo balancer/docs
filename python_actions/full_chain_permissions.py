@@ -142,9 +142,9 @@ def output_list(permission_data, output_name, chain):
 
 
 def generate_chain_files(chain):
-    #permissions = build_chain_permissions_list(chain)
-    #with open(f"data_files/permissions/{chain}.json", "w") as f:
-    #    json.dump(permissions, f, indent=3)
+    permissions = build_chain_permissions_list(chain)
+    with open(f"data_files/permissions/{chain}.json", "w") as f:
+        json.dump(permissions, f, indent=3)
     with open(f"data_files/permissions/{chain}.json", "r") as f:
         permissions = json.load(f)
     output_list(permissions, f"{chain}", chain)
