@@ -8,12 +8,15 @@ The easiest way is to query `getPoolGauge(poolAddress)` on the [`LiquidityGaugeF
 
 To get a gauge, query `getPoolGauge(poolAddress)` on the given network's `ChildChainLiquidityGaugeFactory`**.**
 
-| Network  | ChildChainLiquidityGaugeFactory                                                                                                                                   |
-| -------- | ----------------------------------------------------------------------------------------------------------------------------------------------------------------- |
-| Polygon  | <span class="address-link">[`0x3b8cA519122CdD8efb272b0D3085453404B25bD0`](https://polygonscan.com/address/0x3b8cA519122CdD8efb272b0D3085453404B25bD0#code)</span> |
-| Arbitrum | <span class="address-link">[`0xb08E16cFc07C684dAA2f93C70323BAdb2A6CBFd2`](https://arbiscan.io/address/0xb08E16cFc07C684dAA2f93C70323BAdb2A6CBFd2#code)</span>     |
+| Network  | ChildChainLiquidityGaugeFactory                                                                                                                                     |
+| -------- |---------------------------------------------------------------------------------------------------------------------------------------------------------------------|
+| Polygon  | <span class="address-link">[`0x22625eEDd92c81a219A83e1dc48f88d54786B017`](https://polygonscan.com/address/0x22625eEDd92c81a219A83e1dc48f88d54786B017#code)</span>   |
+| Arbitrum | <span class="address-link">[`0x6817149cb753BF529565B4D023d7507eD2ff4Bc0`](https://arbiscan.io/address/0x6817149cb753BF529565B4D023d7507eD2ff4Bc0#code)</span>       |
+| Gnosis | <span class="address-link">[`0x96484f2aBF5e58b15176dbF1A799627B53F13B6d`](https://gnosisscan.io/address/0x96484f2aBF5e58b15176dbF1A799627B53F13B6d)                 | 
 
+For other chains, search for the `20230316-child-chain-gauge-factory-v2/ChildChainGaugeFactory` entry for the non-mainnet chain in question in the [address book](../contracts/deployment-addresses)
 ## Query Pending Tokens for a Given Pool
+
 
 The process differs slightly depending on if we're on Ethereum mainnet or an alternate network (ie Polygon, Arbitrum). No matter the network though, we need to first start at the relevant subgraph:
 
@@ -83,7 +86,12 @@ Use the [`claim_rewards()`](https://github.com/balancer/balancer-v2-monorepo/blo
 
 ### Child Chains (L2, Sidechains, etc)
 
+#### Old child chain streamer system (phasing out in May 2023)
 Use the [`get_rewards()`](https://github.com/balancer/balancer-v2-monorepo/blob/master/pkg/liquidity-mining/contracts/gauges/ChildChainStreamer.vy#L139-L148) function on the pool's streamer contract.
+
+#### New Layer Zero Gauge system
+Use the same get_rewards() function as on mainnet.
+
 
 ## Query Tokens for a Gauge
 
