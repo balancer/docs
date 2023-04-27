@@ -50,6 +50,35 @@ export const navbar: NavbarConfig = [
             ],
           },
           {
+            text: 'Authorizer Permissions',
+            children: [
+              {
+                text: 'mainnet',
+                link: '/reference/authorizer/mainnet.md',
+              },
+              {
+                text: 'Arbitrum',
+                link: '/reference/authorizer/arbitrum.md',
+              },
+              {
+                text: 'Optimism',
+                link: '/reference/authorizer/optimism.md',
+              },
+              {
+                text: 'Polygon',
+                link: '/reference/authorizer/polygon.md',
+              },
+              {
+                text: 'Gnosis',
+                link: '/reference/authorizer/gnosis.md',
+              },
+              {
+                text: 'Goerli',
+                link: '/reference/authorizer/goerli.md',
+              },
+            ],
+          },
+          {
             text: 'APIs',
             link: '/reference/contracts/apis/vault',
           },

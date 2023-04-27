@@ -147,7 +147,7 @@ def generate_chain_files(chain):
         json.dump(permissions, f, indent=3)
     with open(f"data_files/permissions/{chain}.json", "r") as f:
         permissions = json.load(f)
-    output_list(permissions, f"{chain}-permissions", chain)
+    output_list(permissions, f"{chain}", chain)
 
 def main():
     for chain in SCANNERS_BY_CHAIN.keys():
