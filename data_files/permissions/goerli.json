@@ -1,0 +1,1194 @@
+[
+   {
+      "Fx": "batchSwap(uint8,(bytes32,uint256,uint256,uint256,bytes)[],address[],(address,bool,address,bool),int256[],uint256)",
+      "Contract": "Vault",
+      "Deployment": "20210418-vault",
+      "Authorized_Caller_Addresses": [
+         "0xC92E8bdf79f0507f65a392b0ab4667716BFE0110",
+         "0x7b9B6f094DC2Bd1c12024b0D9CC63d6993Be1888",
+         "0x4B1635c7D3D1FC353298f92083e82dF69e1E9158",
+         "0x2Fb8aD26faDC971464A17407e9213D1A22befc8a",
+         "0x00e695aA8000df01B8DC8401B4C34Fba5D56BBb2",
+         "0x03F1ab8b19bcE21EB06C364aEc9e40322572a1e9",
+         "0x763e86606cD593A2ac9cFa517120502Af65bA351"
+      ],
+      "Authorized_Caller_Names": [
+         "undef",
+         "20220720-batch-relayer-v3/BalancerRelayer",
+         "undef",
+         "undef",
+         "20220916-batch-relayer-v4/BalancerRelayer",
+         "20230314-batch-relayer-v5/BalancerRelayer",
+         "undef"
+      ]
+   },
+   {
+      "Fx": "batchSwap(uint8,(bytes32,uint256,uint256,uint256,bytes)[],address[],(address,bool,address,bool),int256[],uint256)",
+      "Contract": "Vault",
+      "Deployment": "20210418-vault",
+      "Authorized_Caller_Addresses": [
+         "0xC92E8bdf79f0507f65a392b0ab4667716BFE0110",
+         "0x7b9B6f094DC2Bd1c12024b0D9CC63d6993Be1888",
+         "0x4B1635c7D3D1FC353298f92083e82dF69e1E9158",
+         "0x2Fb8aD26faDC971464A17407e9213D1A22befc8a",
+         "0x00e695aA8000df01B8DC8401B4C34Fba5D56BBb2",
+         "0x03F1ab8b19bcE21EB06C364aEc9e40322572a1e9",
+         "0x763e86606cD593A2ac9cFa517120502Af65bA351"
+      ],
+      "Authorized_Caller_Names": [
+         "undef",
+         "20220720-batch-relayer-v3/BalancerRelayer",
+         "undef",
+         "undef",
+         "20220916-batch-relayer-v4/BalancerRelayer",
+         "20230314-batch-relayer-v5/BalancerRelayer",
+         "undef"
+      ]
+   },
+   {
+      "Fx": "batchSwap(uint8,(bytes32,uint256,uint256,uint256,bytes)[],address[],(address,bool,address,bool),int256[],uint256)",
+      "Contract": "Vault",
+      "Deployment": "20210418-vault",
+      "Authorized_Caller_Addresses": [
+         "0xC92E8bdf79f0507f65a392b0ab4667716BFE0110",
+         "0x7b9B6f094DC2Bd1c12024b0D9CC63d6993Be1888",
+         "0x4B1635c7D3D1FC353298f92083e82dF69e1E9158",
+         "0x2Fb8aD26faDC971464A17407e9213D1A22befc8a",
+         "0x00e695aA8000df01B8DC8401B4C34Fba5D56BBb2",
+         "0x03F1ab8b19bcE21EB06C364aEc9e40322572a1e9",
+         "0x763e86606cD593A2ac9cFa517120502Af65bA351"
+      ],
+      "Authorized_Caller_Names": [
+         "undef",
+         "20220720-batch-relayer-v3/BalancerRelayer",
+         "undef",
+         "undef",
+         "20220916-batch-relayer-v4/BalancerRelayer",
+         "20230314-batch-relayer-v5/BalancerRelayer",
+         "undef"
+      ]
+   },
+   {
+      "Fx": "batchSwap(uint8,(bytes32,uint256,uint256,uint256,bytes)[],address[],(address,bool,address,bool),int256[],uint256)",
+      "Contract": "Vault",
+      "Deployment": "20210418-vault",
+      "Authorized_Caller_Addresses": [
+         "0xC92E8bdf79f0507f65a392b0ab4667716BFE0110",
+         "0x7b9B6f094DC2Bd1c12024b0D9CC63d6993Be1888",
+         "0x4B1635c7D3D1FC353298f92083e82dF69e1E9158",
+         "0x2Fb8aD26faDC971464A17407e9213D1A22befc8a",
+         "0x00e695aA8000df01B8DC8401B4C34Fba5D56BBb2",
+         "0x03F1ab8b19bcE21EB06C364aEc9e40322572a1e9",
+         "0x763e86606cD593A2ac9cFa517120502Af65bA351"
+      ],
+      "Authorized_Caller_Names": [
+         "undef",
+         "20220720-batch-relayer-v3/BalancerRelayer",
+         "undef",
+         "undef",
+         "20220916-batch-relayer-v4/BalancerRelayer",
+         "20230314-batch-relayer-v5/BalancerRelayer",
+         "undef"
+      ]
+   },
+   {
+      "Fx": "batchSwap(uint8,(bytes32,uint256,uint256,uint256,bytes)[],address[],(address,bool,address,bool),int256[],uint256)",
+      "Contract": "Vault",
+      "Deployment": "20210418-vault",
+      "Authorized_Caller_Addresses": [
+         "0xC92E8bdf79f0507f65a392b0ab4667716BFE0110",
+         "0x7b9B6f094DC2Bd1c12024b0D9CC63d6993Be1888",
+         "0x4B1635c7D3D1FC353298f92083e82dF69e1E9158",
+         "0x2Fb8aD26faDC971464A17407e9213D1A22befc8a",
+         "0x00e695aA8000df01B8DC8401B4C34Fba5D56BBb2",
+         "0x03F1ab8b19bcE21EB06C364aEc9e40322572a1e9",
+         "0x763e86606cD593A2ac9cFa517120502Af65bA351"
+      ],
+      "Authorized_Caller_Names": [
+         "undef",
+         "20220720-batch-relayer-v3/BalancerRelayer",
+         "undef",
+         "undef",
+         "20220916-batch-relayer-v4/BalancerRelayer",
+         "20230314-batch-relayer-v5/BalancerRelayer",
+         "undef"
+      ]
+   },
+   {
+      "Fx": "batchSwap(uint8,(bytes32,uint256,uint256,uint256,bytes)[],address[],(address,bool,address,bool),int256[],uint256)",
+      "Contract": "Vault",
+      "Deployment": "20210418-vault",
+      "Authorized_Caller_Addresses": [
+         "0xC92E8bdf79f0507f65a392b0ab4667716BFE0110",
+         "0x7b9B6f094DC2Bd1c12024b0D9CC63d6993Be1888",
+         "0x4B1635c7D3D1FC353298f92083e82dF69e1E9158",
+         "0x2Fb8aD26faDC971464A17407e9213D1A22befc8a",
+         "0x00e695aA8000df01B8DC8401B4C34Fba5D56BBb2",
+         "0x03F1ab8b19bcE21EB06C364aEc9e40322572a1e9",
+         "0x763e86606cD593A2ac9cFa517120502Af65bA351"
+      ],
+      "Authorized_Caller_Names": [
+         "undef",
+         "20220720-batch-relayer-v3/BalancerRelayer",
+         "undef",
+         "undef",
+         "20220916-batch-relayer-v4/BalancerRelayer",
+         "20230314-batch-relayer-v5/BalancerRelayer",
+         "undef"
+      ]
+   },
+   {
+      "Fx": "batchSwap(uint8,(bytes32,uint256,uint256,uint256,bytes)[],address[],(address,bool,address,bool),int256[],uint256)",
+      "Contract": "Vault",
+      "Deployment": "20210418-vault",
+      "Authorized_Caller_Addresses": [
+         "0xC92E8bdf79f0507f65a392b0ab4667716BFE0110",
+         "0x7b9B6f094DC2Bd1c12024b0D9CC63d6993Be1888",
+         "0x4B1635c7D3D1FC353298f92083e82dF69e1E9158",
+         "0x2Fb8aD26faDC971464A17407e9213D1A22befc8a",
+         "0x00e695aA8000df01B8DC8401B4C34Fba5D56BBb2",
+         "0x03F1ab8b19bcE21EB06C364aEc9e40322572a1e9",
+         "0x763e86606cD593A2ac9cFa517120502Af65bA351"
+      ],
+      "Authorized_Caller_Names": [
+         "undef",
+         "20220720-batch-relayer-v3/BalancerRelayer",
+         "undef",
+         "undef",
+         "20220916-batch-relayer-v4/BalancerRelayer",
+         "20230314-batch-relayer-v5/BalancerRelayer",
+         "undef"
+      ]
+   },
+   {
+      "Fx": "exitPool(bytes32,address,address,(address[],uint256[],bytes,bool))",
+      "Contract": "Vault",
+      "Deployment": "20210418-vault",
+      "Authorized_Caller_Addresses": [
+         "0x7b9B6f094DC2Bd1c12024b0D9CC63d6993Be1888",
+         "0x4B1635c7D3D1FC353298f92083e82dF69e1E9158",
+         "0x2Fb8aD26faDC971464A17407e9213D1A22befc8a",
+         "0x00e695aA8000df01B8DC8401B4C34Fba5D56BBb2",
+         "0x03F1ab8b19bcE21EB06C364aEc9e40322572a1e9",
+         "0x763e86606cD593A2ac9cFa517120502Af65bA351"
+      ],
+      "Authorized_Caller_Names": [
+         "20220720-batch-relayer-v3/BalancerRelayer",
+         "undef",
+         "undef",
+         "20220916-batch-relayer-v4/BalancerRelayer",
+         "20230314-batch-relayer-v5/BalancerRelayer",
+         "undef"
+      ]
+   },
+   {
+      "Fx": "exitPool(bytes32,address,address,(address[],uint256[],bytes,bool))",
+      "Contract": "Vault",
+      "Deployment": "20210418-vault",
+      "Authorized_Caller_Addresses": [
+         "0x7b9B6f094DC2Bd1c12024b0D9CC63d6993Be1888",
+         "0x4B1635c7D3D1FC353298f92083e82dF69e1E9158",
+         "0x2Fb8aD26faDC971464A17407e9213D1A22befc8a",
+         "0x00e695aA8000df01B8DC8401B4C34Fba5D56BBb2",
+         "0x03F1ab8b19bcE21EB06C364aEc9e40322572a1e9",
+         "0x763e86606cD593A2ac9cFa517120502Af65bA351"
+      ],
+      "Authorized_Caller_Names": [
+         "20220720-batch-relayer-v3/BalancerRelayer",
+         "undef",
+         "undef",
+         "20220916-batch-relayer-v4/BalancerRelayer",
+         "20230314-batch-relayer-v5/BalancerRelayer",
+         "undef"
+      ]
+   },
+   {
+      "Fx": "exitPool(bytes32,address,address,(address[],uint256[],bytes,bool))",
+      "Contract": "Vault",
+      "Deployment": "20210418-vault",
+      "Authorized_Caller_Addresses": [
+         "0x7b9B6f094DC2Bd1c12024b0D9CC63d6993Be1888",
+         "0x4B1635c7D3D1FC353298f92083e82dF69e1E9158",
+         "0x2Fb8aD26faDC971464A17407e9213D1A22befc8a",
+         "0x00e695aA8000df01B8DC8401B4C34Fba5D56BBb2",
+         "0x03F1ab8b19bcE21EB06C364aEc9e40322572a1e9",
+         "0x763e86606cD593A2ac9cFa517120502Af65bA351"
+      ],
+      "Authorized_Caller_Names": [
+         "20220720-batch-relayer-v3/BalancerRelayer",
+         "undef",
+         "undef",
+         "20220916-batch-relayer-v4/BalancerRelayer",
+         "20230314-batch-relayer-v5/BalancerRelayer",
+         "undef"
+      ]
+   },
+   {
+      "Fx": "exitPool(bytes32,address,address,(address[],uint256[],bytes,bool))",
+      "Contract": "Vault",
+      "Deployment": "20210418-vault",
+      "Authorized_Caller_Addresses": [
+         "0x7b9B6f094DC2Bd1c12024b0D9CC63d6993Be1888",
+         "0x4B1635c7D3D1FC353298f92083e82dF69e1E9158",
+         "0x2Fb8aD26faDC971464A17407e9213D1A22befc8a",
+         "0x00e695aA8000df01B8DC8401B4C34Fba5D56BBb2",
+         "0x03F1ab8b19bcE21EB06C364aEc9e40322572a1e9",
+         "0x763e86606cD593A2ac9cFa517120502Af65bA351"
+      ],
+      "Authorized_Caller_Names": [
+         "20220720-batch-relayer-v3/BalancerRelayer",
+         "undef",
+         "undef",
+         "20220916-batch-relayer-v4/BalancerRelayer",
+         "20230314-batch-relayer-v5/BalancerRelayer",
+         "undef"
+      ]
+   },
+   {
+      "Fx": "exitPool(bytes32,address,address,(address[],uint256[],bytes,bool))",
+      "Contract": "Vault",
+      "Deployment": "20210418-vault",
+      "Authorized_Caller_Addresses": [
+         "0x7b9B6f094DC2Bd1c12024b0D9CC63d6993Be1888",
+         "0x4B1635c7D3D1FC353298f92083e82dF69e1E9158",
+         "0x2Fb8aD26faDC971464A17407e9213D1A22befc8a",
+         "0x00e695aA8000df01B8DC8401B4C34Fba5D56BBb2",
+         "0x03F1ab8b19bcE21EB06C364aEc9e40322572a1e9",
+         "0x763e86606cD593A2ac9cFa517120502Af65bA351"
+      ],
+      "Authorized_Caller_Names": [
+         "20220720-batch-relayer-v3/BalancerRelayer",
+         "undef",
+         "undef",
+         "20220916-batch-relayer-v4/BalancerRelayer",
+         "20230314-batch-relayer-v5/BalancerRelayer",
+         "undef"
+      ]
+   },
+   {
+      "Fx": "exitPool(bytes32,address,address,(address[],uint256[],bytes,bool))",
+      "Contract": "Vault",
+      "Deployment": "20210418-vault",
+      "Authorized_Caller_Addresses": [
+         "0x7b9B6f094DC2Bd1c12024b0D9CC63d6993Be1888",
+         "0x4B1635c7D3D1FC353298f92083e82dF69e1E9158",
+         "0x2Fb8aD26faDC971464A17407e9213D1A22befc8a",
+         "0x00e695aA8000df01B8DC8401B4C34Fba5D56BBb2",
+         "0x03F1ab8b19bcE21EB06C364aEc9e40322572a1e9",
+         "0x763e86606cD593A2ac9cFa517120502Af65bA351"
+      ],
+      "Authorized_Caller_Names": [
+         "20220720-batch-relayer-v3/BalancerRelayer",
+         "undef",
+         "undef",
+         "20220916-batch-relayer-v4/BalancerRelayer",
+         "20230314-batch-relayer-v5/BalancerRelayer",
+         "undef"
+      ]
+   },
+   {
+      "Fx": "flashLoan(address,address[],uint256[],bytes)",
+      "Contract": "Vault",
+      "Deployment": "20210418-vault",
+      "Authorized_Caller_Addresses": [
+         "0x763e86606cD593A2ac9cFa517120502Af65bA351"
+      ],
+      "Authorized_Caller_Names": [
+         "undef"
+      ]
+   },
+   {
+      "Fx": "joinPool(bytes32,address,address,(address[],uint256[],bytes,bool))",
+      "Contract": "Vault",
+      "Deployment": "20210418-vault",
+      "Authorized_Caller_Addresses": [
+         "0x7b9B6f094DC2Bd1c12024b0D9CC63d6993Be1888",
+         "0x4B1635c7D3D1FC353298f92083e82dF69e1E9158",
+         "0x2Fb8aD26faDC971464A17407e9213D1A22befc8a",
+         "0x00e695aA8000df01B8DC8401B4C34Fba5D56BBb2",
+         "0x03F1ab8b19bcE21EB06C364aEc9e40322572a1e9",
+         "0x763e86606cD593A2ac9cFa517120502Af65bA351"
+      ],
+      "Authorized_Caller_Names": [
+         "20220720-batch-relayer-v3/BalancerRelayer",
+         "undef",
+         "undef",
+         "20220916-batch-relayer-v4/BalancerRelayer",
+         "20230314-batch-relayer-v5/BalancerRelayer",
+         "undef"
+      ]
+   },
+   {
+      "Fx": "joinPool(bytes32,address,address,(address[],uint256[],bytes,bool))",
+      "Contract": "Vault",
+      "Deployment": "20210418-vault",
+      "Authorized_Caller_Addresses": [
+         "0x7b9B6f094DC2Bd1c12024b0D9CC63d6993Be1888",
+         "0x4B1635c7D3D1FC353298f92083e82dF69e1E9158",
+         "0x2Fb8aD26faDC971464A17407e9213D1A22befc8a",
+         "0x00e695aA8000df01B8DC8401B4C34Fba5D56BBb2",
+         "0x03F1ab8b19bcE21EB06C364aEc9e40322572a1e9",
+         "0x763e86606cD593A2ac9cFa517120502Af65bA351"
+      ],
+      "Authorized_Caller_Names": [
+         "20220720-batch-relayer-v3/BalancerRelayer",
+         "undef",
+         "undef",
+         "20220916-batch-relayer-v4/BalancerRelayer",
+         "20230314-batch-relayer-v5/BalancerRelayer",
+         "undef"
+      ]
+   },
+   {
+      "Fx": "joinPool(bytes32,address,address,(address[],uint256[],bytes,bool))",
+      "Contract": "Vault",
+      "Deployment": "20210418-vault",
+      "Authorized_Caller_Addresses": [
+         "0x7b9B6f094DC2Bd1c12024b0D9CC63d6993Be1888",
+         "0x4B1635c7D3D1FC353298f92083e82dF69e1E9158",
+         "0x2Fb8aD26faDC971464A17407e9213D1A22befc8a",
+         "0x00e695aA8000df01B8DC8401B4C34Fba5D56BBb2",
+         "0x03F1ab8b19bcE21EB06C364aEc9e40322572a1e9",
+         "0x763e86606cD593A2ac9cFa517120502Af65bA351"
+      ],
+      "Authorized_Caller_Names": [
+         "20220720-batch-relayer-v3/BalancerRelayer",
+         "undef",
+         "undef",
+         "20220916-batch-relayer-v4/BalancerRelayer",
+         "20230314-batch-relayer-v5/BalancerRelayer",
+         "undef"
+      ]
+   },
+   {
+      "Fx": "joinPool(bytes32,address,address,(address[],uint256[],bytes,bool))",
+      "Contract": "Vault",
+      "Deployment": "20210418-vault",
+      "Authorized_Caller_Addresses": [
+         "0x7b9B6f094DC2Bd1c12024b0D9CC63d6993Be1888",
+         "0x4B1635c7D3D1FC353298f92083e82dF69e1E9158",
+         "0x2Fb8aD26faDC971464A17407e9213D1A22befc8a",
+         "0x00e695aA8000df01B8DC8401B4C34Fba5D56BBb2",
+         "0x03F1ab8b19bcE21EB06C364aEc9e40322572a1e9",
+         "0x763e86606cD593A2ac9cFa517120502Af65bA351"
+      ],
+      "Authorized_Caller_Names": [
+         "20220720-batch-relayer-v3/BalancerRelayer",
+         "undef",
+         "undef",
+         "20220916-batch-relayer-v4/BalancerRelayer",
+         "20230314-batch-relayer-v5/BalancerRelayer",
+         "undef"
+      ]
+   },
+   {
+      "Fx": "joinPool(bytes32,address,address,(address[],uint256[],bytes,bool))",
+      "Contract": "Vault",
+      "Deployment": "20210418-vault",
+      "Authorized_Caller_Addresses": [
+         "0x7b9B6f094DC2Bd1c12024b0D9CC63d6993Be1888",
+         "0x4B1635c7D3D1FC353298f92083e82dF69e1E9158",
+         "0x2Fb8aD26faDC971464A17407e9213D1A22befc8a",
+         "0x00e695aA8000df01B8DC8401B4C34Fba5D56BBb2",
+         "0x03F1ab8b19bcE21EB06C364aEc9e40322572a1e9",
+         "0x763e86606cD593A2ac9cFa517120502Af65bA351"
+      ],
+      "Authorized_Caller_Names": [
+         "20220720-batch-relayer-v3/BalancerRelayer",
+         "undef",
+         "undef",
+         "20220916-batch-relayer-v4/BalancerRelayer",
+         "20230314-batch-relayer-v5/BalancerRelayer",
+         "undef"
+      ]
+   },
+   {
+      "Fx": "joinPool(bytes32,address,address,(address[],uint256[],bytes,bool))",
+      "Contract": "Vault",
+      "Deployment": "20210418-vault",
+      "Authorized_Caller_Addresses": [
+         "0x7b9B6f094DC2Bd1c12024b0D9CC63d6993Be1888",
+         "0x4B1635c7D3D1FC353298f92083e82dF69e1E9158",
+         "0x2Fb8aD26faDC971464A17407e9213D1A22befc8a",
+         "0x00e695aA8000df01B8DC8401B4C34Fba5D56BBb2",
+         "0x03F1ab8b19bcE21EB06C364aEc9e40322572a1e9",
+         "0x763e86606cD593A2ac9cFa517120502Af65bA351"
+      ],
+      "Authorized_Caller_Names": [
+         "20220720-batch-relayer-v3/BalancerRelayer",
+         "undef",
+         "undef",
+         "20220916-batch-relayer-v4/BalancerRelayer",
+         "20230314-batch-relayer-v5/BalancerRelayer",
+         "undef"
+      ]
+   },
+   {
+      "Fx": "manageUserBalance((uint8,address,uint256,address,address)[])",
+      "Contract": "Vault",
+      "Deployment": "20210418-vault",
+      "Authorized_Caller_Addresses": [
+         "0xC92E8bdf79f0507f65a392b0ab4667716BFE0110",
+         "0x7b9B6f094DC2Bd1c12024b0D9CC63d6993Be1888",
+         "0x4B1635c7D3D1FC353298f92083e82dF69e1E9158",
+         "0x2Fb8aD26faDC971464A17407e9213D1A22befc8a",
+         "0x00e695aA8000df01B8DC8401B4C34Fba5D56BBb2",
+         "0x03F1ab8b19bcE21EB06C364aEc9e40322572a1e9"
+      ],
+      "Authorized_Caller_Names": [
+         "undef",
+         "20220720-batch-relayer-v3/BalancerRelayer",
+         "undef",
+         "undef",
+         "20220916-batch-relayer-v4/BalancerRelayer",
+         "20230314-batch-relayer-v5/BalancerRelayer"
+      ]
+   },
+   {
+      "Fx": "manageUserBalance((uint8,address,uint256,address,address)[])",
+      "Contract": "Vault",
+      "Deployment": "20210418-vault",
+      "Authorized_Caller_Addresses": [
+         "0xC92E8bdf79f0507f65a392b0ab4667716BFE0110",
+         "0x7b9B6f094DC2Bd1c12024b0D9CC63d6993Be1888",
+         "0x4B1635c7D3D1FC353298f92083e82dF69e1E9158",
+         "0x2Fb8aD26faDC971464A17407e9213D1A22befc8a",
+         "0x00e695aA8000df01B8DC8401B4C34Fba5D56BBb2",
+         "0x03F1ab8b19bcE21EB06C364aEc9e40322572a1e9"
+      ],
+      "Authorized_Caller_Names": [
+         "undef",
+         "20220720-batch-relayer-v3/BalancerRelayer",
+         "undef",
+         "undef",
+         "20220916-batch-relayer-v4/BalancerRelayer",
+         "20230314-batch-relayer-v5/BalancerRelayer"
+      ]
+   },
+   {
+      "Fx": "manageUserBalance((uint8,address,uint256,address,address)[])",
+      "Contract": "Vault",
+      "Deployment": "20210418-vault",
+      "Authorized_Caller_Addresses": [
+         "0xC92E8bdf79f0507f65a392b0ab4667716BFE0110",
+         "0x7b9B6f094DC2Bd1c12024b0D9CC63d6993Be1888",
+         "0x4B1635c7D3D1FC353298f92083e82dF69e1E9158",
+         "0x2Fb8aD26faDC971464A17407e9213D1A22befc8a",
+         "0x00e695aA8000df01B8DC8401B4C34Fba5D56BBb2",
+         "0x03F1ab8b19bcE21EB06C364aEc9e40322572a1e9"
+      ],
+      "Authorized_Caller_Names": [
+         "undef",
+         "20220720-batch-relayer-v3/BalancerRelayer",
+         "undef",
+         "undef",
+         "20220916-batch-relayer-v4/BalancerRelayer",
+         "20230314-batch-relayer-v5/BalancerRelayer"
+      ]
+   },
+   {
+      "Fx": "manageUserBalance((uint8,address,uint256,address,address)[])",
+      "Contract": "Vault",
+      "Deployment": "20210418-vault",
+      "Authorized_Caller_Addresses": [
+         "0xC92E8bdf79f0507f65a392b0ab4667716BFE0110",
+         "0x7b9B6f094DC2Bd1c12024b0D9CC63d6993Be1888",
+         "0x4B1635c7D3D1FC353298f92083e82dF69e1E9158",
+         "0x2Fb8aD26faDC971464A17407e9213D1A22befc8a",
+         "0x00e695aA8000df01B8DC8401B4C34Fba5D56BBb2",
+         "0x03F1ab8b19bcE21EB06C364aEc9e40322572a1e9"
+      ],
+      "Authorized_Caller_Names": [
+         "undef",
+         "20220720-batch-relayer-v3/BalancerRelayer",
+         "undef",
+         "undef",
+         "20220916-batch-relayer-v4/BalancerRelayer",
+         "20230314-batch-relayer-v5/BalancerRelayer"
+      ]
+   },
+   {
+      "Fx": "manageUserBalance((uint8,address,uint256,address,address)[])",
+      "Contract": "Vault",
+      "Deployment": "20210418-vault",
+      "Authorized_Caller_Addresses": [
+         "0xC92E8bdf79f0507f65a392b0ab4667716BFE0110",
+         "0x7b9B6f094DC2Bd1c12024b0D9CC63d6993Be1888",
+         "0x4B1635c7D3D1FC353298f92083e82dF69e1E9158",
+         "0x2Fb8aD26faDC971464A17407e9213D1A22befc8a",
+         "0x00e695aA8000df01B8DC8401B4C34Fba5D56BBb2",
+         "0x03F1ab8b19bcE21EB06C364aEc9e40322572a1e9"
+      ],
+      "Authorized_Caller_Names": [
+         "undef",
+         "20220720-batch-relayer-v3/BalancerRelayer",
+         "undef",
+         "undef",
+         "20220916-batch-relayer-v4/BalancerRelayer",
+         "20230314-batch-relayer-v5/BalancerRelayer"
+      ]
+   },
+   {
+      "Fx": "manageUserBalance((uint8,address,uint256,address,address)[])",
+      "Contract": "Vault",
+      "Deployment": "20210418-vault",
+      "Authorized_Caller_Addresses": [
+         "0xC92E8bdf79f0507f65a392b0ab4667716BFE0110",
+         "0x7b9B6f094DC2Bd1c12024b0D9CC63d6993Be1888",
+         "0x4B1635c7D3D1FC353298f92083e82dF69e1E9158",
+         "0x2Fb8aD26faDC971464A17407e9213D1A22befc8a",
+         "0x00e695aA8000df01B8DC8401B4C34Fba5D56BBb2",
+         "0x03F1ab8b19bcE21EB06C364aEc9e40322572a1e9"
+      ],
+      "Authorized_Caller_Names": [
+         "undef",
+         "20220720-batch-relayer-v3/BalancerRelayer",
+         "undef",
+         "undef",
+         "20220916-batch-relayer-v4/BalancerRelayer",
+         "20230314-batch-relayer-v5/BalancerRelayer"
+      ]
+   },
+   {
+      "Fx": "setRelayerApproval(address,address,bool)",
+      "Contract": "Vault",
+      "Deployment": "20210418-vault",
+      "Authorized_Caller_Addresses": [
+         "0x7b9B6f094DC2Bd1c12024b0D9CC63d6993Be1888",
+         "0x4B1635c7D3D1FC353298f92083e82dF69e1E9158",
+         "0x2Fb8aD26faDC971464A17407e9213D1A22befc8a",
+         "0x00e695aA8000df01B8DC8401B4C34Fba5D56BBb2",
+         "0x03F1ab8b19bcE21EB06C364aEc9e40322572a1e9",
+         "0x763e86606cD593A2ac9cFa517120502Af65bA351"
+      ],
+      "Authorized_Caller_Names": [
+         "20220720-batch-relayer-v3/BalancerRelayer",
+         "undef",
+         "undef",
+         "20220916-batch-relayer-v4/BalancerRelayer",
+         "20230314-batch-relayer-v5/BalancerRelayer",
+         "undef"
+      ]
+   },
+   {
+      "Fx": "setRelayerApproval(address,address,bool)",
+      "Contract": "Vault",
+      "Deployment": "20210418-vault",
+      "Authorized_Caller_Addresses": [
+         "0x7b9B6f094DC2Bd1c12024b0D9CC63d6993Be1888",
+         "0x4B1635c7D3D1FC353298f92083e82dF69e1E9158",
+         "0x2Fb8aD26faDC971464A17407e9213D1A22befc8a",
+         "0x00e695aA8000df01B8DC8401B4C34Fba5D56BBb2",
+         "0x03F1ab8b19bcE21EB06C364aEc9e40322572a1e9",
+         "0x763e86606cD593A2ac9cFa517120502Af65bA351"
+      ],
+      "Authorized_Caller_Names": [
+         "20220720-batch-relayer-v3/BalancerRelayer",
+         "undef",
+         "undef",
+         "20220916-batch-relayer-v4/BalancerRelayer",
+         "20230314-batch-relayer-v5/BalancerRelayer",
+         "undef"
+      ]
+   },
+   {
+      "Fx": "setRelayerApproval(address,address,bool)",
+      "Contract": "Vault",
+      "Deployment": "20210418-vault",
+      "Authorized_Caller_Addresses": [
+         "0x7b9B6f094DC2Bd1c12024b0D9CC63d6993Be1888",
+         "0x4B1635c7D3D1FC353298f92083e82dF69e1E9158",
+         "0x2Fb8aD26faDC971464A17407e9213D1A22befc8a",
+         "0x00e695aA8000df01B8DC8401B4C34Fba5D56BBb2",
+         "0x03F1ab8b19bcE21EB06C364aEc9e40322572a1e9",
+         "0x763e86606cD593A2ac9cFa517120502Af65bA351"
+      ],
+      "Authorized_Caller_Names": [
+         "20220720-batch-relayer-v3/BalancerRelayer",
+         "undef",
+         "undef",
+         "20220916-batch-relayer-v4/BalancerRelayer",
+         "20230314-batch-relayer-v5/BalancerRelayer",
+         "undef"
+      ]
+   },
+   {
+      "Fx": "setRelayerApproval(address,address,bool)",
+      "Contract": "Vault",
+      "Deployment": "20210418-vault",
+      "Authorized_Caller_Addresses": [
+         "0x7b9B6f094DC2Bd1c12024b0D9CC63d6993Be1888",
+         "0x4B1635c7D3D1FC353298f92083e82dF69e1E9158",
+         "0x2Fb8aD26faDC971464A17407e9213D1A22befc8a",
+         "0x00e695aA8000df01B8DC8401B4C34Fba5D56BBb2",
+         "0x03F1ab8b19bcE21EB06C364aEc9e40322572a1e9",
+         "0x763e86606cD593A2ac9cFa517120502Af65bA351"
+      ],
+      "Authorized_Caller_Names": [
+         "20220720-batch-relayer-v3/BalancerRelayer",
+         "undef",
+         "undef",
+         "20220916-batch-relayer-v4/BalancerRelayer",
+         "20230314-batch-relayer-v5/BalancerRelayer",
+         "undef"
+      ]
+   },
+   {
+      "Fx": "setRelayerApproval(address,address,bool)",
+      "Contract": "Vault",
+      "Deployment": "20210418-vault",
+      "Authorized_Caller_Addresses": [
+         "0x7b9B6f094DC2Bd1c12024b0D9CC63d6993Be1888",
+         "0x4B1635c7D3D1FC353298f92083e82dF69e1E9158",
+         "0x2Fb8aD26faDC971464A17407e9213D1A22befc8a",
+         "0x00e695aA8000df01B8DC8401B4C34Fba5D56BBb2",
+         "0x03F1ab8b19bcE21EB06C364aEc9e40322572a1e9",
+         "0x763e86606cD593A2ac9cFa517120502Af65bA351"
+      ],
+      "Authorized_Caller_Names": [
+         "20220720-batch-relayer-v3/BalancerRelayer",
+         "undef",
+         "undef",
+         "20220916-batch-relayer-v4/BalancerRelayer",
+         "20230314-batch-relayer-v5/BalancerRelayer",
+         "undef"
+      ]
+   },
+   {
+      "Fx": "setRelayerApproval(address,address,bool)",
+      "Contract": "Vault",
+      "Deployment": "20210418-vault",
+      "Authorized_Caller_Addresses": [
+         "0x7b9B6f094DC2Bd1c12024b0D9CC63d6993Be1888",
+         "0x4B1635c7D3D1FC353298f92083e82dF69e1E9158",
+         "0x2Fb8aD26faDC971464A17407e9213D1A22befc8a",
+         "0x00e695aA8000df01B8DC8401B4C34Fba5D56BBb2",
+         "0x03F1ab8b19bcE21EB06C364aEc9e40322572a1e9",
+         "0x763e86606cD593A2ac9cFa517120502Af65bA351"
+      ],
+      "Authorized_Caller_Names": [
+         "20220720-batch-relayer-v3/BalancerRelayer",
+         "undef",
+         "undef",
+         "20220916-batch-relayer-v4/BalancerRelayer",
+         "20230314-batch-relayer-v5/BalancerRelayer",
+         "undef"
+      ]
+   },
+   {
+      "Fx": "swap((bytes32,uint8,address,address,uint256,bytes),(address,bool,address,bool),uint256,uint256)",
+      "Contract": "Vault",
+      "Deployment": "20210418-vault",
+      "Authorized_Caller_Addresses": [
+         "0x7b9B6f094DC2Bd1c12024b0D9CC63d6993Be1888",
+         "0x00e695aA8000df01B8DC8401B4C34Fba5D56BBb2",
+         "0x03F1ab8b19bcE21EB06C364aEc9e40322572a1e9",
+         "0x763e86606cD593A2ac9cFa517120502Af65bA351"
+      ],
+      "Authorized_Caller_Names": [
+         "20220720-batch-relayer-v3/BalancerRelayer",
+         "20220916-batch-relayer-v4/BalancerRelayer",
+         "20230314-batch-relayer-v5/BalancerRelayer",
+         "undef"
+      ]
+   },
+   {
+      "Fx": "swap((bytes32,uint8,address,address,uint256,bytes),(address,bool,address,bool),uint256,uint256)",
+      "Contract": "Vault",
+      "Deployment": "20210418-vault",
+      "Authorized_Caller_Addresses": [
+         "0x7b9B6f094DC2Bd1c12024b0D9CC63d6993Be1888",
+         "0x00e695aA8000df01B8DC8401B4C34Fba5D56BBb2",
+         "0x03F1ab8b19bcE21EB06C364aEc9e40322572a1e9",
+         "0x763e86606cD593A2ac9cFa517120502Af65bA351"
+      ],
+      "Authorized_Caller_Names": [
+         "20220720-batch-relayer-v3/BalancerRelayer",
+         "20220916-batch-relayer-v4/BalancerRelayer",
+         "20230314-batch-relayer-v5/BalancerRelayer",
+         "undef"
+      ]
+   },
+   {
+      "Fx": "swap((bytes32,uint8,address,address,uint256,bytes),(address,bool,address,bool),uint256,uint256)",
+      "Contract": "Vault",
+      "Deployment": "20210418-vault",
+      "Authorized_Caller_Addresses": [
+         "0x7b9B6f094DC2Bd1c12024b0D9CC63d6993Be1888",
+         "0x00e695aA8000df01B8DC8401B4C34Fba5D56BBb2",
+         "0x03F1ab8b19bcE21EB06C364aEc9e40322572a1e9",
+         "0x763e86606cD593A2ac9cFa517120502Af65bA351"
+      ],
+      "Authorized_Caller_Names": [
+         "20220720-batch-relayer-v3/BalancerRelayer",
+         "20220916-batch-relayer-v4/BalancerRelayer",
+         "20230314-batch-relayer-v5/BalancerRelayer",
+         "undef"
+      ]
+   },
+   {
+      "Fx": "swap((bytes32,uint8,address,address,uint256,bytes),(address,bool,address,bool),uint256,uint256)",
+      "Contract": "Vault",
+      "Deployment": "20210418-vault",
+      "Authorized_Caller_Addresses": [
+         "0x7b9B6f094DC2Bd1c12024b0D9CC63d6993Be1888",
+         "0x00e695aA8000df01B8DC8401B4C34Fba5D56BBb2",
+         "0x03F1ab8b19bcE21EB06C364aEc9e40322572a1e9",
+         "0x763e86606cD593A2ac9cFa517120502Af65bA351"
+      ],
+      "Authorized_Caller_Names": [
+         "20220720-batch-relayer-v3/BalancerRelayer",
+         "20220916-batch-relayer-v4/BalancerRelayer",
+         "20230314-batch-relayer-v5/BalancerRelayer",
+         "undef"
+      ]
+   },
+   {
+      "Fx": "activate()",
+      "Contract": "BalancerTokenAdmin",
+      "Deployment": "20220325-balancer-token-admin",
+      "Authorized_Caller_Addresses": [
+         "0x2122A7FCC2eeBF59cDF532EBFd197d56343E34A0"
+      ],
+      "Authorized_Caller_Names": [
+         "undef"
+      ]
+   },
+   {
+      "Fx": "mint(address,uint256)",
+      "Contract": "BalancerTokenAdmin",
+      "Deployment": "20220325-balancer-token-admin",
+      "Authorized_Caller_Addresses": [
+         "0xdf0399539A72E2689B8B2DD53C3C2A0883879fDd"
+      ],
+      "Authorized_Caller_Names": [
+         "20220325-gauge-controller/BalancerMinter"
+      ]
+   },
+   {
+      "Fx": "addArbitrumGauge(address)",
+      "Contract": "GaugeAdder",
+      "Deployment": "20220325-gauge-adder",
+      "Authorized_Caller_Addresses": [
+         "0x3bAbEBfD684506A5B47701ee231A53427Ad413Ef"
+      ],
+      "Authorized_Caller_Names": [
+         "undef"
+      ]
+   },
+   {
+      "Fx": "addEthereumGauge(address)",
+      "Contract": "GaugeAdder",
+      "Deployment": "20220325-gauge-adder",
+      "Authorized_Caller_Addresses": [
+         "0x3bAbEBfD684506A5B47701ee231A53427Ad413Ef",
+         "0x3b1836C09fdAe0A7C2848F99B2584aEBD6A36876"
+      ],
+      "Authorized_Caller_Names": [
+         "undef",
+         "undef"
+      ]
+   },
+   {
+      "Fx": "addEthereumGauge(address)",
+      "Contract": "GaugeAdder",
+      "Deployment": "20220325-gauge-adder",
+      "Authorized_Caller_Addresses": [
+         "0x3bAbEBfD684506A5B47701ee231A53427Ad413Ef",
+         "0x3b1836C09fdAe0A7C2848F99B2584aEBD6A36876"
+      ],
+      "Authorized_Caller_Names": [
+         "undef",
+         "undef"
+      ]
+   },
+   {
+      "Fx": "addPolygonGauge(address)",
+      "Contract": "GaugeAdder",
+      "Deployment": "20220325-gauge-adder",
+      "Authorized_Caller_Addresses": [
+         "0x3bAbEBfD684506A5B47701ee231A53427Ad413Ef"
+      ],
+      "Authorized_Caller_Names": [
+         "undef"
+      ]
+   },
+   {
+      "Fx": "add_gauge(address,int128)",
+      "Contract": "GaugeController",
+      "Deployment": "20220325-gauge-controller",
+      "Authorized_Caller_Addresses": [
+         "0x0Df18b22fB1DD4c1D4bfBF783A8acF0758979328",
+         "0x3b1836C09fdAe0A7C2848F99B2584aEBD6A36876"
+      ],
+      "Authorized_Caller_Names": [
+         "20220325-gauge-adder/GaugeAdder",
+         "undef"
+      ]
+   },
+   {
+      "Fx": "add_gauge(address,int128)",
+      "Contract": "GaugeController",
+      "Deployment": "20220325-gauge-controller",
+      "Authorized_Caller_Addresses": [
+         "0x0Df18b22fB1DD4c1D4bfBF783A8acF0758979328",
+         "0x3b1836C09fdAe0A7C2848F99B2584aEBD6A36876"
+      ],
+      "Authorized_Caller_Names": [
+         "20220325-gauge-adder/GaugeAdder",
+         "undef"
+      ]
+   },
+   {
+      "Fx": "change_type_weight(int128,uint256)",
+      "Contract": "GaugeController",
+      "Deployment": "20220325-gauge-controller",
+      "Authorized_Caller_Addresses": [
+         "0xE0a171587b1Cae546E069A943EDa96916F5EE977"
+      ],
+      "Authorized_Caller_Names": [
+         "undef"
+      ]
+   },
+   {
+      "Fx": "add_reward(address,address)",
+      "Contract": "LiquidityGaugeV5",
+      "Deployment": "20220325-mainnet-gauge-factory",
+      "Authorized_Caller_Addresses": [
+         "0xE0a171587b1Cae546E069A943EDa96916F5EE977",
+         "0x3bAbEBfD684506A5B47701ee231A53427Ad413Ef"
+      ],
+      "Authorized_Caller_Names": [
+         "undef",
+         "undef"
+      ]
+   },
+   {
+      "Fx": "add_reward(address,address)",
+      "Contract": "LiquidityGaugeV5",
+      "Deployment": "20220325-mainnet-gauge-factory",
+      "Authorized_Caller_Addresses": [
+         "0xE0a171587b1Cae546E069A943EDa96916F5EE977",
+         "0x3bAbEBfD684506A5B47701ee231A53427Ad413Ef"
+      ],
+      "Authorized_Caller_Names": [
+         "undef",
+         "undef"
+      ]
+   },
+   {
+      "Fx": "killGauge()",
+      "Contract": "LiquidityGaugeV5",
+      "Deployment": "20220325-mainnet-gauge-factory",
+      "Authorized_Caller_Addresses": [
+         "0xE0a171587b1Cae546E069A943EDa96916F5EE977",
+         "0x3b1836C09fdAe0A7C2848F99B2584aEBD6A36876"
+      ],
+      "Authorized_Caller_Names": [
+         "undef",
+         "undef"
+      ]
+   },
+   {
+      "Fx": "killGauge()",
+      "Contract": "LiquidityGaugeV5",
+      "Deployment": "20220325-mainnet-gauge-factory",
+      "Authorized_Caller_Addresses": [
+         "0xE0a171587b1Cae546E069A943EDa96916F5EE977",
+         "0x3b1836C09fdAe0A7C2848F99B2584aEBD6A36876"
+      ],
+      "Authorized_Caller_Names": [
+         "undef",
+         "undef"
+      ]
+   },
+   {
+      "Fx": "set_reward_distributor(address,address)",
+      "Contract": "LiquidityGaugeV5",
+      "Deployment": "20220325-mainnet-gauge-factory",
+      "Authorized_Caller_Addresses": [
+         "0xE0a171587b1Cae546E069A943EDa96916F5EE977"
+      ],
+      "Authorized_Caller_Names": [
+         "undef"
+      ]
+   },
+   {
+      "Fx": "unkillGauge()",
+      "Contract": "LiquidityGaugeV5",
+      "Deployment": "20220325-mainnet-gauge-factory",
+      "Authorized_Caller_Addresses": [
+         "0x3b1836C09fdAe0A7C2848F99B2584aEBD6A36876"
+      ],
+      "Authorized_Caller_Names": [
+         "undef"
+      ]
+   },
+   {
+      "Fx": "set_reward_distributor(address,address)",
+      "Contract": "ChildChainStreamer",
+      "Deployment": "20220413-child-chain-gauge-factory",
+      "Authorized_Caller_Addresses": [
+         "0xE0a171587b1Cae546E069A943EDa96916F5EE977"
+      ],
+      "Authorized_Caller_Names": [
+         "undef"
+      ]
+   },
+   {
+      "Fx": "allowlistAddress(address)",
+      "Contract": "SmartWalletChecker",
+      "Deployment": "20220420-smart-wallet-checker",
+      "Authorized_Caller_Addresses": [
+         "0x10A19e7eE7d7F8a52822f6817de8ea18204F2e4f",
+         "0x3bAbEBfD684506A5B47701ee231A53427Ad413Ef",
+         "0x171C0fF5943CE5f133130436A29bF61E26516003"
+      ],
+      "Authorized_Caller_Names": [
+         "undef",
+         "undef",
+         "undef"
+      ]
+   },
+   {
+      "Fx": "allowlistAddress(address)",
+      "Contract": "SmartWalletChecker",
+      "Deployment": "20220420-smart-wallet-checker",
+      "Authorized_Caller_Addresses": [
+         "0x10A19e7eE7d7F8a52822f6817de8ea18204F2e4f",
+         "0x3bAbEBfD684506A5B47701ee231A53427Ad413Ef",
+         "0x171C0fF5943CE5f133130436A29bF61E26516003"
+      ],
+      "Authorized_Caller_Names": [
+         "undef",
+         "undef",
+         "undef"
+      ]
+   },
+   {
+      "Fx": "allowlistAddress(address)",
+      "Contract": "SmartWalletChecker",
+      "Deployment": "20220420-smart-wallet-checker",
+      "Authorized_Caller_Addresses": [
+         "0x10A19e7eE7d7F8a52822f6817de8ea18204F2e4f",
+         "0x3bAbEBfD684506A5B47701ee231A53427Ad413Ef",
+         "0x171C0fF5943CE5f133130436A29bF61E26516003"
+      ],
+      "Authorized_Caller_Names": [
+         "undef",
+         "undef",
+         "undef"
+      ]
+   },
+   {
+      "Fx": "denylistAddress(address)",
+      "Contract": "SmartWalletChecker",
+      "Deployment": "20220420-smart-wallet-checker",
+      "Authorized_Caller_Addresses": [
+         "0x10A19e7eE7d7F8a52822f6817de8ea18204F2e4f",
+         "0x3bAbEBfD684506A5B47701ee231A53427Ad413Ef"
+      ],
+      "Authorized_Caller_Names": [
+         "undef",
+         "undef"
+      ]
+   },
+   {
+      "Fx": "denylistAddress(address)",
+      "Contract": "SmartWalletChecker",
+      "Deployment": "20220420-smart-wallet-checker",
+      "Authorized_Caller_Addresses": [
+         "0x10A19e7eE7d7F8a52822f6817de8ea18204F2e4f",
+         "0x3bAbEBfD684506A5B47701ee231A53427Ad413Ef"
+      ],
+      "Authorized_Caller_Names": [
+         "undef",
+         "undef"
+      ]
+   },
+   {
+      "Fx": "add_reward(address,address)",
+      "Contract": "LiquidityGaugeV5",
+      "Deployment": "20220822-mainnet-gauge-factory-v2",
+      "Authorized_Caller_Addresses": [
+         "0xE0a171587b1Cae546E069A943EDa96916F5EE977",
+         "0x3bAbEBfD684506A5B47701ee231A53427Ad413Ef"
+      ],
+      "Authorized_Caller_Names": [
+         "undef",
+         "undef"
+      ]
+   },
+   {
+      "Fx": "add_reward(address,address)",
+      "Contract": "LiquidityGaugeV5",
+      "Deployment": "20220822-mainnet-gauge-factory-v2",
+      "Authorized_Caller_Addresses": [
+         "0xE0a171587b1Cae546E069A943EDa96916F5EE977",
+         "0x3bAbEBfD684506A5B47701ee231A53427Ad413Ef"
+      ],
+      "Authorized_Caller_Names": [
+         "undef",
+         "undef"
+      ]
+   },
+   {
+      "Fx": "killGauge()",
+      "Contract": "LiquidityGaugeV5",
+      "Deployment": "20220822-mainnet-gauge-factory-v2",
+      "Authorized_Caller_Addresses": [
+         "0xE0a171587b1Cae546E069A943EDa96916F5EE977",
+         "0x3b1836C09fdAe0A7C2848F99B2584aEBD6A36876"
+      ],
+      "Authorized_Caller_Names": [
+         "undef",
+         "undef"
+      ]
+   },
+   {
+      "Fx": "killGauge()",
+      "Contract": "LiquidityGaugeV5",
+      "Deployment": "20220822-mainnet-gauge-factory-v2",
+      "Authorized_Caller_Addresses": [
+         "0xE0a171587b1Cae546E069A943EDa96916F5EE977",
+         "0x3b1836C09fdAe0A7C2848F99B2584aEBD6A36876"
+      ],
+      "Authorized_Caller_Names": [
+         "undef",
+         "undef"
+      ]
+   },
+   {
+      "Fx": "set_reward_distributor(address,address)",
+      "Contract": "LiquidityGaugeV5",
+      "Deployment": "20220822-mainnet-gauge-factory-v2",
+      "Authorized_Caller_Addresses": [
+         "0xE0a171587b1Cae546E069A943EDa96916F5EE977"
+      ],
+      "Authorized_Caller_Names": [
+         "undef"
+      ]
+   },
+   {
+      "Fx": "unkillGauge()",
+      "Contract": "LiquidityGaugeV5",
+      "Deployment": "20220822-mainnet-gauge-factory-v2",
+      "Authorized_Caller_Addresses": [
+         "0x3b1836C09fdAe0A7C2848F99B2584aEBD6A36876"
+      ],
+      "Authorized_Caller_Names": [
+         "undef"
+      ]
+   },
+   {
+      "Fx": "killGauge()",
+      "Contract": "SingleRecipientGauge",
+      "Deployment": "20230215-single-recipient-gauge-factory-v2",
+      "Authorized_Caller_Addresses": [
+         "0xE0a171587b1Cae546E069A943EDa96916F5EE977",
+         "0x3b1836C09fdAe0A7C2848F99B2584aEBD6A36876"
+      ],
+      "Authorized_Caller_Names": [
+         "undef",
+         "undef"
+      ]
+   },
+   {
+      "Fx": "killGauge()",
+      "Contract": "SingleRecipientGauge",
+      "Deployment": "20230215-single-recipient-gauge-factory-v2",
+      "Authorized_Caller_Addresses": [
+         "0xE0a171587b1Cae546E069A943EDa96916F5EE977",
+         "0x3b1836C09fdAe0A7C2848F99B2584aEBD6A36876"
+      ],
+      "Authorized_Caller_Names": [
+         "undef",
+         "undef"
+      ]
+   },
+   {
+      "Fx": "unkillGauge()",
+      "Contract": "SingleRecipientGauge",
+      "Deployment": "20230215-single-recipient-gauge-factory-v2",
+      "Authorized_Caller_Addresses": [
+         "0x3b1836C09fdAe0A7C2848F99B2584aEBD6A36876"
+      ],
+      "Authorized_Caller_Names": [
+         "undef"
+      ]
+   },
+   {
+      "Fx": "add_reward(address,address)",
+      "Contract": "ChildChainGauge",
+      "Deployment": "20230316-child-chain-gauge-factory-v2",
+      "Authorized_Caller_Addresses": [
+         "0xE0a171587b1Cae546E069A943EDa96916F5EE977",
+         "0x3bAbEBfD684506A5B47701ee231A53427Ad413Ef"
+      ],
+      "Authorized_Caller_Names": [
+         "undef",
+         "undef"
+      ]
+   },
+   {
+      "Fx": "add_reward(address,address)",
+      "Contract": "ChildChainGauge",
+      "Deployment": "20230316-child-chain-gauge-factory-v2",
+      "Authorized_Caller_Addresses": [
+         "0xE0a171587b1Cae546E069A943EDa96916F5EE977",
+         "0x3bAbEBfD684506A5B47701ee231A53427Ad413Ef"
+      ],
+      "Authorized_Caller_Names": [
+         "undef",
+         "undef"
+      ]
+   },
+   {
+      "Fx": "killGauge()",
+      "Contract": "ChildChainGauge",
+      "Deployment": "20230316-child-chain-gauge-factory-v2",
+      "Authorized_Caller_Addresses": [
+         "0xE0a171587b1Cae546E069A943EDa96916F5EE977",
+         "0x3b1836C09fdAe0A7C2848F99B2584aEBD6A36876"
+      ],
+      "Authorized_Caller_Names": [
+         "undef",
+         "undef"
+      ]
+   },
+   {
+      "Fx": "killGauge()",
+      "Contract": "ChildChainGauge",
+      "Deployment": "20230316-child-chain-gauge-factory-v2",
+      "Authorized_Caller_Addresses": [
+         "0xE0a171587b1Cae546E069A943EDa96916F5EE977",
+         "0x3b1836C09fdAe0A7C2848F99B2584aEBD6A36876"
+      ],
+      "Authorized_Caller_Names": [
+         "undef",
+         "undef"
+      ]
+   },
+   {
+      "Fx": "set_reward_distributor(address,address)",
+      "Contract": "ChildChainGauge",
+      "Deployment": "20230316-child-chain-gauge-factory-v2",
+      "Authorized_Caller_Addresses": [
+         "0xE0a171587b1Cae546E069A943EDa96916F5EE977"
+      ],
+      "Authorized_Caller_Names": [
+         "undef"
+      ]
+   },
+   {
+      "Fx": "unkillGauge()",
+      "Contract": "ChildChainGauge",
+      "Deployment": "20230316-child-chain-gauge-factory-v2",
+      "Authorized_Caller_Addresses": [
+         "0x3b1836C09fdAe0A7C2848F99B2584aEBD6A36876"
+      ],
+      "Authorized_Caller_Names": [
+         "undef"
+      ]
+   }
+]
