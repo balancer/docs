@@ -15,10 +15,10 @@ export const navbar: NavbarConfig = [
   },
   {
     text: 'Reference',
-    link: '/reference',
     children: [
       {
         text: 'Contracts',
+        link: '/reference/contracts',
         children: [
           {
             text: 'Deployment Addresses',
@@ -52,10 +52,10 @@ export const navbar: NavbarConfig = [
           },
           {
             text: 'Authorizer Permissions',
-            link: '/reference/authorizer/mainnet',
+            link: '/reference/authorizer',
             children: [
               {
-                text: 'Mainnet',
+                text: 'mainnet',
                 link: '/reference/authorizer/mainnet',
               },
               {

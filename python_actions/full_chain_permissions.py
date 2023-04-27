@@ -137,14 +137,14 @@ def output_list(permission_data, output_name, chain):
     dedup = pd.DataFrame(deployment_deduped_map_to_list(generate_deployment_deduped_map(permission_data, chain)))
     dedup = dedup.sort_values(by=["function", "contract"])
     with open(f"{BASE_PATH}/{output_name}.md", "w") as f:
-        f.write(f"# {chain} Authorizer Permissions\n\n### Last generated on {today}\n\n")
+        f.write(f"# {chain.capitalize()} Authorizer Permissions\n\n### Last generated on {today}\n\n")
         dedup.to_markdown(buf=f, index=False)
 
 
 def generate_chain_files(chain):
-    permissions = build_chain_permissions_list(chain)
-    with open(f"data_files/permissions/{chain}.json", "w") as f:
-        json.dump(permissions, f, indent=3)
+    #permissions = build_chain_permissions_list(chain)
+    #with open(f"data_files/permissions/{chain}.json", "w") as f:
+    #    json.dump(permissions, f, indent=3)
     with open(f"data_files/permissions/{chain}.json", "r") as f:
         permissions = json.load(f)
     output_list(permissions, f"{chain}", chain)
