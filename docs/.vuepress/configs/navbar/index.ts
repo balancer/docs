@@ -15,6 +15,7 @@ export const navbar: NavbarConfig = [
   },
   {
     text: 'Reference',
+    link: '/reference',
     children: [
       {
         text: 'Contracts',
@@ -51,30 +52,31 @@ export const navbar: NavbarConfig = [
           },
           {
             text: 'Authorizer Permissions',
+            link: '/reference/authorizer/mainnet',
             children: [
               {
-                text: 'mainnet',
-                link: '/reference/authorizer/mainnet.md',
+                text: 'Mainnet',
+                link: '/reference/authorizer/mainnet',
               },
               {
                 text: 'Arbitrum',
-                link: '/reference/authorizer/arbitrum.md',
+                link: '/reference/authorizer/arbitrum',
               },
               {
                 text: 'Optimism',
-                link: '/reference/authorizer/optimism.md',
+                link: '/reference/authorizer/optimism',
               },
               {
                 text: 'Polygon',
-                link: '/reference/authorizer/polygon.md',
+                link: '/reference/authorizer/polygon',
               },
               {
                 text: 'Gnosis',
-                link: '/reference/authorizer/gnosis.md',
+                link: '/reference/authorizer/gnosis',
               },
               {
                 text: 'Goerli',
-                link: '/reference/authorizer/goerli.md',
+                link: '/reference/authorizer/goerli',
               },
             ],
           },
