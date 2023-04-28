@@ -22,8 +22,8 @@ jobs:
     - name: Update Files
       id: update
       run: |
-        pip3 install -r python_actions/requirements.txt
-        python3 python_actions/genContractLists.py
+        pip3 install -r .github/python_actions/requirements.txt
+        python3 .github/python_actions/genContractLists.py
         git add -A
 
     - name: pull-request

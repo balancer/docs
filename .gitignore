@@ -33,4 +33,4 @@ pnpm-debug.log*
 
 
 # Python
-python_actions/venv
+.github/python_actions/venv
