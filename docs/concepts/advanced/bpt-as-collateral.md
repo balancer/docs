@@ -95,7 +95,7 @@ $$ minPrice = min({P_{M_0} \over P_{RP_0}}, {P_{M_1} \over P_{RP_1}}, {P_{M_2} \
 
 where 
 * `P_M_i` is market price of constituent `i`;
-* `P_RP_i` is the RateProvider price for constituent `i`.
+* `P_RP_i` is the RateProvider price for constituent `i`. When no rate provider is available, use `1e18`.
 
 Using this `minPrice` and multiplying by `pool.getRate()`, assuming that the `StablePool` is near equilibrium, we'd
 have (assuming token 0 has the lowest minPrice):
@@ -109,9 +109,9 @@ $$ bptPrice = P_{M_0} * (B_0 + {P_{RP_1} \over P_{RP_0}} * B_1 + ... + {P_{RP_n}
 So, we can see that RateProviders prices were normalized by `P_RP_0`, for all tokens, before multiplying by `P_M_0` 
 (market price of token 0).
 
-# Example
+# Examples
 
-## Aave's bb-a-USD
+## ComposableStablePools with Linear Pool BPTs (e.g. bb-a-USD)
 
 ### 1. Get market price of each constituent token of bb-a-USD
 
@@ -150,11 +150,11 @@ which, simplifying, becomes
 
 $$ P_{BPT_{bb-a-USD}} = P_{M_{bb-a-USDT}} * {B_{bb-a-USDT} + ({P_{RP_{bb-a-USDC}} \over P_{RP_{bb-a-USDT}}} * B_{bb-a-USDC}) + ({P_{RP_{bb-a-DAI}} \over P_{RP_{bb-a-USDT}}} * B_{bb-a-DAI}) \over actualBptSupply} $$
 
-## wstETH - WETH MetaStablePool
+## MetaStablePools (e.g. wstETH-wETH)
 
 ### 1. Get market price for each constituent token
 
-Get market price of wstETH and wETH in terms of USD.
+Get market price of wstETH and wETH in terms of USD, using chainlink oracles.
 
 ### 2. Get RateProvider price for each constituent token
 
@@ -184,41 +184,28 @@ which, simplifying, and remembering that `P_RP_wETH` is 1e18, becomes:
 
 $$ P_{BPT_{wstETH-wETH}} = P_{M_{wstETH}} * { B_{wstETH} + ({1e18 \over P_{RP_{wstETH}}} * B_{wETH}) \over actualBptSupply} $$
 
-# Practical Solutions
+## ComposableStablePools (stMATIC-wMATIC)
 
-So, the solution seems self-evident, but the question is how do we arrive at the same solution for all pools? Is 
-there a way to fully generalize this methodology to any `StablePool` with `RateProviders`, or does building these 
-oracles necessitate possessing some extra off-chain information about each pool's composition? And is there a single 
-solution that will work for all oracle architectures, or is this bespoke in nature?
+stMATIC is a special case, since `stMATIC` is like `wstETH` in that it doesn't rebase (it's not 1:1 with `WMATIC`), but 
+it's like `stETH` in that it is not a wrapper: it cannot be reduced to another underlying token.
 
-It might be helpful to think about crafting a solution that satisfies both examples above, which are quite different: 
-in one case, all constituents are `LinearPool` BPTs, and in the other there are two tokens but only one `RateProvider` 
-(which does not belong to a BPT).
+However, the generalized formula from the solution above also works for this.
 
-## A Potentially Problematic Example
+### 1. Get market price for each constituent token
 
-There is also perhaps a third example which is even more challenging: the `stMATIC/WMATIC` pool. `stMATIC` is like 
-`wstETH` in that it doesn't rebase (it's not 1:1 with `WMATIC`), but it's like `stETH` in that it is not a wrapper: 
-it cannot be reduced to another underlying token. So, how could we fit a token like this into the minimum-underlying 
-formula?
+Get market price of stMATIC and wMATIC in terms of USD, using chainlink oracles.
 
-It seems that one possible solution would be to have two oracles: the market rate (which reflects the current trading 
-price) and the on-chain rate (which reflects the theoretical price: deposits/supply). To compute a `WMATIC`-equivalent 
-price of `stMATIC` for insertion into `min()`, take the market rate and divide by the on-chain rate. This works because 
-a depeg event can be identified as a divergence of the market rate from the theoretical rate. Important: the pool's 
-`RateProvider` would have to use the on-chain rate in this case.
+### 2. Get RateProvider price for each constituent token
 
-This would be analogous to the `wstETH` example like so:
+Since stMATIC-wMATIC pool is a ComposableStablePool, it has `getTokenRate()` function, so we should use that to fetch
+RateProvider rates for each token. Notice that wMATIC rate is 1e18, even if the rate provider is not set for this token.
 
-```solidity
-// In the wstETH/WETH pool...
-//   the RateProvider uses pOnChainStEth2WstEth
-//   the correct price for min() is pMarketWeth2StEth
-pMarketWeth2WstEth = pMarketWeth2StEth * pOnChainStEth2WstEth
+### 3. Get minimum price
 
-// In the stMATIC/WMATIC pool...
-//   the RateProvider must use pOnChainWmatic2StMatic (does it?)
-//   the correct price for min() is pIntermediate
-pMarketWmatic2StMatic = pIntermediate * pOnChainWmatic2StMatic
-pIntermediate = pMarketWmatic2StMatic / pOnChainWmatic2StMatic
-```
+$$ minPrice = min({P_{M_{stMATIC}} \over P_{RP_{stMATIC}}}, {P_{M_{wMATIC}} \over P_{RP_{wMATIC}}}) $$
+
+### 4. Calculates the BPT price
+
+$$ P_{BPT_{stMATIC-wMATIC}} = minPrice * rate_{pool_{stMATIC-wMATIC}} $$
+
+where `rate_pool_stMATIC-wMATIC` is `pool.getRate()` of stMATIC-wMATIC pool.
