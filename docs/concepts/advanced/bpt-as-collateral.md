@@ -109,38 +109,80 @@ $$ bptPrice = P_{M_0} * (B_0 + {P_{RP_1} \over P_{RP_0}} * B_1 + ... + {P_{RP_n}
 So, we can see that RateProviders prices were normalized by `P_RP_0`, for all tokens, before multiplying by `P_M_0` 
 (market price of token 0).
 
-# Examples
+# Example
 
-## Example 1: `bb-a-USD`
+## Aave's bb-a-USD
 
-For `bb-a-USD`, the step-by-step to calculate the BPT price is:
+### 1. Get market price of each constituent token of bb-a-USD
 
-1. 
+In order to get market price for each constituent token of bb-a-USD (bb-a-USDT, bb-a-USDC, bb-a-DAI) we should use 
+the following formula (using USDT as example):
 
-```solidity
-min(pDAI, pUSDC, pUSDT) * pool.getRate()
-```
+$$ P_{M_{bb-a-USDT}} = P_{USDT} * rate_{pool_{aUSDT}} $$
 
-This works because `bb-a-USD.getRate()` conveniently **includes the rates of its constituents (`bb-a-DAI`, `bb-a-USDC`, 
-`bb-a-USDT`) already!**
+where
+* `P_USDT` is the chainlink oracle price for USDT (in terms of USD);
+* `rate_pool_aUSDT` is `pool.getRate()` of bb-a-USDT pool;
 
-### Example 2: `wstETH/WETH`
+### 2. Get RateProvider price of each pool token
 
-Similarly, for the `wstETH/WETH` pool, we want to do this:
+In order to get RateProvider price of each constituent token of bb-a-USD, we should use getTokenRate() function of
+bb-a-USD pool for each token address (bb-a-USDT, bb-a-USDT and bb-a-DAI).
 
-```solidity
-min(pStETH, pWETH) * pool.getRate()
-```
+$$ P_{RP_{bb-a-USDT}} = tokenRate_{bb-a-USDT} $$
 
-Note that we are using the price of (unwrapped) `stETH` instead of the actual constituent, `wstETH`! This is very 
-counter-intuitive to some, but it makes sense if we consider a long time horizon. Eventually, we would expect 1 
-`wstETH` to be worth 100 `WETH`, as yield will continue to accrue in perpetuity. At that point, a direct comparison 
-between them would obviously not make sense, as `wstETH` would need to lose 99% of its value relative to `WETH` 
-before the minimum would ever change.
+### 3. Get minimum price
 
-We need to compare the prices of **like-kind assets** like `stETH` and `WETH`, before including the pool's overall 
-rate which is expressed in terms of the "base asset" (ETH) and therefore **already includes the `stETH`->`wstETH` 
-price conversion!**
+$$ minPrice = min({P_{M_{bb-a-USDT}} \over P_{RP_{bb-a-USDT}}}, {P_{M_{bb-a-USDC}} \over P_{RP_{bb-a-USDC}}}, {P_{M_{bb-a-DAI}} \over P_{RP_{bb-a-DAI}}}) $$
+
+### 4. Calculates the BPT price
+
+$$ P_{BPT_{bb-a-USD}} = minPrice * rate_{pool_{bb-a-USD}} $$
+
+where `rate_pool_bb-a-USD` is `pool.getRate()` of bb-a-USD pool.
+
+If we manually solve this formula, assuming a pool near equilibrium point to simplify invariant calculation and having 
+USDT's value as minPrice, we'd have:
+
+$$ P_{BPT_{bb-a-USD}} = {P_{M_{bb-a-USDT}} \over P_{RP_{bb-a-USDT}}} * {(P_{RP_{bb-a-USDT}} * B_{bb-a-USDT}) + (P_{RP_{bb-a-USDC}} * B_{bb-a-USDC}) + (P_{RP_{bb-a-DAI}} * B_{bb-a-DAI}) \over actualBptSupply} $$
+
+which, simplifying, becomes
+
+$$ P_{BPT_{bb-a-USD}} = P_{M_{bb-a-USDT}} * {B_{bb-a-USDT} + ({P_{RP_{bb-a-USDC}} \over P_{RP_{bb-a-USDT}}} * B_{bb-a-USDC}) + ({P_{RP_{bb-a-DAI}} \over P_{RP_{bb-a-USDT}}} * B_{bb-a-DAI}) \over actualBptSupply} $$
+
+## wstETH - WETH MetaStablePool
+
+### 1. Get market price for each constituent token
+
+Get market price of wstETH and wETH in terms of USD.
+
+### 2. Get RateProvider price for each constituent token
+
+Since wstETH - wETH pool is a MetaStablePool and not a ComposableStablePool, it does not have `getTokenRate()` function.
+Therefore, we need to get the RateProvider price manually for wstETH, using the rate providers of the pool. The rate 
+provider will return the wstETH token in terms of stETH.
+
+Note that wETH does not have a rate provider for this pool. In that case, we assume a value of `1e18` (it means, 
+we won't divide market price of wETH by any value and use it purely in the minPrice formula).
+
+### 3. Get minimum price
+
+$$ minPrice = min({P_{M_{wstETH}} \over P_{RP_{wstETH}}}, P_{M_{wETH}}) $$
+
+### 4. Calculates the BPT price
+
+$$ P_{BPT_{wstETH-wETH}} = minPrice * rate_{pool_{wstETH-wETH}} $$
+
+where `rate_pool_wstETH-wETH` is `pool.getRate()` of wstETH-wETH pool.
+
+If we manually solve this formula, assuming a pool near equilibrium point to simplify invariant calculation and having
+wstETH's value as minPrice, we'd have:
+
+$$ P_{BPT_{wstETH-wETH}} = {P_{M_{wstETH}} \over P_{RP_{wstETH}}} * {(P_{RP_{wstETH}} * B_{wstETH}) + (P_{RP_{wETH}} * B_{wETH}) \over actualBptSupply} $$
+
+which, simplifying, and remembering that `P_RP_wETH` is 1e18, becomes:
+
+$$ P_{BPT_{wstETH-wETH}} = P_{M_{wstETH}} * { B_{wstETH} + ({1e18 \over P_{RP_{wstETH}}} * B_{wETH}) \over actualBptSupply} $$
 
 # Practical Solutions
 
