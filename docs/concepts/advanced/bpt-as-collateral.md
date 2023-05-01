@@ -1,11 +1,9 @@
-# BPT as Collateral
+# StablePool's BPT as Collateral
 
-<aside>
-💡 Throughout this document, we use the term, "`StablePools` with `RateProviders`." This refers to any Balancer V2 
-    pool employing the `StableMath` library and allowing for the inclusion of `RateProviders` for some or all 
-    constituent tokens. These pools need not all come from the same factory; some examples include `MetaStablePool`, 
-    `StablePhantomPool`, and `ComposableStablePool`.
-</aside>
+Throughout this document, we use the term, "`StablePools` with `RateProviders`". This refers to any Balancer V2 
+pool employing the `StableMath` library and allowing for the inclusion of `RateProviders` for some or all 
+constituent tokens. These pools need not all come from the same factory; some examples include `MetaStablePool`, 
+`StablePhantomPool`, and `ComposableStablePool`.
 
 # How to price BPT of a stable pool without rate providers?
 
@@ -44,10 +42,10 @@ which does not include `RateProviders`):
 # Problem Introducing `RateProviders`
 
 The introduction of `RateProviders` into the `StablePool` creates an obvious issue. Consider the computation of the 
-minimum (we use `p` to denote a price):
+minimum price (we use `p` to denote a price):
 
 ```solidity
-min(pConstituent0, pConstituent1, pConstituent2)
+minPrice = min(pConstituent0, pConstituent1, pConstituent2)
 ```
 
 If our constituent tokens have `RateProviders`, then by definition they cannot be **like-kind assets**. 
@@ -69,9 +67,7 @@ choose the token with the minimum price, if they are not directly related?**
 
 To answer that, we need to evaluate the basic formula of a stable pool invariant near equilibrium:
 
-```solidity
-    uint256 k = chi * (P_RP_0 * B_0 + P_RP_1 * B_1 + ...) + (P_RP_0 * B_0 * P_RP_1 * B_1 * ...)
-```
+$$ k = chi * (P_{RP_0} * B_0 + P_{RP_1} * B_1 + ...) + (P_{RP_0} * B_0 * P_{RP_1} * B_1 * ...)$$
 
 where 
 * `P_RP_i` is the price from RateProvider of token `i`;
@@ -82,9 +78,7 @@ where
 Assuming that the stable pool is near equilibrium, we can assume that chi parameter is near infinite, so
 the invariant will be approximately the constant sum invariant.
 
-```solidity
-    uint256 invariant = P_RP_0 * B_0 + P_RP_1 * B_1 + ...
-```
+$$ invariant = P_{RP_0} * B_0 + P_{RP_1} * B_1 + ... $$
 
 The invariant is used to calculate `pool.getRate()`, which is `uint256 rate = invariant/actualBptSupply`. So, if we
 want to multiply `minPrice * pool.getRate()`, we first need to normalize the RateProviders prices of the invariant.
@@ -97,27 +91,23 @@ The underlying tokens have two different valuations: the market price (Chainlink
 numbers tends to be close to 1, making the division to be a good candidate to normalize prices and find the lowest
 price. So, the `minPrice` would be calculated by
 
-```solidity
-    uint256 minPrice = min(P_M_0/P_RP_0, P_M_1/P_RP_1, P_M_2/P_RP_2)
-```
+$$ minPrice = min({P_{M_0} \over P_{RP_0}}, {P_{M_1} \over P_{RP_1}}, {P_{M_2} \over P_{RP_2}}, ...) $$
 
-Where `P_M_i` is market price of constituent `i`, and `P_RP_i` is the RateProvider price for constituent `i`.
+where 
+* `P_M_i` is market price of constituent `i`;
+* `P_RP_i` is the RateProvider price for constituent `i`.
 
 Using this `minPrice` and multiplying by `pool.getRate()`, assuming that the `StablePool` is near equilibrium, we'd
 have (assuming token 0 has the lowest minPrice):
 
-```
-    bptPrice = minPrice * pool.getRate() = (P_M_0 / P_RP_0) * (P_RP_0 * B_0 + P_RP_1 * B_1 + ...) / actualBptSupply
-```
+$$ bptPrice = minPrice * pool.getRate() = {P_{M_0} \over P_{RP_0}} * {P_{RP_0} * B_0 + P_{RP_1} * B_1 + ... \over actualBptSupply} $$
 
 Simplifying the formula above, we have
 
-```
-    bptPrice = P_M_0 * (B_0 + (P_RP_1/P_RP_0)*B_1 + ... + (P_RP_n/P_RP_0) * B_n)
-```
+$$ bptPrice = P_{M_0} * (B_0 + {P_{RP_1} \over P_{RP_0}} * B_1 + ... + {P_{RP_n} \over P_{RP_0}} * B_n) $$
 
-So, we can see that RateProviders prices were normalized by P_RP_0, for all tokens, before multiplying by market 
-price of token 0.
+So, we can see that RateProviders prices were normalized by `P_RP_0`, for all tokens, before multiplying by `P_M_0` 
+(market price of token 0).
 
 # Examples
 
