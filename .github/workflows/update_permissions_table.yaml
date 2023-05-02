@@ -1,4 +1,4 @@
-name: Update Contract Addresses
+name: Update Permissions Tables
 
 on:
   schedule:
@@ -21,16 +21,18 @@ jobs:
 
     - name: Update Files
       id: update
+      env:
+        WEB3_INFURA_PROJECT_ID = ${{ secrets.INFURA_KEY }}
       run: |
         pip3 install -r .github/python_actions/requirements.txt
-        python3 .github/python_actions/genContractLists.py
+        python3 .github/python_actions/full_chain_permissions
         git add -A
 
     - name: pull-request
       uses: peter-evans/create-pull-request@v5
       with:
-        commit-message: "Scheduled update from changes to monorepo"
-        title: "Scheduled update from changes to monorepo"
+        commit-message: "BOT: Update to permissions tables based on onchain changes."
+        title: "BOT: Automatic update to permissions tables based on onchain changes."
 
         reviewers: "Tritum-VLK"
         assignees: "Tritum-VLK"
