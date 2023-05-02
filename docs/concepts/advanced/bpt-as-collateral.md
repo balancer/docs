@@ -39,7 +39,7 @@ which does not include `RateProviders`):
 2. Compute the minimum of those prices and call it `minPrice`.
 3. Return `minPrice * pool.getRate()`.
 
-# Problem Introducing `RateProviders`
+# Problem: Introducing `RateProviders`
 
 The introduction of `RateProviders` into the `StablePool` creates an obvious issue. Consider the computation of the 
 minimum price (we use `p` to denote a price):
