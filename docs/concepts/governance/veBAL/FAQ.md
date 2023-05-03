@@ -47,7 +47,7 @@ The length of time locked corresponds to how much veBAL you'll get for your 80/2
 
 The LM boost is separate. Related to your share of the pool and share of veBAL. Range limited from 1-2.5x. This can be calculated on our tools site and the math is explained here.
 
-### How do i get veBAL, and can i transfer BPT or veBAL?
+### How do I get veBAL, and can i transfer BPT or veBAL?
 
 You will need to have BAL tokens or WETH to invest in the BAL/WETH 80/20 pool. You can deposit a single asset, which will incur some price impact, or you can deposit both assets in the correct weights. You will receive BPT which you can then time lock here to receive veBAL.
 
