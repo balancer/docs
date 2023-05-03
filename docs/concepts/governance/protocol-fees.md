@@ -44,7 +44,7 @@ The distribution of protocol fees can be adjusted by governance.  Currently:
 
 Pools have been designated as Core in the past for the following reasons:
 1. At least 50% of the tokens in the pool (at peg) are yield baring with rate providers.
-2. The Pool is a ve8020 pool with locked, primary liquidity park on Balancer and is not seeking a grant as defined per [BIP-146](https://forum.balancer.fi/t/bip-146-incentivize-8020-bpt-staking-ve8020/4210) and modified by [BIP-225](https://forum.balancer.fi/t/bip-225-amendment-to-bip-146-incentivize-8020-bpt-staking-ve8020/4543).
+2. The Pool is a ve8020 pool with locked, primary liquidity hosted on Balancer and is not seeking a grant as defined per [BIP-146](https://forum.balancer.fi/t/bip-146-incentivize-8020-bpt-staking-ve8020/4210) and modified by [BIP-225](https://forum.balancer.fi/t/bip-225-amendment-to-bip-146-incentivize-8020-bpt-staking-ve8020/4543).
 3. The pool is the primary source of on-chain liquidity and fees are high [BIP-147](https://snapshot.org/#/balancer.eth/proposal/0x58a74223c1ea38048956969ff0cbaea2167f3a9ed69907a95187c6c222201149), [BIP-237](https://forum.balancer.fi/t/bip-237-enable-ush-eth-50-50-gauge-with-10-emission-cap-ethereum/4599), [BIP-267](https://forum.balancer.fi/t/bip-267-enable-ush-unsheth-gauge-on-ethereum/4678)
 
 
