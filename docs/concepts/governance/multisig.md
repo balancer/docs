@@ -81,13 +81,13 @@ Beyond those current signers, [BIP-16](https://forum.balancer.fi/t/bip-16-update
 The Balancer Maxis operate a number of Multisigs with a reduced signer requirement, which are used for the regular operation of the protocol, as well as adding gauges to veBAL.
 
 | Signer     | Discord Handle  | Address                                      |
-| ---------- | --------------- | -------------------------------------------- |
+| ---------- |-----------------| -------------------------------------------- |
 | Solarcurve | solarcurve#5075 | `0x512fce9B07Ce64590849115EE6B32fd40eC0f5F3` |
 | Zen Dragon | Zen Dragon#2923 | `0x7c2eA10D3e5922ba3bBBafa39Dc0677353D2AF17` |
 | Zekraken   | zekraken#0645   | `0xafFC70b81D54F229A5F50ec07e2c76D2AAAD07Ae` |
 | Mike B     | d_w_b_w_d#0685  | `0xc4591c41e01a7a654B5427f39Bbd1dEe5bD45D1D` |
 | Xeonus     | Xeonus#4620     | `0x7019Be4E4eB74cA5F61224FeAf687d2b43998516` |
-| Tritium    | Trtiium#0069    | `0xcf4fF1e03830D692F52EB094c52A5A6A2181Ab3F` |
+| Tritium    | Tritium#0069    | `0xcf4fF1e03830D692F52EB094c52A5A6A2181Ab3F` |
 
 
 **The Balancer Maxi Multisig set requires 2 or 3 out of 7 signers to execute, depending on the security level of the Multisig.**
