@@ -21,7 +21,7 @@ Balancer Governance Token \(BAL\) is the core token behind the Balancer protocol
 
 The maximum total supply of BAL tokens enforced at the smart contract is 100M; however, this does NOT necessarily mean that this cap will ever be reached. BAL token holders have the authority to decide if the distribution should end before hitting the cap.
 
-At the start of BAL token incentives 145,000 BAL were minted every week. In Q1 2022, [veBAL was introduced](https://forum.balancer.fi/t/introducing-vebal-tokenomics/2512) to replace fixed weekly emissions. veBAL includes an annual reduction in emissions rate such that the program should run until around 2050, leaving a total supply of around 94/100 million tokens upon completion and assuming no other governance is enacted to mint part of the remaining unallocated supply.
+At the start of BAL token incentives 145,000 BAL were minted every week. In Q1 2022, [veBAL was introduced](https://forum.balancer.fi/t/introducing-vebal-tokenomics/2512) to replace fixed weekly emissions. veBAL includes an annual reduction in emissions rate such that the program should run until around 2050, leaving a total supply of around 96/100 million tokens upon completion and assuming no other governance is enacted to mint part of the remaining unallocated supply.
 
 TOTAL Tokens to be emitted by veBAL: 47,520,700
 
