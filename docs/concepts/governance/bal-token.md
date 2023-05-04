@@ -151,7 +151,7 @@ This results in the following emissions schedule:
 }
 :::
 
-Distribution
+## Distribution
 This chart outlines the allocation amounts. More details below.
 
 | BAL Recipient/Fund                                                                                                                                                     | Original Allocation | State as of Feb 2023                         |
@@ -209,7 +209,7 @@ Emissions to liquidity providers are decided by a combination of the emissions s
 
 5M were allocated for the Ecosystem Fund. This fund will be deployed to attract and incentivize strategic partners who will help the Balancer ecosystem grow and thrive. veBAL holders will ultimately decide how this fund is used over the coming years.
 
-Note that as part of the veBAL conversion, the entire ecosystem fund was transferred into the [DAO multisig](https://polygonscan.io/address/0xeE071f4B516F69a1603dA393CdE8e76C40E5Be85).
+Note that as part of the veBAL conversion, the entire ecosystem fund was transferred into the [DAO multisig](https://etherscan.io/address/0x10A19e7eE7d7F8a52822f6817de8ea18204F2e4f)).
 
 Original Ecosystem Fund: <span class="address-link">[Mainnet](https://etherscan.io/address/0xb618F903ad1d00d6F7b92f5b0954DcdC056fC533)</span>, <span class="address-link">[Polygon]](https://etherscan.io/address/0xb618F903ad1d00d6F7b92f5b0954DcdC056fC533)</span>,  <span class="address-link">[Arbitrum]](https://arbiscan.io/address/0xaF23DC5983230E9eEAf93280e312e57539D098D0)</span>
 
