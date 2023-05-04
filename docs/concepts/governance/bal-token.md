@@ -25,7 +25,7 @@ At the start of BAL token incentives 145,000 BAL were minted every week. In Q1 2
 
 TOTAL Tokens to be emitted by veBAL: 47,520,700
 
-The current emissions rate can be understood by looking at the Balancer Token Admin Contract
+The current emissions rate can be understood by looking at the [Balancer Token Admin Contract](https://etherscan.io/address/0xf302f9f50958c5593770fdf4d4812309ff77414f#readContract)
 
 You can see the emission rate (getInflationRate = 0.239 BAL/second = 145k BAL/week)
 
