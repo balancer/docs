@@ -36,7 +36,7 @@ Balancer V1 contracts are immutable, so up until now, there have been no core pr
 
 Balancer V2 contracts, on the other hand, do allow for some tweaking of core protocol parameters, for instance, in turning on protocol fees. As a placeholder for a future on-chain DAO, such limited admin powers has been initially granted to a Multisig.
 
-Balancer strives to continue to automate operations and governance execution. While the eventual goal is still to move the entire governance and execution on-chain, the current Multisigs have proven themselves as reliable executors of the wishes of veBAL voters. In the long run, BAL holders are expected to retire the Multisigners in favor of a full-fledged Balancer DAO.
+Balancer strives to continue to automate operations and governance execution. While the eventual goal is still to move the entire governance and execution on-chain, the current Multisigs have proven themselves as reliable executors of the wishes of veBAL voters. In the long run, BAL holders are expected to retire the Multisig in favor of a full-fledged Balancer DAO.
 
 ## Current state of Multisig Operations
 
