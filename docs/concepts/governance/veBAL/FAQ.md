@@ -4,68 +4,74 @@ title: FAQ
 
 # veBAL FAQ
 
-### Will voters vote on how much emissions go to each network or is that locked?
+### How do I get veBAL?
 
-The voting mechanism is described in "How it works" in Gauge voting documentation.
+When you provide liquidity into a Balancer pool, you take out an ERC-20 token we call a "Balancer Pool Token", or BPT for short. In veBAL, the used BPT is from a B-80BAL-20WETH pool.
 
-Voters will determine the amount of emissions going to gauge listed pools on each chain (Mainnet, Polygon, and Arbitrum), the voting will happen on mainnet. This is because the contracts to read your veBAL balance are on mainnet only.
+You will need to have BAL tokens or WETH to invest in the B-80BAL-20WETH pool. You can deposit a single asset, which will incur some price impact, or you can deposit both assets in the correct weights. You will receive BPT which you can then time lock here to receive veBAL.
 
-### If you have veBAL on mainnet, does it boost your farming on Arbitrum, Polygon?
+The length of time the BPT is locked corresponds to how much veBAL you'll get. veBAL is a function of time and asset. 1 veBAL equals 1 BPT locked for 52 weeks. Where a 1 week lock of 1 BPT will give 1/52 veBAL.
 
-No, only gauges on L1 (Ethereum mainnet) receive incentive boosts because the contracts must read your veBAL balance.
-
-The boost depends on what fraction of the gauge staked liquidity you hold and what fraction of the total veBAL you hold. See more on boosting [here](/reference/vebal-and-gauges/boost-calculations.html)
-
-### Is the veBAL vote on-chain, and does it require gas fees?
-
-Yes, gauge votes are on-chain and cost a fee. They can be cast in the [Balancer DAPP](https://app.balancer.fi/#/ethereum/vebal)
-
-Other governance is done by [snapshot](https://snapshot.org/#/balancer.eth) and costs no gas.
-
-If the same pools will be selected each week, no additional vote, transaction, or gas is needed. Users only have to vote
-once, unless they want to change their allocation.
-
-### Can I delegate my votes?
-
-veBAL voting can not be delegated, however snapshot voting covering general DAO operations and management of gauges can be delegated [here](https://snapshot.org/#/delegate/balancer.eth). A list of delegates and more information about them and how/why they vote can be found on the [In the Delegate Citadel](https://forum.balancer.fi/c/delegate-citadel/14) on the Balancer Forum.
-
-### Do veBAL holders receive a portion of the trading fees? How are the protocol fees paid?
-
-veBAL holders are receive protocol fees distributed in bbaUSD (Boosted Aave Stable Pool LP Tokens) see [Protocol Revenue Distribution](../protocol-fees.md#uses).
-
-### Is there a way to view how much total veBAL there is?
-
-Yes that information can be found on the [veBAL Dune Dashbaord](https://dune.xyz/balancerlabs/veBAL)
-
-### How do I make a pool eligible for gauge voting?
-
-Need to make a governance proposal. See [Governance Process](../process.md) and [The instructions for a Gauge request on the Forum](https://forum.balancer.fi/t/instructions-overview/2674).
-
-### How much BAL/WETH BPT do I stake to maximize my multiplier? What amount do you need to stake at 1 year to hit the 2.5x boost for liquidity incentives?
-
-The length of time locked corresponds to how much veBAL you'll get for your 80/20 BPT. Voting is 1 veBAL for a 52 week lock of 1 BPT. Where a one week lock of 1 BPT will give 1/52 veBAL.
-
-The LM boost is separate. Related to your share of the pool and share of veBAL. Range limited from 1-2.5x. This can be calculated on our tools site and the math is explained here.
-
-### How do i get veBAL, and can i transfer BPT or veBAL?
-
-You will need to have BAL tokens or WETH to invest in the BAL/WETH 80/20 pool. You can deposit a single asset, which will incur some price impact, or you can deposit both assets in the correct weights. You will receive BPT which you can then time lock here to receive veBAL.
+### Can i transfer BPTs or veBAL?
 
 Yes, you can transfer BPTs. Rewards will accrue in the wallet where they are held.
 
 veBAL is a non-standard ERC-20 token and cannot be transferred.
 
+
+### Do veBAL holders receive a portion of the protocol fees? 
+
+Yes. For more information, see [Protocol Revenue Distribution](../protocol-fees.md#uses).
+
+### How are the protocol fees paid?
+
+veBAL holders receive protocol fees distributed in bb-a-USD (Balancer Boosted Aave V3 USD Composable Stable Pool). The fee token was selected based on community feedback taken in the [Balancer Forum](https://forum.balancer.fi/t/rfc-change-vebal-usd-yield-component/4692#looking-for-input-8) followed by a [Snapshot vote](https://snapshot.org/#/balancer.eth/proposal/0xe9fa0968d93ab117d6ef28d139d19e5d9d728c0ed4c9581e2f7eb8c381e5ff45) in May '23.
+
+### When are incentives paid?
+
+Incentives on mainnet are now accrued each block. Protocol fees are distributed on a weekly basis.
+
+### Is there a way to view how much total veBAL there is?
+
+Yes, that information can be found on the [veBAL Dune Dashboard](https://dune.xyz/balancerlabs/veBAL)
+
+### How much BPT (B-80BAL-20WETH) do I stake to maximize my multiplier? What amount do you need to stake at 1 year to hit the 2.5x boost for liquidity incentives?
+
+The incentives boost is related to your share of the pool and share of veBAL. Range limited from 1x to 2.5x. 
+
+Community contributors have developed a very useful [veBAL Boost Calculator](https://balancer.tools/veBAL) tool and the math is explained [here](/reference/vebal-and-gauges/boost-calculations.html).
+
+### If veBAL is on mainnet, can it boost staking incentives on L2?
+
+Yes, Balancer now supports cross-chain gauges to receive incentive boosts.
+
+The boost depends on what fraction of the gauge staked liquidity you hold and what fraction of the total veBAL you hold. See more on boosting [here](/reference/vebal-and-gauges/boost-calculations.html)
+
 ### How do I extend my veBAL lock up?
 
 Just go to the [veBAL site](https://app.balancer.fi/vebal#/ethereum/vebal), see "Lock until" , click "+", choose the time desired, and confirm.
 
-### Are incentives paid daily?
+### Will voters vote on how much emissions go to each network or is that preset?
 
-Incentives on mainnet are now accrued each block. Protocol fees are distributed on a weekly basis.
+Voters will determine the amount of emissions going to gauge listed pools on Ethereum mainnet and on L2 chains. The voting will happen on Ethereum mainnet.
+
+### Is the veBAL gauge vote on-chain, and does it require gas fees?
+
+Yes, gauge votes are on-chain and will cost a gas fee. They can be cast in the [Balancer dAPP](https://app.balancer.fi/#/ethereum/vebal). Other governance decisions (i.e. approving new gauges) are done by [snapshot](https://snapshot.org/#/balancer.eth) and cost no gas.
+
+There is a weekly vote for veBAL holders which ends at 00:00 UTC on Thursdays. If the same pools will be selected each epoch, no additional vote, transaction, or gas is needed. veBAL holders only have to vote once, unless they want to change their allocation.
+
+### Can I delegate my votes?
+
+veBAL gauge voting can not be delegated, however Snapshot voting covering general governance for DAO operations and management of gauges can be delegated [here](https://snapshot.org/#/delegate/balancer.eth). A list of delegates and more information about them and how/why they vote can be found [in the Delegate Citadel](https://forum.balancer.fi/c/delegate-citadel/14) on the Balancer Forum.
+
+### How do I make a pool eligible for gauge voting?
+
+Need to make a governance proposal. See [Governance Process](../process.md) and [The instructions for a Gauge request on the Forum](https://forum.balancer.fi/t/instructions-overview/2674).
 
 ### Does veBAL support Gnosis Safe?
 
-It's normal for vote escrowed (ve) systems to not allow arbitrary contracts to lock as otherwise it's easy to tokenize the ve tokens which defeats can the point if the tokenomics of said derivitive does not require appropriate locking. Users can lock up veBAL from an EOA and delegate it to your gnosis safe to earn boosts. Entities interested in making a large investment in veBAL may appeal to governance to have a multisig whitelisted for veBAL participation.
+It's normal for vote escrowed (ve) systems to not allow arbitrary contracts to lock as otherwise it's easy to tokenize the ve tokens which defeats the point if the tokenomics of said derivitive does not require appropriate locking. Users can lock up veBAL from an EOA and delegate it to your Gnosis Safe to earn boosts. Entities interested in making a large investment in veBAL may appeal to governance to have a multisig whitelisted for veBAL participation.
 
 ### Is there a repository for the contract addresses of all the new staking contracts and veBAL contracts?
 
