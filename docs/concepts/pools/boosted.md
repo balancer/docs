@@ -53,7 +53,6 @@ If this were instead to be built as a Boosted Pool, the idle assets can become y
 * `bb-a-USDT` (consisting of `USDT` and wrapped `aUSDT`)
 * `bb-a-DAI` (consisting of `DAI` and wrapped `aDAI`)
 
-
 ::: info Why are the aTokens wrapped?
 aTokens are incompatible with the Balancer Vault because they have streaming balances. These tokens must be wrapped into a static token, which accounts for any accrued value.
 :::
