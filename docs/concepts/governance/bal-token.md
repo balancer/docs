@@ -148,11 +148,11 @@ This chart outlines the allocation amounts. More details below.
 
 #### Liquidity Providers
 
-Emissions to liquidty providers are decided by a combination of the emissions schedule described above, and [veBAL](./veBAL) voting to determine the rewards that flow to each authorized pool.
+Emissions to liquidty providers are decided by a combination of the emissions schedule described above, and [veBAL](./veBAL) voting to determine the allocations that flow to each authorized pool.
 
 #### Founders, Options, Advisors, Investors
 
-25M tokens were allocated to founders, stock options, advisors, and investors, all subject to vesting periods.
+25M tokens were allocated to founders, options, advisors, and investors, all subject to vesting periods.
 
 #### Ecosystem Fund
 
@@ -166,7 +166,7 @@ Original Ecosystem Fund: <span class="address-link">[0xb618F903ad1d00d6F7b92f5b0
 
 #### Fundraising Fund
 
-5M were allocated for the Fundraising Fund. Balancer Labs raised a pre-seed and seed round. This fund will be used for future fundraising rounds to support Balancer Labs' operations and growth. BAL tokens will never be sold to retail investors. As part of the transition to the [Operating Framework Enacted by Governance in Q2 2022](https://forum.balancer.fi/t/bip-1-operating-framework-for-balancer-dao/3237), 1.9M BAL was [transferred](https://etherscan.io/tx/0xaa29cd251cdb024c415b0e13f67a0ca74fe5abc3de9a9fedd1ae26fd39be4025) from the Fundraising Fund back to the DAO Multisig to supplement the community controlled supply.
+5M were allocated for the Fundraising Fund. Balancer Labs raised a pre-seed and seed round. This fund will be used for future fundraising rounds to support Balancer Labs' operations and growth. BAL tokens will never be sold to retail users. As part of the transition to the [Operating Framework Enacted by Governance in Q2 2022](https://forum.balancer.fi/t/bip-1-operating-framework-for-balancer-dao/3237), 1.9M BAL was [transferred](https://etherscan.io/tx/0xaa29cd251cdb024c415b0e13f67a0ca74fe5abc3de9a9fedd1ae26fd39be4025) from the Fundraising Fund back to the DAO Multisig to supplement the community controlled supply.
 
 For full transparency, the [seed series](https://medium.com/balancer-protocol/balancer-labs-raises-3m-to-supercharge-programmable-liquidity-8f1a42323c78) price of one BAL token was $0.60.
 
