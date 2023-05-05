@@ -51,3 +51,4 @@ Pools have been designated as Core in the past for the following reasons:
 It is important to note that 100% of fees redirected by this program still flow to veBAL voters. They are just contingent on voting for pools that generate significant flows through the protocol and revenue through the DAO.
 
 Join the Discord and Forums to take part in the discussion over how to use these fees.
+
