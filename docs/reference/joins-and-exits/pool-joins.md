@@ -18,12 +18,12 @@ joinPool(
     JoinPoolRequest request
 )
 
-JoinPoolRequest(
+struct JoinPoolRequest {
     address[] assets,
     uint256[] maxAmountsIn,
     bytes userData,
     bool fromInternalBalance
-)
+}
 ```
 
 ### Arguments Explained

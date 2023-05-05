@@ -14,13 +14,14 @@ Stable Math is designed to allow for swaps between any assets that have the same
 
 Developers can use the TypeScript math implementations used by the Smart Order router
 
-- [stableMath.ts](https://github.com/balancer-labs/balancer-sor/blob/john/v2-package-linear/src/pools/stablePool/stableMath.ts)
-- [metaStableMath.ts](https://github.com/balancer-labs/balancer-sor/blob/john/v2-package-linear/src/pools/metaStablePool/metaStableMath.ts)
+- [stableMath.ts](https://github.com/balancer/balancer-sor/blob/john/v2-package-linear/src/pools/stablePool/stableMath.ts)
+- [metaStableMath.ts](https://github.com/balancer/balancer-sor/blob/john/v2-package-linear/src/pools/metaStablePool/metaStableMath.ts)
 
 ## Invariant
 
 Since the Stable Math equation is quite complex, determining the invariant, $D$, is typically done iteratively. For an example of how to do this, please refer to [this function](https://github.com/georgeroman/balancer-v2-pools/blob/main/src/pools/stable/math.ts#L16).
 
+<!-- prettier-ignore -->
 $$
 A \cdot n^n \cdot \sum{x_i} +D = A \cdot D \cdot n^n + { \frac{D^{n+1}}{{n}^{n}\cdot \prod{x_i} } }
 $$
@@ -37,10 +38,12 @@ Similar to determining the invariant, determining (out/in) amount given (in/out)
 
 ### outGivenIn
 
+<!-- prettier-ignore -->
 $$
 y^2 + (\frac{D}{An^n} + \sum_{j \neq out}{x'_j} - D)y        -\frac{D^{n+1}}{An^{2n} \prod_{j \neq out}{x'_j}}= 0
 $$
 
+<!-- prettier-ignore -->
 $$
 a_{out} = x_{out} - x'_{out} = x_{out} - y
 $$
@@ -57,10 +60,12 @@ Where:
 
 ### inGivenOut
 
+<!-- prettier-ignore -->
 $$
 y^2 + (\frac{D}{An^n} + \sum_{j \neq in}{x'_j} - D)y        -\frac{D^{n+1}}{An^{2n} \prod_{j \neq in}{x'_j}}= 0
 $$
 
+<!-- prettier-ignore -->
 $$
 a_{in} = x'_{in} - x_{in}  = y-x_{in}
 $$

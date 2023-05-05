@@ -41,6 +41,6 @@ and would ultimately result in the team holding far more DAI \_\_ at the end of 
 
 [Fjord Foundry](https://fjordfoundry.com/pools) is a platform for Fair Launch Auctions (FLAs) — a simple crowdfunding mechanism that enables projects and ideas from across the world to raise money from individuals without barriers to entry. Fjord makes it easy to create and use LBPs through their intuitive and easy-to-use website. The main concept allows distribution of Tokens and NFTs with transparent, open and fair price discovery mechanism. Fjords long-standing reputation led to a recent [exclusive collaboration agreement](https://snapshot.org/#/balancer.eth/proposal/0xcc065f373e15a264e1647bc794a4a83039fc4d377a69875ec828eb0148faa4ba) between the Balancer DAO and Fjord Foundry.
 
-### Gitcoin's AKITA/ETH LBP
+### [Gitcoin's AKITA/ETH LBP](https://medium.com/balancer-protocol/balancer-lbps-and-the-akita-inu-saga-15fe5cc99154)
 
 [Gitcoin's LBP](https://copperlaunch.com/pools/0xC065798F227b49C150bCDC6CDc43149A12c4d757) is composed of AKITA and WETH, and is meant to slowly transfer the Akita held by Gitcoin (as donated by Vitalik) back to the community. Using an LBP here is useful in performing a gradual sale with continuous pressure. Gitcoin is running a few of these in succession to validate the process, raise more ETH for the next LBPs, and also help fund public goods. Some of the ETH generated will be split with the Akita Development fund and a Dog Rescue charity.

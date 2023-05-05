@@ -1,8 +1,16 @@
 ---
 title: Overview
+references:
+  - details: Querying Gauges
+    link: /reference/vebal-and-gauges/gauges.html
+  - details: veBAL Boost Calculations
+    link: /reference/vebal-and-gauges/boost-calculations.html
+
 ---
 
-# veBAL Overview
+# veBAL
+
+## Overview
 
 veBAL (vote-escrow BAL) is a vesting system based on [Curve's veCRV mechanism](https://curve.readthedocs.io/dao-vecrv.html) which locks 80/20 BAL/WETH Balancer Pool Tokens for a maximum of 1 year. The veBAL and Gauge system is designed to promote long-term token-holder alignment and facilitate fair protocol fee distribution.
 
@@ -21,11 +29,11 @@ Implications:
   - veBAL does have a gauge to direct emissions to the holders if chosen. This option is capped at 10% of total emissions of BAL at a given time in the inflation schedule. The overflow, if a vote goes over 10%, will go to the DAO treasury, where governance will have ownership of it.
   - As demonstrated by BIP-161 the handling and amount of protocol fees are subject to change based on [Balancer Govnernace Process](../process.md)
 
-This gives veBAL holders the option to choose pools for which they have liquidity positions for increased emissions or a potential for "bribing" battles can ensue. Numerous vote markets including [Hiddenhand](https://hiddenhand.finance/balancer), [Wareden](https://app.warden.vote/dashboard/), and [votemarket](https://votemarket.stakedao.org/) allow projects to provide veBAL holders an incentivize to vote in a direction they prefer, hence the term “bribe”.
+This gives veBAL holders the option to choose pools for which they have liquidity positions for increased emissions or a potential for "bribing" battles can ensue. Numerous vote markets including [Hiddenhand](https://hiddenhand.finance/balancer), [Warden](https://app.warden.vote/dashboard/), and [votemarket](https://votemarket.stakedao.org/) allow projects to provide veBAL holders an incentivize to vote in a direction they prefer, hence the term “bribe”.
 
 In the same breath, the emission schedule for BAL has been defined and is set permanently. Before veBAL, 145,000 BAL was being emitted per week, which was unsustainable without a ceiling on emissions. The two key takeaways for the new inflation schedule will be a halving of the inflation rate every 4 years, and a total supply of BAL being capped at 94,000,000.
 
-# How is veBAL different from veCRV?
+### How is veBAL different from veCRV?
 
 There are a few modifications that set veBAL apart:
 

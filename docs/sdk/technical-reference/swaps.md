@@ -8,7 +8,7 @@ order: 2
 
 ### queryBatchSwap
 
-The Balancer Vault provides a [method to simulate a call to batchSwap](https://github.com/balancer-labs/balancer-v2-monorepo/blob/master/pkg/interfaces/contracts/vault/IVault.sol#L630-L650).
+The Balancer Vault provides a [method to simulate a call to batchSwap](https://github.com/balancer/balancer-v2-monorepo/blob/master/pkg/interfaces/contracts/vault/IVault.sol#L630-L650).
 This function performs no checks on the sender or recipient or token balances or approvals. Note that this function is not 'view' (due to implementation details): the client code must explicitly execute eth_call instead of eth_sendTransaction.
 
 ```js

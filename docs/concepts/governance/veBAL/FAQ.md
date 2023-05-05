@@ -14,7 +14,7 @@ Voters will determine the amount of emissions going to gauge listed pools on eac
 
 No, only gauges on L1 (Ethereum mainnet) receive incentive boosts because the contracts must read your veBAL balance.
 
-The boost depends on what fraction of the gauge staked liquidity you hold and what fraction of the total veBAL you hold. See more on boosting here.
+The boost depends on what fraction of the gauge staked liquidity you hold and what fraction of the total veBAL you hold. See more on boosting [here](/reference/vebal-and-gauges/boost-calculations.html)
 
 ### Is the veBAL vote on-chain, and does it require gas fees?
 

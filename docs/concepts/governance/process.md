@@ -54,11 +54,11 @@ Further, votes requesting new gauges should include the following information:
 * Promote your topics, find voters, get feedback.
   * Consider contacting [Delegates](https://forum.balancer.fi/c/delegate-citadel/14) to obtain their support.
 * Encourage interested parties on Discord to gather their thoughts in a forum post
-* It is advised that proper time is given for the community to discuss a proposal before bringing it to snapshot and that that the Original Poster is open to making changes as part of the discussion proccess.
-* The Maxis will perform initial validation on any submitted 
+* It is advised that proper time is given for the community to discuss a proposal before bringing it to snapshot and that that the Original Poster is open to making changes as part of the discussion process.
+* The Maxis will perform initial validation on any submitted snapshots and get in touch with the OP if there are issues, inviting them to take down their vote and repost it properly to avoid an end result that can not be executed due to lack of compliance. 
 
 ### **Step 3: Develop and validate transaction Pull Request**
-**NOTE:** The Balancer Maxis are also available to build and validate your PR.  If you don't want to get involved in the techincal details of defining your execution, contact the Balancer Maxis and they will be happy to help.  They can be found in the [Balancer Discord](https://discord.balancer.fi) and are listed in the [HERE](./multisig.md#Operational-Multisigs-Signer-Set-AKA-Balancer Maxis)
+**NOTE:** The Balancer Maxis are also available to build and validate your PR.  If you don't want to get involved in the techincal details of defining your execution, contact the Balancer Maxis and they will be happy to help.  They can be found in the [Balancer Discord](https://discord.balancer.fi) and are listed in the [HERE](https://docs.balancer.fi/concepts/governance/multisig.html#dao-multisig-signer-set)
 
 A Pull Request(PR) that posts a transaction to a gnosis safe mutlsig which executes the changes specified by the BIP on-chain is required as part of the body of a Proposal specified above before it can be brought to valid snapshot.  
 
@@ -67,7 +67,6 @@ The file(s) should be added into their own directory [HERE on the Multisig Ops R
 Examples of how to submit payload PRs for common governance quests can be found [HERE](https://github.com/BalancerMaxis/multisig-ops/tree/main/BIPs/00examples)
 
 ### **Step 3: Snapshot**
-
 
 The snapshot process is started when an address with at least 200,000 veBAL in delegation posts a snapshot to the forum that meets all of the required specifications as defined in [BIP-163](https://forum.balancer.fi/t/bip-163-restructure-governance-process-disband-governance-council/4244).
 

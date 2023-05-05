@@ -1,0 +1,1597 @@
+{
+  "active": {
+    "goerli": {
+      "20230316-child-chain-gauge-factory-v2": {
+        "ChildChainGauge": "0x6B5dA774890Db7B7b96C6f44e6a4b0F657399E2e",
+        "ChildChainGaugeFactory": "0x7Ba29fE8E83dd6097A7298075C4AFfdBda3121cC"
+      },
+      "20220530-preseeded-voting-escrow-delegation": {
+        "PreseededVotingEscrowDelegation": "0x7AF980bDBc36D21CE228EfABCCA35707566A2be5"
+      },
+      "20230320-weighted-pool-v4": {
+        "WeightedPoolFactory": "0x230a59F4d9ADc147480f03B0D3fFfeCd56c3289a",
+        "MockWeightedPool": "0x072ED560cc042d7aB1c080a9e4fA8C6f4858dEb3"
+      },
+      "20221205-l2-gauge-checkpointer": {
+        "L2GaugeCheckpointer": "0xf23b4DB826DbA14c0e857029dfF076b1c0264843"
+      },
+      "20220513-double-entrypoint-fix-relayer": {
+        "DoubleEntrypointFixRelayer": "0xBe9458ab5B6F289e524410141c8d5E20A6b035fe"
+      },
+      "20220325-bal-token-holder-factory": {
+        "BALTokenHolderFactory": "0x45E617B07021B97407367624648d1A0A358a751A"
+      },
+      "20220714-fee-distributor-v2": {
+        "FeeDistributor": "0x42B67611B208E2e9b4CC975F6D74c87b865aE066"
+      },
+      "20230404-l2-layer0-bridge-forwarder": {
+        "L2LayerZeroBridgeForwarder": "0xEF44D6786b2b4d544b7850Fe67CE6381626Bf2D6"
+      },
+      "20210418-vault": {
+        "Vault": "0xBA12222222228d8Ba445958a75a0704d566BF2C8",
+        "BalancerHelpers": "0x5aDDCCa35b7A0D07C74063c48700C8590E87864E",
+        "ProtocolFeesCollector": "0xce88686553686DA562CE7Cea497CE749DA109f9F"
+      },
+      "20220725-protocol-fee-percentages-provider": {
+        "ProtocolFeePercentagesProvider": "0x0F3e0c4218b7b0108a3643cFe9D3ec0d4F57c54e"
+      },
+      "20220420-smart-wallet-checker": {
+        "SmartWalletChecker": "0x1b6DF1fF5db99F8a8A04D38f7478BAB056Fa35A7"
+      },
+      "20230314-batch-relayer-v5": {
+        "BatchRelayerLibrary": "0x45fFd460cC6642B8D8Fb12373DFd77Ceb0f4932B",
+        "BalancerRelayer": "0x03F1ab8b19bcE21EB06C364aEc9e40322572a1e9"
+      },
+      "20230208-euler-linear-pool": {
+        "EulerLinearPoolFactory": "0x813EE7a840CE909E7Fea2117A44a90b8063bd4fd",
+        "MockEulerToken": "0xB99eDc4b289B0F2284fCF3f66884191BdCe29624",
+        "MockEulerLinearPool": "0x43Fa2c00419F60e18966Aa043DEBd4701CB91B6d"
+      },
+      "20220325-balancer-token-admin": {
+        "BalancerTokenAdmin": "0x0F32D7D830E20809Bcb9071581A696135dD472B7"
+      },
+      "20230320-composable-stable-pool-v4": {
+        "ComposableStablePoolFactory": "0x1802953277FD955f9a254B80Aa0582f193cF1d77",
+        "MockComposableStablePool": "0x5D343D374A769D1AB102e0418a516DadB08A86E4"
+      },
+      "20230411-managed-pool-v2": {
+        "ManagedPoolAddRemoveTokenLib": "0xAcf05BE5134d64d150d153818F8C67EE36996650",
+        "CircuitBreakerLib": "0x9129E834e15eA19b6069e8f08a8EcFc13686B8dC",
+        "ManagedPoolAmmLib": "0xA69E0Ccf150a29369D8Bbc0B3f510849dB7E8EEE",
+        "ExternalWeightedMath": "0xDF9B5B00Ef9bca66e9902Bd813dB14e4343Be025",
+        "RecoveryModeHelper": "0x300Ab2038EAc391f26D9F895dc61F8F66a548833",
+        "ManagedPoolFactory": "0x03F3Fb107e74F2EAC9358862E91ad3c692712054",
+        "MockManagedPool": "0xff79b51ec2934Dd1810a8e0325e3B08708720B26"
+      },
+      "20220325-ve-delegation": {
+        "VotingEscrowDelegation": "0xcfF73979321788d59a6170fF012730dB2087f31c",
+        "VotingEscrowDelegationProxy": "0xA1F107D1cD709514AE8A914eCB757E95f9cedB31"
+      },
+      "20230403-timelock-authorizer": {
+        "TimelockAuthorizerMigrator": "0x7159c4b96bfCfCA232355B55778e85Cf9E245192",
+        "TimelockAuthorizer": "0x70E26F740bAd6a2CDd762e2478496268882C21d4"
+      },
+      "20220325-test-balancer-token": {
+        "TestBalancerToken": "0xfA8449189744799aD2AcE7e0EBAC8BB7575eff47"
+      },
+      "20220822-mainnet-gauge-factory-v2": {
+        "LiquidityGaugeV5": "0x2E96068b3D5B5BAE3D7515da4A1D2E52d08A2647",
+        "LiquidityGaugeFactory": "0x3b8cA519122CdD8efb272b0D3085453404B25bD0"
+      },
+      "00000000-tokens": {
+        "BAL": "0xfA8449189744799aD2AcE7e0EBAC8BB7575eff47",
+        "WETH": "0xdFCeA9088c8A88A76FF74892C1457C17dfeef9C1"
+      },
+      "20220527-child-chain-gauge-token-adder": {
+        "ChildChainGaugeTokenAdder": "0x55B18f514D7f0C6C886d0C23Ac72dF5D3B5F8850"
+      },
+      "20220812-child-chain-reward-helper": {
+        "ChildChainGaugeRewardHelper": "0xC128a9954e6c874eA3d62ce62B468bA073093F25"
+      },
+      "20210418-authorizer": {
+        "Authorizer": "0xA331D84eC860Bf466b4CdCcFb4aC09a1B43F3aE6"
+      },
+      "20210812-wsteth-rate-provider": {
+        "WstETHRateProvider": "0x80a94F458491CA88F09767E58a92FD23Cbf1196F"
+      },
+      "20221123-pool-recovery-helper": {
+        "PoolRecoveryHelper": "0x1cbbE6cEa5E4fE7D69c586b4e362A646DEEf105d"
+      },
+      "20221205-veboost-v2": {
+        "VeBoostV2": "0xd13AFc362F619b840C8f4AaC1D957cE219eF37Ca"
+      },
+      "20230414-authorizer-wrapper": {
+        "AuthorizerWithAdaptorValidation": "0x8eA89804145c007e7D226001A96955ad53836087"
+      },
+      "20230316-l2-balancer-pseudo-minter": {
+        "L2BalancerPseudoMinter": "0x81cFAE226343B24BA12EC6521Db2C79E7aeeb310"
+      },
+      "20220707-distribution-scheduler": {
+        "DistributionScheduler": "0x05a0BF0540F346b6Dac25550738343BEb51C0f65"
+      },
+      "20230222-merkle-orchard-v2": {
+        "MerkleOrchard": "0x5cF4928a3205728bd12830E1840F7DB85c62a4B9"
+      },
+      "20220721-balancer-queries": {
+        "BalancerQueries": "0xE39B5e3B6D74016b2F6A9673D7d7493B6DF549d5"
+      },
+      "20220325-authorizer-adaptor": {
+        "AuthorizerAdaptor": "0x5D90225De345eE24d1d2B6F45DE90B056F5265A1"
+      },
+      "20230215-single-recipient-gauge-factory-v2": {
+        "SingleRecipientGaugeFactory": "0xE3881627B8DeeBCCF9c23B291430a549Fc0bE5F7",
+        "SingleRecipientGauge": "0x0e9aDdc34F93BCcB45D1F744B9F9301285C5b48F"
+      },
+      "20230316-l2-ve-delegation-proxy": {
+        "NullVotingEscrow": "0xa523f47A933D5020b23629dDf689695AA94612Dc",
+        "VotingEscrowDelegationProxy": "0x6817149cb753BF529565B4D023d7507eD2ff4Bc0"
+      },
+      "20220517-protocol-fee-withdrawer": {
+        "ProtocolFeesWithdrawer": "0x85153B639a35d6e6CF8B291Aca237FbE67377154"
+      },
+      "20220325-gauge-controller": {
+        "VotingEscrow": "0x33A99Dcc4C85C014cf12626959111D5898bbCAbF",
+        "GaugeController": "0xBB1CE49b16d55A1f2c6e88102f32144C7334B116",
+        "BalancerMinter": "0xdf0399539A72E2689B8B2DD53C3C2A0883879fDd"
+      },
+      "20230109-gauge-adder-v3": {
+        "GaugeAdder": "0xBd35248F8325DD1cB2bBf9D01E80A6bb99a792Dd"
+      },
+      "20230223-protocol-id-registry": {
+        "ProtocolIdRegistry": "0x4fb47126Fa83A8734991E41B942Ac29A3266C968"
+      },
+      "20220413-child-chain-gauge-factory": {
+        "RewardsOnlyGauge": "0x40Bd3fAef4268EA40F4c372D7f0A44C3EFaAA6b1",
+        "ChildChainStreamer": "0x5B5B72D76B68f4Bb1d2A10EF0fc77711f8Ec7ed0",
+        "ChildChainLiquidityGaugeFactory": "0x393B918Cc2Ffa238732E83dD4eE52343f57d767b"
+      },
+      "20211202-no-protocol-fee-lbp": {
+        "NoProtocolFeeLiquidityBootstrappingPoolFactory": "0xB0C726778C3AE4B3454D85557A48e8fa502bDD6A"
+      },
+      "20221124-authorizer-adaptor-entrypoint": {
+        "AuthorizerAdaptorEntrypoint": "0xacAaC3e6D6Df918Bf3c809DFC7d42de0e4a72d4C"
+      }
+    },
+    "gnosis": {
+      "20230316-child-chain-gauge-factory-v2": {
+        "ChildChainGauge": "0x96484f2aBF5e58b15176dbF1A799627B53F13B6d",
+        "ChildChainGaugeFactory": "0x83E443EF4f9963C77bd860f94500075556668cb8"
+      },
+      "20230320-weighted-pool-v4": {
+        "WeightedPoolFactory": "0x6CaD2ea22BFA7F4C14Aae92E47F510Cd5C509bc7",
+        "MockWeightedPool": "0xd8752f9b0A2c2813796AbD2bE212A32FFd656EF1"
+      },
+      "20230404-l2-layer0-bridge-forwarder": {
+        "L2LayerZeroBridgeForwarder": "0xeb151668006CD04DAdD098AFd0a82e78F77076c3"
+      },
+      "20210418-vault": {
+        "Vault": "0xBA12222222228d8Ba445958a75a0704d566BF2C8",
+        "ProtocolFeesCollector": "0xce88686553686DA562CE7Cea497CE749DA109f9F",
+        "BalancerHelpers": "0x8E9aa87E45e92bad84D5F8DD1bff34Fb92637dE9"
+      },
+      "20220725-protocol-fee-percentages-provider": {
+        "ProtocolFeePercentagesProvider": "0x41B953164995c11C81DA73D212ED8Af25741b7Ac"
+      },
+      "20230314-batch-relayer-v5": {
+        "BatchRelayerLibrary": "0xb9aD3466cdd42015cc05d4804DC68D562b6a2065",
+        "BalancerRelayer": "0x3536fD480CA495Ac91E698A703248A8915c137a3"
+      },
+      "20230320-composable-stable-pool-v4": {
+        "ComposableStablePoolFactory": "0xD87F44Df0159DC78029AB9CA7D7e57E7249F5ACD",
+        "MockComposableStablePool": "0xf3678A0b54C61ccD88Ce321c2e07f87aC75F08B9"
+      },
+      "20230411-managed-pool-v2": {
+        "ManagedPoolAddRemoveTokenLib": "0x4C32a8a8fDa4E24139B51b456B42290f51d6A1c4",
+        "CircuitBreakerLib": "0x54f8F9d28e26Fa5864cfA80f50A5Df95fD85f46a",
+        "ManagedPoolAmmLib": "0xAcf05BE5134d64d150d153818F8C67EE36996650",
+        "ExternalWeightedMath": "0x9129E834e15eA19b6069e8f08a8EcFc13686B8dC",
+        "RecoveryModeHelper": "0xA69E0Ccf150a29369D8Bbc0B3f510849dB7E8EEE",
+        "ManagedPoolFactory": "0xDF9B5B00Ef9bca66e9902Bd813dB14e4343Be025",
+        "MockManagedPool": "0xc061361fDa32fF5b65F7D98aCC9a87349d3F0768"
+      },
+      "00000000-tokens": {
+        "BAL": "0x7eF541E2a22058048904fE5744f9c7E4C57AF717",
+        "WETH": "0xe91D153E0b41518A2Ce8Dd3D7944Fa863463a97d"
+      },
+      "20220527-child-chain-gauge-token-adder": {
+        "ChildChainGaugeTokenAdder": "0x1802953277FD955f9a254B80Aa0582f193cF1d77"
+      },
+      "20220812-child-chain-reward-helper": {
+        "ChildChainGaugeRewardHelper": "0xf7D5DcE55E6D47852F054697BAB6A1B48A00ddbd"
+      },
+      "20210418-authorizer": {
+        "Authorizer": "0xA331D84eC860Bf466b4CdCcFb4aC09a1B43F3aE6"
+      },
+      "20221123-pool-recovery-helper": {
+        "PoolRecoveryHelper": "0xc3ccacE87f6d3A81724075ADcb5ddd85a8A1bB68"
+      },
+      "20230414-authorizer-wrapper": {
+        "AuthorizerWithAdaptorValidation": "0x03F3Fb107e74F2EAC9358862E91ad3c692712054"
+      },
+      "20230316-l2-balancer-pseudo-minter": {
+        "L2BalancerPseudoMinter": "0xA8920455934Da4D853faac1f94Fe7bEf72943eF1"
+      },
+      "20220721-balancer-queries": {
+        "BalancerQueries": "0x0F3e0c4218b7b0108a3643cFe9D3ec0d4F57c54e"
+      },
+      "20220325-authorizer-adaptor": {
+        "AuthorizerAdaptor": "0x5aDDCCa35b7A0D07C74063c48700C8590E87864E"
+      },
+      "20230316-l2-ve-delegation-proxy": {
+        "NullVotingEscrow": "0x013D4382F291be5688AFBcc741Ee8A24C66B2C92",
+        "VotingEscrowDelegationProxy": "0x7A2535f5fB47b8e44c02Ef5D9990588313fe8F05"
+      },
+      "20220517-protocol-fee-withdrawer": {
+        "ProtocolFeesWithdrawer": "0xdAE7e32ADc5d490a43cCba1f0c736033F2b4eFca"
+      },
+      "20230223-protocol-id-registry": {
+        "ProtocolIdRegistry": "0x6B5dA774890Db7B7b96C6f44e6a4b0F657399E2e"
+      },
+      "20220413-child-chain-gauge-factory": {
+        "RewardsOnlyGauge": "0x45fFd460cC6642B8D8Fb12373DFd77Ceb0f4932B",
+        "ChildChainStreamer": "0x230a59F4d9ADc147480f03B0D3fFfeCd56c3289a",
+        "ChildChainLiquidityGaugeFactory": "0x809B79b53F18E9bc08A961ED4678B901aC93213a"
+      },
+      "20211202-no-protocol-fee-lbp": {
+        "NoProtocolFeeLiquidityBootstrappingPoolFactory": "0x85a80afee867aDf27B50BdB7b76DA70f1E853062"
+      },
+      "20221124-authorizer-adaptor-entrypoint": {
+        "AuthorizerAdaptorEntrypoint": "0x8F42aDBbA1B16EaAE3BB5754915E0D06059aDd75"
+      }
+    },
+    "optimism": {
+      "20230316-child-chain-gauge-factory-v2": {
+        "ChildChainGauge": "0x81cFAE226343B24BA12EC6521Db2C79E7aeeb310",
+        "ChildChainGaugeFactory": "0xa523f47A933D5020b23629dDf689695AA94612Dc"
+      },
+      "20230320-weighted-pool-v4": {
+        "WeightedPoolFactory": "0x230a59F4d9ADc147480f03B0D3fFfeCd56c3289a",
+        "MockWeightedPool": "0x62F5f9a446d198E8E4c84eE56e5217416720EdAF"
+      },
+      "20220513-double-entrypoint-fix-relayer": {
+        "DoubleEntrypointFixRelayer": "0x3b8cA519122CdD8efb272b0D3085453404B25bD0"
+      },
+      "20230404-l2-layer0-bridge-forwarder": {
+        "L2LayerZeroBridgeForwarder": "0xbef13D1e54D0c79DA8B0AD704883E1Cea7EB2100"
+      },
+      "20210418-vault": {
+        "Vault": "0xBA12222222228d8Ba445958a75a0704d566BF2C8",
+        "BalancerHelpers": "0x8E9aa87E45e92bad84D5F8DD1bff34Fb92637dE9",
+        "ProtocolFeesCollector": "0xce88686553686DA562CE7Cea497CE749DA109f9F"
+      },
+      "20220725-protocol-fee-percentages-provider": {
+        "ProtocolFeePercentagesProvider": "0xacAaC3e6D6Df918Bf3c809DFC7d42de0e4a72d4C"
+      },
+      "20230314-batch-relayer-v5": {
+        "BatchRelayerLibrary": "0x45fFd460cC6642B8D8Fb12373DFd77Ceb0f4932B",
+        "BalancerRelayer": "0x03F1ab8b19bcE21EB06C364aEc9e40322572a1e9"
+      },
+      "20230320-composable-stable-pool-v4": {
+        "ComposableStablePoolFactory": "0x1802953277FD955f9a254B80Aa0582f193cF1d77",
+        "MockComposableStablePool": "0x11A4cF51Bb0Bb4D925CAdFDA61FcDA952d64889C"
+      },
+      "20230411-managed-pool-v2": {
+        "ManagedPoolAddRemoveTokenLib": "0x59562f93c447656F6E4799fC1FC7c3d977C3324F",
+        "CircuitBreakerLib": "0x2498A2B0d6462d2260EAC50aE1C3e03F4829BA95",
+        "ManagedPoolAmmLib": "0xDEd7Fef7D8eCdcB74F22f0169e1A9EC696e6695d",
+        "ExternalWeightedMath": "0x8df317a729fcaA260306d7de28888932cb579b88",
+        "RecoveryModeHelper": "0x3B1eb8EB7b43882b385aB30533D9A2BeF9052a98",
+        "ManagedPoolFactory": "0x4C32a8a8fDa4E24139B51b456B42290f51d6A1c4",
+        "MockManagedPool": "0xb4AF4fdd49da2A2BA9522EAdCF86D407a69f19c8"
+      },
+      "00000000-tokens": {
+        "BAL": "0xFE8B128bA8C78aabC59d4c64cEE7fF28e9379921",
+        "WETH": "0x4200000000000000000000000000000000000006"
+      },
+      "20220527-child-chain-gauge-token-adder": {
+        "ChildChainGaugeTokenAdder": "0x6f5a2eE11E7a772AeB5114A20d0D7c0ff61EB8A0"
+      },
+      "20220812-child-chain-reward-helper": {
+        "ChildChainGaugeRewardHelper": "0x8aB784368A1883DA90D8513b48801e2Db1cb2D5D"
+      },
+      "20210418-authorizer": {
+        "Authorizer": "0xA331D84eC860Bf466b4CdCcFb4aC09a1B43F3aE6"
+      },
+      "20221123-pool-recovery-helper": {
+        "PoolRecoveryHelper": "0x26743984e3357eFC59f2fd6C1aFDC310335a61c9"
+      },
+      "20230414-authorizer-wrapper": {
+        "AuthorizerWithAdaptorValidation": "0xAcf05BE5134d64d150d153818F8C67EE36996650"
+      },
+      "20230316-l2-balancer-pseudo-minter": {
+        "L2BalancerPseudoMinter": "0x4fb47126Fa83A8734991E41B942Ac29A3266C968"
+      },
+      "20220721-balancer-queries": {
+        "BalancerQueries": "0xE39B5e3B6D74016b2F6A9673D7d7493B6DF549d5"
+      },
+      "20220325-authorizer-adaptor": {
+        "AuthorizerAdaptor": "0x8F42aDBbA1B16EaAE3BB5754915E0D06059aDd75"
+      },
+      "20230409-erc4626-linear-pool-v4": {
+        "ERC4626LinearPoolFactory": "0x7ADbdabaA80F654568421887c12F09E0C7BD9629",
+        "MockERC4626Token": "0x4bE0E4d6184348c5BA845a4010528CFC779610b8",
+        "MockERC4626LinearPool": "0x2DA61Ef3Cdcb97efb0f7099c02527fabFe94Dee5"
+      },
+      "20230316-l2-ve-delegation-proxy": {
+        "NullVotingEscrow": "0xc3ccacE87f6d3A81724075ADcb5ddd85a8A1bB68",
+        "VotingEscrowDelegationProxy": "0x9dA18982a33FD0c7051B19F0d7C76F2d5E7e017c"
+      },
+      "20220517-protocol-fee-withdrawer": {
+        "ProtocolFeesWithdrawer": "0xC128a9954e6c874eA3d62ce62B468bA073093F25"
+      },
+      "20230223-protocol-id-registry": {
+        "ProtocolIdRegistry": "0x9805dcfD25e6De36bad8fe9D3Fe2c9b44B764102"
+      },
+      "20220413-child-chain-gauge-factory": {
+        "RewardsOnlyGauge": "0xC128468b7Ce63eA702C1f104D55A2566b13D3ABD",
+        "ChildChainStreamer": "0x239e55F427D44C3cc793f49bFB507ebe76638a2b",
+        "ChildChainLiquidityGaugeFactory": "0x2E96068b3D5B5BAE3D7515da4A1D2E52d08A2647"
+      },
+      "20211202-no-protocol-fee-lbp": {
+        "NoProtocolFeeLiquidityBootstrappingPoolFactory": "0xf302f9F50958c5593770FDf4d4812309fF77414f"
+      },
+      "20221124-authorizer-adaptor-entrypoint": {
+        "AuthorizerAdaptorEntrypoint": "0xed86ff0c507D3AF5F35d3523B77C17415FCfFaCb"
+      }
+    },
+    "arbitrum": {
+      "20230316-child-chain-gauge-factory-v2": {
+        "ChildChainGauge": "0xa523f47A933D5020b23629dDf689695AA94612Dc",
+        "ChildChainGaugeFactory": "0x6817149cb753BF529565B4D023d7507eD2ff4Bc0"
+      },
+      "20230320-weighted-pool-v4": {
+        "WeightedPoolFactory": "0xc7E5ED1054A24Ef31D827E6F86caA58B3Bc168d7",
+        "MockWeightedPool": "0x129C6402FF88611Aa59BF2e14B39e091822e2C9c"
+      },
+      "20220513-double-entrypoint-fix-relayer": {
+        "DoubleEntrypointFixRelayer": "0x8E5698dC4897DC12243c8642e77B4f21349Db97C"
+      },
+      "20230404-l2-layer0-bridge-forwarder": {
+        "L2LayerZeroBridgeForwarder": "0x12Ca9De662A7Bf5Dc89e034a5083eF751B08EDe7"
+      },
+      "20210418-vault": {
+        "Vault": "0xBA12222222228d8Ba445958a75a0704d566BF2C8",
+        "BalancerHelpers": "0x77d46184d22CA6a3726a2F500c776767b6A3d6Ab",
+        "ProtocolFeesCollector": "0xce88686553686DA562CE7Cea497CE749DA109f9F"
+      },
+      "20220725-protocol-fee-percentages-provider": {
+        "ProtocolFeePercentagesProvider": "0x5ef4c5352882b10893b70DbcaA0C000965bd23c5"
+      },
+      "20230314-batch-relayer-v5": {
+        "BatchRelayerLibrary": "0xD87F44Df0159DC78029AB9CA7D7e57E7249F5ACD",
+        "BalancerRelayer": "0x598ce0f1ab64B27256759ef99d883EE51138b9bd"
+      },
+      "20230320-composable-stable-pool-v4": {
+        "ComposableStablePoolFactory": "0x2498A2B0d6462d2260EAC50aE1C3e03F4829BA95",
+        "MockComposableStablePool": "0xFF7e6B102516e071dcDA763EE9D02c1515481db5"
+      },
+      "20230411-managed-pool-v2": {
+        "ManagedPoolAddRemoveTokenLib": "0xA69E0Ccf150a29369D8Bbc0B3f510849dB7E8EEE",
+        "CircuitBreakerLib": "0xDF9B5B00Ef9bca66e9902Bd813dB14e4343Be025",
+        "ManagedPoolAmmLib": "0x300Ab2038EAc391f26D9F895dc61F8F66a548833",
+        "ExternalWeightedMath": "0x03F3Fb107e74F2EAC9358862E91ad3c692712054",
+        "RecoveryModeHelper": "0x682f0dDBFd41D1272982f64a499Fb62d80e27589",
+        "ManagedPoolFactory": "0x8eA89804145c007e7D226001A96955ad53836087",
+        "MockManagedPool": "0xf5A71257B331C02dA1Eae52151C3d600f16B76F0"
+      },
+      "00000000-tokens": {
+        "BAL": "0x040d1EdC9569d4Bab2D15287Dc5A4F10F56a56B8",
+        "WETH": "0x82aF49447D8a07e3bd95BD0d56f35241523fBab1"
+      },
+      "20220527-child-chain-gauge-token-adder": {
+        "ChildChainGaugeTokenAdder": "0xbfD9769b061E57e478690299011A028194D66e3C"
+      },
+      "20220812-child-chain-reward-helper": {
+        "ChildChainGaugeRewardHelper": "0xA0DAbEBAAd1b243BBb243f933013d560819eB66f"
+      },
+      "20210418-authorizer": {
+        "Authorizer": "0xA331D84eC860Bf466b4CdCcFb4aC09a1B43F3aE6"
+      },
+      "20221123-pool-recovery-helper": {
+        "PoolRecoveryHelper": "0xb5e56CC3d2e38e53b1166175C59e921A37cDC1E2"
+      },
+      "20230414-authorizer-wrapper": {
+        "AuthorizerWithAdaptorValidation": "0x6B1Da720Be2D11d95177ccFc40A917c2688f396c"
+      },
+      "20230316-l2-balancer-pseudo-minter": {
+        "L2BalancerPseudoMinter": "0xc3ccacE87f6d3A81724075ADcb5ddd85a8A1bB68"
+      },
+      "20230222-merkle-orchard-v2": {
+        "MerkleOrchard": "0x9805dcfD25e6De36bad8fe9D3Fe2c9b44B764102"
+      },
+      "20220721-balancer-queries": {
+        "BalancerQueries": "0xE39B5e3B6D74016b2F6A9673D7d7493B6DF549d5"
+      },
+      "20220325-authorizer-adaptor": {
+        "AuthorizerAdaptor": "0x0F3e0c4218b7b0108a3643cFe9D3ec0d4F57c54e"
+      },
+      "20230409-erc4626-linear-pool-v4": {
+        "ERC4626LinearPoolFactory": "0x7ADbdabaA80F654568421887c12F09E0C7BD9629",
+        "MockERC4626Token": "0x4bE0E4d6184348c5BA845a4010528CFC779610b8",
+        "MockERC4626LinearPool": "0x3f53A862919ccFA023CB6AcE91378a79Fb0F6Bf5"
+      },
+      "20230316-l2-ve-delegation-proxy": {
+        "NullVotingEscrow": "0x9dA18982a33FD0c7051B19F0d7C76F2d5E7e017c",
+        "VotingEscrowDelegationProxy": "0x81cFAE226343B24BA12EC6521Db2C79E7aeeb310"
+      },
+      "20220517-protocol-fee-withdrawer": {
+        "ProtocolFeesWithdrawer": "0x70Bbd023481788e443472e123AB963e5EBF58D06"
+      },
+      "20230223-protocol-id-registry": {
+        "ProtocolIdRegistry": "0x5cF4928a3205728bd12830E1840F7DB85c62a4B9"
+      },
+      "20220413-child-chain-gauge-factory": {
+        "RewardsOnlyGauge": "0x41B953164995c11C81DA73D212ED8Af25741b7Ac",
+        "ChildChainStreamer": "0xD7FAD3bd59D6477cbe1BE7f646F7f1BA25b230f8",
+        "ChildChainLiquidityGaugeFactory": "0xb08E16cFc07C684dAA2f93C70323BAdb2A6CBFd2"
+      },
+      "20211202-no-protocol-fee-lbp": {
+        "NoProtocolFeeLiquidityBootstrappingPoolFactory": "0x1802953277FD955f9a254B80Aa0582f193cF1d77"
+      },
+      "20221124-authorizer-adaptor-entrypoint": {
+        "AuthorizerAdaptorEntrypoint": "0x97207B095e4D5C9a6e4cfbfcd2C3358E03B90c4A"
+      }
+    },
+    "polygon": {
+      "20230316-child-chain-gauge-factory-v2": {
+        "ChildChainGauge": "0xc9b36096f5201ea332Db35d6D195774ea0D5988f",
+        "ChildChainGaugeFactory": "0x22625eEDd92c81a219A83e1dc48f88d54786B017"
+      },
+      "20230320-weighted-pool-v4": {
+        "WeightedPoolFactory": "0xFc8a407Bba312ac761D8BFe04CE1201904842B76",
+        "MockWeightedPool": "0xb77E03655ee894AadE216A83D05511A9F9895126"
+      },
+      "20220513-double-entrypoint-fix-relayer": {
+        "DoubleEntrypointFixRelayer": "0x79d0011892fe558FC5a4ec7D4Ca5db59069f460f"
+      },
+      "20230404-l2-layer0-bridge-forwarder": {
+        "L2LayerZeroBridgeForwarder": "0xB98F54A74590a6e681fF664b2Fa22EBfFe1a929E"
+      },
+      "20210418-vault": {
+        "Vault": "0xBA12222222228d8Ba445958a75a0704d566BF2C8",
+        "BalancerHelpers": "0x239e55F427D44C3cc793f49bFB507ebe76638a2b",
+        "ProtocolFeesCollector": "0xce88686553686DA562CE7Cea497CE749DA109f9F"
+      },
+      "20220725-protocol-fee-percentages-provider": {
+        "ProtocolFeePercentagesProvider": "0x42AC0e6FA47385D55Aff070d79eF0079868C48a6"
+      },
+      "20230314-batch-relayer-v5": {
+        "BatchRelayerLibrary": "0x4271de2595c3d85d2D455C5778adF2d7Ad54322C",
+        "BalancerRelayer": "0xd18d5D377eb23362e54Fa496597d7E962d56C554"
+      },
+      "20230320-composable-stable-pool-v4": {
+        "ComposableStablePoolFactory": "0x6Ab5549bBd766A43aFb687776ad8466F8b42f777",
+        "MockComposableStablePool": "0x0f25823cF786b78696b16536e2F2B9835289AB51"
+      },
+      "20230411-managed-pool-v2": {
+        "ManagedPoolAddRemoveTokenLib": "0xf553bf40DB86c35f3058434039D51Aad29c6180b",
+        "CircuitBreakerLib": "0xEDFd0A7005A7c72c44Ff13bEa370c86A9D11beE1",
+        "ManagedPoolAmmLib": "0xCEFD59EedAFA9EE8Ccda1AaF944088E68B5BD890",
+        "ExternalWeightedMath": "0x72EbAFDdC4C7d3EB702c81295D90A8B29F008a03",
+        "RecoveryModeHelper": "0x1eb79551CA0e83EC145608BC39a0c7F10cA21Aa5",
+        "ManagedPoolFactory": "0xB8Dfa4fd0F083de2B7EDc0D5eeD5E684e54bA45D",
+        "MockManagedPool": "0x074eFD7806e6c28e8b6611075b1Aa62c6c408090"
+      },
+      "00000000-tokens": {
+        "BAL": "0x9a71012B13CA4d3D0Cdc72A177DF3ef03b0E76A3",
+        "WETH": "0x0d500b1d8e8ef31e21c99d1db9a6444d3adf1270"
+      },
+      "20220527-child-chain-gauge-token-adder": {
+        "ChildChainGaugeTokenAdder": "0x1554ee754707D5C93b7934AF404747Aba521Aaf2"
+      },
+      "20220812-child-chain-reward-helper": {
+        "ChildChainGaugeRewardHelper": "0xaEb406b0E430BF5Ea2Dc0B9Fe62E4E53f74B3a33"
+      },
+      "20210418-authorizer": {
+        "Authorizer": "0xA331D84eC860Bf466b4CdCcFb4aC09a1B43F3aE6"
+      },
+      "20221123-pool-recovery-helper": {
+        "PoolRecoveryHelper": "0x495F696430F4A51F7fcB98FbE68a9Cb7A07fB1bA"
+      },
+      "20230414-authorizer-wrapper": {
+        "AuthorizerWithAdaptorValidation": "0x020301b0a99EFB6816B41007765Fb577259eC418"
+      },
+      "20230316-l2-balancer-pseudo-minter": {
+        "L2BalancerPseudoMinter": "0x47B489bf5836f83ABD928C316F8e39bC0587B020"
+      },
+      "20230222-merkle-orchard-v2": {
+        "MerkleOrchard": "0xc3ccacE87f6d3A81724075ADcb5ddd85a8A1bB68"
+      },
+      "20220721-balancer-queries": {
+        "BalancerQueries": "0xE39B5e3B6D74016b2F6A9673D7d7493B6DF549d5"
+      },
+      "20220325-authorizer-adaptor": {
+        "AuthorizerAdaptor": "0xC128468b7Ce63eA702C1f104D55A2566b13D3ABD"
+      },
+      "20230409-erc4626-linear-pool-v4": {
+        "ERC4626LinearPoolFactory": "0x5C5fCf8fBd4cd563cED27e7D066b88ee20E1867A",
+        "MockERC4626Token": "0x19DFEF0a828EEC0c85FbB335aa65437417390b85",
+        "MockERC4626LinearPool": "0xc55eC796A4dEBE625d95436a3531f4950b11bdcf"
+      },
+      "20230316-l2-ve-delegation-proxy": {
+        "NullVotingEscrow": "0x1311Fbc9F60359639174c1e7cC2032DbDb5Cc4d1",
+        "VotingEscrowDelegationProxy": "0x0f08eEf2C785AA5e7539684aF04755dEC1347b7c"
+      },
+      "20220517-protocol-fee-withdrawer": {
+        "ProtocolFeesWithdrawer": "0xEF44D6786b2b4d544b7850Fe67CE6381626Bf2D6"
+      },
+      "20230223-protocol-id-registry": {
+        "ProtocolIdRegistry": "0xa523f47A933D5020b23629dDf689695AA94612Dc"
+      },
+      "20220413-child-chain-gauge-factory": {
+        "RewardsOnlyGauge": "0x2E96068b3D5B5BAE3D7515da4A1D2E52d08A2647",
+        "ChildChainStreamer": "0x6f5a2eE11E7a772AeB5114A20d0D7c0ff61EB8A0",
+        "ChildChainLiquidityGaugeFactory": "0x3b8cA519122CdD8efb272b0D3085453404B25bD0"
+      },
+      "20211202-no-protocol-fee-lbp": {
+        "NoProtocolFeeLiquidityBootstrappingPoolFactory": "0x41B953164995c11C81DA73D212ED8Af25741b7Ac"
+      },
+      "20221124-authorizer-adaptor-entrypoint": {
+        "AuthorizerAdaptorEntrypoint": "0xAB093cd16e765b5B23D34030aaFaF026558e0A19"
+      }
+    },
+    "mainnet": {
+      "20220530-preseeded-voting-escrow-delegation": {
+        "PreseededVotingEscrowDelegation": "0xB496FF44746A8693A060FafD984Da41B253f6790"
+      },
+      "20230320-weighted-pool-v4": {
+        "WeightedPoolFactory": "0x897888115Ada5773E02aA29F775430BFB5F34c51",
+        "MockWeightedPool": "0x8055b8C947De30130BC1Ec750C8F345a50006B23"
+      },
+      "20220823-arbitrum-root-gauge-factory-v2": {
+        "ArbitrumRootGaugeFactory": "0x1c99324EDC771c82A0DCCB780CC7DDA0045E50e7",
+        "ArbitrumRootGauge": "0x6337949cbC4825Bbd09242c811770F6F6fee9FfC"
+      },
+      "20221205-l2-gauge-checkpointer": {
+        "L2GaugeCheckpointer": "0xf23b4DB826DbA14c0e857029dfF076b1c0264843"
+      },
+      "20220513-double-entrypoint-fix-relayer": {
+        "DoubleEntrypointFixRelayer": "0xcA96C4f198d343E251b1a01F3EBA061ef3DA73C1"
+      },
+      "20220325-bal-token-holder-factory": {
+        "BALTokenHolderFactory": "0xB848f50141F3D4255b37aC288C25C109104F2158"
+      },
+      "20220714-fee-distributor-v2": {
+        "FeeDistributor": "0xD3cf852898b21fc233251427c2DC93d3d604F3BB"
+      },
+      "20230217-gnosis-root-gauge-factory": {
+        "GnosisRootGaugeFactory": "0x2a18B396829bc29F66a1E59fAdd7a0269A6605E8",
+        "GnosisRootGauge": "0x05277CE7D1e365d660624612d8b8b9B55bFD4518"
+      },
+      "20210418-vault": {
+        "Vault": "0xBA12222222228d8Ba445958a75a0704d566BF2C8",
+        "BalancerHelpers": "0x5aDDCCa35b7A0D07C74063c48700C8590E87864E",
+        "ProtocolFeesCollector": "0xce88686553686DA562CE7Cea497CE749DA109f9F"
+      },
+      "20220725-protocol-fee-percentages-provider": {
+        "ProtocolFeePercentagesProvider": "0x97207B095e4D5C9a6e4cfbfcd2C3358E03B90c4A"
+      },
+      "20220420-smart-wallet-checker": {
+        "SmartWalletChecker": "0x7869296Efd0a76872fEE62A058C8fBca5c1c826C"
+      },
+      "20230314-batch-relayer-v5": {
+        "BatchRelayerLibrary": "0xf77018c0d817dA22caDbDf504C00c0d32cE1e5C2",
+        "BalancerRelayer": "0xfeA793Aa415061C483D2390414275AD314B3F621"
+      },
+      "20230208-euler-linear-pool": {
+        "EulerLinearPoolFactory": "0x5F43FBa61f63Fa6bFF101a0A0458cEA917f6B347",
+        "MockEulerToken": "0xC101dcA301a4011C1F925e9622e749e550a1B667",
+        "MockEulerLinearPool": "0xDEC02e6642e2c999aF429F5cE944653CAd15e093"
+      },
+      "20220325-balancer-token-admin": {
+        "BalancerTokenAdmin": "0xf302f9F50958c5593770FDf4d4812309fF77414f"
+      },
+      "20230320-composable-stable-pool-v4": {
+        "ComposableStablePoolFactory": "0xfADa0f4547AB2de89D1304A668C39B3E09Aa7c76",
+        "MockComposableStablePool": "0x5537f945D8c3FCFDc1b8DECEEBD220FAD26aFdA8"
+      },
+      "20230411-managed-pool-v2": {
+        "ManagedPoolAddRemoveTokenLib": "0x4148bf5B0688eD0a87F317c6534Cb841f503349e",
+        "CircuitBreakerLib": "0x4967b3353Cdf9E5C67421a3890d35f2f3BB50527",
+        "ManagedPoolAmmLib": "0xb37646ACBb1A91287721B2CdBe01BA0DbA5E57A2",
+        "ExternalWeightedMath": "0x3db89f0CA3b388f2BcDbccD2ff8E13C22459CF75",
+        "RecoveryModeHelper": "0x7827108Af2fd9910EA7cf361d9b827941FA7D809",
+        "ManagedPoolFactory": "0xBF904F9F340745B4f0c4702c7B6Ab1e808eA6b93",
+        "MockManagedPool": "0xD0cbF6765997b7CA7Be6440F5E305B2ec7B96065"
+      },
+      "20220325-ve-delegation": {
+        "VotingEscrowDelegation": "0x2E96068b3D5B5BAE3D7515da4A1D2E52d08A2647",
+        "VotingEscrowDelegationProxy": "0x6f5a2eE11E7a772AeB5114A20d0D7c0ff61EB8A0"
+      },
+      "20220822-mainnet-gauge-factory-v2": {
+        "LiquidityGaugeV5": "0xe5F96070CA00cd54795416B1a4b4c2403231c548",
+        "LiquidityGaugeFactory": "0xf1665E19bc105BE4EDD3739F88315cC699cc5b65"
+      },
+      "00000000-tokens": {
+        "BAL": "0xba100000625a3754423978a60c9317c58a424e3D",
+        "WETH": "0xC02aaA39b223FE8D0A0e5C4F27eAD9083C756Cc2"
+      },
+      "20220823-optimism-root-gauge-factory-v2": {
+        "OptimismRootGaugeFactory": "0x866D4B65694c66fbFD15Dd6fa933D0A6b3940A36",
+        "OptimismRootGauge": "0xBC230b1a66A138cD9cFC7b352390025978dFAdde"
+      },
+      "20210418-authorizer": {
+        "Authorizer": "0xA331D84eC860Bf466b4CdCcFb4aC09a1B43F3aE6"
+      },
+      "20210812-wsteth-rate-provider": {
+        "WstETHRateProvider": "0x72D07D7DcA67b8A406aD1Ec34ce969c90bFEE768"
+      },
+      "20221123-pool-recovery-helper": {
+        "PoolRecoveryHelper": "0x1b300C86980a5195bCF49bD419A068D98dC133Db"
+      },
+      "20221205-veboost-v2": {
+        "VeBoostV2": "0x67F8DF125B796B05895a6dc8Ecf944b9556ecb0B"
+      },
+      "20230414-authorizer-wrapper": {
+        "AuthorizerWithAdaptorValidation": "0x6048A8c631Fb7e77EcA533Cf9C29784e482391e7"
+      },
+      "20220707-distribution-scheduler": {
+        "DistributionScheduler": "0xBd35248F8325DD1cB2bBf9D01E80A6bb99a792Dd"
+      },
+      "20230222-merkle-orchard-v2": {
+        "MerkleOrchard": "0xE3881627B8DeeBCCF9c23B291430a549Fc0bE5F7"
+      },
+      "20220721-balancer-queries": {
+        "BalancerQueries": "0xE39B5e3B6D74016b2F6A9673D7d7493B6DF549d5"
+      },
+      "20220325-authorizer-adaptor": {
+        "AuthorizerAdaptor": "0x8F42aDBbA1B16EaAE3BB5754915E0D06059aDd75"
+      },
+      "20230215-single-recipient-gauge-factory-v2": {
+        "SingleRecipientGaugeFactory": "0x4fb47126Fa83A8734991E41B942Ac29A3266C968",
+        "SingleRecipientGauge": "0xb2007B8B7E0260042517f635CFd8E6dD2Dd7f007"
+      },
+      "20230409-erc4626-linear-pool-v4": {
+        "ERC4626LinearPoolFactory": "0x813EE7a840CE909E7Fea2117A44a90b8063bd4fd",
+        "MockERC4626Token": "0xB99eDc4b289B0F2284fCF3f66884191BdCe29624",
+        "MockERC4626LinearPool": "0x9516a2d25958EdB8da246a320f2c7d94A0DBe25d"
+      },
+      "20220517-protocol-fee-withdrawer": {
+        "ProtocolFeesWithdrawer": "0x5ef4c5352882b10893b70DbcaA0C000965bd23c5"
+      },
+      "20220325-gauge-controller": {
+        "VotingEscrow": "0xC128a9954e6c874eA3d62ce62B468bA073093F25",
+        "GaugeController": "0xC128468b7Ce63eA702C1f104D55A2566b13D3ABD",
+        "BalancerMinter": "0x239e55F427D44C3cc793f49bFB507ebe76638a2b"
+      },
+      "20230109-gauge-adder-v3": {
+        "GaugeAdder": "0x5efBb12F01f27F0E020565866effC1dA491E91A4"
+      },
+      "20230223-protocol-id-registry": {
+        "ProtocolIdRegistry": "0xc3ccacE87f6d3A81724075ADcb5ddd85a8A1bB68"
+      },
+      "20211202-no-protocol-fee-lbp": {
+        "NoProtocolFeeLiquidityBootstrappingPoolFactory": "0x0F3e0c4218b7b0108a3643cFe9D3ec0d4F57c54e"
+      },
+      "20221124-authorizer-adaptor-entrypoint": {
+        "AuthorizerAdaptorEntrypoint": "0xf5dECDB1f3d1ee384908Fbe16D2F0348AE43a9eA"
+      },
+      "20220823-polygon-root-gauge-factory-v2": {
+        "PolygonRootGaugeFactory": "0xa98Bce70c92aD2ef3288dbcd659bC0d6b62f8F13",
+        "PolygonRootGauge": "0xfeb1A24C2752E53576133cdb718F25bC64eBDD52"
+      }
+    },
+    "avalanche": {
+      "20230320-weighted-pool-v4": {
+        "WeightedPoolFactory": "0x230a59F4d9ADc147480f03B0D3fFfeCd56c3289a",
+        "MockWeightedPool": "0xb2b5B452d53401391155EA48C4451f6E9b0dD058"
+      },
+      "20210418-vault": {
+        "Vault": "0xBA12222222228d8Ba445958a75a0704d566BF2C8",
+        "ProtocolFeesCollector": "0xce88686553686DA562CE7Cea497CE749DA109f9F",
+        "BalancerHelpers": "0x8E9aa87E45e92bad84D5F8DD1bff34Fb92637dE9"
+      },
+      "20220725-protocol-fee-percentages-provider": {
+        "ProtocolFeePercentagesProvider": "0x239e55F427D44C3cc793f49bFB507ebe76638a2b"
+      },
+      "20230314-batch-relayer-v5": {
+        "BatchRelayerLibrary": "0x45fFd460cC6642B8D8Fb12373DFd77Ceb0f4932B",
+        "BalancerRelayer": "0x03F1ab8b19bcE21EB06C364aEc9e40322572a1e9"
+      },
+      "00000000-tokens": {
+        "BAL": "0x8239a6b877804206c7799028232a7188da487cec",
+        "WETH": "0xb31f66aa3c1e785363f0875a1b74e27b85fd66c7"
+      },
+      "20220527-child-chain-gauge-token-adder": {
+        "ChildChainGaugeTokenAdder": "0xf302f9F50958c5593770FDf4d4812309fF77414f"
+      },
+      "20220812-child-chain-reward-helper": {
+        "ChildChainGaugeRewardHelper": "0x2E96068b3D5B5BAE3D7515da4A1D2E52d08A2647"
+      },
+      "20210418-authorizer": {
+        "Authorizer": "0xA331D84eC860Bf466b4CdCcFb4aC09a1B43F3aE6"
+      },
+      "20221123-pool-recovery-helper": {
+        "PoolRecoveryHelper": "0x3b8cA519122CdD8efb272b0D3085453404B25bD0"
+      },
+      "20230414-authorizer-wrapper": {
+        "AuthorizerWithAdaptorValidation": "0x8df317a729fcaA260306d7de28888932cb579b88"
+      },
+      "20220707-distribution-scheduler": {
+        "DistributionScheduler": "0xC128a9954e6c874eA3d62ce62B468bA073093F25"
+      },
+      "20220721-balancer-queries": {
+        "BalancerQueries": "0xC128468b7Ce63eA702C1f104D55A2566b13D3ABD"
+      },
+      "20220325-authorizer-adaptor": {
+        "AuthorizerAdaptor": "0xdAE7e32ADc5d490a43cCba1f0c736033F2b4eFca"
+      },
+      "20220517-protocol-fee-withdrawer": {
+        "ProtocolFeesWithdrawer": "0x8F42aDBbA1B16EaAE3BB5754915E0D06059aDd75"
+      },
+      "20220413-child-chain-gauge-factory": {
+        "RewardsOnlyGauge": "0x41B953164995c11C81DA73D212ED8Af25741b7Ac",
+        "ChildChainStreamer": "0xD7FAD3bd59D6477cbe1BE7f646F7f1BA25b230f8",
+        "ChildChainLiquidityGaugeFactory": "0xb08E16cFc07C684dAA2f93C70323BAdb2A6CBFd2"
+      },
+      "20211202-no-protocol-fee-lbp": {
+        "NoProtocolFeeLiquidityBootstrappingPoolFactory": "0x0F3e0c4218b7b0108a3643cFe9D3ec0d4F57c54e"
+      },
+      "20221124-authorizer-adaptor-entrypoint": {
+        "AuthorizerAdaptorEntrypoint": "0x4E7bBd911cf1EFa442BC1b2e9Ea01ffE785412EC"
+      }
+    },
+    "bsc": {
+      "20230320-weighted-pool-v4": {
+        "WeightedPoolFactory": "0x230a59F4d9ADc147480f03B0D3fFfeCd56c3289a",
+        "MockWeightedPool": "0xE7eE2d64bCB1B2C915898E9DA0947DA1D413DCAF"
+      },
+      "20230404-l2-layer0-bridge-forwarder": {
+        "L2LayerZeroBridgeForwarder": "0x20AabBC59F3cE58e0ef931380d8Bf2A6fE681019"
+      },
+      "20210418-vault": {
+        "Vault": "0xBA12222222228d8Ba445958a75a0704d566BF2C8",
+        "ProtocolFeesCollector": "0xce88686553686DA562CE7Cea497CE749DA109f9F",
+        "BalancerHelpers": "0x8E9aa87E45e92bad84D5F8DD1bff34Fb92637dE9"
+      },
+      "20220725-protocol-fee-percentages-provider": {
+        "ProtocolFeePercentagesProvider": "0xb08E16cFc07C684dAA2f93C70323BAdb2A6CBFd2"
+      },
+      "20230314-batch-relayer-v5": {
+        "BatchRelayerLibrary": "0x45fFd460cC6642B8D8Fb12373DFd77Ceb0f4932B",
+        "BalancerRelayer": "0x03F1ab8b19bcE21EB06C364aEc9e40322572a1e9"
+      },
+      "20230320-composable-stable-pool-v4": {
+        "ComposableStablePoolFactory": "0x1802953277FD955f9a254B80Aa0582f193cF1d77",
+        "MockComposableStablePool": "0x7C53dBf28a23faB07E322fb35eC53A296f548a45"
+      },
+      "20230411-managed-pool-v2": {
+        "ManagedPoolAddRemoveTokenLib": "0x59562f93c447656F6E4799fC1FC7c3d977C3324F",
+        "CircuitBreakerLib": "0x2498A2B0d6462d2260EAC50aE1C3e03F4829BA95",
+        "ManagedPoolAmmLib": "0xDEd7Fef7D8eCdcB74F22f0169e1A9EC696e6695d",
+        "ExternalWeightedMath": "0x8df317a729fcaA260306d7de28888932cb579b88",
+        "RecoveryModeHelper": "0x3B1eb8EB7b43882b385aB30533D9A2BeF9052a98",
+        "ManagedPoolFactory": "0x4C32a8a8fDa4E24139B51b456B42290f51d6A1c4",
+        "MockManagedPool": "0x710A461Ea47AE36C45CBA8Cb6ce964e8A5cb87eD"
+      },
+      "00000000-tokens": {
+        "WETH": "0xbb4CdB9CBd36B01bD1cBaEBF2De08d9173bc095c",
+        "BAL": "0xf9815ea1a246401d2ebf2185f207d7db579a2500"
+      },
+      "20210418-authorizer": {
+        "Authorizer": "0xA331D84eC860Bf466b4CdCcFb4aC09a1B43F3aE6"
+      },
+      "20221123-pool-recovery-helper": {
+        "PoolRecoveryHelper": "0x3b8cA519122CdD8efb272b0D3085453404B25bD0"
+      },
+      "20230414-authorizer-wrapper": {
+        "AuthorizerWithAdaptorValidation": "0xAcf05BE5134d64d150d153818F8C67EE36996650"
+      },
+      "20220721-balancer-queries": {
+        "BalancerQueries": "0x239e55F427D44C3cc793f49bFB507ebe76638a2b"
+      },
+      "20220325-authorizer-adaptor": {
+        "AuthorizerAdaptor": "0x41B953164995c11C81DA73D212ED8Af25741b7Ac"
+      },
+      "20220517-protocol-fee-withdrawer": {
+        "ProtocolFeesWithdrawer": "0xD7FAD3bd59D6477cbe1BE7f646F7f1BA25b230f8"
+      },
+      "20211202-no-protocol-fee-lbp": {
+        "NoProtocolFeeLiquidityBootstrappingPoolFactory": "0xC128468b7Ce63eA702C1f104D55A2566b13D3ABD"
+      },
+      "20221124-authorizer-adaptor-entrypoint": {
+        "AuthorizerAdaptorEntrypoint": "0xeb151668006CD04DAdD098AFd0a82e78F77076c3"
+      }
+    },
+    "kovan": {
+      "20220325-bal-token-holder-factory": {
+        "BALTokenHolderFactory": "0xa98Bce70c92aD2ef3288dbcd659bC0d6b62f8F13"
+      },
+      "20210418-vault": {
+        "Vault": "0xBA12222222228d8Ba445958a75a0704d566BF2C8",
+        "BalancerHelpers": "0x94905e703fEAd7f0fD0eEe355D267eE909784e6d",
+        "ProtocolFeesCollector": "0xce88686553686DA562CE7Cea497CE749DA109f9F"
+      },
+      "20220325-balancer-token-admin": {
+        "BalancerTokenAdmin": "0xAB093cd16e765b5B23D34030aaFaF026558e0A19"
+      },
+      "20220325-ve-delegation": {
+        "VotingEscrowDelegation": "0xDc6d62ae091ea77331542042A72e5E38B188837C",
+        "VotingEscrowDelegationProxy": "0x98D0d0a65cBeCCaa647a5a95cf27Cf2f00E1231C"
+      },
+      "20220325-test-balancer-token": {
+        "TestBalancerToken": "0xa2D801064652A269D92EE2A59F3261155ec66830"
+      },
+      "20210418-authorizer": {
+        "Authorizer": "0xA331D84eC860Bf466b4CdCcFb4aC09a1B43F3aE6"
+      },
+      "20210812-wsteth-rate-provider": {
+        "WstETHRateProvider": "0xD7FAD3bd59D6477cbe1BE7f646F7f1BA25b230f8"
+      },
+      "20220325-authorizer-adaptor": {
+        "AuthorizerAdaptor": "0x97207B095e4D5C9a6e4cfbfcd2C3358E03B90c4A"
+      },
+      "20220325-gauge-controller": {
+        "VotingEscrow": "0x16ba924752EF283C7946db8A122a6742AA35C1DC",
+        "GaugeController": "0x35c425234DC42e7402f54cC54573f77842963a56",
+        "BalancerMinter": "0x1bbfa323155526F54EEc458571Bb5A75e0c41507"
+      },
+      "20220413-child-chain-gauge-factory": {
+        "RewardsOnlyGauge": "0x868543Bb787317632F94fCfe8eB85406B123590C",
+        "ChildChainStreamer": "0x4De578134995bEA8480D7696946217f356339Ab8",
+        "ChildChainLiquidityGaugeFactory": "0xf9ac7B9dF2b3454E841110CcE5550bD5AC6f875F"
+      },
+      "20211202-no-protocol-fee-lbp": {
+        "NoProtocolFeeLiquidityBootstrappingPoolFactory": "0x1B57f637Ce3408f1f834b0b70f9A595b062DAea7"
+      }
+    },
+    "rinkeby": {
+      "20210418-vault": {
+        "Vault": "0xBA12222222228d8Ba445958a75a0704d566BF2C8",
+        "BalancerHelpers": "0x5aDDCCa35b7A0D07C74063c48700C8590E87864E"
+      },
+      "20210418-authorizer": {
+        "Authorizer": "0xA331D84eC860Bf466b4CdCcFb4aC09a1B43F3aE6"
+      },
+      "20211202-no-protocol-fee-lbp": {
+        "NoProtocolFeeLiquidityBootstrappingPoolFactory": "0x41B953164995c11C81DA73D212ED8Af25741b7Ac"
+      }
+    }
+  },
+  "old": {
+    "goerli": {
+      "20230206-composable-stable-pool-v3": {
+        "ComposableStablePoolFactory": "0xbfD9769b061E57e478690299011A028194D66e3C",
+        "MockComposableStablePool": "0x2EF26d97B5870600BE341561298938c2e5df84f0"
+      },
+      "20220628-gauge-adder-v2": {
+        "GaugeAdder": "0x42bAF6db21250fa76d015621D2F6DF172858A5cb"
+      },
+      "20220325-single-recipient-gauge-factory": {
+        "SingleRecipientGaugeFactory": "0xd14FFA46C211eac64338c27549c3312380f850Fa",
+        "SingleRecipientGauge": "0x5825120665066E3B54D1B21ce45889aff5d41f62"
+      },
+      "20220916-batch-relayer-v4": {
+        "BatchRelayerLibrary": "0xeb151668006CD04DAdD098AFd0a82e78F77076c3",
+        "BalancerRelayer": "0x00e695aA8000df01B8DC8401B4C34Fba5D56BBb2"
+      },
+      "20210721-liquidity-bootstrapping-pool": {
+        "LiquidityBootstrappingPoolFactory": "0xb48Cc42C45d262534e46d5965a9Ac496F1B7a830"
+      },
+      "20221122-composable-stable-pool-v2": {
+        "ComposableStablePoolFactory": "0x85a80afee867aDf27B50BdB7b76DA70f1E853062",
+        "MockComposableStablePool": "0x373b347bc87998b151A5E9B6bB6ca692b766648a"
+      },
+      "20220425-unbutton-aave-linear-pool": {
+        "UnbuttonAaveLinearPoolFactory": "0x4b9A00DD766DB94Df48C2901C321174a5cE75529"
+      },
+      "20230206-weighted-pool-v3": {
+        "WeightedPoolFactory": "0x26575A44755E0aaa969FDda1E4291Df22C5624Ea",
+        "MockWeightedPool": "0x0441ff033652bcEB75a011887F17B5dfC84Ddc6f"
+      },
+      "20221021-managed-pool": {
+        "ManagedPoolAddRemoveTokenLib": "0x0343311A33994a3d27273505560ED73dC2BD0Db3",
+        "CircuitBreakerLib": "0x782640c4e71F523152AE0942ee7589fB24c8367D",
+        "ManagedPoolFactory": "0x3EAd2FdcBEE244d9fA5b8d233EfedD34Bb7D2434"
+      },
+      "20211208-aave-linear-pool": {
+        "AaveLinearPoolFactory": "0x94470C12fc192e071F12Fec1152861608CE01562"
+      },
+      "20220817-aave-rebalanced-linear-pool": {
+        "AaveLinearPoolFactory": "0xC128468b7Ce63eA702C1f104D55A2566b13D3ABD"
+      },
+      "20220908-weighted-pool-v2": {
+        "WeightedPoolFactory": "0x94f68b54191F62f781Fe8298A8A5Fa3ed772d227"
+      },
+      "20230213-yearn-linear-pool": {
+        "YearnLinearPoolFactory": "0x2a12a248f9b56cE6e7fAbA62D1bBA8735FB513F9",
+        "MockYearnTokenVault": "0x057Cf03e3E0EC8D5a5FaFb3A0fC99a0aA0C1989e",
+        "MockYearnLinearPool": "0x6D2b8b4EBa8ac88F8467D84bE010d344bFBD90e2"
+      },
+      "20230206-erc4626-linear-pool-v3": {
+        "ERC4626LinearPoolFactory": "0xBa240C856498e2d7a70AF4911AaFae0D6b565a5B",
+        "MockERC4626Token": "0xa1C22168262fbaf5a87b9Aa6A13122BE630085E9",
+        "MockERC4626LinearPool": "0x744644537fB1AE7c4E05f6331e87126b4fd0C325"
+      },
+      "20211012-merkle-orchard": {
+        "MerkleOrchard": "0x35b50C7955e7D0E8298e043C9F4dCDef737b9f5a"
+      },
+      "20220420-fee-distributor": {
+        "FeeDistributor": "0x7F91dcdE02F72b478Dc73cB21730cAcA907c8c44"
+      },
+      "20220325-gauge-adder": {
+        "GaugeAdder": "0x0Df18b22fB1DD4c1D4bfBF783A8acF0758979328"
+      },
+      "20230213-gearbox-linear-pool": {
+        "GearboxLinearPoolFactory": "0x806E02Dea8d4a0882caD9fA3Fa75B212328692dE",
+        "MockGearboxVault": "0xa496bE32F7C9Abc49E8ba91A23d37cF6fA58651B",
+        "MockGearboxDieselToken": "0x4E11AEec21baF1660b1a46472963cB3DA7811C89",
+        "MockGearboxLinearPool": "0x007E1830BcC05039c3926d6478F6B2912376e52E"
+      },
+      "20210812-lido-relayer": {
+        "LidoRelayer": "0xdc10e8f47B6858E32218E01db224795235872B19"
+      },
+      "20210907-investment-pool": {
+        "InvestmentPoolFactory": "0x3C9F788131A26329A689Bd951b5aCb4454669487"
+      },
+      "20230206-aave-rebalanced-linear-pool-v4": {
+        "AaveLinearPoolFactory": "0x76578ecf9a141296Ec657847fb45B0585bCDa3a6",
+        "MockAaveLendingPool": "0xb9F8AB3ED3F3aCBa64Bc6cd2DcA74B7F38fD7B88",
+        "MockStaticAToken": "0x9dd5Db2d38b50bEF682cE532bCca5DfD203915E1",
+        "MockAaveLinearPool": "0x707B7d4a1bAe449d546DCAb869256591bbB3d70b"
+      },
+      "20211203-batch-relayer": {
+        "BatchRelayerLibrary": "0xFB2f4CE9843E1069CC1F9d76e0236d6dFF2b1eeA",
+        "BalancerRelayer": "0x8002d3e5875b38C5B03da83aeB430dC63E047F62"
+      },
+      "20220404-erc4626-linear-pool-v2": {
+        "ERC4626LinearPoolFactory": "0xdc15A3C5D16413C1C1F75Db0f75c4ae2a4104650"
+      },
+      "20220609-stable-pool-v2": {
+        "StablePoolFactory": "0xD360B8afb3d7463bE823bE1Ec3c33aA173EbE86e"
+      },
+      "20211208-stable-phantom-pool": {
+        "StablePhantomPoolFactory": "0x41E9036AE350baEDCC7107760A020Dca3c0731ec"
+      },
+      "20221207-aave-rebalanced-linear-pool-v3": {
+        "AaveLinearPoolFactory": "0x70Bbd023481788e443472e123AB963e5EBF58D06",
+        "MockAaveLendingPool": "0xBF6d7e9a6db814D2856c9e2f83442f60f9D40738",
+        "MockStaticAToken": "0xAAda0aF3FA5C819145dA760bab8F180DaeeA8514",
+        "MockAaveLinearPool": "0xf93F6382913d1dE6Bdf683A94be8349751af8d59"
+      },
+      "20210624-stable-pool": {
+        "StablePoolFactory": "0x44afeb87c871D8fEA9398a026DeA2BD3A13F5769"
+      },
+      "20210418-weighted-pool": {
+        "WeightedPoolFactory": "0x8E9aa87E45e92bad84D5F8DD1bff34Fb92637dE9",
+        "WeightedPool2TokensFactory": "0xA5bf2ddF098bb0Ef6d120C98217dD6B141c74EE0"
+      },
+      "20221202-timelock-authorizer": {
+        "TimelockAuthorizerMigrator": "0xee47ef369CDa5a65639D7794b70a4d247826DdF3",
+        "TimelockAuthorizer": "0x5D21A65b6Ec0687f471891257F1DA25ab8be6153"
+      },
+      "20220325-mainnet-gauge-factory": {
+        "LiquidityGaugeV5": "0xfE734760aD346d4013FD597c4f4a897aef332128",
+        "LiquidityGaugeFactory": "0x224E808FBD9e491Be8988B8A0451FBF777C81B8A"
+      },
+      "20210727-meta-stable-pool": {
+        "QueryProcessor": "0xf97c7788d2D74b12CbAb2Efa0c69a44280211457",
+        "MetaStablePoolFactory": "0xA55F73E2281c60206ba43A3590dB07B8955832Be"
+      },
+      "20220906-composable-stable-pool": {
+        "ComposableStablePoolFactory": "0xB848f50141F3D4255b37aC288C25C109104F2158"
+      },
+      "20220318-batch-relayer-v2": {
+        "BatchRelayerLibrary": "0x10aF508f3b0e067Dd5eA3149A003457F49C8bB69",
+        "BalancerRelayer": "0x12A39C1A0d17f354d02670961DEf678223Aa15Da"
+      },
+      "20220720-batch-relayer-v3": {
+        "BatchRelayerLibrary": "0xdcdbf71A870cc60C6F9B621E28a7D3Ffd6Dd4965",
+        "BalancerRelayer": "0x7b9B6f094DC2Bd1c12024b0D9CC63d6993Be1888"
+      }
+    },
+    "gnosis": {
+      "20230206-composable-stable-pool-v3": {
+        "ComposableStablePoolFactory": "0xC128468b7Ce63eA702C1f104D55A2566b13D3ABD",
+        "MockComposableStablePool": "0x07c896050dD6E273c199f06d7516F8A4A369d23A"
+      },
+      "20220916-batch-relayer-v4": {
+        "BatchRelayerLibrary": "0xD7FAD3bd59D6477cbe1BE7f646F7f1BA25b230f8",
+        "BalancerRelayer": "0xeF606F58A4FD0fCcb066c6203d0994694d3eB2D3"
+      },
+      "20221122-composable-stable-pool-v2": {
+        "ComposableStablePoolFactory": "0x76578ecf9a141296Ec657847fb45B0585bCDa3a6",
+        "MockComposableStablePool": "0x707B7d4a1bAe449d546DCAb869256591bbB3d70b"
+      },
+      "20220425-unbutton-aave-linear-pool": {
+        "UnbuttonAaveLinearPoolFactory": "0x4fb47126Fa83A8734991E41B942Ac29A3266C968"
+      },
+      "20230206-weighted-pool-v3": {
+        "WeightedPoolFactory": "0xC128a9954e6c874eA3d62ce62B468bA073093F25",
+        "MockWeightedPool": "0xE051605A83dEAe38d26a7346B100EF1AC2ef8a0b"
+      },
+      "20220908-weighted-pool-v2": {
+        "WeightedPoolFactory": "0xf302f9F50958c5593770FDf4d4812309fF77414f"
+      },
+      "20230206-aave-rebalanced-linear-pool-v4": {
+        "AaveLinearPoolFactory": "0x9dA18982a33FD0c7051B19F0d7C76F2d5E7e017c",
+        "MockAaveLendingPool": "0x81cFAE226343B24BA12EC6521Db2C79E7aeeb310",
+        "MockStaticAToken": "0xa523f47A933D5020b23629dDf689695AA94612Dc",
+        "MockAaveLinearPool": "0x225E0047671939A8d78e08EBd692788Abe63f15c"
+      },
+      "20220404-erc4626-linear-pool-v2": {
+        "ERC4626LinearPoolFactory": "0x4132f7AcC9dB7A6cF7BE2Dd3A9DC8b30C7E6E6c8"
+      },
+      "20220609-stable-pool-v2": {
+        "StablePoolFactory": "0xf23b4DB826DbA14c0e857029dfF076b1c0264843"
+      },
+      "20221207-aave-rebalanced-linear-pool-v3": {
+        "AaveLinearPoolFactory": "0x9dd5Db2d38b50bEF682cE532bCca5DfD203915E1",
+        "MockAaveLendingPool": "0x9805dcfD25e6De36bad8fe9D3Fe2c9b44B764102",
+        "MockStaticAToken": "0x5cF4928a3205728bd12830E1840F7DB85c62a4B9",
+        "MockAaveLinearPool": "0x581Ec1f5e7CeD12B186deaE32256AdB53BDd5B08"
+      }
+    },
+    "bsc": {
+      "20230206-composable-stable-pool-v3": {
+        "ComposableStablePoolFactory": "0xacAaC3e6D6Df918Bf3c809DFC7d42de0e4a72d4C",
+        "MockComposableStablePool": "0xB521E108c8aC5aD91Dc16d0001b7253D3B3beBC5"
+      },
+      "20220916-batch-relayer-v4": {
+        "BatchRelayerLibrary": "0x8F42aDBbA1B16EaAE3BB5754915E0D06059aDd75",
+        "BalancerRelayer": "0x4574ccBcC09A00C9eE55fB92Fe353699A4fA800e"
+      },
+      "20221122-composable-stable-pool-v2": {
+        "ComposableStablePoolFactory": "0x85a80afee867aDf27B50BdB7b76DA70f1E853062",
+        "MockComposableStablePool": "0x373b347bc87998b151A5E9B6bB6ca692b766648a"
+      },
+      "20230206-weighted-pool-v3": {
+        "WeightedPoolFactory": "0x6e4cF292C5349c79cCd66349c3Ed56357dD11B46",
+        "MockWeightedPool": "0x463957510888720f1EA65B599e996aaD4264206A"
+      },
+      "20220817-aave-rebalanced-linear-pool": {
+        "AaveLinearPoolFactory": "0x2E96068b3D5B5BAE3D7515da4A1D2E52d08A2647"
+      },
+      "20220908-weighted-pool-v2": {
+        "WeightedPoolFactory": "0xC128a9954e6c874eA3d62ce62B468bA073093F25"
+      },
+      "20230206-aave-rebalanced-linear-pool-v4": {
+        "AaveLinearPoolFactory": "0xf23b4DB826DbA14c0e857029dfF076b1c0264843",
+        "MockAaveLendingPool": "0x76578ecf9a141296Ec657847fb45B0585bCDa3a6",
+        "MockStaticAToken": "0xb9F8AB3ED3F3aCBa64Bc6cd2DcA74B7F38fD7B88",
+        "MockAaveLinearPool": "0x11884dA90FB4221b3aa288a7741C51eC4Fc43B2f"
+      },
+      "20221207-aave-rebalanced-linear-pool-v3": {
+        "AaveLinearPoolFactory": "0x1cbbE6cEa5E4fE7D69c586b4e362A646DEEf105d",
+        "MockAaveLendingPool": "0x4C4287b07d293E361281bCeEe8715c8CDeB64E34",
+        "MockStaticAToken": "0x6d471c05f8A99Bd8f991467A8283e3DC968b8D7c",
+        "MockAaveLinearPool": "0x1a505Ba1cA84D1A4dCF14c8E4866e556B060c974"
+      },
+      "20220906-composable-stable-pool": {
+        "ComposableStablePoolFactory": "0xf302f9F50958c5593770FDf4d4812309fF77414f"
+      }
+    },
+    "mainnet": {
+      "20230206-composable-stable-pool-v3": {
+        "ComposableStablePoolFactory": "0xdba127fBc23fb20F5929C546af220A991b5C6e01",
+        "MockComposableStablePool": "0x222bc81C6F3C17e9e9Aba47a12f55a1Dea42f163"
+      },
+      "20220628-gauge-adder-v2": {
+        "GaugeAdder": "0x2fFB7B215Ae7F088eC2530C7aa8E1B24E398f26a"
+      },
+      "20220325-single-recipient-gauge-factory": {
+        "SingleRecipientGaugeFactory": "0x94f68b54191F62f781Fe8298A8A5Fa3ed772d227",
+        "SingleRecipientGauge": "0x5D3d2D18148baAcE45D09254513BcF2C548C4480"
+      },
+      "20220916-batch-relayer-v4": {
+        "BatchRelayerLibrary": "0xd02992266BB6a6324A3aB8B62FeCBc9a3C58d1F9",
+        "BalancerRelayer": "0x2536dfeeCB7A0397CF98eDaDA8486254533b1aFA"
+      },
+      "20210721-liquidity-bootstrapping-pool": {
+        "LiquidityBootstrappingPoolFactory": "0x751A0bC0e3f75b38e01Cf25bFCE7fF36DE1C87DE"
+      },
+      "20221122-composable-stable-pool-v2": {
+        "ComposableStablePoolFactory": "0x85a80afee867aDf27B50BdB7b76DA70f1E853062",
+        "MockComposableStablePool": "0x373b347bc87998b151A5E9B6bB6ca692b766648a"
+      },
+      "20220425-unbutton-aave-linear-pool": {
+        "UnbuttonAaveLinearPoolFactory": "0x9588c26142e345f1A0d005CfC0C6DF29A8Fa010C"
+      },
+      "20230206-weighted-pool-v3": {
+        "WeightedPoolFactory": "0x5Dd94Da3644DDD055fcf6B3E1aa310Bb7801EB8b",
+        "MockWeightedPool": "0x1576d472d82A72a1Ec7C57FcA770BD752D124A62"
+      },
+      "20221021-managed-pool": {
+        "ManagedPoolAddRemoveTokenLib": "0xE42FFA682A26EF8F25891db4882932711D42e467",
+        "CircuitBreakerLib": "0x956CCab09898C0AF2aCa5e6C229c3aD4E93d9288",
+        "ManagedPoolFactory": "0x9Ac3E70dB606659Bf32D4BdFbb687AD193FD1F5B"
+      },
+      "20211208-aave-linear-pool": {
+        "AaveLinearPoolFactory": "0xD7FAD3bd59D6477cbe1BE7f646F7f1BA25b230f8"
+      },
+      "20220817-aave-rebalanced-linear-pool": {
+        "AaveLinearPoolFactory": "0x6A0AC04f5C2A10297D5FA79FA6358837a8770041"
+      },
+      "20220908-weighted-pool-v2": {
+        "WeightedPoolFactory": "0xcC508a455F5b0073973107Db6a878DdBDab957bC"
+      },
+      "20230213-yearn-linear-pool": {
+        "YearnLinearPoolFactory": "0x8b7854708c0C54f9D7d1FF351D4F84E6dE0E134C",
+        "MockYearnTokenVault": "0x5C5fCf8fBd4cd563cED27e7D066b88ee20E1867A",
+        "MockYearnLinearPool": "0x0a0fb4ff697de5ac5b6770cd8ee1b72af80b57cf"
+      },
+      "20230206-erc4626-linear-pool-v3": {
+        "ERC4626LinearPoolFactory": "0x67A25ca2350Ebf4a0C475cA74C257C94a373b828",
+        "MockERC4626Token": "0xE605Dbe1cA85dCdb8F43CEfA427f3B0fC06f6ba6",
+        "MockERC4626LinearPool": "0xfeF969638C52899f91781f1Be594aF6f40B99BAd"
+      },
+      "20211012-merkle-orchard": {
+        "MerkleOrchard": "0xdAE7e32ADc5d490a43cCba1f0c736033F2b4eFca"
+      },
+      "20220420-fee-distributor": {
+        "FeeDistributor": "0x26743984e3357eFC59f2fd6C1aFDC310335a61c9"
+      },
+      "20220325-gauge-adder": {
+        "GaugeAdder": "0xEd5ba579bB5D516263ff6E1C10fcAc1040075Fe2"
+      },
+      "20230213-gearbox-linear-pool": {
+        "GearboxLinearPoolFactory": "0x2EbE41E1aa44D61c206A94474932dADC7D3FD9E3",
+        "MockGearboxVault": "0x7ADbdabaA80F654568421887c12F09E0C7BD9629",
+        "MockGearboxDieselToken": "0x4bE0E4d6184348c5BA845a4010528CFC779610b8",
+        "MockGearboxLinearPool": "0xa8b103A10A94f4f2D7Ed2FdCd5545E8075573307"
+      },
+      "20210812-lido-relayer": {
+        "LidoRelayer": "0xdcdbf71A870cc60C6F9B621E28a7D3Ffd6Dd4965"
+      },
+      "20220413-arbitrum-root-gauge-factory": {
+        "ArbitrumRootGaugeFactory": "0xad901309d9e9DbC5Df19c84f729f429F0189a633",
+        "ArbitrumRootGauge": "0x715C777C6149C31A75D0d29633bbBE0A14370bDC"
+      },
+      "20210907-investment-pool": {
+        "InvestmentPoolFactory": "0x48767F9F868a4A7b86A90736632F6E44C2df7fa9"
+      },
+      "20230206-aave-rebalanced-linear-pool-v4": {
+        "AaveLinearPoolFactory": "0xb9F8AB3ED3F3aCBa64Bc6cd2DcA74B7F38fD7B88",
+        "MockAaveLendingPool": "0x9dd5Db2d38b50bEF682cE532bCca5DfD203915E1",
+        "MockStaticAToken": "0x9805dcfD25e6De36bad8fe9D3Fe2c9b44B764102",
+        "MockAaveLinearPool": "0x331d50e0b00fc1C32742F151E56B9B616227E23E"
+      },
+      "20211203-batch-relayer": {
+        "BatchRelayerLibrary": "0x41B953164995c11C81DA73D212ED8Af25741b7Ac",
+        "BalancerRelayer": "0xAc9f49eF3ab0BbC929f7b1bb0A17E1Fca5786251"
+      },
+      "20220404-erc4626-linear-pool-v2": {
+        "ERC4626LinearPoolFactory": "0xE061bF85648e9FA7b59394668CfEef980aEc4c66"
+      },
+      "20220609-stable-pool-v2": {
+        "StablePoolFactory": "0x8df6EfEc5547e31B0eb7d1291B511FF8a2bf987c"
+      },
+      "20211208-stable-phantom-pool": {
+        "StablePhantomPoolFactory": "0xb08E16cFc07C684dAA2f93C70323BAdb2A6CBFd2"
+      },
+      "20220628-optimism-root-gauge-factory": {
+        "OptimismRootGaugeFactory": "0x3083A1C455ff38d39e58Dbac5040f465cF73C5c8",
+        "OptimismRootGauge": "0xcA734aD0b286EA7dD6367a504a48FB75cd12a97F"
+      },
+      "20221207-aave-rebalanced-linear-pool-v3": {
+        "AaveLinearPoolFactory": "0x7d833FEF5BB92ddb578DA85fc0c35cD5Cc00Fb3e",
+        "MockAaveLendingPool": "0x9061D0D56F162D3de7f855828A34ace1eEd3a5BE",
+        "MockStaticAToken": "0xf9F5E0f3f74F57755a8c8be7b2FeDcAa40673080",
+        "MockAaveLinearPool": "0x813E3fE1761f714c502d1d2d3a7CCEB33f37F59D"
+      },
+      "20210624-stable-pool": {
+        "StablePoolFactory": "0xc66Ba2B6595D3613CCab350C886aCE23866EDe24"
+      },
+      "20210418-weighted-pool": {
+        "WeightedPoolFactory": "0x8E9aa87E45e92bad84D5F8DD1bff34Fb92637dE9",
+        "WeightedPool2TokensFactory": "0xA5bf2ddF098bb0Ef6d120C98217dD6B141c74EE0"
+      },
+      "20221202-timelock-authorizer": {
+        "TimelockAuthorizerMigrator": "0xf8ee6f1F9B54F9b2C192D703ea2d22112cBC062b",
+        "TimelockAuthorizer": "0x9E3cD0606Db55ac68845bB60121847823712ae05"
+      },
+      "20220413-polygon-root-gauge-factory": {
+        "PolygonRootGaugeFactory": "0x4C4287b07d293E361281bCeEe8715c8CDeB64E34",
+        "PolygonRootGauge": "0xe53D8f8aAaFD95FCc7196E393EC5a907Df44495E"
+      },
+      "20220325-mainnet-gauge-factory": {
+        "LiquidityGaugeV5": "0x3b8cA519122CdD8efb272b0D3085453404B25bD0",
+        "LiquidityGaugeFactory": "0x4E7bBd911cf1EFa442BC1b2e9Ea01ffE785412EC"
+      },
+      "20210811-ldo-merkle": {
+        "MerkleRedeem": "0x884226c9f7b7205f607922E0431419276a64CF8f"
+      },
+      "20210727-meta-stable-pool": {
+        "QueryProcessor": "0x469b58680774AAc9Ad66447eFB4EF634756A2cC5",
+        "MetaStablePoolFactory": "0x67d27634E44793fE63c467035E31ea8635117cd4"
+      },
+      "20220906-composable-stable-pool": {
+        "ComposableStablePoolFactory": "0xf9ac7B9dF2b3454E841110CcE5550bD5AC6f875F"
+      },
+      "20220318-batch-relayer-v2": {
+        "BatchRelayerLibrary": "0xd45369c11870e2057D5be17Cc106d32Ea416F7c4",
+        "BalancerRelayer": "0x51CC53375A8920aE54C0561E73a9d0423A74832e"
+      },
+      "20220720-batch-relayer-v3": {
+        "BatchRelayerLibrary": "0xD966d712F470067B60D37246404D6DFe5Bf0B419",
+        "BalancerRelayer": "0x886A3Ec7bcC508B8795990B60Fa21f85F9dB7948"
+      }
+    },
+    "optimism": {
+      "20230206-composable-stable-pool-v3": {
+        "ComposableStablePoolFactory": "0xe2E901AB09f37884BA31622dF3Ca7FC19AA443Be",
+        "MockComposableStablePool": "0x9BF7c3b63c77b4B4F2717776F15A4bec1b532a28"
+      },
+      "20220916-batch-relayer-v4": {
+        "BatchRelayerLibrary": "0x8E5698dC4897DC12243c8642e77B4f21349Db97C",
+        "BalancerRelayer": "0x1a58897Ab366082028ced3740900ecBD765Af738"
+      },
+      "20221122-composable-stable-pool-v2": {
+        "ComposableStablePoolFactory": "0x85a80afee867aDf27B50BdB7b76DA70f1E853062",
+        "MockComposableStablePool": "0x373b347bc87998b151A5E9B6bB6ca692b766648a"
+      },
+      "20220425-unbutton-aave-linear-pool": {
+        "UnbuttonAaveLinearPoolFactory": "0x6d471c05f8A99Bd8f991467A8283e3DC968b8D7c"
+      },
+      "20230206-weighted-pool-v3": {
+        "WeightedPoolFactory": "0xA0DAbEBAAd1b243BBb243f933013d560819eB66f",
+        "MockWeightedPool": "0xbC99aa9bD55d3f8431Ecec24Da03AEc1D6e62754"
+      },
+      "20221021-managed-pool": {
+        "ManagedPoolAddRemoveTokenLib": "0xF24917fB88261a37Cc57F686eBC831a5c0B9fD39",
+        "CircuitBreakerLib": "0xE42FFA682A26EF8F25891db4882932711D42e467",
+        "ManagedPoolFactory": "0x956CCab09898C0AF2aCa5e6C229c3aD4E93d9288"
+      },
+      "20220817-aave-rebalanced-linear-pool": {
+        "AaveLinearPoolFactory": "0x994086630773dC6cB54D3A5E0Ef0963532789E75"
+      },
+      "20220908-weighted-pool-v2": {
+        "WeightedPoolFactory": "0xad901309d9e9DbC5Df19c84f729f429F0189a633"
+      },
+      "20230213-yearn-linear-pool": {
+        "YearnLinearPoolFactory": "0xD8B6b96c88ad626EB6209c4876e3B14f45f8803A",
+        "MockYearnTokenVault": "0x1b986138a4F2aA538E79fdEC222dad93F8d66703",
+        "MockYearnLinearPool": "0x81fC12C60ee5b753cf5fD0ADC342dFb5f3817E32"
+      },
+      "20230206-erc4626-linear-pool-v3": {
+        "ERC4626LinearPoolFactory": "0xa3B9515A9c557455BC53F7a535A85219b59e8B2E",
+        "MockERC4626Token": "0x62aaB12865d7281048c337D53a4dde9d770321E6",
+        "MockERC4626LinearPool": "0xf984eb2B8a7eF780245a797A2fCcd82f346409ca"
+      },
+      "20230206-aave-rebalanced-linear-pool-v4": {
+        "AaveLinearPoolFactory": "0xf23b4DB826DbA14c0e857029dfF076b1c0264843",
+        "MockAaveLendingPool": "0x76578ecf9a141296Ec657847fb45B0585bCDa3a6",
+        "MockStaticAToken": "0xb9F8AB3ED3F3aCBa64Bc6cd2DcA74B7F38fD7B88",
+        "MockAaveLinearPool": "0x11884dA90FB4221b3aa288a7741C51eC4Fc43B2f"
+      },
+      "20220404-erc4626-linear-pool-v2": {
+        "ERC4626LinearPoolFactory": "0x4C4287b07d293E361281bCeEe8715c8CDeB64E34"
+      },
+      "20220609-stable-pool-v2": {
+        "StablePoolFactory": "0xeb151668006CD04DAdD098AFd0a82e78F77076c3"
+      },
+      "20221207-aave-rebalanced-linear-pool-v3": {
+        "AaveLinearPoolFactory": "0xAd3CC7852382C09fdCE54784292c6aB7fb9Df917",
+        "MockAaveLendingPool": "0x56017074321ce77E2F88F2233830f5b29d4cf595",
+        "MockStaticAToken": "0xcA96C4f198d343E251b1a01F3EBA061ef3DA73C1",
+        "MockAaveLinearPool": "0x5936497ffE0dBA0eF272D6301D65c0122862971A"
+      },
+      "20210624-stable-pool": {
+        "StablePoolFactory": "0x41B953164995c11C81DA73D212ED8Af25741b7Ac"
+      },
+      "20210418-weighted-pool": {
+        "WeightedPoolFactory": "0xdAE7e32ADc5d490a43cCba1f0c736033F2b4eFca",
+        "WeightedPool2TokensFactory": "0x0F3e0c4218b7b0108a3643cFe9D3ec0d4F57c54e"
+      },
+      "20210727-meta-stable-pool": {
+        "QueryProcessor": "0xD7FAD3bd59D6477cbe1BE7f646F7f1BA25b230f8",
+        "MetaStablePoolFactory": "0xb08E16cFc07C684dAA2f93C70323BAdb2A6CBFd2"
+      },
+      "20220906-composable-stable-pool": {
+        "ComposableStablePoolFactory": "0xf145caFB67081895EE80eB7c04A30Cf87f07b745"
+      },
+      "20220720-batch-relayer-v3": {
+        "BatchRelayerLibrary": "0x5c89d9E1A668d0B39F4EC242F280bdDd445C633c",
+        "BalancerRelayer": "0x195CcCBE464EF9073d1f7A1ba1C9Bf0f56dfFFff"
+      }
+    },
+    "arbitrum": {
+      "20230206-composable-stable-pool-v3": {
+        "ComposableStablePoolFactory": "0x1c99324EDC771c82A0DCCB780CC7DDA0045E50e7",
+        "MockComposableStablePool": "0x231B05F3a92d578EFf772f2Ddf6DacFFB3609749"
+      },
+      "20220916-batch-relayer-v4": {
+        "BatchRelayerLibrary": "0x967F7AdD4Fd5AF0553B7A45F225ec26EDD699E61",
+        "BalancerRelayer": "0x5bf3B7c14b10f16939d63Bd679264A1Aa951B4D5"
+      },
+      "20210721-liquidity-bootstrapping-pool": {
+        "LiquidityBootstrappingPoolFactory": "0x142B9666a0a3A30477b052962ddA81547E7029ab"
+      },
+      "20221122-composable-stable-pool-v2": {
+        "ComposableStablePoolFactory": "0x85a80afee867aDf27B50BdB7b76DA70f1E853062",
+        "MockComposableStablePool": "0x373b347bc87998b151A5E9B6bB6ca692b766648a"
+      },
+      "20220425-unbutton-aave-linear-pool": {
+        "UnbuttonAaveLinearPoolFactory": "0x8878f1273466157a79570DdE1A42130e551B6EAd"
+      },
+      "20230206-weighted-pool-v3": {
+        "WeightedPoolFactory": "0xf1665E19bc105BE4EDD3739F88315cC699cc5b65",
+        "MockWeightedPool": "0x96d7e549eA1d810725e4Cd1f51ed6b4AE8496338"
+      },
+      "20221021-managed-pool": {
+        "ManagedPoolAddRemoveTokenLib": "0xF24917fB88261a37Cc57F686eBC831a5c0B9fD39",
+        "CircuitBreakerLib": "0xE42FFA682A26EF8F25891db4882932711D42e467",
+        "ManagedPoolFactory": "0x956CCab09898C0AF2aCa5e6C229c3aD4E93d9288"
+      },
+      "20211208-aave-linear-pool": {
+        "AaveLinearPoolFactory": "0xdcdbf71A870cc60C6F9B621E28a7D3Ffd6Dd4965"
+      },
+      "20220817-aave-rebalanced-linear-pool": {
+        "AaveLinearPoolFactory": "0xe2E901AB09f37884BA31622dF3Ca7FC19AA443Be"
+      },
+      "20220908-weighted-pool-v2": {
+        "WeightedPoolFactory": "0x8df6EfEc5547e31B0eb7d1291B511FF8a2bf987c"
+      },
+      "20230213-yearn-linear-pool": {
+        "YearnLinearPoolFactory": "0xD8B6b96c88ad626EB6209c4876e3B14f45f8803A",
+        "MockYearnTokenVault": "0x1b986138a4F2aA538E79fdEC222dad93F8d66703",
+        "MockYearnLinearPool": "0x81fC12C60ee5b753cf5fD0ADC342dFb5f3817E32"
+      },
+      "20230206-erc4626-linear-pool-v3": {
+        "ERC4626LinearPoolFactory": "0xa3B9515A9c557455BC53F7a535A85219b59e8B2E",
+        "MockERC4626Token": "0x62aaB12865d7281048c337D53a4dde9d770321E6",
+        "MockERC4626LinearPool": "0xf984eb2B8a7eF780245a797A2fCcd82f346409ca"
+      },
+      "20211012-merkle-orchard": {
+        "MerkleOrchard": "0x751A0bC0e3f75b38e01Cf25bFCE7fF36DE1C87DE"
+      },
+      "20210928-mcb-arbitrum-merkle": {
+        "MerkleRedeem": "0xC6bD2497332d24094eC16a7261eec5C412B5a2C1"
+      },
+      "20210907-investment-pool": {
+        "InvestmentPoolFactory": "0xaCd615B3705B9c880E4E7293f1030B34e57B4c1c"
+      },
+      "20230206-aave-rebalanced-linear-pool-v4": {
+        "AaveLinearPoolFactory": "0xf23b4DB826DbA14c0e857029dfF076b1c0264843",
+        "MockAaveLendingPool": "0x76578ecf9a141296Ec657847fb45B0585bCDa3a6",
+        "MockStaticAToken": "0xb9F8AB3ED3F3aCBa64Bc6cd2DcA74B7F38fD7B88",
+        "MockAaveLinearPool": "0x11884dA90FB4221b3aa288a7741C51eC4Fc43B2f"
+      },
+      "20211203-batch-relayer": {
+        "BatchRelayerLibrary": "0x72D07D7DcA67b8A406aD1Ec34ce969c90bFEE768",
+        "BalancerRelayer": "0x466262c2a275aB106E54D95B5B04603e12b58cA1"
+      },
+      "20220404-erc4626-linear-pool-v2": {
+        "ERC4626LinearPoolFactory": "0x2794953110874981a0d301286c986992022A62a1"
+      },
+      "20210913-bal-arbitrum-merkle": {
+        "MerkleRedeem": "0x6bd0B17713aaa29A2d7c9A39dDc120114f9fD809"
+      },
+      "20220609-stable-pool-v2": {
+        "StablePoolFactory": "0xEF44D6786b2b4d544b7850Fe67CE6381626Bf2D6"
+      },
+      "20211208-stable-phantom-pool": {
+        "StablePhantomPoolFactory": "0xdAE7e32ADc5d490a43cCba1f0c736033F2b4eFca"
+      },
+      "20221207-aave-rebalanced-linear-pool-v3": {
+        "AaveLinearPoolFactory": "0xa2D801064652A269D92EE2A59F3261155ec66830",
+        "MockAaveLendingPool": "0xAB093cd16e765b5B23D34030aaFaF026558e0A19",
+        "MockStaticAToken": "0x16ba924752EF283C7946db8A122a6742AA35C1DC",
+        "MockAaveLinearPool": "0xa612B6AeD2E7ca1A3a4f23FbcA9128461bBB7718"
+      },
+      "20210624-stable-pool": {
+        "StablePoolFactory": "0x2433477A10FC5d31B9513C638F19eE85CaED53Fd"
+      },
+      "20210418-weighted-pool": {
+        "WeightedPoolFactory": "0x7dFdEF5f355096603419239CE743BfaF1120312B",
+        "WeightedPool2TokensFactory": "0xCF0a32Bbef8F064969F21f7e02328FB577382018"
+      },
+      "20210727-meta-stable-pool": {
+        "QueryProcessor": "0x6783995f91A3D7f7C24B523669488F96cCa88d31",
+        "MetaStablePoolFactory": "0xEBFD5681977E38Af65A7487DC70B8221D089cCAD"
+      },
+      "20220906-composable-stable-pool": {
+        "ComposableStablePoolFactory": "0xaEb406b0E430BF5Ea2Dc0B9Fe62E4E53f74B3a33"
+      },
+      "20220318-batch-relayer-v2": {
+        "BatchRelayerLibrary": "0x1554ee754707D5C93b7934AF404747Aba521Aaf2",
+        "BalancerRelayer": "0x440eC9C8b78518D420E6fb6c6c838421F28BC280"
+      },
+      "20220720-batch-relayer-v3": {
+        "BatchRelayerLibrary": "0x4f4269F7008430860693aeDB86b0C55962D6E9b7",
+        "BalancerRelayer": "0x42E49B48573c725ee32d2579060Ed06894f97002"
+      }
+    },
+    "polygon": {
+      "20230206-composable-stable-pool-v3": {
+        "ComposableStablePoolFactory": "0x7bc6C0E73EDAa66eF3F6E2f27b0EE8661834c6C9",
+        "MockComposableStablePool": "0xeff1d57A28167E6982DCa1D63321810400f73929"
+      },
+      "20220916-batch-relayer-v4": {
+        "BatchRelayerLibrary": "0x156C628135327F41748D8c8802fC043870714E9a",
+        "BalancerRelayer": "0x28A224d9d398a1eBB7BA69BCA515898966Bb1B6b"
+      },
+      "20210721-liquidity-bootstrapping-pool": {
+        "LiquidityBootstrappingPoolFactory": "0x751A0bC0e3f75b38e01Cf25bFCE7fF36DE1C87DE"
+      },
+      "20221122-composable-stable-pool-v2": {
+        "ComposableStablePoolFactory": "0x85a80afee867aDf27B50BdB7b76DA70f1E853062",
+        "MockComposableStablePool": "0x373b347bc87998b151A5E9B6bB6ca692b766648a"
+      },
+      "20220425-unbutton-aave-linear-pool": {
+        "UnbuttonAaveLinearPoolFactory": "0x6bAF5Fa330F2d7C59f2bB57cF4b2C927B7f160d2"
+      },
+      "20230206-weighted-pool-v3": {
+        "WeightedPoolFactory": "0x82e4cFaef85b1B6299935340c964C942280327f4",
+        "MockWeightedPool": "0x93ECf386cD53718aF16a09C325a56D1bB60aDc37"
+      },
+      "20221021-managed-pool": {
+        "ManagedPoolAddRemoveTokenLib": "0xE42FFA682A26EF8F25891db4882932711D42e467",
+        "CircuitBreakerLib": "0x956CCab09898C0AF2aCa5e6C229c3aD4E93d9288",
+        "ManagedPoolFactory": "0x9Ac3E70dB606659Bf32D4BdFbb687AD193FD1F5B"
+      },
+      "20211208-aave-linear-pool": {
+        "AaveLinearPoolFactory": "0xf302f9F50958c5593770FDf4d4812309fF77414f"
+      },
+      "20220817-aave-rebalanced-linear-pool": {
+        "AaveLinearPoolFactory": "0x8df6EfEc5547e31B0eb7d1291B511FF8a2bf987c"
+      },
+      "20220908-weighted-pool-v2": {
+        "WeightedPoolFactory": "0x0e39C3D9b2ec765eFd9c5c70BB290B1fCD8536E3"
+      },
+      "20230213-yearn-linear-pool": {
+        "YearnLinearPoolFactory": "0x7396f99B48e7436b152427bfA3DD6Aa8C7C6d05B",
+        "MockYearnTokenVault": "0x533a16F90E7d3Ca31dbc608E5EC54967710F0D2A",
+        "MockYearnLinearPool": "0x0320C1C5B6df19A194D48882aaEC1c72940081D9"
+      },
+      "20230206-erc4626-linear-pool-v3": {
+        "ERC4626LinearPoolFactory": "0xa3B9515A9c557455BC53F7a535A85219b59e8B2E",
+        "MockERC4626Token": "0x040dBA12Bb3D5C0A73ddfe84C220Be3ddBA06966",
+        "MockERC4626LinearPool": "0xf984eb2B8a7eF780245a797A2fCcd82f346409ca"
+      },
+      "20211012-merkle-orchard": {
+        "MerkleOrchard": "0x0F3e0c4218b7b0108a3643cFe9D3ec0d4F57c54e"
+      },
+      "20210907-investment-pool": {
+        "InvestmentPoolFactory": "0x0f7bb7ce7b6ed9366F9b6B910AdeFE72dC538193"
+      },
+      "20230206-aave-rebalanced-linear-pool-v4": {
+        "AaveLinearPoolFactory": "0xf23b4DB826DbA14c0e857029dfF076b1c0264843",
+        "MockAaveLendingPool": "0x76578ecf9a141296Ec657847fb45B0585bCDa3a6",
+        "MockStaticAToken": "0xb9F8AB3ED3F3aCBa64Bc6cd2DcA74B7F38fD7B88",
+        "MockAaveLinearPool": "0x11884dA90FB4221b3aa288a7741C51eC4Fc43B2f"
+      },
+      "20211203-batch-relayer": {
+        "BatchRelayerLibrary": "0x8F42aDBbA1B16EaAE3BB5754915E0D06059aDd75",
+        "BalancerRelayer": "0x4574ccBcC09A00C9eE55fB92Fe353699A4fA800e"
+      },
+      "20220404-erc4626-linear-pool-v2": {
+        "ERC4626LinearPoolFactory": "0x6637dA12881f66dC7E42b8879B0a79faF43C9be2"
+      },
+      "20220609-stable-pool-v2": {
+        "StablePoolFactory": "0xcA96C4f198d343E251b1a01F3EBA061ef3DA73C1"
+      },
+      "20211208-stable-phantom-pool": {
+        "StablePhantomPoolFactory": "0xC128a9954e6c874eA3d62ce62B468bA073093F25"
+      },
+      "20221207-aave-rebalanced-linear-pool-v3": {
+        "AaveLinearPoolFactory": "0x35c425234DC42e7402f54cC54573f77842963a56",
+        "MockAaveLendingPool": "0x1bbfa323155526F54EEc458571Bb5A75e0c41507",
+        "MockStaticAToken": "0xD487eec3EF2Be7a3d06D37F406d878DC7c50deEF",
+        "MockAaveLinearPool": "0xFA2C0bd8327C99db5bdE4c9e9E5cbF30946351bb"
+      },
+      "20210624-stable-pool": {
+        "StablePoolFactory": "0xc66Ba2B6595D3613CCab350C886aCE23866EDe24"
+      },
+      "20210418-weighted-pool": {
+        "WeightedPoolFactory": "0x8E9aa87E45e92bad84D5F8DD1bff34Fb92637dE9",
+        "WeightedPool2TokensFactory": "0xA5bf2ddF098bb0Ef6d120C98217dD6B141c74EE0"
+      },
+      "20210727-meta-stable-pool": {
+        "QueryProcessor": "0x72D07D7DcA67b8A406aD1Ec34ce969c90bFEE768",
+        "MetaStablePoolFactory": "0xdAE7e32ADc5d490a43cCba1f0c736033F2b4eFca"
+      },
+      "20220906-composable-stable-pool": {
+        "ComposableStablePoolFactory": "0x136FD06Fa01eCF624C7F2B3CB15742c1339dC2c4"
+      },
+      "20220318-batch-relayer-v2": {
+        "BatchRelayerLibrary": "0xC4eD21Aa0Bec959ED7e4A83B2CD46dd00a0205dA",
+        "BalancerRelayer": "0xF537dDd7f4cc72C6C08866b62EAe9378f1F62da8"
+      },
+      "20220304-erc4626-linear-pool": {
+        "ERC4626LinearPoolFactory": "0xC6bD2497332d24094eC16a7261eec5C412B5a2C1"
+      },
+      "20220720-batch-relayer-v3": {
+        "BatchRelayerLibrary": "0x5ef4c5352882b10893b70DbcaA0C000965bd23c5",
+        "BalancerRelayer": "0xcf6a66E32dCa0e26AcC3426b851FD8aCbF12Dac7"
+      }
+    },
+    "kovan": {
+      "20220325-single-recipient-gauge-factory": {
+        "SingleRecipientGaugeFactory": "0x866D4B65694c66fbFD15Dd6fa933D0A6b3940A36"
+      },
+      "20210721-liquidity-bootstrapping-pool": {
+        "LiquidityBootstrappingPoolFactory": "0x0F3e0c4218b7b0108a3643cFe9D3ec0d4F57c54e"
+      },
+      "20220425-unbutton-aave-linear-pool": {
+        "UnbuttonAaveLinearPoolFactory": "0x3e197287Cf17bfe139A9E8eDb16765911aAdC5eb"
+      },
+      "20211208-aave-linear-pool": {
+        "AaveLinearPoolFactory": "0x94522C4586cb15E08AFF943545Fb2c8Ca7f508cE"
+      },
+      "20211012-merkle-orchard": {
+        "MerkleOrchard": "0xc33e0fE411322009947931c32d2273ee645cDb5B"
+      },
+      "20220420-fee-distributor": {
+        "FeeDistributor": "0xcC508a455F5b0073973107Db6a878DdBDab957bC"
+      },
+      "20220325-gauge-adder": {
+        "GaugeAdder": "0x1c99324EDC771c82A0DCCB780CC7DDA0045E50e7"
+      },
+      "20210812-lido-relayer": {
+        "LidoRelayer": "0x41B953164995c11C81DA73D212ED8Af25741b7Ac"
+      },
+      "20210907-investment-pool": {
+        "InvestmentPoolFactory": "0xb08E16cFc07C684dAA2f93C70323BAdb2A6CBFd2"
+      },
+      "20211203-batch-relayer": {
+        "BatchRelayerLibrary": "0x22be81ecAe87F1Ae1db9e17d6B072f846e07FC45",
+        "BalancerRelayer": "0x6bfd48F3873E21F7686982d352b610E1523c218B"
+      },
+      "20220404-erc4626-linear-pool-v2": {
+        "ERC4626LinearPoolFactory": "0x44284efFA14964feF15CB13e4a6579D3b3AD7e14"
+      },
+      "20220609-stable-pool-v2": {
+        "StablePoolFactory": "0x1F47AB83420Cd1F818Df9aCBD6Ee68341bB91592"
+      },
+      "20211208-stable-phantom-pool": {
+        "StablePhantomPoolFactory": "0x6c7F4D97269eCE163fd08D5C2584A21E4a33934c"
+      },
+      "20210624-stable-pool": {
+        "StablePoolFactory": "0x751dfDAcE1AD995fF13c927f6f761C6604532c79"
+      },
+      "20210418-weighted-pool": {
+        "WeightedPoolFactory": "0x8E9aa87E45e92bad84D5F8DD1bff34Fb92637dE9",
+        "WeightedPool2TokensFactory": "0xA5bf2ddF098bb0Ef6d120C98217dD6B141c74EE0"
+      },
+      "20220325-mainnet-gauge-factory": {
+        "LiquidityGaugeV5": "0xe5F96070CA00cd54795416B1a4b4c2403231c548",
+        "LiquidityGaugeFactory": "0xf1665E19bc105BE4EDD3739F88315cC699cc5b65"
+      },
+      "20210727-meta-stable-pool": {
+        "QueryProcessor": "0x88919A6C36359d449322Cd40451749553C6E33A2",
+        "MetaStablePoolFactory": "0x590E544e7Ca956Bb878F8C873E82e65550d67D2F"
+      },
+      "20220318-batch-relayer-v2": {
+        "BatchRelayerLibrary": "0x029FAC26e77e6f781B6A466ACf539C8bDf5e26c3",
+        "BalancerRelayer": "0xbC74ae15b2d7196729a0dFB1E3C38Dc97299C55b"
+      }
+    },
+    "avalanche": {
+      "20220916-batch-relayer-v4": {
+        "BatchRelayerLibrary": "0x6f5a2eE11E7a772AeB5114A20d0D7c0ff61EB8A0",
+        "BalancerRelayer": "0x9A7b723101ba5A4672960A3b65840AB3b7805048"
+      },
+      "20230206-weighted-pool-v3": {
+        "WeightedPoolFactory": "0x94f68b54191F62f781Fe8298A8A5Fa3ed772d227",
+        "MockWeightedPool": "0xE867AD0a48e8f815DC0cda2CDb275e0F163A480b"
+      }
+    },
+    "rinkeby": {
+      "20210721-liquidity-bootstrapping-pool": {
+        "LiquidityBootstrappingPoolFactory": "0xdcdbf71A870cc60C6F9B621E28a7D3Ffd6Dd4965"
+      },
+      "20211012-merkle-orchard": {
+        "MerkleOrchard": "0x0F3e0c4218b7b0108a3643cFe9D3ec0d4F57c54e"
+      },
+      "20210907-investment-pool": {
+        "InvestmentPoolFactory": "0xdAE7e32ADc5d490a43cCba1f0c736033F2b4eFca"
+      },
+      "20211203-batch-relayer": {
+        "BatchRelayerLibrary": "0xD7FAD3bd59D6477cbe1BE7f646F7f1BA25b230f8",
+        "BalancerRelayer": "0xeF606F58A4FD0fCcb066c6203d0994694d3eB2D3"
+      },
+      "20210624-stable-pool": {
+        "StablePoolFactory": "0xc66Ba2B6595D3613CCab350C886aCE23866EDe24"
+      },
+      "20210418-weighted-pool": {
+        "WeightedPoolFactory": "0x8E9aa87E45e92bad84D5F8DD1bff34Fb92637dE9",
+        "WeightedPool2TokensFactory": "0xA5bf2ddF098bb0Ef6d120C98217dD6B141c74EE0"
+      },
+      "20210727-meta-stable-pool": {
+        "QueryProcessor": "0x81DFdF96Cc20313Fd38c87e6Cb9482214d74Cf70",
+        "MetaStablePoolFactory": "0x751dfDAcE1AD995fF13c927f6f761C6604532c79"
+      }
+    }
+  }
+}

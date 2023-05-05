@@ -36,7 +36,7 @@ onMounted(() => {
     class="algolia-search-wrapper search-box"
     role="search"
   >
-    <SearchInput id="algolia-search-input" placeholder="" />
+    <SearchInput id="algolia-search-input" placeholder="Search docs" />
   </form>
 </template>
 
@@ -46,7 +46,8 @@ onMounted(() => {
 }
 
 .home .search-box {
-  width: 75%;
+  width: 100%;
+  max-width: var(--search-box-max-width);
   margin: 40px auto;
 }
 

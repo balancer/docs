@@ -11,7 +11,7 @@ Balancer Governance Token \(BAL\) is the core token behind the Balancer protocol
 ## Contract Address
 
 | Network  | BAL Token Address                                                                                                                                              |
-|:---------|:---------------------------------------------------------------------------------------------------------------------------------------------------------------|
+| :------- | :------------------------------------------------------------------------------------------------------------------------------------------------------------- |
 | Ethereum | <span class="address-link">[0xba100000625a3754423978a60c9317c58a424e3d](https://etherscan.io/address/0xba100000625a3754423978a60c9317c58a424e3d)</span>        |
 | Polygon  | <span class="address-link">[0x9a71012b13ca4d3d0cdc72a177df3ef03b0e76a3](https://polygonscan.com/address/0x9a71012b13ca4d3d0cdc72a177df3ef03b0e76a3)</span>     |
 | Arbitrum | <span class="address-link">[0x040d1EdC9569d4Bab2D15287Dc5A4F10F56a56B8](https://arbiscan.io/address/0x040d1EdC9569d4Bab2D15287Dc5A4F10F56a56B8)</span>         |
@@ -35,7 +35,7 @@ This is applied to the inflation rate every year so as to achieve the emission s
 
 This results in the following emissions schedule:
 
-::: chart BAL Total Supply
+::: chart BAL Supply and Emissions
 
 ```json
 {
@@ -44,50 +44,108 @@ This results in the following emissions schedule:
     "labels": [],
     "datasets": [
       {
-        "label": "",
+        "label": "BAL Emitted Weekly",
+        "yAxisID": "weekly",
         "data": [
-          { "x": "2022", "y": 46890000 },
-          { "x": "2023", "y": 54450714 },
-          { "x": "2024", "y": 60808492 },
-          { "x": "2025", "y": 66154724 },
-          { "x": "2026", "y": 70650352 },
-          { "x": "2027", "y": 74430709 },
-          { "x": "2028", "y": 77609598 },
-          { "x": "2029", "y": 80282714 },
-          { "x": "2030", "y": 82530528 },
-          { "x": "2031", "y": 84420706 },
-          { "x": "2032", "y": 86010151 },
-          { "x": "2033", "y": 87346709 },
-          { "x": "2034", "y": 88470616 },
-          { "x": "2035", "y": 89415705 },
-          { "x": "2036", "y": 90210427 },
-          { "x": "2037", "y": 90878706 },
-          { "x": "2038", "y": 91440660 },
-          { "x": "2039", "y": 91913204 },
-          { "x": "2040", "y": 92310565 },
-          { "x": "2041", "y": 92644705 },
-          { "x": "2042", "y": 92925682 },
-          { "x": "2043", "y": 93161954 },
-          { "x": "2044", "y": 93360634 },
-          { "x": "2045", "y": 93527704 },
-          { "x": "2046", "y": 93668193 },
-          { "x": "2047", "y": 93786329 },
-          { "x": "2048", "y": 93885669 },
-          { "x": "2049", "y": 93969204 },
-          { "x": "2050", "y": 94039448 }
+          { "x": "2022", "y": "145000" },
+          { "x": "2023", "y": "121929.98021178861" },
+          { "x": "2024", "y": "102530.4832720494" },
+          { "x": "2025", "y": "86217.51583769728" },
+          { "x": "2026", "y": "72500.00000000001" },
+          { "x": "2027", "y": "60964.99010589432" },
+          { "x": "2028", "y": "51265.24163602471" },
+          { "x": "2029", "y": "43108.75791884865" },
+          { "x": "2030", "y": "36250.00000000001" },
+          { "x": "2031", "y": "30482.49505294716" },
+          { "x": "2032", "y": "25632.620818012354" },
+          { "x": "2033", "y": "21554.378959424324" },
+          { "x": "2034", "y": "18125.000000000004" },
+          { "x": "2035", "y": "15241.24752647358" },
+          { "x": "2036", "y": "12816.310409006177" },
+          { "x": "2037", "y": "10777.189479712162" },
+          { "x": "2038", "y": "9062.500000000002" },
+          { "x": "2039", "y": "7620.62376323679" },
+          { "x": "2040", "y": "6408.1552045030885" },
+          { "x": "2041", "y": "5388.594739856081" },
+          { "x": "2042", "y": "4531.250000000001" },
+          { "x": "2043", "y": "3810.311881618395" },
+          { "x": "2044", "y": "3204.0776022515442" },
+          { "x": "2045", "y": "2694.2973699280406" },
+          { "x": "2046", "y": "2265.6250000000005" },
+          { "x": "2047", "y": "1905.1559408091975" },
+          { "x": "2048", "y": "1602.0388011257721" },
+          { "x": "2049", "y": "1347.1486849640203" },
+          { "x": "2050", "y": "1132.8125000000002" }
+        ]
+      },
+      {
+        "label": "Total BAL Supply",
+        "yAxisID": "annual",
+
+        "data": [
+          { "x": "2022", "y": "48485000" },
+          { "x": "2023", "y": "56045714.28571428" },
+          { "x": "2024", "y": "62403491.825328976" },
+          { "x": "2025", "y": "67749724.16737156" },
+          { "x": "2026", "y": "72245351.77890863" },
+          { "x": "2027", "y": "76025708.92176577" },
+          { "x": "2028", "y": "79204597.69157313" },
+          { "x": "2029", "y": "81877713.86259441" },
+          { "x": "2030", "y": "84125527.66836295" },
+          { "x": "2031", "y": "86015706.23979151" },
+          { "x": "2032", "y": "87605150.62469518" },
+          { "x": "2033", "y": "88941708.71020582" },
+          { "x": "2034", "y": "90065615.6130901" },
+          { "x": "2035", "y": "91010704.89880438" },
+          { "x": "2036", "y": "91805427.09125622" },
+          { "x": "2037", "y": "92473706.13401154" },
+          { "x": "2038", "y": "93035659.58545367" },
+          { "x": "2039", "y": "93508204.22831082" },
+          { "x": "2040", "y": "93905565.32453674" },
+          { "x": "2041", "y": "94239704.84591441" },
+          { "x": "2042", "y": "94520681.57163547" },
+          { "x": "2043", "y": "94756953.89306404" },
+          { "x": "2044", "y": "94955634.441177" },
+          { "x": "2045", "y": "95122704.20186582" },
+          { "x": "2046", "y": "95263192.56472635" },
+          { "x": "2047", "y": "95381328.72544064" },
+          { "x": "2048", "y": "95480668.99949712" },
+          { "x": "2049", "y": "95564203.87984154" },
+          { "x": "2050", "y": "95634448.0612718" }
         ]
       }
     ]
   },
   "options": {
     "scales": {
-      "y": {
-        "min": 0
+      "weekly": {
+        "min": 0,
+        "position": "left",
+        "scaleLabel": {
+          "display": true,
+          "labelString": "BAL Emitted Weekly"
+        },
+        "title": {
+          "display": true,
+          "text": "BAL Emitted Weekly"
+        }
+      },
+      "annual": {
+        "min": 0,
+        "position": "right",
+        "scaleLabel": {
+          "display": true,
+          "labelString": "Total BAL Supply"
+        },
+        "title": {
+          "display": true,
+          "text": "Total BAL Supply"
+        }
       }
     },
     "plugins": {
       "legend": {
-        "display": false
+        "display": true
       }
     }
   }
@@ -100,13 +158,13 @@ This results in the following emissions schedule:
 
 This chart outlines the allocation amounts. More details below.
 
-| BAL Recipient/Fund                                                                                                                                                     | Original Allocation | State as of Feb 2023                          |
-|:-----------------------------------------------------------------------------------------------------------------------------------------------------------------------|:--------------------|:----------------------------------------------|
-| Community                                                                                                                                                              | 65M                 | 6M remain                                     |
-| Liquidity Providers(veBAL) - [allocated by community](https://snapshot.org/#/balancer.eth/proposal/0xc93aa02ea7153a53d124189567ba19aa28663c499cdbfa60fe9bf35bf574d2a7) | N/A                 | 47.5M From community fund allocated to veBAL  |
-| Founders, Options, Advisors, Investors                                                                                                                                 | 25M                 | No Information Available                      |
-| Ecosystem Fund                                                                                                                                                         | 5M                  | Merged into Community Fund                    |
-| Fundraising Fund                                                                                                                                                       | 5M                  | Merged into Community Fund                    |
+| BAL Recipient/Fund                                                                                                                                                     | Original Allocation | State as of Feb 2023                         |
+| :--------------------------------------------------------------------------------------------------------------------------------------------------------------------- | :------------------ | :------------------------------------------- |
+| Community                                                                                                                                                              | 65M                 | 6M remain                                    |
+| Liquidity Providers(veBAL) - [allocated by community](https://snapshot.org/#/balancer.eth/proposal/0xc93aa02ea7153a53d124189567ba19aa28663c499cdbfa60fe9bf35bf574d2a7) | N/A                 | 47.5M From community fund allocated to veBAL |
+| Founders, Options, Advisors, Investors                                                                                                                                 | 25M                 | No Information Available                     |
+| Ecosystem Fund                                                                                                                                                         | 5M                  | Merged into Community Fund                   |
+| Fundraising Fund                                                                                                                                                       | 5M                  | Merged into Community Fund                   |
 
 ::: chart BAL Token Distribution
 
@@ -170,4 +228,4 @@ Original Ecosystem Fund: <span class="address-link">[0xb618F903ad1d00d6F7b92f5b0
 
 For full transparency, the [seed series](https://medium.com/balancer-protocol/balancer-labs-raises-3m-to-supercharge-programmable-liquidity-8f1a42323c78) price of one BAL token was $0.60.
 
-Fundrasiing Fund <span class="address-link">[0xB129F73f1AFd3A49C701241F374dB17AE63B20Eb](https://etherscan.io/address/0xB129F73f1AFd3A49C701241F374dB17AE63B20Eb)</span>
+Fundraising Fund <span class="address-link">[0xB129F73f1AFd3A49C701241F374dB17AE63B20Eb](https://etherscan.io/address/0xB129F73f1AFd3A49C701241F374dB17AE63B20Eb)</span>

@@ -18,10 +18,11 @@ export const navbar: NavbarConfig = [
     children: [
       {
         text: 'Contracts',
+        link: '/reference/contracts',
         children: [
           {
             text: 'Deployment Addresses',
-            link: '',
+            link: '/reference/contracts/deployment-addresses/mainnet',
             children: [
               {
                 text: 'Mainnet',
@@ -46,6 +47,36 @@ export const navbar: NavbarConfig = [
               {
                 text: 'Goerli',
                 link: '/reference/contracts/deployment-addresses/goerli',
+              },
+            ],
+          },
+          {
+            text: 'Authorizer Permissions',
+            link: '/reference/authorizer',
+            children: [
+              {
+                text: 'mainnet',
+                link: '/reference/authorizer/mainnet',
+              },
+              {
+                text: 'Arbitrum',
+                link: '/reference/authorizer/arbitrum',
+              },
+              {
+                text: 'Optimism',
+                link: '/reference/authorizer/optimism',
+              },
+              {
+                text: 'Polygon',
+                link: '/reference/authorizer/polygon',
+              },
+              {
+                text: 'Gnosis',
+                link: '/reference/authorizer/gnosis',
+              },
+              {
+                text: 'Goerli',
+                link: '/reference/authorizer/goerli',
               },
             ],
           },
@@ -83,8 +114,8 @@ export const navbar: NavbarConfig = [
           '/reference/swaps/batch-swaps',
           '/reference/swaps/flash-swaps',
           '/reference/swaps/single-swap',
-          'reference/joins-and-exits/pool-joins',
-          'reference/joins-and-exits/pool-exits',
+          '/reference/joins-and-exits/pool-joins',
+          '/reference/joins-and-exits/pool-exits',
         ],
       },
       {
