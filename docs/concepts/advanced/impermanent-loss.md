@@ -154,7 +154,7 @@ $$ Ratio_{HODL} = (1 * 0.25) + (0.96 * 0.25) + (1.15 * 0.25) + (1.5 * 0.25) = 1.
 $$$$
 $$ IL = {\frac{Invariant \ Ratio_{LP}}{Ratio_{HODL}}} = {\frac{1.13439704}{1.1525}} - 1 = 0.0157076 \ or \ 1.57076\% $$
 ##### New Token Balances can be calculated as follows:
-$$ New \ Token \ Balances \ B*{t'} = B*{t} * {\frac{Ratio*{LP}}{Price \ Action*{t}}} $$
+$$ New \ Token \ Balances \ B_{t'} = B_{t} * {\frac{Ratio_{LP}}{Price \ Action_{t}}} $$
 $$$$
 $$ USDC = 2500 * {\frac{1.13439704}{1}} = 2836 \ USDC $$
 $$ WMATIC  = 2000 * {\frac{1.13439704}{0.96}} = 2363.327 \ WMATIC $$
@@ -171,7 +171,6 @@ $$$$
 $$ V_{current} = 2836^{0.25} * 2363.327^{0.25} * 98.643^{0.25} * 0.7562647^{0.25} = 149.53489 $$
 $$ V_{2}= (2836)^{0.25} * (2363.327 * 1.04167)^{0.25} * (98.643 * 0.8696)^{0.25} * $$
 $$(0.7562647 * 0.67)^{0.25} = 131.8204$$
-
 $$ The \ values \ above \ were \ shortened \ for \ formatting $$
 $$$$
 $$ {\frac{131.8204}{149.53489}} = 0.881536 \ The \ calculations \ below \ will \ yield \ the \ $$
