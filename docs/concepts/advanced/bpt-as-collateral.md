@@ -99,18 +99,31 @@ where
 ### 2. Get RateProvider price of each pool token
 
 In order to get RateProvider price of each constituent token of bb-a-USD, we should use getTokenRate() function of
-bb-a-USD pool for each token address (bb-a-USDT, bb-a-USDT and bb-a-DAI). In this case, it'll return `pool.getRate()`
-of each pool (bb-a-USDT, bb-a-USDT and bb-a-DAI).
+bb-a-USD pool for each token address (bb-a-USDT, bb-a-USDT and bb-a-DAI). 
 
-$$ P_{RP_{bb-a-USDT}} = tokenRate_{bb-a-USDT} $$
+$$ P_{RP_{bb-a-TOKEN}} = tokenRate_{bb-a-TOKEN} $$
 
-It seems redundant at first to multiply by `pool.getRate()` to get market price, then divide by `pool.getRate()` again, 
-but remember that this is a generic way to calculate BPT prices. With tokens of different nature in the same pool, the
-same steps could be applied, as will be demonstrated in the next examples.
+In this case, $tokenRate_{bb-a-TOKEN}$ is equal to `pool.getRate()` of each pool (bb-a-USDT, bb-a-USDT and bb-a-DAI).
+
+It seems redundant to multiply by `pool.getRate()` to get market price, then divide by `pool.getRate()` again.
+Remember that this is a generic method to calculate BPT prices that works for tokens of different natures, as will be 
+demonstrated in the next examples.
 
 ### 3. Get minimum price
 
 $$ minPrice = min({P_{M_{bb-a-USDT}} \over P_{RP_{bb-a-USDT}}}, {P_{M_{bb-a-USDC}} \over P_{RP_{bb-a-USDC}}}, {P_{M_{bb-a-DAI}} \over P_{RP_{bb-a-DAI}}}) $$
+
+Since $tokenRate_{bb-a-TOKEN}$ is equal to `pool.getRate()` of `bb-a-TOKEN` pool, the division 
+${P_{M_{bb-a-TOKEN}} \over P_{RP_{bb-a-TOKEN}}}$ can be simplified
+
+$$ {P_{M_{bb-a-TOKEN}} \over P_{RP_{bb-a-TOKEN}}} = {P_{TOKEN} * rate_{pool_{aTOKEN}} \over rate_{pool_{aTOKEN}}} = P_{TOKEN}$$
+
+Therefore, minPrice is calculated as
+
+$$ minPrice = min(P_{USDT}, P_{USDC}, P_{DAI}) $$
+
+Remembering, not always the RateProvider price will be included in the Market price. This assumption is valid only for
+Linear Pool tokens.
 
 ### 4. Calculates the BPT price
 
