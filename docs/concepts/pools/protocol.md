@@ -1,6 +1,6 @@
 # Protocol Pools
 
-Unlike any of the other pool categories where the pool can be thought of as an indvidual entity, Protocol pools represent entire DeFi protocols built on top of Balancer infrastructure. Balancer provides the infrastructure for custom AMMs by separating the pool logic from the accounting logic.  Any AMM logic can be implemented as a custom pool on top of the Balancer Vault and as a result, the design space of Balancer pools is infinite. In simpler terms: **programmable liquidity**.
+Unlike any of the other pool categories where the pool can be thought of as an indvidual entity, Protocol pools represent entire DeFi protocols built on top of Balancer infrastructure. Balancer provides the infrastructure for custom AMMs by separating the pool logic from the accounting logic. Any AMM logic can be implemented as a custom pool on top of the Balancer Vault and as a result, the design space of Balancer pools is infinite. In simpler terms: **programmable liquidity**.
 
 ::: tip Case Study: Gyroscope
 
