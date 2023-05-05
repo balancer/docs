@@ -1,6 +1,6 @@
 # StablePool's BPT as Collateral
 
-Throughout this document, the term, "`StablePools` with `RateProviders`" is used. This refers to any Balancer V2 
+Throughout this document, the term "`StablePools` with `RateProviders`" is used. This refers to any Balancer V2 
 pool employing the `StableMath` library and allowing for the inclusion of `RateProviders` for some or all 
 constituent tokens. Several pool factories deploy pools which employs `StableMath`, such as `MetaStablePool`, 
 `StablePhantomPool`, and `ComposableStablePool`.
@@ -118,35 +118,35 @@ $$ P_{BPT_{bb-a-USD}} = minPrice * rate_{pool_{bb-a-USD}} $$
 
 where `rate_pool_bb-a-USD` is `pool.getRate()` of bb-a-USD pool.
 
-## MetaStablePools (e.g. wstETH-wETH)
+## MetaStablePools (e.g. wstETH-WETH)
 
 ### 1. Get market price for each constituent token
 
-Get market price of wstETH and wETH in terms of USD, using chainlink oracles.
+Get market price of wstETH and WETH in terms of USD, using chainlink oracles.
 
 ### 2. Get RateProvider price for each constituent token
 
-Since wstETH - wETH pool is a MetaStablePool and not a ComposableStablePool, it does not have `getTokenRate()` function.
+Since wstETH - WETH pool is a MetaStablePool and not a ComposableStablePool, it does not have `getTokenRate()` function.
 Therefore, it`s needed to get the RateProvider price manually for wstETH, using the rate providers of the pool. The rate 
 provider will return the wstETH token in terms of stETH.
 
-Note that wETH does not have a rate provider for this pool. In that case, assume a value of `1e18` (it means,
-market price of wETH won't be divided by any value, and it's used purely in the minPrice formula).
+Note that WETH does not have a rate provider for this pool. In that case, assume a value of `1e18` (it means,
+market price of WETH won't be divided by any value, and it's used purely in the minPrice formula).
 
 ### 3. Get minimum price
 
-$$ minPrice = min({P_{M_{wstETH}} \over P_{RP_{wstETH}}}, P_{M_{wETH}}) $$
+$$ minPrice = min({P_{M_{wstETH}} \over P_{RP_{wstETH}}}, P_{M_{WETH}}) $$
 
 ### 4. Calculates the BPT price
 
-$$ P_{BPT_{wstETH-wETH}} = minPrice * rate_{pool_{wstETH-wETH}} $$
+$$ P_{BPT_{wstETH-WETH}} = minPrice * rate_{pool_{wstETH-WETH}} $$
 
-where `rate_pool_wstETH-wETH` is `pool.getRate()` of wstETH-wETH pool.
+where `rate_pool_wstETH-WETH` is `pool.getRate()` of wstETH-WETH pool.
 
 ## ComposableStablePools (stMATIC-wMATIC)
 
-stMATIC is a special case, since `stMATIC` is like `wstETH` in that it doesn't rebase (it's not 1:1 with `WMATIC`), but 
-it's like `stETH` in that it is not a wrapper: it cannot be reduced to another underlying token.
+stMATIC is a special case, since `stMATIC` accrues value and doesn't rebase, so it's not 1:1 with WMATIC. Therefore,
+it cannot be reduced to anoter underlying token.
 
 However, the generalized formula from the solution above also works for this.
 
