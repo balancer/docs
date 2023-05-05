@@ -21,7 +21,7 @@ This does not mean you are trying to sell the token above what it is worth. Sett
 
 ### Sell Pressure
 
-During a weight shift, the token price of one token experiences sell pressure while the other experiences buy pressure. When this is mixed with modest trading volume, the price approaches the generally agreed-upon market price.
+During a weight shift, the token price of one token experiences sell pressure while the other experiences buy pressure. When this is mixed with modest swap volume, the price approaches the generally agreed-upon market price.
 
 ### Fair Market
 

@@ -10,8 +10,7 @@ order: 3
 To understand Flash Swaps, make sure you understand [Batch Swaps](batch-swaps.md) first.
 :::
 
-Anyone who identifies a price discrepancy in two Balancer Pools can execute a **Flash Swap**. \***\* An arbitrageur who makes a flash swap **does not need to hold any** of the input **tokens\*\* that one would normally need to make a trade. Instead, the trader identifies the imbalance, tells the Vault to make the swap, and is rewarded with the profit.
-
+Anyone who identifies a price discrepancy in two Balancer Pools can execute a **Flash Swap**. \***\* An arbitrageur who makes a flash swap **does not need to hold any** of the input **tokens\*\* that one would normally need to make a swap. Instead, the arbitrageur identifies the imbalance, tells the Vault to make the swap, and is rewarded with the profit.
 ## Example
 
 In this sample transaction ([click here for logs](https://kovan.etherscan.io/tx/0x3afd88c42a8bd1ff696c38f4232da3b872a783660d54417db8c3e33f6ab957a4#eventlog) and [click here for execution trace](https://dashboard.tenderly.co/tx/kovan/0x3afd88c42a8bd1ff696c38f4232da3b872a783660d54417db8c3e33f6ab957a4)), the sender identifies a price discrepancy between two pools that contain the same two tokens. They realize that if they were to sell 1,000,000 units of token `0xc256`to pool `0x3a19` and then sell the proceeds to pool `0x32fc` they would come out with more than 1,000,000 units of token `0xc256`. Even though the sender doesn't hold any of the tokens, they make a call to `batchSwap.`
@@ -30,9 +29,9 @@ In this sample transaction ([click here for logs](https://kovan.etherscan.io/tx/
 
 Where:
 
-- `kind`: GIVEN_IN (= 0) means that the trades are formatted such that the amount represents the amount being sent to the pool
-- `assets`: the list of tokens used in the trade
-- `limits`: the number of tokens the trader is willing to send to the Vault For a Flash Swap, these are set to zero (or less) since a Flash Swap doesn't require the trader to send any tokens to the Vault)
+- `kind`: GIVEN_IN (= 0) means that the swaps are formatted such that the amount represents the amount being sent to the pool
+- `assets`: the list of tokens used in the swap
+- `limits`: the number of tokens the swapper is willing to send to the Vault For a Flash Swap, these are set to zero (or less) since a Flash Swap doesn't require the swapper to send any tokens to the Vault)
 
 ```
 "swaps": [

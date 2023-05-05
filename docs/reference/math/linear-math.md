@@ -36,9 +36,9 @@ $$ SP*{i}^{o} = {\frac{R*{i}}{R\_{o}}} $$
 - $R_i$ is the rate provider of token $i$ going into the pool
 - $R_o$ is the rate provider of token $o$ coming out of the pool
 
-## Trade Equations
+## Swap Equations
 
-For linear pools, the unique factor of the trade equations is the swap fees. The fee structure incentivizes traders to maintain the unwrapped balance of the tokens in the pool to remain between an upper ($T_{2}$) and lower ($T_{1}$) boundary. The trade equations can best be described by the following piece wise functions.
+For linear pools, the unique factor of the swap equations is the swap fees. The fee structure incentivizes swappers to maintain the unwrapped balance of the tokens in the pool to remain between an upper ($T_{2}$) and lower ($T_{1}$) boundary. The swap equations can best be described by the following piece wise functions.
 
 ### outGivenIn
 
@@ -46,8 +46,8 @@ $$
 A_{o} =
     \begin{cases}
       A_{i} * \frac{R_{i}}{R_{o}} & T_{1}\leq x\leq T_{2} \\ \\
-      A_{i} * \frac{R_{i}}{R_{o}} * (1 - \phi) & x\leq T_{1} \ or \ T_{2}\leq x \ \ \ When \ trade \ pushes \ pool \ out \ of \ bounds \\ \\
-      A_{i} * \frac{R_{i}}{R_{o}} * (1 + \phi) & x\leq T_{1} \ or \ T_{2}\leq x \ \ \ When \ trade \ pushes \ pool \ towards \ bounds\\
+      A_{i} * \frac{R_{i}}{R_{o}} * (1 - \phi) & x\leq T_{1} \ or \ T_{2}\leq x \ \ \ When \ swap \ pushes \ pool \ out \ of \ bounds \\ \\
+      A_{i} * \frac{R_{i}}{R_{o}} * (1 + \phi) & x\leq T_{1} \ or \ T_{2}\leq x \ \ \ When \ swap \ pushes \ pool \ towards \ bounds\\
     \end{cases}
 $$
 
@@ -68,8 +68,8 @@ $$
 A_{i} =
     \begin{cases}
       A_{o} * \frac{R_{o}}{R_{i}} & T_{1}\leq x\leq T_{2} \\ \\
-      A_{o} * \frac{R_{o}}{R_{i}} * (1 - \phi) & x\leq T_{1} \ or \ T_{2}\leq x \ \ \ When \ trade \ pushes \ pool \ out \ of \ bounds \\ \\
-      A_{o} * \frac{R_{o}}{R_{i}} * (1 + \phi) & x\leq T_{1} \ or \ T_{2}\leq x \ \ \ When \ trade \ pushes \ pool \ towards \ bounds\\
+      A_{o} * \frac{R_{o}}{R_{i}} * (1 - \phi) & x\leq T_{1} \ or \ T_{2}\leq x \ \ \ When \ swap \ pushes \ pool \ out \ of \ bounds \\ \\
+      A_{o} * \frac{R_{o}}{R_{i}} * (1 + \phi) & x\leq T_{1} \ or \ T_{2}\leq x \ \ \ When \ swap \ pushes \ pool \ towards \ bounds\\
     \end{cases}
 $$
 

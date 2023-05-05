@@ -97,7 +97,7 @@ $$ COMP: 15.16575*{\frac {0.9890703}{0.75}}=20 $$
 
 These balances match our initial liquidity position meaning overall we lost nothing impermanent loss. The price action is still in our favor by 50% for both assets as we hold the same initial number of each. Also, we would have likely collected swap fees for this from swappers making our gains slightly larger.
 
-Through the price action regardless of how dramatic impermanent loss can be reversed as seen above. This can occur countless times as prices of assets in a pool fluctuate in price. The importance of this is understanding the assets you are holding and how comfortable you are with volatility. In theory great volatility will be coupled with large volumes of trading making the swap fees and gains for liquidity providers increase. Weighing the risk of impermanent loss with the accumulation of swap fees or “volatility farming” is the game of a liquidity provider long term.
+Through the price action regardless of how dramatic impermanent loss can be reversed as seen above. This can occur countless times as prices of assets in a pool fluctuate in price. The importance of this is understanding the assets you are holding and how comfortable you are with volatility. In theory great volatility will be coupled with large swap volumes, making the swap fees and gains for liquidity providers increase. Weighing the risk of impermanent loss with the accumulation of swap fees or “volatility farming” is the game of a liquidity provider long term.
 
 @tab 80/20 Pools
 

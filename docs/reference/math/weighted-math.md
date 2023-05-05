@@ -48,8 +48,8 @@ $$
 SP^o_i = \frac{\frac{B_i}{W_i}}{\frac{B_o}{W_o}}
 $$
 
-- $B_i$ is the balance of token $i$, the token being sold by the trader which is going into the pool
-- $B_o$ is the balance of token $o$, the token being bought by the trader which is going out of the pool
+- $B_i$ is the balance of token $i$, the token being sold by the swapper which is going into the pool
+- $B_o$ is the balance of token $o$, the token being bought by the swapper which is going out of the pool
 - $W_i$ is the weight of token $i$
 - $W_o$ is the weight of token $o$
 
@@ -61,23 +61,23 @@ $$
 SP^o_i = \frac{\frac{B_i}{W_i}}{\frac{B_o}{W_o}} \cdot \frac{1}{1-swapFee}
 $$
 
-## Trade Equations
+## Swap Equations
 
 ### outGivenIn
 
-When a user sends tokens $i$ to get tokens $o$, all other token balances remain the same. Therefore, if we define $A_i$ and $A_o$ as the amount of tokens $i$ and $o$ exchanged, and since the value function $V$ must be constant before and after the trade, we can calculate the amount $A_o$ a users gets when sending $A_i$.
+When a user sends tokens $i$ to get tokens $o$, all other token balances remain the same. Therefore, if we define $A_i$ and $A_o$ as the amount of tokens $i$ and $o$ exchanged, and since the value function $V$ must be constant before and after the swap, we can calculate the amount $A_o$ a users gets when sending $A_i$.
 
 $$
 A_o = B_o \cdot \left(1-\left(\frac{B_i}{B_i + A_i}\right)^{\frac{W_i}{W_o}}\right)
 $$
 
 ::: info
-If you're computing this value yourself, remember that the pool collects swap fees as a percentage of the **input token**. In the equation above,$A_i$ is the amount that the pool actually swaps into the output token, not the amount sent by a trader, $A_{sent}$. To calculate through, we must compute:$A_i = A_{sent} * (1-swapFee)$
+If you're computing this value yourself, remember that the pool collects swap fees as a percentage of the **input token**. In the equation above,$A_i$ is the amount that the pool actually swaps into the output token, not the amount sent by a swapper, $A_{sent}$. To calculate through, we must compute:$A_i = A_{sent} * (1-swapFee)$
 :::
 
 ### inGivenOut
 
-It is also very useful for traders to know how much they need to send of the input token $A_i$ to get a desired amount of output token $A_o$:
+It is also very useful for swappers to know how much they need to send of the input token $A_i$ to get a desired amount of output token $A_o$:
 
 $$
 A_i = B_i \cdot \left(\left(\frac{B_o}{B_o - A_o}\right)^{\frac{W_o}{W_i}}-1\right)

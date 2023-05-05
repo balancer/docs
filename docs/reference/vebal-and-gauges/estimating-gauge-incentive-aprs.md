@@ -11,7 +11,7 @@ To estimate the BAL liquidity mining APR for a certain gauge, various endpoints 
 
 Follow the steps below to calculate the liquidity mining APR for a certain gauge:
 
-1. Obtain the current gauge whitelist from the front-end repo
+1. Obtain the current gauge allowlist from the front-end repo
 2. Obtain the working supply for each gauge by reading gauge vyper contracts
 3. Obtain the relative weight for each gauge via the gauge controller contract
 4. Infer the price per Balancer Pool Token (BPT) price from the balancer-v2 subgraph
