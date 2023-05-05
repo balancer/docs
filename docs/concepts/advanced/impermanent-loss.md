@@ -125,7 +125,7 @@ $$ Invariant \ Ratio_{LP} = {\frac{28.647290182}{16}} = 1.7904556364 $$
 $$ Ratio_{HODL} = (1.15 * 0.2) + (2 * 0.8) = 1.83 $$
 $$$$
 Here we can consider the USD values to be the same in the numerator and denominator therefore not needed to determine the ratio between the two.
-$$ IL = {\frac{Invariant \ Ratio*{LP}}{Ratio*{HODL}}} = {\frac{1.17904556364}{1.83}} = -0.02160893 \ or \ 2.160894\%$$
+$$ IL = {\frac{Invariant \ Ratio_{LP}}{Ratio_{HODL}}} = {\frac{1.17904556364}{1.83}} = -0.02160893 \ or \ 2.160894\%$$
 $$$$
 While impermanent loss is still applicable in this scenario in comparison to the 50/50 pool the losses are nearly cut in half (a factor of 0.5825 more precisely). When dealing with very large liquidity positions these small amounts can make a large difference in value and ultimately weighting will protect or expose liquidity providers from impermanent loss depending on their choices; however, if prices return to their initial state or follow the same price change at a certain point the “losses” will revert to zero regardless of weighting.
 
