@@ -28,7 +28,7 @@ CONTRACTS_BY_HEADING = {
 
 
 
-def address_directory(chain):
+def address_directory():
    r = requests.get(ADDRESSBOOK_URL)
    return r.json()
 
