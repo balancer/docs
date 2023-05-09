@@ -14,7 +14,7 @@ All docs on this site refer to Balancer V2 which is currently live on Ethereum, 
 
 Balancer is a decentralized automated market maker (AMM) protocol built on Ethereum that represents a flexible building block for programmable liquidity.
 
-By separating the AMM curve logic and math from the core swapping functionality, Balancer becomes an extensible AMM that can incorporate any number of trading curves and pool types. This includes:
+By separating the AMM curve logic and math from the core swapping functionality, Balancer becomes an extensible AMM that can incorporate any number of swap curves and pool types. This includes:
 
 - Traditional 50/50 $x*y=k$ weighted pools
 - Custom weights like 80/20 for controlled exposure
@@ -25,13 +25,13 @@ By separating the AMM curve logic and math from the core swapping functionality,
 - Managed pools that allow customizable parameters
 - Entire protocols to be built on top (ex: Gyroscope)
 
-All of the aggregate liquidity is then easily accessilbe for traders, aggregators, and arbitraugers. The Balancer [Vault](/concepts/vault) optimizes batching and path logic so that gas costs and capital requirements remain extremely low. Each individual pool and project built on top benefits from the global liquidity within Balancer that brings deep liquidity for base assets and opens up swap paths.
+All of the aggregate liquidity is then easily accessilbe for swappers, aggregators, and arbitraugers. The Balancer [Vault](/concepts/vault) optimizes batching and path logic so that gas costs and capital requirements remain extremely low. Each individual pool and project built on top benefits from the global liquidity within Balancer that brings deep liquidity for base assets and opens up swap paths.
 
 ## Who uses Balancer?
 
 Balancer is an incredibly useful tool for a diverse set of actors in the Defi space.
 
-Traders can swap between any two ERC20 tokens. This can be done through the [Balancer Dapp](https://app.balancer.fi/#/ethereum/trade) or aggregators like [1inch](https://app.1inch.io), [Matcha](https://www.matcha.xyz), or [Paraswap](https://app.paraswap.io).
+Swappers can swap between any two ERC20 tokens. This can be done through the [Balancer Dapp](https://app.balancer.fi/#/ethereum/swap) or aggregators like [1inch](https://app.1inch.io), [Matcha](https://www.matcha.xyz), or [Paraswap](https://app.paraswap.io).
 
 Liquidity Providers (LPs) can add liquidity to pools to earn swap fees, liquidity incentives, and other forms of yield
 

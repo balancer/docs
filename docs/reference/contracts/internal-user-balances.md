@@ -2,7 +2,7 @@
 
 ## Overview
 
-Similar to how the Vault keeps track of what tokens are in a pool, the Vault can also maintain balances for users or any other smart contract. Balances can be deposited to, withdrawn from, and transferred. When utilizing internal balances in Balancer transactions (swap/join/trade), gas costs are reduced since there are fewer (or no) ERC20 tokens transferred and everything is handled by the Vault's bookkeeping.
+Similar to how the Vault keeps track of what tokens are in a pool, the Vault can also maintain balances for users or any other smart contract. Balances can be deposited to, withdrawn from, and transferred. When utilizing internal balances in Balancer transactions (swap/join/exit), gas costs are reduced since there are fewer (or no) ERC20 tokens transferred and everything is handled by the Vault's bookkeeping.
 
 ::: tip Arbitraging with Interal Balances
 An arbitrageur that holds `WETH` and `USDC` as internal balances in the Vault can perform an extremely low gas cost swap with no token transfers and then complete the other leg of the arb on a centralized exchange.

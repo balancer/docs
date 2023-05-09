@@ -29,7 +29,7 @@ once, unless they want to change their allocation.
 
 veBAL voting can not be delegated, however snapshot voting covering general DAO operations and management of gauges can be delegated [here](https://snapshot.org/#/delegate/balancer.eth). A list of delegates and more information about them and how/why they vote can be found on the [In the Delegate Citadel](https://forum.balancer.fi/c/delegate-citadel/14) on the Balancer Forum.
 
-### Do veBAL holders receive a portion of the trading fees? How are the protocol fees paid?
+### Do veBAL holders receive a portion of the swap fees? How are the protocol fees paid?
 
 veBAL holders are receive protocol fees distributed in bbaUSD (Boosted Aave Stable Pool LP Tokens) see [Protocol Revenue Distribution](../protocol-fees.md#uses).
 
@@ -47,11 +47,11 @@ The length of time locked corresponds to how much veBAL you'll get for your 80/2
 
 The LM boost is separate. Related to your share of the pool and share of veBAL. Range limited from 1-2.5x. This can be calculated on our tools site and the math is explained here.
 
-### How do i get veBAL, and can i transfer BPT or veBAL?
+### How do I get veBAL, and can I transfer BPT or veBAL?
 
-You will need to have BAL tokens or WETH to invest in the BAL/WETH 80/20 pool. You can deposit a single asset, which will incur some price impact, or you can deposit both assets in the correct weights. You will receive BPT which you can then time lock here to receive veBAL.
+You will need to have BAL tokens or WETH to join the BAL/WETH 80/20 pool. You can deposit a single asset, which will incur some price impact, or you can deposit both assets in the correct weights. You will receive BPT which you can then time lock here to receive veBAL.
 
-Yes, you can transfer BPTs. Rewards will accrue in the wallet where they are held.
+Yes, you can transfer BPTs. Accrused swap fees will accrue in the wallet where they are held.
 
 veBAL is a non-standard ERC-20 token and cannot be transferred.
 
@@ -65,7 +65,7 @@ Incentives on mainnet are now accrued each block. Protocol fees are distributed 
 
 ### Does veBAL support Gnosis Safe?
 
-It's normal for vote escrowed (ve) systems to not allow arbitrary contracts to lock as otherwise it's easy to tokenize the ve tokens which defeats can the point if the tokenomics of said derivitive does not require appropriate locking. Users can lock up veBAL from an EOA and delegate it to your gnosis safe to earn boosts. Entities interested in making a large investment in veBAL may appeal to governance to have a multisig whitelisted for veBAL participation.
+It's normal for vote escrowed (ve) systems to not allow arbitrary contracts to lock as otherwise it's easy to tokenize the ve tokens which defeats can the point if the tokenomics of said derivitive does not require appropriate locking. Users can lock up veBAL from an EOA and delegate it to your Gnosis safe to utilize boosts. Entities interested in taking a large position in veBAL may appeal to governance to have a multisig allowlisted for veBAL participation.
 
 ### Is there a repository for the contract addresses of all the new staking contracts and veBAL contracts?
 
