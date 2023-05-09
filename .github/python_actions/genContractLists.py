@@ -28,7 +28,7 @@ CONTRACTS_BY_HEADING = {
 
 
 
-def address_directory(chain):
+def address_directory():
    r = requests.get(ADDRESSBOOK_URL)
    return r.json()
 
@@ -199,7 +199,6 @@ td {
 
 
 def main():
-    r = address_directory()["active"]
     for chain in SCANNERS_BY_CHAIN.keys():
         output=genChainMd(chain)
         with open(f"{OUTPUT_PATH}/{chain}.md", "w") as f:
