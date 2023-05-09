@@ -6,20 +6,19 @@ order: 5
 
 ## Overview
 
-Boosted Pools are actually a subclass of other pools (typically [Composable Stable Pools](./composable-stable.md) and [Weighted Pools](./weighted.md)) but deserve their own page due to their powerful feature set. Boosted Pools bring the best of both worlds to Liquidity Providers (LPs) and Traders. Traders get access to deep liquidity with minimized price impact while Liquidity Providers get their liquidity positions sent to external protocols, such as [Aave](https://aave.com/).
+Boosted Pools are actually a subclass of other pools (typically [Composable Stable Pools](./composable-stable.md) and [Weighted Pools](./weighted.md)) but deserve their own page due to their powerful feature set. Boosted Pools bring the best of both worlds to Liquidity Providers (LPs) and Swappers. Swappers get access to deep liquidity with minimized price impact while Liquidity Providers get their liquidity positions sent to external protocols, such as [Aave](https://aave.com/).
 
 ### Motivation
-In liquidity pools, swap prices are determined by pool balances. A large pool is great for traders: the larger the balances in the pool, the less the price changes from a given trade. The downside, however, is that large pools are not as great for LPs.
-While the full amount of the balances support token prices, only a fraction of the balances in the pool are actively traded back and forth to facilitate trades. As a result, much of the pool sits idle.
+In liquidity pools, swap prices are determined by pool balances. A large pool is great for swappers: the larger the balances in the pool, the less the price changes from a given swap. The downside, however, is that large pools are not as great for LPs.
+While the full amount of the balances support token prices, only a fraction of the balances in the pool are actively swapped back and forth to facilitate swaps. As a result, much of the pool sits idle.
 
 ## Advantages
 
-### Better for LPs, Better for Traders
-How can changes in pool structure improve the LP experience? By using the idle liquidity to gain value in other ways. With this idle liquidity in other protocols, LPs can get a boost (e.g. lending fees from Aave) and the pool becomes more enticing than other pools. Since the pool is more appealing for LPs, the liquidity will grow even larger, offering even better prices to traders.
+### Better for LPs, Better for Swappers
+How can changes in pool structure improve the LP experience? By using the idle liquidity to gain value in other ways. With this idle liquidity in other protocols, LPs can get a boost (e.g. lending fees from Aave) and the pool becomes more enticing than other pools. Since the pool is more appealing for LPs, the liquidity will grow even larger, offering even better prices to swappers.
 
 ### High Capital Efficiency
-
-Boosted Pools are designed to deliver high capital efficiency by enabling users to provide trade liquidity for common tokens while forwarding idle tokens to external protocols. This gives liquidity providers the benefits of protocols like Aave **on top of** the swap fees they collect from trades.
+Boosted Pools are designed to deliver high capital efficiency by enabling users to provide swap liquidity for common tokens while forwarding idle tokens to external protocols. This gives liquidity providers the benefits of protocols like Aave **on top of** the swap fees they collect from swaps.
 
 ### Superfluid, Consolidated Liquidity
 
@@ -29,14 +28,14 @@ Nesting pool tokens creates a powerful avenue to make swaps between any stableco
 
 To understand Boosted Pool, it's important to understand their core building block: [Linear Pools](./linear.md).
 
-> Linear Pools are Balancer pools that facilitate the exchange of an asset and its wrapped, yield bearing counterpart at a known (calculated or queried) exchange rate. For example, `DAI` and wrapped `aDAI` from Aave. Linear pools have target ranges to incentivize how much of the native token should be kept available for swaps vs the yield bearing counterpart. They use a fee/reward mechanism to incentivize arbitrageurs to maintain a desired ratio between the two tokens (pay fees for leaving the target range, receive reward for returning to range). One additional critical feature of Linear Pools is that they allow users to trade directly to BPT; no joins or exits are needed.
+> Linear Pools are Balancer pools that facilitate the exchange of an asset and its wrapped, yield bearing counterpart at a known (calculated or queried) exchange rate. For example, `DAI` and wrapped `aDAI` from Aave. Linear pools have target ranges to incentivize how much of the native token should be kept available for swaps vs the yield bearing counterpart. They use a fee/reward mechanism to incentivize arbitrageurs to maintain a desired ratio between the two tokens (pay fees for leaving the target range, receive those previously collected fees for returning to range). One additional critical feature of Linear Pools is that they allow users to swap directly to BPT; no joins or exits are needed.
 
 ### Nesting Linear Pools
-Since BPT are ERC-20 tokens themselves, Linear Pool BPT can be nested within another pool. This creates a simple `batchSwap` path between base assets and tokens in the outer pool because traders can swap from BPT to one of the Linear Pool's underlying tokens.
+Since BPT are ERC-20 tokens themselves, Linear Pool BPT can be nested within another pool. This creates a simple `batchSwap` path between base assets and tokens in the outer pool because swappers can swap from BPT to one of the Linear Pool's underlying tokens.
 
 ## Example
 
-Let's say there is a hypothetical new Weighted Pool with two tokens: 50% USDC and 50% WETH. One can expect that swaps on this pool will touch just a fraction of its depth (i.e. swaps typically won't use more than ~20% of the balances in the pool since trades of that scale would significantly change the price).
+Let's say there is a hypothetical new Weighted Pool with two tokens: 50% USDC and 50% WETH. One can expect that swaps on this pool will touch just a fraction of its depth (i.e. swaps typically won't use more than ~20% of the balances in the pool since swaps of that scale would significantly change the price).
 
 ![](/images/idle-tokens.png)
 
@@ -49,7 +48,7 @@ If this were instead to be built as a Boosted Pool, the idle assets can become y
 ## Case Study: bb-a-USD
 ![](/images/bb-a-USD.png)
 
-[Balancer Boosted Aave USD](https://app.balancer.fi/#/ethereum/pool/0xa13a9247ea42d743238089903570127dda72fe4400000000000000000000035d) (symbol: `bb-a-USD`) is a Composable Stable Pool that facilitates trades between three US Dollar stablecoins (`USDC`, `USDT`, and `DAI`) while sending idle liquidity to Aave. The underlying Linear Pools are:
+[Balancer Boosted Aave USD](https://app.balancer.fi/#/ethereum/pool/0xa13a9247ea42d743238089903570127dda72fe4400000000000000000000035d) (symbol: `bb-a-USD`) is a Composable Stable Pool that facilitates swaps between three US Dollar stablecoins (`USDC`, `USDT`, and `DAI`) while sending idle liquidity to Aave. The underlying Linear Pools are:
 * `bb-a-USDC` (consisting of `USDC` and wrapped `aUSDC`)
 * `bb-a-USDT` (consisting of `USDT` and wrapped `aUSDT`)
 * `bb-a-DAI` (consisting of `DAI` and wrapped `aDAI`)

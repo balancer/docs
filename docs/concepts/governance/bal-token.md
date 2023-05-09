@@ -37,6 +37,7 @@ This results in the following emissions schedule:
 
 ::: chart BAL Supply and Emissions
 
+```json
 {
   "type": "line",
   "data": {
@@ -149,9 +150,12 @@ This results in the following emissions schedule:
     }
   }
 }
+```
+
 :::
 
 ## Distribution
+
 This chart outlines the allocation amounts. More details below.
 
 | BAL Recipient/Fund                                                                                                                                                     | Original Allocation | State as of Feb 2023                         |
@@ -164,6 +168,7 @@ This chart outlines the allocation amounts. More details below.
 
 ::: chart BAL Token Distribution
 
+```json
 {
   "type": "pie",
   "data": {
@@ -195,15 +200,17 @@ This chart outlines the allocation amounts. More details below.
   },
   "options": {}
 }
+```
+
 :::
 
 #### Liquidity Providers
 
-Emissions to liquidity providers are decided by a combination of the emissions schedule described above, and veBAL voting to determine the rewards that flow to each authorized pool.
+Emissions to liquidty providers are decided by a combination of the emissions schedule described above, and [veBAL](./veBAL) voting to determine the allocations that flow to each authorized pool.
 
 #### Founders, Options, Advisors, Investors
 
-25M tokens were allocated to founders, stock options, advisors, and investors, all subject to vesting periods.
+25M tokens were allocated to founders, options, advisors, and investors, all subject to vesting periods.
 
 #### Ecosystem Fund
 
@@ -211,13 +218,12 @@ Emissions to liquidity providers are decided by a combination of the emissions s
 
 Note that as part of the veBAL conversion, the entire ecosystem fund was transferred into the [DAO multisig](https://etherscan.io/address/0x10A19e7eE7d7F8a52822f6817de8ea18204F2e4f)).
 
-Original Ecosystem Fund: <span class="address-link">[Mainnet](https://etherscan.io/address/0xb618F903ad1d00d6F7b92f5b0954DcdC056fC533)</span>, <span class="address-link">[Polygon]](https://etherscan.io/address/0xb618F903ad1d00d6F7b92f5b0954DcdC056fC533)</span>,  <span class="address-link">[Arbitrum]](https://arbiscan.io/address/0xaF23DC5983230E9eEAf93280e312e57539D098D0)</span>
-
+Original Ecosystem Fund: <span class="address-link">[Mainnet](https://etherscan.io/address/0xb618F903ad1d00d6F7b92f5b0954DcdC056fC533)</span>, <span class="address-link">[Polygon]](https://etherscan.io/address/0xb618F903ad1d00d6F7b92f5b0954DcdC056fC533)</span>, <span class="address-link">[Arbitrum]](https://arbiscan.io/address/0xaF23DC5983230E9eEAf93280e312e57539D098D0)</span>
 
 #### Fundraising Fund
 
-5M were allocated for the Fundraising Fund. Balancer Labs raised a pre-seed and seed round. This fund will be used for future fundraising rounds to support Balancer Labs' operations and growth. BAL tokens will never be sold to retail investors. As part of the transition to the [Operating Framework Enacted by Governance in Q2 2022](https://forum.balancer.fi/t/bip-1-operating-framework-for-balancer-dao/3237), 1.9M BAL was [transferred](https://etherscan.io/tx/0xaa29cd251cdb024c415b0e13f67a0ca74fe5abc3de9a9fedd1ae26fd39be4025) from the Fundraising Fund back to the DAO Multisig to supplement the community controlled supply.
+5M were allocated for the Fundraising Fund. Balancer Labs raised a pre-seed and seed round. This fund will be used for future fundraising rounds to support Balancer Labs' operations and growth. BAL tokens will never be sold to retail users. As part of the transition to the [Operating Framework Enacted by Governance in Q2 2022](https://forum.balancer.fi/t/bip-1-operating-framework-for-balancer-dao/3237), 1.9M BAL was [transferred](https://etherscan.io/tx/0xaa29cd251cdb024c415b0e13f67a0ca74fe5abc3de9a9fedd1ae26fd39be4025) from the Fundraising Fund back to the DAO Multisig to supplement the community controlled supply.
 
-For full transparency, the seed series price of one BAL token was $0.60: 
+For full transparency, the seed series price of one BAL token was $0.60.
 
 <span class="address-link">[Fundraising Fund](https://etherscan.io/address/0xB129F73f1AFd3A49C701241F374dB17AE63B20Eb)</span>

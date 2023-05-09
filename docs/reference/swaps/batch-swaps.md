@@ -6,9 +6,9 @@ order: 1
 
 ## Batch Swap Overview
 
-Balancer V2 allows powerful multi-hop trades, or "batch swaps", which pull the best prices from all the pools registered with the Vault.
+Balancer V2 allows powerful multi-hop swaps, or "batch swaps", which pull the best prices from all the pools registered with the Vault.
 
-The Vault exposes the `batchSwap` function to allow multi-hop trades with the the interface below.
+The Vault exposes the `batchSwap` function to allow multi-hop swaps with the the interface below.
 
 ```solidity
 batchSwap(SwapKind kind,
@@ -33,7 +33,7 @@ struct BatchSwapStep {
 }
 ```
 
-- `poolId`: The id of the pool to trade with.
+- `poolId`: The id of the pool to swap with.
 - `assetInIndex`: The index of the token within `assets` which to use as an input of this step.
 - `assetOutIndex`: The index of the token within `assets` which is the output of this step.
 - `amount`: The meaning of `amount` depends on the value of `kind` which passed to the `batchSwap` function.
@@ -41,8 +41,8 @@ struct BatchSwapStep {
   - `GIVEN_OUT`: The amount of tokens received from the pool in this step
 - `userData`: Any additional data which the pool requires to perform the swap. This allows pools to have more flexible swapping logic in future - for all current Balancer pools this can be left empty.
 
-::: tip Amounts for multi-hop trades
-When performing multi-hop trades, it's not always possible to know the value of `amount` for a given step.
+::: tip Amounts for multi-hop swaps
+When performing multi-hop swaps, it's not always possible to know the value of `amount` for a given step.
 
 By setting `amount` to `0`, the vault will interpret this to use the full output of the previous hop.
 :::
@@ -60,9 +60,9 @@ struct FundManagement {
 }
 ```
 
-- `sender`: The address from which tokens will be taken to perform the trade
-- `fromInternalBalance`: Whether the trade should use tokens owned by the `sender` which are already stored in the Vault.
-- `recipient`: The address to which tokens will be sent to after the trade.
+- `sender`: The address from which tokens will be taken to perform the swap.
+- `fromInternalBalance`: Whether the swap should use tokens owned by the `sender` which are already stored in the Vault.
+- `recipient`: The address to which tokens will be sent to after the swap.
 - `toInternalBalance`: Whether the tokens should be sent to the `recipient` or stored within their internal balance within the Vault.
 
 For more information on internal balances see [Core Concepts](/concepts/vault/#internal-balances).
@@ -80,9 +80,9 @@ batchSwap(SwapKind kind,
 
 - `kind`: The type of batch swap to perform - either "Out Given Exact In" or "In Given Exact Out."
 - `assets`: An array of tokens which are used in the batch swap. This is referenced from within `swaps`
-- `limits`: An array of maximum amounts of each `asset` to be transferred. For tokens going **in** to the Vault, the `limit` shall be a positive number. For tokens going **out** of the Vault, the `limit` shall be a negative number. If the `amount` to be transferred for a given asset is greater than its `limit`, the trade will fail with error `BAL#507: SWAP_LIMIT`.
+- `limits`: An array of maximum amounts of each `asset` to be transferred. For tokens going **in** to the Vault, the `limit` shall be a positive number. For tokens going **out** of the Vault, the `limit` shall be a negative number. If the `amount` to be transferred for a given asset is greater than its `limit`, the swap will fail with error `BAL#507: SWAP_LIMIT`.
   - **How do you determine what your `limits` should be?** If you want to compute `limits`, it is recommended to use `queryBatchSwap` and then [add a slippage tolerance](batch-swaps.md#adding-a-slippage-tolerance).
-- `deadline`: The UNIX timestamp at which our trade must be completed by - if the transaction is confirmed after this time, the transaction will fail.
+- `deadline`: The UNIX timestamp at which our swap must be completed by - if the transaction is confirmed after this time, the transaction will fail.
 
 ## `queryBatchSwap`
 
@@ -124,7 +124,7 @@ To perform a `GIVEN_OUT` `batchSwap` and apply a 1% slippage tolerance, multiply
 
 ## Multi-hop Examples
 
-In these examples, token A is being traded for token C, through the intermediate token B (illustrated as A->B->C). Tokens A, B, and C could be in different pools, or in the same pool.
+In these examples, token A is being swapped for token C, through the intermediate token B (illustrated as A->B->C). Tokens A, B, and C could be in different pools, or in the same pool.
 
 "Given In" means the caller knows the exact amount of the incoming token, and is asking the pool to calculate the tokenOut amount. The opposite is true of "Given Out."
 
@@ -146,7 +146,7 @@ If the result of the first swap is 5 B. The amount of the second swap is then se
 
 ### Example 2 ("Given Out")
 
-The second case is a “Given Out” Batch Swap: an user wants to receive 20 C, and wants to know how much A that will cost. Here the swaps happen “backwards,” first trading C for B, then B for A.
+The second case is a “Given Out” Batch Swap: an user wants to receive 20 C, and wants to know how much A that will cost. Here the swaps happen “backwards,” first swapping C for B, then B for A.
 
 Since a 20 C output is known, the swap kind is `GIVEN_OUT`, and the amount for the first swap is 20. The first swap will produce some require input amount of token B, but as before, the exact amount is not known in advance. So again, the amount of the second swap is set to zero.
 
@@ -164,7 +164,7 @@ Of course, the amount of the first swap in a batch cannot be zero. The batch swa
 
 ## Parallel Examples
 
-As described in the examples above, batch swaps are most commonly used for multi-hop trades. Although much less common, it is also possible to use batch swaps for a set of unrelated swaps to be performed in parallel.
+As described in the examples above, batch swaps are most commonly used for multi-hop swaps. Although much less common, it is also possible to use batch swaps for a set of unrelated swaps to be performed in parallel.
 
 ### Example 3 (Parallel Single Swaps - "Given In")
 
@@ -178,7 +178,7 @@ In this case, the input amount of each swap must be provided explicitly. In this
 
 ### Example 4 (Combined Swaps - "Given Out")
 
-And of course, it is also possible to combine multi-hop trades and single-hop swaps in parallel. This example performs two trades in `GIVEN_OUT` fashion: A->B->C->D and E->F. The final outputs will be 100 D and 50 F, if the user can supply the computed amounts of A and E.
+And of course, it is also possible to combine multi-hop swaps and single-hop swaps in parallel. This example performs two swaps in `GIVEN_OUT` fashion: A->B->C->D and E->F. The final outputs will be 100 D and 50 F, if the user can supply the computed amounts of A and E.
 
 | Parameter | Swap 1 | Swap 2 | Swap 3 | Swap 4 |
 | --------- | ------ | ------ | ------ | ------ |

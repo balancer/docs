@@ -204,7 +204,7 @@ emits PoolBalanceChanged(
 
 ## Single Swaps
 
-The vault supports "single swaps," a way to perform exactly one trade directly and gas-efficiently with a particular pool (e.g., for token sale GUIs). You can still use the internal balance.
+The vault supports "single swaps," a way to perform exactly one swap directly and gas-efficiently with a particular pool (e.g., for token sale GUIs). You can still use the internal balance.
 
 ### **`swap`**
 

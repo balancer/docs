@@ -49,7 +49,7 @@ The boost depends on what fraction of the gauge staked liquidity you hold and wh
 
 ### How do I extend my veBAL lock up?
 
-Just go to the [veBAL site](https://app.balancer.fi/vebal#/ethereum/vebal), see "Lock until" , click "+", choose the time desired, and confirm.
+Go to the [veBAL site](https://app.balancer.fi/vebal#/ethereum/vebal), see "Lock until" , click "+", choose the time desired, and confirm.
 
 ### Will voters vote on how much emissions go to each network or is that preset?
 
