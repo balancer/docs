@@ -39,6 +39,7 @@ enum UserBalanceOpKind {
 - `ops` - An array of UserBalanceOps, explained below
   - `kind` - Enum of type `UserBalanceOpKind`
   - `asset` - The token you are moving
+  - `amount` - The amount of the asset to move
   - `sender` - Address sending tokens or internal balance
   - `recipient` - Address receiving tokens or internal balance
 
