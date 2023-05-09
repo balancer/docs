@@ -18,6 +18,7 @@ export const navbar: NavbarConfig = [
     children: [
       {
         text: 'Contracts',
+        link: '/reference/contracts',
         children: [
           {
             text: 'Deployment Addresses',
@@ -46,6 +47,36 @@ export const navbar: NavbarConfig = [
               {
                 text: 'Goerli',
                 link: '/reference/contracts/deployment-addresses/goerli',
+              },
+            ],
+          },
+          {
+            text: 'Authorizer Permissions',
+            link: '/reference/authorizer',
+            children: [
+              {
+                text: 'mainnet',
+                link: '/reference/authorizer/mainnet',
+              },
+              {
+                text: 'Arbitrum',
+                link: '/reference/authorizer/arbitrum',
+              },
+              {
+                text: 'Optimism',
+                link: '/reference/authorizer/optimism',
+              },
+              {
+                text: 'Polygon',
+                link: '/reference/authorizer/polygon',
+              },
+              {
+                text: 'Gnosis',
+                link: '/reference/authorizer/gnosis',
+              },
+              {
+                text: 'Goerli',
+                link: '/reference/authorizer/goerli',
               },
             ],
           },

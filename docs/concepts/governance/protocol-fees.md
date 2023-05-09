@@ -6,18 +6,17 @@ Governable Protocol Fees are fees collected by the Balancer Protocol, **not** Li
 
 ## Sources
 
-### Trade Fees
+### Swap Fees
 
-The obvious source of Protocol Fees is from trading. Balancer traders already pay trade fees to Liquidity Providers in exchange for making their swap possible. Fees are denominated in the Input Token when executing a trade.
+The obvious source of Protocol Fees is from swapping. Balancer swappers already pay swap fees to Liquidity Providers in exchange for making their swap possible. Fees are denominated in the Input Token when executing a swap. 
 
-The Protocol Fees for trades can be collected as a percentage of the trade fees already being collected (a fraction of a fraction). From the traders' perspective, there will be no price increase.
+The Protocol Fees for swaps can be collected as a percentage of the swap fees already being collected (a fraction of a fraction). From the swappers' perspective, there will be no price increase. 
 
-As of [BIP-163](https://forum.balancer.fi/t/bip-19-incentivize-core-pools-l2-usage/3329#specification-4) in January 2023, the protocol takes 50% of the trade fees.
-
-- 100% of all BAL fees collected are emitted as fee sharing to veBAL holders. See this [Governance Proposal](https://forum.balancer.fi/t/proposal-distribute-protocol-fees-in-bal-where-appropriate/2933)
-- All other tokens are sold for USDC, of which
-  - 35% are paid to the DAO
-  - 65% are emitted to BAL holders in either the form of bb-a-USD (a boosted USD balancer pool) or via USDC incentives placed on the hidden hands vote market, which can be earned by veBAL participants for voting on these revenue generating pools.
+As of [BIP-163](https://forum.balancer.fi/t/bip-19-incentivize-core-pools-l2-usage/3329#specification-4)  in January 2023, the protocol takes 50% of the swap fees.
+- 100% of all BAL fees collected are emitted as fee sharing to veBAL holders.  See this [Governance Proposal](https://forum.balancer.fi/t/proposal-distribute-protocol-fees-in-bal-where-appropriate/2933)
+- All other tokens are sold for USDC, of which 
+  - 35% are paid to the DAO 
+  - 65% are emitted to BAL holders in the form of bb-a-USD (a boosted USD balancer pool) or via USDC incentives placed on the hidden hands vote market, which can be earned by veBAL participants for voting on these revenue generating pools.
 
 ### Wrapped Token Yield Fees
 

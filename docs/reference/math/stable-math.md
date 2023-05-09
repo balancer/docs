@@ -32,7 +32,7 @@ Where:
 - $x_i$ is is balance of token $i$
 - $A$ is the amplification parameter
 
-## Trade Equations
+## Swap Equations
 
 Similar to determining the invariant, determining (out/in) amount given (in/out) amounts is also done iteratively. Both [outGivenIn](https://github.com/georgeroman/balancer-v2-pools/blob/db415173277bfa86d9aa6b0c1fbd15481c7a2398/src/pools/stable/math.ts#L88) and [inGivenOut](https://github.com/georgeroman/balancer-v2-pools/blob/db415173277bfa86d9aa6b0c1fbd15481c7a2398/src/pools/stable/math.ts#L138) use the same function, [getTokenBalanceGivenInvariantAndAllOtherBalances](https://github.com/georgeroman/balancer-v2-pools/blob/db415173277bfa86d9aa6b0c1fbd15481c7a2398/src/pools/stable/math.ts#L502).
 

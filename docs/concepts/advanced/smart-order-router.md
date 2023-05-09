@@ -2,7 +2,7 @@
 
 ## Overview
 
-The Smart Order Router (SOR) finds the best prices for Balancer traders. For given input and output tokens, the SOR finds the optimal trades whether that is a direct swap in one pool, or a combination of trades hopping through multiple pools.
+The Smart Order Router (SOR) finds the best prices for Balancer swappers. For given input and output tokens, the SOR finds the optimal swaps whether that is a direct swap in one pool, or a combination of swaps hopping through multiple pools.
 
 ![SOR Path Split Example](/images/sor-path-example.png)
 

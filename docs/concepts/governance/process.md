@@ -48,9 +48,9 @@ Start a new conversation: [General Proposals](https://forum.balancer.fi/c/govern
 
 Further, votes requesting new gauges should include the following information:
 
-- What are the initial fees set to, and what is the reasoning for this?
-- If stableswap, How is the A-factor set and why was the given a-factor chosen?
-- If custom pool, How does this pool generate revenue? Is 50% of the revenue generated sent to the fees collector? Where can details about the performance of this pool be found? Where can users deposit into it and trade through it?
+* What are the initial fees set to, and what is the reasoning for this?
+* If stableswap, how is the A-factor set and why was the given a-factor chosen?
+* If custom pool, how does this pool generate revenue? Is 50% of the revenue generated sent to the fees collector? Where can details about the performance of this pool be found? Where can users deposit into it and swap through it?
 
 ### **Step 2: Discussion**
 

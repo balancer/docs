@@ -26,7 +26,7 @@ You will have no `rateProvider`s in your pool when your tokens are price-pegged 
 
 ### Direct Balance Query
 
-Wrapping rebasing tokens, such as `stETH`, makes them compatible with Balancer, but knowing the exchange rate between the underlying rebasing token and the wrapped token is necessary to facilitate Stableswap trades. As such, the `wstETH` `rateProvider` has a `getRate()` function that calls `wstETH`'s own `stEthPerToken()` function. [See the contract here](https://github.com/balancer/metastable-rate-providers/blob/master/contracts/WstETHRateProvider.sol).
+Wrapping rebasing tokens, such as `stETH`, makes them compatible with Balancer, but knowing the exchange rate between the underlying rebasing token and the wrapped token is necessary to facilitate Stableswap swaps. As such, the `wstETH` `rateProvider` has a `getRate()` function that calls `wstETH`'s own `stEthPerToken()` function. [See the contract here](https://github.com/balancer-labs/metastable-rate-providers/blob/master/contracts/WstETHRateProvider.sol).
 
 ### Oracles
 
