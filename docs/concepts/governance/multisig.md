@@ -7,7 +7,6 @@ The core of Balancer smart contracts are immutable and do not use proxies or oth
 
 ## The Multisigs and their addresses
 
-
 | Name                   | <div style="width:350px">Purpose</div>                                                                                                  | Chain                                                                                                                                                                                                                                                                           | Address                                      | Signer Set                                                         |
 | ---------------------- | --------------------------------------------------------------------------------------------------------------------------------------- | ------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- | -------------------------------------------- | ------------------------------------------------------------------ |
 | Protocol Fees Multisig | Collect fees, and set A-Factors and Fees on pools (default pool-owner, except on mainnet where a separate Multisig is used to set fees. | [MAINNET](https://gnosis-safe.io/app/eth:0x7c68c42De679ffB0f16216154C996C354cF1161B/home), [ARBI](https://gnosis-safe.io/app/arb1:0x7c68c42De679ffB0f16216154C996C354cF1161B/home), [POLYGON](https://gnosis-safe.io/app/matic:0x7c68c42De679ffB0f16216154C996C354cF1161B/home) | `0x7c68c42De679ffB0f16216154C996C354cF1161B` | [BAL Maxis](#operational-multisigs-signer-set-aka-balancer-maxis)  |
@@ -31,25 +30,6 @@ But getting to that ideal, long-term vision of a truly decentralized and effecti
 - which mechanisms and processes work best
 - the necessary infrastructure, tooling, and user interfaces
 - the risks and concerns associated with each approach
-
-Experimentation has been running wild in all directions:
-
-- vote delegation
-- minimum quorum
-- specialized committees
-- continuous voting
-- augmented voting power via token lock
-- off-chain voting for signaling / polling
-- on-chain actions from off-chain voting by way of oracles
-- upgradeable smart contracts
-- time delays on sensitive actions
-- emergency actions via Multisig \(e.g. pause, shutdown\)
-- legal entities \(e.g. foundation\) providing support for the DAO
-- tools for DAO treasury management
-- token issuance to cover protocol expenses
-- incentivized voting
-- incentivized off-chain engagement \(e.g. forum participation\)
-- and so on…
 
 While also actively experimenting with governance-related initiatives, the Balancer community has leaned towards the more cautious and thoughtful approach of not trying to rush the path to full decentralization, so each step towards a mature on-chain governance will be taken with due care, having learned from others’ experiences.
 
@@ -102,14 +82,14 @@ Beyond those current signers, [BIP-16](https://forum.balancer.fi/t/bip-16-update
 The Balancer Maxis operate a number of Multisigs with a reduced signer requirement, which are used for the regular operation of the protocol, as well as adding gauges to veBAL.
 
 | Signer     | Discord Handle  | Address                                      |
-| ---------- | --------------- | -------------------------------------------- |
+| ---------- |-----------------| -------------------------------------------- |
 | Solarcurve | solarcurve#5075 | `0x512fce9B07Ce64590849115EE6B32fd40eC0f5F3` |
 | Zen Dragon | Zen Dragon#2923 | `0x7c2eA10D3e5922ba3bBBafa39Dc0677353D2AF17` |
 | Zekraken   | zekraken#0645   | `0xafFC70b81D54F229A5F50ec07e2c76D2AAAD07Ae` |
 | Mike B     | d_w_b_w_d#0685  | `0xc4591c41e01a7a654B5427f39Bbd1dEe5bD45D1D` |
 | Xeonus     | Xeonus#4620     | `0x7019Be4E4eB74cA5F61224FeAf687d2b43998516` |
-| Danko      | 0xDanko#3565    | `0x200550cAD164E8e0Cb544A9c7Dc5c833122C1438` |
-| Tritium    | Trtiium#0069    | `0xcf4fF1e03830D692F52EB094c52A5A6A2181Ab3F` |
+| Tritium    | Tritium#0069    | `0xcf4fF1e03830D692F52EB094c52A5A6A2181Ab3F` |
+
 
 **The Balancer Maxi Multisig set requires 2 or 3 out of 7 signers to execute, depending on the security level of the Multisig.**
 
