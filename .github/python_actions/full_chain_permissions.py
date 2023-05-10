@@ -107,7 +107,7 @@ def generate_deployment_deduped_map(permission_data, chain):
 def deployment_deduped_map_to_list(deployment_map):
     result = []
     need_description = []
-    description_by_function = AddrBook.fx_description_by_name
+    description_by_function = AddrBook.fx_description_by_name()
     for contract, fxdata in deployment_map.items():
         for fx, callers in fxdata.items():
             try:

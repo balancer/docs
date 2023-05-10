@@ -511,7 +511,7 @@
          "0x170027069fd114BFF2f57B0FC796df93290C02a6"
       ],
       "Authorized_Caller_Names": [
-         "EAO/blabs_ops/EmergencyPauser"
+         "EOA/blabs_ops/EmergencyPauser"
       ]
    },
    {
@@ -764,7 +764,7 @@
          "0x170027069fd114BFF2f57B0FC796df93290C02a6"
       ],
       "Authorized_Caller_Names": [
-         "EAO/blabs_ops/EmergencyPauser"
+         "EOA/blabs_ops/EmergencyPauser"
       ]
    },
    {
