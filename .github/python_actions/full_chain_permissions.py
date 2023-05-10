@@ -2,7 +2,7 @@ import requests
 import json
 import pandas as pd
 import os
-from bal_addresses import read_addressbook, read_reversebook, read_fx_descriptions, SCANNERS_BY_CHAIN, GITHUB_MONOREPO_NICE, GITHUB_MONOREPO_RAW
+from bal_addresses import AddrBook
 from web3 import Web3
 import datetime
 
@@ -16,23 +16,22 @@ w3_by_chain = {
     "optimism": Web3(Web3.HTTPProvider(f"https://optimism-mainnet.infura.io/v3/{INFURA_KEY}")),
     "polygon": Web3(Web3.HTTPProvider(f"https://polygon-mainnet.infura.io/v3/{INFURA_KEY}")),
     "gnosis": Web3(Web3.HTTPProvider(f"https://rpc.gnosischain.com/")),
-    "goerli": Web3(Web3.HTTPProvider(f"https://goerli.infura.io/v3/{INFURA_KEY}"))
+    "goerli": Web3(Web3.HTTPProvider(f"https://goerli.infura.io/v3/{INFURA_KEY}")),
+    "sepolia": Web3(Web3.HTTPProvider(f"https://sepolia.infura.io/v3/{INFURA_KEY}"))
 }
 
 
 
 
-def monorepo_names_by_address(chain_name):
-    return read_reversebook(chain_name)
-
 
 def build_chain_permissions_list(chain_name):
-    r = read_addressbook(chain_name)
+    a = AddrBook(chain_name)
+    r = a.flatbook
     results = []
-    address_names = monorepo_names_by_address(chain_name)
-    action_ids_list = f"{GITHUB_MONOREPO_RAW}/pkg/deployments/action-ids/{chain_name}/action-ids.json"
+    address_names = a.reversebook
+    action_ids_list = f"{a.GITHUB_MONOREPO_RAW}/pkg/deployments/action-ids/{chain_name}/action-ids.json"
     w3 = w3_by_chain[chain_name]
-    authorizer = w3.eth.contract(address=r["20210418-authorizer/Authorizer"], abi=json.load(open("python_actions/abis/Authorizer.json")))
+    authorizer = w3.eth.contract(address=r["20210418-authorizer/Authorizer"], abi=json.load(open(".github/python_actions/abis/Authorizer.json")))
     try:
         result = requests.get(action_ids_list)
     except requests.exceptions.HTTPError as err:
@@ -94,9 +93,9 @@ def generate_deployment_deduped_map(permission_data, chain):
         linkedAddresses = []
         linkedDeployments = []
         for address in callerAddresses:
-            linkedAddresses.append(f"[{address}]({SCANNERS_BY_CHAIN[chain]}/address/{address})")
+            linkedAddresses.append(f"[{address}]({AddrBook.SCANNERS_BY_CHAIN[chain]}/address/{address})")
         for deployment in deployments:
-            linkedDeployments.append(f"[{deployment}]({GITHUB_MONOREPO_NICE}/pkg/deployments/tasks/{deployment})")
+            linkedDeployments.append(f"[{deployment}]({AddrBook.GITHUB_MONOREPO_NICE}/pkg/deployments/tasks/{deployment})")
 
         results[contract][fx]["callerNames"] = list(set(callerNames + list(results[contract][fx]["callerNames"])))
         results[contract][fx]["callerAddresses"] = list(set(linkedAddresses + list(results[contract][fx]["callerAddresses"])))
@@ -108,7 +107,7 @@ def generate_deployment_deduped_map(permission_data, chain):
 def deployment_deduped_map_to_list(deployment_map):
     result = []
     need_description = []
-    description_by_function = read_fx_descriptions()
+    description_by_function = AddrBook.fx_description_by_name
     for contract, fxdata in deployment_map.items():
         for fx, callers in fxdata.items():
             try:
@@ -147,10 +146,13 @@ def generate_chain_files(chain):
         json.dump(permissions, f, indent=3)
     with open(f"data_files/permissions/{chain}.json", "r") as f:
         permissions = json.load(f)
-    output_list(permissions, f"{chain}", chain)
+    if len(permissions) > 0:
+        output_list(permissions, f"{chain}", chain)
+    else:
+        print(f"WARNING: No permissions found for chain {chain}")
 
 def main():
-    for chain in SCANNERS_BY_CHAIN.keys():
+    for chain in w3_by_chain:
         print(f"\n\n\nWriting docs for {chain.capitalize()}\n\n\n")
         generate_chain_files(chain)
 

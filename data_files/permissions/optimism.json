@@ -1316,6 +1316,17 @@
       ]
    },
    {
+      "Fx": "add_reward(address,address)",
+      "Contract": "ChildChainGauge",
+      "Deployment": "20230316-child-chain-gauge-factory-v2",
+      "Authorized_Caller_Addresses": [
+         "0x09Df1626110803C7b3b07085Ef1E053494155089"
+      ],
+      "Authorized_Caller_Names": [
+         "multisigs/lm"
+      ]
+   },
+   {
       "Fx": "disable()",
       "Contract": "ManagedPoolFactory",
       "Deployment": "20230411-managed-pool-v2",
