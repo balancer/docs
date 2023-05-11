@@ -5,7 +5,7 @@ import re
 GITHUB_MONOREPO_RAW="https://raw.githubusercontent.com/balancer-labs/balancer-v2-monorepo/master"
 GITHUB_MONOREPO_NICE="https://github.com/balancer/balancer-v2-monorepo/blob/master"
 OUTPUT_PATH = "docs/reference/contracts/deployment-addresses"
-ADDRESSBOOK_URL = "https://raw.githubusercontent.com/BalancerMaxis/bal_addresses/main/outputs/addressbook.json"
+ADDRESSBOOK_URL = "https://raw.githubusercontent.com/BalancerMaxis/bal_addresses/main/outputs/deployments.json"
 
 SCANNERS_BY_CHAIN = {
     "mainnet": "https://etherscan.io",

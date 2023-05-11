@@ -45,9 +45,13 @@ export const navbar: NavbarConfig = [
                 link: '/reference/contracts/deployment-addresses/gnosis',
               },
               {
-                text: 'Goerli',
+                text: 'Goerli(testnet)',
                 link: '/reference/contracts/deployment-addresses/goerli',
               },
+              {
+                text: 'Sepolia(testnet)',
+                link: '/reference/contracts/deployment-addresses/sepolia'
+              }
             ],
           },
           {
@@ -55,7 +59,7 @@ export const navbar: NavbarConfig = [
             link: '/reference/authorizer',
             children: [
               {
-                text: 'mainnet',
+                text: 'Mainnet',
                 link: '/reference/authorizer/mainnet',
               },
               {
@@ -78,6 +82,11 @@ export const navbar: NavbarConfig = [
                 text: 'Goerli',
                 link: '/reference/authorizer/goerli',
               },
+              {
+                text: 'Sepolia(testnet)',
+                link: '/reference/authorizer/sepolia'
+              }
+
             ],
           },
           {
