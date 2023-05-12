@@ -9,7 +9,7 @@ references:
 
 ## Overview
 
-Liquidity Bootstrapping Pools (LBPs) are pools that can dynamically change token weighting (e.g 1/99 to 99/1 for TokenA/TokenB). LBPs use [Weighted Math](/reference/math/weighted-math.md) with time-dependent weights. The starting and end weights and times are selected by the pool owner, who also has the power to pause swaps.
+Liquidity Bootstrapping Pools (LBPs) are pools that can dynamically change token weighting (e.g 1/99 to 99/1 for TokenA/TokenB). LBPs use [Weighted Math](/reference/math/weighted-math.md) with time-dependent weights. The starting and end weights and times are selected by the pool owner, who also has the power to pause swaps. The pool owner is the only address that can join the pool.
 
 ### Mental Model
 
