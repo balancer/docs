@@ -92,3 +92,14 @@ Fetch historical metrics for a given pool
   }
 }
 ```
+
+Find pools that have specific tokens in them (WETH and BAL in this example)
+```graphql
+{
+  pools(first: 100, where:{tokensList_contains: ["0xc02aaa39b223fe8d0a0e5c4f27ead9083c756cc2","0xba100000625a3754423978a60c9317c58a424e3D"]}) {
+    id
+    poolType
+    poolTypeVersion
+  }
+}
+```
