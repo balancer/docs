@@ -20,6 +20,12 @@ w3_by_chain = {
     "sepolia": Web3(Web3.HTTPProvider(f"https://sepolia.infura.io/v3/{INFURA_KEY}"))
 }
 
+ENABLE_WIDE_TABLES = '''
+---
+pageClass: wide-content
+---
+
+'''
 
 
 
@@ -136,6 +142,7 @@ def output_list(permission_data, output_name, chain):
     dedup = pd.DataFrame(deployment_deduped_map_to_list(generate_deployment_deduped_map(permission_data, chain)))
     dedup = dedup.sort_values(by=["function", "contract"])
     with open(f"{BASE_PATH}/{output_name}.md", "w") as f:
+        f.write(ENABLE_WIDE_TABLES)
         f.write(f"# {chain.capitalize()} Authorizer Permissions\n\n### Last generated on {today}\n\n")
         dedup.to_markdown(buf=f, index=False)
 
