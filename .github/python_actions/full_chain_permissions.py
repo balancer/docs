@@ -20,8 +20,7 @@ w3_by_chain = {
     "sepolia": Web3(Web3.HTTPProvider(f"https://sepolia.infura.io/v3/{INFURA_KEY}"))
 }
 
-ENABLE_WIDE_TABLES = '''
----
+ENABLE_WIDE_TABLES = '''---
 pageClass: wide-content
 ---
 
