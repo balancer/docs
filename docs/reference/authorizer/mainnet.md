@@ -1,3 +1,7 @@
+---
+pageClass: wide-content
+---
+
 # Mainnet Authorizer Permissions
 
 ### Last generated on 2023-05-10
