@@ -39,3 +39,50 @@ This contract makes use of Chainlink's registry contract so it can handle if Cha
 #### [`ChainlinkRateProvider`](https://github.com/balancer/metastable-rate-providers/blob/master/contracts/ChainlinkRateProvider.sol)
 
 If you're running on a network for which Chainlink doesn't have a registry and you think the risk of a deprecated price feed is low enough, then you can use the rateProvider that directly queries a given Chainlink oracle.
+
+## RateProviders as part of a pool's lifecycle
+| PoolType              | Yield Fee        |  Pricing Equations| 
+| -----------           | -----------      |  -----------      |
+| Composable Stable Pool| ✅               | ✅                |
+| Weighted Pool         | ✅               | ❌              |
+| Managed Pool          | Text             | Text              |
+| Custom Pool           | Text             | Text              |
+
+Looking at this [transaction](https://etherscan.io/tx/0x67f477517acf6e0c91ec7997e665ca25d2806da060af30272876742584f0aa21). 50 ETH is being exchanged for 46.68 rETH. This pool is a MetaStablePool. According to the table the rate, the rateProvider, supplies is being taken into account during the swap. Looking at the Trade equations, the best suited parameter to weave in the `rate` is the balances which are used to compute `OutGivenIn` or `InGivenOut`.
+
+Querying the balances of this pool via `vault.getPoolTokens(poolId)` returns  
+20040415915824227571764 for rETH and 21953505292747563228232 for Weth. 
+
+Before these balances are being used in the Trade equations two operations will be done to them:
+- 1. Upscaling. 
+- 2. Applying the rate
+Effectively changing the value of the balances reported via the earlier call to `vault.getPoolTokens(poolId)`.
+<summary> Implementation for MetaStablePools (superseded by ComposableStablePool) </summary>
+
+```
+function _scalingFactor(IERC20 token) internal view virtual override returns (uint256) {
+        uint256 baseScalingFactor = super._scalingFactor(token);
+        uint256 priceRate = _priceRate(token);
+        // Given there is no generic direction for this rounding, it simply follows the same strategy as the BasePool.
+        return baseScalingFactor.mulDown(priceRate);
+    }
+```
+
+<summary> Implementation for Composable Stable Pool </summary>
+
+```
+function _scalingFactors() internal view virtual override returns (uint256[] memory) {
+        // There is no need to check the arrays length since both are based on `_getTotalTokens`
+        uint256 totalTokens = _getTotalTokens();
+        uint256[] memory scalingFactors = new uint256[](totalTokens);
+
+        for (uint256 i = 0; i < totalTokens; ++i) {
+            scalingFactors[i] = _getScalingFactor(i).mulDown(_getTokenRate(i));
+        }
+
+        return scalingFactors;
+    }
+```
+
+The token balances used in the Trade Equations are then [upscaled](https://dashboard.tenderly.co/tx/mainnet/0x67f477517acf6e0c91ec7997e665ca25d2806da060af30272876742584f0aa21?trace=0.5.2.1.5.11). In the example transaction the tokenOutBalances which are fed into
+[`OnSwapGivenIn()`](https://dashboard.tenderly.co/tx/mainnet/0x67f477517acf6e0c91ec7997e665ca25d2806da060af30272876742584f0aa21?trace=0.5.2.1.5.13.2) is 21445684973708525874136. Meaning the rate, the providers supplies is "baked in" the balances.
