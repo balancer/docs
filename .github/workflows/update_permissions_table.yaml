@@ -22,7 +22,7 @@ jobs:
     - name: Update Files
       id: update
       env:
-        WEB3_INFURA_PROJECT_ID = ${{ secrets.INFURA_KEY }}
+        WEB3_INFURA_PROJECT_ID: ${{ secrets.INFURA_KEY }}
       run: |
         pip3 install -r .github/python_actions/requirements.txt
         python3 .github/python_actions/full_chain_permissions
