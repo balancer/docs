@@ -1,20 +1,14 @@
 import requests
 import pandas as pd
 import re
+from bal_addresses import AddrBook
 
 GITHUB_MONOREPO_RAW="https://raw.githubusercontent.com/balancer-labs/balancer-v2-monorepo/master"
 GITHUB_MONOREPO_NICE="https://github.com/balancer/balancer-v2-monorepo/blob/master"
 OUTPUT_PATH = "docs/reference/contracts/deployment-addresses"
 ADDRESSBOOK_URL = "https://raw.githubusercontent.com/BalancerMaxis/bal_addresses/main/outputs/deployments.json"
 
-SCANNERS_BY_CHAIN = {
-    "mainnet": "https://etherscan.io",
-    "polygon": "https://polygonscan.com",
-    "arbitrum": "https://arbiscan.io",
-    "optimism": "https://optimistic.etherscan.io",
-    "gnosis": "https://gnosisscan.io",
-    "goerli": "https://goerli.etherscan.io/"
-}
+SCANNERS_BY_CHAIN = AddrBook.SCANNERS_BY_CHAIN
 
 
 CONTRACTS_BY_HEADING = {
