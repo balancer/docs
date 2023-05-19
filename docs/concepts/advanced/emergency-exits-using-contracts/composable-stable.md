@@ -12,13 +12,13 @@ https://etherscan.io/address/0xba12222222228d8ba445958a75a0704d566bf2c8#code
 
 It should look like this 
 
-![1.png](images/1.png)
+![emergencyWD1.png](docs/.vuepress/public/images/backgrounds/emergencyWD1.png)
 
 The exitpool transaction is made up of four parts, `poolId, sender, recipient, request`
 
 **poolId**: You can find this by going to the LP token contract address, going to "contract" tab on etherscan then "read contract" and item 12 should be getPoolId, which should look like this `0x79c58f70905f734641735bc61e45c19dd9ad60bc0000000000000000000004e7`
 
-![CSP2.png](docs/concepts/advanced/images/CSP2.png)
+![emergencyWDCSP2.png](docs/.vuepress/public/images/backgrounds/emergencyWDCSP2.png)
 
 **Sender**: this is your address
 
@@ -41,7 +41,7 @@ this is an array of **contract addresses for the assets** in the pool. Please no
 *If you already know the asset contract addresses, you can skip this part.*
 Go to the balancer vault on etherscan, and go to contract>read contract then find 10. getPoolTokens.  Input the poolid and hit query and it should return the array of tokens like this 
 
-![CSP3.png](docs/concepts/advanced/images/CSP3.png)
+![emergencyWDCSP3.png](docs/.vuepress/public/images/backgrounds/emergencyWDCSP3.png)
 
 It should look like this 
 `["0x6B175474E89094C44Da98b954EedeAC495271d0F",
@@ -85,14 +85,14 @@ To encode this value, go to https://abi.hashex.org/ and select Add Argument and 
 
 You can get your BPT amount by going to the pool token contract, clicking contract> read contract and going to balanceOf() and inputting your address.  
 
-![CSP6.png](docs/concepts/advanced/images/CSP6.png)
+![emergencyWDCSP6.png](docs/.vuepress/public/images/backgrounds/emergencyWDCSP6.png)
 
 Whatever it returns is how much BPT you hold in 18 decimals.  Input that into the site above and copy the resulting "encoded data" at the bottom. It should look like this
 
 `0000000000000000000000000000000000000000000028e31d29b0a80513a2d6`
 
 
-![CSP4.png](docs/concepts/advanced/images/CSP4.png)
+![emergencyWDCSP4.png](docs/.vuepress/public/images/backgrounds/emergencyWDCSP4.png)
 
 Now we put these two parts together with a 0x at the beginning so
 `0x` + `0000000000000000000000000000000000000000000000000000000000000002` + `000000000000000000000000000000000000000000000022ee66da08cf2d48ef` = 
@@ -115,12 +115,12 @@ So the **Request** looks like this
 
 Now go back to the hashex site with the exitPool function selected and lets fill in the data.  We already explained poolId, sender and recipient.  Now copy the entire Request struct starting with the opening [ and ending with the closing ] into the request struct box.  It should look like this 
 
-![CSP5.png](docs/concepts/advanced/images/CSP5.png)
+![emergencyWDCSP6.png](docs/.vuepress/public/images/backgrounds/emergencyWDCSP6.png)
 
 Now that the transaction is created, we now have to send it.  In order to send custom transactions through metamask, we first must go to settings>advanced>"show hex data" and enable it.  Next go to send, and with the "to" address being the balancer vault `0xBA12222222228d8Ba445958a75a0704d566BF2C8`
 
 In the "hex data" section on metamask, input the "encoded data" at the bottom of the above image.  Note that if there are any errors in the tx construction, it will say the transaction is likely to fail.  If its only estimating 21000 gas, that means the transaction will fail.  
 
-![6.png](docs/concepts/advanced/images/6.png)
+![emergencyWD6.png](docs/.vuepress/public/images/backgrounds/emergencyWD6.png)
 
 Assuming everything is right, sending this transaction will withdraw from the composable stable pool.  
