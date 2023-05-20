@@ -86,7 +86,7 @@ If all goes well, you should only need to change the fields highlighted above.
 ## Subgraph
 Adding new integrations to the subgraph is important for tracking Linear Pool creations. The subgraph is maintained in the [Balancer Subgraph Repository](https://github.com/balancer/balancer-subgraph-v2). 
 
-In the `abi` folder add two JSON files: one for the new Linear Pool ABI and one for the the corresponding factory ABI. 
+In the `abi` folder, add two JSON files: one for the new Linear Pool ABI and one for the the corresponding factory ABI. 
 
 In `networks.yaml`, add an entry for each network that the new Linear Pool is deployed on. This includes information on the `network`, factory name, `address` of the deployed contract, and `startBlock`. Maintain the current naming conventions by naming the factory, `<protocol>LinearPool<version>Factory`. 
 
