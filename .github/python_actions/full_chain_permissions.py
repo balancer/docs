@@ -17,7 +17,9 @@ w3_by_chain = {
     "polygon": Web3(Web3.HTTPProvider(f"https://polygon-mainnet.infura.io/v3/{INFURA_KEY}")),
     "gnosis": Web3(Web3.HTTPProvider(f"https://rpc.gnosischain.com/")),
     "goerli": Web3(Web3.HTTPProvider(f"https://goerli.infura.io/v3/{INFURA_KEY}")),
-    "sepolia": Web3(Web3.HTTPProvider(f"https://sepolia.infura.io/v3/{INFURA_KEY}"))
+    "sepolia": Web3(Web3.HTTPProvider(f"https://sepolia.infura.io/v3/{INFURA_KEY}")),
+    "zkevm": Web3(Web3.HTTPProvider(f"https://zkevm-rpc.com")),
+    "avalanche": Web3(Web3.HTTPProvider(f"https://api.avax.network/ext/bc/C/rpc")),
 }
 
 ENABLE_WIDE_TABLES = '''---
