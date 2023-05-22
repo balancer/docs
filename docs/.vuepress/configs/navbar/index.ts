@@ -95,7 +95,7 @@ export const navbar: NavbarConfig = [
                 link: '/reference/authorizer/avalanche'
               },
               {
-                text: 'Goerli',
+                text: 'Goerli(testnet)',
                 link: '/reference/authorizer/goerli',
               },
               {
