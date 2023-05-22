@@ -1,20 +1,12 @@
 import requests
 import pandas as pd
 import re
+from bal_addresses import AddrBook
 
-GITHUB_DEPLOYMENTS_RAW="https://raw.githubusercontent.com/balancer/balancer-deployments/master"
-GITHUB_DEPLOYMENTS_NICE="https://github.com/balancer/balancer-deployments/blob/master"
 OUTPUT_PATH = "docs/reference/contracts/deployment-addresses"
 ADDRESSBOOK_URL = "https://raw.githubusercontent.com/BalancerMaxis/bal_addresses/main/outputs/deployments.json"
 
-SCANNERS_BY_CHAIN = {
-    "mainnet": "https://etherscan.io",
-    "polygon": "https://polygonscan.com",
-    "arbitrum": "https://arbiscan.io",
-    "optimism": "https://optimistic.etherscan.io",
-    "gnosis": "https://gnosisscan.io",
-    "goerli": "https://goerli.etherscan.io/"
-}
+SCANNERS_BY_CHAIN = AddrBook.SCANNERS_BY_CHAIN
 
 
 CONTRACTS_BY_HEADING = {
@@ -32,8 +24,6 @@ def address_directory():
    r = requests.get(ADDRESSBOOK_URL)
    return r.json()
 
-#def getContractUrl(deployment, contract):
-
 
 def genFullTable(r, chain):
     result = pd.DataFrame(columns=["Contract", "Address", "Deployment"])
@@ -49,8 +39,8 @@ def genFullTable(r, chain):
                 contractText = contract
             ###
 
-            dl = f'{GITHUB_DEPLOYMENTS_NICE}/tasks/{deployment}'
-            al = f"{SCANNERS_BY_CHAIN[chain]}/address/{contracts[contract]}#code"
+            dl = f'{AddrBook.GITHUB_DEPLOYMENTS_NICE}/tasks/{deployment}'
+            al = f"{AddrBook.SCANNERS_BY_CHAIN[chain]}/address/{contracts[contract]}#code"
             addressText = f'[{contracts[contract]}]({al})'
             ## TODO find github code links
             result.loc[len(result)] = [contractText, addressText, f"[{deployment}]({dl})"]
@@ -76,8 +66,8 @@ def genPoolFactories(r, chain):
                     contractText = contract
                 ###
 
-                dl = f"{GITHUB_DEPLOYMENTS_NICE}/tasks/{deployment}"
-                al = f"{SCANNERS_BY_CHAIN[chain]}/address/{contracts[contract]}#code"
+                dl = f"{AddrBook.GITHUB_DEPLOYMENTS_NICE}/tasks/{deployment}"
+                al = f"{AddrBook.SCANNERS_BY_CHAIN[chain]}/address/{contracts[contract]}#code"
                 result.loc[len(result)] = [contractText, f"[{contracts[contract]}]({al})", f"[{deployment}]({dl})"]
     result.sort_values(by=["Contract","Deployment"], inplace=True)
     return result
@@ -101,8 +91,8 @@ def genNotInContractList(r, chain, contractList):
                 contractText = contract
             ###
 
-            dl = f'{GITHUB_DEPLOYMENTS_NICE}/tasks/{deployment}'
-            al = f"{SCANNERS_BY_CHAIN[chain]}/address/{contracts[contract]}#code"
+            dl = f'{AddrBook.GITHUB_DEPLOYMENTS_NICE}/tasks/{deployment}'
+            al = f"{AddrBook.SCANNERS_BY_CHAIN[chain]}/address/{contracts[contract]}#code"
             addressText = f'[{contracts[contract]}]({al})'
             ## TODO find github code links
             result.loc[len(result)] = [contractText, addressText, f"[{deployment}]({dl})"]
@@ -126,8 +116,8 @@ def genFromContractList(r, chain, contractList):
                 contractText = contract
             ###
 
-            dl = f'{GITHUB_DEPLOYMENTS_NICE}/tasks/{deployment}'
-            al = f"{SCANNERS_BY_CHAIN[chain]}/address/{contracts[contract]}#code"
+            dl = f'{AddrBook.GITHUB_MONOREPO_NICE}/pkg/deployments/tasks/{deployment}'
+            al = f"{AddrBook.SCANNERS_BY_CHAIN[chain]}/address/{contracts[contract]}#code"
             addressText = f'[{contracts[contract]}]({al})'
             ## TODO find github code links
             result.loc[len(result)] = [contract, addressText, f"[{deployment}]({dl})"]
@@ -173,9 +163,12 @@ These deployments were in use at some point, and may still be in active operatio
 
     
 """
-    r = address_directory()["old"]
-    output += genFullTable(r, chain).to_markdown(index=False)
-    output += """
+    try:
+        r = address_directory()["old"]
+        output += genFullTable(r, chain).to_markdown(index=False)
+    except:
+        output += "No deprecated contracts found\n"
+        output += """
     
 <style scoped>
 table {
@@ -199,7 +192,7 @@ td {
 
 
 def main():
-    for chain in SCANNERS_BY_CHAIN.keys():
+    for chain in AddrBook.SCANNERS_BY_CHAIN.keys():
         output=genChainMd(chain)
         with open(f"{OUTPUT_PATH}/{chain}.md", "w") as f:
             f.write(output)
