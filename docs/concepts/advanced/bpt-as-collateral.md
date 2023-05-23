@@ -65,17 +65,17 @@ underlying tokens are `DAI`, `USDC`, and `USDT`.
 The mathematical demonstration of the solution is found at the [Appendix](#appendix).
 
 The constituent tokens have two different valuations: the market price (Chainlink oracles) and the pool price
-(RateProvider). The market price and the RateProvider price are usually close in value, so a division between these
-numbers tends to be close to 1, making the division to be a good candidate to normalize prices and find the lowest
-price. So, the `minPrice` (from `minPrice * pool.getRate()` formula described above) would be calculated by
+(from a `RateProvider`). The market price and the `RateProvider` price are usually close in value, so a division between these
+numbers tends to be close to 1, making the division a good candidate to normalize prices and find the minimum
+price. So, the `minPrice` (from the `minPrice * pool.getRate()` formula described above) would be calculated using
 
 $$ minPrice = min({P_{M_0} \over P_{RP_0}}, {P_{M_1} \over P_{RP_1}}, {P_{M_2} \over P_{RP_2}}, ...) $$
 
 where
 * $P_{M_i}$ is market price of constituent `i`;
-* $P_{RP_i}$ is the RateProvider price for constituent `i`. When no rate provider is available, use `1e18`.
+* $P_{RP_i}$ is the `RateProvider` price for constituent `i`. When no `RateProvider` is available, use `1e18`.
 
-Therefore, BPT price can be calculated by:
+Therefore, the BPT price can be calculated using
 
 $$ bptPrice = minPrice * pool.getRate() $$
 
