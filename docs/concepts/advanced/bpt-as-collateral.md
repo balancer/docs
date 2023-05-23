@@ -210,25 +210,25 @@ that requires an understanding of the price components of an underlying token.
 ### Constituent Token Prices
 
 The constituent tokens have two different valuations: the market price (Chainlink oracles) and the pool price
-(RateProvider). The market price and the RateProvider price are usually close in value, so a division between these
-numbers tends to be close to 1, making the division to be a good candidate to normalize prices and find the lowest
-price. So, the `minPrice` would be calculated by
+(`RateProvider`). The market price and the `RateProvider` price are usually close in value, so a division between these
+numbers tends to be close to 1, making the division a good candidate to normalize prices and find the minimum
+price. So, the `minPrice` would be calculated using
 
 $$ minPrice = min({P_{M_0} \over P_{RP_0}}, {P_{M_1} \over P_{RP_1}}, ..., {P_{M_n} \over P_{RP_n}}) $$
 
 where
 * $P_{M_i}$ is market price of constituent `i`;
-* $P_{RP_i}$ is the RateProvider price for constituent `i`. When no rate provider is available, use `1e18`;
+* $P_{RP_i}$ is the `RateProvider` price for constituent `i`. When no `RateProvider` is available, use `1e18`;
 * $n$ is the total number of tokens in the pool.
 
-The following calculation for BPT price is reached using this `minPrice` and multiplying by `pool.getRate()`, 
-assuming that the `StablePool` is near equilibrium and `token 0` is the token with the lowest price:
+The following calculation for BPT price is achieved using this `minPrice` and multiplying by `pool.getRate()`, 
+assuming that the `StablePool` is near equilibrium and `token 0` is the token with the minimum price:
 
 $$ bptPrice = minPrice * pool.getRate() = {P_{M_0} \over P_{RP_0}} * {\sum_{i=0}^{n} P_{RP_i} * B_i \over actualBptSupply} $$
 
-Simplifying the formula above
+Simplifying the formula above produces:
 
 $$ bptPrice = P_{M_0} * {(B_0 + \sum_{i=1}^{n} {P_{RP_i} \over P_{RP_0}} * B_i) \over actualBptSupply} $$
 
-Notice that RateProviders prices were normalized by $P_{RP_0}$, for all tokens, before multiplying by $P_{M_0}$
+Note that `RateProvider` prices were normalized by $P_{RP_0}$, for all tokens, before multiplying by $P_{M_0}$
 (market price of token 0).
