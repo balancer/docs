@@ -6,8 +6,6 @@ from bal_addresses import AddrBook
 OUTPUT_PATH = "docs/reference/contracts/deployment-addresses"
 ADDRESSBOOK_URL = "https://raw.githubusercontent.com/BalancerMaxis/bal_addresses/main/outputs/deployments.json"
 
-SCANNERS_BY_CHAIN = AddrBook.SCANNERS_BY_CHAIN
-
 
 CONTRACTS_BY_HEADING = {
     "Core": ["Vault", "BalancerRelayer", "BatchRelayerLibrary", "BalancerQueries", "ProtocolFeePercentagesProvider"],
@@ -168,7 +166,7 @@ These deployments were in use at some point, and may still be in active operatio
         output += genFullTable(r, chain).to_markdown(index=False)
     except:
         output += "No deprecated contracts found\n"
-        output += """
+    output += """
     
 <style scoped>
 table {
