@@ -114,7 +114,7 @@ def genFromContractList(r, chain, contractList):
                 contractText = contract
             ###
 
-            dl = f'{AddrBook.GITHUB_MONOREPO_NICE}/pkg/deployments/tasks/{deployment}'
+            dl = f'{AddrBook.GITHUB_DEPLOYMENTS_NICE}/tasks/{deployment}'
             al = f"{AddrBook.SCANNERS_BY_CHAIN[chain]}/address/{contracts[contract]}#code"
             addressText = f'[{contracts[contract]}]({al})'
             ## TODO find github code links
