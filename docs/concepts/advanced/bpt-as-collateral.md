@@ -42,11 +42,9 @@ which does not include `RateProviders`):
 # Problem: Introducing `RateProviders`
 
 The introduction of `RateProviders` into the `StablePool` creates an obvious issue. Consider the computation of the 
-minimum price (we use `p` to denote a price):
+minimum price (we use $P_i$ to denote the price of constituent $i$):
 
-```solidity
-minPrice = min(pConstituent0, pConstituent1, pConstituent2)
-```
+$$ minPrice = min({P_0}, {P_1}, {P_2}) $$
 
 If the constituent tokens have `RateProviders`, then by definition they cannot be **like-kind assets**. 
 Theoretically, they are all somehow pegged to the same "base asset", or else they wouldn't be included in 
