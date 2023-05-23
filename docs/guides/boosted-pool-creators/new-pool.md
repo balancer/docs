@@ -10,11 +10,11 @@ When deploying a Linear Pool, it's important to properly set the `protocolId` ar
 
 ## Frequently Used Factories
 
-### ERC-4626 ([deployments](https://github.com/balancer/balancer-v2-monorepo/tree/master/pkg/deployments/tasks/20230206-erc4626-linear-pool-v3/output))
+### ERC-4626 ([deployments](https://github.com/balancer/balancer-deployments/tree/master/tasks/20230206-erc4626-linear-pool-v3/output))
 
 If a user has a token, `TKN`, that has a corresponding ERC-4626 tokenized vault, `xTKN`, then it is immediately possible to create an ERC-4626 Linear Pool from the factory with `TKN` as the main token and Wrapped `aTKN` as the wrapped token.
 
-### Aave V2 ([deployments](https://github.com/balancer/balancer-v2-monorepo/tree/master/pkg/deployments/tasks/20230206-aave-rebalanced-linear-pool-v4/output))
+### Aave V2 ([deployments](https://github.com/balancer/balancer-deployments/tree/master/tasks/20230206-aave-rebalanced-linear-pool-v4/output))
 
 If a user has a token, `TKN`, that has a corresponding Aave aToken, `aTKN`, then it is possible to create an Aave Linear Pool; however, it is important to note that `aTKN` must be wrapped in a Static aToken Wrapper since aTokens are not natively compatible with Balancer V2!
 

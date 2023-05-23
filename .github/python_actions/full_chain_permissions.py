@@ -34,7 +34,7 @@ def build_chain_permissions_list(chain_name):
     r = a.flatbook
     results = []
     address_names = a.reversebook
-    action_ids_list = f"{a.GITHUB_MONOREPO_RAW}/pkg/deployments/action-ids/{chain_name}/action-ids.json"
+    action_ids_list = f"{a.GITHUB_DEPLOYMENTS_RAW}/action-ids/{chain_name}/action-ids.json"
     w3 = w3_by_chain[chain_name]
     authorizer = w3.eth.contract(address=r["20210418-authorizer/Authorizer"], abi=json.load(open(".github/python_actions/abis/Authorizer.json")))
     try:
@@ -100,7 +100,7 @@ def generate_deployment_deduped_map(permission_data, chain):
         for address in callerAddresses:
             linkedAddresses.append(f"[{address}]({AddrBook.SCANNERS_BY_CHAIN[chain]}/address/{address})")
         for deployment in deployments:
-            linkedDeployments.append(f"[{deployment}]({AddrBook.GITHUB_MONOREPO_NICE}/pkg/deployments/tasks/{deployment})")
+            linkedDeployments.append(f"[{deployment}]({AddrBook.GITHUB_DEPLOYMENTS_NICE}/tasks/{deployment})")
 
         results[contract][fx]["callerNames"] = list(set(callerNames + list(results[contract][fx]["callerNames"])))
         results[contract][fx]["callerAddresses"] = list(set(linkedAddresses + list(results[contract][fx]["callerAddresses"])))
