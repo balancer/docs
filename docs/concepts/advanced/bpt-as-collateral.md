@@ -107,12 +107,12 @@ It may seem redundant to multiply by `pool.getRate()` to get the market price, t
 Remember that this is a generic method to calculate BPT prices that works for tokens of different types, as will be 
 demonstrated in the next examples.
 
-### 3. Get minimum price
+### 3. Get the minimum price.
 
 $$ minPrice = min({P_{M_{bb-a-USDT}} \over P_{RP_{bb-a-USDT}}}, {P_{M_{bb-a-USDC}} \over P_{RP_{bb-a-USDC}}}, {P_{M_{bb-a-DAI}} \over P_{RP_{bb-a-DAI}}}) $$
 
-Since $tokenRate_{bb-a-TOKEN}$ is equal to `pool.getRate()` of `bb-a-TOKEN` pool, the division 
-${P_{M_{bb-a-TOKEN}} \over P_{RP_{bb-a-TOKEN}}}$ can be simplified
+Since $tokenRate_{bb-a-TOKEN}$ is equal to `pool.getRate()` from the `bb-a-TOKEN` pool, the division 
+${P_{M_{bb-a-TOKEN}} \over P_{RP_{bb-a-TOKEN}}}$ can be simplified:
 
 $$ {P_{M_{bb-a-TOKEN}} \over P_{RP_{bb-a-TOKEN}}} = {P_{TOKEN} * rate_{pool_{aTOKEN}} \over rate_{pool_{aTOKEN}}} = P_{TOKEN}$$
 
@@ -120,7 +120,7 @@ Therefore, minPrice is calculated as
 
 $$ minPrice = min(P_{USDT}, P_{USDC}, P_{DAI}) $$
 
-Remembering, not always the RateProvider price will be included in the Market price. This assumption is valid only for
+Remember, the `RateProvider` price will not always be included in the market price. This simplification is valid only for
 Linear Pool tokens.
 
 ### 4. Calculates the BPT price
