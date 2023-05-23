@@ -94,17 +94,17 @@ where
 * $P_{USDT}$ is the Chainlink oracle price for `USDT` (in terms of USD);
 * $rate_{pool_{aUSDT}}$ is `pool.getRate()` from the `bb-a-USDT` pool;
 
-### 2. Get RateProvider price of each pool token
+### 2. Get the `RateProvider` price of each constituent token.
 
-In order to get RateProvider price of each constituent token of bb-a-USD, we should use getTokenRate() function of
-bb-a-USD pool for each token address (bb-a-USDT, bb-a-USDT and bb-a-DAI). 
+In order to get the `RateProvider` price of each constituent token of `bb-a-USD`, we should use the `getTokenRate()` function of the
+`bb-a-USD` pool for each token address (`bb-a-USDT`, `bb-a-USDC` and `bb-a-DAI`).
 
 $$ P_{RP_{bb-a-TOKEN}} = tokenRate_{bb-a-TOKEN} $$
 
-In this case, $tokenRate_{bb-a-TOKEN}$ is equal to `pool.getRate()` of each pool (bb-a-USDT, bb-a-USDT and bb-a-DAI).
+In this case, $tokenRate_{bb-a-TOKEN}$ is equal to `pool.getRate()` from the given pool (e.g., `bb-a-USDT`, `bb-a-USDC`, `bb-a-DAI`).
 
-It seems redundant to multiply by `pool.getRate()` to get market price, then divide by `pool.getRate()` again.
-Remember that this is a generic method to calculate BPT prices that works for tokens of different natures, as will be 
+It may seem redundant to multiply by `pool.getRate()` to get the market price, then divide by `pool.getRate()` again.
+Remember that this is a generic method to calculate BPT prices that works for tokens of different types, as will be 
 demonstrated in the next examples.
 
 ### 3. Get minimum price
