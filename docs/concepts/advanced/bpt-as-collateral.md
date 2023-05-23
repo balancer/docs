@@ -123,11 +123,11 @@ $$ minPrice = min(P_{USDT}, P_{USDC}, P_{DAI}) $$
 Remember, the `RateProvider` price will not always be included in the market price. This simplification is valid only for
 Linear Pool tokens.
 
-### 4. Calculates the BPT price
+### 4. Calculate the BPT price.
 
 $$ P_{BPT_{bb-a-USD}} = minPrice * rate_{pool_{bb-a-USD}} $$
 
-where `rate_pool_bb-a-USD` is `pool.getRate()` of bb-a-USD pool.
+where $rate_{pool_{bb-a-USD}}$ is `pool.getRate()` from the `bb-a-USD` pool.
 
 ## MetaStablePools (e.g. wstETH-WETH)
 
