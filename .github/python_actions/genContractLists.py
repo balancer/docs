@@ -166,9 +166,9 @@ These deployments were in use at some point, and may still be in active operatio
     try:
         r = address_directory()["old"]
         output += genFullTable(r, chain).to_markdown(index=False)
+        output += """
     except:
         output += "No deprecated contracts found\n"
-        output += """
     
 <style scoped>
 table {
