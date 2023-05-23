@@ -1,11 +1,11 @@
-# StablePool's BPT as Collateral
+# `StablePool` BPT as Collateral
 
 Throughout this document, the term "`StablePools` with `RateProviders`" is used. This refers to any Balancer V2 
 pool employing the `StableMath` library and allowing for the inclusion of `RateProviders` for some or all 
-constituent tokens. Several pool factories deploy pools which employs `StableMath`, such as `MetaStablePool`, 
+constituent tokens. Several pool factories deploy pools which employ `StableMath`, such as `MetaStablePool`, 
 `StablePhantomPool`, and `ComposableStablePool`.
 
-# How to price BPT of a stable pool without rate providers?
+# Pricing `StablePool` BPT (without `RateProviders`)
 
 [Chainlink's article on pricing Curve LP tokens](https://blog.chain.link/using-chainlink-oracles-to-securely-utilize-curve-lp-pools/) 
 serves as the canonical reference. The article describes a methodology for computing the worst-case price of 
