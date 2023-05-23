@@ -81,18 +81,18 @@ $$ bptPrice = minPrice * pool.getRate() $$
 
 # Examples
 
-## ComposableStablePools with Linear Pool BPTs (e.g. bb-a-USD)
+## `ComposableStablePools` with `LinearPool` BPTs (e.g. `bb-a-USD`)
 
-### 1. Get market price of each constituent token of bb-a-USD
+### 1. Get the market price of each constituent token of `bb-a-USD`.
 
-In order to get market price for each constituent token of bb-a-USD (bb-a-USDT, bb-a-USDC, bb-a-DAI) we should use 
-the following formula (using USDT as example):
+In order to get the market price of each constituent token of `bb-a-USD` (i.e., `bb-a-USDT`, `bb-a-USDC`, `bb-a-DAI`), we should use 
+the following formula (using `USDT` as an example):
 
 $$ P_{M_{bb-a-USDT}} = P_{USDT} * rate_{pool_{aUSDT}} $$
 
 where
-* $P_{USDT}$ is the chainlink oracle price for USDT (in terms of USD);
-* $rate_{pool_{aUSDT}}$ is `pool.getRate()` of bb-a-USDT pool;
+* $P_{USDT}$ is the Chainlink oracle price for `USDT` (in terms of USD);
+* $rate_{pool_{aUSDT}}$ is `pool.getRate()` from the `bb-a-USDT` pool;
 
 ### 2. Get RateProvider price of each pool token
 
