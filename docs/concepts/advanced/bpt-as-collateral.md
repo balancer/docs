@@ -184,28 +184,28 @@ where `rate_pool_stMATIC-wMATIC` is `pool.getRate()` of stMATIC-wMATIC pool.
 
 ## Proof of the solution
 
-**How to choose the token with the minimum price, if they are not directly related (pegged)?**
+**How do we choose the token with the minimum price, if the prices are not expected to be 1:1?**
 
-Answering the question above is the key to calculate the BPT price from a `StablePool` with `RateProviders`. To answer 
-that, consider the basic formula of a stable pool invariant near equilibrium:
+Answering the question above is the key to calculate the BPT price for a `StablePool` with `RateProviders`.
+Consider the basic formula of a `StablePool` invariant near equilibrium:
 
 $$ k = chi * (\sum_{i=0}^{n} P_{RP_i} * B_i) + (\prod_{i=0}^{n} P_{RP_i} * B_i)$$
 
 where
-* $P_{RP_i}$ is the price from RateProvider of token `i`;
+* $P_{RP_i}$ is the price from the `RateProvider` of token `i`;
 * $B_i$ is the balance of token `i`;
-* $chi$ is a function of the amplification factor of the stable pool. The closer to the equilibrium,
+* $chi$ is a function of the amplification factor of the `StablePool`. The closer to the equilibrium,
   the greater is $chi$;
 * $n$ is the total number of tokens in the pool.
 
-When the stable pool is near equilibrium, the $chi$ parameter is near infinite, so the invariant will be approximately 
+When the `StablePool` is near equilibrium, the $chi$ parameter is near infinite, so the invariant will be approximately
 the constant sum invariant.
 
 $$ invariant = \sum_{i=0}^{n} P_{RP_i} * B_i $$
 
 The invariant is used to calculate `pool.getRate()`, which is `uint256 rate = invariant/actualBptSupply`. So, in order 
-to multiply `minPrice * pool.getRate()`, the RateProviders prices of the invariant must be normalized. To accomplish 
-that, an understanding of the price components of an underlying token is needed.
+to multiply `minPrice * pool.getRate()`, the `RateProvider` prices of the invariant must be normalized. Accomplishing
+that requires an understanding of the price components of an underlying token.
 
 ### Constituent Token Prices
 
