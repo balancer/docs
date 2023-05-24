@@ -35,7 +35,7 @@ The recommended technique for updating weights in a Managed Pool is to do so gra
 There are pricing risks that liquidity providers are exposed to during weight changes. If token weights are adjusted too quickly before arbitrageurs get a chance to rebalance, prices will have a significantly negative effect. It is important for `owner`s to allow ample time for the pool to change weights in order to mitigate this risk. This ensures that sufficient time is given for market corrections, reducing potential slippage.
 
 ### Examples
-[ManagedPoolSetting.sol](https://github.com/baileyspraggins/balancer-v2-monorepo/blob/master/pkg/pool-weighted/contracts/managed/ManagedPoolSettings.sol) provides the necessary logic for viewing and updating token weights within a Managed Pool. Below are a few basic examples of how an `owner` can interact with token weights on a Managed Pool.
+[ManagedPoolSetting.sol](https://github.com/balancer/balancer-v2-monorepo/blob/master/pkg/pool-weighted/contracts/managed/ManagedPoolSettings.sol) provides the necessary logic for viewing and updating token weights within a Managed Pool. Below are a few basic examples of how an `owner` can interact with token weights on a Managed Pool.
 
 ```solidity
 // Time for weight change to finalize
