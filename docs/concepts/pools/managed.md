@@ -38,7 +38,7 @@ Gradually updating swap fees over a set period of time is the recommended method
 Instantaneous updates occur when swap fees are updated immediately instead of on a slow, gradual basis. Lowering fees instantaneously is generally not recommended as it can lead to instantaneous arbitrage opportunities, giving arbitragers an opportunity to extract value. Instantaneous swap fee increases are generally considered safe.
 
 ### Examples:
-[ManagedPoolSetting.sol](https://github.com/baileyspraggins/balancer-v2-monorepo/blob/master/pkg/pool-weighted/contracts/managed/ManagedPoolSettings.sol) provides the necessary logic for viewing and updating swap fees within a Managed Pool. Below are a few basic examples of how a Manager can interact with swap fees on a Managed Pool.
+[ManagedPoolSetting.sol](https://github.com/balancer/balancer-v2-monorepo/blob/master/pkg/pool-weighted/contracts/managed/ManagedPoolSettings.sol) provides the necessary logic for viewing and updating swap fees within a Managed Pool. Below are a few basic examples of how a Manager can interact with swap fees on a Managed Pool.
 
 ```solidity
 // Set custom swap fees (Must be >= 1e12 and <>= 95e16)
@@ -59,4 +59,23 @@ _managedPool.updateSwapFeeGradually(
 ```solidity
 // Get the current value of the swap fee percentage
 uint256 swapFeePercentage = _managedPool.getSwapFeePercentage();
+```
+
+## Pause Swaps
+Managed Pool `owner`s have the ability to pause and unpause swaps. This feature enables `owner`s to protect a pools assets in the case of security vulnerabilities, volital market conditions or in the case that pool actions do not work in a predicted manner.
+
+### Examples
+[ManagedPoolStorageLib.sol](https://github.com/balancer/balancer-v2-monorepo/blob/master/pkg/pool-weighted/contracts/managed/ManagedPoolStorageLib.sol) provides the necessary logic for viewing the status of a pool, as well as pausing and unpausing swap within a Managed Pool. Below are a few basic examples of how an `owner` can accomplish this with a Managed Pool.
+
+```solidity
+// Enable swaps
+_managedPool.setSwapEnabled(true);
+
+// Disable swaps
+_managedPool.setSwapEnabled(false);
+```
+
+```solidity
+// Returns true if swaps are currently allowed
+_managedPool.getSwapEnabled();
 ```
