@@ -50,7 +50,7 @@ function changeWeights() public {
   newWeights[1] = 30e16 // 30%
   newWeights[2] = 40e16 // 40%
 
-  _updateWeights(block.timestamp, block.timestamp + _REWEIGHT_DURATION, _poolTokens, newWeights);
+  _managedPool.updateWeightsGradually(block.timestamp, block.timestamp + _REWEIGHT_DURATION, _poolTokens, newWeights);
 }
 ```
 ```solidity
