@@ -24,18 +24,18 @@ Managed Pools are feature rich. Some of the features include:
 
 ## Weights
 
-An important feature of Managed Pools that makes them unique from a standard Weighted Pool is the ability for managers to update token weights. This allows managers to adjust the distributions of assets within a pool, in order to shift to different DeFi strategies. An example of this is modifying token weights in response to changes in market conditions.
+An important feature of Managed Pools that makes them distinct from standard Weighted Pools is that they allow the pool `owner` to update token weights. This allows `owner`s to adjust the distributions of assets within a pool, in order to shift to different DeFi strategies. An example of this is modifying token weights in response to changes in market conditions.
 
 ### Gradual Updates
 
-Updating weights gradually in a linear manner over a set period of time is the recommend method for adjusting token weights. This steady weight update allows token prices to slowly adjust, baiting arbitratures to rebalance pool balances in line with the desired weights.
+The recommended technique for updating weights in a Managed Pool is to do so gradually. In a gradual weight update, the pool calculates each weight by linearly interpolating between the start and end weights for the specified time. This steady weight update slowly adjusts token prices, encouraging arbitrageurs to rebalance pool balances in line with the desired weights.
 
 ### Risks
 
-There are pricing risks that liquidity providers are exposed to during weight changes. If token weights are adjusted too quickly before argitragers get a chance to rebalance, prices will have a significantly negative effect. It is important for managers to allow ample time for the pool to change weights in order to mitigate this risk. This ensures that sufficient time is given for market corrections, reducing potential slippage.
+There are pricing risks that liquidity providers are exposed to during weight changes. If token weights are adjusted too quickly before arbitrageurs get a chance to rebalance, prices will have a significantly negative effect. It is important for `owner`s to allow ample time for the pool to change weights in order to mitigate this risk. This ensures that sufficient time is given for market corrections, reducing potential slippage.
 
 ### Examples
-[ManagedPoolSetting.sol](https://github.com/baileyspraggins/balancer-v2-monorepo/blob/master/pkg/pool-weighted/contracts/managed/ManagedPoolSettings.sol) provides the necessary logic for viewing and updating token weights within a Managed Pool. Below are a few basic examples of how a manager can interact with token weights on a Managed Pool.
+[ManagedPoolSetting.sol](https://github.com/baileyspraggins/balancer-v2-monorepo/blob/master/pkg/pool-weighted/contracts/managed/ManagedPoolSettings.sol) provides the necessary logic for viewing and updating token weights within a Managed Pool. Below are a few basic examples of how an `owner` can interact with token weights on a Managed Pool.
 
 ```solidity
 // Time for weight change to finalize
