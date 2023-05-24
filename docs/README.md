@@ -37,6 +37,7 @@ footer:
 **Github Repos**
 
 - [Smart Contracts](https://github.com/balancer/balancer-v2-monorepo)
+- [Deployments](https://github.com/balancer/balancer-deployments)
 - [SDK](https://github.com/balancer/balancer-sdk)
 - [Smart Order Router](https://github.com/balancer/balancer-sor)
 - [Frontend](https://github.com/balancer/frontend-v2)

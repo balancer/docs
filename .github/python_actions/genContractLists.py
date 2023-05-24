@@ -2,8 +2,8 @@ import requests
 import pandas as pd
 import re
 
-GITHUB_MONOREPO_RAW="https://raw.githubusercontent.com/balancer-labs/balancer-v2-monorepo/master"
-GITHUB_MONOREPO_NICE="https://github.com/balancer/balancer-v2-monorepo/blob/master"
+GITHUB_DEPLOYMENTS_RAW="https://raw.githubusercontent.com/balancer/balancer-deployments/master"
+GITHUB_DEPLOYMENTS_NICE="https://github.com/balancer/balancer-deployments/blob/master"
 OUTPUT_PATH = "docs/reference/contracts/deployment-addresses"
 ADDRESSBOOK_URL = "https://raw.githubusercontent.com/BalancerMaxis/bal_addresses/main/outputs/deployments.json"
 
@@ -49,7 +49,7 @@ def genFullTable(r, chain):
                 contractText = contract
             ###
 
-            dl = f'{GITHUB_MONOREPO_NICE}/pkg/deployments/tasks/{deployment}'
+            dl = f'{GITHUB_DEPLOYMENTS_NICE}/tasks/{deployment}'
             al = f"{SCANNERS_BY_CHAIN[chain]}/address/{contracts[contract]}#code"
             addressText = f'[{contracts[contract]}]({al})'
             ## TODO find github code links
@@ -76,7 +76,7 @@ def genPoolFactories(r, chain):
                     contractText = contract
                 ###
 
-                dl = f"{GITHUB_MONOREPO_NICE}/pkg/deployments/tasks/{deployment}"
+                dl = f"{GITHUB_DEPLOYMENTS_NICE}/tasks/{deployment}"
                 al = f"{SCANNERS_BY_CHAIN[chain]}/address/{contracts[contract]}#code"
                 result.loc[len(result)] = [contractText, f"[{contracts[contract]}]({al})", f"[{deployment}]({dl})"]
     result.sort_values(by=["Contract","Deployment"], inplace=True)
@@ -101,7 +101,7 @@ def genNotInContractList(r, chain, contractList):
                 contractText = contract
             ###
 
-            dl = f'{GITHUB_MONOREPO_NICE}/pkg/deployments/tasks/{deployment}'
+            dl = f'{GITHUB_DEPLOYMENTS_NICE}/tasks/{deployment}'
             al = f"{SCANNERS_BY_CHAIN[chain]}/address/{contracts[contract]}#code"
             addressText = f'[{contracts[contract]}]({al})'
             ## TODO find github code links
@@ -126,7 +126,7 @@ def genFromContractList(r, chain, contractList):
                 contractText = contract
             ###
 
-            dl = f'{GITHUB_MONOREPO_NICE}/pkg/deployments/tasks/{deployment}'
+            dl = f'{GITHUB_DEPLOYMENTS_NICE}/tasks/{deployment}'
             al = f"{SCANNERS_BY_CHAIN[chain]}/address/{contracts[contract]}#code"
             addressText = f'[{contracts[contract]}]({al})'
             ## TODO find github code links
@@ -143,7 +143,7 @@ def genChainMd(chain):
 # {chain.capitalize()} Deployment Addresses
 
 ::: info More Details
-For more information on specific deployments as well as changelogs for different contract versions, please see the [deployment tasks](https://github.com/balancer/balancer-v2-monorepo/tree/master/pkg/deployments/tasks) section of the monorepo.
+For more information on specific deployments as well as changelogs for different contract versions, please see the [deployment tasks](https://github.com/balancer/balancer-deployments/tree/master/tasks).
 :::
 
 ## Pool Factories
