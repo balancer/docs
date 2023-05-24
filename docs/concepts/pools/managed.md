@@ -62,10 +62,10 @@ uint256 swapFeePercentage = _managedPool.getSwapFeePercentage();
 ```
 
 ## Pause Swaps
-Managed Pool `owner`s have the ability to pause and unpause swaps. This feature enables `owner`s to protect a pools assets in the case of security vulnerabilities, volital market conditions or in the case that pool actions do not work in a predicted manner.
+Managed Pool `owner`s have the ability to pause and unpause swaps. This feature has a wide range of practical applications, including, but not limited to, `owner`s shielding the pool's assets during security vulnerabilities, navigating through volatile market conditions, or preserving the pool's composition as a static basket of assets. `owner`s can be creative with this feature to fit their needs.
 
 ### Examples
-[ManagedPoolStorageLib.sol](https://github.com/balancer/balancer-v2-monorepo/blob/master/pkg/pool-weighted/contracts/managed/ManagedPoolStorageLib.sol) provides the necessary logic for viewing the status of a pool, as well as pausing and unpausing swap within a Managed Pool. Below are a few basic examples of how an `owner` can accomplish this with a Managed Pool.
+[ManagedPoolSettings.sol](https://github.com/balancer/balancer-v2-monorepo/blob/master/pkg/pool-weighted/contracts/managed/ManagedPoolSettings.sol) provides the necessary logic for viewing the swap status of a pool, as well as enabling and disabling swaps within a Managed Pool. Below are a few basic examples of how an `owner` can accomplish this within a Managed Pool. 
 
 ```solidity
 // Enable swaps
