@@ -49,8 +49,7 @@ Different pool types utilise rate Providers in varying contexts.
 | Composable Stable Pool  | ✅               | ✅                |
 | Meta Stable (EOL)       | ✅               | ✅                |
 | Weighted Pool           | ✅               | ❌                |
-| Managed Pool            | ❓               | ❓                |
-| Custom Pool             | ❓               | ❓                |
+| Managed Pool            | ✅               | ❌                |
 
 
 One important aspect to determine a trade's outcome are the Token balances a pool contains. Before the reported balances by the Vault are being used in the Trade equations for StableMath two operations will be done to them:
@@ -129,7 +128,7 @@ The token balances used in the Trade Equations are then [upscaled](https://dashb
 
 ### RateProvider being used in a MetaStablePool swap
 
-## RateProviders being used to collect yieldFees. 
+## RateProviders being used to collect yieldFees for WeightedPools
 
 Rate providers play a crucial role in determining whether yield fees are charged during pool join or exit. The primary factor used for this determination is the comparison of the `_athRateProduct` private variable with a dynamically calculated `rateProduct` on every pool join or exit. Here's an example illustrating what the `rateProduct` represents:
 
