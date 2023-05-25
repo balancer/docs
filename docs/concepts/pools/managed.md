@@ -62,16 +62,16 @@ uint256 swapFeePercentage = _managedPool.getSwapFeePercentage();
 ```
 
 ## Management and Protocol Fees
-Assets Under Management Fees are paid out to the `owner` for maintaining the pool. In Managed Pools, protocol fees are only taken as a percentage of AUM fees, as opposed to the standard method of being extracted from swap fees. AUM fee percentage can be set by an `owner` but must be less than `95e16` or 95%. Protocol fees take up a portion of the AUM fee and are calculated using this [formula](https://github.com/balancer/balancer-v2-monorepo/blob/cbce7d63479dafb4f4ea9ad8cb2dbdbb26edae50/pkg/pool-weighted/contracts/managed/ManagedPoolSettings.sol#LL593C99-L593C102).
+Assets Under Management (AUM) fees are paid out to the `owner` for maintaining the pool. In Managed Pools, protocol fees are only taken as a percentage of AUM fees, as opposed to the standard method of being extracted from swap fees. The AUM fee percentage can be set by an `owner` but must be less than `95e16` or 95%. The protocol fee percentage is established by [ProtocolFeePercentagesProvider](https://github.com/balancer/balancer-v2-monorepo/blob/master/pkg/standalone-utils/contracts/ProtocolFeePercentagesProvider.sol). 
 
 ### Examples
-[ManagedPoolSetting.sol](https://github.com/balancer/balancer-v2-monorepo/blob/master/pkg/pool-weighted/contracts/managed/ManagedPoolSettings.sol) provides the necessary logic for collecting and setting management fees. Below are examples of how an `owner` can set and view management fees in a pool.
+[ManagedPoolSetting.sol](https://github.com/balancer/balancer-v2-monorepo/blob/master/pkg/pool-weighted/contracts/managed/ManagedPoolSettings.sol) provides the necessary logic for collecting and setting management fees. Below are examples of how an `owner` can set and view AUM fees in a Managed Pool.
 
 ```solidity
 // Set AUM fee to 2%
 uint256 desiredAumFeePercentage = 2e16;
 _managedPool.setManagementAumFeePercentage(managementFeePercentage);
 
-// Get the current AUM fee as well as the last time fee collections occured
-(uint256 aumFeePercentage, uint246 lastCollectionTimestamp) = _managedPool.getManagementAumFeeParams();
+// Get the current AUM fee, as well as the last time fee collections occured
+(uint256 aumFeePercentage, uint256 lastCollectionTimestamp) = _managedPool.getManagementAumFeeParams();
 ```
