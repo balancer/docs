@@ -28,10 +28,7 @@ CONTRACTS_BY_HEADING = {
 
 
 
-def main():
-    r = address_directory()
-
-def address_directory(addressbook_url="pip3 /addressbook.json"):
+def address_directory(chain):
    r = requests.get(ADDRESSBOOK_URL)
    return r.json()
 
