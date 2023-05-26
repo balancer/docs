@@ -53,61 +53,123 @@ emits GradualSwapFeeUpdateScheduled(uint256 startTime,
 
 Schedules a gradual update in swap fees. This is a permissioned function that can only be called by an authorized address. If the pool is paused, the call will revert. Implemented in `ManagedPoolSettings`.
 
-
-
 ## Weights
 
-  ```solidity
-    function getNormalizedWeights() returns (uint256[] memory)
-  ```
+### `getNormalizedWeights`
 
-  - **Returns:** Then normalized weights in the same order as the Pool's tokens.
+```solidity
+getNormalizedWeights() 
+returns (uint256[] memory)
+```
 
-  ```solidity
-  function getGradualWeightUpdateParams()
-    returns (
-        uint256 startTime,
-        uint256 endTime,
-        uint256[] memory startWeights,
-        uint256[] memory endWeights
-    )
-  ```
+Returns the normalized weights in the same order as the Pool's tokens. Implemented in `ManagedPoolSettings`.
 
-  - **Returns:** The current gradual weight change update parameters.
+### `getGradualWeightUpdateParams`
+
+```solidity
+getGradualWeightUpdateParams()
+returns (uint256 startTime,
+         uint256 endTime,
+         uint256[] memory startWeights,
+         uint256[] memory endWeights)
+```
+
+Returns the current gradual weight change update parameters. Implemented in `ManagedPoolSettings`.
+
+### `updateWeightsGradually`
+
+```solidity
+updateWeightsGradually(uint256 startTime,
+                       uint256 endTime,
+                       IERC20[] memory tokens,
+                       uint256[] memory endWeights)
+
+emit GradualWeightUpdateScheduled(uint256 startTime,
+                                  uint256 endTime,
+                                  uint256[] startWeights,
+                                  uint256[] endWeights)
+```
+
+Schedules a gradual weight change at the block timestamp provided in startTime, up until endTime. This is a permissioned function that can only be called by an authorized address set by the `owner`. If the pool is paused, the call will revert. Implemented in `ManagedPoolSettings`.
 
 ## Swaps
 
-// TODO: Verify the validity of these apis
+### `getSwapEnabled`
 
-  ```solidity
-  function getSwapEnabled() returns (bool)
-  ```
+```solidity
+getSwapEnabled() 
+returns (bool)
+```
 
-  - **Returns:** Whether swaps are enabled.
+Returns whether swaps are enabled. 
+
+### `setSwapEnabled`
+
+```solidity
+setSwapEnabled(bool swapEnabled)
+
+emit SwapEnabledSet(bool swapEnabled)
+```
+
+Enables or disable trading. This is a permissioned function that can only be called by an authorized address set by the `owner`. Implemented in `ManagedPoolSettings`.
 
 ## Joins and Exits
-  ```solidity
-  function getJoinExitEnabled() returns (bool)
-  ```
 
-  - **Returns:** Whether joins and exits are enabled.
+### `getJoinExitEnabled`
+
+```solidity
+getJoinExitEnabled() 
+returns (bool)
+```
+
+Returns whether joins and exits are enabled. Implemented in `ManagedPoolSettings`.
+
+### `setJoinExitEnabled`
+
+```solidity
+setJoinExitEnabled(bool joinExitEnabled)
+
+emits JoinExitEnabledSet(bool joinExitEnabled)
+```
+
+Enable or disable joins and exits. This is a permissioned function that can only be called by an authorized address set by the `owner`. Implemented in `ManagedPoolSettings`.
+
+::: info
+Note: This does not affect Recovery Mode exits
+:::
 
 ## Allowlist
 
-  ```solidity
-  function getMustAllowlistLPs() returns (bool)
-  ```
+### `getMustAllowlistLPs`
 
-  - **Returns:** Whether the allowlist for Liquidity Providers in enabled.
+```solidity
+getMustAllowlistLPs() 
+returns (bool)
+```
 
-  ```solidity
-  function isAddressOnAllowlist(address member) returns (bool)
-  ```
+Returns whether the allowlist for Liquidity Providers in enabled.
 
-  - **Note:** Checks the allowlist regardless of whether the allowlist features is enabled
-  - **Parameters:** `member` - The address to check against the allowlist
-  - **Returns:** Whether a given address is on the allowlist.
+### `isAddressOnAllowlist`
 
+```solidity
+isAddressOnAllowlist(address member) 
+returns (bool)
+```
+
+- **Note:** Checks the allowlist regardless of whether the allowlist features is enabled
+- **Parameters:** `member` - The address to check against the allowlist
+- **Returns:** Whether a given address is on the allowlist.
+
+### `setMustAllowlistLPs`
+
+```solidity
+setMustAllowlistLPs(bool mustAllowlistLPs)
+
+emit AllowlistAddressAdded(address indexed member);
+emit AllowlistAddressRemoved(address indexed member);
+```
+
+Enables or disables the LP allowlist. 
 ## AUM Fees
 
   ```solidity
