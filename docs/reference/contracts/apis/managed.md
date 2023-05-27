@@ -147,7 +147,7 @@ getMustAllowlistLPs()
 returns (bool)
 ```
 
-Returns whether the allowlist for Liquidity Providers in enabled.
+Returns whether the allowlist for Liquidity Providers in enabled. Implemented in `ManagedPoolSettings`.
 
 ### `isAddressOnAllowlist`
 
@@ -156,44 +156,83 @@ isAddressOnAllowlist(address member)
 returns (bool)
 ```
 
-- **Note:** Checks the allowlist regardless of whether the allowlist features is enabled
-- **Parameters:** `member` - The address to check against the allowlist
-- **Returns:** Whether a given address is on the allowlist.
+Returns hether a given address, `member`, is on the allowlist. Checks the allowlist regardless of whether the allowlist features is enabled. Implemented in `ManagedPoolSettings`.
 
 ### `setMustAllowlistLPs`
 
 ```solidity
 setMustAllowlistLPs(bool mustAllowlistLPs)
 
-emit AllowlistAddressAdded(address indexed member);
-emit AllowlistAddressRemoved(address indexed member);
+emit MustAllowlistLPsSet(mustAllowlistLPs)
 ```
 
-Enables or disables the LP allowlist. 
+Enables or disables the LP allowlist. This is a permissioned function that can only be called by an authorized address set by the `owner`. Implemented in `ManagedPoolSettings`.
+
+### `addAllowedAddress`
+
+```solidity
+addAllowedAddress(address member)
+
+emits AllowlistAddressAdded(address indexed member)
+```
+
+Adds an address, `member`, to the LP allowlist. This is a permissioned function that can only be called by an authorized address set by the `owner`. Implemented in `ManagedPoolSettings`.
+
+### `removeAllowedAddress`
+
+```solidity
+removeAllowedAddress(address member)
+
+emits AllowlistAddressRemoved(address indexed member)
+```
+
+Removes an address, `member`, from the LP allowlist. This is a permissioned function that can only be called by an authorized address set by the `owner`. Implemented in `ManagedPoolSettings`.
+
 ## AUM Fees
 
-  ```solidity
-  function getManagementAumFeeParams()
-    returns (uint256 aumFeePercentage, uint256 lastCollectionTimestamp)
-  ```
+### `getManagementAumFeeParams`
 
-  - **Returns:** 
-      - `uint256` The management AUM fee perecentage as an 18-decimal fixed point number
-      - `uint256` The timestamp of the last collection of AUM fees.
+```solidity
+getManagementAumFeeParams()
+returns (uint256 aumFeePercentage, uint256 lastCollectionTimestamp)
+```
+
+Returns the AUM fee percentage as an 18-decimal fixed point number, and the timestamp of the last collection of AUM fees. Implemented in `ManagedPoolSettings`.
+
+###  `setManagementAumFeePercentage`
+
+```solidity
+setManagementAumFeePercentage(uint256 managementAumFeePercentage)
+returns (uint256)
+
+emits ManagementAumFeePercentageChanged(uint256 managementAumFeePercentage)
+```
+
+Sets the yearly percentage AUM management fee, which is payable to the pool `owner`. The amount of BPT minted to the manager before the update is returned. This is a permissioned function that can only be called by an authorized address set by the `owner`. Implemented in `ManagedPoolSettings`.
+
+###  `collectAumManagementFees`
+
+```solidity
+collectAumManagementFees()
+
+emits ManagementAumFeeCollected(uint256 bptAmount)
+```
+
+Collects any accrued AUM fees and sends them to the Managed Pool `owner`. This is not a permissioned function and can be called by anyone. It will also be called automatically whenever supply changes occur (e.g., joins/exits, add/remove token) and before any fee percentage changes. Implemented in `ManagedPoolSettings`.
 
 ## Circuit Breakers
 
-  ```solidity
-  function getCircuitBreakerState(IERC20 token)
-    returns (
-      uint256 bptPrice,
-      uint256 referenceWeight,
-      uint256 lowerBound,
-      uint256 upperBound,
-      uint256 lowerBptPriceBound,
-      uint256 upperBptPriceBound
-    )
-  ```
+```solidity
+function getCircuitBreakerState(IERC20 token)
+returns (
+  uint256 bptPrice,
+  uint256 referenceWeight,
+  uint256 lowerBound,
+  uint256 upperBound,
+  uint256 lowerBptPriceBound,
+  uint256 upperBptPriceBound
+)
+```
 
   - **Returns:** 
     - `uint256` The Current BPT Price.
