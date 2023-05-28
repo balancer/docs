@@ -222,22 +222,61 @@ Collects any accrued AUM fees and sends them to the Managed Pool `owner`. This i
 
 ## Circuit Breakers
 
+### `getCircuitBreakerState`
+
 ```solidity
-function getCircuitBreakerState(IERC20 token)
-returns (
-  uint256 bptPrice,
-  uint256 referenceWeight,
-  uint256 lowerBound,
-  uint256 upperBound,
-  uint256 lowerBptPriceBound,
-  uint256 upperBptPriceBound
-)
+getCircuitBreakerState(IERC20 token)
+returns (uint256 bptPrice,
+         uint256 referenceWeight,
+         uint256 lowerBound,
+         uint256 upperBound,
+         uint256 lowerBptPriceBound,
+         uint256 upperBptPriceBound)
 ```
 
-  - **Returns:** 
-    - `uint256` The Current BPT Price.
-    - `uint256` The Reference Weight // TODO: What is this
-    - `uint256` The lower bound of the circuit breaker
-    - `uint256` The upper bound of the circuit breaker
-    - `uint256` The lower bound of the price of BTP
-    - `uint256` The upper bound of the price of BTP
+Returns the full circuit breaker state for a given `token`. A full circuit breaker state contains the current BPT price, `uint256`, the reference weight, `uint256`, the lower and upper bound of the circuit breaker, `uint256`, and the lower and upper bound price of BTP, `uint256`. Implemented in `ManagedPoolSettings`.
+
+### `setCircuitBreakers`
+
+```solidity
+setCircuitBreakers(IERC20[] memory tokens,
+                   uint256[] memory bptPrices,
+                   uint256[] memory lowerBoundPercentages,
+                   uint256[] memory upperBoundPercentages)
+
+emit CircuitBreakerSet(IERC20 indexed token,
+                       uint256 bptPrice,
+                       uint256 lowerBoundPercentage,
+                       uint256 upperBoundPercentage)
+```
+
+Sets a current circuit breajer for one or more `tokens`. The lower and upper bound percentages correspond to a relative change in the token's spot price. An example of this would be that a lower bound of 0.8 means the breaker should prevent trades that result in the value of the token dropping 20% or more relative to the rest of the pool. This is a permissioned function that can only be called by an authorized address set by the `owner`. Implemented in `ManagedPoolSettings`.
+
+## Add/Remove Tokens
+
+### Add Token
+
+```solidity
+addToken(IERC20 tokenToAdd,
+         address assetManager,
+         uint256 tokenToAddNormalizedWeight,
+         uint256 mintAmount,
+         address recipient)
+
+emits TokenAdded(IERC20 indexed token, uint256 normalizedWeight)
+```
+
+Adds a token, `tokenToAdd`, to the Pool's list of tradeable tokens. This is a permissioned function that can only be called by an authorized address set by the `owner`. Implemented in `ManagedPoolSettings`.
+
+
+### Remove Token
+
+```solidity
+removeToken(IERC20 tokenToRemove,
+            uint256 burnAmount,
+            address sender)
+
+emits TokenRemoved(IERC20 indexed token)
+```
+
+Removes a token, `tokenToRemove`, to the Pool's list of tradeable tokens. This is a permissioned function that can only be called by an authorized address set by the `owner`. Implemented in `ManagedPoolSettings`.
