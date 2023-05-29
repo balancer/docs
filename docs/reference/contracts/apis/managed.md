@@ -9,11 +9,11 @@ getActualSupply()
 returns (uint256)
 ```
 
+Returns the effective BPT Supply. Implemented in `ManagedPoolSettings`. 
+
 ::: warning
 Since this function reads balances directly from the Vault, it is potentially subject to manipulation via reentrancy. To call this function safely, attempt to trigger the reentrancy guard in the Vault by calling a non-reentrant function before calling `getActualSupply`.
 :::
-
-Returns the effective BPT Supply. Implemented in `ManagedPoolSettings`. 
 
 ## Swap Fees
 
@@ -41,9 +41,9 @@ Returns the current gradual swap fee update parameters. Implemented in `ManagedP
 
 ```solidity
 updateSwapFeeGradually(uint256 startTime,
-                                uint256 endTime,
-                                uint256 startSwapFeePercentage,
-                                uint256 endSwapFeePercentage)
+                       uint256 endTime,
+                       uint256 startSwapFeePercentage,
+                       uint256 endSwapFeePercentage)
 
 emits GradualSwapFeeUpdateScheduled(uint256 startTime,
                                     uint256 endTime,
@@ -51,7 +51,7 @@ emits GradualSwapFeeUpdateScheduled(uint256 startTime,
                                     uint256 endSwapFeePercentage)
 ```
 
-Schedules a gradual update in swap fees. This is a permissioned function that can only be called by an authorized address. If the pool is paused, the call will revert. Implemented in `ManagedPoolSettings`.
+Schedules a gradual update in swap fees at the block timestamp provided in `startTime`, up until `endTime`. This is a permissioned function that can only be called by an authorized address. If the pool is paused, the call will revert. Implemented in `ManagedPoolSettings`.
 
 ## Weights
 
@@ -62,7 +62,7 @@ getNormalizedWeights()
 returns (uint256[] memory)
 ```
 
-Returns the normalized weights in the same order as the Pool's tokens. Implemented in `ManagedPoolSettings`.
+Returns the normalized weights in the same order as the pool's tokens. Implemented in `ManagedPoolSettings`.
 
 ### `getGradualWeightUpdateParams`
 
@@ -90,28 +90,7 @@ emit GradualWeightUpdateScheduled(uint256 startTime,
                                   uint256[] endWeights)
 ```
 
-Schedules a gradual weight change at the block timestamp provided in startTime, up until endTime. This is a permissioned function that can only be called by an authorized address set by the `owner`. If the pool is paused, the call will revert. Implemented in `ManagedPoolSettings`.
-
-## Swaps
-
-### `getSwapEnabled`
-
-```solidity
-getSwapEnabled() 
-returns (bool)
-```
-
-Returns whether swaps are enabled. 
-
-### `setSwapEnabled`
-
-```solidity
-setSwapEnabled(bool swapEnabled)
-
-emit SwapEnabledSet(bool swapEnabled)
-```
-
-Enables or disable trading. This is a permissioned function that can only be called by an authorized address set by the `owner`. Implemented in `ManagedPoolSettings`.
+Schedules a gradual weight change at the block timestamp provided in `startTime`, up until `endTime`. This is a permissioned function that can only be called by an authorized address set by the `owner`. If the pool is paused, the call will revert. Implemented in `ManagedPoolSettings`.
 
 ## Joins and Exits
 
@@ -132,11 +111,32 @@ setJoinExitEnabled(bool joinExitEnabled)
 emits JoinExitEnabledSet(bool joinExitEnabled)
 ```
 
-Enable or disable joins and exits. This is a permissioned function that can only be called by an authorized address set by the `owner`. Implemented in `ManagedPoolSettings`.
+Enables or disables joins and exits. This is a permissioned function that can only be called by an authorized address set by the `owner`. Implemented in `ManagedPoolSettings`.
 
 ::: info
-Note: This does not affect Recovery Mode exits
+**Note:** This does not affect Recovery Mode exits
 :::
+
+## Swaps
+
+### `getSwapEnabled`
+
+```solidity
+getSwapEnabled() 
+returns (bool)
+```
+
+Returns whether swaps are enabled. Implemented in `ManagedPoolSettings`.
+
+### `setSwapEnabled`
+
+```solidity
+setSwapEnabled(bool swapEnabled)
+
+emit SwapEnabledSet(bool swapEnabled)
+```
+
+Enables or disables trading. This is a permissioned function that can only be called by an authorized address set by the `owner`. Implemented in `ManagedPoolSettings`.
 
 ## Allowlist
 
@@ -156,17 +156,7 @@ isAddressOnAllowlist(address member)
 returns (bool)
 ```
 
-Returns hether a given address, `member`, is on the allowlist. Checks the allowlist regardless of whether the allowlist features is enabled. Implemented in `ManagedPoolSettings`.
-
-### `setMustAllowlistLPs`
-
-```solidity
-setMustAllowlistLPs(bool mustAllowlistLPs)
-
-emit MustAllowlistLPsSet(mustAllowlistLPs)
-```
-
-Enables or disables the LP allowlist. This is a permissioned function that can only be called by an authorized address set by the `owner`. Implemented in `ManagedPoolSettings`.
+Returns whether a given address, `member`, is on the allowlist. Checks the allowlist regardless of whether the allowlist features is enabled. Implemented in `ManagedPoolSettings`.
 
 ### `addAllowedAddress`
 
@@ -188,6 +178,16 @@ emits AllowlistAddressRemoved(address indexed member)
 
 Removes an address, `member`, from the LP allowlist. This is a permissioned function that can only be called by an authorized address set by the `owner`. Implemented in `ManagedPoolSettings`.
 
+### `setMustAllowlistLPs`
+
+```solidity
+setMustAllowlistLPs(bool mustAllowlistLPs)
+
+emit MustAllowlistLPsSet(bool mustAllowlistLPs)
+```
+
+Enables or disables the LP allowlist. This is a permissioned function that can only be called by an authorized address set by the `owner`. Implemented in `ManagedPoolSettings`.
+
 ## AUM Fees
 
 ### `getManagementAumFeeParams`
@@ -208,7 +208,7 @@ returns (uint256)
 emits ManagementAumFeePercentageChanged(uint256 managementAumFeePercentage)
 ```
 
-Sets the yearly percentage AUM management fee, which is payable to the pool `owner`. The amount of BPT minted to the manager before the update is returned. This is a permissioned function that can only be called by an authorized address set by the `owner`. Implemented in `ManagedPoolSettings`.
+Sets the yearly percentage AUM fee, which is payable to the pool `owner`. The amount of BPT minted to the manager before the update is returned. This is a permissioned function that can only be called by an authorized address set by the `owner`. Implemented in `ManagedPoolSettings`.
 
 ###  `collectAumManagementFees`
 
@@ -218,7 +218,7 @@ collectAumManagementFees()
 emits ManagementAumFeeCollected(uint256 bptAmount)
 ```
 
-Collects any accrued AUM fees and sends them to the Managed Pool `owner`. This is not a permissioned function and can be called by anyone. It will also be called automatically whenever supply changes occur (e.g., joins/exits, add/remove token) and before any fee percentage changes. Implemented in `ManagedPoolSettings`.
+Collects any accrued AUM fees and sends them to the Managed pool `owner`. It will also be called automatically whenever supply changes occur (e.g., joins/exits, add/remove token) and before any fee percentage changes. This is not a permissioned function and can be called by anyone. Implemented in `ManagedPoolSettings`.
 
 ## Circuit Breakers
 
@@ -234,7 +234,7 @@ returns (uint256 bptPrice,
          uint256 upperBptPriceBound)
 ```
 
-Returns the full circuit breaker state for a given `token`. A full circuit breaker state contains the current BPT price, `uint256`, the reference weight, `uint256`, the lower and upper bound of the circuit breaker, `uint256`, and the lower and upper bound price of BTP, `uint256`. Implemented in `ManagedPoolSettings`.
+Returns the full circuit breaker state for a given `token`. Implemented in `ManagedPoolSettings`.
 
 ### `setCircuitBreakers`
 
@@ -250,7 +250,7 @@ emit CircuitBreakerSet(IERC20 indexed token,
                        uint256 upperBoundPercentage)
 ```
 
-Sets a current circuit breajer for one or more `tokens`. The lower and upper bound percentages correspond to a relative change in the token's spot price. An example of this would be that a lower bound of 0.8 means the breaker should prevent trades that result in the value of the token dropping 20% or more relative to the rest of the pool. This is a permissioned function that can only be called by an authorized address set by the `owner`. Implemented in `ManagedPoolSettings`.
+Sets a current circuit breaker for one or more `tokens`. The lower and upper bound percentages correspond to a relative change in the token's spot price. An example of this would be that a lower bound of 0.8 means the breaker should prevent trades that result in the value of the token dropping 20% or more relative to the rest of the pool. This is a permissioned function that can only be called by an authorized address set by the `owner`. Implemented in `ManagedPoolSettings`.
 
 ## Add/Remove Tokens
 
@@ -266,7 +266,15 @@ addToken(IERC20 tokenToAdd,
 emits TokenAdded(IERC20 indexed token, uint256 normalizedWeight)
 ```
 
-Adds a token, `tokenToAdd`, to the Pool's list of tradeable tokens. This is a permissioned function that can only be called by an authorized address set by the `owner`. Implemented in `ManagedPoolSettings`.
+Adds a token, `tokenToAdd`, to the pool's list of tradeable tokens. This is a permissioned function that can only be called by an authorized address set by the `owner`. Implemented in `ManagedPoolSettings`.
+
+::: warning
+When adding a new token to a pool, the weights of all other tokens will be decreased. The new token will have a balance of zero, so it is up to the owner to provide some imediate liquidity after calling this function.
+:::
+
+::: info 
+**Note:** Regular joins do not work when a new token has a balance of zero. The only way to deposit an initial amount is by using an Asset Manager.
+:::
 
 
 ### Remove Token
@@ -279,4 +287,8 @@ removeToken(IERC20 tokenToRemove,
 emits TokenRemoved(IERC20 indexed token)
 ```
 
-Removes a token, `tokenToRemove`, to the Pool's list of tradeable tokens. This is a permissioned function that can only be called by an authorized address set by the `owner`. Implemented in `ManagedPoolSettings`.
+Removes a token, `tokenToRemove`, to the pool's list of tradeable tokens. This is a permissioned function that can only be called by an authorized address set by the `owner`. Implemented in `ManagedPoolSettings`.
+
+::: info
+**Note:** Tokens can only be removed if the pool has more than two tokens (not including BPT).
+:::
