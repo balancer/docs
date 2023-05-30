@@ -5,14 +5,14 @@ pool employing the `StableMath` library and allowing for the inclusion of `RateP
 constituent tokens. Several pool factories deploy pools which employ `StableMath`, such as `MetaStablePool`, 
 `StablePhantomPool`, and `ComposableStablePool`.
 
-# Pricing `StablePool` BPT (without `RateProviders`)
+## Pricing `StablePool` BPT (without `RateProviders`)
 
 [Chainlink's article on pricing Curve LP tokens](https://blog.chain.link/using-chainlink-oracles-to-securely-utilize-curve-lp-pools/) 
 serves as the canonical reference. The article describes a methodology for computing the worst-case price of 
 traditional `StableSwap` liquidity positions, which can be useful specifically for lending markets. The approach 
 has been utilized by countless Curve integrators, including Aave, Maker, and Yearn.
 
-## Curve
+### Curve
 
 Curve's methodology is as follows (consider a classical Curve 3pool):
 
@@ -30,7 +30,7 @@ price assumptions to the upside and leave lending markets at risk of accumulatin
 underestimate and over-liquidate than it is to do the opposite, and in fact the minimum price should be 
 representative of the pool's entire balance as long as the amplification factor is sufficiently high.
 
-## Balancer
+### Balancer
 
 To translate this methodology for any Balancer `StablePool` (from the original `StablePoolFactory`, 
 which does not include `RateProviders`):
@@ -39,7 +39,7 @@ which does not include `RateProviders`):
 2. Compute the minimum of those prices and call it `minPrice`.
 3. Return `minPrice * pool.getRate()`.
 
-# Problem: Introducing `RateProviders`
+## Problem: Introducing `RateProviders`
 
 The introduction of `RateProviders` into the `StablePool` creates an obvious issue. Consider the computation of the 
 minimum price (we use $P_i$ to denote the price of constituent $i$):
@@ -60,7 +60,7 @@ There's a reason to use the term "constituent" instead of "underlying":
 Example: in `bb-a-USD`, the constituents are three `LinearPool` BPTs: `bb-a-DAI`, `bb-a-USDC`, and `bb-a-USDT`. But the 
 underlying tokens are `DAI`, `USDC`, and `USDT`.
 
-# The Solution
+## The Solution
 
 The mathematical demonstration of the solution is found at the [Appendix](#appendix).
 
@@ -79,11 +79,11 @@ Therefore, the BPT price can be calculated using
 
 $$ bptPrice = minPrice * pool.getRate() $$
 
-# Examples
+## Examples
 
-## `ComposableStablePools` with `LinearPool` BPTs (e.g. `bb-a-USD`)
+### `ComposableStablePools` with `LinearPool` BPTs (e.g. `bb-a-USD`)
 
-### 1. Get the market price of each constituent token of `bb-a-USD`.
+#### 1. Get the market price of each constituent token of `bb-a-USD`.
 
 In order to get the market price of each constituent token of `bb-a-USD` (i.e., `bb-a-USDT`, `bb-a-USDC`, `bb-a-DAI`), we should use 
 the following formula (using `USDT` as an example):
@@ -94,7 +94,7 @@ where
 * $P_{USDT}$ is the Chainlink oracle price for `USDT` (in terms of USD);
 * $rate_{pool_{aUSDT}}$ is `pool.getRate()` from the `bb-a-USDT` pool;
 
-### 2. Get the `RateProvider` price of each constituent token.
+#### 2. Get the `RateProvider` price of each constituent token.
 
 In order to get the `RateProvider` price of each constituent token of `bb-a-USD`, we should use the `getTokenRate()` function of the
 `bb-a-USD` pool for each token address (`bb-a-USDT`, `bb-a-USDC` and `bb-a-DAI`).
@@ -107,7 +107,7 @@ It may seem redundant to multiply by `pool.getRate()` to get the market price, t
 Remember that this is a generic method to calculate BPT prices that works for tokens of different types, as will be 
 demonstrated in the next examples.
 
-### 3. Get the minimum price.
+#### 3. Get the minimum price.
 
 $$ minPrice = min({P_{M_{bb-a-USDT}} \over P_{RP_{bb-a-USDT}}}, {P_{M_{bb-a-USDC}} \over P_{RP_{bb-a-USDC}}}, {P_{M_{bb-a-DAI}} \over P_{RP_{bb-a-DAI}}}) $$
 
@@ -123,19 +123,19 @@ $$ minPrice = min(P_{USDT}, P_{USDC}, P_{DAI}) $$
 Remember, the `RateProvider` price will not always be included in the market price. This simplification is valid only for
 Linear Pool tokens.
 
-### 4. Calculate the BPT price.
+#### 4. Calculate the BPT price.
 
 $$ P_{BPT_{bb-a-USD}} = minPrice * rate_{pool_{bb-a-USD}} $$
 
 where $rate_{pool_{bb-a-USD}}$ is `pool.getRate()` from the `bb-a-USD` pool.
 
-## MetaStablePools (e.g. wstETH-WETH)
+### MetaStablePools (e.g. wstETH-WETH)
 
-### 1. Get market price for each constituent token
+#### 1. Get market price for each constituent token
 
 Get market price of wstETH and WETH in terms of USD, using chainlink oracles.
 
-### 2. Get RateProvider price for each constituent token
+#### 2. Get RateProvider price for each constituent token
 
 Since wstETH - WETH pool is a MetaStablePool and not a ComposableStablePool, it does not have `getTokenRate()` function.
 Therefore, it`s needed to get the RateProvider price manually for wstETH, using the rate providers of the pool. The rate 
@@ -144,45 +144,45 @@ provider will return the wstETH token in terms of stETH.
 Note that WETH does not have a rate provider for this pool. In that case, assume a value of `1e18` (it means,
 market price of WETH won't be divided by any value, and it's used purely in the minPrice formula).
 
-### 3. Get minimum price
+#### 3. Get minimum price
 
 $$ minPrice = min({P_{M_{wstETH}} \over P_{RP_{wstETH}}}, P_{M_{WETH}}) $$
 
-### 4. Calculates the BPT price
+#### 4. Calculates the BPT price
 
 $$ P_{BPT_{wstETH-WETH}} = minPrice * rate_{pool_{wstETH-WETH}} $$
 
 where `rate_pool_wstETH-WETH` is `pool.getRate()` of wstETH-WETH pool.
 
-## ComposableStablePools (stMATIC-wMATIC)
+### ComposableStablePools (stMATIC-wMATIC)
 
 stMATIC is a special case, since `stMATIC` accrues value and doesn't rebase, so it's not 1:1 with WMATIC. Therefore,
 it cannot be reduced to anoter underlying token.
 
 However, the generalized formula from the solution above also works for this.
 
-### 1. Get market price for each constituent token
+#### 1. Get market price for each constituent token
 
 Get market price of stMATIC and wMATIC in terms of USD, using chainlink oracles.
 
-### 2. Get RateProvider price for each constituent token
+#### 2. Get RateProvider price for each constituent token
 
 Since stMATIC-wMATIC pool is a ComposableStablePool, it has `getTokenRate()` function, which make it easier to fetch
 RateProvider rates for each token. Notice that wMATIC rate is 1e18, even if the rate provider is not set for this token.
 
-### 3. Get minimum price
+#### 3. Get minimum price
 
 $$ minPrice = min({P_{M_{stMATIC}} \over P_{RP_{stMATIC}}}, {P_{M_{wMATIC}} \over P_{RP_{wMATIC}}}) $$
 
-### 4. Calculates the BPT price
+#### 4. Calculates the BPT price
 
 $$ P_{BPT_{stMATIC-wMATIC}} = minPrice * rate_{pool_{stMATIC-wMATIC}} $$
 
 where `rate_pool_stMATIC-wMATIC` is `pool.getRate()` of stMATIC-wMATIC pool.
 
-# Appendix
+## Appendix
 
-## Proof of the solution
+### Proof of the solution
 
 **How do we choose the token with the minimum price, if the prices are not expected to be 1:1?**
 

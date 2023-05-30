@@ -1,3 +1,10 @@
+---
+title: Overview
+references:
+  - details: StablePool BPT as Collateral
+    link: /concepts/advanced/valuing-bpt/bpt-as-collateral.html
+---
+
 # Valuing BPT
 
 ## Overview
