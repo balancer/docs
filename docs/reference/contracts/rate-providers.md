@@ -90,9 +90,9 @@ This trade was executed in Block 17233083. Looking at the token balances the poo
 |     Token                                              | balances                              |  rate                |  scaled balance                           | 
 | -----------                                            | -----------                           |  -----------         |  -----------                              | 
 | BPT - 0x5aee1e99fe86960377de9f88689616916d5dcabe       | 2596148429265848431954582359320590    | 100000000000000000   |  2596148429265848431954582359320590       | 
-| wstEth - 0x7f39c581f595b53c5cb19bd0b3f8da6c935e2ca0    | 6998331684674570187580                | 1123265399574462175  |  7860983836140600107855                   | 
-| sfrxEth - 0xac3e018457b222d93114458476f3e3416abbe38f   | 7388958961745977404526                | 1038371994655823641  |  7672488055538194248508                   | 
-| rEth - 0xae78736cd615f374d3085123a210448e74fc6393      | 5950507951882438548950                | 1069881935087994199  |  6366340962316480428138                   | 
+| wstETH - 0x7f39c581f595b53c5cb19bd0b3f8da6c935e2ca0    | 6998331684674570187580                | 1123265399574462175  |  7860983836140600107855                   | 
+| sfrxETH - 0xac3e018457b222d93114458476f3e3416abbe38f   | 7388958961745977404526                | 1038371994655823641  |  7672488055538194248508                   | 
+| rETH - 0xae78736cd615f374d3085123a210448e74fc6393      | 5950507951882438548950                | 1069881935087994199  |  6366340962316480428138                   | 
 
 \*Bear in mind that the tokens used for demonstration in these examples all have 18 decimals and Balancer natively uses 18 decimals for internal accounting. If tokens have different decimals, the scaled balances scale with the tokens decimals as well.
 
@@ -116,12 +116,12 @@ function _scalingFactor(IERC20 token) internal view virtual override returns (ui
 Looking at this [transaction](https://etherscan.io/tx/0x67f477517acf6e0c91ec7997e665ca25d2806da060af30272876742584f0aa21). 50 ETH is being exchanged for 46.68 rETH. This pool is a MetaStablePool. According to the next table the rate, the `rateProvider`  supplies is being taken into account during the swap. Looking at the Trade equations, a well suited parameter to weave in the `rate` is the balances which are used to compute `OutGivenIn` or `InGivenOut`.
 
 Querying the balances of this pool via `vault.getPoolTokens(poolId)` returns  
-20040415915824227571764 for rETH and 21953505292747563228232 for Weth. 
+20040415915824227571764 for rETH and 21953505292747563228232 for WETH. 
   
 | Token                                             | balances                              |  rate                |  scaled balance                           | 
 | -----------                                       | -----------                           |  -----------         |  -----------                              | 
-| reth 0xae78736cd615f374d3085123a210448e74fc6393   | 20040415915824227571764                | 1070121751154609309  |  21445684973708525874136                  | 
-| Weth 0xc02aaa39b223fe8d0a0e5c4f27ead9083c756cc2   | 21953505292747563228232                | 1000000000000000000  |  21953505292747563228232                  | 
+| rEth 0xae78736cd615f374d3085123a210448e74fc6393   | 20040415915824227571764                | 1070121751154609309  |  21445684973708525874136                  | 
+| WETH 0xc02aaa39b223fe8d0a0e5c4f27ead9083c756cc2   | 21953505292747563228232                | 1000000000000000000  |  21953505292747563228232                  | 
 
 The token balances used in the Trade Equations are then [upscaled](https://dashboard.tenderly.co/tx/mainnet/0x67f477517acf6e0c91ec7997e665ca25d2806da060af30272876742584f0aa21?trace=0.5.2.1.5.11) the scaled balance. Only after upscaling are the apparent balances supplied to
 [`OnSwapGivenIn()`](https://dashboard.tenderly.co/tx/mainnet/0x67f477517acf6e0c91ec7997e665ca25d2806da060af30272876742584f0aa21?trace=0.5.2.1.5.13.2). 
