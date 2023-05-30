@@ -40,16 +40,17 @@ This contract makes use of Chainlink's registry contract so it can handle if Cha
 
 If you're running on a network for which Chainlink doesn't have a registry and you think the risk of a deprecated price feed is low enough, then you can use the rateProvider that directly queries a given Chainlink oracle.
 
-## RateProviders as part of a pool's lifecycle
+## Rate Providers as part of a pool's lifecycle
 
-Different pool types utilise rate Providers in varying contexts.
+Different pool types utilise rate providers in varying contexts.
 
-| PoolType                | Yield Fee        |  Pricing Equations| 
-| -----------             | -----------      |  -----------      |
-| Composable Stable Pool  | ✅               | ✅                |
-| Meta Stable (EOL)       | ✅               | ✅                |
-| Weighted Pool           | ✅               | ❌                |
-| Managed Pool            | ✅               | ❌                |
+| PoolType                   | Yield Fee        |  Pricing Equations| 
+| -----------                | -----------      |  -----------      |
+| Composable Stable Pool     | ✅               | ✅                |
+| Meta Stable (EOL)          | ✅               | ✅                |
+| Weighted Pool              | ✅               | ❌                |
+| Managed Pool               | ✅               | ❌                |
+| Liquity Bootstrapping Pool | ✅               | ❌                |
 
 
 One important aspect to determine a trade's outcome are the Token balances a pool contains. Before the reported balances by the Vault are being used in the Trade equations for StableMath two operations will be done to them:
@@ -80,9 +81,9 @@ function _scalingFactors() internal view virtual override returns (uint256[] mem
     }
 ```
 
-### Example for a Composable Stable Pool swap utilising rate providers
+### Example for a Composable Stable Pool swap utilising rate Providers
 
-Looking at this [transaction](https://dashboard.tenderly.co/tx/mainnet/0x72d756d0fcd663343ca1b2adcfc7e114e8598bc0be28386752f16222384a29b3). 0.1575 staked Frax Ether is being exchanged for 0.1456 wrapped staked Ether. This pool is a Composable Stable Pool. According to the table the rate, the rateProvider provides a rate which is being used in the Trade Equations.  
+Looking at this [transaction](https://dashboard.tenderly.co/tx/mainnet/0x72d756d0fcd663343ca1b2adcfc7e114e8598bc0be28386752f16222384a29b3). 0.1575 staked Frax Ether is being exchanged for 0.1456 wrapped staked Ether. This pool is a Composable Stable Pool. According to the table the rate, the `rateProvider` provides a rate which is being used in the Trade Equations.  
 
 This trade was executed in Block 17233083. Looking at the token balances the pool has before the swap it can be seen that:
 
@@ -96,7 +97,7 @@ This trade was executed in Block 17233083. Looking at the token balances the poo
 ** Bear in mind that the tokens used for demonstration in this doc all have 18 decimals and Balancer natively uses 18 decimals. If tokens have different decimals, the scaled balances scale with the tokens decimals as well.
 
 After the token balances have been upscaled, they are fed into `_calcOutGivenIn`[here](https://dashboard.tenderly.co/tx/mainnet/0x72d756d0fcd663343ca1b2adcfc7e114e8598bc0be28386752f16222384a29b3?trace=0.4.2.2.19.11.0.3.0.5).
-That is how RateProviders feed into the pricing equation for ComposableStablePool and for MetaStablePool
+That is how `rateProvider` feeds a rate into the pricing equation for ComposableStablePools and for MetaStablePools
 
 ### Implementation in a MetaStablePool 
 The scaling factor that is used can be seen in the below code snippet.
@@ -110,9 +111,9 @@ function _scalingFactor(IERC20 token) internal view virtual override returns (ui
     }
 ```
 
-### Example for MetaStablePools (superseded by ComposableStablePool) swap utilising rate providers.
+### Example for MetaStablePools (superseded by ComposableStablePool) swap utilising rate Providers.
 
-Looking at this [transaction](https://etherscan.io/tx/0x67f477517acf6e0c91ec7997e665ca25d2806da060af30272876742584f0aa21). 50 ETH is being exchanged for 46.68 rETH. This pool is a MetaStablePool. According to the table the rate, the rateProvider, supplies is being taken into account during the swap. Looking at the Trade equations, the best suited parameter to weave in the `rate` is the balances which are used to compute `OutGivenIn` or `InGivenOut`.
+Looking at this [transaction](https://etherscan.io/tx/0x67f477517acf6e0c91ec7997e665ca25d2806da060af30272876742584f0aa21). 50 ETH is being exchanged for 46.68 rETH. This pool is a MetaStablePool. According to the table the rate, the `rateProvider`, supplies is being taken into account during the swap. Looking at the Trade equations, the best suited parameter to weave in the `rate` is the balances which are used to compute `OutGivenIn` or `InGivenOut`.
 
 Querying the balances of this pool via `vault.getPoolTokens(poolId)` returns  
 20040415915824227571764 for rETH and 21953505292747563228232 for Weth. 
@@ -126,9 +127,9 @@ The token balances used in the Trade Equations are then [upscaled](https://dashb
 [`OnSwapGivenIn()`](https://dashboard.tenderly.co/tx/mainnet/0x67f477517acf6e0c91ec7997e665ca25d2806da060af30272876742584f0aa21?trace=0.5.2.1.5.13.2). 
 
 
-### RateProvider being used in a MetaStablePool swap
+### Rate Provider being used in a MetaStablePool swap
 
-## RateProviders being used to collect yieldFees for WeightedPools
+## Rate Providers being used to collect yieldFees for WeightedPools
 
 Rate providers play a crucial role in determining whether yield fees are charged during pool join or exit. The primary factor used for this determination is the comparison of the `_athRateProduct` private variable with a dynamically calculated `rateProduct` on every pool join or exit. Here's an example illustrating what the `rateProduct` represents:
 
@@ -144,11 +145,11 @@ The rate product is obtained by multiplying the weighted rates together:
 
 Rate product = (0.3 * 1.01) * (0.5 * 1) * (0.2 * 1.05) = 1.013
 
-As part of the calculation of the rateProduct, the rate providers of the pool tokens are queried for their rates [here](https://github.com/balancer/balancer-v2-monorepo/blob/cbce7d63479dafb4f4ea9ad8cb2dbdbb26edae50/pkg/pool-weighted/contracts/WeightedPoolProtocolFees.sol#L304). This occurs in the following code snippet:
+As part of the calculation of the rateProduct, the `rateProvider` of the pool tokens are queried for their rates [here](https://github.com/balancer/balancer-v2-monorepo/blob/cbce7d63479dafb4f4ea9ad8cb2dbdbb26edae50/pkg/pool-weighted/contracts/WeightedPoolProtocolFees.sol#L304). This occurs in the following code snippet:
 
 ```
 /**
-     * @notice Returns the contribution to the total rate product from a token with the given weight and rate provider.
+     * @notice Returns the contribution to the total rate product from a token with the given weight and rate Provider.
      */
     function _getRateFactor(uint256 normalizedWeight, IRateProvider provider) internal view returns (uint256) {
         return provider == IRateProvider(0) ? FixedPoint.ONE : provider.getRate().powDown(normalizedWeight);
@@ -157,7 +158,7 @@ As part of the calculation of the rateProduct, the rate providers of the pool to
 
 There are several scenarios in which no yield fees are paid during a pool join or exit operation. Here are a couple of examples:
 
-- Rate providers only update with a given frequency: If multiple joins or exits occur without any factors contributing to a newATHRateProduct, no yield fees are minted. This means that if the rate providers have not updated their rates within the given timeframe, the rateProduct remains unchanged and no yield fees are charged.
+- Rate Providers only update with a given frequency: If multiple joins or exits occur without any factors contributing to a newATHRateProduct, no yield fees are minted. This means that if the rate Providers have not updated their rates within the given timeframe, the rateProduct remains unchanged and no yield fees are charged.
 - Rate fluctuations of different tokens: In some cases, the rate of one token may increase while the rate of another token decreases. If, on a normalized basis, the rate increase of Token A is less than the rate decrease of Token B, the calculated `rateProduct` would not reach the ceiling of `ATHRateProduct`. As a result, no yield fees would be paid during the pool join or exit, as the rateProduct did not increase sufficiently.
 
 
