@@ -50,7 +50,7 @@ Different pool types utilise rate providers in varying contexts.
 | Meta Stable (EOL)          | ✅               | ✅                |
 | Weighted Pool              | ✅               | ❌                |
 | Managed Pool               | ✅               | ❌                |
-| Liquity Bootstrapping Pool | ✅               | ❌                |
+| Liquity Bootstrapping Pool | ❌               | ❌                |
 
 
 One important aspect to determine a trade's outcome are the Token balances a pool contains. Before the reported balances by the Vault are being used in the Trade equations for StableMath two operations will be done to them:
@@ -60,12 +60,12 @@ One important aspect to determine a trade's outcome are the Token balances a poo
 
 These operations supply apparent balances to the StableMath equations effectively changing the value of the balances reported via the earlier call to `vault.getPoolTokens(poolId)`.
 
-ComposableStablePools & MetaStablePools have different implementations for the above operations but the outcome is the same.
+ComposableStablePools & MetaStablePools have different implementations for the scaling operations but the outcome is the same.
 
 
 ### Implementation for Composable Stable Pool 
 
-The scaling factor that is used can be seen in the below code snippet.
+How scaling is used can be seen in the below code snippet.
 
 ```
 function _scalingFactors() internal view virtual override returns (uint256[] memory) {
@@ -94,13 +94,13 @@ This trade was executed in Block 17233083. Looking at the token balances the poo
 | sfrxEth - 0xac3e018457b222d93114458476f3e3416abbe38f   | 7388958961745977404526                | 1038371994655823641  |  7672488055538194248508                   | 
 | rEth - 0xae78736cd615f374d3085123a210448e74fc6393      | 5950507951882438548950                | 1069881935087994199  |  6366340962316480428138                   | 
 
-** Bear in mind that the tokens used for demonstration in this doc all have 18 decimals and Balancer natively uses 18 decimals. If tokens have different decimals, the scaled balances scale with the tokens decimals as well.
+\*Bear in mind that the tokens used for demonstration in these examples all have 18 decimals and Balancer natively uses 18 decimals for internal accounting. If tokens have different decimals, the scaled balances scale with the tokens decimals as well.
 
-After the token balances have been upscaled, they are fed into `_calcOutGivenIn`[here](https://dashboard.tenderly.co/tx/mainnet/0x72d756d0fcd663343ca1b2adcfc7e114e8598bc0be28386752f16222384a29b3?trace=0.4.2.2.19.11.0.3.0.5).
-That is how `rateProvider` feeds a rate into the pricing equation for ComposableStablePools and for MetaStablePools
+After the token balances have been upscaled, they are fed into `_calcOutGivenIn` [here](https://dashboard.tenderly.co/tx/mainnet/0x72d756d0fcd663343ca1b2adcfc7e114e8598bc0be28386752f16222384a29b3?trace=0.4.2.2.19.11.0.3.0.5).
+That is how `rateProvider` feeds a rate into the pricing equation for ComposableStablePools.
 
 ### Implementation in a MetaStablePool 
-The scaling factor that is used can be seen in the below code snippet.
+How scaling is used can be seen in the below code snippet.
 
 ```
 function _scalingFactor(IERC20 token) internal view virtual override returns (uint256) {
@@ -113,7 +113,7 @@ function _scalingFactor(IERC20 token) internal view virtual override returns (ui
 
 ### Example for MetaStablePools (superseded by ComposableStablePool) swap utilising rate Providers.
 
-Looking at this [transaction](https://etherscan.io/tx/0x67f477517acf6e0c91ec7997e665ca25d2806da060af30272876742584f0aa21). 50 ETH is being exchanged for 46.68 rETH. This pool is a MetaStablePool. According to the table the rate, the `rateProvider`, supplies is being taken into account during the swap. Looking at the Trade equations, the best suited parameter to weave in the `rate` is the balances which are used to compute `OutGivenIn` or `InGivenOut`.
+Looking at this [transaction](https://etherscan.io/tx/0x67f477517acf6e0c91ec7997e665ca25d2806da060af30272876742584f0aa21). 50 ETH is being exchanged for 46.68 rETH. This pool is a MetaStablePool. According to the next table the rate, the `rateProvider`  supplies is being taken into account during the swap. Looking at the Trade equations, a well suited parameter to weave in the `rate` is the balances which are used to compute `OutGivenIn` or `InGivenOut`.
 
 Querying the balances of this pool via `vault.getPoolTokens(poolId)` returns  
 20040415915824227571764 for rETH and 21953505292747563228232 for Weth. 
