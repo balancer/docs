@@ -120,8 +120,8 @@ Querying the balances of this pool via `vault.getPoolTokens(poolId)` returns
   
 | Token                                             | balances                              |  rate                |  scaled balance                           | 
 | -----------                                       | -----------                           |  -----------         |  -----------                              | 
-| reth 0xae78736cd615f374d3085123a210448e74fc6393   | 6998331684674570187580                | 1070121751154609309  |  21445684973708525874136                  | 
-| Weth 0xc02aaa39b223fe8d0a0e5c4f27ead9083c756cc2   | 7388958961745977404526                | 1000000000000000000  |  21953505292747563228232                  | 
+| reth 0xae78736cd615f374d3085123a210448e74fc6393   | 20040415915824227571764                | 1070121751154609309  |  21445684973708525874136                  | 
+| Weth 0xc02aaa39b223fe8d0a0e5c4f27ead9083c756cc2   | 21953505292747563228232                | 1000000000000000000  |  21953505292747563228232                  | 
 
 The token balances used in the Trade Equations are then [upscaled](https://dashboard.tenderly.co/tx/mainnet/0x67f477517acf6e0c91ec7997e665ca25d2806da060af30272876742584f0aa21?trace=0.5.2.1.5.11) the scaled balance. Only after upscaling are the apparent balances supplied to
 [`OnSwapGivenIn()`](https://dashboard.tenderly.co/tx/mainnet/0x67f477517acf6e0c91ec7997e665ca25d2806da060af30272876742584f0aa21?trace=0.5.2.1.5.13.2). 
