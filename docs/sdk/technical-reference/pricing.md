@@ -2,7 +2,7 @@
 order: 4
 guides:
   - details: Get Spot Price of Pool
-    link: /guides/swaps/get-spot-price.md
+    link: /guides/arbitrageurs/get-spot-price.md
 ---
 
 # Pricing
