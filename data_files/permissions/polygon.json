@@ -1,0 +1,1710 @@
+[
+   {
+      "Fx": "batchSwap(uint8,(bytes32,uint256,uint256,uint256,bytes)[],address[],(address,bool,address,bool),int256[],uint256)",
+      "Contract": "Vault",
+      "Deployment": "20210418-vault",
+      "Authorized_Caller_Addresses": [
+         "0x4574ccBcC09A00C9eE55fB92Fe353699A4fA800e",
+         "0xF537dDd7f4cc72C6C08866b62EAe9378f1F62da8",
+         "0xcf6a66E32dCa0e26AcC3426b851FD8aCbF12Dac7",
+         "0x28A224d9d398a1eBB7BA69BCA515898966Bb1B6b",
+         "0xd18d5D377eb23362e54Fa496597d7E962d56C554"
+      ],
+      "Authorized_Caller_Names": [
+         "20211203-batch-relayer/BalancerRelayer",
+         "20220318-batch-relayer-v2/BalancerRelayer",
+         "20220720-batch-relayer-v3/BalancerRelayer",
+         "20220916-batch-relayer-v4/BalancerRelayer",
+         "20230314-batch-relayer-v5/BalancerRelayer"
+      ]
+   },
+   {
+      "Fx": "batchSwap(uint8,(bytes32,uint256,uint256,uint256,bytes)[],address[],(address,bool,address,bool),int256[],uint256)",
+      "Contract": "Vault",
+      "Deployment": "20210418-vault",
+      "Authorized_Caller_Addresses": [
+         "0x4574ccBcC09A00C9eE55fB92Fe353699A4fA800e",
+         "0xF537dDd7f4cc72C6C08866b62EAe9378f1F62da8",
+         "0xcf6a66E32dCa0e26AcC3426b851FD8aCbF12Dac7",
+         "0x28A224d9d398a1eBB7BA69BCA515898966Bb1B6b",
+         "0xd18d5D377eb23362e54Fa496597d7E962d56C554"
+      ],
+      "Authorized_Caller_Names": [
+         "20211203-batch-relayer/BalancerRelayer",
+         "20220318-batch-relayer-v2/BalancerRelayer",
+         "20220720-batch-relayer-v3/BalancerRelayer",
+         "20220916-batch-relayer-v4/BalancerRelayer",
+         "20230314-batch-relayer-v5/BalancerRelayer"
+      ]
+   },
+   {
+      "Fx": "batchSwap(uint8,(bytes32,uint256,uint256,uint256,bytes)[],address[],(address,bool,address,bool),int256[],uint256)",
+      "Contract": "Vault",
+      "Deployment": "20210418-vault",
+      "Authorized_Caller_Addresses": [
+         "0x4574ccBcC09A00C9eE55fB92Fe353699A4fA800e",
+         "0xF537dDd7f4cc72C6C08866b62EAe9378f1F62da8",
+         "0xcf6a66E32dCa0e26AcC3426b851FD8aCbF12Dac7",
+         "0x28A224d9d398a1eBB7BA69BCA515898966Bb1B6b",
+         "0xd18d5D377eb23362e54Fa496597d7E962d56C554"
+      ],
+      "Authorized_Caller_Names": [
+         "20211203-batch-relayer/BalancerRelayer",
+         "20220318-batch-relayer-v2/BalancerRelayer",
+         "20220720-batch-relayer-v3/BalancerRelayer",
+         "20220916-batch-relayer-v4/BalancerRelayer",
+         "20230314-batch-relayer-v5/BalancerRelayer"
+      ]
+   },
+   {
+      "Fx": "batchSwap(uint8,(bytes32,uint256,uint256,uint256,bytes)[],address[],(address,bool,address,bool),int256[],uint256)",
+      "Contract": "Vault",
+      "Deployment": "20210418-vault",
+      "Authorized_Caller_Addresses": [
+         "0x4574ccBcC09A00C9eE55fB92Fe353699A4fA800e",
+         "0xF537dDd7f4cc72C6C08866b62EAe9378f1F62da8",
+         "0xcf6a66E32dCa0e26AcC3426b851FD8aCbF12Dac7",
+         "0x28A224d9d398a1eBB7BA69BCA515898966Bb1B6b",
+         "0xd18d5D377eb23362e54Fa496597d7E962d56C554"
+      ],
+      "Authorized_Caller_Names": [
+         "20211203-batch-relayer/BalancerRelayer",
+         "20220318-batch-relayer-v2/BalancerRelayer",
+         "20220720-batch-relayer-v3/BalancerRelayer",
+         "20220916-batch-relayer-v4/BalancerRelayer",
+         "20230314-batch-relayer-v5/BalancerRelayer"
+      ]
+   },
+   {
+      "Fx": "batchSwap(uint8,(bytes32,uint256,uint256,uint256,bytes)[],address[],(address,bool,address,bool),int256[],uint256)",
+      "Contract": "Vault",
+      "Deployment": "20210418-vault",
+      "Authorized_Caller_Addresses": [
+         "0x4574ccBcC09A00C9eE55fB92Fe353699A4fA800e",
+         "0xF537dDd7f4cc72C6C08866b62EAe9378f1F62da8",
+         "0xcf6a66E32dCa0e26AcC3426b851FD8aCbF12Dac7",
+         "0x28A224d9d398a1eBB7BA69BCA515898966Bb1B6b",
+         "0xd18d5D377eb23362e54Fa496597d7E962d56C554"
+      ],
+      "Authorized_Caller_Names": [
+         "20211203-batch-relayer/BalancerRelayer",
+         "20220318-batch-relayer-v2/BalancerRelayer",
+         "20220720-batch-relayer-v3/BalancerRelayer",
+         "20220916-batch-relayer-v4/BalancerRelayer",
+         "20230314-batch-relayer-v5/BalancerRelayer"
+      ]
+   },
+   {
+      "Fx": "exitPool(bytes32,address,address,(address[],uint256[],bytes,bool))",
+      "Contract": "Vault",
+      "Deployment": "20210418-vault",
+      "Authorized_Caller_Addresses": [
+         "0x4574ccBcC09A00C9eE55fB92Fe353699A4fA800e",
+         "0xF537dDd7f4cc72C6C08866b62EAe9378f1F62da8",
+         "0xcf6a66E32dCa0e26AcC3426b851FD8aCbF12Dac7",
+         "0x28A224d9d398a1eBB7BA69BCA515898966Bb1B6b",
+         "0xd18d5D377eb23362e54Fa496597d7E962d56C554"
+      ],
+      "Authorized_Caller_Names": [
+         "20211203-batch-relayer/BalancerRelayer",
+         "20220318-batch-relayer-v2/BalancerRelayer",
+         "20220720-batch-relayer-v3/BalancerRelayer",
+         "20220916-batch-relayer-v4/BalancerRelayer",
+         "20230314-batch-relayer-v5/BalancerRelayer"
+      ]
+   },
+   {
+      "Fx": "exitPool(bytes32,address,address,(address[],uint256[],bytes,bool))",
+      "Contract": "Vault",
+      "Deployment": "20210418-vault",
+      "Authorized_Caller_Addresses": [
+         "0x4574ccBcC09A00C9eE55fB92Fe353699A4fA800e",
+         "0xF537dDd7f4cc72C6C08866b62EAe9378f1F62da8",
+         "0xcf6a66E32dCa0e26AcC3426b851FD8aCbF12Dac7",
+         "0x28A224d9d398a1eBB7BA69BCA515898966Bb1B6b",
+         "0xd18d5D377eb23362e54Fa496597d7E962d56C554"
+      ],
+      "Authorized_Caller_Names": [
+         "20211203-batch-relayer/BalancerRelayer",
+         "20220318-batch-relayer-v2/BalancerRelayer",
+         "20220720-batch-relayer-v3/BalancerRelayer",
+         "20220916-batch-relayer-v4/BalancerRelayer",
+         "20230314-batch-relayer-v5/BalancerRelayer"
+      ]
+   },
+   {
+      "Fx": "exitPool(bytes32,address,address,(address[],uint256[],bytes,bool))",
+      "Contract": "Vault",
+      "Deployment": "20210418-vault",
+      "Authorized_Caller_Addresses": [
+         "0x4574ccBcC09A00C9eE55fB92Fe353699A4fA800e",
+         "0xF537dDd7f4cc72C6C08866b62EAe9378f1F62da8",
+         "0xcf6a66E32dCa0e26AcC3426b851FD8aCbF12Dac7",
+         "0x28A224d9d398a1eBB7BA69BCA515898966Bb1B6b",
+         "0xd18d5D377eb23362e54Fa496597d7E962d56C554"
+      ],
+      "Authorized_Caller_Names": [
+         "20211203-batch-relayer/BalancerRelayer",
+         "20220318-batch-relayer-v2/BalancerRelayer",
+         "20220720-batch-relayer-v3/BalancerRelayer",
+         "20220916-batch-relayer-v4/BalancerRelayer",
+         "20230314-batch-relayer-v5/BalancerRelayer"
+      ]
+   },
+   {
+      "Fx": "exitPool(bytes32,address,address,(address[],uint256[],bytes,bool))",
+      "Contract": "Vault",
+      "Deployment": "20210418-vault",
+      "Authorized_Caller_Addresses": [
+         "0x4574ccBcC09A00C9eE55fB92Fe353699A4fA800e",
+         "0xF537dDd7f4cc72C6C08866b62EAe9378f1F62da8",
+         "0xcf6a66E32dCa0e26AcC3426b851FD8aCbF12Dac7",
+         "0x28A224d9d398a1eBB7BA69BCA515898966Bb1B6b",
+         "0xd18d5D377eb23362e54Fa496597d7E962d56C554"
+      ],
+      "Authorized_Caller_Names": [
+         "20211203-batch-relayer/BalancerRelayer",
+         "20220318-batch-relayer-v2/BalancerRelayer",
+         "20220720-batch-relayer-v3/BalancerRelayer",
+         "20220916-batch-relayer-v4/BalancerRelayer",
+         "20230314-batch-relayer-v5/BalancerRelayer"
+      ]
+   },
+   {
+      "Fx": "exitPool(bytes32,address,address,(address[],uint256[],bytes,bool))",
+      "Contract": "Vault",
+      "Deployment": "20210418-vault",
+      "Authorized_Caller_Addresses": [
+         "0x4574ccBcC09A00C9eE55fB92Fe353699A4fA800e",
+         "0xF537dDd7f4cc72C6C08866b62EAe9378f1F62da8",
+         "0xcf6a66E32dCa0e26AcC3426b851FD8aCbF12Dac7",
+         "0x28A224d9d398a1eBB7BA69BCA515898966Bb1B6b",
+         "0xd18d5D377eb23362e54Fa496597d7E962d56C554"
+      ],
+      "Authorized_Caller_Names": [
+         "20211203-batch-relayer/BalancerRelayer",
+         "20220318-batch-relayer-v2/BalancerRelayer",
+         "20220720-batch-relayer-v3/BalancerRelayer",
+         "20220916-batch-relayer-v4/BalancerRelayer",
+         "20230314-batch-relayer-v5/BalancerRelayer"
+      ]
+   },
+   {
+      "Fx": "joinPool(bytes32,address,address,(address[],uint256[],bytes,bool))",
+      "Contract": "Vault",
+      "Deployment": "20210418-vault",
+      "Authorized_Caller_Addresses": [
+         "0x4574ccBcC09A00C9eE55fB92Fe353699A4fA800e",
+         "0xF537dDd7f4cc72C6C08866b62EAe9378f1F62da8",
+         "0xcf6a66E32dCa0e26AcC3426b851FD8aCbF12Dac7",
+         "0x28A224d9d398a1eBB7BA69BCA515898966Bb1B6b",
+         "0xd18d5D377eb23362e54Fa496597d7E962d56C554"
+      ],
+      "Authorized_Caller_Names": [
+         "20211203-batch-relayer/BalancerRelayer",
+         "20220318-batch-relayer-v2/BalancerRelayer",
+         "20220720-batch-relayer-v3/BalancerRelayer",
+         "20220916-batch-relayer-v4/BalancerRelayer",
+         "20230314-batch-relayer-v5/BalancerRelayer"
+      ]
+   },
+   {
+      "Fx": "joinPool(bytes32,address,address,(address[],uint256[],bytes,bool))",
+      "Contract": "Vault",
+      "Deployment": "20210418-vault",
+      "Authorized_Caller_Addresses": [
+         "0x4574ccBcC09A00C9eE55fB92Fe353699A4fA800e",
+         "0xF537dDd7f4cc72C6C08866b62EAe9378f1F62da8",
+         "0xcf6a66E32dCa0e26AcC3426b851FD8aCbF12Dac7",
+         "0x28A224d9d398a1eBB7BA69BCA515898966Bb1B6b",
+         "0xd18d5D377eb23362e54Fa496597d7E962d56C554"
+      ],
+      "Authorized_Caller_Names": [
+         "20211203-batch-relayer/BalancerRelayer",
+         "20220318-batch-relayer-v2/BalancerRelayer",
+         "20220720-batch-relayer-v3/BalancerRelayer",
+         "20220916-batch-relayer-v4/BalancerRelayer",
+         "20230314-batch-relayer-v5/BalancerRelayer"
+      ]
+   },
+   {
+      "Fx": "joinPool(bytes32,address,address,(address[],uint256[],bytes,bool))",
+      "Contract": "Vault",
+      "Deployment": "20210418-vault",
+      "Authorized_Caller_Addresses": [
+         "0x4574ccBcC09A00C9eE55fB92Fe353699A4fA800e",
+         "0xF537dDd7f4cc72C6C08866b62EAe9378f1F62da8",
+         "0xcf6a66E32dCa0e26AcC3426b851FD8aCbF12Dac7",
+         "0x28A224d9d398a1eBB7BA69BCA515898966Bb1B6b",
+         "0xd18d5D377eb23362e54Fa496597d7E962d56C554"
+      ],
+      "Authorized_Caller_Names": [
+         "20211203-batch-relayer/BalancerRelayer",
+         "20220318-batch-relayer-v2/BalancerRelayer",
+         "20220720-batch-relayer-v3/BalancerRelayer",
+         "20220916-batch-relayer-v4/BalancerRelayer",
+         "20230314-batch-relayer-v5/BalancerRelayer"
+      ]
+   },
+   {
+      "Fx": "joinPool(bytes32,address,address,(address[],uint256[],bytes,bool))",
+      "Contract": "Vault",
+      "Deployment": "20210418-vault",
+      "Authorized_Caller_Addresses": [
+         "0x4574ccBcC09A00C9eE55fB92Fe353699A4fA800e",
+         "0xF537dDd7f4cc72C6C08866b62EAe9378f1F62da8",
+         "0xcf6a66E32dCa0e26AcC3426b851FD8aCbF12Dac7",
+         "0x28A224d9d398a1eBB7BA69BCA515898966Bb1B6b",
+         "0xd18d5D377eb23362e54Fa496597d7E962d56C554"
+      ],
+      "Authorized_Caller_Names": [
+         "20211203-batch-relayer/BalancerRelayer",
+         "20220318-batch-relayer-v2/BalancerRelayer",
+         "20220720-batch-relayer-v3/BalancerRelayer",
+         "20220916-batch-relayer-v4/BalancerRelayer",
+         "20230314-batch-relayer-v5/BalancerRelayer"
+      ]
+   },
+   {
+      "Fx": "joinPool(bytes32,address,address,(address[],uint256[],bytes,bool))",
+      "Contract": "Vault",
+      "Deployment": "20210418-vault",
+      "Authorized_Caller_Addresses": [
+         "0x4574ccBcC09A00C9eE55fB92Fe353699A4fA800e",
+         "0xF537dDd7f4cc72C6C08866b62EAe9378f1F62da8",
+         "0xcf6a66E32dCa0e26AcC3426b851FD8aCbF12Dac7",
+         "0x28A224d9d398a1eBB7BA69BCA515898966Bb1B6b",
+         "0xd18d5D377eb23362e54Fa496597d7E962d56C554"
+      ],
+      "Authorized_Caller_Names": [
+         "20211203-batch-relayer/BalancerRelayer",
+         "20220318-batch-relayer-v2/BalancerRelayer",
+         "20220720-batch-relayer-v3/BalancerRelayer",
+         "20220916-batch-relayer-v4/BalancerRelayer",
+         "20230314-batch-relayer-v5/BalancerRelayer"
+      ]
+   },
+   {
+      "Fx": "manageUserBalance((uint8,address,uint256,address,address)[])",
+      "Contract": "Vault",
+      "Deployment": "20210418-vault",
+      "Authorized_Caller_Addresses": [
+         "0x4574ccBcC09A00C9eE55fB92Fe353699A4fA800e",
+         "0xF537dDd7f4cc72C6C08866b62EAe9378f1F62da8",
+         "0xcf6a66E32dCa0e26AcC3426b851FD8aCbF12Dac7",
+         "0x28A224d9d398a1eBB7BA69BCA515898966Bb1B6b",
+         "0xd18d5D377eb23362e54Fa496597d7E962d56C554"
+      ],
+      "Authorized_Caller_Names": [
+         "20211203-batch-relayer/BalancerRelayer",
+         "20220318-batch-relayer-v2/BalancerRelayer",
+         "20220720-batch-relayer-v3/BalancerRelayer",
+         "20220916-batch-relayer-v4/BalancerRelayer",
+         "20230314-batch-relayer-v5/BalancerRelayer"
+      ]
+   },
+   {
+      "Fx": "manageUserBalance((uint8,address,uint256,address,address)[])",
+      "Contract": "Vault",
+      "Deployment": "20210418-vault",
+      "Authorized_Caller_Addresses": [
+         "0x4574ccBcC09A00C9eE55fB92Fe353699A4fA800e",
+         "0xF537dDd7f4cc72C6C08866b62EAe9378f1F62da8",
+         "0xcf6a66E32dCa0e26AcC3426b851FD8aCbF12Dac7",
+         "0x28A224d9d398a1eBB7BA69BCA515898966Bb1B6b",
+         "0xd18d5D377eb23362e54Fa496597d7E962d56C554"
+      ],
+      "Authorized_Caller_Names": [
+         "20211203-batch-relayer/BalancerRelayer",
+         "20220318-batch-relayer-v2/BalancerRelayer",
+         "20220720-batch-relayer-v3/BalancerRelayer",
+         "20220916-batch-relayer-v4/BalancerRelayer",
+         "20230314-batch-relayer-v5/BalancerRelayer"
+      ]
+   },
+   {
+      "Fx": "manageUserBalance((uint8,address,uint256,address,address)[])",
+      "Contract": "Vault",
+      "Deployment": "20210418-vault",
+      "Authorized_Caller_Addresses": [
+         "0x4574ccBcC09A00C9eE55fB92Fe353699A4fA800e",
+         "0xF537dDd7f4cc72C6C08866b62EAe9378f1F62da8",
+         "0xcf6a66E32dCa0e26AcC3426b851FD8aCbF12Dac7",
+         "0x28A224d9d398a1eBB7BA69BCA515898966Bb1B6b",
+         "0xd18d5D377eb23362e54Fa496597d7E962d56C554"
+      ],
+      "Authorized_Caller_Names": [
+         "20211203-batch-relayer/BalancerRelayer",
+         "20220318-batch-relayer-v2/BalancerRelayer",
+         "20220720-batch-relayer-v3/BalancerRelayer",
+         "20220916-batch-relayer-v4/BalancerRelayer",
+         "20230314-batch-relayer-v5/BalancerRelayer"
+      ]
+   },
+   {
+      "Fx": "manageUserBalance((uint8,address,uint256,address,address)[])",
+      "Contract": "Vault",
+      "Deployment": "20210418-vault",
+      "Authorized_Caller_Addresses": [
+         "0x4574ccBcC09A00C9eE55fB92Fe353699A4fA800e",
+         "0xF537dDd7f4cc72C6C08866b62EAe9378f1F62da8",
+         "0xcf6a66E32dCa0e26AcC3426b851FD8aCbF12Dac7",
+         "0x28A224d9d398a1eBB7BA69BCA515898966Bb1B6b",
+         "0xd18d5D377eb23362e54Fa496597d7E962d56C554"
+      ],
+      "Authorized_Caller_Names": [
+         "20211203-batch-relayer/BalancerRelayer",
+         "20220318-batch-relayer-v2/BalancerRelayer",
+         "20220720-batch-relayer-v3/BalancerRelayer",
+         "20220916-batch-relayer-v4/BalancerRelayer",
+         "20230314-batch-relayer-v5/BalancerRelayer"
+      ]
+   },
+   {
+      "Fx": "manageUserBalance((uint8,address,uint256,address,address)[])",
+      "Contract": "Vault",
+      "Deployment": "20210418-vault",
+      "Authorized_Caller_Addresses": [
+         "0x4574ccBcC09A00C9eE55fB92Fe353699A4fA800e",
+         "0xF537dDd7f4cc72C6C08866b62EAe9378f1F62da8",
+         "0xcf6a66E32dCa0e26AcC3426b851FD8aCbF12Dac7",
+         "0x28A224d9d398a1eBB7BA69BCA515898966Bb1B6b",
+         "0xd18d5D377eb23362e54Fa496597d7E962d56C554"
+      ],
+      "Authorized_Caller_Names": [
+         "20211203-batch-relayer/BalancerRelayer",
+         "20220318-batch-relayer-v2/BalancerRelayer",
+         "20220720-batch-relayer-v3/BalancerRelayer",
+         "20220916-batch-relayer-v4/BalancerRelayer",
+         "20230314-batch-relayer-v5/BalancerRelayer"
+      ]
+   },
+   {
+      "Fx": "setRelayerApproval(address,address,bool)",
+      "Contract": "Vault",
+      "Deployment": "20210418-vault",
+      "Authorized_Caller_Addresses": [
+         "0x4574ccBcC09A00C9eE55fB92Fe353699A4fA800e",
+         "0xF537dDd7f4cc72C6C08866b62EAe9378f1F62da8",
+         "0xcf6a66E32dCa0e26AcC3426b851FD8aCbF12Dac7",
+         "0x28A224d9d398a1eBB7BA69BCA515898966Bb1B6b",
+         "0xd18d5D377eb23362e54Fa496597d7E962d56C554"
+      ],
+      "Authorized_Caller_Names": [
+         "20211203-batch-relayer/BalancerRelayer",
+         "20220318-batch-relayer-v2/BalancerRelayer",
+         "20220720-batch-relayer-v3/BalancerRelayer",
+         "20220916-batch-relayer-v4/BalancerRelayer",
+         "20230314-batch-relayer-v5/BalancerRelayer"
+      ]
+   },
+   {
+      "Fx": "setRelayerApproval(address,address,bool)",
+      "Contract": "Vault",
+      "Deployment": "20210418-vault",
+      "Authorized_Caller_Addresses": [
+         "0x4574ccBcC09A00C9eE55fB92Fe353699A4fA800e",
+         "0xF537dDd7f4cc72C6C08866b62EAe9378f1F62da8",
+         "0xcf6a66E32dCa0e26AcC3426b851FD8aCbF12Dac7",
+         "0x28A224d9d398a1eBB7BA69BCA515898966Bb1B6b",
+         "0xd18d5D377eb23362e54Fa496597d7E962d56C554"
+      ],
+      "Authorized_Caller_Names": [
+         "20211203-batch-relayer/BalancerRelayer",
+         "20220318-batch-relayer-v2/BalancerRelayer",
+         "20220720-batch-relayer-v3/BalancerRelayer",
+         "20220916-batch-relayer-v4/BalancerRelayer",
+         "20230314-batch-relayer-v5/BalancerRelayer"
+      ]
+   },
+   {
+      "Fx": "setRelayerApproval(address,address,bool)",
+      "Contract": "Vault",
+      "Deployment": "20210418-vault",
+      "Authorized_Caller_Addresses": [
+         "0x4574ccBcC09A00C9eE55fB92Fe353699A4fA800e",
+         "0xF537dDd7f4cc72C6C08866b62EAe9378f1F62da8",
+         "0xcf6a66E32dCa0e26AcC3426b851FD8aCbF12Dac7",
+         "0x28A224d9d398a1eBB7BA69BCA515898966Bb1B6b",
+         "0xd18d5D377eb23362e54Fa496597d7E962d56C554"
+      ],
+      "Authorized_Caller_Names": [
+         "20211203-batch-relayer/BalancerRelayer",
+         "20220318-batch-relayer-v2/BalancerRelayer",
+         "20220720-batch-relayer-v3/BalancerRelayer",
+         "20220916-batch-relayer-v4/BalancerRelayer",
+         "20230314-batch-relayer-v5/BalancerRelayer"
+      ]
+   },
+   {
+      "Fx": "setRelayerApproval(address,address,bool)",
+      "Contract": "Vault",
+      "Deployment": "20210418-vault",
+      "Authorized_Caller_Addresses": [
+         "0x4574ccBcC09A00C9eE55fB92Fe353699A4fA800e",
+         "0xF537dDd7f4cc72C6C08866b62EAe9378f1F62da8",
+         "0xcf6a66E32dCa0e26AcC3426b851FD8aCbF12Dac7",
+         "0x28A224d9d398a1eBB7BA69BCA515898966Bb1B6b",
+         "0xd18d5D377eb23362e54Fa496597d7E962d56C554"
+      ],
+      "Authorized_Caller_Names": [
+         "20211203-batch-relayer/BalancerRelayer",
+         "20220318-batch-relayer-v2/BalancerRelayer",
+         "20220720-batch-relayer-v3/BalancerRelayer",
+         "20220916-batch-relayer-v4/BalancerRelayer",
+         "20230314-batch-relayer-v5/BalancerRelayer"
+      ]
+   },
+   {
+      "Fx": "setRelayerApproval(address,address,bool)",
+      "Contract": "Vault",
+      "Deployment": "20210418-vault",
+      "Authorized_Caller_Addresses": [
+         "0x4574ccBcC09A00C9eE55fB92Fe353699A4fA800e",
+         "0xF537dDd7f4cc72C6C08866b62EAe9378f1F62da8",
+         "0xcf6a66E32dCa0e26AcC3426b851FD8aCbF12Dac7",
+         "0x28A224d9d398a1eBB7BA69BCA515898966Bb1B6b",
+         "0xd18d5D377eb23362e54Fa496597d7E962d56C554"
+      ],
+      "Authorized_Caller_Names": [
+         "20211203-batch-relayer/BalancerRelayer",
+         "20220318-batch-relayer-v2/BalancerRelayer",
+         "20220720-batch-relayer-v3/BalancerRelayer",
+         "20220916-batch-relayer-v4/BalancerRelayer",
+         "20230314-batch-relayer-v5/BalancerRelayer"
+      ]
+   },
+   {
+      "Fx": "swap((bytes32,uint8,address,address,uint256,bytes),(address,bool,address,bool),uint256,uint256)",
+      "Contract": "Vault",
+      "Deployment": "20210418-vault",
+      "Authorized_Caller_Addresses": [
+         "0x4574ccBcC09A00C9eE55fB92Fe353699A4fA800e",
+         "0xF537dDd7f4cc72C6C08866b62EAe9378f1F62da8",
+         "0xcf6a66E32dCa0e26AcC3426b851FD8aCbF12Dac7",
+         "0x28A224d9d398a1eBB7BA69BCA515898966Bb1B6b",
+         "0xd18d5D377eb23362e54Fa496597d7E962d56C554"
+      ],
+      "Authorized_Caller_Names": [
+         "20211203-batch-relayer/BalancerRelayer",
+         "20220318-batch-relayer-v2/BalancerRelayer",
+         "20220720-batch-relayer-v3/BalancerRelayer",
+         "20220916-batch-relayer-v4/BalancerRelayer",
+         "20230314-batch-relayer-v5/BalancerRelayer"
+      ]
+   },
+   {
+      "Fx": "swap((bytes32,uint8,address,address,uint256,bytes),(address,bool,address,bool),uint256,uint256)",
+      "Contract": "Vault",
+      "Deployment": "20210418-vault",
+      "Authorized_Caller_Addresses": [
+         "0x4574ccBcC09A00C9eE55fB92Fe353699A4fA800e",
+         "0xF537dDd7f4cc72C6C08866b62EAe9378f1F62da8",
+         "0xcf6a66E32dCa0e26AcC3426b851FD8aCbF12Dac7",
+         "0x28A224d9d398a1eBB7BA69BCA515898966Bb1B6b",
+         "0xd18d5D377eb23362e54Fa496597d7E962d56C554"
+      ],
+      "Authorized_Caller_Names": [
+         "20211203-batch-relayer/BalancerRelayer",
+         "20220318-batch-relayer-v2/BalancerRelayer",
+         "20220720-batch-relayer-v3/BalancerRelayer",
+         "20220916-batch-relayer-v4/BalancerRelayer",
+         "20230314-batch-relayer-v5/BalancerRelayer"
+      ]
+   },
+   {
+      "Fx": "swap((bytes32,uint8,address,address,uint256,bytes),(address,bool,address,bool),uint256,uint256)",
+      "Contract": "Vault",
+      "Deployment": "20210418-vault",
+      "Authorized_Caller_Addresses": [
+         "0x4574ccBcC09A00C9eE55fB92Fe353699A4fA800e",
+         "0xF537dDd7f4cc72C6C08866b62EAe9378f1F62da8",
+         "0xcf6a66E32dCa0e26AcC3426b851FD8aCbF12Dac7",
+         "0x28A224d9d398a1eBB7BA69BCA515898966Bb1B6b",
+         "0xd18d5D377eb23362e54Fa496597d7E962d56C554"
+      ],
+      "Authorized_Caller_Names": [
+         "20211203-batch-relayer/BalancerRelayer",
+         "20220318-batch-relayer-v2/BalancerRelayer",
+         "20220720-batch-relayer-v3/BalancerRelayer",
+         "20220916-batch-relayer-v4/BalancerRelayer",
+         "20230314-batch-relayer-v5/BalancerRelayer"
+      ]
+   },
+   {
+      "Fx": "swap((bytes32,uint8,address,address,uint256,bytes),(address,bool,address,bool),uint256,uint256)",
+      "Contract": "Vault",
+      "Deployment": "20210418-vault",
+      "Authorized_Caller_Addresses": [
+         "0x4574ccBcC09A00C9eE55fB92Fe353699A4fA800e",
+         "0xF537dDd7f4cc72C6C08866b62EAe9378f1F62da8",
+         "0xcf6a66E32dCa0e26AcC3426b851FD8aCbF12Dac7",
+         "0x28A224d9d398a1eBB7BA69BCA515898966Bb1B6b",
+         "0xd18d5D377eb23362e54Fa496597d7E962d56C554"
+      ],
+      "Authorized_Caller_Names": [
+         "20211203-batch-relayer/BalancerRelayer",
+         "20220318-batch-relayer-v2/BalancerRelayer",
+         "20220720-batch-relayer-v3/BalancerRelayer",
+         "20220916-batch-relayer-v4/BalancerRelayer",
+         "20230314-batch-relayer-v5/BalancerRelayer"
+      ]
+   },
+   {
+      "Fx": "swap((bytes32,uint8,address,address,uint256,bytes),(address,bool,address,bool),uint256,uint256)",
+      "Contract": "Vault",
+      "Deployment": "20210418-vault",
+      "Authorized_Caller_Addresses": [
+         "0x4574ccBcC09A00C9eE55fB92Fe353699A4fA800e",
+         "0xF537dDd7f4cc72C6C08866b62EAe9378f1F62da8",
+         "0xcf6a66E32dCa0e26AcC3426b851FD8aCbF12Dac7",
+         "0x28A224d9d398a1eBB7BA69BCA515898966Bb1B6b",
+         "0xd18d5D377eb23362e54Fa496597d7E962d56C554"
+      ],
+      "Authorized_Caller_Names": [
+         "20211203-batch-relayer/BalancerRelayer",
+         "20220318-batch-relayer-v2/BalancerRelayer",
+         "20220720-batch-relayer-v3/BalancerRelayer",
+         "20220916-batch-relayer-v4/BalancerRelayer",
+         "20230314-batch-relayer-v5/BalancerRelayer"
+      ]
+   },
+   {
+      "Fx": "setFlashLoanFeePercentage(uint256)",
+      "Contract": "ProtocolFeesCollector",
+      "Deployment": "20210418-vault",
+      "Authorized_Caller_Addresses": [
+         "0x42AC0e6FA47385D55Aff070d79eF0079868C48a6"
+      ],
+      "Authorized_Caller_Names": [
+         "20220725-protocol-fee-percentages-provider/ProtocolFeePercentagesProvider"
+      ]
+   },
+   {
+      "Fx": "setSwapFeePercentage(uint256)",
+      "Contract": "ProtocolFeesCollector",
+      "Deployment": "20210418-vault",
+      "Authorized_Caller_Addresses": [
+         "0xd2bD536ADB0198f74D5f4f2Bd4Fe68Bae1e1Ba80",
+         "0x42AC0e6FA47385D55Aff070d79eF0079868C48a6"
+      ],
+      "Authorized_Caller_Names": [
+         "undef",
+         "20220725-protocol-fee-percentages-provider/ProtocolFeePercentagesProvider"
+      ]
+   },
+   {
+      "Fx": "setSwapFeePercentage(uint256)",
+      "Contract": "ProtocolFeesCollector",
+      "Deployment": "20210418-vault",
+      "Authorized_Caller_Addresses": [
+         "0xd2bD536ADB0198f74D5f4f2Bd4Fe68Bae1e1Ba80",
+         "0x42AC0e6FA47385D55Aff070d79eF0079868C48a6"
+      ],
+      "Authorized_Caller_Names": [
+         "undef",
+         "20220725-protocol-fee-percentages-provider/ProtocolFeePercentagesProvider"
+      ]
+   },
+   {
+      "Fx": "withdrawCollectedFees(address[],uint256[],address)",
+      "Contract": "ProtocolFeesCollector",
+      "Deployment": "20210418-vault",
+      "Authorized_Caller_Addresses": [
+         "0xEF44D6786b2b4d544b7850Fe67CE6381626Bf2D6"
+      ],
+      "Authorized_Caller_Names": [
+         "20220517-protocol-fee-withdrawer/ProtocolFeesWithdrawer"
+      ]
+   },
+   {
+      "Fx": "setSwapFeePercentage(uint256)",
+      "Contract": "StablePool",
+      "Deployment": "20210624-stable-pool",
+      "Authorized_Caller_Addresses": [
+         "0x7c68c42De679ffB0f16216154C996C354cF1161B"
+      ],
+      "Authorized_Caller_Names": [
+         "multisigs/feeManager"
+      ]
+   },
+   {
+      "Fx": "startAmplificationParameterUpdate(uint256,uint256)",
+      "Contract": "StablePool",
+      "Deployment": "20210624-stable-pool",
+      "Authorized_Caller_Addresses": [
+         "0x7c68c42De679ffB0f16216154C996C354cF1161B"
+      ],
+      "Authorized_Caller_Names": [
+         "multisigs/feeManager"
+      ]
+   },
+   {
+      "Fx": "stopAmplificationParameterUpdate()",
+      "Contract": "StablePool",
+      "Deployment": "20210624-stable-pool",
+      "Authorized_Caller_Addresses": [
+         "0x7c68c42De679ffB0f16216154C996C354cF1161B"
+      ],
+      "Authorized_Caller_Names": [
+         "multisigs/feeManager"
+      ]
+   },
+   {
+      "Fx": "disable()",
+      "Contract": "NoProtocolFeeLiquidityBootstrappingPoolFactory",
+      "Deployment": "20211202-no-protocol-fee-lbp",
+      "Authorized_Caller_Addresses": [
+         "0xf9D6BdE5c2eef334AC88204CB2eEc07111DCBA97",
+         "0x3c58668054c299bE836a0bBB028Bee3aD4724846"
+      ],
+      "Authorized_Caller_Names": [
+         "multisigs/blabs_ops",
+         "multisigs/emergency"
+      ]
+   },
+   {
+      "Fx": "disable()",
+      "Contract": "NoProtocolFeeLiquidityBootstrappingPoolFactory",
+      "Deployment": "20211202-no-protocol-fee-lbp",
+      "Authorized_Caller_Addresses": [
+         "0xf9D6BdE5c2eef334AC88204CB2eEc07111DCBA97",
+         "0x3c58668054c299bE836a0bBB028Bee3aD4724846"
+      ],
+      "Authorized_Caller_Names": [
+         "multisigs/blabs_ops",
+         "multisigs/emergency"
+      ]
+   },
+   {
+      "Fx": "set_rewards(address,bytes32,address[8])",
+      "Contract": "RewardsOnlyGauge",
+      "Deployment": "20220413-child-chain-gauge-factory",
+      "Authorized_Caller_Addresses": [
+         "0x1554ee754707D5C93b7934AF404747Aba521Aaf2"
+      ],
+      "Authorized_Caller_Names": [
+         "20220527-child-chain-gauge-token-adder/ChildChainGaugeTokenAdder"
+      ]
+   },
+   {
+      "Fx": "add_reward(address,address,uint256)",
+      "Contract": "ChildChainStreamer",
+      "Deployment": "20220413-child-chain-gauge-factory",
+      "Authorized_Caller_Addresses": [
+         "0x1554ee754707D5C93b7934AF404747Aba521Aaf2"
+      ],
+      "Authorized_Caller_Names": [
+         "20220527-child-chain-gauge-token-adder/ChildChainGaugeTokenAdder"
+      ]
+   },
+   {
+      "Fx": "notify_reward_amount(address)",
+      "Contract": "ChildChainStreamer",
+      "Deployment": "20220413-child-chain-gauge-factory",
+      "Authorized_Caller_Addresses": [
+         "0xf9D6BdE5c2eef334AC88204CB2eEc07111DCBA97"
+      ],
+      "Authorized_Caller_Names": [
+         "multisigs/blabs_ops"
+      ]
+   },
+   {
+      "Fx": "denylistToken(address)",
+      "Contract": "ProtocolFeesWithdrawer",
+      "Deployment": "20220517-protocol-fee-withdrawer",
+      "Authorized_Caller_Addresses": [
+         "0x3c58668054c299bE836a0bBB028Bee3aD4724846"
+      ],
+      "Authorized_Caller_Names": [
+         "multisigs/emergency"
+      ]
+   },
+   {
+      "Fx": "withdrawCollectedFees(address[],uint256[],address)",
+      "Contract": "ProtocolFeesWithdrawer",
+      "Deployment": "20220517-protocol-fee-withdrawer",
+      "Authorized_Caller_Addresses": [
+         "0x7c68c42De679ffB0f16216154C996C354cF1161B"
+      ],
+      "Authorized_Caller_Names": [
+         "multisigs/feeManager"
+      ]
+   },
+   {
+      "Fx": "addTokenToGauge(address,address,address)",
+      "Contract": "ChildChainGaugeTokenAdder",
+      "Deployment": "20220527-child-chain-gauge-token-adder",
+      "Authorized_Caller_Addresses": [
+         "0xc38c5f97B34E175FFd35407fc91a937300E33860"
+      ],
+      "Authorized_Caller_Names": [
+         "multisigs/lm"
+      ]
+   },
+   {
+      "Fx": "enableRecoveryMode()",
+      "Contract": "StablePool",
+      "Deployment": "20220609-stable-pool-v2",
+      "Authorized_Caller_Addresses": [
+         "0x3c58668054c299bE836a0bBB028Bee3aD4724846"
+      ],
+      "Authorized_Caller_Names": [
+         "multisigs/emergency"
+      ]
+   },
+   {
+      "Fx": "setSwapFeePercentage(uint256)",
+      "Contract": "StablePool",
+      "Deployment": "20220609-stable-pool-v2",
+      "Authorized_Caller_Addresses": [
+         "0x7c68c42De679ffB0f16216154C996C354cF1161B"
+      ],
+      "Authorized_Caller_Names": [
+         "multisigs/feeManager"
+      ]
+   },
+   {
+      "Fx": "startAmplificationParameterUpdate(uint256,uint256)",
+      "Contract": "StablePool",
+      "Deployment": "20220609-stable-pool-v2",
+      "Authorized_Caller_Addresses": [
+         "0x7c68c42De679ffB0f16216154C996C354cF1161B"
+      ],
+      "Authorized_Caller_Names": [
+         "multisigs/feeManager"
+      ]
+   },
+   {
+      "Fx": "stopAmplificationParameterUpdate()",
+      "Contract": "StablePool",
+      "Deployment": "20220609-stable-pool-v2",
+      "Authorized_Caller_Addresses": [
+         "0x7c68c42De679ffB0f16216154C996C354cF1161B"
+      ],
+      "Authorized_Caller_Names": [
+         "multisigs/feeManager"
+      ]
+   },
+   {
+      "Fx": "setFeeTypePercentage(uint256,uint256)",
+      "Contract": "ProtocolFeePercentagesProvider",
+      "Deployment": "20220725-protocol-fee-percentages-provider",
+      "Authorized_Caller_Addresses": [
+         "0xd2bD536ADB0198f74D5f4f2Bd4Fe68Bae1e1Ba80"
+      ],
+      "Authorized_Caller_Names": [
+         "undef"
+      ]
+   },
+   {
+      "Fx": "disable()",
+      "Contract": "AaveLinearPoolFactory",
+      "Deployment": "20220817-aave-rebalanced-linear-pool",
+      "Authorized_Caller_Addresses": [
+         "0xf9D6BdE5c2eef334AC88204CB2eEc07111DCBA97",
+         "0x3c58668054c299bE836a0bBB028Bee3aD4724846"
+      ],
+      "Authorized_Caller_Names": [
+         "multisigs/blabs_ops",
+         "multisigs/emergency"
+      ]
+   },
+   {
+      "Fx": "disable()",
+      "Contract": "AaveLinearPoolFactory",
+      "Deployment": "20220817-aave-rebalanced-linear-pool",
+      "Authorized_Caller_Addresses": [
+         "0xf9D6BdE5c2eef334AC88204CB2eEc07111DCBA97",
+         "0x3c58668054c299bE836a0bBB028Bee3aD4724846"
+      ],
+      "Authorized_Caller_Names": [
+         "multisigs/blabs_ops",
+         "multisigs/emergency"
+      ]
+   },
+   {
+      "Fx": "enableRecoveryMode()",
+      "Contract": "AaveLinearPool",
+      "Deployment": "20220817-aave-rebalanced-linear-pool",
+      "Authorized_Caller_Addresses": [
+         "0x3c58668054c299bE836a0bBB028Bee3aD4724846"
+      ],
+      "Authorized_Caller_Names": [
+         "multisigs/emergency"
+      ]
+   },
+   {
+      "Fx": "pause()",
+      "Contract": "AaveLinearPool",
+      "Deployment": "20220817-aave-rebalanced-linear-pool",
+      "Authorized_Caller_Addresses": [
+         "0x3c58668054c299bE836a0bBB028Bee3aD4724846"
+      ],
+      "Authorized_Caller_Names": [
+         "multisigs/emergency"
+      ]
+   },
+   {
+      "Fx": "setSwapFeePercentage(uint256)",
+      "Contract": "AaveLinearPool",
+      "Deployment": "20220817-aave-rebalanced-linear-pool",
+      "Authorized_Caller_Addresses": [
+         "0x7c68c42De679ffB0f16216154C996C354cF1161B"
+      ],
+      "Authorized_Caller_Names": [
+         "multisigs/feeManager"
+      ]
+   },
+   {
+      "Fx": "setTargets(uint256,uint256)",
+      "Contract": "AaveLinearPool",
+      "Deployment": "20220817-aave-rebalanced-linear-pool",
+      "Authorized_Caller_Addresses": [
+         "0x7c68c42De679ffB0f16216154C996C354cF1161B"
+      ],
+      "Authorized_Caller_Names": [
+         "multisigs/feeManager"
+      ]
+   },
+   {
+      "Fx": "unpause()",
+      "Contract": "AaveLinearPool",
+      "Deployment": "20220817-aave-rebalanced-linear-pool",
+      "Authorized_Caller_Addresses": [
+         "0x3c58668054c299bE836a0bBB028Bee3aD4724846"
+      ],
+      "Authorized_Caller_Names": [
+         "multisigs/emergency"
+      ]
+   },
+   {
+      "Fx": "disable()",
+      "Contract": "ComposableStablePoolFactory",
+      "Deployment": "20220906-composable-stable-pool",
+      "Authorized_Caller_Addresses": [
+         "0xf9D6BdE5c2eef334AC88204CB2eEc07111DCBA97",
+         "0x3c58668054c299bE836a0bBB028Bee3aD4724846"
+      ],
+      "Authorized_Caller_Names": [
+         "multisigs/blabs_ops",
+         "multisigs/emergency"
+      ]
+   },
+   {
+      "Fx": "disable()",
+      "Contract": "ComposableStablePoolFactory",
+      "Deployment": "20220906-composable-stable-pool",
+      "Authorized_Caller_Addresses": [
+         "0xf9D6BdE5c2eef334AC88204CB2eEc07111DCBA97",
+         "0x3c58668054c299bE836a0bBB028Bee3aD4724846"
+      ],
+      "Authorized_Caller_Names": [
+         "multisigs/blabs_ops",
+         "multisigs/emergency"
+      ]
+   },
+   {
+      "Fx": "enableRecoveryMode()",
+      "Contract": "ComposableStablePool",
+      "Deployment": "20220906-composable-stable-pool",
+      "Authorized_Caller_Addresses": [
+         "0x495F696430F4A51F7fcB98FbE68a9Cb7A07fB1bA",
+         "0x3c58668054c299bE836a0bBB028Bee3aD4724846"
+      ],
+      "Authorized_Caller_Names": [
+         "20221123-pool-recovery-helper/PoolRecoveryHelper",
+         "multisigs/emergency"
+      ]
+   },
+   {
+      "Fx": "enableRecoveryMode()",
+      "Contract": "ComposableStablePool",
+      "Deployment": "20220906-composable-stable-pool",
+      "Authorized_Caller_Addresses": [
+         "0x495F696430F4A51F7fcB98FbE68a9Cb7A07fB1bA",
+         "0x3c58668054c299bE836a0bBB028Bee3aD4724846"
+      ],
+      "Authorized_Caller_Names": [
+         "20221123-pool-recovery-helper/PoolRecoveryHelper",
+         "multisigs/emergency"
+      ]
+   },
+   {
+      "Fx": "pause()",
+      "Contract": "ComposableStablePool",
+      "Deployment": "20220906-composable-stable-pool",
+      "Authorized_Caller_Addresses": [
+         "0x3c58668054c299bE836a0bBB028Bee3aD4724846"
+      ],
+      "Authorized_Caller_Names": [
+         "multisigs/emergency"
+      ]
+   },
+   {
+      "Fx": "setSwapFeePercentage(uint256)",
+      "Contract": "ComposableStablePool",
+      "Deployment": "20220906-composable-stable-pool",
+      "Authorized_Caller_Addresses": [
+         "0x7c68c42De679ffB0f16216154C996C354cF1161B"
+      ],
+      "Authorized_Caller_Names": [
+         "multisigs/feeManager"
+      ]
+   },
+   {
+      "Fx": "startAmplificationParameterUpdate(uint256,uint256)",
+      "Contract": "ComposableStablePool",
+      "Deployment": "20220906-composable-stable-pool",
+      "Authorized_Caller_Addresses": [
+         "0x7c68c42De679ffB0f16216154C996C354cF1161B"
+      ],
+      "Authorized_Caller_Names": [
+         "multisigs/feeManager"
+      ]
+   },
+   {
+      "Fx": "stopAmplificationParameterUpdate()",
+      "Contract": "ComposableStablePool",
+      "Deployment": "20220906-composable-stable-pool",
+      "Authorized_Caller_Addresses": [
+         "0x7c68c42De679ffB0f16216154C996C354cF1161B"
+      ],
+      "Authorized_Caller_Names": [
+         "multisigs/feeManager"
+      ]
+   },
+   {
+      "Fx": "unpause()",
+      "Contract": "ComposableStablePool",
+      "Deployment": "20220906-composable-stable-pool",
+      "Authorized_Caller_Addresses": [
+         "0x3c58668054c299bE836a0bBB028Bee3aD4724846"
+      ],
+      "Authorized_Caller_Names": [
+         "multisigs/emergency"
+      ]
+   },
+   {
+      "Fx": "disable()",
+      "Contract": "WeightedPoolFactory",
+      "Deployment": "20220908-weighted-pool-v2",
+      "Authorized_Caller_Addresses": [
+         "0xf9D6BdE5c2eef334AC88204CB2eEc07111DCBA97",
+         "0x3c58668054c299bE836a0bBB028Bee3aD4724846"
+      ],
+      "Authorized_Caller_Names": [
+         "multisigs/blabs_ops",
+         "multisigs/emergency"
+      ]
+   },
+   {
+      "Fx": "disable()",
+      "Contract": "WeightedPoolFactory",
+      "Deployment": "20220908-weighted-pool-v2",
+      "Authorized_Caller_Addresses": [
+         "0xf9D6BdE5c2eef334AC88204CB2eEc07111DCBA97",
+         "0x3c58668054c299bE836a0bBB028Bee3aD4724846"
+      ],
+      "Authorized_Caller_Names": [
+         "multisigs/blabs_ops",
+         "multisigs/emergency"
+      ]
+   },
+   {
+      "Fx": "enableRecoveryMode()",
+      "Contract": "WeightedPool",
+      "Deployment": "20220908-weighted-pool-v2",
+      "Authorized_Caller_Addresses": [
+         "0x495F696430F4A51F7fcB98FbE68a9Cb7A07fB1bA",
+         "0x3c58668054c299bE836a0bBB028Bee3aD4724846"
+      ],
+      "Authorized_Caller_Names": [
+         "20221123-pool-recovery-helper/PoolRecoveryHelper",
+         "multisigs/emergency"
+      ]
+   },
+   {
+      "Fx": "enableRecoveryMode()",
+      "Contract": "WeightedPool",
+      "Deployment": "20220908-weighted-pool-v2",
+      "Authorized_Caller_Addresses": [
+         "0x495F696430F4A51F7fcB98FbE68a9Cb7A07fB1bA",
+         "0x3c58668054c299bE836a0bBB028Bee3aD4724846"
+      ],
+      "Authorized_Caller_Names": [
+         "20221123-pool-recovery-helper/PoolRecoveryHelper",
+         "multisigs/emergency"
+      ]
+   },
+   {
+      "Fx": "pause()",
+      "Contract": "WeightedPool",
+      "Deployment": "20220908-weighted-pool-v2",
+      "Authorized_Caller_Addresses": [
+         "0x3c58668054c299bE836a0bBB028Bee3aD4724846"
+      ],
+      "Authorized_Caller_Names": [
+         "multisigs/emergency"
+      ]
+   },
+   {
+      "Fx": "setSwapFeePercentage(uint256)",
+      "Contract": "WeightedPool",
+      "Deployment": "20220908-weighted-pool-v2",
+      "Authorized_Caller_Addresses": [
+         "0x7c68c42De679ffB0f16216154C996C354cF1161B"
+      ],
+      "Authorized_Caller_Names": [
+         "multisigs/feeManager"
+      ]
+   },
+   {
+      "Fx": "unpause()",
+      "Contract": "WeightedPool",
+      "Deployment": "20220908-weighted-pool-v2",
+      "Authorized_Caller_Addresses": [
+         "0x3c58668054c299bE836a0bBB028Bee3aD4724846"
+      ],
+      "Authorized_Caller_Names": [
+         "multisigs/emergency"
+      ]
+   },
+   {
+      "Fx": "addPoolFactory(address)",
+      "Contract": "PoolRecoveryHelper",
+      "Deployment": "20221123-pool-recovery-helper",
+      "Authorized_Caller_Addresses": [
+         "0xf9D6BdE5c2eef334AC88204CB2eEc07111DCBA97"
+      ],
+      "Authorized_Caller_Names": [
+         "multisigs/blabs_ops"
+      ]
+   },
+   {
+      "Fx": "removePoolFactory(address)",
+      "Contract": "PoolRecoveryHelper",
+      "Deployment": "20221123-pool-recovery-helper",
+      "Authorized_Caller_Addresses": [
+         "0xf9D6BdE5c2eef334AC88204CB2eEc07111DCBA97"
+      ],
+      "Authorized_Caller_Names": [
+         "multisigs/blabs_ops"
+      ]
+   },
+   {
+      "Fx": "disable()",
+      "Contract": "ComposableStablePoolFactory",
+      "Deployment": "20221122-composable-stable-pool-v2",
+      "Authorized_Caller_Addresses": [
+         "0xf9D6BdE5c2eef334AC88204CB2eEc07111DCBA97",
+         "0x3c58668054c299bE836a0bBB028Bee3aD4724846"
+      ],
+      "Authorized_Caller_Names": [
+         "multisigs/blabs_ops",
+         "multisigs/emergency"
+      ]
+   },
+   {
+      "Fx": "disable()",
+      "Contract": "ComposableStablePoolFactory",
+      "Deployment": "20221122-composable-stable-pool-v2",
+      "Authorized_Caller_Addresses": [
+         "0xf9D6BdE5c2eef334AC88204CB2eEc07111DCBA97",
+         "0x3c58668054c299bE836a0bBB028Bee3aD4724846"
+      ],
+      "Authorized_Caller_Names": [
+         "multisigs/blabs_ops",
+         "multisigs/emergency"
+      ]
+   },
+   {
+      "Fx": "enableRecoveryMode()",
+      "Contract": "ComposableStablePool",
+      "Deployment": "20221122-composable-stable-pool-v2",
+      "Authorized_Caller_Addresses": [
+         "0x3c58668054c299bE836a0bBB028Bee3aD4724846",
+         "0x495F696430F4A51F7fcB98FbE68a9Cb7A07fB1bA"
+      ],
+      "Authorized_Caller_Names": [
+         "multisigs/emergency",
+         "20221123-pool-recovery-helper/PoolRecoveryHelper"
+      ]
+   },
+   {
+      "Fx": "enableRecoveryMode()",
+      "Contract": "ComposableStablePool",
+      "Deployment": "20221122-composable-stable-pool-v2",
+      "Authorized_Caller_Addresses": [
+         "0x3c58668054c299bE836a0bBB028Bee3aD4724846",
+         "0x495F696430F4A51F7fcB98FbE68a9Cb7A07fB1bA"
+      ],
+      "Authorized_Caller_Names": [
+         "multisigs/emergency",
+         "20221123-pool-recovery-helper/PoolRecoveryHelper"
+      ]
+   },
+   {
+      "Fx": "pause()",
+      "Contract": "ComposableStablePool",
+      "Deployment": "20221122-composable-stable-pool-v2",
+      "Authorized_Caller_Addresses": [
+         "0x3c58668054c299bE836a0bBB028Bee3aD4724846"
+      ],
+      "Authorized_Caller_Names": [
+         "multisigs/emergency"
+      ]
+   },
+   {
+      "Fx": "setSwapFeePercentage(uint256)",
+      "Contract": "ComposableStablePool",
+      "Deployment": "20221122-composable-stable-pool-v2",
+      "Authorized_Caller_Addresses": [
+         "0x7c68c42De679ffB0f16216154C996C354cF1161B"
+      ],
+      "Authorized_Caller_Names": [
+         "multisigs/feeManager"
+      ]
+   },
+   {
+      "Fx": "startAmplificationParameterUpdate(uint256,uint256)",
+      "Contract": "ComposableStablePool",
+      "Deployment": "20221122-composable-stable-pool-v2",
+      "Authorized_Caller_Addresses": [
+         "0x7c68c42De679ffB0f16216154C996C354cF1161B"
+      ],
+      "Authorized_Caller_Names": [
+         "multisigs/feeManager"
+      ]
+   },
+   {
+      "Fx": "stopAmplificationParameterUpdate()",
+      "Contract": "ComposableStablePool",
+      "Deployment": "20221122-composable-stable-pool-v2",
+      "Authorized_Caller_Addresses": [
+         "0x7c68c42De679ffB0f16216154C996C354cF1161B"
+      ],
+      "Authorized_Caller_Names": [
+         "multisigs/feeManager"
+      ]
+   },
+   {
+      "Fx": "unpause()",
+      "Contract": "ComposableStablePool",
+      "Deployment": "20221122-composable-stable-pool-v2",
+      "Authorized_Caller_Addresses": [
+         "0x3c58668054c299bE836a0bBB028Bee3aD4724846"
+      ],
+      "Authorized_Caller_Names": [
+         "multisigs/emergency"
+      ]
+   },
+   {
+      "Fx": "disable()",
+      "Contract": "ManagedPoolFactory",
+      "Deployment": "20221021-managed-pool",
+      "Authorized_Caller_Addresses": [
+         "0xf9D6BdE5c2eef334AC88204CB2eEc07111DCBA97",
+         "0x3c58668054c299bE836a0bBB028Bee3aD4724846"
+      ],
+      "Authorized_Caller_Names": [
+         "multisigs/blabs_ops",
+         "multisigs/emergency"
+      ]
+   },
+   {
+      "Fx": "disable()",
+      "Contract": "ManagedPoolFactory",
+      "Deployment": "20221021-managed-pool",
+      "Authorized_Caller_Addresses": [
+         "0xf9D6BdE5c2eef334AC88204CB2eEc07111DCBA97",
+         "0x3c58668054c299bE836a0bBB028Bee3aD4724846"
+      ],
+      "Authorized_Caller_Names": [
+         "multisigs/blabs_ops",
+         "multisigs/emergency"
+      ]
+   },
+   {
+      "Fx": "disable()",
+      "Contract": "AaveLinearPoolFactory",
+      "Deployment": "20221207-aave-rebalanced-linear-pool-v3",
+      "Authorized_Caller_Addresses": [
+         "0x3c58668054c299bE836a0bBB028Bee3aD4724846"
+      ],
+      "Authorized_Caller_Names": [
+         "multisigs/emergency"
+      ]
+   },
+   {
+      "Fx": "enableRecoveryMode()",
+      "Contract": "AaveLinearPool",
+      "Deployment": "20221207-aave-rebalanced-linear-pool-v3",
+      "Authorized_Caller_Addresses": [
+         "0x3c58668054c299bE836a0bBB028Bee3aD4724846"
+      ],
+      "Authorized_Caller_Names": [
+         "multisigs/emergency"
+      ]
+   },
+   {
+      "Fx": "disable()",
+      "Contract": "WeightedPoolFactory",
+      "Deployment": "20230206-weighted-pool-v3",
+      "Authorized_Caller_Addresses": [
+         "0x3c58668054c299bE836a0bBB028Bee3aD4724846"
+      ],
+      "Authorized_Caller_Names": [
+         "multisigs/emergency"
+      ]
+   },
+   {
+      "Fx": "enableRecoveryMode()",
+      "Contract": "WeightedPool",
+      "Deployment": "20230206-weighted-pool-v3",
+      "Authorized_Caller_Addresses": [
+         "0x3c58668054c299bE836a0bBB028Bee3aD4724846",
+         "0x495F696430F4A51F7fcB98FbE68a9Cb7A07fB1bA"
+      ],
+      "Authorized_Caller_Names": [
+         "multisigs/emergency",
+         "20221123-pool-recovery-helper/PoolRecoveryHelper"
+      ]
+   },
+   {
+      "Fx": "enableRecoveryMode()",
+      "Contract": "WeightedPool",
+      "Deployment": "20230206-weighted-pool-v3",
+      "Authorized_Caller_Addresses": [
+         "0x3c58668054c299bE836a0bBB028Bee3aD4724846",
+         "0x495F696430F4A51F7fcB98FbE68a9Cb7A07fB1bA"
+      ],
+      "Authorized_Caller_Names": [
+         "multisigs/emergency",
+         "20221123-pool-recovery-helper/PoolRecoveryHelper"
+      ]
+   },
+   {
+      "Fx": "pause()",
+      "Contract": "WeightedPool",
+      "Deployment": "20230206-weighted-pool-v3",
+      "Authorized_Caller_Addresses": [
+         "0x3c58668054c299bE836a0bBB028Bee3aD4724846"
+      ],
+      "Authorized_Caller_Names": [
+         "multisigs/emergency"
+      ]
+   },
+   {
+      "Fx": "setSwapFeePercentage(uint256)",
+      "Contract": "WeightedPool",
+      "Deployment": "20230206-weighted-pool-v3",
+      "Authorized_Caller_Addresses": [
+         "0x7c68c42De679ffB0f16216154C996C354cF1161B"
+      ],
+      "Authorized_Caller_Names": [
+         "multisigs/feeManager"
+      ]
+   },
+   {
+      "Fx": "disable()",
+      "Contract": "ComposableStablePoolFactory",
+      "Deployment": "20230206-composable-stable-pool-v3",
+      "Authorized_Caller_Addresses": [
+         "0x3c58668054c299bE836a0bBB028Bee3aD4724846"
+      ],
+      "Authorized_Caller_Names": [
+         "multisigs/emergency"
+      ]
+   },
+   {
+      "Fx": "enableRecoveryMode()",
+      "Contract": "ComposableStablePool",
+      "Deployment": "20230206-composable-stable-pool-v3",
+      "Authorized_Caller_Addresses": [
+         "0x3c58668054c299bE836a0bBB028Bee3aD4724846",
+         "0x495F696430F4A51F7fcB98FbE68a9Cb7A07fB1bA"
+      ],
+      "Authorized_Caller_Names": [
+         "multisigs/emergency",
+         "20221123-pool-recovery-helper/PoolRecoveryHelper"
+      ]
+   },
+   {
+      "Fx": "enableRecoveryMode()",
+      "Contract": "ComposableStablePool",
+      "Deployment": "20230206-composable-stable-pool-v3",
+      "Authorized_Caller_Addresses": [
+         "0x3c58668054c299bE836a0bBB028Bee3aD4724846",
+         "0x495F696430F4A51F7fcB98FbE68a9Cb7A07fB1bA"
+      ],
+      "Authorized_Caller_Names": [
+         "multisigs/emergency",
+         "20221123-pool-recovery-helper/PoolRecoveryHelper"
+      ]
+   },
+   {
+      "Fx": "pause()",
+      "Contract": "ComposableStablePool",
+      "Deployment": "20230206-composable-stable-pool-v3",
+      "Authorized_Caller_Addresses": [
+         "0x3c58668054c299bE836a0bBB028Bee3aD4724846"
+      ],
+      "Authorized_Caller_Names": [
+         "multisigs/emergency"
+      ]
+   },
+   {
+      "Fx": "setSwapFeePercentage(uint256)",
+      "Contract": "ComposableStablePool",
+      "Deployment": "20230206-composable-stable-pool-v3",
+      "Authorized_Caller_Addresses": [
+         "0x7c68c42De679ffB0f16216154C996C354cF1161B"
+      ],
+      "Authorized_Caller_Names": [
+         "multisigs/feeManager"
+      ]
+   },
+   {
+      "Fx": "startAmplificationParameterUpdate(uint256,uint256)",
+      "Contract": "ComposableStablePool",
+      "Deployment": "20230206-composable-stable-pool-v3",
+      "Authorized_Caller_Addresses": [
+         "0x7c68c42De679ffB0f16216154C996C354cF1161B"
+      ],
+      "Authorized_Caller_Names": [
+         "multisigs/feeManager"
+      ]
+   },
+   {
+      "Fx": "stopAmplificationParameterUpdate()",
+      "Contract": "ComposableStablePool",
+      "Deployment": "20230206-composable-stable-pool-v3",
+      "Authorized_Caller_Addresses": [
+         "0x7c68c42De679ffB0f16216154C996C354cF1161B"
+      ],
+      "Authorized_Caller_Names": [
+         "multisigs/feeManager"
+      ]
+   },
+   {
+      "Fx": "disable()",
+      "Contract": "AaveLinearPoolFactory",
+      "Deployment": "20230206-aave-rebalanced-linear-pool-v4",
+      "Authorized_Caller_Addresses": [
+         "0x3c58668054c299bE836a0bBB028Bee3aD4724846"
+      ],
+      "Authorized_Caller_Names": [
+         "multisigs/emergency"
+      ]
+   },
+   {
+      "Fx": "setSwapFeePercentage(uint256)",
+      "Contract": "AaveLinearPool",
+      "Deployment": "20230206-aave-rebalanced-linear-pool-v4",
+      "Authorized_Caller_Addresses": [
+         "0x7c68c42De679ffB0f16216154C996C354cF1161B"
+      ],
+      "Authorized_Caller_Names": [
+         "multisigs/feeManager"
+      ]
+   },
+   {
+      "Fx": "setTargets(uint256,uint256)",
+      "Contract": "AaveLinearPool",
+      "Deployment": "20230206-aave-rebalanced-linear-pool-v4",
+      "Authorized_Caller_Addresses": [
+         "0x7c68c42De679ffB0f16216154C996C354cF1161B"
+      ],
+      "Authorized_Caller_Names": [
+         "multisigs/feeManager"
+      ]
+   },
+   {
+      "Fx": "setSwapFeePercentage(uint256)",
+      "Contract": "ERC4626LinearPool",
+      "Deployment": "20230206-erc4626-linear-pool-v3",
+      "Authorized_Caller_Addresses": [
+         "0x7c68c42De679ffB0f16216154C996C354cF1161B"
+      ],
+      "Authorized_Caller_Names": [
+         "multisigs/feeManager"
+      ]
+   },
+   {
+      "Fx": "setTargets(uint256,uint256)",
+      "Contract": "ERC4626LinearPool",
+      "Deployment": "20230206-erc4626-linear-pool-v3",
+      "Authorized_Caller_Addresses": [
+         "0x7c68c42De679ffB0f16216154C996C354cF1161B"
+      ],
+      "Authorized_Caller_Names": [
+         "multisigs/feeManager"
+      ]
+   },
+   {
+      "Fx": "disable()",
+      "Contract": "ERC4626LinearPoolFactory",
+      "Deployment": "20230206-erc4626-linear-pool-v3",
+      "Authorized_Caller_Addresses": [
+         "0x3c58668054c299bE836a0bBB028Bee3aD4724846"
+      ],
+      "Authorized_Caller_Names": [
+         "multisigs/emergency"
+      ]
+   },
+   {
+      "Fx": "disable()",
+      "Contract": "YearnLinearPoolFactory",
+      "Deployment": "20230213-yearn-linear-pool",
+      "Authorized_Caller_Addresses": [
+         "0x3c58668054c299bE836a0bBB028Bee3aD4724846"
+      ],
+      "Authorized_Caller_Names": [
+         "multisigs/emergency"
+      ]
+   },
+   {
+      "Fx": "setSwapFeePercentage(uint256)",
+      "Contract": "YearnLinearPool",
+      "Deployment": "20230213-yearn-linear-pool",
+      "Authorized_Caller_Addresses": [
+         "0x7c68c42De679ffB0f16216154C996C354cF1161B"
+      ],
+      "Authorized_Caller_Names": [
+         "multisigs/feeManager"
+      ]
+   },
+   {
+      "Fx": "setTargets(uint256,uint256)",
+      "Contract": "YearnLinearPool",
+      "Deployment": "20230213-yearn-linear-pool",
+      "Authorized_Caller_Addresses": [
+         "0x7c68c42De679ffB0f16216154C996C354cF1161B"
+      ],
+      "Authorized_Caller_Names": [
+         "multisigs/feeManager"
+      ]
+   },
+   {
+      "Fx": "registerProtocolId(uint256,string)",
+      "Contract": "ProtocolIdRegistry",
+      "Deployment": "20230223-protocol-id-registry",
+      "Authorized_Caller_Addresses": [
+         "0xc38c5f97B34E175FFd35407fc91a937300E33860"
+      ],
+      "Authorized_Caller_Names": [
+         "multisigs/lm"
+      ]
+   },
+   {
+      "Fx": "renameProtocolId(uint256,string)",
+      "Contract": "ProtocolIdRegistry",
+      "Deployment": "20230223-protocol-id-registry",
+      "Authorized_Caller_Addresses": [
+         "0xc38c5f97B34E175FFd35407fc91a937300E33860"
+      ],
+      "Authorized_Caller_Names": [
+         "multisigs/lm"
+      ]
+   },
+   {
+      "Fx": "disable()",
+      "Contract": "WeightedPoolFactory",
+      "Deployment": "20230320-weighted-pool-v4",
+      "Authorized_Caller_Addresses": [
+         "0x3c58668054c299bE836a0bBB028Bee3aD4724846"
+      ],
+      "Authorized_Caller_Names": [
+         "multisigs/emergency"
+      ]
+   },
+   {
+      "Fx": "enableRecoveryMode()",
+      "Contract": "WeightedPool",
+      "Deployment": "20230320-weighted-pool-v4",
+      "Authorized_Caller_Addresses": [
+         "0x3c58668054c299bE836a0bBB028Bee3aD4724846",
+         "0x495F696430F4A51F7fcB98FbE68a9Cb7A07fB1bA"
+      ],
+      "Authorized_Caller_Names": [
+         "multisigs/emergency",
+         "20221123-pool-recovery-helper/PoolRecoveryHelper"
+      ]
+   },
+   {
+      "Fx": "enableRecoveryMode()",
+      "Contract": "WeightedPool",
+      "Deployment": "20230320-weighted-pool-v4",
+      "Authorized_Caller_Addresses": [
+         "0x3c58668054c299bE836a0bBB028Bee3aD4724846",
+         "0x495F696430F4A51F7fcB98FbE68a9Cb7A07fB1bA"
+      ],
+      "Authorized_Caller_Names": [
+         "multisigs/emergency",
+         "20221123-pool-recovery-helper/PoolRecoveryHelper"
+      ]
+   },
+   {
+      "Fx": "pause()",
+      "Contract": "WeightedPool",
+      "Deployment": "20230320-weighted-pool-v4",
+      "Authorized_Caller_Addresses": [
+         "0x3c58668054c299bE836a0bBB028Bee3aD4724846"
+      ],
+      "Authorized_Caller_Names": [
+         "multisigs/emergency"
+      ]
+   },
+   {
+      "Fx": "setSwapFeePercentage(uint256)",
+      "Contract": "WeightedPool",
+      "Deployment": "20230320-weighted-pool-v4",
+      "Authorized_Caller_Addresses": [
+         "0xc38c5f97B34E175FFd35407fc91a937300E33860"
+      ],
+      "Authorized_Caller_Names": [
+         "multisigs/lm"
+      ]
+   },
+   {
+      "Fx": "disable()",
+      "Contract": "ComposableStablePoolFactory",
+      "Deployment": "20230320-composable-stable-pool-v4",
+      "Authorized_Caller_Addresses": [
+         "0x3c58668054c299bE836a0bBB028Bee3aD4724846"
+      ],
+      "Authorized_Caller_Names": [
+         "multisigs/emergency"
+      ]
+   },
+   {
+      "Fx": "enableRecoveryMode()",
+      "Contract": "ComposableStablePool",
+      "Deployment": "20230320-composable-stable-pool-v4",
+      "Authorized_Caller_Addresses": [
+         "0x3c58668054c299bE836a0bBB028Bee3aD4724846",
+         "0x495F696430F4A51F7fcB98FbE68a9Cb7A07fB1bA"
+      ],
+      "Authorized_Caller_Names": [
+         "multisigs/emergency",
+         "20221123-pool-recovery-helper/PoolRecoveryHelper"
+      ]
+   },
+   {
+      "Fx": "enableRecoveryMode()",
+      "Contract": "ComposableStablePool",
+      "Deployment": "20230320-composable-stable-pool-v4",
+      "Authorized_Caller_Addresses": [
+         "0x3c58668054c299bE836a0bBB028Bee3aD4724846",
+         "0x495F696430F4A51F7fcB98FbE68a9Cb7A07fB1bA"
+      ],
+      "Authorized_Caller_Names": [
+         "multisigs/emergency",
+         "20221123-pool-recovery-helper/PoolRecoveryHelper"
+      ]
+   },
+   {
+      "Fx": "pause()",
+      "Contract": "ComposableStablePool",
+      "Deployment": "20230320-composable-stable-pool-v4",
+      "Authorized_Caller_Addresses": [
+         "0x3c58668054c299bE836a0bBB028Bee3aD4724846"
+      ],
+      "Authorized_Caller_Names": [
+         "multisigs/emergency"
+      ]
+   },
+   {
+      "Fx": "setSwapFeePercentage(uint256)",
+      "Contract": "ComposableStablePool",
+      "Deployment": "20230320-composable-stable-pool-v4",
+      "Authorized_Caller_Addresses": [
+         "0xc38c5f97B34E175FFd35407fc91a937300E33860"
+      ],
+      "Authorized_Caller_Names": [
+         "multisigs/lm"
+      ]
+   },
+   {
+      "Fx": "startAmplificationParameterUpdate(uint256,uint256)",
+      "Contract": "ComposableStablePool",
+      "Deployment": "20230320-composable-stable-pool-v4",
+      "Authorized_Caller_Addresses": [
+         "0xc38c5f97B34E175FFd35407fc91a937300E33860"
+      ],
+      "Authorized_Caller_Names": [
+         "multisigs/lm"
+      ]
+   },
+   {
+      "Fx": "stopAmplificationParameterUpdate()",
+      "Contract": "ComposableStablePool",
+      "Deployment": "20230320-composable-stable-pool-v4",
+      "Authorized_Caller_Addresses": [
+         "0xc38c5f97B34E175FFd35407fc91a937300E33860"
+      ],
+      "Authorized_Caller_Names": [
+         "multisigs/lm"
+      ]
+   },
+   {
+      "Fx": "add_reward(address,address)",
+      "Contract": "ChildChainGauge",
+      "Deployment": "20230316-child-chain-gauge-factory-v2",
+      "Authorized_Caller_Addresses": [
+         "0xc38c5f97B34E175FFd35407fc91a937300E33860"
+      ],
+      "Authorized_Caller_Names": [
+         "multisigs/lm"
+      ]
+   },
+   {
+      "Fx": "disable()",
+      "Contract": "ManagedPoolFactory",
+      "Deployment": "20230411-managed-pool-v2",
+      "Authorized_Caller_Addresses": [
+         "0x3c58668054c299bE836a0bBB028Bee3aD4724846"
+      ],
+      "Authorized_Caller_Names": [
+         "multisigs/emergency"
+      ]
+   },
+   {
+      "Fx": "enableRecoveryMode()",
+      "Contract": "ManagedPool",
+      "Deployment": "20230411-managed-pool-v2",
+      "Authorized_Caller_Addresses": [
+         "0x3c58668054c299bE836a0bBB028Bee3aD4724846",
+         "0x495F696430F4A51F7fcB98FbE68a9Cb7A07fB1bA"
+      ],
+      "Authorized_Caller_Names": [
+         "multisigs/emergency",
+         "20221123-pool-recovery-helper/PoolRecoveryHelper"
+      ]
+   },
+   {
+      "Fx": "enableRecoveryMode()",
+      "Contract": "ManagedPool",
+      "Deployment": "20230411-managed-pool-v2",
+      "Authorized_Caller_Addresses": [
+         "0x3c58668054c299bE836a0bBB028Bee3aD4724846",
+         "0x495F696430F4A51F7fcB98FbE68a9Cb7A07fB1bA"
+      ],
+      "Authorized_Caller_Names": [
+         "multisigs/emergency",
+         "20221123-pool-recovery-helper/PoolRecoveryHelper"
+      ]
+   },
+   {
+      "Fx": "pause()",
+      "Contract": "ManagedPool",
+      "Deployment": "20230411-managed-pool-v2",
+      "Authorized_Caller_Addresses": [
+         "0x3c58668054c299bE836a0bBB028Bee3aD4724846"
+      ],
+      "Authorized_Caller_Names": [
+         "multisigs/emergency"
+      ]
+   }
+]

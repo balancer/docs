@@ -9,7 +9,7 @@ references:
 
 ## Overview
 
-Liquidity Bootstrapping Pools (LBPs) are pools that can dynamically change token weighting (e.g 1/99 to 99/1 for TokenA/TokenB). LBPs use [Weighted Math](/reference/math/weighted-math.md) with time-dependent weights. The starting and end weights and times are selected by the pool owner, who also has the power to pause swaps.
+Liquidity Bootstrapping Pools (LBPs) are pools that can dynamically change token weighting (e.g 1/99 to 99/1 for TokenA/TokenB). LBPs use [Weighted Math](/reference/math/weighted-math.md) with time-dependent weights. The starting and end weights and times are selected by the pool owner, who also has the power to pause swaps. The pool owner is the only address that can join the pool.
 
 ### Mental Model
 
@@ -21,7 +21,7 @@ This does not mean you are trying to sell the token above what it is worth. Sett
 
 ### Sell Pressure
 
-During a weight shift, the token price of one token experiences sell pressure while the other experiences buy pressure. When this is mixed with modest trading volume, the price approaches the generally agreed-upon market price.
+During a weight shift, the token price of one token experiences sell pressure while the other experiences buy pressure. When this is mixed with modest swap volume, the price approaches the generally agreed-upon market price.
 
 ### Fair Market
 

@@ -18,6 +18,7 @@ export const navbar: NavbarConfig = [
     children: [
       {
         text: 'Contracts',
+        link: '/reference/contracts',
         children: [
           {
             text: 'Deployment Addresses',
@@ -44,9 +45,48 @@ export const navbar: NavbarConfig = [
                 link: '/reference/contracts/deployment-addresses/gnosis',
               },
               {
-                text: 'Goerli',
+                text: 'Goerli(testnet)',
                 link: '/reference/contracts/deployment-addresses/goerli',
               },
+              {
+                text: 'Sepolia(testnet)',
+                link: '/reference/contracts/deployment-addresses/sepolia'
+              }
+            ],
+          },
+          {
+            text: 'Authorizer Permissions',
+            link: '/reference/authorizer',
+            children: [
+              {
+                text: 'Mainnet',
+                link: '/reference/authorizer/mainnet',
+              },
+              {
+                text: 'Arbitrum',
+                link: '/reference/authorizer/arbitrum',
+              },
+              {
+                text: 'Optimism',
+                link: '/reference/authorizer/optimism',
+              },
+              {
+                text: 'Polygon',
+                link: '/reference/authorizer/polygon',
+              },
+              {
+                text: 'Gnosis',
+                link: '/reference/authorizer/gnosis',
+              },
+              {
+                text: 'Goerli',
+                link: '/reference/authorizer/goerli',
+              },
+              {
+                text: 'Sepolia(testnet)',
+                link: '/reference/authorizer/sepolia'
+              }
+
             ],
           },
           {

@@ -1,0 +1,39 @@
+name: Update Permissions Tables
+
+on:
+  schedule:
+    - cron: "0 0 * * 0"
+  workflow_dispatch:
+
+jobs:
+  refresh_permissions_table:
+    runs-on: ubuntu-latest
+
+    steps:
+
+    - name: Checkout code
+      uses: actions/checkout@v3
+
+    - name: Install Python
+      uses: actions/setup-python@v4
+      with:
+        python-version: '3.9'
+
+    - name: Update Files
+      id: update
+      env:
+        WEB3_INFURA_PROJECT_ID: ${{ secrets.INFURA_KEY }}
+      run: |
+        pip3 install -r .github/python_actions/requirements.txt
+        python3 .github/python_actions/full_chain_permissions
+        git add -A
+
+    - name: pull-request
+      uses: peter-evans/create-pull-request@v5
+      with:
+        commit-message: "BOT: Update to permissions tables based on onchain changes."
+        title: "BOT: Automatic update to permissions tables based on onchain changes."
+
+        reviewers: "Tritum-VLK"
+        assignees: "Tritum-VLK"
+        labels: "Automatic"

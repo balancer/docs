@@ -6,6 +6,7 @@ heroImage: /images/backgrounds/blue.png
 
 ## Arbitrageurs
 
+- [Flash Loans](/guides/arbitrageurs/flash-loans.md)
 - [Get Spot Price of a Pool](/guides/arbitrageurs/get-spot-price.md)
 
 ## Aggregators
