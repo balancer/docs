@@ -60,3 +60,18 @@ _managedPool.updateSwapFeeGradually(
 // Get the current value of the swap fee percentage
 uint256 swapFeePercentage = _managedPool.getSwapFeePercentage();
 ```
+
+## Management and Protocol Fees
+Assets Under Management (AUM) fees are paid out to the `owner` for maintaining the pool. In Managed Pools, protocol fees are only taken as a percentage of AUM fees, as opposed to the standard method of being extracted from swap fees. The maximum allowable AUM fee that an `owner` can set is 95% (represented as `95e16`). The protocol fee percentage is established by [ProtocolFeePercentagesProvider](https://github.com/balancer/balancer-v2-monorepo/blob/master/pkg/standalone-utils/contracts/ProtocolFeePercentagesProvider.sol). 
+
+### Examples
+[ManagedPoolSetting.sol](https://github.com/balancer/balancer-v2-monorepo/blob/master/pkg/pool-weighted/contracts/managed/ManagedPoolSettings.sol) provides the necessary logic for collecting and setting management fees. Below are examples of how an `owner` can set and view AUM fees in a Managed Pool.
+
+```solidity
+// Set AUM fee to 2%
+uint256 desiredAumFeePercentage = 2e16;
+_managedPool.setManagementAumFeePercentage(managementFeePercentage);
+
+// Get the current AUM fee, as well as the last time fee collections occured
+(uint256 aumFeePercentage, uint256 lastCollectionTimestamp) = _managedPool.getManagementAumFeeParams();
+```
