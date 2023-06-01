@@ -59,7 +59,7 @@ Stable Pools require the reported token balances from , `vault.getPoolTokens(poo
 2. Multiply the scaled balance by the rate.
 
 
-ComposableStablePools & MetaStablePools have different implementations for the scaling operations but the outcome is the same.
+Composable Stable Pools and Meta Stable Pools have different implementations for the scaling operations but the outcome is the same.
 
 
 ### Composable Stable Pool Implementation
