@@ -36,7 +36,7 @@ def address_directory(chain, status=None):
 def genFullTable(r, chain):
     result = pd.DataFrame(columns=["Contract", "Address", "Deployment"])
     for deployment, depdata in r.items():
-        for contract in depdata["contracts"]:
+        for contract in depdata['contracts']:
             ### Check if versioned
             t = deployment.split("-")
             t = t[len(t) - 1]
@@ -61,7 +61,7 @@ def genPoolFactories(r, chain):
     for deployment, depdata in r.items():
         if "-pool" not in deployment:
             continue
-        for contract in depdata["contracts"]:
+        for contract in depdata['contracts']:
             if "Factory" in contract['name']:
                 ### Check if versioned
                 t = deployment.split("-")
@@ -81,10 +81,10 @@ def genPoolFactories(r, chain):
 def genNotInContractList(r, chain, contractList):
     result = pd.DataFrame(columns=["Contract", "Address", "Deployment"])
     for deployment, depdata in r.items():
-        for contract in depdata["contracts"]:
+        for contract in depdata['contracts']:
             if contract['name'] in contractList:
                 continue
-            if "-pool" in deployment:
+            if '-pool' in deployment:
                 continue
 
             ### Check if versioned
@@ -109,9 +109,9 @@ def genNotInContractList(r, chain, contractList):
 def genFromContractList(r, chain, contractList):
     result = pd.DataFrame(columns=["Contract", "Address", "Deployment"])
     for deployment, depdata in r.items():
-        for contract in depdata["contracts"]:
+        for contract in depdata['contracts']:
             ### Check if in list
-            if contract["name"] not in contractList:
+            if contract['name'] not in contractList:
                 continue
             ### Check if versioned
             t = deployment.split("-")
@@ -146,7 +146,7 @@ For more information on specific deployments as well as changelogs for different
 ## Pool Factories
 
 """
-    r = address_directory(chain, status="ACTIVE")
+    r = address_directory(chain, status='ACTIVE')
     output += genPoolFactories(r, chain).to_markdown(index=False)
 
     for heading, contracts in CONTRACTS_BY_HEADING.items():
@@ -171,7 +171,7 @@ These deployments were in use at some point, and may still be in active operatio
     
 """
     try:
-        r = address_directory(chain, status="DEPRECATED")
+        r = address_directory(chain, status='DEPRECATED')
         output += genFullTable(r, chain).to_markdown(index=False)
     except:
         output += "No deprecated contracts found\n"
