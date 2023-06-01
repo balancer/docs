@@ -136,7 +136,6 @@ Rate providers play a crucial role in determining whether yield fees are charged
 | B (non yield bearing)    |       0.5        | 1.00            |   
 | C (yield bearing)              |       0.2        | 1.05            |  
 
-The rate product is obtained by multiplying the weighted rates together:
 
 Rate product = (0.3 * 1.01) * (0.5 * 1) * (0.2 * 1.05) = 1.013
 
