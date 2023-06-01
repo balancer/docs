@@ -40,9 +40,9 @@ This contract makes use of Chainlink's registry contract so it can handle if Cha
 
 If you're running on a network for which Chainlink doesn't have a registry and you think the risk of a deprecated price feed is low enough, then you can use the rateProvider that directly queries a given Chainlink oracle.
 
-## Rate Providers as part of a pool's lifecycle
+## Application of Rate Providers By Pool Type
 
-Different pool types utilise rate providers in varying contexts.
+Different types of pools utilize rate providers in different contexts.
 
 | PoolType                   | Yield Fee        |  Pricing Equations| 
 | -----------                | -----------      |  -----------      |
@@ -53,19 +53,17 @@ Different pool types utilise rate providers in varying contexts.
 | Liquity Bootstrapping Pool | ❌               | ❌                |
 
 
-One important aspect to determine a trade's outcome are the Token balances a pool contains. Before the reported balances by the Vault are being used in the Trade equations for StableMath two operations will be done to them:
+Stable Pools require the reported token balances from , `vault.getPoolTokens(poolId)`, be manipulated in two distinct manners before prices can be calculated using StableMath:
 
-- 1. Upscaling to Balancer's internal 18 decimals.
-- 2. Applying the rate via multiplication.
+1. Scale token balances to an 18-decimal fixed point number.
+2. Multiply the scaled balance by the rate.
 
-These operations supply apparent balances to the StableMath equations effectively changing the value of the balances reported via the earlier call to `vault.getPoolTokens(poolId)`.
 
 ComposableStablePools & MetaStablePools have different implementations for the scaling operations but the outcome is the same.
 
 
-### Implementation for Composable Stable Pool 
-
-How scaling is used can be seen in the below code snippet.
+### Composable Stable Pool Implementation
+Scaling Example:
 
 ```
 function _scalingFactors() internal view virtual override returns (uint256[] memory) {
@@ -81,9 +79,7 @@ function _scalingFactors() internal view virtual override returns (uint256[] mem
     }
 ```
 
-### Example for a Composable Stable Pool swap utilising rate Providers
-
-Looking at this [transaction](https://dashboard.tenderly.co/tx/mainnet/0x72d756d0fcd663343ca1b2adcfc7e114e8598bc0be28386752f16222384a29b3). 0.1575 staked Frax Ether is being exchanged for 0.1456 wrapped staked Ether. This pool is a Composable Stable Pool. According to the table the rate, the `rateProvider` provides a rate which is being used in the Trade Equations.  
+### Composable Stable Pool Swap Example
 
 This trade was executed in Block 17233083. Looking at the token balances the pool has before the swap it can be seen that:
 
@@ -99,8 +95,8 @@ This trade was executed in Block 17233083. Looking at the token balances the poo
 After the token balances have been upscaled, they are fed into `_calcOutGivenIn` [here](https://dashboard.tenderly.co/tx/mainnet/0x72d756d0fcd663343ca1b2adcfc7e114e8598bc0be28386752f16222384a29b3?trace=0.4.2.2.19.11.0.3.0.5).
 That is how `rateProvider` feeds a rate into the pricing equation for ComposableStablePools.
 
-### Implementation in a MetaStablePool 
-How scaling is used can be seen in the below code snippet.
+### Meta Stable Pool Implementation
+Scaling Example:
 
 ```
 function _scalingFactor(IERC20 token) internal view virtual override returns (uint256) {
@@ -111,8 +107,7 @@ function _scalingFactor(IERC20 token) internal view virtual override returns (ui
     }
 ```
 
-### Example for MetaStablePools (superseded by ComposableStablePool) swap utilising rate Providers.
-
+### Meta Stable Pool Swap Example
 Looking at this [transaction](https://etherscan.io/tx/0x67f477517acf6e0c91ec7997e665ca25d2806da060af30272876742584f0aa21). 50 ETH is being exchanged for 46.68 rETH. This pool is a MetaStablePool. According to the next table the rate, the `rateProvider`  supplies is being taken into account during the swap. Looking at the Trade equations, a well suited parameter to weave in the `rate` is the balances which are used to compute `OutGivenIn` or `InGivenOut`.
 
 Querying the balances of this pool via `vault.getPoolTokens(poolId)` returns  
@@ -134,12 +129,12 @@ The token balances used in the Trade Equations are then [upscaled](https://dashb
 Rate providers play a crucial role in determining whether yield fees are charged during pool join or exit. The primary factor used for this determination is the comparison of the `_athRateProduct` private variable with a dynamically calculated `rateProduct` on every pool join or exit. Here's an example illustrating what the `rateProduct` represents:
 
 The rateProduct is calculated as the weighted product of all current rates:
-
+## Yield Fees for WeightedPools
 | Token                    |  Weight          |  rate           | 
 | -----------              | -----------      |  -----------    |   
 | A (yield bearing)        |       0.3        | 1.01            | 
 | B (non yield bearing)    |       0.5        | 1.00            |   
-| C (bearing)              |       0.2        | 1.05            |  
+| C (yield bearing)              |       0.2        | 1.05            |  
 
 The rate product is obtained by multiplying the weighted rates together:
 
