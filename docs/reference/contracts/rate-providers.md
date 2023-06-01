@@ -150,7 +150,7 @@ As part of the calculation of the rateProduct, the `rateProvider` of the pool to
     }
 ```
 
-There are several scenarios in which no yield fees are paid during a pool join or exit operation. Here are a couple of examples:
+There are several scenarios in which no yield fees are paid during a pools join or exit operation. Below are a couple of examples:
 
 - `rateProduct' remain unchanged: If multiple joins or exits occur without any factors contributing to a `newATHRateProduct`, no yield fees are minted. 
 - Rate fluctuations of different tokens: In some cases, the rate of one token may increase while the rate of another token decreases. If, on a normalized basis, the rate increase of Token A is less than the rate decrease of Token B, the calculated `rateProduct` would not reach the ceiling of `ATHRateProduct`. As a result, no yield fees would be paid during the pool join or exit, as the rateProduct did not increase sufficiently.
