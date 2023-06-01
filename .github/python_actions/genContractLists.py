@@ -2,6 +2,7 @@ import requests
 import pandas as pd
 import re
 from bal_addresses import AddrBook
+from dotmap import DotMap
 
 OUTPUT_PATH = "docs/reference/contracts/deployment-addresses"
 ADDRESSBOOK_URL = "https://raw.githubusercontent.com/BalancerMaxis/bal_addresses/main/outputs/deployments.json"
@@ -18,28 +19,36 @@ CONTRACTS_BY_HEADING = {
 
 
 
-def address_directory():
-   r = requests.get(ADDRESSBOOK_URL)
-   return r.json()
+def address_directory(chain, status=None):
+    r = requests.get(f"https://raw.githubusercontent.com/balancer/balancer-deployments/master/addresses/{chain}.json")
+    r=r.json()
+    if isinstance(status, str):
+        filtered = {}
+        for deployment, depdata in r.items():
+            if depdata["status"] == status:
+                filtered[deployment] = depdata
+        return filtered
+    else:
+        return r
+
 
 
 def genFullTable(r, chain):
     result = pd.DataFrame(columns=["Contract", "Address", "Deployment"])
-    r = r[chain]  # go to chain
-    for deployment, contracts in r.items():
-        for contract in contracts.keys():
+    for deployment, depdata in r.items():
+        for contract in depdata["contracts"]:
             ### Check if versioned
             t = deployment.split("-")
             t = t[len(t) - 1]
             if bool(re.search(r'^v\d', t)):
-                contractText = f"{contract} ({t})"
+                contractText = f"{contract['name']} ({t})"
             else:
-                contractText = contract
+                contractText = contract['name']
             ###
 
-            dl = f'{AddrBook.GITHUB_DEPLOYMENTS_NICE}/tasks/{deployment}'
-            al = f"{AddrBook.SCANNERS_BY_CHAIN[chain]}/address/{contracts[contract]}#code"
-            addressText = f'[{contracts[contract]}]({al})'
+            dl = f"{AddrBook.GITHUB_DEPLOYMENTS_NICE}/tasks/{deployment}"
+            al = f"{AddrBook.SCANNERS_BY_CHAIN[chain]}/address/{contract['address']}#code"
+            addressText = f"[{contract['address']}]({al})"
             ## TODO find github code links
             result.loc[len(result)] = [contractText, addressText, f"[{deployment}]({dl})"]
     result.sort_values(by=["Contract","Deployment"], inplace=True)
@@ -49,49 +58,47 @@ def genFullTable(r, chain):
 def genPoolFactories(r, chain):
     result = pd.DataFrame(columns=["Contract", "Address", "Deployment"])
     print(f"Generating pools for {chain}")
-    r = r[chain] # go to chain
-    for deployment, contracts in r.items():
+    for deployment, depdata in r.items():
         if "-pool" not in deployment:
             continue
-        for contract, address in contracts.items():
-            if "Factory" in contract:
+        for contract in depdata["contracts"]:
+            if "Factory" in contract['name']:
                 ### Check if versioned
                 t = deployment.split("-")
                 t = t[len(t)-1]
                 if bool(re.search(r'^v\d', t)):
-                    contractText = f"{contract} ({t})"
+                    contractText = f"{contract['name']} ({t})"
                 else:
-                    contractText = contract
+                    contractText = contract['name']
                 ###
 
                 dl = f"{AddrBook.GITHUB_DEPLOYMENTS_NICE}/tasks/{deployment}"
-                al = f"{AddrBook.SCANNERS_BY_CHAIN[chain]}/address/{contracts[contract]}#code"
-                result.loc[len(result)] = [contractText, f"[{contracts[contract]}]({al})", f"[{deployment}]({dl})"]
+                al = f"{AddrBook.SCANNERS_BY_CHAIN[chain]}/address/{contract['address']}#code"
+                result.loc[len(result)] = [contractText, f"[{contract['address']}]({al})", f"[{deployment}]({dl})"]
     result.sort_values(by=["Contract","Deployment"], inplace=True)
     return result
 
 def genNotInContractList(r, chain, contractList):
     result = pd.DataFrame(columns=["Contract", "Address", "Deployment"])
-    r = r[chain] # go to chain
-    for deployment, contracts in r.items():
-        for contract, address in contracts.items():
-            if contract in contractList:
+    for deployment, depdata in r.items():
+        for contract in depdata["contracts"]:
+            if contract['name'] in contractList:
                 continue
-            if "-pool"  in deployment:
+            if "-pool" in deployment:
                 continue
 
             ### Check if versioned
             t = deployment.split("-")
             t = t[len(t) - 1]
             if bool(re.search(r'^v\d', t)):
-                contractText = f"{contract} ({t})"
+                contractText = f"{contract['name']} ({t})"
             else:
-                contractText = contract
+                contractText = contract['name']
             ###
 
             dl = f'{AddrBook.GITHUB_DEPLOYMENTS_NICE}/tasks/{deployment}'
-            al = f"{AddrBook.SCANNERS_BY_CHAIN[chain]}/address/{contracts[contract]}#code"
-            addressText = f'[{contracts[contract]}]({al})'
+            al = f"{AddrBook.SCANNERS_BY_CHAIN[chain]}/address/{contract['address']}#code"
+            addressText = f"[{contract['address']}]({al})"
             ## TODO find github code links
             result.loc[len(result)] = [contractText, addressText, f"[{deployment}]({dl})"]
     result.sort_values(by=["Contract","Deployment"], inplace=True)
@@ -101,24 +108,26 @@ def genNotInContractList(r, chain, contractList):
 
 def genFromContractList(r, chain, contractList):
     result = pd.DataFrame(columns=["Contract", "Address", "Deployment"])
-    r = r[chain] # go to chain
-    for deployment, contracts in r.items():
-        m = set(contracts.keys()) & set(contractList)
-        for contract in m:
+    for deployment, depdata in r.items():
+        for contract in depdata["contracts"]:
+            ### Check if in list
+            if contract["name"] not in contractList:
+                continue
             ### Check if versioned
             t = deployment.split("-")
             t = t[len(t) - 1]
             if bool(re.search(r'^v\d', t)):
-                contractText = f"{contract} ({t})"
+                contractText = f"{contract['name']} ({t})"
             else:
-                contractText = contract
+                contractText = contract['name']
+
             ###
 
-            dl = f'{AddrBook.GITHUB_DEPLOYMENTS_NICE}/tasks/{deployment}'
-            al = f"{AddrBook.SCANNERS_BY_CHAIN[chain]}/address/{contracts[contract]}#code"
-            addressText = f'[{contracts[contract]}]({al})'
+            dl = f"{AddrBook.GITHUB_DEPLOYMENTS_NICE}/tasks/{deployment}"
+            al = f"{AddrBook.SCANNERS_BY_CHAIN[chain]}/address/{contract['address']}#code"
+            addressText = f"[{contract['address']}]({al})"
             ## TODO find github code links
-            result.loc[len(result)] = [contract, addressText, f"[{deployment}]({dl})"]
+            result.loc[len(result)] = [contractText, addressText, f"[{deployment}]({dl})"]
     result.sort_values(by=["Contract","Deployment"], inplace=True)
     return result
 
@@ -137,7 +146,7 @@ For more information on specific deployments as well as changelogs for different
 ## Pool Factories
 
 """
-    r = address_directory()["active"]
+    r = address_directory(chain, status="ACTIVE")
     output += genPoolFactories(r, chain).to_markdown(index=False)
 
     for heading, contracts in CONTRACTS_BY_HEADING.items():
@@ -162,7 +171,7 @@ These deployments were in use at some point, and may still be in active operatio
     
 """
     try:
-        r = address_directory()["old"]
+        r = address_directory(chain, status="DEPRECATED")
         output += genFullTable(r, chain).to_markdown(index=False)
     except:
         output += "No deprecated contracts found\n"
