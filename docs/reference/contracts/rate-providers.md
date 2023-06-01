@@ -126,7 +126,7 @@ The token balances used in the Trade Equations are then [upscaled](https://dashb
 
 ## Rate Providers being used to collect yieldFees for WeightedPools
 
-Rate providers play a crucial role in determining whether yield fees are charged during pool join or exit. The primary factor used for this determination is the comparison of the `_athRateProduct` private variable with a dynamically calculated `rateProduct` on every pool join or exit. Here's an example illustrating what the `rateProduct` represents:
+Rate providers play a crucial role in determining whether yield fees are charged during pool joins and exits. The pool's `_athRateProduct` and it dynamically calculated `rateProduct` are key factors that determine this.
 
 `rateProduct` is calculated as the weighted product of all current rates:
 ## Yield Fees for WeightedPools
