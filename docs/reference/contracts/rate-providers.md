@@ -153,7 +153,7 @@ As part of the calculation of the rateProduct, the `rateProvider` of the pool to
 There are several scenarios in which no yield fees are paid during a pools join or exit operation. Below are a couple of examples:
 
 - `rateProduct' remain unchanged: If multiple joins or exits occur without any factors contributing to a `newATHRateProduct`, no yield fees are minted. 
-- Rate fluctuations of different tokens: In some cases, the rate of one token may increase while the rate of another token decreases. If, on a normalized basis, the rate increase of Token A is less than the rate decrease of Token B, the calculated `rateProduct` would not reach the ceiling of `ATHRateProduct`. As a result, no yield fees would be paid during the pool join or exit, as the rateProduct did not increase sufficiently.
+- Insignificant `rateProduct` fluctuations between tokens: In some cases, the rate of one token may increase while the rate of another token decreases. If, on a normalized basis, the rate increase of Token A is less than the rate decrease of Token B, the calculated `rateProduct` would not reach the ceiling of `ATHRateProduct`. As a result, no yield fees would be paid during the pools join or exit.
 
 
 As part of this [transaction](https://dashboard.tenderly.co/mkflow/project/tx/mainnet/0x9e1d45013f4b65f444bb9b2ef823c0d4fd0a53e2b2bad85ba85a8e26c0bed45d?trace=0.2.7.3.7.1.2.2) yield fees are minted. This can be seen by the positive return values of the `_getYieldProtocolFeesPoolPercentage` function
