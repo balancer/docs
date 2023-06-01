@@ -143,7 +143,7 @@ Rate product = (0.3 * 1.01) * (0.5 * 1) * (0.2 * 1.05) = 1.013
 As part of the calculation of the rateProduct, the `rateProvider` of the pool tokens are queried for their rates [here](https://github.com/balancer/balancer-v2-monorepo/blob/cbce7d63479dafb4f4ea9ad8cb2dbdbb26edae50/pkg/pool-weighted/contracts/WeightedPoolProtocolFees.sol#L304). This occurs in the following code snippet:
 
 ```
-/**
+    /**
      * @notice Returns the contribution to the total rate product from a token with the given weight and rate Provider.
      */
     function _getRateFactor(uint256 normalizedWeight, IRateProvider provider) internal view returns (uint256) {
