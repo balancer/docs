@@ -79,6 +79,12 @@ Therefore, the BPT price can be calculated using
 
 $$ bptPrice = minPrice * pool.getRate() $$
 
+### How to choose the right market price oracle?
+
+Since `pool.getRate()` will be divided by `RateProvider` price, the resulting number has no unit. Therefore, any token
+can be used as base of a market price oracle (ETH, USD, etc.), as long as the same token is used as base for all oracles 
+of all pool tokens.
+
 ## Examples
 
 ### `ComposableStablePools` with `LinearPool` BPTs (e.g. `bb-a-USD`)
