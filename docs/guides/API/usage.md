@@ -10,8 +10,8 @@ The `{chainId}` in each endpoint is the chain/network number you wish to request
 - `/pools/{chainId}/update` - Runs the worker lambda that fetches the latest pool information from the graph and saves it in the database.
 - `/pools/{chainId}` - Returns a JSON array of all Balancer pools of that chain
 - `/pools/{chainId}/{id}` - Returns JSON information about a pool of a specific `id`.
-- `/sor/{chainId}` - Run a SOR (Smart Order Router) query against the balancer pools and returns [SerializedSwapInfo](./src/modules/sor/types.ts).
-- `/order/{chainId}` - Run a SOR (Smart Order Router) query against the balancer pools and returns a [SorOrderResponse](./src/modules/sor/types.ts).
+- `/sor/{chainId}` - Run a SOR (Smart Order Router) query against the balancer pools and returns [SerializedSwapInfo](https://github.com/balancer/balancer-api/blob/master/src/modules/sor/types.ts).
+- `/order/{chainId}` - Run a SOR (Smart Order Router) query against the balancer pools and returns a [SorOrderResponse](https://github.com/balancer/balancer-api/blob/master/src/modules/sor/types.ts).
 - `/tokens/{chainId}` - Returns a JSON array of all known tokens of that chain
 - `/tokens/update/` - Runs the worker lambda that for every known token, fetches the latest price (in the chains native asset) from coingecko and saves it in the database.
 
@@ -49,6 +49,7 @@ Order Kind - Set to 'buy' to buy the exact amount of your `buyToken` and sell as
 ##### /sor Endpoint
 
 The `/sor` endpoint returns json according to this interface:
+
 ```js
 export interface SerializedSwapInfo {
   tokenAddresses: string[];

@@ -58,7 +58,7 @@ You may also need to install the [AWS CLI](https://aws.amazon.com/cli/) and [con
 
 #### (Optional) Creating a scoped-down deployer user
 
-If you wish to create an AWS user with the bare minimum permissions required to deploy this stack, see the [deployer permissions json file](./config/deployer-permissions.json). Copy this into a new policy, then create a new user and attach that policy to them, and use their credentials for deploying.
+If you wish to create an AWS user with the bare minimum permissions required to deploy this stack, see the [deployer permissions json file](https://github.com/balancer/balancer-api/blob/master/src/config/deployer-permissions.json). Copy this into a new policy, then create a new user and attach that policy to them, and use their credentials for deploying.
 
 #### Bootstraping + Deploying CDK
 
@@ -120,8 +120,8 @@ The `{chainId}` in each endpoint is the chain/network number you wish to request
 - `/pools/{chainId}/update` - Runs the worker lambda that fetches the latest pool information from the graph and saves it in the database.
 - `/pools/{chainId}` - Returns a JSON array of all Balancer pools of that chain
 - `/pools/{chainId}/{id}` - Returns JSON information about a pool of a specific `id`.
-- `/sor/{chainId}` - Run a SOR (Smart Order Router) query against the balancer pools and returns [SerializedSwapInfo](./src/modules/sor/types.ts).
-- `/order/{chainId}` - Run a SOR (Smart Order Router) query against the balancer pools and returns a [SorOrderResponse](./src/modules/sor/types.ts).
+- `/sor/{chainId}` - Run a SOR (Smart Order Router) query against the balancer pools and returns [SerializedSwapInfo](https://github.com/balancer/balancer-api/blob/master/src/modules/sor/types.ts).
+- `/order/{chainId}` - Run a SOR (Smart Order Router) query against the balancer pools and returns a [SorOrderResponse](https://github.com/balancer/balancer-api/blob/master/src/modules/sor/types.ts).
 - `/tokens/{chainId}` - Returns a JSON array of all known tokens of that chain
 - `/tokens/update/` - Runs the worker lambda that for every known token, fetches the latest price (in the chains native asset) from coingecko and saves it in the database.
 
@@ -234,7 +234,7 @@ You can customize your deployment with env variables. See .env.example for all p
 ## Common Issues
 
 - AWS error `Specified ReservedConcurrentExecutions for function decreases account's UnreservedConcurrentExecution below its minimum value of [10]`
-  - By default this package creates 13 lambdas while new AWS accounts are limited to 10. You can fix this by changing the `NETWORKS` environment variable to just `1` to only deploy lambdas for Mainnet instead of all networks.
+  - By default, this package creates 13 lambdas while new AWS accounts are limited to 10. You can fix this by changing the `NETWORKS` environment variable to just `1` to only deploy lambdas for Mainnet instead of all networks.
 
 ## Tips
 
