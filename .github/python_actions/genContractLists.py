@@ -2,7 +2,6 @@ import requests
 import pandas as pd
 import re
 from bal_addresses import AddrBook
-from dotmap import DotMap
 
 OUTPUT_PATH = "docs/reference/contracts/deployment-addresses"
 ADDRESSBOOK_URL = "https://raw.githubusercontent.com/BalancerMaxis/bal_addresses/main/outputs/deployments.json"
@@ -170,10 +169,10 @@ These deployments were in use at some point, and may still be in active operatio
 
     
 """
-    try:
-        r = address_directory(chain, status='DEPRECATED')
+    r = address_directory(chain, status='DEPRECATED')
+    if r != {}:
         output += genFullTable(r, chain).to_markdown(index=False)
-    except:
+    else:
         output += "No deprecated contracts found\n"
     output += """
     

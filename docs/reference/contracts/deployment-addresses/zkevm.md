@@ -69,8 +69,8 @@ These deployments were in use at some point, and may still be in active operatio
 #### If you can only find the contract you are looking for in the deprecated section and it is not an old pool, try checking the deployments tasks to find it or ask in the Discord before using a deprecated contract.
 
     
-| Contract   | Address   | Deployment   |
-|------------|-----------|--------------|
+No deprecated contracts found
+
     
 <style scoped>
 table {
