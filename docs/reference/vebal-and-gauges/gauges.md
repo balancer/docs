@@ -72,7 +72,7 @@ pendingToken = gauge.claimable_rewards(userAddress, tokenAddress).call();
 ```
 
 ::: warning L2 Gauges
-On Polygon and Arbitrum, the Gauges treat BAL the same as any other "reward" token, therefore instead of calling `claimable_tokens` ** on those networks, you will use `claimable_rewards` ** and pass in that network's BAL address.
+On Polygon and Arbitrum, the Gauges treat BAL the same as any other liquidity mining token, therefore instead of calling `claimable_tokens` __ on those networks, you will use `claimable_rewards` __ and pass in that network's BAL address.
 :::
 
 ## Claim Pending Tokens for a Pool

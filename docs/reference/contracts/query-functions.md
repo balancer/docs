@@ -57,7 +57,7 @@ struct ExitPoolRequest {
 
 ::: info Nested Pools
 
-**Composable Stable Pools** or **Boosted Pools** do not have join or exit functionality since those are handled as swaps! For example, if you want to figure out how much `bb-a-USD` you'll get for an amount of `DAI`, you'll need to use `queryBatchSwap` on a trade route that swaps `DAI` for `bb-a-DAI` and then swaps `bb-a-DAI` for `bb-a-USD`.
+**Composable Stable Pools** or **Boosted Pools** do not have join or exit functionality since those are handled as swaps! For example, if you want to figure out how much `bb-a-USD` you'll get for an amount of `DAI`, you'll need to use `queryBatchSwap` on a swap route that swaps `DAI` for `bb-a-DAI` and then swaps `bb-a-DAI` for `bb-a-USD`.
 :::
 
 ### `querySwap`

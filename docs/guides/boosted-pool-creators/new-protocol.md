@@ -83,5 +83,18 @@ Adapt the test file to the protocol name, and change the block number of the tes
 
 If all goes well, you should only need to change the fields highlighted above.
 
+## Subgraph
+Adding new integrations to the subgraph is important for tracking Linear Pool creations. The subgraph is maintained in the [Balancer Subgraph Repository](https://github.com/balancer/balancer-subgraph-v2). 
+
+In the `abi` folder, add two JSON files: one for the new Linear Pool ABI and one for the the corresponding factory ABI. 
+
+In `networks.yaml`, add an entry for each network that the new Linear Pool is deployed on. This includes information on the `network`, factory name, `address` of the deployed contract, and `startBlock`. Maintain the current naming conventions by naming the factory, `<protocol>LinearPool<version>Factory`. 
+
+Add the Linear Pool to the `PoolType` namespaces within `src/mappings/helpers/pool.ts`. In the `pool.ts` file, update `hasVirtualSupply` and `isLinearPool` to include the new `PoolType`. 
+
+In `manifest.template.yaml`, copy and paste the `ERC4626LinearPoolV4Factory` entry and change to fit the new Linear Pool's protocol and version. Verify the events match the source code. 
+
+Add event handler mappings for the factory in `poolFactory.ts`. Copy and paste `handleNewERC4626LinearPoolV4` and make necessary changes for the new Linear Pool's protocol and version. The function name must match the name provided in the factory's handler from `manifest.template.yaml`.
+
 ## Need More Help?
 Feel free to come by the [Balancer Discord](https://discord.balancer.fi/) with any questions.

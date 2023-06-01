@@ -1,20 +1,10 @@
 import requests
 import pandas as pd
 import re
+from bal_addresses import AddrBook
 
-GITHUB_MONOREPO_RAW="https://raw.githubusercontent.com/balancer-labs/balancer-v2-monorepo/master"
-GITHUB_MONOREPO_NICE="https://github.com/balancer/balancer-v2-monorepo/blob/master"
 OUTPUT_PATH = "docs/reference/contracts/deployment-addresses"
-ADDRESSBOOK_URL = "https://raw.githubusercontent.com/BalancerMaxis/bal_addresses/main/outputs/addressbook.json"
-
-SCANNERS_BY_CHAIN = {
-    "mainnet": "https://etherscan.io",
-    "polygon": "https://polygonscan.com",
-    "arbitrum": "https://arbiscan.io",
-    "optimism": "https://optimistic.etherscan.io",
-    "gnosis": "https://gnosisscan.io",
-    "goerli": "https://goerli.etherscan.io/"
-}
+ADDRESSBOOK_URL = "https://raw.githubusercontent.com/BalancerMaxis/bal_addresses/main/outputs/deployments.json"
 
 
 CONTRACTS_BY_HEADING = {
@@ -28,11 +18,9 @@ CONTRACTS_BY_HEADING = {
 
 
 
-def address_directory(chain):
+def address_directory():
    r = requests.get(ADDRESSBOOK_URL)
    return r.json()
-
-#def getContractUrl(deployment, contract):
 
 
 def genFullTable(r, chain):
@@ -49,8 +37,8 @@ def genFullTable(r, chain):
                 contractText = contract
             ###
 
-            dl = f'{GITHUB_MONOREPO_NICE}/pkg/deployments/tasks/{deployment}'
-            al = f"{SCANNERS_BY_CHAIN[chain]}/address/{contracts[contract]}#code"
+            dl = f'{AddrBook.GITHUB_DEPLOYMENTS_NICE}/tasks/{deployment}'
+            al = f"{AddrBook.SCANNERS_BY_CHAIN[chain]}/address/{contracts[contract]}#code"
             addressText = f'[{contracts[contract]}]({al})'
             ## TODO find github code links
             result.loc[len(result)] = [contractText, addressText, f"[{deployment}]({dl})"]
@@ -76,8 +64,8 @@ def genPoolFactories(r, chain):
                     contractText = contract
                 ###
 
-                dl = f"{GITHUB_MONOREPO_NICE}/pkg/deployments/tasks/{deployment}"
-                al = f"{SCANNERS_BY_CHAIN[chain]}/address/{contracts[contract]}#code"
+                dl = f"{AddrBook.GITHUB_DEPLOYMENTS_NICE}/tasks/{deployment}"
+                al = f"{AddrBook.SCANNERS_BY_CHAIN[chain]}/address/{contracts[contract]}#code"
                 result.loc[len(result)] = [contractText, f"[{contracts[contract]}]({al})", f"[{deployment}]({dl})"]
     result.sort_values(by=["Contract","Deployment"], inplace=True)
     return result
@@ -101,8 +89,8 @@ def genNotInContractList(r, chain, contractList):
                 contractText = contract
             ###
 
-            dl = f'{GITHUB_MONOREPO_NICE}/pkg/deployments/tasks/{deployment}'
-            al = f"{SCANNERS_BY_CHAIN[chain]}/address/{contracts[contract]}#code"
+            dl = f'{AddrBook.GITHUB_DEPLOYMENTS_NICE}/tasks/{deployment}'
+            al = f"{AddrBook.SCANNERS_BY_CHAIN[chain]}/address/{contracts[contract]}#code"
             addressText = f'[{contracts[contract]}]({al})'
             ## TODO find github code links
             result.loc[len(result)] = [contractText, addressText, f"[{deployment}]({dl})"]
@@ -126,8 +114,8 @@ def genFromContractList(r, chain, contractList):
                 contractText = contract
             ###
 
-            dl = f'{GITHUB_MONOREPO_NICE}/pkg/deployments/tasks/{deployment}'
-            al = f"{SCANNERS_BY_CHAIN[chain]}/address/{contracts[contract]}#code"
+            dl = f'{AddrBook.GITHUB_DEPLOYMENTS_NICE}/tasks/{deployment}'
+            al = f"{AddrBook.SCANNERS_BY_CHAIN[chain]}/address/{contracts[contract]}#code"
             addressText = f'[{contracts[contract]}]({al})'
             ## TODO find github code links
             result.loc[len(result)] = [contract, addressText, f"[{deployment}]({dl})"]
@@ -143,7 +131,7 @@ def genChainMd(chain):
 # {chain.capitalize()} Deployment Addresses
 
 ::: info More Details
-For more information on specific deployments as well as changelogs for different contract versions, please see the [deployment tasks](https://github.com/balancer/balancer-v2-monorepo/tree/master/pkg/deployments/tasks) section of the monorepo.
+For more information on specific deployments as well as changelogs for different contract versions, please see the [deployment tasks](https://github.com/balancer/balancer-deployments/tree/master/tasks).
 :::
 
 ## Pool Factories
@@ -173,8 +161,11 @@ These deployments were in use at some point, and may still be in active operatio
 
     
 """
-    r = address_directory()["old"]
-    output += genFullTable(r, chain).to_markdown(index=False)
+    try:
+        r = address_directory()["old"]
+        output += genFullTable(r, chain).to_markdown(index=False)
+    except:
+        output += "No deprecated contracts found\n"
     output += """
     
 <style scoped>
@@ -199,8 +190,7 @@ td {
 
 
 def main():
-    r = address_directory()["active"]
-    for chain in SCANNERS_BY_CHAIN.keys():
+    for chain in AddrBook.SCANNERS_BY_CHAIN.keys():
         output=genChainMd(chain)
         with open(f"{OUTPUT_PATH}/{chain}.md", "w") as f:
             f.write(output)

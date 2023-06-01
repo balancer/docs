@@ -20,7 +20,7 @@ swap(SingleSwap singleSwap,
 - `limit`: The meaning of `limit` depends on the value of `singleSwap.kind`
   - `GIVEN_IN`: The minimum amount of tokens to receive from the swap.
   - `GIVEN_OUT`: The maximum amount of tokens to send for the swap.
-- `deadline`: The UNIX timestamp at which our trade must be completed by - if the transaction is confirmed after this time then the transaction will fail.
+- `deadline`: The UNIX timestamp at which our swap must be completed by - if the transaction is confirmed after this time then the transaction will fail.
 
 ### SingleSwap struct
 
@@ -39,7 +39,7 @@ struct SingleSwap {
 }
 ```
 
-- `poolId`: The id of the pool to trade with.
+- `poolId`: The id of the pool to swap with.
 - `kind`: The type of swap to perform - either "Out Given Exact In" or "In Given Exact Out."
 - `assetIn`: The address of the token to swap into the pool.
 - `assetOut`: The address of the token to receive in return.
@@ -61,7 +61,7 @@ struct FundManagement {
 }
 ```
 
-- `sender`: The address from which tokens will be taken to perform the trade
-- `fromInternalBalance`: Whether the trade should use tokens owned by the `sender` which are already stored in the Vault.
-- `recipient`: The address to which tokens will be sent to after the trade.
+- `sender`: The address from which tokens will be taken to perform the swap.
+- `fromInternalBalance`: Whether the swap should use tokens owned by the `sender` which are already stored in the Vault.
+- `recipient`: The address to which tokens will be sent to after the swap.
 - `toInternalBalance`: Whether the tokens should be sent to the `recipient` or stored within their internal balance within the Vault.

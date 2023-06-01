@@ -6,8 +6,20 @@
 }
 
 table {
+  width: 100%;
+  table-layout: fixed;
   td {
     background: none;
+  }
+  td, th {
+    font-size: 14px;    
+    word-break: break-word; 
+    overflow-wrap: break-word; 
+    min-width: 140px;
+    vertical-align: top;
+  }
+  td:first-child {
+    min-width: 200px;
   }
 }
 

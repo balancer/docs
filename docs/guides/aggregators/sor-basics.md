@@ -4,6 +4,8 @@ The Smart Order Router (SOR) is a library for order routing optimzation across B
 
 [![npm version](https://img.shields.io/npm/v/@balancer-labs/sor/latest.svg)](https://www.npmjs.com/package/@balancer-labs/sor/v/latest)
 
+Note that you can also call the SOR through the Balancer API.  Instructions on how to do this can be found [here](../API/usage.md).
+
 The below docs assume the SDK is installed and initialized:
 
 ```javascript
@@ -17,7 +19,7 @@ const balancer = new BalancerSDK({
 const { swaps } = balancer // Swaps module
 ```
 
-Swaps module abstracts the SOR and the general flow for finding a trade route includes the following steps:
+Swaps module abstracts the SOR and the general flow for finding a swap route includes the following steps:
 
 ### Step 1. Pool data fetching
 The SOR requires information about the available pools and their current status, including the prices of tokens and the liquidity of the pools. It is essential to use the SOR based on up-to-date information, as outdated information can lead to incorrect slippage predictions and potentially result in failed swaps.
@@ -27,7 +29,7 @@ await swaps.fetchPools()
 Function is fetching pool data from subgraph and updates it with onchain balances then caches them internally.
 
 ### Step 2. Route proposal
-The SOR determines the optimal trade route based on the available pool data and the desired trade, taking into account factors such as trade size, gas costs, and slippage. When searching for swaps, developers have to choose between two types of swaps:
+The SOR determines the optimal swap route based on the available pool data and the desired swap, taking into account factors such as swap size, gas costs, and slippage. When searching for swaps, developers have to choose between two types of swaps:
 
 * `findRouteGivenIn`, where the amount of tokens being sent to the pool is known, or
 * `findRouteGivenOut`, where the amount of tokens received from the pool is known.
@@ -36,13 +38,13 @@ The SOR determines the optimal trade route based on the available pool data and 
 const swapInfo = await swaps.findRouteGivenIn({
   tokenIn: '0xstring',          // address of tokenIn
   tokenOut: '0xstring',         // address of tokenOut
-  amount: parseEther('1'),      // BigNumber with a trade amount
+  amount: parseEther('1'),      // BigNumber with a swap amount
   gasPrice: parseFixed('1', 9), // BigNumber current gas price
   maxPools,                     // number of pool included in path, above 4 is usually a high gas price
 });
 ```
 
-The SOR returns the trade information, including the optimal trade route, the expected slippage and gas cost, and the estimated trade outcome as `swapInfo`.
+The SOR returns the swap information, including the optimal swap route, the expected slippage and gas cost, and the estimated swap outcome as `swapInfo`.
 
 ```js
 {
@@ -97,7 +99,7 @@ The SOR returns the trade information, including the optimal trade route, the ex
 TODO: describe useBpts case
 
 ### Step 3. Transaction encoding
-To execute the trade, the returned `swapInfo` must be encoded into a transaction, which requires the following information:
+To execute the swap, the returned `swapInfo` must be encoded into a transaction, which requires the following information:
 ```javascript
 const tx = swaps.buildSwap({
   userAddress: '0xstring',    // user address

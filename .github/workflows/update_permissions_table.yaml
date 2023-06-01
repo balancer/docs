@@ -6,7 +6,7 @@ on:
   workflow_dispatch:
 
 jobs:
-  refersh_books:
+  refresh_permissions_table:
     runs-on: ubuntu-latest
 
     steps:
@@ -22,10 +22,10 @@ jobs:
     - name: Update Files
       id: update
       env:
-        WEB3_INFURA_PROJECT_ID = ${{ secrets.INFURA_KEY }}
+        WEB3_INFURA_PROJECT_ID: ${{ secrets.INFURA_KEY }}
       run: |
         pip3 install -r .github/python_actions/requirements.txt
-        python3 .github/python_actions/full_chain_permissions
+        python3 .github/python_actions/full_chain_permissions.py
         git add -A
 
     - name: pull-request

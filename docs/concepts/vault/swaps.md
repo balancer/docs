@@ -114,7 +114,7 @@ The chart below highlights the results of these design decisions.
 
 ## Swap Types
 
-The Vault has two core types of swaps: Single Swaps and Batch Swaps. As the names imply, Single Swap is used when only trading 2 tokens against a single pool. And Batch Swap, the more commonly used one, allows for multiple hops, paths, and pools. This differentiation allows for the Single Swap to be even more gas optimized and can be as low as 95k for a swap.
+The Vault has two core types of swaps: Single Swaps and Batch Swaps. As the names imply, Single Swap is used when only swapping 2 tokens against a single pool. And Batch Swap, the more commonly used one, allows for multiple hops, paths, and pools. This differentiation allows for the Single Swap to be even more gas optimized and can be as low as 95k for a swap.
 
 ::: tip Developer Reference
 
