@@ -22,11 +22,7 @@ def address_directory(chain, status=None):
     r = requests.get(f"https://raw.githubusercontent.com/balancer/balancer-deployments/master/addresses/{chain}.json")
     r=r.json()
     if isinstance(status, str):
-        filtered = {}
-        for deployment, depdata in r.items():
-            if depdata["status"] == status:
-                filtered[deployment] = depdata
-        return filtered
+        return {k: v for k, v in r.items() if v['status'] == status}
     else:
         return r
 
