@@ -9,6 +9,8 @@ The Balancer SDK is a Typescript/Javascript library for interfacing with the Bal
 
 [![npm version](https://img.shields.io/npm/v/@balancer-labs/sdk/latest.svg)](https://www.npmjs.com/package/@balancer-labs/sdk/v/latest)
 
+Some functionality of the SDK, including the SOR can also be accessed via the Balancer API for developers not using ts.  Find details in the [API Section](../../API/README.md)
+
 
 ## Setup
 
