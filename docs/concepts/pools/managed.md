@@ -61,7 +61,6 @@ Instantaneous updates occur when swap fees are updated immediately instead of on
 ### Examples:
 [ManagedPoolSetting.sol](https://github.com/balancer/balancer-v2-monorepo/blob/master/pkg/pool-weighted/contracts/managed/ManagedPoolSettings.sol) provides the necessary logic for viewing and updating swap fees within a Managed Pool. Below are a few basic examples of how an `owner` can interact with swap fees on a Managed Pool.
 
-
 ```solidity
 // Set custom swap fees (Must be >= 1e12 and <>= 95e16)
 uint256 private constant _INITIAL_SWAP_FEE_PERCENTAGE = 92e16
