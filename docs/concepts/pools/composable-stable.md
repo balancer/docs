@@ -9,7 +9,7 @@ references:
 
 ::: info Predecessors
 
-**Composable Stable Pools** are a superset of all previous Stable-type pools (Stable Pools, MetaStable Pools, StablePhantom Pools, and StablePool v2) and therefore obsolete all previous pools.
+**Composable Stable Pools** are a superset of all previous Stable-type pools (Stable Pools, MetaStable Pools, StablePhantom Pools, and StablePool v2) and therefore deprecate all previous pools.
 :::
 
 ## Overview
