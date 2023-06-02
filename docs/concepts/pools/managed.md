@@ -68,11 +68,13 @@ Managed Pool `owner`s have the ability to pause and unpause swaps. This feature 
 [ManagedPoolSettings.sol](https://github.com/balancer/balancer-v2-monorepo/blob/master/pkg/pool-weighted/contracts/managed/ManagedPoolSettings.sol) provides the necessary logic for viewing the swap status of a pool, as well as enabling and disabling swaps within a Managed Pool. Below are a few basic examples of how an `owner` can accomplish this within a Managed Pool. 
 
 ```solidity
-// Enable swaps
-_managedPool.setSwapEnabled(true);
-
 // Disable swaps
 _managedPool.setSwapEnabled(false);
+
+// Enable swaps
+// Enbaling swaps might create an instant arbitrage opportunity. 
+// Applying a gradual swap fee update can help mitigate this.
+_managedPool.setSwapEnabled(true);
 ```
 
 ```solidity
