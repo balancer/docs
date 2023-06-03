@@ -12,6 +12,8 @@ returns (uint256)
 Returns the effective BPT Supply. Implemented in `ManagedPoolSettings`. 
 
 ::: warning
+BPT is minted immediately prior to joins or exits. Swap fees are paid to the pool `owner`, resulting in the accumulation of unminted BPT as debt. It is important to consider this, as any pool operation involving BPT will include this unminted BPT. Therefore, in most cases, it is recommended to utilize this function instead of `totalSupply`, which only returns the supply of minted BPT.
+
 Since this function reads balances directly from the Vault, it is potentially subject to manipulation via reentrancy. To call this function safely, attempt to trigger the reentrancy guard in the Vault by calling a non-reentrant function before calling `getActualSupply`.
 :::
 
@@ -24,7 +26,7 @@ getSwapFeePercentage()
 returns (uint256)
 ```
 
-Returns the current value of the swap fee percentage. Implemented in `ManagedPoolSettings`.
+Returns the current value of the swap fee percentage. If the swap fee is gradually being updated, the return value will represent the swap fee at the time of the last confirmed block. Implemented in `ManagedPoolSettings`.
 
 ### `getGradualSwapFeeUpdateParams`
 ```solidity
@@ -62,7 +64,7 @@ getNormalizedWeights()
 returns (uint256[] memory)
 ```
 
-Returns the normalized weights in the same order as the pool's tokens. Implemented in `ManagedPoolSettings`.
+Returns the normalized weights in the same order as the pool's tokens. If the weights are gradually being updated, the return value will represent the normalized weights at the time of the last confirmed block. Implemented in `ManagedPoolSettings`.
 
 ### `getGradualWeightUpdateParams`
 
@@ -114,7 +116,7 @@ emits JoinExitEnabledSet(bool joinExitEnabled)
 Enables or disables joins and exits. This is a permissioned function that can only be called by an authorized address set by the `owner`. Implemented in `ManagedPoolSettings`.
 
 ::: info
-**Note:** This does not affect Recovery Mode exits
+This does not affect Recovery Mode exits
 :::
 
 ## Swaps
@@ -176,7 +178,7 @@ removeAllowedAddress(address member)
 emits AllowlistAddressRemoved(address indexed member)
 ```
 
-Removes an address, `member`, from the LP allowlist. This is a permissioned function that can only be called by an authorized address set by the `owner`. Implemented in `ManagedPoolSettings`.
+Removes an address, `member`, from the LP allowlist. Any `member` who has joined a pool and is later removed from the LP allowlist is still able to exit. This is a permissioned function that can only be called by an authorized address set by the `owner`. Implemented in `ManagedPoolSettings`.
 
 ### `setMustAllowlistLPs`
 
@@ -186,7 +188,7 @@ setMustAllowlistLPs(bool mustAllowlistLPs)
 emit MustAllowlistLPsSet(bool mustAllowlistLPs)
 ```
 
-Enables or disables the LP allowlist. This is a permissioned function that can only be called by an authorized address set by the `owner`. Implemented in `ManagedPoolSettings`.
+Enables or disables the LP allowlist. If a LP has already joined the pool and the allowlist is later turned on, that user will still be able to exit. This is a permissioned function that can only be called by an authorized address set by the `owner`. Implemented in `ManagedPoolSettings`.
 
 ## AUM Fees
 
@@ -236,6 +238,11 @@ returns (uint256 bptPrice,
 
 Returns the full circuit breaker state for a given `token`. Implemented in `ManagedPoolSettings`.
 
+::: info
+- `bptPrice`: The current price of BPT, denominated in `token`.
+- `referenceWeight`: The `token`'s weight when the circuit breaker was set.
+:::
+
 ### `setCircuitBreakers`
 
 ```solidity
@@ -269,13 +276,10 @@ emits TokenAdded(IERC20 indexed token, uint256 normalizedWeight)
 Adds a token, `tokenToAdd`, to the pool's list of tradeable tokens. This is a permissioned function that can only be called by an authorized address set by the `owner`. Implemented in `ManagedPoolSettings`.
 
 ::: warning
-When adding a new token to a pool, the weights of all other tokens will be decreased. The new token will have a balance of zero, so it is up to the owner to provide some imediate liquidity after calling this function.
-:::
+When adding a new token to a pool, the weights of all other tokens will be decreased. The new token will have a balance of zero, so it is up to the owner to provide some immediate liquidity after calling this function.
 
-::: info 
-**Note:** Regular joins do not work when a new token has a balance of zero. The only way to deposit an initial amount is by using an Asset Manager.
+Regular joins do not work when a new token has a balance of zero. The only way to deposit an initial amount is by using an Asset Manager.
 :::
-
 
 ### Remove Token
 
@@ -290,5 +294,7 @@ emits TokenRemoved(IERC20 indexed token)
 Removes a token, `tokenToRemove`, to the pool's list of tradeable tokens. This is a permissioned function that can only be called by an authorized address set by the `owner`. Implemented in `ManagedPoolSettings`.
 
 ::: info
-**Note:** Tokens can only be removed if the pool has more than two tokens (not including BPT).
+Tokens can only be removed if the pool has more than two tokens (not including BPT).
+
+When removing a token from a pool, the weights of all other tokens will be increased. The removed token will have a balance of zero, so it is up to the owner to withdraw any remaining liquidity after calling this function via an Asset Manager.
 :::
