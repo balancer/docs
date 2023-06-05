@@ -122,7 +122,6 @@ The token balances used in the Trade Equations are then [upscaled](https://dashb
 [`OnSwapGivenIn()`](https://dashboard.tenderly.co/tx/mainnet/0x67f477517acf6e0c91ec7997e665ca25d2806da060af30272876742584f0aa21?trace=0.5.2.1.5.13.2). 
 
 
-### Rate Provider being used in a MetaStablePool swap
 
 ## Rate Providers being used to collect yieldFees for WeightedPools
 
