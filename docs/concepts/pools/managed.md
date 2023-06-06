@@ -61,6 +61,17 @@ function changeWeights() public {
 ```solidity
 // View current weights of tokens in a Managed Pool
 uint256[] memory tokenWeights = _managedPool.getNormalizedWeights();
+
+// View the current gradual weight change update parameters
+(
+  uint256[] memory newWeights,
+  uint256[] memory startWeights,
+  uint256[] memory endWeights,
+  uint256 startTime,
+  uint256 endTime
+) = _managedPool.getGradualWeightUpdateParams();
+
+
 ```
 ## Swap Fees
 
