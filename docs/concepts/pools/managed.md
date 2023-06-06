@@ -80,6 +80,14 @@ _managedPool.updateSwapFeeGradually(
 ```solidity
 // Get the current value of the swap fee percentage
 uint256 swapFeePercentage = _managedPool.getSwapFeePercentage();
+
+// Get the current gradual swap fee update parameters
+(
+  uint256 startTime,
+  uint256 endTime,
+  uint256 startSwapFeePercentage,
+  uint256 endSwapFeePercentage
+) = _managedPool.getGradualSwapFeeUpdateParams();
 ```
 
 ## Management and Protocol Fees
