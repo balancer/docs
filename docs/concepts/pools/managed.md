@@ -64,14 +64,11 @@ uint256[] memory tokenWeights = _managedPool.getNormalizedWeights();
 
 // View the current gradual weight change update parameters
 (
-  uint256[] memory newWeights,
-  uint256[] memory startWeights,
-  uint256[] memory endWeights,
   uint256 startTime,
-  uint256 endTime
+  uint256 endTime,
+  uint256[] memory startWeights,
+  uint256[] memory endWeights
 ) = _managedPool.getGradualWeightUpdateParams();
-
-
 ```
 ## Swap Fees
 
