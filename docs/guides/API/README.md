@@ -13,7 +13,7 @@ It has the following components:
 - A Lambda that fetches the latest data from the graph / infura and updates the database.
 - An API Gateway server and set of lambdas that handle user requests.
 - An AppSync GraphQL endpoint for loading decorated pools.
-![](pools-api-diagram.png)
+  ![](/images/pools-api-diagram.png)
 
 ## Disclaimers
 
@@ -23,7 +23,9 @@ functions or GraphQL interface so anyone can call them.
 # Sections
 
 #### [Development and installation of the API](./setup.md)
+
 #### [Using the API](./usage.md)
 
 # Code
+
 The Source Code for the API can be found [on Github](https://github.com/balancer/balancer-api)

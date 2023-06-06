@@ -1,6 +1,6 @@
 # Setting up the API
 
-Here are notes on how to setup the API in a dev environment and deploy it to AWS. 
+Here are notes on how to setup the API in a dev environment and deploy it to AWS.
 
 ## Requirements
 
@@ -110,7 +110,7 @@ npm run test:e2e
 
 Note: Everything inside the AWS container is setup by the CDK scripts in this repository. You'll need to manually configure any external services, such as Alchemy event triggers.
 
-![](./pools-api-diagram.png)
+![](/images/pools-api-diagram.png)
 
 ## API Gateway Endpoints
 
