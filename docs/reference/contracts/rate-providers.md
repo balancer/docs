@@ -96,10 +96,22 @@ Bear in mind that the tokens used for demonstration in these examples all have 1
 
 :::
 
+The upscaled token balances are are fed into `_calcOutGivenIn`.
+```
+ComposableStablePool._calcOutGivenIn
+    (
+        amplificationParameter = 200000, 
+        balances = ["7860983836140600107855","7672488055538194248508","6366340962316480428138"], 
+        tokenIndexIn = 1, 
+        tokenIndexOut = 0, 
+        tokenAmountIn = 163517835854389679,
+        invariant = 21899336949210774987256
+    )
 
+=> (163536626614409153)
+```
 
-After the token balances have been upscaled, they are fed into `_calcOutGivenIn` [here](https://dashboard.tenderly.co/tx/mainnet/0x72d756d0fcd663343ca1b2adcfc7e114e8598bc0be28386752f16222384a29b3?trace=0.4.2.2.19.11.0.3.0.5).
-That is how `rateProvider` feeds a rate into the pricing equation for ComposableStablePools.
+More details on this specific transaction can be found [here](https://dashboard.tenderly.co/tx/mainnet/0x72d756d0fcd663343ca1b2adcfc7e114e8598bc0be28386752f16222384a29b3?trace=0.4.2.2.19.11.0.3.0.5).
 
 ### Meta Stable Pool Implementation
 Scaling Example:
@@ -114,18 +126,33 @@ function _scalingFactor(IERC20 token) internal view virtual override returns (ui
 ```
 
 ### Meta Stable Pool Swap Example
-In this [transaction](https://etherscan.io/tx/0x67f477517acf6e0c91ec7997e665ca25d2806da060af30272876742584f0aa21) 50 ETH is being exchanged for 46.68 rETH. This pool is a MetaStablePool. According to the next table the rate, the `rateProvider`  supplies, is being taken into account during the swap. Looking at the Trade equations, a well suited parameter to weave in the `rate` is the balances which are used to compute `OutGivenIn` or `InGivenOut`.
 
-Querying the balances of this pool via `vault.getPoolTokens(poolId)` returns  
-20040415915824227571764 for rETH and 21953505292747563228232 for WETH. 
+Looking at a swap of 50 ETH to 46.68 rETH the pool balances are upscaled.
+
+
   
 | Token                                             | balances                              |  rate                |  scaled balance                           | 
 | -----------                                       | -----------                           |  -----------         |  -----------                              | 
 | rEth 0xae78736cd615f374d3085123a210448e74fc6393   | 20040415915824227571764                | 1070121751154609309  |  21445684973708525874136                  | 
 | WETH 0xc02aaa39b223fe8d0a0e5c4f27ead9083c756cc2   | 21953505292747563228232                | 1000000000000000000  |  21953505292747563228232                  | 
 
-The token balances used in the Trade Equations are then [upscaled](https://dashboard.tenderly.co/tx/mainnet/0x67f477517acf6e0c91ec7997e665ca25d2806da060af30272876742584f0aa21?trace=0.5.2.1.5.11) the scaled balance. Only after upscaling are the apparent balances supplied to
-[`OnSwapGivenIn()`](https://dashboard.tenderly.co/tx/mainnet/0x67f477517acf6e0c91ec7997e665ca25d2806da060af30272876742584f0aa21?trace=0.5.2.1.5.13.2). 
+The upscaled token balances are fed into `_calcOutGivenIn`
+
+```
+MetaStablePool._calcOutGivenIn
+    (
+        amplificationParameter = 50000, 
+        balances = ["21445684973708525874136","21953505292747563228232"], 
+        tokenIndexIn = 1, 
+        tokenIndexOut = 0, 
+        tokenAmountIn = 49980000000000000000
+    )
+
+=> (49954807369169689518)
+
+```
+
+more details on this specific transaction can be found [here].(https://etherscan.io/tx/0x67f477517acf6e0c91ec7997e665ca25d2806da060af30272876742584f0aa21)
 
 
 
