@@ -52,12 +52,12 @@ Different types of pools utilize rate providers in different contexts.
 | Managed Pool               | ✅               | ❌                |
 | Liquity Bootstrapping Pool | ❌               | ❌                |
 
-
-Stable Pools require the reported token balances from , `vault.getPoolTokens(poolId)`, be manipulated in two distinct manners before prices can be calculated using StableMath:
+::: note
+Stable Pools apply Stable Math as their pricing equations whereas all other pools (except Linear Pools) use Weighted Math for pricing equations. The key difference between why rate Providers impact pricing equations for Stable Pools with rate Providers is that the pool balances (retrieved via `vault.getPoolTokens(poolId)`) are manipulated in two distinct manners before prices are calculated:
 
 1. Scale token balances to an 18-decimal fixed point number.
 2. Multiply the scaled balance by the rate.
-
+:::
 
 Composable Stable Pools and Meta Stable Pools have different implementations for the scaling operations but the outcome is the same.
 
