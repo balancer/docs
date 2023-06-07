@@ -136,7 +136,7 @@ Rate providers play a crucial role in determining whether yield fees are charged
 | C (yield bearing)              |       0.2        | 1.05            |  
 
 
-`rateProduct` = (0.3 * 1.01) * (0.5 * 1) * (0.2 * 1.05) = 1.013
+`rateProduct` = $(0.3 * 1.01) * (0.5 * 1) * (0.2 * 1.05) = 1.013$
 
 As part of the calculation of the rateProduct, the `rateProvider` of the pool tokens are queried for their rates [here](https://github.com/balancer/balancer-v2-monorepo/blob/cbce7d63479dafb4f4ea9ad8cb2dbdbb26edae50/pkg/pool-weighted/contracts/WeightedPoolProtocolFees.sol#L304). This occurs in the following code snippet:
 
