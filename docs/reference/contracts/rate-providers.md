@@ -103,11 +103,10 @@ ComposableStablePool._calcOutGivenIn
         tokenAmountIn = 163517835854389679,
         invariant = 21899336949210774987256
     )
-
 => (163536626614409153)
 ```
 
-More details on this specific transaction can be found [here](https://dashboard.tenderly.co/tx/mainnet/0x72d756d0fcd663343ca1b2adcfc7e114e8598bc0be28386752f16222384a29b3?trace=0.4.2.2.19.11.0.3.0.5).
+More details on this specific transaction can be found [here.](https://dashboard.tenderly.co/tx/mainnet/0x72d756d0fcd663343ca1b2adcfc7e114e8598bc0be28386752f16222384a29b3?trace=0.4.2.2.19.11.0.3.0.5)
 
 ### Meta Stable Pool Implementation
 Scaling Example:
@@ -143,24 +142,23 @@ MetaStablePool._calcOutGivenIn
         tokenIndexOut = 0, 
         tokenAmountIn = 49980000000000000000
     )
-
 => (49954807369169689518)
 
 ```
 
-more details on this specific transaction can be found [here](https://etherscan.io/tx/0x67f477517acf6e0c91ec7997e665ca25d2806da060af30272876742584f0aa21).
+more details on this specific transaction can be found [here.](https://etherscan.io/tx/0x67f477517acf6e0c91ec7997e665ca25d2806da060af30272876742584f0aa21)
 
 ::: note scaling
 Bear in mind that the tokens used for demonstration in these examples all have 18 decimals and Balancer natively uses 18 decimals for internal accounting. If tokens have different decimals, the scaled balances scale with the tokens decimals as well.
 
 :::
 
-## Rate Providers being used to collect yieldFees for WeightedPools
+## Yield Fee
 
-Rate providers play a crucial role in determining whether yield fees are charged during pool joins and exits. The pool's `_athRateProduct` and it dynamically calculated `rateProduct` are key factors that determine this.
+Rate providers play a crucial role in determining whether yield fees are charged during pool joins and exits. The pool's `_athRateProduct` and its dynamically calculated `rateProduct` are key factors that determine this.
 
 `rateProduct` is calculated as the weighted product of all current rates:
-## Yield Fees for WeightedPools
+###  Yield Fees for WeightedPools
 | Token                    |  Weight          |  rate           | 
 | -----------              | -----------      |  -----------    |   
 | A (yield bearing)        |       0.3        | 1.01            | 
@@ -170,7 +168,7 @@ Rate providers play a crucial role in determining whether yield fees are charged
 
 `rateProduct` = $(0.3 * 1.01) * (0.5 * 1) * (0.2 * 1.05) = 1.013$
 
-As part of the calculation of the rateProduct, the `rateProvider` of the pool tokens are queried for their rates [here](https://github.com/balancer/balancer-v2-monorepo/blob/cbce7d63479dafb4f4ea9ad8cb2dbdbb26edae50/pkg/pool-weighted/contracts/WeightedPoolProtocolFees.sol#L304). This occurs in the following code snippet:
+As part of the calculation of the `rateProduct`, the `rateProvider` of the pool tokens are queried for their rates.
 
 ```
     /**
@@ -180,6 +178,7 @@ As part of the calculation of the rateProduct, the `rateProvider` of the pool to
         return provider == IRateProvider(0) ? FixedPoint.ONE : provider.getRate().powDown(normalizedWeight);
     }
 ```
+more details on the implementation can be found [here.](https://github.com/balancer/balancer-v2-monorepo/blob/cbce7d63479dafb4f4ea9ad8cb2dbdbb26edae50/pkg/pool-weighted/contracts/WeightedPoolProtocolFees.sol#L304)
 
 There are several scenarios in which no yield fees are paid during a pools join or exit operation. Below are a couple of examples:
 
@@ -187,9 +186,28 @@ There are several scenarios in which no yield fees are paid during a pools join 
 - Insignificant `rateProduct` fluctuations between tokens: In some cases, the rate of one token may increase while the rate of another token decreases. If, on a normalized basis, the rate increase of Token A is less than the rate decrease of Token B, the calculated `rateProduct` would not reach the ceiling of `ATHRateProduct`. As a result, no yield fees would be paid during the pools join or exit.
 
 
-As part of this [transaction](https://dashboard.tenderly.co/mkflow/project/tx/mainnet/0x9e1d45013f4b65f444bb9b2ef823c0d4fd0a53e2b2bad85ba85a8e26c0bed45d?trace=0.2.7.3.7.1.2.2) yield fees are minted. This can be seen by the positive return values of the `_getYieldProtocolFeesPoolPercentage` function
+Yield fees being minted indicated by positive return values of 
+```
+WeightedPool._getYieldProtocolFeesPoolPercentage
+    (
+        normalizedWeights = ["800000000000000000","200000000000000000"]
+    )
+=>
+(1074881576209740, 978863663373687295)
+```
+More details on this specific transaction be found [here.](https://dashboard.tenderly.co/mkflow/project/tx/mainnet/0x9e1d45013f4b65f444bb9b2ef823c0d4fd0a53e2b2bad85ba85a8e26c0bed45d?trace=0.2.7.3.7.1.2.2)
 
+No yield fees being minted indicated by zoer return values of
+```
+WeightedPool.getYieldProtocolFeesPoolPercentage
+    (
+        normalizedWeights = ["800000000000000000","200000000000000000"]
+    )
+=>
+(0, 0)
+```
+More
 Whereas in this [transaction](https://dashboard.tenderly.co/mkflow/project/tx/mainnet/0xe2d8d7f705d23c18e7d25e68bf01ac2544cc73806c8e4572135d9bc16790b4f5) the `ATHRateProduct` did not increase
-and (0,0) is [returned](https://github.com/balancer/balancer-v2-monorepo/blob/cbce7d63479dafb4f4ea9ad8cb2dbdbb26edae50/pkg/pool-weighted/contracts/WeightedPoolProtocolFees.sol#L191) since `rateProduct <= athRateProduct`. This indicates that no yield fees were paid in this transaction due to the insufficient increase in the rateProduct.
+and `(0,0)` is [returned](https://github.com/balancer/balancer-v2-monorepo/blob/cbce7d63479dafb4f4ea9ad8cb2dbdbb26edae50/pkg/pool-weighted/contracts/WeightedPoolProtocolFees.sol#L191) since `rateProduct <= athRateProduct`. This indicates that no yield fees were paid in this transaction due to the insufficient increase in the rateProduct.
 
 
