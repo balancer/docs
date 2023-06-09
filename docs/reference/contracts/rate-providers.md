@@ -206,7 +206,7 @@ WeightedPool.getYieldProtocolFeesPoolPercentage
 =>
 (0, 0)
 ```
-Whereas in this [transaction](https://dashboard.tenderly.co/mkflow/project/tx/mainnet/0xe2d8d7f705d23c18e7d25e68bf01ac2544cc73806c8e4572135d9bc16790b4f5) the `ATHRateProduct` did not increase
+Whereas in this [transaction](https://dashboard.tenderly.co/mkflow/project/tx/mainnet/0xe2d8d7f705d23c18e7d25e68bf01ac2544cc73806c8e4572135d9bc16790b4f5), the `ATHRateProduct` did not increase
 and `(0,0)` is [returned](https://github.com/balancer/balancer-v2-monorepo/blob/cbce7d63479dafb4f4ea9ad8cb2dbdbb26edae50/pkg/pool-weighted/contracts/WeightedPoolProtocolFees.sol#L191) since `rateProduct <= athRateProduct`. This indicates that no yield fees were paid in this transaction due to the insufficient increase in the rateProduct.
 
 
