@@ -53,7 +53,7 @@ Different types of pools utilize rate providers in different contexts.
 | Liquity Bootstrapping Pool | ❌               | ❌                |
 
 ::: note
-Stable Pools apply Stable Math as their pricing equations whereas all other pools (except Linear Pools) use Weighted Math for pricing equations. The key difference between why rate Providers impact pricing equations for Stable Pools with rate Providers is that the pool balances (retrieved via `vault.getPoolTokens(poolId)`) are manipulated in two distinct manners before prices are calculated:
+Stable Pools apply Stable Math as their pricing equations, whereas all other pools (except Linear Pools) use Weighted Math for pricing equations. The key difference between why rate Providers impact pricing equations for Stable Pools with rate Providers is that the pool balances (retrieved via `vault.getPoolTokens(poolId)`) are manipulated in two distinct manners before prices are calculated:
 
 1. Scale token balances to an 18-decimal fixed point number.
 2. Multiply the scaled balance by the rate.
