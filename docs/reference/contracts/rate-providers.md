@@ -67,16 +67,16 @@ Scaling Example:
 
 ```
 function _scalingFactors() internal view virtual override returns (uint256[] memory) {
-        // There is no need to check the arrays length since both are based on `_getTotalTokens`
-        uint256 totalTokens = _getTotalTokens();
-        uint256[] memory scalingFactors = new uint256[](totalTokens);
+    // There is no need to check the arrays length since both are based on `_getTotalTokens`
+    uint256 totalTokens = _getTotalTokens();
+    uint256[] memory scalingFactors = new uint256[](totalTokens);
 
-        for (uint256 i = 0; i < totalTokens; ++i) {
-            scalingFactors[i] = _getScalingFactor(i).mulDown(_getTokenRate(i));
-        }
-
-        return scalingFactors;
+    for (uint256 i = 0; i < totalTokens; ++i) {
+        scalingFactors[i] = _getScalingFactor(i).mulDown(_getTokenRate(i));
     }
+
+    return scalingFactors;
+}
 ```
 
 ### Composable Stable Pool Swap Example
@@ -113,11 +113,11 @@ Scaling Example:
 
 ```
 function _scalingFactor(IERC20 token) internal view virtual override returns (uint256) {
-        uint256 baseScalingFactor = super._scalingFactor(token);
-        uint256 priceRate = _priceRate(token);
-        // Given there is no generic direction for this rounding, it simply follows the same strategy as the BasePool.
-        return baseScalingFactor.mulDown(priceRate);
-    }
+    uint256 baseScalingFactor = super._scalingFactor(token);
+    uint256 priceRate = _priceRate(token);
+    // Given there is no generic direction for this rounding, it simply follows the same strategy as the BasePool.
+    return baseScalingFactor.mulDown(priceRate);
+}
 ```
 
 ### Meta Stable Pool Swap Example
@@ -171,12 +171,12 @@ Rate providers play a crucial role in determining whether yield fees are charged
 As part of the calculation of the `rateProduct`, the `rateProvider` of the pool tokens are queried for their rates.
 
 ```
-    /**
-     * @notice Returns the contribution to the total rate product from a token with the given weight and rate Provider.
-     */
-    function _getRateFactor(uint256 normalizedWeight, IRateProvider provider) internal view returns (uint256) {
-        return provider == IRateProvider(0) ? FixedPoint.ONE : provider.getRate().powDown(normalizedWeight);
-    }
+/**
+ * @notice Returns the contribution to the total rate product from a token with the given weight and rate Provider.
+ */
+function _getRateFactor(uint256 normalizedWeight, IRateProvider provider) internal view returns (uint256) {
+    return provider == IRateProvider(0) ? FixedPoint.ONE : provider.getRate().powDown(normalizedWeight);
+}
 ```
 More details on the implementation can be found [here.](https://github.com/balancer/balancer-v2-monorepo/blob/cbce7d63479dafb4f4ea9ad8cb2dbdbb26edae50/pkg/pool-weighted/contracts/WeightedPoolProtocolFees.sol#L304)
 
