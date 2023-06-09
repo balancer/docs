@@ -178,7 +178,7 @@ As part of the calculation of the `rateProduct`, the `rateProvider` of the pool 
         return provider == IRateProvider(0) ? FixedPoint.ONE : provider.getRate().powDown(normalizedWeight);
     }
 ```
-more details on the implementation can be found [here.](https://github.com/balancer/balancer-v2-monorepo/blob/cbce7d63479dafb4f4ea9ad8cb2dbdbb26edae50/pkg/pool-weighted/contracts/WeightedPoolProtocolFees.sol#L304)
+More details on the implementation can be found [here.](https://github.com/balancer/balancer-v2-monorepo/blob/cbce7d63479dafb4f4ea9ad8cb2dbdbb26edae50/pkg/pool-weighted/contracts/WeightedPoolProtocolFees.sol#L304)
 
 There are several scenarios in which no yield fees are paid during a pools join or exit operation. Below are a couple of examples:
 
