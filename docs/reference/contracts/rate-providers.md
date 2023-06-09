@@ -148,7 +148,7 @@ MetaStablePool._calcOutGivenIn
 
 More details on this specific transaction can be found [here.](https://etherscan.io/tx/0x67f477517acf6e0c91ec7997e665ca25d2806da060af30272876742584f0aa21)
 
-::: note scaling
+::: note Scaling
 Bear in mind that the tokens used for demonstration in these examples all have 18 decimals and Balancer natively uses 18 decimals for internal accounting. If tokens have different decimals, the scaled balances scale with the tokens decimals as well.
 
 :::
