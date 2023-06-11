@@ -11,7 +11,7 @@ Balancer Pool Tokens (BPT) grant you access to a share of the pool's underlying 
 2. [Proportional exit](#proportional-exit) - receive an equal portion of all the underlying.
 3. [Exact token amounts](#exact-token-amounts) - choose a specific amount of the underlying tokens from the pool and burn only the required amount of BPT.
 
-> Note: Use swaps to exit boosted pools and composable stable pools. [Explaination](#boosted-pools)
+> Note: Use swaps to exit boosted pools and composable stable pools. [Explanation](#boosted-pools)
 
 ## Exit strategies
 
