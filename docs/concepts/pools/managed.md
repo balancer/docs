@@ -26,7 +26,7 @@ Managed Pools are feature rich. Some of the features include:
 
 Swap fees are collected during token swaps (as well as some joins and exits: specifically when the transactions are not proportional with the rest of the pool). Swap fees accrue to the pool, and therefore increase the amount of underlying tokens in the pool. This in turn translates to collected fees going to Liquidity Providers by means of increasing the value of their LP tokens (BPT). Unlike most other Balancer pools, Managed Pools do not split swap fees with the protocol.
 
-`owner`s can adjust swap fee percentages in order to influencing the economic activity and incentives around a Managed Pool. For example, when re-enabling swaps in a previously paused pool, running a swap fee update from a very high swap fee to a low swap fee can help mitigate arbitrage losses.
+`owner`s can adjust swap fee percentages in order to influence the economic activity and incentives around a Managed Pool. For example, when re-enabling swaps in a previously paused pool, running a swap fee update from a very high swap fee to a low swap fee can help mitigate arbitrage losses.
 
 ### Limits
 [ManagedPoolSettings.sol](https://github.com/balancer/balancer-v2-monorepo/blob/master/pkg/pool-weighted/contracts/managed/ManagedPoolSettings.sol) defines `_MAX_SWAP_FEE_PERCENTAGE = 95e16` or 95% and `_MIN_SWAP_FEE_PERCENTAGE = 1e12` or 0.0001%. Swap fee limits exist to safeguard from potential math errors and to incentivize Liquidity Providers to join pools. `owner`s can set custom swap fee percentages in their own implementations as long as they are in the bounds of `_MAX_SWAP_FEE_PERCENTAGE` and `_MIN_SWAP_FEE_PERCENTAGE`.
@@ -72,6 +72,6 @@ Assets Under Management (AUM) fees are paid out to the `owner` for maintaining t
 uint256 desiredAumFeePercentage = 2e16;
 _managedPool.setManagementAumFeePercentage(managementFeePercentage);
 
-// Get the current AUM fee, as well as the last time fee collections occured
+// Get the current AUM fee, as well as the last time fee collections occurred
 (uint256 aumFeePercentage, uint256 lastCollectionTimestamp) = _managedPool.getManagementAumFeeParams();
 ```

@@ -1,6 +1,6 @@
 # Protocol Pools
 
-Unlike any of the other pool categories where the pool can be thought of as an indvidual entity, Protocol pools represent entire DeFi protocols built on top of Balancer infrastructure. Balancer provides the infrastructure for custom AMMs by separating the pool logic from the accounting logic. Any AMM logic can be implemented as a custom pool on top of the Balancer Vault and as a result, the design space of Balancer pools is infinite. In simpler terms: **programmable liquidity**.
+Unlike any of the other pool categories where the pool can be thought of as an individual entity, Protocol pools represent entire DeFi protocols built on top of Balancer infrastructure. Balancer provides the infrastructure for custom AMMs by separating the pool logic from the accounting logic. Any AMM logic can be implemented as a custom pool on top of the Balancer Vault and as a result, the design space of Balancer pools is infinite. In simpler terms: **programmable liquidity**.
 
 ::: tip Case Study: Gyroscope
 
@@ -10,7 +10,7 @@ Gyroscope is a stablecoin DeFi project built on top of Balancer using concentrat
 
 ## The case to build on top of Balancer
 
-Over the last few years there have been hundreds of experiments in AMM & DEX design. One of the biggest hurdles new AMMs have faced is underestimating the importance of having each of the actors neccessary to create a healthy swapping ecosystem. These actors are: retail swappers, DEX aggregators, arbitrageurs, and liquidity providers. If a single one of those actors is missing on an AMM it breaks the liquidity flywheel and leads to diminishing trade volume and poor returns.
+Over the last few years there have been hundreds of experiments in AMM & DEX design. One of the biggest hurdles new AMMs have faced is underestimating the importance of having each of the actors necessary to create a healthy swapping ecosystem. These actors are: retail swappers, DEX aggregators, arbitrageurs, and liquidity providers. If a single one of those actors is missing on an AMM it breaks the liquidity flywheel and leads to diminishing trade volume and poor returns.
 
 Even with strong technical teams and innovative iterations on Uniswap's concentrated liquidity (meaning TVL is less important), there have been notable AMMs launched in the last 6 months that have already failed.
 
@@ -22,7 +22,7 @@ A great real world example of an AMM built on Balancer seeing success after a qu
 
 ### Arbitrageurs
 
-Although there is some nuance around arbitrage volume and types of order flow that will be glossed over in this overview, arbitrageurs still represent a necessary piece to creating a sucessful DEX. Like aggregators, arbitrageurs carefully select which protocols to dedicate resources to. And even exact forks of existing AMMs require new logic and monitoring to be built. SCP, Wintermute, and other top firms are all swapping with Balancer liquidity.
+Although there is some nuance around arbitrage volume and types of order flow that will be glossed over in this overview, arbitrageurs still represent a necessary piece to creating a successful DEX. Like aggregators, arbitrageurs carefully select which protocols to dedicate resources to. And even exact forks of existing AMMs require new logic and monitoring to be built. SCP, Wintermute, and other top firms are all swapping with Balancer liquidity.
 
 ### Liquidity
 Once deployed, protocol pools are immediately hooked into one of the deepest and diverse sources of liquidity in DeFi. This means that the assets in the new pool are now easily added to swap routes with stablecoins and other base assets like ETH, wstETH, and wBTC. Unlike other AMMs and DEXes, the additional hops within a swap route do not incur additional token transfers and therefore gas. This unlocks all sorts of interesting swap combinations and routes between the various pool types in the Balancer ecosystem.
@@ -31,7 +31,7 @@ Once deployed, protocol pools are immediately hooked into one of the deepest and
 Other features of the Vault a new protocol pool can take advantage of include [flash swaps](/reference/swaps/flash-swaps.md), [batch swaps](/reference/swaps/batch-swaps.md), [flash loans](/reference/contracts/flash-loans.md) of pool assets, and [internal balances](/reference/contracts/internal-user-balances.md).
 
 ### Security
-Another important consideration when deciding between building a standalone AMM vs building on top of Balancer is smart contract security. Very few non-forked DEX designs have survived the last cycle due to exploits. Even assuming secure code, it can takes months if not years for a smart contract to be "lindy" enough for larger sources of capital to consider entering. Balancer v2 has been live for almost 2 years and has one of the biggest [bug bounties](https://immunefi.com/bounty/balancer/) in the DeFi space.  The codebase has been [extensively audited](/reference/contracts/security.md) by top names in the smart contract auditing space, such as Trail of Bits and Certora. The Balancer Vault keeps pool balances independent from one another while inheriting the benefits of a single contract vault model.  Balancer governance has no control over any pool parameters unless explicitly authorized and is fully non custodial.
+Another important consideration when deciding between building a standalone AMM vs building on top of Balancer is smart contract security. Very few non-forked DEX designs have survived the last cycle due to exploits. Even assuming secure code, it can take months if not years for a smart contract to be "lindy" enough for larger sources of capital to consider entering. Balancer v2 has been live for almost 2 years and has one of the biggest [bug bounties](https://immunefi.com/bounty/balancer/) in the DeFi space.  The codebase has been [extensively audited](/reference/contracts/security.md) by top names in the smart contract auditing space, such as Trail of Bits and Certora. The Balancer Vault keeps pool balances independent from one another while inheriting the benefits of a single contract vault model.  Balancer governance has no control over any pool parameters unless explicitly authorized and is fully non custodial.
 
 ### Ecosystem & Tooling
 

@@ -60,7 +60,7 @@ You may also need to install the [AWS CLI](https://aws.amazon.com/cli/) and [con
 
 If you wish to create an AWS user with the bare minimum permissions required to deploy this stack, see the [deployer permissions json file](https://github.com/balancer/balancer-api/blob/master/src/config/deployer-permissions.json). Copy this into a new policy, then create a new user and attach that policy to them, and use their credentials for deploying.
 
-#### Bootstraping + Deploying CDK
+#### Bootstrapping + Deploying CDK
 
 If you've never used CDK before in your account you need to run the following bootstrap command with your account id and region.
 
@@ -131,7 +131,7 @@ The `{chainId}` in each endpoint is the chain/network number you wish to request
 
 ### Update Pools Lambda
 
-The update lambda is not called automatically, you must call it to initially poplate the database. We recommend connecting a webhook to
+The update lambda is not called automatically, you must call it to initially populate the database. We recommend connecting a webhook to
 this endpoint that runs with every new Ethereum block, or whenever a transaction is made to the [Balancer Vault Contract](https://etherscan.io/address/0xba12222222228d8ba445958a75a0704d566bf2c8).
 
 Only one instance of this lambda can run at a time per network. If you attempt to run it twice the second call will return a 500 Internal Server Error.
@@ -161,7 +161,7 @@ It loads all the latest token and pool data and calculates the following for eac
 - Fees in last 24hrs
 
 It then saves this information back out to the database. This is so that pools can be fetched in one call to the GraphQL API and contain
-all neccessary data to display them in the Balancer App.
+all necessary data to display them in the Balancer App.
 
 ### Get Pools Lambda
 
@@ -218,8 +218,8 @@ You can customize your deployment with env variables. See .env.example for all p
 - DYNAMODB_POOLS_WRITE_CAPACITY - default: 25 - The write capacity of the `pools` DynamoDB table.
 - DYNAMODB_POOLS_IDX_READ_CAPACITY - default: 10 - The read capacity of the secondary indexes on the `pools` DynamoDB table.
 - DYNAMODB_POOLS_WRITE_CAPACITY - default: 10 - The write capacity of the secondary indexes on the `pools` DynamoDB table.
-- DYNAMODB_TOKENS_READ_CAPACITY - default: 10 - The read capcity of the `tokens` DynamoDB table.
-- DYNAMODB_TOKENS_WRITE_CAPACITY - default: 10 - The write capacity of the `tokens` DynamoDB tbale.
+- DYNAMODB_TOKENS_READ_CAPACITY - default: 10 - The read capacity of the `tokens` DynamoDB table.
+- DYNAMODB_TOKENS_WRITE_CAPACITY - default: 10 - The write capacity of the `tokens` DynamoDB table.
 - DYNAMODB_AUTOSCALE_MAX_MULTIPLIER - default: 1 - Increasing this causes your tables to autoscale their capacity up to CAPACITY \* MULTIPLIER
 
 #### Additional Settings - Rarely used

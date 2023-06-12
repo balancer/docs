@@ -1,6 +1,6 @@
 # Use the Smart Order Router
 
-The Smart Order Router (SOR) is a library for order routing optimzation across Balancer pools for best price execution. It is a component of the SDK but also exists as a standalone package for integrators who only need swap routing logic. The example code and reference shown in the docs will use the SDK swaps module, but it should be straightforward to infer the changes required for the standalone SOR package.
+The Smart Order Router (SOR) is a library for order routing optimization across Balancer pools for best price execution. It is a component of the SDK but also exists as a standalone package for integrators who only need swap routing logic. The example code and reference shown in the docs will use the SDK swaps module, but it should be straightforward to infer the changes required for the standalone SOR package.
 
 [![npm version](https://img.shields.io/npm/v/@balancer-labs/sor/latest.svg)](https://www.npmjs.com/package/@balancer-labs/sor/v/latest)
 
