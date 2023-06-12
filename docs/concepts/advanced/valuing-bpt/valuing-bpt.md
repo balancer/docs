@@ -1,3 +1,10 @@
+---
+title: Overview
+references:
+  - details: StablePool BPT as Collateral
+    link: /concepts/advanced/valuing-bpt/bpt-as-collateral.html
+---
+
 # Valuing BPT
 
 ## Overview
@@ -15,7 +22,7 @@ When evaluating for mission critical operations (e.g. determining if a loan with
 ## Getting BPT Supply
 
 ::: warning Don't use `totalSupply` without reading this first!
-Balancer Pools with [pre-minted BPT](./preminted-bpt.md) will always return `type(uint211).max`.
+Balancer Pools with [pre-minted BPT](../preminted-bpt.md) will always return `type(uint211).max`.
 :::
 
 There are three potential functions to query when determining the BPT supply depending on pool type. When evaluating a new pool type, ensure that you are using the correct supply function!
@@ -69,6 +76,10 @@ A few examples:
 
 - The `WETH/wstETH` pool will return a rate relative to `WETH`
 - `bb-a-USD` will return a rate relative to USD, calculated as a weighted average of the underlying stablecoins (`DAI`, `USDC`, `USDT`) in the nested linear pools (`bb-a-DAI`, `bb-a-USDC`, `bb-a-USDT`)
+
+#### Using Stable Pool BPT as Collateral
+
+Note that the method above does not account for price divergence from the assumed peg. If `stETH` depegs from `ETH` or any stablecoin depegs from USD, `pool.getRate()` will suffer inaccuracies. To price Stable Pool BPT for more mission-critical use cases such as money market collateral, please refer to [this page](./bpt-as-collateral.md).
 
 ### Linear Pools
 

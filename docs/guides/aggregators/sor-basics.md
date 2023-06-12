@@ -4,6 +4,8 @@ The Smart Order Router (SOR) is a library for order routing optimzation across B
 
 [![npm version](https://img.shields.io/npm/v/@balancer-labs/sor/latest.svg)](https://www.npmjs.com/package/@balancer-labs/sor/v/latest)
 
+Note that you can also call the SOR through the Balancer API.  Instructions on how to do this can be found [here](../API/usage.md).
+
 The below docs assume the SDK is installed and initialized:
 
 ```javascript
