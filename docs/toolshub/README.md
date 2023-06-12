@@ -7,7 +7,7 @@ homeImage: /images/hero-circles.png
 features:
   - title: Xeonus and Zen Dragon Tools
     icon: /images/logo-light.svg
-    details: veBAL, Impermanent Loss and Price Impact Calculators create by Xeonus and Zen Dragon
+    details: veBAL, Impermanent Loss and Price Impact Calculators - created by Xeonus and Zen Dragon
     link: https://balancer.tools/veBAL
   - title: Defilytica Analytics
     icon: /images/toolshub/defilytica_simple.png
@@ -15,7 +15,7 @@ features:
     link: https://balancer.defilytica.com/
   - title: veBAL Gauge Multivoter
     icon: /images/toolshub/zekraken.jpg
-    details: Vote for multiple gauges in the one transaction
+    details: Vote for multiple gauges in the one transaction - created by Zekraken
     link: https://vebalvoter.web.app/
   - title: Dune veBAL
     icon: /images/toolshub/DuneLogoCircle.svg
@@ -25,6 +25,10 @@ features:
     icon: /images/toolshub/defi-lama-logo.webp
     details: Balancer Dashboard
     link: https://defillama.com/protocol/balancer
+  - title: Internal Balances Manager
+    icon: /images/toolshub/balancer-symbol.svg
+    details: User-friendly interface designed for traders to easily manage and interact with their internal balances within the Vault - created by Bleu
+    link: https://tools.balancer.blue/internalmanager
 
 footer:
 ---
