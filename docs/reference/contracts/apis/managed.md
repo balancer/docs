@@ -12,7 +12,7 @@ returns (uint256)
 Returns the effective BPT Supply. Implemented in `ManagedPoolSettings`. 
 
 ::: warning
-BPT is minted immediately prior to joins or exits. Swap fees are paid to the pool `owner`, resulting in the accumulation of unminted BPT as debt. It is important to consider this, as any pool operation involving BPT will include this unminted BPT. Therefore, in most cases, it is recommended to utilize this function instead of `totalSupply`, which only returns the supply of minted BPT.
+To consume the BPT supply, users need to query `getActualSupply` rather than the typical `totalSupply`; since Managed Pools have pre-minted BPT, `totalSupply` will return `type(uint111).max`. Instead, querying `getActualSupply` accounts for the true functional supply and takes due protocol fees (paid in BPT) into consideration.
 
 Since this function reads balances directly from the Vault, it is potentially subject to manipulation via reentrancy. To call this function safely, attempt to trigger the reentrancy guard in the Vault by calling a non-reentrant function before calling `getActualSupply`.
 :::
