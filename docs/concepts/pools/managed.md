@@ -59,7 +59,7 @@ Gradually updating swap fees over a set period of time is the recommended method
 Instantaneous updates occur when swap fees are updated immediately instead of on a slow, gradual basis. Lowering fees instantaneously is generally not recommended as it can lead to instantaneous arbitrage opportunities, giving arbitragers an opportunity to extract value. Instantaneous swap fee increases are generally considered safe.
 
 ### Examples
-[ManagedPoolSetting.sol](https://github.com/balancer/balancer-v2-monorepo/blob/master/pkg/pool-weighted/contracts/managed/ManagedPoolSettings.sol) provides the necessary logic for viewing and updating swap fees within a Managed Pool. Below are a few basic examples of how an `owner` can interact with swap fees on a Managed Pool.
+[ManagedPoolSetting.sol](https://github.com/balancer/balancer-v2-monorepo/blob/master/pkg/pool-weighted/contracts/managed/ManagedPoolSettings.sol) provides the necessary logic for viewing and updating swap fees within a Managed Pool. Below are a few basic examples of how to interact with swap fees on a Managed Pool. Only an `owner` can set the swap fee parameters, but anyone can call the getter.
 
 ```solidity
 // Set custom swap fees (Must be >= 1e12 and <>= 95e16)
