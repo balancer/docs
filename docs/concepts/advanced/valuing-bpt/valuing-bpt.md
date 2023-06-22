@@ -54,7 +54,7 @@ $$ price*{BPT} = \frac{\sum*{i=0\rightarrow n}{Balance*i \* Price_i}}{Supply*{BP
 ::: warning Check for Balancer Vault re-entrancy on ALL on-chain price evaluations!!!
 When evaluating BPT price on-chain, it is **CRUCIAL** to verify that the Balancer Vault is not being re-entered.
 
-The recommended method for doing this is using Balancer's [VaultReentrancyLib](https://github.com/balancer/balancer-v2-monorepo/blob/90f77293fef4b8782feae68643c745c754bac45c/pkg/pool-utils/contracts/lib/VaultReentrancyLib.sol). Calling `ensureNotInVaultContext(vault)` will perform a noop call to the Vault that will fail if an attacker is attempting a read-only re-entrancy attack.
+The recommended method for doing this is using Balancer's [VaultReentrancyLib](https://github.com/balancer/balancer-v2-monorepo/blob/9c1574b7d8c4f5040a016cdf79b9d2cc47364fd9/pkg/pool-utils/contracts/lib/VaultReentrancyLib.sol). Calling `ensureNotInVaultContext(vault)` will perform a noop call to the Vault that will fail if an attacker is attempting a read-only re-entrancy attack.
 
 This library can be imported from version >= 3.1.2 of [v2-pool-utils](https://www.npmjs.com/package/@balancer-labs/v2-pool-utils).
 :::
