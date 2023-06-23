@@ -1,5 +1,11 @@
 <script setup>
 import { defineProps } from 'vue';
+import {
+  Listbox,
+  ListboxButton,
+  ListboxOptions,
+  ListboxOption,
+} from '@headlessui/vue';
 
 defineProps({
   networks: {
@@ -18,18 +24,26 @@ defineProps({
 </script>
 <template>
   <div class="ToolboxWidgetNav">
-    <div class="ToolboxWidgetNav__tabs">
-      <button class="ToolboxWidgetNav__tab ToolboxWidgetNav__tab--active">
-        Pools
-      </button>
-      <button class="ToolboxWidgetNav__tab">Batch Swap</button>
-      <button class="ToolboxWidgetNav__tab">Smart Order Router (SOR)</button>
+    <div class="toolbox-pages">
+      <button class="toolbox-page toolbox-page--active">Pools</button>
+      <button class="toolbox-page">Batch Swap</button>
+      <button class="toolbox-page">Smart Order Router (SOR)</button>
     </div>
     <NetworkSelect
       :networks="networks"
       :selectedNetwork="selectedNetwork"
       :onChange="onNetworkSelect"
     />
+    <!--
+      <div class="ToolboxWidgetNav__tabs">
+      <button class="ToolboxWidgetNav__tab ToolboxWidgetNav__tab--active">
+        Pools
+      </button>
+      <button class="ToolboxWidgetNav__tab">Batch Swap</button>
+      <button class="ToolboxWidgetNav__tab">Smart Order Router (SOR)</button>
+    </div>
+
+   -->
   </div>
 </template>
 <style scoped>
@@ -40,7 +54,7 @@ p {
   display: flex;
   justify-content: space-between;
   align-items: center;
-  padding: 12px 24px;
+  padding: 0 24px;
   background-color: #0f172a;
   color: #fff;
   border-top-left-radius: 6px;
@@ -51,37 +65,68 @@ p {
   background-color: #162031;
 }
 
-.ToolboxWidgetNav__tabs {
+.toolbox-pages {
   align-items: center;
   display: flex;
-  gap: 16px;
+  gap: 12px;
 }
 
-.ToolboxWidgetNav__tab {
+.toolbox-page {
   background-color: transparent;
-  border: 1.5px solid #475569;
-  color: #cbd5e1;
-  font-size: 14px;
+  color: #fff;
+  height: 80px;
+  border: 0;
+  font-family: var(--font-family);
   font-weight: 600;
-  padding: 0;
-  border-radius: 16px;
-  padding: 8px 24px;
-  transition-property: color, background-color, border-color,
-    text-decoration-color, fill, stroke, opacity;
-  transition-timing-function: cubic-bezier(0.4, 0, 0.2, 1);
-  transition-duration: 150ms;
+  -webkit-font-smoothing: antialiased;
+  font-size: 14px;
+  position: relative;
+  overflow: hidden;
   cursor: pointer;
+  white-space: nowrap;
 }
 
-.ToolboxWidgetNav__tab:not(.ToolboxWidgetNav__tab--active):hover {
-  background-color: #1e293b;
-  border-color: #1e293b;
-  color: #fff;
+.toolbox-page::before {
+  content: '';
+  position: absolute;
+  top: 0px;
+  left: 0px;
+  display: block;
+  width: 100%;
+  overflow: hidden;
+  transition-property: all;
+  transition-timing-function: cubic-bezier(0.4, 0, 0.2, 1);
+  transition-duration: 0.15s;
+  border-top: 4px solid #9333ea;
+  transform: translate3d(0, -101%, 0);
+  border-color: #fed533;
 }
 
-.ToolboxWidgetNav__tab--active {
-  background-color: #384aff;
-  border-color: #384aff;
-  color: #fff;
+.toolbox-page:hover {
+  color: #fed533;
+}
+
+.toolbox-page:hover::before {
+  transform: translateZ(0);
+}
+
+.toolbox-page--active {
+  color: #fed533;
+}
+
+.toolbox-page--active::before {
+  transform: translateZ(0);
+}
+
+@media (min-width: 720px) {
+  .toolbox-page {
+    font-size: 12px;
+  }
+}
+
+@media (min-width: 768px) {
+  .toolbox-page {
+    font-size: 14px;
+  }
 }
 </style>

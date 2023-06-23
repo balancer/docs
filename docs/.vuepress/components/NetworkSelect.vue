@@ -95,10 +95,9 @@ ul {
 .NetworkSelect__button {
   display: inline-flex;
   align-items: center;
-  width: 200px;
   padding: 10px;
   border: 0;
-  background-color: #1e293b;
+  background-color: #334155;
   color: #fff;
   font-size: 14px;
   font-weight: bold;
@@ -108,11 +107,12 @@ ul {
     text-decoration-color, fill, stroke, opacity;
   transition-timing-function: cubic-bezier(0.4, 0, 0.2, 1);
   transition-duration: 150ms;
-  border-radius: 6px;
+  border-radius: 99px;
   cursor: pointer;
 }
 
 .NetworkSelect__button span {
+  display: none;
   flex: 1;
 }
 
@@ -126,6 +126,7 @@ ul {
 }
 
 .NetworkSelect__button-arrow {
+  display: none;
   width: 20px;
   height: 20px;
   opacity: 0.75;
@@ -183,5 +184,19 @@ ul {
 
 .NetworkSelect__item--active .NetworkSelect__item-check {
   opacity: 1;
+}
+
+@media (min-width: 1024px) {
+  .NetworkSelect__button {
+    width: 200px;
+    border-radius: 6px;
+  }
+  .NetworkSelect__button span {
+    display: block;
+  }
+
+  .NetworkSelect__button-arrow {
+    display: block;
+  }
 }
 </style>

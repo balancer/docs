@@ -60,15 +60,15 @@ watchEffect(async () => {
     <PoolSearchForm :onSubmit="handleSubmit" />
     <PoolsViewLoading v-if="loading" />
     <div v-if="!loading && pool">
-      <div class="header">
-        <p class="pool__name">{{ pool.name }}</p>
-        <p class="pool__id">
-          <strong>ID:</strong>
-          {{ pool.id }}
-        </p>
-      </div>
-      <div class="columns">
-        <div class="details">
+      <div class="layout">
+        <div class="header">
+          <p class="pool__name">{{ pool.name }}</p>
+          <p class="pool__id">
+            <strong>ID:</strong>
+            {{ pool.id }}
+          </p>
+        </div>
+        <div class="tokens">
           <p class="detail__heading">Pool Tokens</p>
           <div class="asset-list">
             <div
@@ -95,43 +95,49 @@ watchEffect(async () => {
                 </p>
               </div>
               <div class="asset__details">
-                <p>
-                  <strong>Address: </strong>
-                  <a
-                    class="external-link"
-                    :href="`${network.explorer}/address/${token.address}`"
-                    target="_blank"
-                    rel="noopener noreferrer"
-                    >{{ token.address.slice(0, 6) }}...{{
-                      token.address.slice(-4)
-                    }}
-                    <svg
-                      xmlns="http://www.w3.org/2000/svg"
-                      viewBox="0 0 20 20"
-                      fill="currentColor"
-                    >
-                      <path
-                        fill-rule="evenodd"
-                        d="M4.25 5.5a.75.75 0 00-.75.75v8.5c0 .414.336.75.75.75h8.5a.75.75 0 00.75-.75v-4a.75.75 0 011.5 0v4A2.25 2.25 0 0112.75 17h-8.5A2.25 2.25 0 012 14.75v-8.5A2.25 2.25 0 014.25 4h5a.75.75 0 010 1.5h-5z"
-                        clip-rule="evenodd"
-                      />
-                      <path
-                        fill-rule="evenodd"
-                        d="M6.194 12.753a.75.75 0 001.06.053L16.5 4.44v2.81a.75.75 0 001.5 0v-4.5a.75.75 0 00-.75-.75h-4.5a.75.75 0 000 1.5h2.553l-9.056 8.194a.75.75 0 00-.053 1.06z"
-                        clip-rule="evenodd"
-                      />
-                    </svg>
-                  </a>
-                </p>
-                <p>
-                  <strong>Balance (wei):</strong>
-                  {{ toWei(token.balance, token.decimals) }}
-                </p>
+                <div class="stats">
+                  <div class="stat">
+                    <p class="stat__label">Address</p>
+                    <p class="stat__value">
+                      <a
+                        class="external-link"
+                        :href="`${network.explorer}/address/${token.address}`"
+                        target="_blank"
+                        rel="noopener noreferrer"
+                        >{{ token.address.slice(0, 6) }}...{{
+                          token.address.slice(-4)
+                        }}
+                        <svg
+                          xmlns="http://www.w3.org/2000/svg"
+                          viewBox="0 0 20 20"
+                          fill="currentColor"
+                        >
+                          <path
+                            fill-rule="evenodd"
+                            d="M4.25 5.5a.75.75 0 00-.75.75v8.5c0 .414.336.75.75.75h8.5a.75.75 0 00.75-.75v-4a.75.75 0 011.5 0v4A2.25 2.25 0 0112.75 17h-8.5A2.25 2.25 0 012 14.75v-8.5A2.25 2.25 0 014.25 4h5a.75.75 0 010 1.5h-5z"
+                            clip-rule="evenodd"
+                          />
+                          <path
+                            fill-rule="evenodd"
+                            d="M6.194 12.753a.75.75 0 001.06.053L16.5 4.44v2.81a.75.75 0 001.5 0v-4.5a.75.75 0 00-.75-.75h-4.5a.75.75 0 000 1.5h2.553l-9.056 8.194a.75.75 0 00-.053 1.06z"
+                            clip-rule="evenodd"
+                          />
+                        </svg>
+                      </a>
+                    </p>
+                  </div>
+                  <div class="stat">
+                    <p class="stat__label">Balance (wei)</p>
+                    <div class="stat__value">
+                      {{ toWei(token.balance, token.decimals) }}
+                    </div>
+                  </div>
+                </div>
               </div>
             </div>
           </div>
         </div>
-        <div class="right-col">
+        <div class="queries">
           <div class="queries-card">
             <div class="tabs">
               <button
@@ -171,6 +177,8 @@ watchEffect(async () => {
               />
             </div>
           </div>
+        </div>
+        <div class="details">
           <div class="pool-details">
             <p class="pool-details__heading">Pool Details</p>
             <div class="testing">
@@ -212,6 +220,8 @@ watchEffect(async () => {
           </div>
         </div>
       </div>
+      <!-- 
+      -->
     </div>
   </div>
 </template>
@@ -222,6 +232,30 @@ p {
 
 .flex-1 {
   flex: 1;
+}
+
+.layout {
+  display: grid;
+  grid-template-columns: minmax(0, 1fr);
+  grid-template-areas: 'header' 'tokens' 'queries' 'details';
+  gap: 36px;
+  width: 100%;
+}
+
+.header {
+  grid-area: header;
+}
+
+.tokens {
+  grid-area: tokens;
+}
+
+.queries {
+  grid-area: queries;
+}
+
+.details {
+  grid-area: details;
 }
 
 .header {
@@ -237,18 +271,25 @@ p {
 .pool__name {
   font-size: 18px;
   font-weight: bold;
+  overflow: hidden;
+  white-space: nowrap;
+  text-overflow: ellipsis;
 }
 
 .pool__id {
   color: #64748b;
   font-size: 14px;
+  overflow: hidden;
+  white-space: nowrap;
+  text-overflow: ellipsis;
 }
 
 .columns {
-  display: grid;
-  grid-template-columns: repeat(2, 1fr);
-  gap: 36px;
-  padding: 24px 0 0;
+  /* display: grid; */
+  /* grid-template-columns: repeat(2, 1fr); */
+  /* grid-template-columns: repeat(1, 1fr); */
+  /* gap: 36px; */
+  /* padding: 24px 0 0; */
 }
 
 .right-col {
@@ -281,11 +322,15 @@ p {
   padding-top: 0;
 }
 
+.asset:last-child {
+  padding-bottom: 0;
+}
+
 .asset__header {
   align-items: center;
   display: flex;
   gap: 16px;
-  padding-bottom: 8px;
+  padding-bottom: 16px;
 }
 
 .asset__symbol {
@@ -325,7 +370,7 @@ p {
 }
 
 .asset__details {
-  padding-left: 52px;
+  /* padding-left: 52px; */
 }
 
 .queries-card {
@@ -415,5 +460,26 @@ p {
   width: 18px;
   height: 18px;
   display: inline;
+}
+
+.stats > * + * {
+  margin-top: 8px;
+}
+
+.stat {
+  align-items: center;
+  display: flex;
+  justify-content: space-between;
+}
+
+.stat__label {
+  font-weight: bold;
+}
+
+@media (min-width: 1024px) {
+  .layout {
+    grid-template-columns: 1fr 1fr;
+    grid-template-areas: 'header header' 'tokens queries' 'details queries' '. queries';
+  }
 }
 </style>
