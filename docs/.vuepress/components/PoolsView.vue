@@ -31,7 +31,7 @@ function toWei(value, decimals) {
 }
 
 const loading = ref(false);
-const activeTab = ref('exit');
+const activeTab = ref('swap');
 
 const pool = ref(undefined);
 

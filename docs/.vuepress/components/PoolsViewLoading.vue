@@ -77,13 +77,6 @@
     </div>
     <div class="right-col">
       <div class="queries-card"></div>
-      <div class="pool-details">
-        <p class="pool-details__heading">Pool Details</p>
-        <TextSkeleton :fontSize="14" :width="175" />
-        <TextSkeleton :fontSize="14" :width="100" />
-        <TextSkeleton :fontSize="14" :width="300" />
-        <TextSkeleton :fontSize="14" :width="125" />
-      </div>
     </div>
   </div>
 </template>
