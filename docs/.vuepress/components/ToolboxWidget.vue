@@ -1,5 +1,6 @@
 <script setup>
 import { ref } from 'vue';
+
 const NETWORKS = [
   {
     id: 1,
@@ -41,8 +42,14 @@ const NETWORKS = [
 const networks = ref(NETWORKS);
 const selectedNetwork = ref(NETWORKS[0]);
 
+const selectedPage = ref('sor');
+
 function onNetworkSelect(value) {
   selectedNetwork.value = value;
+}
+
+function onPageSelect(value) {
+  selectedPage.value = value;
 }
 </script>
 <template>
@@ -51,9 +58,15 @@ function onNetworkSelect(value) {
       :networks="networks"
       :selectedNetwork="selectedNetwork"
       :onNetworkSelect="onNetworkSelect"
+      :selectedPage="selectedPage"
+      :onPageSelect="onPageSelect"
     />
     <div class="ToolboxWidget__content">
-      <PoolsView :network="selectedNetwork" />
+      <PoolsView v-if="selectedPage === 'pools'" :network="selectedNetwork" />
+      <SmartOrderRouterView
+        v-if="selectedPage === 'sor'"
+        :network="selectedNetwork"
+      />
     </div>
   </div>
 </template>

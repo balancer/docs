@@ -1,13 +1,15 @@
 <script setup>
 import { defineProps } from 'vue';
-import {
-  Listbox,
-  ListboxButton,
-  ListboxOptions,
-  ListboxOption,
-} from '@headlessui/vue';
 
 defineProps({
+  selectedPage: {
+    type: String,
+    required: true,
+  },
+  onPageSelect: {
+    type: Function,
+    required: true,
+  },
   networks: {
     type: Array,
     required: true,
@@ -25,25 +27,36 @@ defineProps({
 <template>
   <div class="ToolboxWidgetNav">
     <div class="toolbox-pages">
-      <button class="toolbox-page toolbox-page--active">Pools</button>
-      <button class="toolbox-page">Batch Swap</button>
-      <button class="toolbox-page">Smart Order Router (SOR)</button>
+      <button
+        :class="`toolbox-page ${
+          selectedPage === 'pools' ? 'toolbox-page--active' : ''
+        }`"
+        @click="onPageSelect('pools')"
+      >
+        Pools
+      </button>
+      <button
+        :class="`toolbox-page ${
+          selectedPage === 'batchswap' ? 'toolbox-page--active' : ''
+        }`"
+        @click="onPageSelect('batchswap')"
+      >
+        Batch Swap
+      </button>
+      <button
+        :class="`toolbox-page ${
+          selectedPage === 'sor' ? 'toolbox-page--active' : ''
+        }`"
+        @click="onPageSelect('sor')"
+      >
+        Smart Order Router (SOR)
+      </button>
     </div>
     <NetworkSelect
       :networks="networks"
       :selectedNetwork="selectedNetwork"
       :onChange="onNetworkSelect"
     />
-    <!--
-      <div class="ToolboxWidgetNav__tabs">
-      <button class="ToolboxWidgetNav__tab ToolboxWidgetNav__tab--active">
-        Pools
-      </button>
-      <button class="ToolboxWidgetNav__tab">Batch Swap</button>
-      <button class="ToolboxWidgetNav__tab">Smart Order Router (SOR)</button>
-    </div>
-
-   -->
   </div>
 </template>
 <style scoped>

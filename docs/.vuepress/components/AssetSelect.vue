@@ -5,6 +5,8 @@ import {
   ListboxOptions,
   ListboxOption,
 } from '@headlessui/vue';
+import 'vue-virtual-scroller/dist/vue-virtual-scroller.css';
+import { RecycleScroller } from 'vue-virtual-scroller';
 
 defineProps({
   selectedToken: {
@@ -49,7 +51,7 @@ defineProps({
         </svg>
       </ListboxButton>
       <ListboxOptions v-if="tokens" class="asset-select__options">
-        <ListboxOption
+        <!-- <ListboxOption
           v-for="token in tokens"
           :key="token.address"
           :value="token"
@@ -61,7 +63,26 @@ defineProps({
             :size="20"
           />
           <span>{{ token.symbol }}</span>
-        </ListboxOption>
+        </ListboxOption> -->
+        <RecycleScroller
+          v-slot="{ item }"
+          class="scroller"
+          :items="tokens"
+          :itemSize="48"
+          keyField="address"
+        >
+          <!-- <div class="user">
+            {{ item.symbol }}
+          </div> -->
+          <ListboxOption class="asset-select__option" :value="item">
+            <Avatar
+              :address="item.address"
+              :imageURL="`https://raw.githubusercontent.com/balancer/tokenlists/main/src/assets/images/tokens/${item.address}.png`"
+              :size="20"
+            />
+            <span>{{ item.symbol }}</span>
+          </ListboxOption>
+        </RecycleScroller>
       </ListboxOptions>
     </div>
   </Listbox>
@@ -134,6 +155,17 @@ ul {
   box-shadow: 0 10px 15px -3px rgb(0 0 0 / 0.1), 0 4px 6px -4px rgb(0 0 0 / 0.1);
   z-index: 99;
   background-color: #fff;
+}
+
+.asset-select__options .scroller {
+  max-height: 264px;
+  overflow-y: auto;
+  -ms-overflow-style: none; /* IE and Edge */
+  scrollbar-width: none; /* Firefox */
+}
+
+.asset-select__options .scroller::-webkit-scrollbar {
+  display: none;
 }
 
 .dark .asset-select__options {

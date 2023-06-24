@@ -64,8 +64,6 @@ async function handleSubmit() {
     rpcUrl: props.network.rpcUrl,
   };
 
-  console.log(config);
-
   const balancer = new BalancerSDK(config);
 
   const response = await balancer.swaps.queryBatchSwap({
