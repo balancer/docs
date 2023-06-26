@@ -137,7 +137,7 @@ The upscaled token balances are fed into `_calcOutGivenIn`
 MetaStablePool._calcOutGivenIn
     (
         amplificationParameter = 50000, 
-        balances = ["21445684973708525874136","21953505292747563228232"], 
+        balances = [21445684973708525874136,21953505292747563228232], 
         tokenIndexIn = 1, 
         tokenIndexOut = 0, 
         tokenAmountIn = 49980000000000000000
