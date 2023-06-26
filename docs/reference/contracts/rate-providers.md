@@ -197,7 +197,7 @@ WeightedPool._getYieldProtocolFeesPoolPercentage
 ```
 More details on this specific transaction be found [here.](https://dashboard.tenderly.co/mkflow/project/tx/mainnet/0x9e1d45013f4b65f444bb9b2ef823c0d4fd0a53e2b2bad85ba85a8e26c0bed45d?trace=0.2.7.3.7.1.2.2)
 
-No yield fees being minted indicated by zoer return values of
+No yield fees being minted indicated by zero return values of
 ```
 WeightedPool.getYieldProtocolFeesPoolPercentage
     (
