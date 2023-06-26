@@ -6,7 +6,7 @@ The [Emergency DAO](https://dao.curve.fi/emergencymembers) is an idea pioneered 
 
 ## Members
 
-aThe Balancer Emergency subDAO is a 4-of-7 multisig with the following members as appointed by [this vote](https://forum.balancer.fi/t/form-the-emergency-subdao/3197):
+The Balancer Emergency subDAO is a 4-of-7 multisig with the following members as appointed by [this vote](https://forum.balancer.fi/t/form-the-emergency-subdao/3197):
 
 | Person     | Address                                      |
 | :--------- | :------------------------------------------- |

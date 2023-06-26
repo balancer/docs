@@ -2,7 +2,7 @@
 
 Impermanent Loss, sometimes referred to as divergent loss, can simply be put as the opportunity cost of adding liquidity into an AMM pool vs holding the individual tokens.
 
-Impermanent loss occurs when the prices of two assets experience a divergence in price action. For example if two assets increase by 20% no impermanent loss is noticed; however, if one asset increases in value by 20% then a divergence has taken place and some form of impermanent loss would be noticed in the position. This can be reversed by the other token in the pool also increasing 20% or both tokens converging on the same price movement relative to the original amount the user put in the pool. A basic example of impermanent loss followed by reversal scenario are is outlined on the following page.
+Impermanent loss occurs when the prices of two assets experience a divergence in price action. For example if two assets increase by 20% no impermanent loss is noticed; however, if one asset increases in value by 20% then a divergence has taken place and some form of impermanent loss would be noticed in the position. This can be reversed by the other token in the pool also increasing 20% or both tokens converging on the same price movement relative to the original amount the user put in the pool. A basic example of impermanent loss followed by reversal scenario is outlined on the following page.
 
 <!-- prettier-ignore -->
 $
@@ -135,7 +135,7 @@ While impermanent loss is still applicable in this scenario in comparison to the
 @tab Multi-token Pools
 
 # Multi-token Pools
-Balancer's multi-token pools are on of our unique features. Below is an example of how impermanent loss on one of these pools on the can occur. Inclusive of details on volatility and stable coins.
+Balancer's multi-token pools are one of our unique features. Below is an example of how impermanent loss on one of these pools can occur. Inclusive of details on volatility and stable coins.
 #### Advanced Example – Multi Token Pool
 An example of a multi token pool and how impermanent loss would occur and then be reverted will be solved below. We will look at a Polygon pool: 25% USDC, 25% WMATIC, 25% BAL, 25% WETH. Initially we will assume we joined with $10,000 in USD evenly amongst the assets.
 
@@ -163,7 +163,7 @@ $$ WMATIC = 1 * {\frac{1.13439704}{1.5}} = 0.7562647 \ WETH $$
 Due to a stable coin (USDC) being a portion of the pool, impermanent loss is nearly inevitable unless all tokens return to their initial value at the time of liquidity provision; therefore, the pool above and any pool with stables and non-stable assets a Liquidity Provider is concerned mostly with volatility and their profit to be made from swap fees or liquidity mining. They are essentially positioning themselves with the expectations of this type of price pattern:
 ![Price Chart for mid-July 2022 COMP](/images/Multi-token-chart.png)
 
-##### One may provide liquidity to a pool in whch USDC and an asset (X) at 14.01 are present in mid-July. Then by the time the chart comes to an end the price is still 14.01 after going through stages of upward and downward price changes. This will yield an amount of swap fees to be collected as profit as well as 0% impermanent loss.
+##### One may provide liquidity to a pool in which USDC and an asset (X) at 14.01 are present in mid-July. Then by the time the chart comes to an end the price is still 14.01 after going through stages of upward and downward price changes. This will yield an amount of swap fees to be collected as profit as well as 0% impermanent loss.
 
 At any point where all prices revert to their initial values, arbitragers will bring the tokens back to their initial balances. With a stable token present this would mean no gains can be made without impermanent loss or swap fees being present. In turn the goal can be considered to have low IL and high swap or liquidity mining for a liquidity provider with these types of positions. Also, it can be viewed to manage exposure to volatile assets.
 

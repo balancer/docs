@@ -22,11 +22,32 @@ Managed Pools are feature rich. Some of the features include:
   - Change token weights
 - Circuit Breakers to protect from malicious/compromised tokens
 
+## Pause Swaps
+Managed Pool `owner`s have the ability to pause and unpause swaps. This feature has a wide range of practical applications, including, but not limited to, `owner`s shielding the pool's assets during security vulnerabilities, navigating through volatile market conditions, or preserving the pool's composition as a static basket of assets. `owner`s can be creative with this feature to fit their needs.
+
+### Examples
+[ManagedPoolSettings.sol](https://github.com/balancer/balancer-v2-monorepo/blob/master/pkg/pool-weighted/contracts/managed/ManagedPoolSettings.sol) provides the necessary logic for viewing the swap status of a pool, as well as enabling and disabling swaps within a Managed Pool. Below are a few basic examples of how an `owner` can accomplish this within a Managed Pool. 
+
+```solidity
+// Disable swaps
+_managedPool.setSwapEnabled(false);
+
+// Enable swaps
+// Enbaling swaps might create an instant arbitrage opportunity. 
+// Applying a gradual swap fee update can help mitigate this.
+_managedPool.setSwapEnabled(true);
+```
+
+```solidity
+// Returns true if swaps are currently allowed
+_managedPool.getSwapEnabled();
+```
+
 ## Swap Fees
 
 Swap fees are collected during token swaps (as well as some joins and exits: specifically when the transactions are not proportional with the rest of the pool). Swap fees accrue to the pool, and therefore increase the amount of underlying tokens in the pool. This in turn translates to collected fees going to Liquidity Providers by means of increasing the value of their LP tokens (BPT). Unlike most other Balancer pools, Managed Pools do not split swap fees with the protocol.
 
-`owner`s can adjust swap fee percentages in order to influencing the economic activity and incentives around a Managed Pool. For example, when re-enabling swaps in a previously paused pool, running a swap fee update from a very high swap fee to a low swap fee can help mitigate arbitrage losses.
+`owner`s can adjust swap fee percentages in order to influence the economic activity and incentives around a Managed Pool. For example, when re-enabling swaps in a previously paused pool, running a swap fee update from a very high swap fee to a low swap fee can help mitigate arbitrage losses.
 
 ### Limits
 [ManagedPoolSettings.sol](https://github.com/balancer/balancer-v2-monorepo/blob/master/pkg/pool-weighted/contracts/managed/ManagedPoolSettings.sol) defines `_MAX_SWAP_FEE_PERCENTAGE = 95e16` or 95% and `_MIN_SWAP_FEE_PERCENTAGE = 1e12` or 0.0001%. Swap fee limits exist to safeguard from potential math errors and to incentivize Liquidity Providers to join pools. `owner`s can set custom swap fee percentages in their own implementations as long as they are in the bounds of `_MAX_SWAP_FEE_PERCENTAGE` and `_MIN_SWAP_FEE_PERCENTAGE`.
@@ -37,8 +58,8 @@ Gradually updating swap fees over a set period of time is the recommended method
 ### Instantaneous Updates
 Instantaneous updates occur when swap fees are updated immediately instead of on a slow, gradual basis. Lowering fees instantaneously is generally not recommended as it can lead to instantaneous arbitrage opportunities, giving arbitragers an opportunity to extract value. Instantaneous swap fee increases are generally considered safe.
 
-### Examples:
-[ManagedPoolSetting.sol](https://github.com/balancer/balancer-v2-monorepo/blob/master/pkg/pool-weighted/contracts/managed/ManagedPoolSettings.sol) provides the necessary logic for viewing and updating swap fees within a Managed Pool. Below are a few basic examples of how an `owner` can interact with swap fees on a Managed Pool.
+### Examples
+[ManagedPoolSetting.sol](https://github.com/balancer/balancer-v2-monorepo/blob/master/pkg/pool-weighted/contracts/managed/ManagedPoolSettings.sol) provides the necessary logic for viewing and updating swap fees within a Managed Pool. Below are a few basic examples of how to interact with swap fees on a Managed Pool. Only an `owner` can set the swap fee parameters, but anyone can call the getter.
 
 ```solidity
 // Set custom swap fees (Must be >= 1e12 and <>= 95e16)
@@ -59,6 +80,14 @@ _managedPool.updateSwapFeeGradually(
 ```solidity
 // Get the current value of the swap fee percentage
 uint256 swapFeePercentage = _managedPool.getSwapFeePercentage();
+
+// Get the current gradual swap fee update parameters
+(
+  uint256 startTime,
+  uint256 endTime,
+  uint256 startSwapFeePercentage,
+  uint256 endSwapFeePercentage
+) = _managedPool.getGradualSwapFeeUpdateParams();
 ```
 
 ## Management and Protocol Fees
@@ -72,6 +101,6 @@ Assets Under Management (AUM) fees are paid out to the `owner` for maintaining t
 uint256 desiredAumFeePercentage = 2e16;
 _managedPool.setManagementAumFeePercentage(managementFeePercentage);
 
-// Get the current AUM fee, as well as the last time fee collections occured
+// Get the current AUM fee, as well as the last time fee collections occurred
 (uint256 aumFeePercentage, uint256 lastCollectionTimestamp) = _managedPool.getManagementAumFeeParams();
 ```

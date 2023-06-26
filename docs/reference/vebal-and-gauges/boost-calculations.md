@@ -1,7 +1,7 @@
 # veBAL Boost Calculation
 
 ::: info
-A range of 1x to 2.5x of the calculated APR is possible. A user may be interested in the minimum amount of veBAL for max boost, how their boost is caluclated, and the maximum boost they can receive in cases where 2.5x is not attainable.
+A range of 1x to 2.5x of the calculated APR is possible. A user may be interested in the minimum amount of veBAL for max boost, how their boost is calculated, and the maximum boost they can receive in cases where 2.5x is not attainable.
 :::
 
 For these calculations consider the following:

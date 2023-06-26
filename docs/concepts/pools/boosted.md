@@ -48,7 +48,7 @@ If this were instead to be built as a Boosted Pool, the idle assets can become y
 ## Case Study: bb-a-USD
 ![](/images/bb-a-USD.png)
 
-[Balancer Boosted Aave USD](https://app.balancer.fi/#/ethereum/pool/0xa13a9247ea42d743238089903570127dda72fe4400000000000000000000035d) (symbol: `bb-a-USD`) is a Composable Stable Pool that facilitates swaps between three US Dollar stablecoins (`USDC`, `USDT`, and `DAI`) while sending idle liquidity to Aave. The underlying Linear Pools are:
+[Balancer Boosted Aave USD](https://app.balancer.fi/#/ethereum/pool/0xfebb0bbf162e64fb9d0dfe186e517d84c395f016000000000000000000000502) (symbol: `bb-a-USD`) is a Composable Stable Pool that facilitates swaps between three US Dollar stablecoins (`USDC`, `USDT`, and `DAI`) while sending idle liquidity to Aave. The underlying Linear Pools are:
 * `bb-a-USDC` (consisting of `USDC` and wrapped `aUSDC`)
 * `bb-a-USDT` (consisting of `USDT` and wrapped `aUSDT`)
 * `bb-a-DAI` (consisting of `DAI` and wrapped `aDAI`)
