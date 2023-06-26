@@ -97,7 +97,7 @@ The upscaled token balances are are fed into `_calcOutGivenIn`.
 ComposableStablePool._calcOutGivenIn
     (
         amplificationParameter = 200000, 
-        balances = ["7860983836140600107855","7672488055538194248508","6366340962316480428138"], 
+        balances = [7860983836140600107855,7672488055538194248508,6366340962316480428138], 
         tokenIndexIn = 1, 
         tokenIndexOut = 0, 
         tokenAmountIn = 163517835854389679,
