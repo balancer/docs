@@ -51,7 +51,7 @@ ERC20 approvals - Balancer vault needs to be approved to use deposited tokens as
 
 ### Building a join transaction
 
-`pool.buildJoin` handles building transaction payload which can be send to the provider. It takes following parameters:
+`pool.buildJoin` handles building transaction payload which can be sent to the provider. It takes following parameters:
 
 ```typescript
 function buildJoin(
@@ -111,7 +111,7 @@ joinReceipt will contain the logs confirming all the state changes in the vault.
 
 ## Joining via swaps
 
-Balancer relayer contract allows to combine swaps and joins in a single transaction. This method is particulary useful for joining a pool containing a boosted pool, for example bbaUSD, because it makes possible to join with any bbaUSD's underlying asset.
+Balancer relayer contract allows to combine swaps and joins in a single transaction. This method is particularly useful for joining a pool containing a boosted pool, for example bbaUSD, because it makes possible to join with any bbaUSD's underlying asset.
 
 As an example let's join the Stargate pool with DAI. First step is to swap DAI to bbaDAI to bbaUSD pool token, and then join using the output of that swap.
 
