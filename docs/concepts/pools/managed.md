@@ -22,6 +22,55 @@ Managed Pools are feature rich. Some of the features include:
   - Change token weights
 - Circuit Breakers to protect from malicious/compromised tokens
 
+## Weights
+
+An important feature of Managed Pools that makes them distinct from standard Weighted Pools is that they allow the pool `owner` to update token weights. This allows `owner`s to adjust the distributions of assets within a pool, in order to shift to different DeFi strategies. An example of this is modifying token weights in response to changes in market conditions.
+
+### Gradual Updates
+
+The recommended technique for updating weights in a Managed Pool is to do so gradually. In a gradual weight update, the pool calculates each weight by linearly interpolating between the start and end weights for the specified time. This steady weight update slowly adjusts token prices, encouraging arbitrageurs to rebalance pool balances in line with the desired weights.
+
+### Risks
+
+There are pricing risks that liquidity providers are exposed to during weight changes. If token weights are adjusted too quickly, prices can become unfavorable for the pool (and its Liquidity Providers). Arbitrageurs are able to extract more value when there is a sharper price discrepancy, so it is important for `owner`s to allow ample time for the pool to change weights in order to mitigate this risk. This ensures that sufficient time is given for market/arbitrage corrections, lowering the price impact of the pool rebalancing.
+
+### Examples
+[ManagedPoolSetting.sol](https://github.com/balancer/balancer-v2-monorepo/blob/master/pkg/pool-weighted/contracts/managed/ManagedPoolSettings.sol) provides the necessary logic for viewing and updating token weights within a Managed Pool. Only an `owner` can call `updateWeightsGradually`, but anyone can call the getters.
+
+```solidity
+// Time for weight change to finalize
+uint256 private constant _REWEIGHT_DURATION = 7 days;
+
+// Adjust pool weights in a pool with 3 tokens
+function changeWeights() public {
+  uint256[] memory newWeights = new uint256[](3);
+
+  // Weights must add up to 100% or 1e18
+  newWeights[0] = 30e16 // 30%
+  newWeights[1] = 30e16 // 30%
+  newWeights[2] = 40e16 // 40%
+
+  _managedPool.updateWeightsGradually(
+    block.timestamp, 
+    block.timestamp + _REWEIGHT_DURATION, 
+    _poolTokens, 
+    newWeights
+  );
+}
+```
+```solidity
+// View current weights of tokens in a Managed Pool
+uint256[] memory tokenWeights = _managedPool.getNormalizedWeights();
+
+// View the current gradual weight change update parameters
+(
+  uint256 startTime,
+  uint256 endTime,
+  uint256[] memory startWeights,
+  uint256[] memory endWeights
+) = _managedPool.getGradualWeightUpdateParams();
+```
+
 ## Pause Swaps
 Managed Pool `owner`s have the ability to pause and unpause swaps. This feature has a wide range of practical applications, including, but not limited to, `owner`s shielding the pool's assets during security vulnerabilities, navigating through volatile market conditions, or preserving the pool's composition as a static basket of assets. `owner`s can be creative with this feature to fit their needs.
 
