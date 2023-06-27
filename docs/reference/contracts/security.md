@@ -8,7 +8,7 @@ Balancer's bug bounty program is [among the largest in DeFi](https://immunefi.co
 **Bounties only apply to protcol smart contracts**. Bug reports pertaining to Balancer's web interfaces, both in terms of UI/UX or servers/infrastructure, are not eligible.
 :::
 
-For security reports outside of the bug bounty program, please reach out via security@balancer.finance
+For security reports outside of the scope of the bug bounty program, please reach out via security@balancer.finance
 
 ## Audits
 
