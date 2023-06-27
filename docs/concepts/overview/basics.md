@@ -25,7 +25,7 @@ By separating the AMM curve logic and math from the core swapping functionality,
 - Managed pools that allow customizable parameters
 - Entire protocols to be built on top (ex: Gyroscope)
 
-All of the aggregate liquidity is then easily accessilbe for swappers, aggregators, and arbitraugers. The Balancer [Vault](/concepts/vault) optimizes batching and path logic so that gas costs and capital requirements remain extremely low. Each individual pool and project built on top benefits from the global liquidity within Balancer that brings deep liquidity for base assets and opens up swap paths.
+All of the aggregate liquidity is then easily accessible for swappers, aggregators, and arbitrageurs. The Balancer [Vault](/concepts/vault) optimizes batching and path logic so that gas costs and capital requirements remain extremely low. Each individual pool and project built on top benefits from the global liquidity within Balancer that brings deep liquidity for base assets and opens up swap paths.
 
 ## Who uses Balancer?
 
@@ -39,7 +39,7 @@ Liquidity Providers (LPs) can add liquidity to pools to earn swap fees, liquidit
 
 Arbitrageurs can swap against pools using things like batch swaps and flash loans
 
-BAL Token holders can lock their token into veBAL and participate in the goverenance of evolving the Balancer protocol
+BAL Token holders can lock their token into veBAL and participate in the governance of evolving the Balancer protocol
 
 ## Helpful Articles to Learn More
 

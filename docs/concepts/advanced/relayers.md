@@ -1,12 +1,71 @@
 # Relayers
+A relayer is a contract that, once authorized, can perform specific actions on behalf of another account. This includes swaps, joins, and exits, among other operations. For security, a relayer has to be authorized by the Balancer DAO before it can be used, and even after authorization, each user still needs to opt-in by submitting an approval transaction or signing a message explicitly approving the relayer.
 
-## Overview
+Relayers can follow any structure; it is not necessarily to conform to any specific architecture. That being said, if you are considering writing a relayer, it is worth asking yourself if you should write a standalone relayer or implement a module for the Batch Relayer.
 
-A relayer is a contract that is authorized by the protocol and allows users to make calls to the Vault on behalf of the users. It can use the sender’s ERC20 vault allowance, internal balance, and BPTs on their behalf. Multiple actions (such as exit/join pools, swaps, etc.) can be chained together, improving the UX.
+## Authorizing a Relayer
+There are two levels of authorization required to use a relayer: user-level and protocol-level. This double authorization design is important because relayers have access to all of the Vault's token approvals. It is crucial that relayers are implemented in such a way that users are only able to send transactions for themselves and that no account can make use of another account's token approvals.
 
-For security reasons, a Relayer has to be authorized by the Balancer DAO before it can be used, and even after authorization, each user would still be required to opt into the relayer by submitting an approval transaction or signing a message.
+### User Level
+On the user level, an account must directly approve a relayer. This can be done in a signature-based one-time approval, or a transaction-based persistent approval. For the one-time approval, the most user-friendly way to do this is to use the Balancer SDK. The implementation for one-time approval is [here](https://github.com/balancer/balancer-sdk/blob/develop/balancer-js/src/modules/relayer/relayer.module.ts#L327-L354) with example usage [here](https://github.com/balancer/balancer-sdk/blob/develop/balancer-js/src/modules/joins/joins.module.integration.spec.ts#L132). The persistent method is done by calling `vault.setRelayerApproval(...)` outlined below:
 
-## How it Works
+```solidity
+setRelayerApproval(
+    address sender,
+    address relayer,
+    bool approved)
+
+emits RelayerApprovalChanged(address indexed relayer,
+                             address indexed sender,
+                             bool approved)
+```
+* `sender` - address of the account to be approved (should be `msg.sender`)
+* `relayer` - address of the relayer contract to be approved
+* `approved` - `true` if the intent is to allow the relayer; `false` if the intent is to disallow the relayer
+
+For completeness' sake, there is one (unlikely) scenario in which `sender` does not need to be `msg.sender`: if there is (yet another) a relayer that has permission to call `setRelayerApproval` itself. Approving a relayer with such a permission should be done with extreme care, if at all, as it effectively grants permissions to add any logic *after* a user has signed off.
+
+### Protocol Level
+On the protocol level, the protocol `authorizer` must be told what actions a relayer is allowed to take on which contracts. Using either `grantPermission` or `scheduleGrantPermission`, the protocol admin account (controlled by governance on production networks, developers on testnets, and you yourself on a local instance) can specify allowable permissions. The need for `grantPermission` or `scheduleGrantPermission` depends on whether a permission requires a timelock. More sensitive actions require longer timelocks for protocol safety.
+
+```solidity
+function grantPermission(
+    bytes32 actionId,
+    address account,
+    address where
+) external;
+
+// or...
+
+function scheduleGrantPermission(
+    bytes32 actionId,
+    address account,
+    address where,
+    address[] memory executors
+) external returns (uint256);
+```
+* `actionId` - keccak256 hash of the target address and function selector for the specified action.
+* `account` - in this case, the address of the relayer.
+* `where` - the target contract that the relayer will have permission to execute an action on (often the Vault).
+* `executors` - (only for `scheduleGrantPermission`) a list of addresses that are authorized to execute this scheduled permission granting. Empty array implies public execution.
+
+### Getting an `actionId`
+For contracts like the Vault, you can query them directly with the function selectors: `vault.getActionId(selector)`. 
+
+To generalize a bit more, a Solidity snippet like this can calculate an `actionId` given a `target` address and a function definition `fn` such as `"swap((bytes32,uint8,address,address,uint256,bytes),(address,bool,address,bool),uint256,uint256)"`.
+```solidity
+function generateActionId(address target, string calldata fn) public pure returns (bytes32) {
+    bytes32 disambiguator = bytes32(uint256(address(target)));
+    bytes4 selector = bytes4(keccak256(bytes(fn)));
+    return keccak256(abi.encodePacked(disambiguator, selector));
+}
+```
+
+## The Batch Relayer
+
+The Batch Relayer is a specific relayer contract that allows users to run multiple actions (such as exit/join pools, swaps, etc.) by chaining them together, improving the UX.
+
+## How It Works
 
 ### Contracts
 

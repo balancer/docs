@@ -1688,11 +1688,13 @@
       "Deployment": "20221021-managed-pool",
       "Authorized_Caller_Addresses": [
          "0x02f35dA6A02017154367Bc4d47bb6c7D06C7533B",
-         "0xA29F61256e948F3FB707b4b3B138C5cCb9EF9888"
+         "0xA29F61256e948F3FB707b4b3B138C5cCb9EF9888",
+         "0x10A19e7eE7d7F8a52822f6817de8ea18204F2e4f"
       ],
       "Authorized_Caller_Names": [
          "multisigs/blabs_ops",
-         "multisigs/emergency"
+         "multisigs/emergency",
+         "multisigs/dao"
       ]
    },
    {
@@ -1701,11 +1703,28 @@
       "Deployment": "20221021-managed-pool",
       "Authorized_Caller_Addresses": [
          "0x02f35dA6A02017154367Bc4d47bb6c7D06C7533B",
-         "0xA29F61256e948F3FB707b4b3B138C5cCb9EF9888"
+         "0xA29F61256e948F3FB707b4b3B138C5cCb9EF9888",
+         "0x10A19e7eE7d7F8a52822f6817de8ea18204F2e4f"
       ],
       "Authorized_Caller_Names": [
          "multisigs/blabs_ops",
-         "multisigs/emergency"
+         "multisigs/emergency",
+         "multisigs/dao"
+      ]
+   },
+   {
+      "Fx": "disable()",
+      "Contract": "ManagedPoolFactory",
+      "Deployment": "20221021-managed-pool",
+      "Authorized_Caller_Addresses": [
+         "0x02f35dA6A02017154367Bc4d47bb6c7D06C7533B",
+         "0xA29F61256e948F3FB707b4b3B138C5cCb9EF9888",
+         "0x10A19e7eE7d7F8a52822f6817de8ea18204F2e4f"
+      ],
+      "Authorized_Caller_Names": [
+         "multisigs/blabs_ops",
+         "multisigs/emergency",
+         "multisigs/dao"
       ]
    },
    {
@@ -1842,10 +1861,25 @@
       "Contract": "AaveLinearPoolFactory",
       "Deployment": "20221207-aave-rebalanced-linear-pool-v3",
       "Authorized_Caller_Addresses": [
-         "0xA29F61256e948F3FB707b4b3B138C5cCb9EF9888"
+         "0xA29F61256e948F3FB707b4b3B138C5cCb9EF9888",
+         "0x10A19e7eE7d7F8a52822f6817de8ea18204F2e4f"
       ],
       "Authorized_Caller_Names": [
-         "multisigs/emergency"
+         "multisigs/emergency",
+         "multisigs/dao"
+      ]
+   },
+   {
+      "Fx": "disable()",
+      "Contract": "AaveLinearPoolFactory",
+      "Deployment": "20221207-aave-rebalanced-linear-pool-v3",
+      "Authorized_Caller_Addresses": [
+         "0xA29F61256e948F3FB707b4b3B138C5cCb9EF9888",
+         "0x10A19e7eE7d7F8a52822f6817de8ea18204F2e4f"
+      ],
+      "Authorized_Caller_Names": [
+         "multisigs/emergency",
+         "multisigs/dao"
       ]
    },
    {
@@ -1882,6 +1916,17 @@
       ]
    },
    {
+      "Fx": "addGnosisGauge(address)",
+      "Contract": "GaugeAdder",
+      "Deployment": "20230109-gauge-adder-v3",
+      "Authorized_Caller_Addresses": [
+         "0xc38c5f97B34E175FFd35407fc91a937300E33860"
+      ],
+      "Authorized_Caller_Names": [
+         "multisigs/lm"
+      ]
+   },
+   {
       "Fx": "addOptimismGauge(address)",
       "Contract": "GaugeAdder",
       "Deployment": "20230109-gauge-adder-v3",
@@ -1904,14 +1949,40 @@
       ]
    },
    {
+      "Fx": "addZKSyncGauge(address)",
+      "Contract": "GaugeAdder",
+      "Deployment": "20230109-gauge-adder-v3",
+      "Authorized_Caller_Addresses": [
+         "0xc38c5f97B34E175FFd35407fc91a937300E33860"
+      ],
+      "Authorized_Caller_Names": [
+         "multisigs/lm"
+      ]
+   },
+   {
       "Fx": "disable()",
       "Contract": "WeightedPoolFactory",
       "Deployment": "20230206-weighted-pool-v3",
       "Authorized_Caller_Addresses": [
-         "0xA29F61256e948F3FB707b4b3B138C5cCb9EF9888"
+         "0xA29F61256e948F3FB707b4b3B138C5cCb9EF9888",
+         "0x10A19e7eE7d7F8a52822f6817de8ea18204F2e4f"
       ],
       "Authorized_Caller_Names": [
-         "multisigs/emergency"
+         "multisigs/emergency",
+         "multisigs/dao"
+      ]
+   },
+   {
+      "Fx": "disable()",
+      "Contract": "WeightedPoolFactory",
+      "Deployment": "20230206-weighted-pool-v3",
+      "Authorized_Caller_Addresses": [
+         "0xA29F61256e948F3FB707b4b3B138C5cCb9EF9888",
+         "0x10A19e7eE7d7F8a52822f6817de8ea18204F2e4f"
+      ],
+      "Authorized_Caller_Names": [
+         "multisigs/emergency",
+         "multisigs/dao"
       ]
    },
    {
@@ -1967,10 +2038,25 @@
       "Contract": "ComposableStablePoolFactory",
       "Deployment": "20230206-composable-stable-pool-v3",
       "Authorized_Caller_Addresses": [
-         "0xA29F61256e948F3FB707b4b3B138C5cCb9EF9888"
+         "0xA29F61256e948F3FB707b4b3B138C5cCb9EF9888",
+         "0x10A19e7eE7d7F8a52822f6817de8ea18204F2e4f"
       ],
       "Authorized_Caller_Names": [
-         "multisigs/emergency"
+         "multisigs/emergency",
+         "multisigs/dao"
+      ]
+   },
+   {
+      "Fx": "disable()",
+      "Contract": "ComposableStablePoolFactory",
+      "Deployment": "20230206-composable-stable-pool-v3",
+      "Authorized_Caller_Addresses": [
+         "0xA29F61256e948F3FB707b4b3B138C5cCb9EF9888",
+         "0x10A19e7eE7d7F8a52822f6817de8ea18204F2e4f"
+      ],
+      "Authorized_Caller_Names": [
+         "multisigs/emergency",
+         "multisigs/dao"
       ]
    },
    {
@@ -2048,10 +2134,25 @@
       "Contract": "AaveLinearPoolFactory",
       "Deployment": "20230206-aave-rebalanced-linear-pool-v4",
       "Authorized_Caller_Addresses": [
-         "0xA29F61256e948F3FB707b4b3B138C5cCb9EF9888"
+         "0xA29F61256e948F3FB707b4b3B138C5cCb9EF9888",
+         "0x10A19e7eE7d7F8a52822f6817de8ea18204F2e4f"
       ],
       "Authorized_Caller_Names": [
-         "multisigs/emergency"
+         "multisigs/emergency",
+         "multisigs/dao"
+      ]
+   },
+   {
+      "Fx": "disable()",
+      "Contract": "AaveLinearPoolFactory",
+      "Deployment": "20230206-aave-rebalanced-linear-pool-v4",
+      "Authorized_Caller_Addresses": [
+         "0xA29F61256e948F3FB707b4b3B138C5cCb9EF9888",
+         "0x10A19e7eE7d7F8a52822f6817de8ea18204F2e4f"
+      ],
+      "Authorized_Caller_Names": [
+         "multisigs/emergency",
+         "multisigs/dao"
       ]
    },
    {
@@ -2081,10 +2182,25 @@
       "Contract": "ERC4626LinearPoolFactory",
       "Deployment": "20230206-erc4626-linear-pool-v3",
       "Authorized_Caller_Addresses": [
-         "0xA29F61256e948F3FB707b4b3B138C5cCb9EF9888"
+         "0xA29F61256e948F3FB707b4b3B138C5cCb9EF9888",
+         "0x10A19e7eE7d7F8a52822f6817de8ea18204F2e4f"
       ],
       "Authorized_Caller_Names": [
-         "multisigs/emergency"
+         "multisigs/emergency",
+         "multisigs/dao"
+      ]
+   },
+   {
+      "Fx": "disable()",
+      "Contract": "ERC4626LinearPoolFactory",
+      "Deployment": "20230206-erc4626-linear-pool-v3",
+      "Authorized_Caller_Addresses": [
+         "0xA29F61256e948F3FB707b4b3B138C5cCb9EF9888",
+         "0x10A19e7eE7d7F8a52822f6817de8ea18204F2e4f"
+      ],
+      "Authorized_Caller_Names": [
+         "multisigs/emergency",
+         "multisigs/dao"
       ]
    },
    {
@@ -2158,10 +2274,25 @@
       "Contract": "EulerLinearPoolFactory",
       "Deployment": "20230208-euler-linear-pool",
       "Authorized_Caller_Addresses": [
-         "0xA29F61256e948F3FB707b4b3B138C5cCb9EF9888"
+         "0xA29F61256e948F3FB707b4b3B138C5cCb9EF9888",
+         "0x10A19e7eE7d7F8a52822f6817de8ea18204F2e4f"
       ],
       "Authorized_Caller_Names": [
-         "multisigs/emergency"
+         "multisigs/emergency",
+         "multisigs/dao"
+      ]
+   },
+   {
+      "Fx": "disable()",
+      "Contract": "EulerLinearPoolFactory",
+      "Deployment": "20230208-euler-linear-pool",
+      "Authorized_Caller_Addresses": [
+         "0xA29F61256e948F3FB707b4b3B138C5cCb9EF9888",
+         "0x10A19e7eE7d7F8a52822f6817de8ea18204F2e4f"
+      ],
+      "Authorized_Caller_Names": [
+         "multisigs/emergency",
+         "multisigs/dao"
       ]
    },
    {
@@ -2169,10 +2300,25 @@
       "Contract": "YearnLinearPoolFactory",
       "Deployment": "20230213-yearn-linear-pool",
       "Authorized_Caller_Addresses": [
-         "0xA29F61256e948F3FB707b4b3B138C5cCb9EF9888"
+         "0xA29F61256e948F3FB707b4b3B138C5cCb9EF9888",
+         "0x10A19e7eE7d7F8a52822f6817de8ea18204F2e4f"
       ],
       "Authorized_Caller_Names": [
-         "multisigs/emergency"
+         "multisigs/emergency",
+         "multisigs/dao"
+      ]
+   },
+   {
+      "Fx": "disable()",
+      "Contract": "YearnLinearPoolFactory",
+      "Deployment": "20230213-yearn-linear-pool",
+      "Authorized_Caller_Addresses": [
+         "0xA29F61256e948F3FB707b4b3B138C5cCb9EF9888",
+         "0x10A19e7eE7d7F8a52822f6817de8ea18204F2e4f"
+      ],
+      "Authorized_Caller_Names": [
+         "multisigs/emergency",
+         "multisigs/dao"
       ]
    },
    {
@@ -2202,10 +2348,25 @@
       "Contract": "GearboxLinearPoolFactory",
       "Deployment": "20230213-gearbox-linear-pool",
       "Authorized_Caller_Addresses": [
-         "0xA29F61256e948F3FB707b4b3B138C5cCb9EF9888"
+         "0xA29F61256e948F3FB707b4b3B138C5cCb9EF9888",
+         "0x10A19e7eE7d7F8a52822f6817de8ea18204F2e4f"
       ],
       "Authorized_Caller_Names": [
-         "multisigs/emergency"
+         "multisigs/emergency",
+         "multisigs/dao"
+      ]
+   },
+   {
+      "Fx": "disable()",
+      "Contract": "GearboxLinearPoolFactory",
+      "Deployment": "20230213-gearbox-linear-pool",
+      "Authorized_Caller_Addresses": [
+         "0xA29F61256e948F3FB707b4b3B138C5cCb9EF9888",
+         "0x10A19e7eE7d7F8a52822f6817de8ea18204F2e4f"
+      ],
+      "Authorized_Caller_Names": [
+         "multisigs/emergency",
+         "multisigs/dao"
       ]
    },
    {
@@ -2482,6 +2643,248 @@
       ],
       "Authorized_Caller_Names": [
          "multisigs/emergency"
+      ]
+   },
+   {
+      "Fx": "disable()",
+      "Contract": "YearnLinearPoolFactory",
+      "Deployment": "20230409-yearn-linear-pool-v2",
+      "Authorized_Caller_Addresses": [
+         "0xA29F61256e948F3FB707b4b3B138C5cCb9EF9888"
+      ],
+      "Authorized_Caller_Names": [
+         "multisigs/emergency"
+      ]
+   },
+   {
+      "Fx": "enableRecoveryMode()",
+      "Contract": "YearnLinearPool",
+      "Deployment": "20230409-yearn-linear-pool-v2",
+      "Authorized_Caller_Addresses": [
+         "0x1b300C86980a5195bCF49bD419A068D98dC133Db"
+      ],
+      "Authorized_Caller_Names": [
+         "20221123-pool-recovery-helper/PoolRecoveryHelper"
+      ]
+   },
+   {
+      "Fx": "pause()",
+      "Contract": "YearnLinearPool",
+      "Deployment": "20230409-yearn-linear-pool-v2",
+      "Authorized_Caller_Addresses": [
+         "0xA29F61256e948F3FB707b4b3B138C5cCb9EF9888"
+      ],
+      "Authorized_Caller_Names": [
+         "multisigs/emergency"
+      ]
+   },
+   {
+      "Fx": "setSwapFeePercentage(uint256)",
+      "Contract": "YearnLinearPool",
+      "Deployment": "20230409-yearn-linear-pool-v2",
+      "Authorized_Caller_Addresses": [
+         "0xE4a8ed6c1D8d048bD29A00946BFcf2DB10E7923B"
+      ],
+      "Authorized_Caller_Names": [
+         "gauntlet/GauntletFeeSetter"
+      ]
+   },
+   {
+      "Fx": "disable()",
+      "Contract": "ERC4626LinearPoolFactory",
+      "Deployment": "20230409-erc4626-linear-pool-v4",
+      "Authorized_Caller_Addresses": [
+         "0xA29F61256e948F3FB707b4b3B138C5cCb9EF9888"
+      ],
+      "Authorized_Caller_Names": [
+         "multisigs/emergency"
+      ]
+   },
+   {
+      "Fx": "enableRecoveryMode()",
+      "Contract": "ERC4626LinearPool",
+      "Deployment": "20230409-erc4626-linear-pool-v4",
+      "Authorized_Caller_Addresses": [
+         "0x1b300C86980a5195bCF49bD419A068D98dC133Db"
+      ],
+      "Authorized_Caller_Names": [
+         "20221123-pool-recovery-helper/PoolRecoveryHelper"
+      ]
+   },
+   {
+      "Fx": "pause()",
+      "Contract": "ERC4626LinearPool",
+      "Deployment": "20230409-erc4626-linear-pool-v4",
+      "Authorized_Caller_Addresses": [
+         "0xA29F61256e948F3FB707b4b3B138C5cCb9EF9888"
+      ],
+      "Authorized_Caller_Names": [
+         "multisigs/emergency"
+      ]
+   },
+   {
+      "Fx": "setSwapFeePercentage(uint256)",
+      "Contract": "ERC4626LinearPool",
+      "Deployment": "20230409-erc4626-linear-pool-v4",
+      "Authorized_Caller_Addresses": [
+         "0xE4a8ed6c1D8d048bD29A00946BFcf2DB10E7923B"
+      ],
+      "Authorized_Caller_Names": [
+         "gauntlet/GauntletFeeSetter"
+      ]
+   },
+   {
+      "Fx": "disable()",
+      "Contract": "SiloLinearPoolFactory",
+      "Deployment": "20230410-silo-linear-pool-v2",
+      "Authorized_Caller_Addresses": [
+         "0xA29F61256e948F3FB707b4b3B138C5cCb9EF9888"
+      ],
+      "Authorized_Caller_Names": [
+         "multisigs/emergency"
+      ]
+   },
+   {
+      "Fx": "enableRecoveryMode()",
+      "Contract": "SiloLinearPool",
+      "Deployment": "20230410-silo-linear-pool-v2",
+      "Authorized_Caller_Addresses": [
+         "0x1b300C86980a5195bCF49bD419A068D98dC133Db"
+      ],
+      "Authorized_Caller_Names": [
+         "20221123-pool-recovery-helper/PoolRecoveryHelper"
+      ]
+   },
+   {
+      "Fx": "pause()",
+      "Contract": "SiloLinearPool",
+      "Deployment": "20230410-silo-linear-pool-v2",
+      "Authorized_Caller_Addresses": [
+         "0xA29F61256e948F3FB707b4b3B138C5cCb9EF9888"
+      ],
+      "Authorized_Caller_Names": [
+         "multisigs/emergency"
+      ]
+   },
+   {
+      "Fx": "setSwapFeePercentage(uint256)",
+      "Contract": "SiloLinearPool",
+      "Deployment": "20230410-silo-linear-pool-v2",
+      "Authorized_Caller_Addresses": [
+         "0xE4a8ed6c1D8d048bD29A00946BFcf2DB10E7923B"
+      ],
+      "Authorized_Caller_Names": [
+         "gauntlet/GauntletFeeSetter"
+      ]
+   },
+   {
+      "Fx": "disable()",
+      "Contract": "GearboxLinearPoolFactory",
+      "Deployment": "20230409-gearbox-linear-pool-v2",
+      "Authorized_Caller_Addresses": [
+         "0xA29F61256e948F3FB707b4b3B138C5cCb9EF9888"
+      ],
+      "Authorized_Caller_Names": [
+         "multisigs/emergency"
+      ]
+   },
+   {
+      "Fx": "enableRecoveryMode()",
+      "Contract": "GearboxLinearPool",
+      "Deployment": "20230409-gearbox-linear-pool-v2",
+      "Authorized_Caller_Addresses": [
+         "0x1b300C86980a5195bCF49bD419A068D98dC133Db"
+      ],
+      "Authorized_Caller_Names": [
+         "20221123-pool-recovery-helper/PoolRecoveryHelper"
+      ]
+   },
+   {
+      "Fx": "pause()",
+      "Contract": "GearboxLinearPool",
+      "Deployment": "20230409-gearbox-linear-pool-v2",
+      "Authorized_Caller_Addresses": [
+         "0xA29F61256e948F3FB707b4b3B138C5cCb9EF9888"
+      ],
+      "Authorized_Caller_Names": [
+         "multisigs/emergency"
+      ]
+   },
+   {
+      "Fx": "setSwapFeePercentage(uint256)",
+      "Contract": "GearboxLinearPool",
+      "Deployment": "20230409-gearbox-linear-pool-v2",
+      "Authorized_Caller_Addresses": [
+         "0xE4a8ed6c1D8d048bD29A00946BFcf2DB10E7923B"
+      ],
+      "Authorized_Caller_Names": [
+         "gauntlet/GauntletFeeSetter"
+      ]
+   },
+   {
+      "Fx": "enableRecoveryMode()",
+      "Contract": "AaveLinearPool",
+      "Deployment": "20230410-aave-linear-pool-v5",
+      "Authorized_Caller_Addresses": [
+         "0x1b300C86980a5195bCF49bD419A068D98dC133Db"
+      ],
+      "Authorized_Caller_Names": [
+         "20221123-pool-recovery-helper/PoolRecoveryHelper"
+      ]
+   },
+   {
+      "Fx": "pause()",
+      "Contract": "AaveLinearPool",
+      "Deployment": "20230410-aave-linear-pool-v5",
+      "Authorized_Caller_Addresses": [
+         "0xA29F61256e948F3FB707b4b3B138C5cCb9EF9888"
+      ],
+      "Authorized_Caller_Names": [
+         "multisigs/emergency"
+      ]
+   },
+   {
+      "Fx": "setSwapFeePercentage(uint256)",
+      "Contract": "AaveLinearPool",
+      "Deployment": "20230410-aave-linear-pool-v5",
+      "Authorized_Caller_Addresses": [
+         "0xE4a8ed6c1D8d048bD29A00946BFcf2DB10E7923B"
+      ],
+      "Authorized_Caller_Names": [
+         "gauntlet/GauntletFeeSetter"
+      ]
+   },
+   {
+      "Fx": "disable()",
+      "Contract": "AaveLinearPoolFactory",
+      "Deployment": "20230410-aave-linear-pool-v5",
+      "Authorized_Caller_Addresses": [
+         "0xA29F61256e948F3FB707b4b3B138C5cCb9EF9888"
+      ],
+      "Authorized_Caller_Names": [
+         "multisigs/emergency"
+      ]
+   },
+   {
+      "Fx": "checkpoint()",
+      "Contract": "PolygonZkEVMRootGauge",
+      "Deployment": "20230526-zkevm-root-gauge-factory",
+      "Authorized_Caller_Addresses": [
+         "0x02f35dA6A02017154367Bc4d47bb6c7D06C7533B"
+      ],
+      "Authorized_Caller_Names": [
+         "multisigs/blabs_ops"
+      ]
+   },
+   {
+      "Fx": "killGauge()",
+      "Contract": "PolygonZkEVMRootGauge",
+      "Deployment": "20230526-zkevm-root-gauge-factory",
+      "Authorized_Caller_Addresses": [
+         "0x10A19e7eE7d7F8a52822f6817de8ea18204F2e4f"
+      ],
+      "Authorized_Caller_Names": [
+         "multisigs/dao"
       ]
    }
 ]
