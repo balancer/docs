@@ -7,12 +7,17 @@ title: Overview
 
 The Balancer Subgraph indexes data on the Balancer smart contracts with a GraphQL interface. It updates data in response to function calls and contract events to maintain data on the `Vault`, `Pools`, `AssetManagers` etc, to power front-end apps and integrations.
 
-| Network          | Subgraph URL                                                                                                                                                         |
-| ---------------- | -------------------------------------------------------------------------------------------------------------------------------------------------------------------- |
-| Ethereum Mainnet | [https://thegraph.com/legacy-explorer/subgraph/balancer-labs/balancer-v2](https://thegraph.com/legacy-explorer/subgraph/balancer-labs/balancer-v2)                   |
-| Polygon          | [https://thegraph.com/legacy-explorer/subgraph/balancer-labs/balancer-polygon-v2](https://thegraph.com/legacy-explorer/subgraph/balancer-labs/balancer-polygon-v2)   |
-| Arbitrum         | [https://thegraph.com/legacy-explorer/subgraph/balancer-labs/balancer-arbitrum-v2](https://thegraph.com/legacy-explorer/subgraph/balancer-labs/balancer-arbitrum-v2) |
-| Goerli           | [https://thegraph.com/legacy-explorer/subgraph/balancer-labs/balancer-goerli-v2](https://thegraph.com/legacy-explorer/subgraph/balancer-labs/balancer-goerli-v2)     |
+| Network          | Subgraph URL                                                                                                                                                           |
+| ---------------- | ---------------------------------------------------------------------------------------------------------------------------------------------------------------------- |
+| Ethereum Mainnet | [https://api.thegraph.com/subgraphs/name/balancer-labs/balancer-v2](https://api.thegraph.com/subgraphs/name/balancer-labs/balancer-v2)                                 |
+| Polygon          | [https://api.thegraph.com/subgraphs/name/balancer-labs/balancer-polygon-v2](https://api.thegraph.com/subgraphs/name/balancer-labs/balancer-polygon-v2)                 |
+| Polygon zkEVM    | [https://api.studio.thegraph.com/query/24660/balancer-polygon-zk-v2/version/latest](https://api.studio.thegraph.com/query/24660/balancer-polygon-zk-v2/version/latest) |
+| Arbitrum         | [https://api.thegraph.com/subgraphs/name/balancer-labs/balancer-arbitrum-v2](https://api.thegraph.com/subgraphs/name/balancer-labs/balancer-arbitrum-v2)               |
+| Optimism         | [https://api.thegraph.com/subgraphs/name/balancer-labs/balancer-optimism-v2](https://api.thegraph.com/subgraphs/name/balancer-labs/balancer-optimism-v2)               |
+| Gnosis Chain     | [https://api.thegraph.com/subgraphs/name/balancer-labs/balancer-gnosis-chain-v2](https://api.thegraph.com/subgraphs/name/balancer-labs/balancer-gnosis-chain-v2)       |
+| Avalanche        | [https://api.thegraph.com/subgraphs/name/balancer-labs/balancer-avalanche-v2](https://api.thegraph.com/subgraphs/name/balancer-labs/balancer-avalanche-v2)             |
+| Goerli           | [https://api.thegraph.com/subgraphs/name/balancer-labs/balancer-goerli-v2](https://api.thegraph.com/subgraphs/name/balancer-labs/balancer-goerli-v2)                   |
+| Sepolia          | [https://api.studio.thegraph.com/query/24660/balancer-sepolia-v2/version/latest](https://api.studio.thegraph.com/query/24660/balancer-sepolia-v2/version/latest)       |
 
 ### GraphQL Schema
 
@@ -94,9 +99,18 @@ Fetch historical metrics for a given pool
 ```
 
 Find pools that have specific tokens in them (WETH and BAL in this example)
+
 ```graphql
 {
-  pools(first: 100, where:{tokensList_contains: ["0xc02aaa39b223fe8d0a0e5c4f27ead9083c756cc2","0xba100000625a3754423978a60c9317c58a424e3D"]}) {
+  pools(
+    first: 100
+    where: {
+      tokensList_contains: [
+        "0xc02aaa39b223fe8d0a0e5c4f27ead9083c756cc2"
+        "0xba100000625a3754423978a60c9317c58a424e3D"
+      ]
+    }
+  ) {
     id
     poolType
     poolTypeVersion
