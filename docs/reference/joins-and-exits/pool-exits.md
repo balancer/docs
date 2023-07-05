@@ -88,6 +88,19 @@ Applies to:
 - StablePool
 - MetaStablePool
 
+```solidity
+enum ExitKind { 
+  EXACT_BPT_IN_FOR_ONE_TOKEN_OUT,
+  BPT_IN_FOR_EXACT_TOKENS_OUT,
+  EXACT_BPT_IN_FOR_ALL_TOKENS_OUT
+}
+
+```
+
+Applies to:
+
+- ComposableStablePool
+
 #### Exit Types Explained
 
 - **Single Asset Exit** (`EXACT_BPT_IN_FOR_ONE_TOKEN_OUT`)
