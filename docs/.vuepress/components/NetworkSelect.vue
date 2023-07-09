@@ -1,32 +1,20 @@
 <script setup>
-import { defineProps } from 'vue';
 import {
   Listbox,
   ListboxButton,
   ListboxOptions,
   ListboxOption,
 } from '@headlessui/vue';
+import { NETWORKS } from '../config/config';
+import { useNetwork } from '../providers/network';
 
-defineProps({
-  networks: {
-    type: Array,
-    required: true,
-  },
-  selectedNetwork: {
-    type: Object,
-    required: true,
-  },
-  onChange: {
-    type: Function,
-    required: true,
-  },
-});
+const { network: selectedNetwork, selectNetwork } = useNetwork();
 </script>
 <template>
   <Listbox
     :defaultValue="selectedNetwork"
     class="NetworkSelect"
-    @update:model-value="$value => onChange($value)"
+    @update:model-value="selectNetwork"
   >
     <div>
       <ListboxButton class="NetworkSelect__button">
@@ -50,7 +38,7 @@ defineProps({
       </ListboxButton>
       <ListboxOptions class="NetworkSelect__menu">
         <ListboxOption
-          v-for="network in networks"
+          v-for="network in NETWORKS"
           :key="network.id"
           :class="`NetworkSelect__item ${
             network.id === selectedNetwork.id

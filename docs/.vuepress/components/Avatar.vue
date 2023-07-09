@@ -19,18 +19,21 @@ defineProps({
 const error = ref(false);
 </script>
 <template>
-  <img
-    v-if="!error"
-    :src="imageURL"
-    :style="{
-      borderRadius: '99px',
-      width: `${size}px`,
-      height: `${size}px`,
-      background: 'white',
-    }"
-    @error="error = true"
-  />
-  <div v-else :style="{ lineHeight: 0 }">
-    <Jazzicon :address="address" :diameter="size" />
+  <div class="avatar">
+    <img
+      v-if="!error"
+      :src="imageURL"
+      :style="{
+        borderRadius: '99px',
+        width: `${size}px`,
+        height: `${size}px`,
+        background: 'white',
+        display: 'block',
+      }"
+      @error="error = true"
+    />
+    <div v-else :style="{ lineHeight: 0 }">
+      <Jazzicon :address="address" :diameter="size" />
+    </div>
   </div>
 </template>

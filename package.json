@@ -43,6 +43,7 @@
     "@balancer/sdk": "^0.0.3",
     "@ethersproject/bignumber": "^5.7.0",
     "@headlessui/vue": "^1.7.14",
+    "axios": "^1.4.0",
     "color": "^4.2.3",
     "ethereum-blockies": "^0.1.1",
     "ethers": "^6.4.0",

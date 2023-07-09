@@ -1,29 +1,18 @@
 <script setup>
-import { watchEffect, ref } from 'vue';
+import { watch, ref, computed } from 'vue';
 import { SubgraphPoolProvider } from '@balancer/sdk';
 import { ethers } from 'ethers';
 import Avatar from './Avatar.vue';
+import { useNetwork } from '../providers/network';
+import { usePools } from '../providers/pools';
+import { useTokens } from '../providers/tokens';
 
-const props = defineProps({
-  network: {
-    type: Object,
-    required: true,
-  },
-});
+const { network } = useNetwork();
+const { pools, isLoading: poolsLoading, getPool } = usePools();
+const { getTokens, getToken } = useTokens();
 
-async function handleSubmit(value) {
-  loading.value = true;
-  const subgraphProvider = new SubgraphPoolProvider(props.network.id);
-  const { pools } = await subgraphProvider.getPools({
-    timestamp: BigInt(new Date().getDate()),
-  });
-
-  const _pool = pools.find(p => p.address === value || p.id === value);
-  if (_pool) {
-    pool.value = _pool;
-  }
-
-  loading.value = false;
+function handleSubmit(value) {
+  pool.value = getPool(value);
 }
 
 function toWei(value, decimals) {
@@ -35,31 +24,19 @@ const activeTab = ref('swap');
 
 const pool = ref(undefined);
 
-watchEffect(async () => {
-  loading.value = true;
-  const subgraphProvider = new SubgraphPoolProvider(props.network.id);
-  const { pools } = await subgraphProvider.getPools({
-    timestamp: BigInt(new Date().getDate()),
-  });
+if (pools.value.length > 0) {
+  pool.value = pools.value[0];
+}
 
-  if (props.network.id === 1) {
-    pool.value = pools.find(
-      p =>
-        p.id ===
-        '0x5c6ee304399dbdb9c8ef030ab642b10820db8f56000200000000000000000014'
-    );
-  } else {
-    pool.value = pools[0];
-  }
-
-  loading.value = false;
+watch(pools, () => {
+  pool.value = pools.value[0];
 });
 </script>
 <template>
   <div class="PoolsView">
     <PoolSearchForm :onSubmit="handleSubmit" />
-    <PoolsViewLoading v-if="loading" />
-    <div v-if="!loading && pool">
+    <PoolsViewLoading v-if="poolsLoading" />
+    <div v-if="!poolsLoading && pool">
       <div class="layout">
         <div class="header">
           <p class="pool__name">{{ pool.name }}</p>
@@ -79,7 +56,7 @@ watchEffect(async () => {
               <div class="asset__header">
                 <Avatar
                   :address="token.address"
-                  :imageURL="`https://raw.githubusercontent.com/balancer/tokenlists/main/src/assets/images/tokens/${token.address}.png`"
+                  :imageURL="getToken(token.address)?.logoURI"
                   :size="36"
                 />
                 <div class="flex-1">
@@ -220,8 +197,6 @@ watchEffect(async () => {
           </div>
         </div>
       </div>
-      <!-- 
-      -->
     </div>
   </div>
 </template>

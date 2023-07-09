@@ -32,7 +32,7 @@ defineProps({
       >
         <Avatar
           :address="selectedToken.address"
-          :imageURL="`https://raw.githubusercontent.com/balancer/tokenlists/main/src/assets/images/tokens/${selectedToken.address}.png`"
+          :imageURL="selectedToken.logoURI"
           :size="20"
         />
         <span>{{ selectedToken.symbol }}</span>
@@ -51,19 +51,6 @@ defineProps({
         </svg>
       </ListboxButton>
       <ListboxOptions v-if="tokens" class="asset-select__options">
-        <!-- <ListboxOption
-          v-for="token in tokens"
-          :key="token.address"
-          :value="token"
-          class="asset-select__option"
-        >
-          <Avatar
-            :address="token.address"
-            :imageURL="`https://raw.githubusercontent.com/balancer/tokenlists/main/src/assets/images/tokens/${token.address}.png`"
-            :size="20"
-          />
-          <span>{{ token.symbol }}</span>
-        </ListboxOption> -->
         <RecycleScroller
           v-slot="{ item }"
           class="scroller"
@@ -71,13 +58,10 @@ defineProps({
           :itemSize="48"
           keyField="address"
         >
-          <!-- <div class="user">
-            {{ item.symbol }}
-          </div> -->
           <ListboxOption class="asset-select__option" :value="item">
             <Avatar
               :address="item.address"
-              :imageURL="`https://raw.githubusercontent.com/balancer/tokenlists/main/src/assets/images/tokens/${item.address}.png`"
+              :imageURL="item.logoURI"
               :size="20"
             />
             <span>{{ item.symbol }}</span>

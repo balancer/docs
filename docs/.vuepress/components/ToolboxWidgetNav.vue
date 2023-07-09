@@ -10,18 +10,6 @@ defineProps({
     type: Function,
     required: true,
   },
-  networks: {
-    type: Array,
-    required: true,
-  },
-  selectedNetwork: {
-    type: Object,
-    required: true,
-  },
-  onNetworkSelect: {
-    type: Function,
-    required: true,
-  },
 });
 </script>
 <template>
@@ -52,11 +40,7 @@ defineProps({
         Smart Order Router (SOR)
       </button>
     </div>
-    <NetworkSelect
-      :networks="networks"
-      :selectedNetwork="selectedNetwork"
-      :onChange="onNetworkSelect"
-    />
+    <NetworkSelect />
   </div>
 </template>
 <style scoped>

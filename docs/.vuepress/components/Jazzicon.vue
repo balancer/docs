@@ -1,7 +1,7 @@
 <template>
   <div ref="jazzicon" />
 </template>
-<script>
+<script lang="ts">
 import MersenneTwister from 'mersenne-twister';
 import Color from 'color';
 
@@ -147,7 +147,12 @@ export default {
       const amount = generator.random() * 30 - wobble / 2;
       return colors.map(function (hex) {
         const color = Color(hex);
+        if (!color) {
+          return hex;
+        }
+
         color.rotate(amount);
+
         return color.hex();
       });
     },

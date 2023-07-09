@@ -1,104 +1,356 @@
 <script setup>
-import { watchEffect, ref } from 'vue';
-import { BalancerSDK } from '@balancer-labs/sdk';
+import { ref, watch } from 'vue';
+import {
+  SwapKind,
+  Token,
+  sorGetSwapsWithPools,
+  TokenAmount,
+  sorParseRawPools,
+  SubgraphPoolProvider,
+} from '@balancer/sdk';
+import { useTokens } from '../providers/tokens';
+import { useNetwork } from '../providers/network';
+import { usePools } from '../providers/pools';
 import { ethers } from 'ethers';
-import { BigNumber } from '@ethersproject/bignumber';
 
-const props = defineProps({
-  network: {
-    type: Object,
-    required: true,
-  },
+const { network } = useNetwork();
+const { tokens } = useTokens();
+const { pools } = usePools();
+
+const isLoading = ref(true);
+const noRouteFound = ref(false);
+
+const swapKind = ref(SwapKind.GivenIn);
+
+const tokenIn = ref(tokens.value[0]);
+const tokenOut = ref(tokens.value[1]);
+
+const amountIn = ref('1.0');
+const amountOut = ref('');
+
+const tokenFilters = ref([]);
+const poolFilters = ref([]);
+
+const route = ref(null);
+
+watch(network, () => {
+  tokenIn.value = null;
+  tokenOut.value = null;
+  amountIn.value = '1.0';
+  amountOut.value = '';
+  route.value = null;
 });
 
-const tokens = ref([]);
-const tokenIn = ref(null);
+watch(tokens, () => {
+  tokenIn.value = tokens.value[0];
+  tokenOut.value = tokens.value[1];
+});
 
-async function fetchAllTokens(network) {
-  const _tokens = {};
+watch(
+  [
+    tokenIn,
+    tokenOut,
+    () => tokenFilters.value.length,
+    () => poolFilters.value.length,
+  ],
+  () => {
+    updateRoute();
+  }
+);
 
-  const config = {
-    network: network.id,
-    rpcUrl: network.rpcUrl,
-  };
+watch(tokenIn, () => {
+  if (swapKind.value === SwapKind.GivenIn) {
+    amountOut.value = '';
+  }
+});
 
-  const { swaps } = new BalancerSDK(config);
-
-  await swaps.fetchPools();
-
-  const pools = swaps.getPools();
-
-  for (const pool of pools) {
-    for (const token of pool.tokens) {
-      _tokens[token.address] = token;
-    }
+watch(tokenOut, () => {
+  if (swapKind.value === SwapKind.GivenIn) {
+    amountOut.value = '';
   }
 
-  const tokensArr = Object.values(_tokens);
-  tokenIn.value = tokensArr[0];
-  tokens.value = tokensArr;
-
-  console.log('done');
-}
-
-watchEffect(() => {
-  fetchAllTokens(props.network);
+  if (swapKind.value === SwapKind.GivenOut) {
+    amountIn.value = '';
+  }
 });
 
-// const allTokens = computed(async () => {
-//   const config = {
-//     network: props.network.id,
-//     rpcUrl: props.network.rpcUrl,
-//   };
+watch(route, () => {
+  if (!route.value) {
+    return;
+  }
 
-//   const { sor, swaps, ...rest } = new BalancerSDK(config);
+  if (swapKind.value === SwapKind.GivenIn) {
+    amountOut.value = ethers.formatUnits(
+      route.value.paths.reduce((acc, path) => {
+        return acc + path.outputAmount.amount;
+      }, 0n),
+      tokenOut.value.decimals
+    );
+  }
 
-//   await swaps.fetchPools();
+  if (swapKind.value === SwapKind.GivenOut) {
+    amountIn.value = ethers.formatUnits(
+      route.value.paths.reduce((acc, path) => {
+        return acc + path.inputAmount.amount;
+      }, 0n),
+      tokenIn.value.decimals
+    );
+  }
+});
 
-//   return [];
-// });
+async function updateRoute() {
+  isLoading.value = true;
+  noRouteFound.value = false;
+  route.value = null;
 
-async function handleSubmit() {
-  const DAI = '0x6B175474E89094C44Da98b954EedeAC495271d0F';
-  const WETH = '0xC02aaA39b223FE8D0A0e5C4F27eAD9083C756Cc2';
+  console.log('swapKind', swapKind.value);
 
-  const config = {
-    network: props.network.id,
-    rpcUrl: props.network.rpcUrl,
-  };
+  const tIn = new Token(
+    network.value.id,
+    tokenIn.value.address,
+    tokenIn.value.decimals
+  );
 
-  const { sor, swaps, ...rest } = new BalancerSDK(config);
+  const tOut = new Token(
+    network.value.id,
+    tokenOut.value.address,
+    tokenOut.value.decimals
+  );
 
-  console.log('loading pools...');
+  const tokenAmount = TokenAmount.fromHumanAmount(
+    swapKind.value === SwapKind.GivenIn ? tIn : tOut,
+    swapKind.value === SwapKind.GivenIn ? amountIn.value : amountOut.value
+  );
 
-  await swaps.fetchPools();
-
-  console.log('pools loaded!');
-
-  console.log('fetching route...');
-
-  const response = await swaps.findRouteGivenIn({
-    tokenIn: DAI,
-    tokenOut: WETH,
-    amount: ethers.parseEther('100'),
-    gasPrice: BigNumber.from('20000000000'),
-    maxPools: 4,
+  const poolProvider = new SubgraphPoolProvider(network.value.id, undefined, {
+    gqlAdditionalPoolQueryFields: 'name symbol totalLiquidity',
   });
 
-  console.log(response);
+  const timestamp = BigInt(Math.floor(new Date().getTime() / 1000));
+
+  const { pools } = await poolProvider.getPools({ timestamp });
+
+  const filteredPools = pools.filter(pool => {
+    for (const token of pool.tokens) {
+      try {
+        TokenAmount.fromHumanAmount(token, token.balance);
+      } catch (error) {
+        return false;
+      }
+    }
+
+    // filter by tokens
+    if (
+      tokenFilters.value.length > 0 &&
+      pool.tokens.filter(token =>
+        tokenFilters.value
+          .map(t => t.address.toLowerCase())
+          .includes(token.address.toLowerCase())
+      ).length === 0
+    ) {
+      return false;
+    }
+
+    // filter by pools
+    if (
+      poolFilters.value.length > 0 &&
+      !poolFilters.value
+        .map(p => p.address.toLowerCase())
+        .includes(pool.address.toLowerCase())
+    ) {
+      return false;
+    }
+
+    return true;
+  });
+
+  const parsedPools = await sorParseRawPools(
+    network.value.id,
+    filteredPools,
+    []
+  );
+
+  try {
+    const response = await sorGetSwapsWithPools(
+      tIn,
+      tOut,
+      swapKind.value,
+      tokenAmount,
+      parsedPools
+    );
+    route.value = response;
+  } catch {
+    noRouteFound.value = true;
+    return;
+  }
+
+  isLoading.value = false;
+  isLoading.value = false;
 }
-// const balancer = new BalancerSDK.
+
+function onAmountInChange() {
+  swapKind.value = SwapKind.GivenIn;
+  amountOut.value = '';
+  updateRoute();
+}
+
+function onAmountOutChange() {
+  swapKind.value = SwapKind.GivenOut;
+  amountIn.value = '';
+  updateRoute();
+}
 </script>
 <template>
-  <div>
-    <p>SOR</p>
-    <button @click="handleSubmit">Click Me</button>
-    <div v-if="tokens.length > 0">
-      <AssetSelect
-        :selectedToken="tokenIn"
-        :tokens="tokens"
-        :onChange="$token => (tokenIn = $token)"
+  <div
+    v-if="tokens.length > 0 && pools.length > 0"
+    style="padding-bottom: 20px"
+    class="filters"
+  >
+    <Filter
+      v-slot="item"
+      enabledKey="address"
+      enabledLabel="symbol"
+      :enabled="tokenFilters"
+      :onEnable="token => tokenFilters.push(token)"
+      :onDisable="
+        token => (tokenFilters = tokenFilters.filter(t => t !== token))
+      "
+      :items="tokens"
+      label="Tokens"
+    >
+      <FilterOption
+        :imageURL="item.logoURI"
+        :textA="item.symbol"
+        :textB="item.name"
       />
+    </Filter>
+    <Filter
+      v-slot="item"
+      enabledKey="address"
+      enabledLabel="symbol"
+      :enabled="poolFilters"
+      :onEnable="pool => poolFilters.push(pool)"
+      :onDisable="pool => (poolFilters = poolFilters.filter(p => p !== pool))"
+      :items="pools"
+      label="Pools"
+    >
+      <FilterOption
+        :imageURL="item.logoURI"
+        :textA="item.symbol"
+        :textB="item.name"
+      />
+    </Filter>
+  </div>
+  <div v-if="tokenIn && tokenOut">
+    <div class="token-cols">
+      <div style="display: flex; flex-direction: column; gap: 24px">
+        <div>
+          <label>Token In</label>
+          <InputWithEmbed
+            v-model="amountIn"
+            placeholder="0.0"
+            @input="onAmountInChange"
+          >
+            <AssetSelect
+              :selectedToken="tokenIn"
+              :tokens="tokens"
+              :onChange="$token => (tokenIn = $token)"
+            />
+          </InputWithEmbed>
+        </div>
+      </div>
+      <div>
+        <label>Token Out</label>
+        <InputWithEmbed
+          v-model="amountOut"
+          placeholder="0.0"
+          @input="onAmountOutChange"
+        >
+          <AssetSelect
+            :selectedToken="tokenOut"
+            :tokens="tokens"
+            :onChange="$token => (tokenOut = $token)"
+          />
+        </InputWithEmbed>
+      </div>
+    </div>
+    <div>
+      <div
+        v-if="isLoading || noRouteFound"
+        :class="`route-empty ${isLoading ? 'route-empty--loading' : ''}`"
+      >
+        <span v-if="noRouteFound">No Route Found</span>
+      </div>
+      <div v-else class="route">
+        <p class="route-heading">Batch Swap Route</p>
+        <RouteDisplay :tokenIn="tokenIn" :tokenOut="tokenOut" :route="route" />
+      </div>
     </div>
   </div>
 </template>
+<style scoped>
+label {
+  color: #475569;
+  display: block;
+  font-size: 14px;
+  font-weight: bold;
+  margin-bottom: 8px;
+}
+
+p {
+  margin: 0;
+  padding: 0;
+}
+
+.token-cols {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 24px;
+  margin-bottom: 24px;
+}
+
+.route-empty {
+  aspect-ratio: 36 / 9;
+  background-color: #eaf0f6;
+  border-radius: 12px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 14px;
+  font-weight: bold;
+}
+
+.route-empty--loading {
+  animation: pulse 2s cubic-bezier(0.4, 0, 0.6, 1) infinite;
+}
+
+@keyframes pulse {
+  0%,
+  100% {
+    opacity: 1;
+  }
+  50% {
+    opacity: 0.5;
+  }
+}
+
+.route {
+  border: 1px solid #eaf0f6;
+  border-radius: 12px;
+  padding: 12px;
+}
+
+.route-heading {
+  text-align: center;
+  font-size: 14px;
+  font-weight: bold;
+  margin-bottom: 16px;
+}
+
+.filters {
+  align-items: center;
+  display: flex;
+  gap: 12px;
+  flex-wrap: wrap;
+}
+</style>
