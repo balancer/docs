@@ -75,6 +75,12 @@ As noted in the comment, only the InvestmentPool has a fourth:`MANAGEMENT_FEE_TO
 
 #### StablePool ExitKinds
 
+::: warning 
+ComposableStablePools have different `ExitKind` enum ordering from StablePools and MetaStablePools 
+:::
+
+For **StablePool** and **MetaStablePool** the following `ExitKind` applies: 
+
 ```solidity
 enum ExitKind {
     EXACT_BPT_IN_FOR_ONE_TOKEN_OUT,
@@ -83,10 +89,8 @@ enum ExitKind {
 }
 ```
 
-Applies to:
+For **ComposableStablePool** the following `ExitKind` applies: 
 
-- StablePool
-- MetaStablePool
 
 ```solidity
 enum ExitKind { 
@@ -97,9 +101,6 @@ enum ExitKind {
 
 ```
 
-Applies to:
-
-- ComposableStablePool
 
 #### Exit Types Explained
 
