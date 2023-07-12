@@ -11,7 +11,7 @@ For more information on specific deployments as well as changelogs for different
 | Contract                         | Address                                                                                                                              | Deployment                                                                                                                                  |
 |:---------------------------------|:-------------------------------------------------------------------------------------------------------------------------------------|:--------------------------------------------------------------------------------------------------------------------------------------------|
 | AaveLinearPoolFactory (v5)       | [0x4b7b369989e613ff2C65768B7Cf930cC927F901E](https://zkevm.polygonscan.com//address/0x4b7b369989e613ff2C65768B7Cf930cC927F901E#code) | [20230410-aave-linear-pool-v5](https://github.com/balancer/balancer-deployments/blob/master/tasks/20230410-aave-linear-pool-v5)             |
-| ComposableStablePoolFactory (v4) | [0x8eA89804145c007e7D226001A96955ad53836087](https://zkevm.polygonscan.com//address/0x8eA89804145c007e7D226001A96955ad53836087#code) | [20230320-composable-stable-pool-v4](https://github.com/balancer/balancer-deployments/blob/master/tasks/20230320-composable-stable-pool-v4) |
+| ComposableStablePoolFactory (v5) | [0x956CCab09898C0AF2aCa5e6C229c3aD4E93d9288](https://zkevm.polygonscan.com//address/0x956CCab09898C0AF2aCa5e6C229c3aD4E93d9288#code) | [20230711-composable-stable-pool-v5](https://github.com/balancer/balancer-deployments/blob/master/tasks/20230711-composable-stable-pool-v5) |
 | ERC4626LinearPoolFactory (v4)    | [0x6B1Da720Be2D11d95177ccFc40A917c2688f396c](https://zkevm.polygonscan.com//address/0x6B1Da720Be2D11d95177ccFc40A917c2688f396c#code) | [20230409-erc4626-linear-pool-v4](https://github.com/balancer/balancer-deployments/blob/master/tasks/20230409-erc4626-linear-pool-v4)       |
 | GearboxLinearPoolFactory (v2)    | [0x687b8C9b41E01Be8B591725fac5d5f52D0564d79](https://zkevm.polygonscan.com//address/0x687b8C9b41E01Be8B591725fac5d5f52D0564d79#code) | [20230409-gearbox-linear-pool-v2](https://github.com/balancer/balancer-deployments/blob/master/tasks/20230409-gearbox-linear-pool-v2)       |
 | ManagedPoolFactory (v2)          | [0xaf779e58dafb4307b998C7b3C9D3f788DFc80632](https://zkevm.polygonscan.com//address/0xaf779e58dafb4307b998C7b3C9D3f788DFc80632#code) | [20230411-managed-pool-v2](https://github.com/balancer/balancer-deployments/blob/master/tasks/20230411-managed-pool-v2)                     |
@@ -46,6 +46,7 @@ For more information on specific deployments as well as changelogs for different
 | L2LayerZeroBridgeForwarder  | [0xDEd7Fef7D8eCdcB74F22f0169e1A9EC696e6695d](https://zkevm.polygonscan.com//address/0xDEd7Fef7D8eCdcB74F22f0169e1A9EC696e6695d#code) | [20230404-l2-layer0-bridge-forwarder](https://github.com/balancer/balancer-deployments/blob/master/tasks/20230404-l2-layer0-bridge-forwarder)     |
 | ProtocolFeesCollector       | [0xce88686553686DA562CE7Cea497CE749DA109f9F](https://zkevm.polygonscan.com//address/0xce88686553686DA562CE7Cea497CE749DA109f9F#code) | [20210418-vault](https://github.com/balancer/balancer-deployments/blob/master/tasks/20210418-vault)                                               |
 | ProtocolFeesWithdrawer      | [0x230a59F4d9ADc147480f03B0D3fFfeCd56c3289a](https://zkevm.polygonscan.com//address/0x230a59F4d9ADc147480f03B0D3fFfeCd56c3289a#code) | [20220517-protocol-fee-withdrawer](https://github.com/balancer/balancer-deployments/blob/master/tasks/20220517-protocol-fee-withdrawer)           |
+| VeBoostV2 (v2)              | [0xE39B5e3B6D74016b2F6A9673D7d7493B6DF549d5](https://zkevm.polygonscan.com//address/0xE39B5e3B6D74016b2F6A9673D7d7493B6DF549d5#code) | [20230525-l2-veboost-v2](https://github.com/balancer/balancer-deployments/blob/master/tasks/20230525-l2-veboost-v2)                               |
 | VotingEscrowDelegationProxy | [0xc7E5ED1054A24Ef31D827E6F86caA58B3Bc168d7](https://zkevm.polygonscan.com//address/0xc7E5ED1054A24Ef31D827E6F86caA58B3Bc168d7#code) | [20230316-l2-ve-delegation-proxy](https://github.com/balancer/balancer-deployments/blob/master/tasks/20230316-l2-ve-delegation-proxy)             |
 
 ## Ungrouped Active/Current Contracts
@@ -69,8 +70,10 @@ These deployments were in use at some point, and may still be in active operatio
 #### If you can only find the contract you are looking for in the deprecated section and it is not an old pool, try checking the deployments tasks to find it or ask in the Discord before using a deprecated contract.
 
     
-No deprecated contracts found
-
+| Contract                         | Address                                                                                                                              | Deployment                                                                                                                                  |
+|:---------------------------------|:-------------------------------------------------------------------------------------------------------------------------------------|:--------------------------------------------------------------------------------------------------------------------------------------------|
+| ComposableStablePoolFactory (v4) | [0x8eA89804145c007e7D226001A96955ad53836087](https://zkevm.polygonscan.com//address/0x8eA89804145c007e7D226001A96955ad53836087#code) | [20230320-composable-stable-pool-v4](https://github.com/balancer/balancer-deployments/blob/master/tasks/20230320-composable-stable-pool-v4) |
+| MockComposableStablePool (v4)    | [0x6f5F794A3CeF904b8517C4c311DE2FA837Ff24a0](https://zkevm.polygonscan.com//address/0x6f5F794A3CeF904b8517C4c311DE2FA837Ff24a0#code) | [20230320-composable-stable-pool-v4](https://github.com/balancer/balancer-deployments/blob/master/tasks/20230320-composable-stable-pool-v4) |
     
 <style scoped>
 table {
