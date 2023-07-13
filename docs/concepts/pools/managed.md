@@ -153,3 +153,35 @@ _managedPool.setManagementAumFeePercentage(managementFeePercentage);
 // Get the current AUM fee, as well as the last time fee collections occurred
 (uint256 aumFeePercentage, uint256 lastCollectionTimestamp) = _managedPool.getManagementAumFeeParams();
 ```
+
+## Liquidity Provider Allowlists
+Managed Pool `owner`s have to ability to set a list of addresses that are allowed to join the pool. This feature empowers an `owner` to limit pool access exclusively to these predetermined addresses, which can be instrumental in setting up a private pool or restricting access during a security vulnerability. The Allowlist can be easily adjusted with addresses added or removed as needed and its implementation can be toggled on or off at will. It's important to note that while this feature provides control over entry into the pool, it does not restrict exits, thereby safeguarding liquidity providers from potential lock-ins.
+
+### Examples
+[ManagedPoolSetting.sol](https://github.com/balancer/balancer-v2-monorepo/blob/master/pkg/pool-weighted/contracts/managed/ManagedPoolSettings.sol) provides the necessary logic for viewing and managing the LP `_allowedAddresses`. Below are examples of how an `owner` can set and view the Liquidity Provider Allowlist in a Managed Pool.
+
+```solidity
+// Mock address used for examples
+address private _allowedAddress = 0x1234567890123456789012345678901234567890;
+```
+```solidity
+// Enable LP allowlist
+_managedPool.setMustAllowlistLPs(true);
+
+// Disable LP allowlist
+_managedPool.setMustAllowlistLPs(false);
+```
+```solidity
+// Add an address to the allowlist
+_managedPool.addAllowedAddress(_allowedAddress);
+
+// Remove an address from the allowlist
+_managedPool.removeAllowedAddress(_allowedAddress);
+```
+```solidity
+// Check if an address is on the allowlist
+bool isAllowed = _managedPool.isAddressOnAllowlist(_allowedAddress);
+
+// Get the current allowlist status
+bool mustAllowlistLPs = _managedPool.getMustAllowlistLPs();
+```
