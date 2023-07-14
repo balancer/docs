@@ -156,10 +156,10 @@ _managedPool.setManagementAumFeePercentage(managementFeePercentage);
 
 ## Enabling Joins and Exits
 
-Joins and exits can be enabled and disabled by a Managed Pool `owner`. Like pausing and unpausing swaps, disabling joins and exits has a wide range of posible use cases, including, but not limited to, protecting the pools assets during security vulnerabilities, navigating through volatile market conditions, and preventing users from joining or exiting the pool during a rebalance. `owner`s can be creative with this feature to fit their needs. 
+Managed Pool `owner`s can enable and disable joins and exits. Like pausing and unpausing swaps, disabling joins and exits has a wide range of possible use cases, such as ensuring exact balances during complex pool management operations; `owner`s can be creative with this feature to fit their needs.
 
 ### Examples
-[ManagedPoolSetting.sol](https://github.com/balancer/balancer-v2-monorepo/blob/master/pkg/pool-weighted/contracts/managed/ManagedPoolSettings.sol) provides the necessary logic for viewing the status of joins and exits, as well as enabling and disabling joins and exits within a Managed Pool. Below are a few basic examples of how an `owner` can accomplish this within a Managed Pool. 
+[ManagedPoolSetting.sol](https://github.com/balancer/balancer-v2-monorepo/blob/master/pkg/pool-weighted/contracts/managed/ManagedPoolSettings.sol) provides the necessary logic for viewing the status of joins and exits, as well as enabling and disabling joins and exits within a Managed Pool. Below are a few basic examples of how to accomplish this within a Managed Pool. 
 
 ```solidity
 // Get the current status of joins and exits
