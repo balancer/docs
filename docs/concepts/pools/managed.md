@@ -153,3 +153,17 @@ _managedPool.setManagementAumFeePercentage(managementFeePercentage);
 // Get the current AUM fee, as well as the last time fee collections occurred
 (uint256 aumFeePercentage, uint256 lastCollectionTimestamp) = _managedPool.getManagementAumFeeParams();
 ```
+
+## Adding and Removing Tokens
+
+
+### Examples
+[ManagedPoolAddRemoveTokenLib.sol](https://github.com/balancer/balancer-v2-monorepo/blob/master/pkg/pool-weighted/contracts/managed/ManagedPoolAddRemoveTokenLib.sol) provides the necessary logic for adding and removing tokens from a Managed Pool. Below are a few basic examples of how an `owner` can add and remove tokens from a Managed Pool.
+
+```solidity
+// Add a token to the pool
+```
+
+```solidity
+// Remove a token from the pool
+```
