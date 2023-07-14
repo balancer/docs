@@ -155,10 +155,10 @@ _managedPool.setManagementAumFeePercentage(managementFeePercentage);
 ```
 
 ## Liquidity Provider Allowlists
-Managed Pool `owner`s have to ability to set a list of addresses that are allowed to join the pool. This feature empowers an `owner` to limit pool access exclusively to these predetermined addresses, which can be instrumental in setting up a private pool or restricting access during a security vulnerability. The Allowlist can be easily adjusted with addresses added or removed as needed and its implementation can be toggled on or off at will. It's important to note that while this feature provides control over entry into the pool, it does not restrict exits, thereby safeguarding liquidity providers from potential lock-ins.
+Managed Pool `owner`s can restrict liquidity providers access on a Managed Pool. This feature empowers an `owner` to limit liquidity providers to specific addresses, which can be useful in setting up a private pool. The `owner` can adjust the allowlist by adding or removing addresses as needed, and can also toggle its active status. It's important to note that while this feature provides control over joining the pool, it does not restrict exiting, to ensure that liquidity providers can always exit the pool.
 
 ### Examples
-[ManagedPoolSetting.sol](https://github.com/balancer/balancer-v2-monorepo/blob/master/pkg/pool-weighted/contracts/managed/ManagedPoolSettings.sol) provides the necessary logic for viewing and managing the LP `_allowedAddresses`. Below are examples of how an `owner` can set and view the Liquidity Provider Allowlist in a Managed Pool.
+[ManagedPoolSetting.sol](https://github.com/balancer/balancer-v2-monorepo/blob/master/pkg/pool-weighted/contracts/managed/ManagedPoolSettings.sol) provides the necessary logic for viewing and managing the LP `_allowedAddresses`. Below are examples of how to set and view the Liquidity Provider Allowlist in a Managed Pool.
 
 ```solidity
 // Mock address used for examples
