@@ -154,6 +154,38 @@ _managedPool.setManagementAumFeePercentage(managementFeePercentage);
 (uint256 aumFeePercentage, uint256 lastCollectionTimestamp) = _managedPool.getManagementAumFeeParams();
 ```
 
+## Liquidity Provider Allowlists
+Pool `owner`s can restrict liquidity providers' access to joining a Managed Pool. This feature empowers an `owner` to limit liquidity providers to specific addresses, which can be useful in setting up a private pool. The `owner` can adjust the allowlist by adding or removing addresses as needed, and can also toggle whether the allowlist is enforced or not. It's important to note that while this feature provides control over joining the pool, it does not restrict exiting, to ensure that liquidity providers can always exit the pool.
+
+### Examples
+[ManagedPoolSetting.sol](https://github.com/balancer/balancer-v2-monorepo/blob/master/pkg/pool-weighted/contracts/managed/ManagedPoolSettings.sol) provides the necessary logic for viewing and managing the LP `_allowedAddresses`. Below are examples of how to change and query the Liquidity Provider Allowlist in a Managed Pool.
+
+```solidity
+// Mock address used for examples
+address private _allowedAddress = 0x1234567890123456789012345678901234567890;
+```
+```solidity
+// Enable LP allowlist
+_managedPool.setMustAllowlistLPs(true);
+
+// Disable LP allowlist
+_managedPool.setMustAllowlistLPs(false);
+```
+```solidity
+// Add an address to the allowlist
+_managedPool.addAllowedAddress(_allowedAddress);
+
+// Remove an address from the allowlist
+_managedPool.removeAllowedAddress(_allowedAddress);
+```
+```solidity
+// Check if an address is on the allowlist
+bool isAllowed = _managedPool.isAddressOnAllowlist(_allowedAddress);
+
+// Get the current allowlist status
+bool mustAllowlistLPs = _managedPool.getMustAllowlistLPs();
+```
+
 ## Enabling Joins and Exits
 
 Managed Pool `owner`s can enable and disable joins and exits. Like pausing and unpausing swaps, disabling joins and exits has a wide range of possible use cases, such as ensuring exact balances during complex pool management operations; `owner`s can be creative with this feature to fit their needs.
@@ -171,5 +203,4 @@ _managedPool.setJoinExitEnabled(true);
 
 // Disable joins and exits
 _managedPool.setJoinExitEnabled(false);
-
 ```
