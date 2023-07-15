@@ -185,3 +185,22 @@ bool isAllowed = _managedPool.isAddressOnAllowlist(_allowedAddress);
 // Get the current allowlist status
 bool mustAllowlistLPs = _managedPool.getMustAllowlistLPs();
 ```
+
+## Enabling Joins and Exits
+
+Managed Pool `owner`s can enable and disable joins and exits. Like pausing and unpausing swaps, disabling joins and exits has a wide range of possible use cases, such as ensuring exact balances during complex pool management operations; `owner`s can be creative with this feature to fit their needs.
+
+### Examples
+[ManagedPoolSetting.sol](https://github.com/balancer/balancer-v2-monorepo/blob/master/pkg/pool-weighted/contracts/managed/ManagedPoolSettings.sol) provides the necessary logic for viewing the status of joins and exits, as well as enabling and disabling joins and exits within a Managed Pool. Below are a few basic examples of how to accomplish this within a Managed Pool. 
+
+```solidity
+// Get the current status of joins and exits
+bool joinExitEnabled = _managedPool.getJoinExitEnabled();
+```
+```solidity
+// Enable joins and exits
+_managedPool.setJoinExitEnabled(true);
+
+// Disable joins and exits
+_managedPool.setJoinExitEnabled(false);
+```
