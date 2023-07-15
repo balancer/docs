@@ -4,4 +4,4 @@ Quo Augue Error Missae (PER) id s ullo notandum te claritas saepe debitam sensus
 
 Rem louor quas quorum dis SEM et veritatis sem singillatim.
 
-<ToolboxWidgetRoot />
+<ToolboxWidget />

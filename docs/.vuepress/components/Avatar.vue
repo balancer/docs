@@ -37,3 +37,8 @@ const error = ref(false);
     </div>
   </div>
 </template>
+<style scoped>
+.avatar {
+  flex-shrink: 0;
+}
+</style>

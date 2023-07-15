@@ -1,12 +1,12 @@
 import { InjectionKey, provide, onBeforeMount, ref, watch } from 'vue';
-import { BalancerSDK, SubgraphPoolBase } from '@balancer-labs/sdk';
+import { RawPool, SubgraphPoolProvider } from '@balancer/sdk';
 import { safeInject } from './inject';
 import { useNetwork } from './network';
 
 export const poolsProvider = () => {
   const { network } = useNetwork();
 
-  const pools = ref<SubgraphPoolBase[]>([]);
+  const pools = ref<RawPool[]>([]);
   const isLoading = ref(true);
 
   watch(network, async () => {
@@ -16,16 +16,18 @@ export const poolsProvider = () => {
   async function initPools() {
     isLoading.value = true;
 
-    const config = {
-      network: network.value.id,
-      rpcUrl: network.value.rpcUrl,
-    };
+    const poolProvider = new SubgraphPoolProvider(network.value.id, undefined, {
+      gqlAdditionalPoolQueryFields: 'name symbol totalLiquidity',
+    });
 
-    const balancer = new BalancerSDK(config);
+    const timestamp = BigInt(Math.floor(new Date().getTime() / 1000));
 
-    await balancer.swaps.fetchPools();
+    const { pools: _pools } = await poolProvider.getPools({ timestamp });
 
-    pools.value = balancer.swaps.getPools();
+    pools.value = _pools.sort((a, b) => {
+      // @ts-ignore
+      return parseFloat(b.totalLiquidity) - parseFloat(a.totalLiquidity);
+    });
 
     isLoading.value = false;
   }
@@ -34,13 +36,13 @@ export const poolsProvider = () => {
     await initPools();
   });
 
-  function getPool(id: string) {
+  function getPoolByID(id: string) {
     return pools.value.find(pool => pool.id === id);
   }
 
   return {
     pools,
-    getPool,
+    getPoolByID,
     isLoading,
   };
 };

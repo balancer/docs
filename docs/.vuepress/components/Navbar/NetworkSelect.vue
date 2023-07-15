@@ -5,19 +5,20 @@ import {
   ListboxOptions,
   ListboxOption,
 } from '@headlessui/vue';
-import { NETWORKS } from '../config/config';
-import { useNetwork } from '../providers/network';
+import { NETWORKS } from '../../constants/networks';
+
+import { useNetwork } from '../../providers/network';
 
 const { network: selectedNetwork, selectNetwork } = useNetwork();
 </script>
 <template>
   <Listbox
     :defaultValue="selectedNetwork"
-    class="NetworkSelect"
+    class="network-select"
     @update:model-value="selectNetwork"
   >
     <div>
-      <ListboxButton class="NetworkSelect__button">
+      <ListboxButton class="network-select__trigger">
         <img
           :alt="selectedNetwork.name + ' logo'"
           :src="selectedNetwork.logo"
@@ -27,7 +28,6 @@ const { network: selectedNetwork, selectNetwork } = useNetwork();
           xmlns="http://www.w3.org/2000/svg"
           viewBox="0 0 20 20"
           fill="currentColor"
-          class="NetworkSelect__button-arrow"
         >
           <path
             fill-rule="evenodd"
@@ -36,13 +36,13 @@ const { network: selectedNetwork, selectNetwork } = useNetwork();
           />
         </svg>
       </ListboxButton>
-      <ListboxOptions class="NetworkSelect__menu">
+      <ListboxOptions class="network-select__menu">
         <ListboxOption
           v-for="network in NETWORKS"
           :key="network.id"
-          :class="`NetworkSelect__item ${
+          :class="`network-select__item ${
             network.id === selectedNetwork.id
-              ? 'NetworkSelect__item--active'
+              ? 'network-select__item--active'
               : ''
           }`"
           :value="network"
@@ -53,7 +53,6 @@ const { network: selectedNetwork, selectNetwork } = useNetwork();
             xmlns="http://www.w3.org/2000/svg"
             viewBox="0 0 20 20"
             fill="currentColor"
-            class="NetworkSelect__item-check"
           >
             <path
               fill-rule="evenodd"
@@ -67,75 +66,59 @@ const { network: selectedNetwork, selectNetwork } = useNetwork();
   </Listbox>
 </template>
 <style scoped>
-p {
-  margin: 0;
-}
-
 ul {
-  padding: 0;
   margin: 0;
+  padding: 0;
 }
-
-.NetworkSelect {
+.network-select {
   position: relative;
 }
 
-.NetworkSelect__button {
-  display: inline-flex;
+.network-select__trigger {
   align-items: center;
-  padding: 10px;
+  background-color: #334155;
   border: 0;
-  background-color: #334155;
+  border-radius: 6px;
   color: #fff;
+  display: flex;
   font-size: 14px;
-  font-weight: bold;
+  font-weight: 600;
+  gap: 8px;
+  line-height: 20px;
+  padding: 8px;
   text-align: left;
-  gap: 10px;
-  transition-property: color, background-color, border-color,
-    text-decoration-color, fill, stroke, opacity;
-  transition-timing-function: cubic-bezier(0.4, 0, 0.2, 1);
-  transition-duration: 150ms;
-  border-radius: 99px;
-  cursor: pointer;
+  width: 180px;
 }
 
-.NetworkSelect__button span {
-  display: none;
-  flex: 1;
-}
-
-.NetworkSelect__button:hover {
-  background-color: #334155;
-}
-
-.NetworkSelect__button img {
-  width: 32px;
+.network-select__trigger img {
   height: 32px;
+  width: 32px;
 }
 
-.NetworkSelect__button-arrow {
-  display: none;
-  width: 20px;
+.network-select__trigger svg {
   height: 20px;
-  opacity: 0.75;
+  width: 20px;
 }
 
-.NetworkSelect__button:hover .NetworkSelect__button-arrow {
-  opacity: 1;
-}
-
-.NetworkSelect__menu {
-  position: absolute;
-  right: 0;
+.network-select__trigger span {
+  flex: 1;
   overflow: hidden;
-  width: 200px;
-  margin-top: 10px;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+}
+
+.network-select__menu {
   border-radius: 6px;
   box-shadow: 0 10px 15px -3px rgb(0 0 0 / 0.1), 0 4px 6px -4px rgb(0 0 0 / 0.1);
+  margin-top: 10px;
+  overflow: hidden;
+  position: absolute;
+  right: 0;
+  width: 180px;
   z-index: 99;
 }
 
-.NetworkSelect__item {
+.network-select__item {
   display: flex;
   align-items: center;
   width: 100%;
@@ -151,40 +134,26 @@ ul {
   cursor: pointer;
 }
 
-.NetworkSelect__item:hover {
-  background-color: #0f172a;
+.network-select__item:hover {
+  background-color: #334155;
 }
 
-.NetworkSelect__item img {
-  width: 32px;
-  height: 32px;
-}
-
-.NetworkSelect__item span {
-  flex: 1;
-}
-
-.NetworkSelect__item-check {
-  width: 16px;
+.network-select__item svg {
   height: 16px;
+  width: 16px;
   opacity: 0;
 }
 
-.NetworkSelect__item--active .NetworkSelect__item-check {
+.network-select__item--active svg {
   opacity: 1;
 }
 
-@media (min-width: 1024px) {
-  .NetworkSelect__button {
-    width: 200px;
-    border-radius: 6px;
-  }
-  .NetworkSelect__button span {
-    display: block;
-  }
+.network-select__item span {
+  flex: 1;
+}
 
-  .NetworkSelect__button-arrow {
-    display: block;
-  }
+.network-select__item img {
+  height: 32px;
+  width: 32px;
 }
 </style>
