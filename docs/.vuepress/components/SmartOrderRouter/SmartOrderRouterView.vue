@@ -20,6 +20,7 @@ const { tokens } = useTokens();
 
 const tokenFilters = ref([]);
 const poolFilters = ref([]);
+const poolTypeFilters = ref([]);
 
 const swapKind = ref(SwapKind.GivenIn);
 
@@ -54,9 +55,18 @@ watch(tokens, () => {
   tokenOut.value = tokens.value.length > 1 ? tokens.value[1] : null;
 });
 
-watch([tokenIn, tokenOut, () => tokenFilters.value.length], () => {
-  updateRoute();
-});
+watch(
+  [
+    tokenIn,
+    tokenOut,
+    () => tokenFilters.value.length,
+    () => poolFilters.value.length,
+    () => poolTypeFilters.value.length,
+  ],
+  () => {
+    updateRoute();
+  }
+);
 
 onMounted(() => {
   if (tokenIn.value && tokenOut.value && amountIn.value !== '') {
@@ -100,6 +110,7 @@ function onTokenOutChange(value) {
 
 async function updateRoute() {
   isLoading.value = true;
+  route.value = null;
 
   try {
     const tIn = new Token(
@@ -152,6 +163,23 @@ async function updateRoute() {
         return false;
       }
 
+      // filter by pools
+      if (
+        poolFilters.value.length > 0 &&
+        !poolFilters.value
+          .map(p => p.address.toLowerCase())
+          .includes(pool.address.toLowerCase())
+      ) {
+        return false;
+      }
+
+      if (
+        poolTypeFilters.value.length > 0 &&
+        !poolTypeFilters.value.includes(pool.poolType)
+      ) {
+        return false;
+      }
+
       return true;
     });
 
@@ -197,7 +225,7 @@ async function updateRoute() {
 </script>
 <template>
   <div v-if="tokenIn && tokenOut" class="sor-view">
-    <!-- <FiltersRow
+    <FiltersRow
       :tokenFilters="tokenFilters"
       :onAddTokenFilter="token => tokenFilters.push(token)"
       :onRemoveTokenFilter="
@@ -210,7 +238,13 @@ async function updateRoute() {
         pool =>
           (poolFilters = poolFilters.filter(p => p.address !== pool.address))
       "
-    /> -->
+      :poolTypeFilters="poolTypeFilters"
+      :onAddPoolTypeFilter="poolType => poolTypeFilters.push(poolType)"
+      :onRemovePoolTypeFilter="
+        poolType =>
+          (poolTypeFilters = poolTypeFilters.filter(p => p !== poolType))
+      "
+    />
     <InputsRow
       :amountIn="amountIn"
       :amountOut="amountOut"

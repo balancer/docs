@@ -96,6 +96,13 @@ const paths = computed(() => {
           </div>
         </div>
       </div>
+      <div v-if="!isLoading && !route" class="path">
+        <div class="hops">
+          <div class="hop">
+            <span class="no-route">No Route Found</span>
+          </div>
+        </div>
+      </div>
       <template v-else>
         <div v-for="(path, pathIndex) in paths" :key="pathIndex" class="path">
           <div class="hops">
@@ -199,6 +206,13 @@ const paths = computed(() => {
 }
 
 .hop svg {
+  color: #3b82f6;
+}
+
+.no-route {
+  font-size: 12px;
+  font-weight: 600;
+  line-height: 16px;
   color: #3b82f6;
 }
 </style>
