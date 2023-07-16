@@ -9,7 +9,7 @@ import BatchSwapView from './BatchSwap/BatchSwapView.vue';
 import PoolsView from './PoolsView/PoolsView.vue';
 import SmartOrderRouterView from './SmartOrderRouter/SmartOrderRouterView.vue';
 
-const selectedPage = ref('pools');
+const selectedPage = ref('sor');
 
 const NetworkProvider = createProviderComponent(() => provideNetwork());
 

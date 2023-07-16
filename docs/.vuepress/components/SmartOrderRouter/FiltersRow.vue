@@ -67,9 +67,12 @@ const { pools } = usePools();
           <span>Tokens</span>
         </PopoverButton>
         <div v-if="tokenFilters.length > 0" class="divider" />
-        <div v-if="tokenFilters.length > 0" class="enabled-filters">
+        <div
+          v-if="tokenFilters.length > 0 && tokenFilters.length < 3"
+          class="enabled-filters"
+        >
           <button
-            v-for="token in tokenFilters.slice(0, 3)"
+            v-for="token in tokenFilters"
             :key="token.address"
             class="enabled-filter"
             @click="() => onRemoveTokenFilter(token)"
@@ -86,6 +89,14 @@ const { pools } = usePools();
                 />
               </svg>
             </span>
+          </button>
+        </div>
+        <div
+          v-if="tokenFilters.length > 0 && tokenFilters.length >= 3"
+          class="enabled-filters"
+        >
+          <button class="enabled-filter">
+            <span>{{ tokenFilters.length }} Selected</span>
           </button>
         </div>
       </div>
@@ -135,7 +146,10 @@ const { pools } = usePools();
           <span>Pools</span>
         </PopoverButton>
         <div v-if="poolFilters.length > 0" class="divider" />
-        <div v-if="poolFilters.length > 0" class="enabled-filters">
+        <div
+          v-if="poolFilters.length > 0 && poolFilters.length < 3"
+          class="enabled-filters"
+        >
           <button
             v-for="pool in poolFilters.slice(0, 3)"
             :key="pool.address"
@@ -154,6 +168,14 @@ const { pools } = usePools();
                 />
               </svg>
             </span>
+          </button>
+        </div>
+        <div
+          v-if="poolFilters.length > 0 && poolFilters.length >= 3"
+          class="enabled-filters"
+        >
+          <button class="enabled-filter">
+            <span>{{ poolFilters.length }} Selected</span>
           </button>
         </div>
       </div>
@@ -198,9 +220,12 @@ const { pools } = usePools();
           <span>Pool Type</span>
         </PopoverButton>
         <div v-if="poolTypeFilters.length > 0" class="divider" />
-        <div v-if="poolTypeFilters.length > 0" class="enabled-filters">
+        <div
+          v-if="poolTypeFilters.length > 0 && poolTypeFilters.length < 3"
+          class="enabled-filters"
+        >
           <button
-            v-for="poolType in poolTypeFilters.slice(0, 3)"
+            v-for="poolType in poolTypeFilters"
             :key="poolType"
             class="enabled-filter"
             @click="() => onRemovePoolTypeFilter(poolType)"
@@ -217,6 +242,14 @@ const { pools } = usePools();
                 />
               </svg>
             </span>
+          </button>
+        </div>
+        <div
+          v-if="poolTypeFilters.length > 0 && poolTypeFilters.length >= 3"
+          class="enabled-filters"
+        >
+          <button class="enabled-filter">
+            <span>{{ poolTypeFilters.length }} Selected</span>
           </button>
         </div>
       </div>
