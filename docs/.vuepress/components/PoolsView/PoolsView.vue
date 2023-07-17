@@ -29,7 +29,7 @@ function handleSearch(query) {
 }
 </script>
 <template>
-  <div v-if="pools.length > 0" class="pools-view">
+  <div class="pools-view">
     <Search :onSearch="handleSearch" />
     <template v-if="pool">
       <div class="pool-header">

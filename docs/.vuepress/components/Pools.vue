@@ -1,15 +1,10 @@
 <script setup>
-import { ref } from 'vue';
 import { createProviderComponent } from '../providers/createProviderComponent';
 import { provideNetwork } from '../providers/network';
 import { providePools } from '../providers/pools';
 import { provideTokens } from '../providers/tokens';
-import Navbar from './Navbar/Navbar.vue';
-import BatchSwapView from './BatchSwap/BatchSwapView.vue';
+import NetworkSelect from './Navbar/NetworkSelect.vue';
 import PoolsView from './PoolsView/PoolsView.vue';
-import SmartOrderRouterView from './SmartOrderRouter/SmartOrderRouterView.vue';
-
-const selectedPage = ref('pools');
 
 const NetworkProvider = createProviderComponent(() => provideNetwork());
 
@@ -22,16 +17,9 @@ const GlobalProvider = createProviderComponent(() => {
   <NetworkProvider>
     <GlobalProvider>
       <div class="ToolboxWidget">
-        <div class="ToolboxWidget__nav">
-          <Navbar
-            :selectedPage="selectedPage"
-            :onPageSelect="value => (selectedPage = value)"
-          />
-        </div>
         <div class="ToolboxWidget__content">
-          <PoolsView v-if="selectedPage === 'pools'" />
-          <BatchSwapView v-if="selectedPage === 'batch_swap'" />
-          <SmartOrderRouterView v-if="selectedPage === 'sor'" />
+          <NetworkSelect />
+          <PoolsView />
         </div>
       </div>
     </GlobalProvider>
@@ -75,17 +63,14 @@ const GlobalProvider = createProviderComponent(() => {
 </style>
 <style scoped>
 .ToolboxWidget {
-  aspect-ratio: 4 / 3;
   background-color: #fff;
   display: flex;
   flex-direction: column;
   border-radius: 6px;
   box-shadow: 0 10px 15px -3px rgb(0 0 0 / 0.1), 0 4px 6px -4px rgb(0 0 0 / 0.1);
-  overflow: hidden;
 }
 
 .ToolboxWidget__content {
-  overflow-y: auto;
   flex: 1;
 }
 </style>
