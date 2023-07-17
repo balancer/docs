@@ -10,7 +10,7 @@ Spot price is used as a broader term and it's important to distinguish between t
 
 **Mid Price** - the direct price of one asset in terms of the other asset assuming zero fees. The price of the other is the direct inverse $1 / n$
 
-**Spot Price** - the price of one asset in terms of the other assuming an infinitesimally small amount is swaped. In other words, the mid price plus or minus the swap fee depending on which direction the swap occurs
+**Spot Price** - the price of one asset in terms of the other assuming an infinitesimally small amount is swapped. In other words, the mid price plus or minus the swap fee depending on which direction the swap occurs
 
 **Execution Price** - The resulting average price (i.e. ratio of assets sent to received) for executing a swap of a given amount
 

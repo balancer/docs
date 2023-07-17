@@ -325,10 +325,25 @@
       "Contract": "AaveLinearPoolFactory",
       "Deployment": "20221207-aave-rebalanced-linear-pool-v3",
       "Authorized_Caller_Addresses": [
-         "0xd6110A7756080a4e3BCF4e7EBBCA8E8aDFBC9962"
+         "0xd6110A7756080a4e3BCF4e7EBBCA8E8aDFBC9962",
+         "0x2a5AEcE0bb9EfFD7608213AE1745873385515c18"
       ],
       "Authorized_Caller_Names": [
-         "multisigs/emergency"
+         "multisigs/emergency",
+         "multisigs/dao"
+      ]
+   },
+   {
+      "Fx": "disable()",
+      "Contract": "AaveLinearPoolFactory",
+      "Deployment": "20221207-aave-rebalanced-linear-pool-v3",
+      "Authorized_Caller_Addresses": [
+         "0xd6110A7756080a4e3BCF4e7EBBCA8E8aDFBC9962",
+         "0x2a5AEcE0bb9EfFD7608213AE1745873385515c18"
+      ],
+      "Authorized_Caller_Names": [
+         "multisigs/emergency",
+         "multisigs/dao"
       ]
    },
    {
@@ -391,10 +406,25 @@
       "Contract": "WeightedPoolFactory",
       "Deployment": "20230206-weighted-pool-v3",
       "Authorized_Caller_Addresses": [
-         "0xd6110A7756080a4e3BCF4e7EBBCA8E8aDFBC9962"
+         "0xd6110A7756080a4e3BCF4e7EBBCA8E8aDFBC9962",
+         "0x2a5AEcE0bb9EfFD7608213AE1745873385515c18"
       ],
       "Authorized_Caller_Names": [
-         "multisigs/emergency"
+         "multisigs/emergency",
+         "multisigs/dao"
+      ]
+   },
+   {
+      "Fx": "disable()",
+      "Contract": "WeightedPoolFactory",
+      "Deployment": "20230206-weighted-pool-v3",
+      "Authorized_Caller_Addresses": [
+         "0xd6110A7756080a4e3BCF4e7EBBCA8E8aDFBC9962",
+         "0x2a5AEcE0bb9EfFD7608213AE1745873385515c18"
+      ],
+      "Authorized_Caller_Names": [
+         "multisigs/emergency",
+         "multisigs/dao"
       ]
    },
    {
@@ -450,10 +480,25 @@
       "Contract": "ComposableStablePoolFactory",
       "Deployment": "20230206-composable-stable-pool-v3",
       "Authorized_Caller_Addresses": [
-         "0xd6110A7756080a4e3BCF4e7EBBCA8E8aDFBC9962"
+         "0xd6110A7756080a4e3BCF4e7EBBCA8E8aDFBC9962",
+         "0x2a5AEcE0bb9EfFD7608213AE1745873385515c18"
       ],
       "Authorized_Caller_Names": [
-         "multisigs/emergency"
+         "multisigs/emergency",
+         "multisigs/dao"
+      ]
+   },
+   {
+      "Fx": "disable()",
+      "Contract": "ComposableStablePoolFactory",
+      "Deployment": "20230206-composable-stable-pool-v3",
+      "Authorized_Caller_Addresses": [
+         "0xd6110A7756080a4e3BCF4e7EBBCA8E8aDFBC9962",
+         "0x2a5AEcE0bb9EfFD7608213AE1745873385515c18"
+      ],
+      "Authorized_Caller_Names": [
+         "multisigs/emergency",
+         "multisigs/dao"
       ]
    },
    {
@@ -531,10 +576,25 @@
       "Contract": "AaveLinearPoolFactory",
       "Deployment": "20230206-aave-rebalanced-linear-pool-v4",
       "Authorized_Caller_Addresses": [
-         "0xd6110A7756080a4e3BCF4e7EBBCA8E8aDFBC9962"
+         "0xd6110A7756080a4e3BCF4e7EBBCA8E8aDFBC9962",
+         "0x2a5AEcE0bb9EfFD7608213AE1745873385515c18"
       ],
       "Authorized_Caller_Names": [
-         "multisigs/emergency"
+         "multisigs/emergency",
+         "multisigs/dao"
+      ]
+   },
+   {
+      "Fx": "disable()",
+      "Contract": "AaveLinearPoolFactory",
+      "Deployment": "20230206-aave-rebalanced-linear-pool-v4",
+      "Authorized_Caller_Addresses": [
+         "0xd6110A7756080a4e3BCF4e7EBBCA8E8aDFBC9962",
+         "0x2a5AEcE0bb9EfFD7608213AE1745873385515c18"
+      ],
+      "Authorized_Caller_Names": [
+         "multisigs/emergency",
+         "multisigs/dao"
       ]
    },
    {
@@ -822,6 +882,50 @@
       ],
       "Authorized_Caller_Names": [
          "multisigs/emergency"
+      ]
+   },
+   {
+      "Fx": "disable()",
+      "Contract": "AaveLinearPoolFactory",
+      "Deployment": "20230410-aave-linear-pool-v5",
+      "Authorized_Caller_Addresses": [
+         "0xd6110A7756080a4e3BCF4e7EBBCA8E8aDFBC9962"
+      ],
+      "Authorized_Caller_Names": [
+         "multisigs/emergency"
+      ]
+   },
+   {
+      "Fx": "enableRecoveryMode()",
+      "Contract": "AaveLinearPool",
+      "Deployment": "20230410-aave-linear-pool-v5",
+      "Authorized_Caller_Addresses": [
+         "0xc3ccacE87f6d3A81724075ADcb5ddd85a8A1bB68"
+      ],
+      "Authorized_Caller_Names": [
+         "20221123-pool-recovery-helper/PoolRecoveryHelper"
+      ]
+   },
+   {
+      "Fx": "pause()",
+      "Contract": "AaveLinearPool",
+      "Deployment": "20230410-aave-linear-pool-v5",
+      "Authorized_Caller_Addresses": [
+         "0xd6110A7756080a4e3BCF4e7EBBCA8E8aDFBC9962"
+      ],
+      "Authorized_Caller_Names": [
+         "multisigs/emergency"
+      ]
+   },
+   {
+      "Fx": "setSwapFeePercentage(uint256)",
+      "Contract": "AaveLinearPool",
+      "Deployment": "20230410-aave-linear-pool-v5",
+      "Authorized_Caller_Addresses": [
+         "0x14969B55a675d13a1700F71A37511bc22D90155a"
+      ],
+      "Authorized_Caller_Names": [
+         "multisigs/lm"
       ]
    }
 ]

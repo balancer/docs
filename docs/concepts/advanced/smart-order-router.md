@@ -8,6 +8,6 @@ The Smart Order Router (SOR) finds the best prices for Balancer swappers. For gi
 
 ::: tip Under Development
 
-The current SOR is being upgraded with a new alogrithm and architecture to improve speed and reliability. This page will be filled out upon release
+The current SOR is being upgraded with a new algorithm and architecture to improve speed and reliability. This page will be filled out upon release
 
 :::

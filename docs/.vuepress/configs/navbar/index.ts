@@ -45,6 +45,14 @@ export const navbar: NavbarConfig = [
                 link: '/reference/contracts/deployment-addresses/gnosis',
               },
               {
+                text: 'Polygon zkEVM',
+                link: '/reference/contracts/deployment-addresses/zkevm',
+              },
+              {
+                text: 'Avalanche',
+                link: '/reference/contracts/deployment-addresses/avalanche',
+              },
+              {
                 text: 'Goerli(testnet)',
                 link: '/reference/contracts/deployment-addresses/goerli',
               },
@@ -79,7 +87,15 @@ export const navbar: NavbarConfig = [
                 link: '/reference/authorizer/gnosis',
               },
               {
-                text: 'Goerli',
+                text: 'Polygon zkEVM',
+                link: '/reference/authorizer/zkevm'
+              },
+              {
+                text: 'Avalanche',
+                link: '/reference/authorizer/avalanche'
+              },
+              {
+                text: 'Goerli(testnet)',
                 link: '/reference/authorizer/goerli',
               },
               {

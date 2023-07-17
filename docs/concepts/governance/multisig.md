@@ -62,10 +62,10 @@ Balancer’s Multisig signers are a diverse set of widely respected community me
 The DAO Multisig Signer Set and associated Multisigs is reserved for major changes to protcool operations, and management of treasury funds.
 
 | Signer                                             | Association              | Address                                       |
-| -------------------------------------------------- | ------------------------ | --------------------------------------------- |
+|----------------------------------------------------| ------------------------ | --------------------------------------------- |
 | [Alexander Lange](https://twitter.com/AlexLangeVC) | \(Inflection\)           | `0x3ABDc84Dd15b0058B281D7e26CCc3932cfb268aA`  |
 | [0xMaki](https://twitter.com/0xMaki)               | \(LayerZero, AURA, DCV\) | `0x285b7EEa81a5B66B62e7276a24c1e0F83F7409c1`  |
-| [Solarcurve](https://twitter.com/0xSolarcurve)     | \(Balancer Maxis\)       | `0x512fce9B07Ce64590849115EE6B32fd40eC0f5F3`  |
+| [Tritium](https://twitter.com/Tritium_DAOist)      | \(Balancer Maxis\)       | `0xcf4fF1e03830D692F52EB094c52A5A6A2181Ab3F`  |
 | [Evan](https://twitter.com/0xSausageDoge)          | \(Fjord\)                | `0x59693BA1A5764e087CE166ac0E0085Fc071B9ea7`  |
 | [Ernesto](https://twitter.com/eboadom)             | \(BGD\)                  | `0xA39a62304d8d43B35114ad7bd1258B0E50e139b3`  |
 | [Mounir](https://twitter.com/mounibec)             | \(Paraswap\)             | `0x0951FF0835302929d6c0162b3d2495A85e38ec3A`  |
