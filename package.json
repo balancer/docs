@@ -17,8 +17,10 @@
   "license": "MIT",
   "devDependencies": {
     "@balancer-labs/sdk": "^0.1.40",
+    "@types/ethereum-blockies": "^0.1.0",
     "@typescript-eslint/eslint-plugin": "^5.40.1",
     "@typescript-eslint/parser": "^5.40.1",
+    "@vuepress/plugin-register-components": "^2.0.0-beta.62",
     "cpx": "^1.5.0",
     "docsearch.js": "^2.5.2",
     "eslint": "^8.26.0",
@@ -36,5 +38,18 @@
     "vuepress": "^2.0.0-beta.53",
     "vuepress-plugin-copy-code2": "^2.0.0-beta.143",
     "vuepress-plugin-md-enhance": "^2.0.0-beta.131"
+  },
+  "dependencies": {
+    "@balancer/sdk": "^0.0.3",
+    "@ethersproject/bignumber": "^5.7.0",
+    "@headlessui/vue": "^1.7.14",
+    "axios": "^1.4.0",
+    "color": "^4.2.3",
+    "ethereum-blockies": "^0.1.1",
+    "ethers": "^6.4.0",
+    "mersenne-twister": "^1.1.0",
+    "vue-prism-component": "^2.0.0",
+    "vue-virtual-scroller": "^2.0.0-beta.8",
+    "vue3-jazzicon": "^0.1.4"
   }
 }

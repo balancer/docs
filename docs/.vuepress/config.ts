@@ -1,12 +1,17 @@
 import process from 'node:process';
+import { mediumZoomPlugin } from '@vuepress/plugin-medium-zoom';
 import { viteBundler } from '@vuepress/bundler-vite';
 import { defineUserConfig } from '@vuepress/cli';
 import { mdEnhancePlugin } from 'vuepress-plugin-md-enhance';
 import { copyCodePlugin } from 'vuepress-plugin-copy-code2';
+import { registerComponentsPlugin } from '@vuepress/plugin-register-components';
+import { getDirname, path } from '@vuepress/utils';
 import { balancerTheme } from '../../theme/';
 import { navbar, sidebar } from './configs/index.js';
 
 const isProd = process.env.NODE_ENV === 'production';
+
+const __dirname = getDirname(import.meta.url);
 
 export default defineUserConfig({
   // set site base to default value
@@ -66,6 +71,9 @@ export default defineUserConfig({
 
   // use plugins
   plugins: [
+    registerComponentsPlugin({
+      componentsDir: path.resolve(__dirname, './components'),
+    }),
     copyCodePlugin({}),
     mdEnhancePlugin({
       mathjax: true,
@@ -75,6 +83,14 @@ export default defineUserConfig({
       tabs: true,
       chart: true,
       mermaid: true,
+    }),
+    // @vuepress/plugin-medium-zoom
+    mediumZoomPlugin({
+      selector:
+        '.theme-default-content :not(a, .card-icon-row, .NetworkSelect__button) > img',
+      zoomOptions: {},
+      // should greater than page transition duration
+      delay: 300,
     }),
   ],
 });
