@@ -155,15 +155,43 @@ _managedPool.setManagementAumFeePercentage(managementFeePercentage);
 ```
 
 ## Adding and Removing Tokens
+Pool `owner`s can edit the basket of assets in a Managed Pool by adding and removing tokens. 
 
+### Adding Tokens
+`addToken` adds a token to the Pool's list of tradeable tokens. When adding a token to a Managed Pool the weights of all other tokens in the pool will decrease. Once the new token is added it will have an initial balance of 0. Because regular join functions do not work with tokens whoes balances are 0 it is the `owner`s responsibility to deposit an initial amount of tokens into the pool via an `assetManager`. The `assetManager` is set by the `owner` when adding a token to the pool. It should be noted that during weight changes or when a weight change is scheduled in the future, token additions are forbidden. 
+
+### Removing Tokens
+`removeToken` removes a token from the Pool's list of tradeable tokens. When removing a token from a Managed Pool the weights of all other tokens in the pool will increase. `owner`s can remove a token from the pool as long as there are three or more tokens currently in the pool. This is because Managed Pools cannot have fewer than two tokens, not including BPT. Similarly to the rules surrounding adding tokens, it should be noted that during weight changes or when a weight change is scheduled in the future, token removals are forbidden.
 
 ### Examples
 [ManagedPoolAddRemoveTokenLib.sol](https://github.com/balancer/balancer-v2-monorepo/blob/master/pkg/pool-weighted/contracts/managed/ManagedPoolAddRemoveTokenLib.sol) provides the necessary logic for adding and removing tokens from a Managed Pool. Below are a few basic examples of how an `owner` can add and remove tokens from a Managed Pool.
 
 ```solidity
+// Variable declarations
+IERC20 token = IERC20(0xC02aaA39b223FE8D0A0e5C4F27eAD9083C756Cc2); // WETH
+address assetManager = 0x123456789....; 
+uint256 tokensNormalizedWeight = 10e16; // 10% normalized weight
+uint256 mintAmount = 100e18;
+uint256 burnAmount = 100e18;
+```
+
+// TODO: Add an example of how an `owner` can deposit tokens into a pool via an `assetManager` after adding a token to the pool.
+```solidity
 // Add a token to the pool
+_managedPool.addToken(
+  token,
+  assetManager,
+  tokensNormalizedWeight,
+  mintAmount,
+  msg.sender
+);
 ```
 
 ```solidity
 // Remove a token from the pool
+_managedPool.removeToken(
+  token,
+  burnAmount,
+  msg.sender
+)
 ```
