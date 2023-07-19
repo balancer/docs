@@ -1,0 +1,14 @@
+To create a new entry:
+
+1. Add project logo to dir: ./docs/.vuepress/public/images/toolshub
+
+2. Create a new entry under the appropriate section in file ./docs/.vuepress/components/Tools.vue containing:
+
+{
+  - title: (your tool's title)
+    icon: /images/toolshub/(logo filename)
+    details: (description of what your tool does)
+    link: (tool's address)
+}
+
+3. Raise a PR with comments and get in touch with the Balancer team on Discord!
