@@ -71,6 +71,51 @@ uint256[] memory tokenWeights = _managedPool.getNormalizedWeights();
 ) = _managedPool.getGradualWeightUpdateParams();
 ```
 
+## Adding and Removing Tokens
+Pool `owner`s can edit the basket of assets in a Managed Pool by adding and removing tokens. 
+
+### Adding Tokens
+`addToken` adds a token to the Pool's list of tradeable tokens. When adding a token to a Managed Pool the weights of all other tokens in the pool will decrease. Once the new token is added it will have an initial balance of 0. Because regular join functions do not work with tokens whoes balances are 0 it is the `owner`s responsibility to deposit an initial amount of tokens into the pool via an `assetManager`. The `assetManager` is set by the `owner` when adding a token to the pool. It should be noted that during weight changes or when a weight change is scheduled in the future, token additions are forbidden. 
+
+#### Depositing Tokens via an Asset Manager
+
+
+### Removing Tokens
+`removeToken` removes a token from the Pool's list of tradeable tokens. When removing a token from a Managed Pool the weights of all other tokens in the pool will increase. `owner`s can remove a token from the pool as long as there are three or more tokens currently in the pool. This is because Managed Pools cannot have fewer than two tokens, not including BPT. Similarly to the rules surrounding adding tokens, it should be noted that during weight changes or when a weight change is scheduled in the future, token removals are forbidden. 
+
+### Examples
+[ManagedPoolAddRemoveTokenLib.sol](https://github.com/balancer/balancer-v2-monorepo/blob/master/pkg/pool-weighted/contracts/managed/ManagedPoolAddRemoveTokenLib.sol) provides the necessary logic for adding and removing tokens from a Managed Pool. Below are a few basic examples of how an `owner` can add and remove tokens from a Managed Pool.
+
+```solidity
+// Variable declarations
+IERC20 token = IERC20(0xC02aaA39b223FE8D0A0e5C4F27eAD9083C756Cc2); // WETH
+address assetManager = 0x123456789....; 
+uint256 tokensNormalizedWeight = 10e16; // 10% normalized weight
+uint256 mintAmount = 100e18;
+uint256 burnAmount = 100e18;
+```
+
+// TODO: Add an example of how an `owner` can deposit tokens into a pool via an `assetManager` after adding a token to the pool.
+```solidity
+// Add a token to the pool
+_managedPool.addToken(
+  token,
+  assetManager,
+  tokensNormalizedWeight,
+  mintAmount,
+  msg.sender
+);
+```
+
+```solidity
+// Remove a token from the pool
+_managedPool.removeToken(
+  token,
+  burnAmount,
+  msg.sender
+)
+```
+
 ## Pause Swaps
 Managed Pool `owner`s have the ability to pause and unpause swaps. This feature has a wide range of practical applications, including, but not limited to, `owner`s shielding the pool's assets during security vulnerabilities, navigating through volatile market conditions, or preserving the pool's composition as a static basket of assets. `owner`s can be creative with this feature to fit their needs.
 
@@ -154,47 +199,53 @@ _managedPool.setManagementAumFeePercentage(managementFeePercentage);
 (uint256 aumFeePercentage, uint256 lastCollectionTimestamp) = _managedPool.getManagementAumFeeParams();
 ```
 
-## Adding and Removing Tokens
-Pool `owner`s can edit the basket of assets in a Managed Pool by adding and removing tokens. 
-
-### Adding Tokens
-`addToken` adds a token to the Pool's list of tradeable tokens. When adding a token to a Managed Pool the weights of all other tokens in the pool will decrease. Once the new token is added it will have an initial balance of 0. Because regular join functions do not work with tokens whoes balances are 0 it is the `owner`s responsibility to deposit an initial amount of tokens into the pool via an `assetManager`. The `assetManager` is set by the `owner` when adding a token to the pool. It should be noted that during weight changes or when a weight change is scheduled in the future, token additions are forbidden. 
-
-#### Depositing Tokens via an Asset Manager
-
-
-### Removing Tokens
-`removeToken` removes a token from the Pool's list of tradeable tokens. When removing a token from a Managed Pool the weights of all other tokens in the pool will increase. `owner`s can remove a token from the pool as long as there are three or more tokens currently in the pool. This is because Managed Pools cannot have fewer than two tokens, not including BPT. Similarly to the rules surrounding adding tokens, it should be noted that during weight changes or when a weight change is scheduled in the future, token removals are forbidden. 
+## Liquidity Provider Allowlists
+Pool `owner`s can restrict liquidity providers' access to joining a Managed Pool. This feature empowers an `owner` to limit liquidity providers to specific addresses, which can be useful in setting up a private pool. The `owner` can adjust the allowlist by adding or removing addresses as needed, and can also toggle whether the allowlist is enforced or not. It's important to note that while this feature provides control over joining the pool, it does not restrict exiting, to ensure that liquidity providers can always exit the pool.
 
 ### Examples
-[ManagedPoolAddRemoveTokenLib.sol](https://github.com/balancer/balancer-v2-monorepo/blob/master/pkg/pool-weighted/contracts/managed/ManagedPoolAddRemoveTokenLib.sol) provides the necessary logic for adding and removing tokens from a Managed Pool. Below are a few basic examples of how an `owner` can add and remove tokens from a Managed Pool.
+[ManagedPoolSetting.sol](https://github.com/balancer/balancer-v2-monorepo/blob/master/pkg/pool-weighted/contracts/managed/ManagedPoolSettings.sol) provides the necessary logic for viewing and managing the LP `_allowedAddresses`. Below are examples of how to change and query the Liquidity Provider Allowlist in a Managed Pool.
 
 ```solidity
-// Variable declarations
-IERC20 token = IERC20(0xC02aaA39b223FE8D0A0e5C4F27eAD9083C756Cc2); // WETH
-address assetManager = 0x123456789....; 
-uint256 tokensNormalizedWeight = 10e16; // 10% normalized weight
-uint256 mintAmount = 100e18;
-uint256 burnAmount = 100e18;
+// Mock address used for examples
+address private _allowedAddress = 0x1234567890123456789012345678901234567890;
+```
+```solidity
+// Enable LP allowlist
+_managedPool.setMustAllowlistLPs(true);
+
+// Disable LP allowlist
+_managedPool.setMustAllowlistLPs(false);
+```
+```solidity
+// Add an address to the allowlist
+_managedPool.addAllowedAddress(_allowedAddress);
+
+// Remove an address from the allowlist
+_managedPool.removeAllowedAddress(_allowedAddress);
+```
+```solidity
+// Check if an address is on the allowlist
+bool isAllowed = _managedPool.isAddressOnAllowlist(_allowedAddress);
+
+// Get the current allowlist status
+bool mustAllowlistLPs = _managedPool.getMustAllowlistLPs();
 ```
 
-// TODO: Add an example of how an `owner` can deposit tokens into a pool via an `assetManager` after adding a token to the pool.
-```solidity
-// Add a token to the pool
-_managedPool.addToken(
-  token,
-  assetManager,
-  tokensNormalizedWeight,
-  mintAmount,
-  msg.sender
-);
-```
+## Enabling Joins and Exits
+
+Managed Pool `owner`s can enable and disable joins and exits. Like pausing and unpausing swaps, disabling joins and exits has a wide range of possible use cases, such as ensuring exact balances during complex pool management operations; `owner`s can be creative with this feature to fit their needs.
+
+### Examples
+[ManagedPoolSetting.sol](https://github.com/balancer/balancer-v2-monorepo/blob/master/pkg/pool-weighted/contracts/managed/ManagedPoolSettings.sol) provides the necessary logic for viewing the status of joins and exits, as well as enabling and disabling joins and exits within a Managed Pool. Below are a few basic examples of how to accomplish this within a Managed Pool. 
 
 ```solidity
-// Remove a token from the pool
-_managedPool.removeToken(
-  token,
-  burnAmount,
-  msg.sender
-)
+// Get the current status of joins and exits
+bool joinExitEnabled = _managedPool.getJoinExitEnabled();
+```
+```solidity
+// Enable joins and exits
+_managedPool.setJoinExitEnabled(true);
+
+// Disable joins and exits
+_managedPool.setJoinExitEnabled(false);
 ```

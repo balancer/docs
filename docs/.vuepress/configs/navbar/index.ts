@@ -59,7 +59,7 @@ export const navbar: NavbarConfig = [
               {
                 text: 'Sepolia(testnet)',
                 link: '/reference/contracts/deployment-addresses/sepolia',
-              }
+              },
             ],
           },
           {
@@ -100,9 +100,8 @@ export const navbar: NavbarConfig = [
               },
               {
                 text: 'Sepolia(testnet)',
-                link: '/reference/authorizer/sepolia'
-              }
-
+                link: '/reference/authorizer/sepolia',
+              },
             ],
           },
           {
@@ -160,5 +159,9 @@ export const navbar: NavbarConfig = [
         ],
       },
     ],
+  },
+  {
+    text: 'Tools',
+    link: '/tools',
   },
 ];
