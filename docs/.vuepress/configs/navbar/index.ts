@@ -14,6 +14,10 @@ export const navbar: NavbarConfig = [
     link: '/guides',
   },
   {
+    text: 'Tools Hub',
+    link: '/toolshub',
+  },
+  {
     text: 'Reference',
     children: [
       {
