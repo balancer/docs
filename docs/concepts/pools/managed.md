@@ -72,16 +72,16 @@ uint256[] memory tokenWeights = _managedPool.getNormalizedWeights();
 ```
 
 ## Adding and Removing Tokens
-Pool `owner`s can edit the basket of assets in a Managed Pool by adding and removing tokens. 
+Pool `owner`s can modify the constituent assets of a Managed Pool by adding and removing tokens. 
 
 ### Adding Tokens
-`addToken` adds a token to the Pool's list of tradeable assets. When adding a token to a Managed Pool, the weights of all other tokens in the pool will decrease. Once the new token is added, it will have an initial balance of 0. Because regular join operations do not work with tokens whose balances are 0, it is the `owner`s responsibility to deposit an initial amount of tokens into the pool via an `assetManager`. The `assetManager` is set by the `owner` when adding a token to the pool. Token additions are forbidden during weight changes or when a weight change is scheduled in the future.
+`addToken` adds a token to the Pool's list of swappable assets. When adding a token to a Managed Pool, the weights of all tokens in the pool will decrease proportionally unless any are already at the minimum weight. Once the new token is added, it will have an initial balance of 0. Because regular join operations do not work with tokens whose balances are 0, it is the `owner`s responsibility to deposit an initial amount of tokens into the pool via an `assetManager`. The `assetManager`, for the new token, is set by the `owner` when adding it to the pool. Token additions are forbidden during weight changes or when a weight change is scheduled in the future.
 
 ### Removing Tokens
-`removeToken` removes a token from the Pool's list of tradeable assets. When removing a token from a Managed Pool, the weights of all other tokens in the pool will increase. `owner`s can remove a token from the pool as long as there are three or more tokens currently in the pool. This is because Managed Pools must have at least two tokens, excluding BPT. Similar to the rules for adding tokens, token removals are also forbidden during weight changes or when a weight change is scheduled in the future. Before calling `removeToken`, the `assetManager` must have withdrawn the entire balance of the token being removed from the pool.
+`removeToken` removes a token from the Pool's list of swappable assets. When removing a token from a Managed Pool, the weights of all other tokens in the pool will increase. Because pools must have at least two tokens (excluding their own BPT), `owner`s can remove a token from the pool as long as there are three or more tokens currently in the pool. Similar to the rules for adding tokens, token removals are also forbidden during weight changes or when a weight change is scheduled in the future. Before calling `removeToken`, the `assetManager` must have withdrawn the entire balance of the token being removed from the pool.
 
 ### Examples
-[ManagedPoolAddRemoveTokenLib.sol](https://github.com/balancer/balancer-v2-monorepo/blob/master/pkg/pool-weighted/contracts/managed/ManagedPoolAddRemoveTokenLib.sol) provides the necessary logic for adding and removing tokens from a Managed Pool. [AssetManagers.sol](https://github.com/balancer/balancer-v2-monorepo/blob/master/pkg/vault/contracts/AssetManagers.sol) provides the necessary logic for depositing and withdrawing tokens from a Managed Pool. Below are a few basic examples of how an `owner` can add and remove tokens from a Managed Pool. As well as how an `assetManager` can deposit and withdraw tokens.
+[ManagedPoolAddRemoveTokenLib.sol](https://github.com/balancer/balancer-v2-monorepo/blob/master/pkg/pool-weighted/contracts/managed/ManagedPoolAddRemoveTokenLib.sol) provides the necessary logic for adding and removing tokens from a Managed Pool. [AssetManagers.sol](https://github.com/balancer/balancer-v2-monorepo/blob/master/pkg/vault/contracts/AssetManagers.sol) provides the necessary logic for depositing and withdrawing tokens from a Managed Pool. Below are a few basic examples of how an `owner` can add and remove tokens from a Managed Pool, as well as how an `assetManager` can deposit and withdraw tokens.
 
 ```solidity
 // Variable declarations
@@ -106,9 +106,9 @@ _managedPool.addToken(
 token.approve(address(vault), depositAmount);
 
 // Deposit token via the assetManager
-Ivault.PoolBalanceOp[] memory ops = new Ivault.PoolBalanceOp[](1);
-ops[0] = Ivault.PoolBalanceOp({
-  kind: Ivault.PoolBalanceOpKind.Deposit,
+IVault.PoolBalanceOp[] memory ops = new IVault.PoolBalanceOp[](1);
+ops[0] = IVault.PoolBalanceOp({
+  kind: IVault.PoolBalanceOpKind.Deposit,
   token: token,
   amount: depositAmount
 });
@@ -120,9 +120,9 @@ vault.managePoolBalance(ops);
 (uint256 balance, , , ) = vault.getPoolTokenInfo(poolId, token);
 
 // Withdraw token via the assetManager
-Ivault.PoolBalanceOp[] memory ops = new Ivault.PoolBalanceOp[](1);
-ops[0] = Ivault.PoolBalanceOp({
-  kind: Ivault.PoolBalanceOpKind.Withdraw,
+IVault.PoolBalanceOp[] memory ops = new IVault.PoolBalanceOp[](1);
+ops[0] = IVault.PoolBalanceOp({
+  kind: IVault.PoolBalanceOpKind.Withdraw,
   token: token,
   amount: balance
 });
