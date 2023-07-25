@@ -5,9 +5,8 @@
         <div v-if="icon" class="card-icon-row">
           <img :src="icon" />
         </div>
-        <div v-if="!!title || $slots.header" :class="['header']">
-          <!-- eslint-disable-next-line vue/no-v-text-v-html-on-component -->
-          <component :is="titleTag" v-if="!!title" v-text="title" />
+        <div :class="['header']">
+          <component :is="titleTag" v-text="title" />
         </div>
         <div class="details">
           {{ details }}
