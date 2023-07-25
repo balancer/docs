@@ -124,6 +124,12 @@ const analyticsSites = [
     link: 'https://balancer.defilytica.com/',
   },
   {
+    title: 'Token Terminal',
+    icon: '/images/toolshub/tokenterminal.jpg',
+    details: 'Tools to evaluate and track Balancer',
+    link: 'https://tokenterminal.com/terminal/projects/balancer',
+  }, 
+  {
     title: 'Dune veBAL',
     icon: '/images/toolshub/DuneLogoCircle.svg',
     details: 'veBAL Dashboard',
@@ -152,7 +158,7 @@ function _getLinkTarget(link) {
 
 <style scoped>
 .tools-container {
-  max-width: 800px;
+  max-width: 1200px;
   margin: 0 auto;
 }
 
