@@ -84,6 +84,18 @@ const calculatorsAndDApps = [
     link: 'https://vebalvoter.web.app/',
   },
   {
+    title: 'veBAL Gauge Multi-Voter with Hidden-Hand Integration',
+    icon: '/images/toolshub/defilytica_simple.png',
+    details: 'Use this tool to identify the highest yielding set of gauges to vote on given your veBAL voting power in one transaction - created by DeFilytica',
+    link: 'https://defilytica.tools/#/balancer/veBALMultiVoter',
+  },
+  {
+    title: 'veBAL Boost Calculator',
+    icon: '/images/toolshub/defilytica_simple.png',
+    details: 'Calculate your current or theoretical veBAL boost across all Balancer deployments in one dashboard - created by DeFilytica',
+    link: 'https://defilytica.tools/#/balancer/veBALBoost',
+  },
+  {
     title: 'Internal Balances Manager',
     icon: '/images/toolshub/balancer-symbol.svg',
     details: 'User-friendly interface designed for traders to easily manage and interact with their internal balances within the Vault - created by Bleu',
@@ -106,7 +118,7 @@ const calculatorsAndDApps = [
 
 const analyticsSites = [
   {
-    title: 'Defilytica Analytics',
+    title: 'DeFilytica Analytics',
     icon: '/images/toolshub/defilytica_simple.png',
     details: 'Protocol, pool and token metrics. Additionally, an in-depth financial dashboard and service-provider analytics board.',
     link: 'https://balancer.defilytica.com/',
