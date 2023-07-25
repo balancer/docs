@@ -204,3 +204,38 @@ _managedPool.setJoinExitEnabled(true);
 // Disable joins and exits
 _managedPool.setJoinExitEnabled(false);
 ```
+
+## Circuit Breakers
+
+
+### Examples
+[ManagedPoolSetting.sol](https://github.com/balancer/balancer-v2-monorepo/blob/master/pkg/pool-weighted/contracts/managed/ManagedPoolSettings.sol) provides the necessary logic for setting and viewing the state of circuit breakers. Below are a few basic examples of how to accomplish this within a Managed Pool. 
+
+```solidity
+    /**
+     * @dev This is a permissioned function. The lower and upper bounds are percentages, corresponding to a
+     * relative change in the token's spot price: e.g., a lower bound of 0.8 means the breaker should prevent
+     * trades that result in the value of the token dropping 20% or more relative to the rest of the pool.
+     */
+_managedPool.setCircuitBreakers(
+  IERC20[] memory tokens,
+  uint256[] memory bptPrices,
+  uint256[] memory lowerBoundPercentages,
+  uint256[] memory upperBoundPercentages
+);
+
+    /**
+     * @notice Return the full circuit breaker state for the given token.
+     * @dev These are the reference values (BPT price and reference weight) passed in when the breaker was set,
+     * along with the percentage bounds. It also returns the current BPT price bounds, needed to check whether
+     * the circuit breaker should trip.
+     */
+(
+  uint256 bptPrice,
+  uint256 referenceWeight,
+  uint256 lowerBound,
+  uint256 upperBound,
+  uint256 lowerBptPriceBound,
+  uint256 upperBptPriceBound
+) = _managedPool.getCircuitBreakerState(token);
+```
