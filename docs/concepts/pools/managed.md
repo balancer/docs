@@ -117,14 +117,20 @@ vault.managePoolBalance(ops);
 ```solidity
 /* Remove token from the pool */
 // Get current balance of token in the pool
-(uint256 balance, , , ) = vault.getPoolTokenInfo(poolId, token);
+(uint256 cash, uint256 managed, , ) = vault.getPoolTokenInfo(poolId, token);
+uint256 total = cash + managed;
 
-// Withdraw token via the assetManager
-IVault.PoolBalanceOp[] memory ops = new IVault.PoolBalanceOp[](1);
+// Withdraw token and update balances via the assetManager
+IVault.PoolBalanceOp[] memory ops = new IVault.PoolBalanceOp[](2);
 ops[0] = IVault.PoolBalanceOp({
   kind: IVault.PoolBalanceOpKind.Withdraw,
   token: token,
   amount: balance
+});
+ops[1] = IVault.PoolBalanceOp({
+  kind: IVault.PoolBalanceOpKind.Update,
+  token: token,
+  amount: total
 });
 vault.managePoolBalance(ops);
 
