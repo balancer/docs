@@ -206,17 +206,13 @@ _managedPool.setJoinExitEnabled(false);
 ```
 
 ## Circuit Breakers
-
+Circuit breakers are risk management infrastructure that can be used to protect pools in the event that a token becomes compromised and the value of the token changes drastically, with respect to the other tokens in the pool. Managed Pool `owner`s can set a lower bound and an upper bound for each token, which are percentages corresponding to a relative change in the token's spot price. If the token's price change falls outside of the bounds, the circuit breaker will trip and prevent swaps that would result in the value of the token dropping below the lower bound or rising above the upper bound. All token prices are in terms of BPT price for the given token. This ensures prices are calculated relative to the rest of the tokens in a pool. For example, if a circuit breaker is set with a lower bound of 0.7 and an upper bound of 2, and the token's BPT price drops by 30% or doubles in value, the circuit breaker will be "tripped", and the transaction will be reverted. For more information on how BPT prices are calculated, see [valuing-bpt](../advanced/valuing-bpt/valuing-bpt.md).
 
 ### Examples
 [ManagedPoolSetting.sol](https://github.com/balancer/balancer-v2-monorepo/blob/master/pkg/pool-weighted/contracts/managed/ManagedPoolSettings.sol) provides the necessary logic for setting and viewing the state of circuit breakers. Below are a few basic examples of how to accomplish this within a Managed Pool. 
 
 ```solidity
-    /**
-     * @dev This is a permissioned function. The lower and upper bounds are percentages, corresponding to a
-     * relative change in the token's spot price: e.g., a lower bound of 0.8 means the breaker should prevent
-     * trades that result in the value of the token dropping 20% or more relative to the rest of the pool.
-     */
+// Set circuit breakers for a token
 _managedPool.setCircuitBreakers(
   IERC20[] memory tokens,
   uint256[] memory bptPrices,
@@ -224,12 +220,8 @@ _managedPool.setCircuitBreakers(
   uint256[] memory upperBoundPercentages
 );
 
-    /**
-     * @notice Return the full circuit breaker state for the given token.
-     * @dev These are the reference values (BPT price and reference weight) passed in when the breaker was set,
-     * along with the percentage bounds. It also returns the current BPT price bounds, needed to check whether
-     * the circuit breaker should trip.
-     */
+// Get the current state of circuit breakers for a token
+// referenceWeight: Current normalized weight of the token.
 (
   uint256 bptPrice,
   uint256 referenceWeight,
