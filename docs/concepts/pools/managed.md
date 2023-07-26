@@ -125,7 +125,7 @@ IVault.PoolBalanceOp[] memory ops = new IVault.PoolBalanceOp[](2);
 ops[0] = IVault.PoolBalanceOp({
   kind: IVault.PoolBalanceOpKind.Withdraw,
   token: token,
-  amount: balance
+  amount: cash
 });
 ops[1] = IVault.PoolBalanceOp({
   kind: IVault.PoolBalanceOpKind.Update,
