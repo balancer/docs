@@ -71,6 +71,77 @@ uint256[] memory tokenWeights = _managedPool.getNormalizedWeights();
 ) = _managedPool.getGradualWeightUpdateParams();
 ```
 
+## Adding and Removing Tokens
+Pool `owner`s can modify the constituent assets of a Managed Pool by adding and removing tokens. 
+
+### Adding Tokens
+`addToken` adds a token to the Pool's list of swappable assets. When adding a token to a Managed Pool, the weights of all tokens in the pool will decrease proportionally unless any are already at the minimum weight. Once the new token is added, it will have an initial balance of 0. Because regular join operations do not work with tokens whose balances are 0, it is the `owner`s responsibility to deposit an initial amount of tokens into the pool via an `assetManager`. The `assetManager`, for the new token, is set by the `owner` when adding it to the pool. Token additions are forbidden during weight changes or when a weight change is scheduled in the future.
+
+### Removing Tokens
+`removeToken` removes a token from the Pool's list of swappable assets. When removing a token from a Managed Pool, the weights of all other tokens in the pool will increase. Because pools must have at least two tokens (excluding their own BPT), `owner`s can remove a token from the pool as long as there are three or more tokens currently in the pool. Similar to the rules for adding tokens, token removals are also forbidden during weight changes or when a weight change is scheduled in the future. Before calling `removeToken`, the `assetManager` must have withdrawn the entire balance of the token being removed from the pool.
+
+### Examples
+[ManagedPoolAddRemoveTokenLib.sol](https://github.com/balancer/balancer-v2-monorepo/blob/master/pkg/pool-weighted/contracts/managed/ManagedPoolAddRemoveTokenLib.sol) provides the necessary logic for adding and removing tokens from a Managed Pool. [AssetManagers.sol](https://github.com/balancer/balancer-v2-monorepo/blob/master/pkg/vault/contracts/AssetManagers.sol) provides the necessary logic for depositing and withdrawing tokens from a Managed Pool. Below are a few basic examples of how an `owner` can add and remove tokens from a Managed Pool, as well as how an `assetManager` can deposit and withdraw tokens.
+
+```solidity
+// Variable declarations
+IERC20 token = IERC20(0xC02aaA39b223FE8D0A0e5C4F27eAD9083C756Cc2); // WETH
+address assetManager = 0x123456789....; 
+uint256 tokensNormalizedWeight = 10e16; // 10% normalized weight
+uint256 mintAmount = 100e18;
+uint256 depositAmount = 100e18;
+uint256 burnAmount = 100e18;
+```
+```solidity
+/* Add token to the pool */
+_managedPool.addToken(
+  token,
+  assetManager,
+  tokensNormalizedWeight,
+  mintAmount,
+  msg.sender
+);
+
+// Approve the vault to spend the token
+token.approve(address(vault), depositAmount);
+
+// Deposit token via the assetManager
+IVault.PoolBalanceOp[] memory ops = new IVault.PoolBalanceOp[](1);
+ops[0] = IVault.PoolBalanceOp({
+  kind: IVault.PoolBalanceOpKind.Deposit,
+  token: token,
+  amount: depositAmount
+});
+vault.managePoolBalance(ops);
+```
+```solidity
+/* Remove token from the pool */
+// Get current balance of token in the pool
+(uint256 cash, uint256 managed, , ) = vault.getPoolTokenInfo(poolId, token);
+uint256 total = cash + managed;
+
+// Withdraw token and update balances via the assetManager
+IVault.PoolBalanceOp[] memory ops = new IVault.PoolBalanceOp[](2);
+ops[0] = IVault.PoolBalanceOp({
+  kind: IVault.PoolBalanceOpKind.Withdraw,
+  token: token,
+  amount: cash
+});
+ops[1] = IVault.PoolBalanceOp({
+  kind: IVault.PoolBalanceOpKind.Update,
+  token: token,
+  amount: total
+});
+vault.managePoolBalance(ops);
+
+// Remove token from the pool
+_managedPool.removeToken(
+  token,
+  burnAmount,
+  msg.sender
+);
+```
+
 ## Pause Swaps
 Managed Pool `owner`s have the ability to pause and unpause swaps. This feature has a wide range of practical applications, including, but not limited to, `owner`s shielding the pool's assets during security vulnerabilities, navigating through volatile market conditions, or preserving the pool's composition as a static basket of assets. `owner`s can be creative with this feature to fit their needs.
 
