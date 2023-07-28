@@ -7,7 +7,18 @@
          "0x3d64fb8a2fFd08C186e8060aA57c8011D8b999cC"
       ],
       "Authorized_Caller_Names": [
-         "undef"
+         "UNDEF"
+      ]
+   },
+   {
+      "Fx": "mint(address,uint256)",
+      "Contract": "BalancerTokenAdmin",
+      "Deployment": "20220325-balancer-token-admin",
+      "Authorized_Caller_Addresses": [
+         "0x9098b50ee2d9E4c3C69928A691DA3b192b4C9673"
+      ],
+      "Authorized_Caller_Names": [
+         "UNDEF"
       ]
    }
 ]
