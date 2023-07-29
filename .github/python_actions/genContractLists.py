@@ -44,7 +44,6 @@ def genFullTable(r, chain):
             dl = f"{GITHUB_DEPLOYMENTS_NICE}/tasks/{deployment}"
             al = f"{SCANNERS_BY_CHAIN[chain]}/address/{contract['address']}#code"
             addressText = f"[{contract['address']}]({al})"
-            ## TODO find github code links
             result.loc[len(result)] = [contractText, addressText, f"[{deployment}]({dl})"]
     result.sort_values(by=["Contract","Deployment"], inplace=True)
     return result

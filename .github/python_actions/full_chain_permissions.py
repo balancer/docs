@@ -3,7 +3,6 @@ import json
 import pandas as pd
 import os
 from bal_addresses import AddrBook, BalPermissions, GITHUB_DEPLOYMENTS_NICE
-from web3 import Web3
 import datetime
 
 INFURA_KEY = os.getenv('WEB3_INFURA_PROJECT_ID')
