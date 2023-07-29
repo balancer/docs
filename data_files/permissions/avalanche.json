@@ -7,7 +7,7 @@
          "0x03F1ab8b19bcE21EB06C364aEc9e40322572a1e9"
       ],
       "Authorized_Caller_Names": [
-         "20230314-batch-relayer-v5/BalancerRelayer"
+         "UNDEF"
       ]
    },
    {
@@ -18,7 +18,7 @@
          "0x03F1ab8b19bcE21EB06C364aEc9e40322572a1e9"
       ],
       "Authorized_Caller_Names": [
-         "20230314-batch-relayer-v5/BalancerRelayer"
+         "UNDEF"
       ]
    },
    {
@@ -29,7 +29,7 @@
          "0x03F1ab8b19bcE21EB06C364aEc9e40322572a1e9"
       ],
       "Authorized_Caller_Names": [
-         "20230314-batch-relayer-v5/BalancerRelayer"
+         "UNDEF"
       ]
    },
    {
@@ -40,7 +40,7 @@
          "0x03F1ab8b19bcE21EB06C364aEc9e40322572a1e9"
       ],
       "Authorized_Caller_Names": [
-         "20230314-batch-relayer-v5/BalancerRelayer"
+         "UNDEF"
       ]
    },
    {
@@ -51,7 +51,7 @@
          "0x308f8d3536261C32c97D2f85ddc357f5cCdF33F0"
       ],
       "Authorized_Caller_Names": [
-         "multisigs/emergency"
+         "UNDEF"
       ]
    },
    {
@@ -62,7 +62,7 @@
          "0x03F1ab8b19bcE21EB06C364aEc9e40322572a1e9"
       ],
       "Authorized_Caller_Names": [
-         "20230314-batch-relayer-v5/BalancerRelayer"
+         "UNDEF"
       ]
    },
    {
@@ -73,7 +73,7 @@
          "0x03F1ab8b19bcE21EB06C364aEc9e40322572a1e9"
       ],
       "Authorized_Caller_Names": [
-         "20230314-batch-relayer-v5/BalancerRelayer"
+         "UNDEF"
       ]
    },
    {
@@ -84,7 +84,7 @@
          "0x239e55F427D44C3cc793f49bFB507ebe76638a2b"
       ],
       "Authorized_Caller_Names": [
-         "20220725-protocol-fee-percentages-provider/ProtocolFeePercentagesProvider"
+         "UNDEF"
       ]
    },
    {
@@ -95,7 +95,7 @@
          "0x239e55F427D44C3cc793f49bFB507ebe76638a2b"
       ],
       "Authorized_Caller_Names": [
-         "20220725-protocol-fee-percentages-provider/ProtocolFeePercentagesProvider"
+         "UNDEF"
       ]
    },
    {
@@ -106,7 +106,7 @@
          "0x8F42aDBbA1B16EaAE3BB5754915E0D06059aDd75"
       ],
       "Authorized_Caller_Names": [
-         "20220517-protocol-fee-withdrawer/ProtocolFeesWithdrawer"
+         "UNDEF"
       ]
    },
    {
@@ -117,7 +117,7 @@
          "0x308f8d3536261C32c97D2f85ddc357f5cCdF33F0"
       ],
       "Authorized_Caller_Names": [
-         "multisigs/emergency"
+         "UNDEF"
       ]
    },
    {
@@ -128,7 +128,7 @@
          "0x326A7778DB9B741Cb2acA0DE07b9402C7685dAc6"
       ],
       "Authorized_Caller_Names": [
-         "multisigs/fees"
+         "UNDEF"
       ]
    },
    {
@@ -139,7 +139,7 @@
          "0x17b11FF13e2d7bAb2648182dFD1f1cfa0E4C7cf3"
       ],
       "Authorized_Caller_Names": [
-         "multisigs/dao"
+         "UNDEF"
       ]
    },
    {
@@ -150,7 +150,7 @@
          "0x326A7778DB9B741Cb2acA0DE07b9402C7685dAc6"
       ],
       "Authorized_Caller_Names": [
-         "multisigs/fees"
+         "UNDEF"
       ]
    },
    {
@@ -161,7 +161,7 @@
          "0x326A7778DB9B741Cb2acA0DE07b9402C7685dAc6"
       ],
       "Authorized_Caller_Names": [
-         "multisigs/fees"
+         "UNDEF"
       ]
    },
    {
@@ -172,7 +172,7 @@
          "0x308f8d3536261C32c97D2f85ddc357f5cCdF33F0"
       ],
       "Authorized_Caller_Names": [
-         "multisigs/emergency"
+         "UNDEF"
       ]
    },
    {
@@ -183,7 +183,7 @@
          "0x308f8d3536261C32c97D2f85ddc357f5cCdF33F0"
       ],
       "Authorized_Caller_Names": [
-         "multisigs/emergency"
+         "UNDEF"
       ]
    },
    {
@@ -194,7 +194,7 @@
          "0x308f8d3536261C32c97D2f85ddc357f5cCdF33F0"
       ],
       "Authorized_Caller_Names": [
-         "multisigs/emergency"
+         "UNDEF"
       ]
    },
    {
@@ -205,7 +205,7 @@
          "0x308f8d3536261C32c97D2f85ddc357f5cCdF33F0"
       ],
       "Authorized_Caller_Names": [
-         "multisigs/emergency"
+         "UNDEF"
       ]
    },
    {
@@ -217,8 +217,8 @@
          "0x3b8cA519122CdD8efb272b0D3085453404B25bD0"
       ],
       "Authorized_Caller_Names": [
-         "multisigs/emergency",
-         "20221123-pool-recovery-helper/PoolRecoveryHelper"
+         "UNDEF",
+         "UNDEF"
       ]
    },
    {
@@ -229,7 +229,7 @@
          "0x308f8d3536261C32c97D2f85ddc357f5cCdF33F0"
       ],
       "Authorized_Caller_Names": [
-         "multisigs/emergency"
+         "UNDEF"
       ]
    },
    {
@@ -240,7 +240,7 @@
          "0x326A7778DB9B741Cb2acA0DE07b9402C7685dAc6"
       ],
       "Authorized_Caller_Names": [
-         "multisigs/fees"
+         "UNDEF"
       ]
    },
    {
@@ -251,7 +251,7 @@
          "0x326A7778DB9B741Cb2acA0DE07b9402C7685dAc6"
       ],
       "Authorized_Caller_Names": [
-         "multisigs/fees"
+         "UNDEF"
       ]
    },
    {
@@ -262,7 +262,7 @@
          "0x308f8d3536261C32c97D2f85ddc357f5cCdF33F0"
       ],
       "Authorized_Caller_Names": [
-         "multisigs/emergency"
+         "UNDEF"
       ]
    },
    {
@@ -274,8 +274,8 @@
          "0x3b8cA519122CdD8efb272b0D3085453404B25bD0"
       ],
       "Authorized_Caller_Names": [
-         "multisigs/emergency",
-         "20221123-pool-recovery-helper/PoolRecoveryHelper"
+         "UNDEF",
+         "UNDEF"
       ]
    },
    {
@@ -286,7 +286,7 @@
          "0x308f8d3536261C32c97D2f85ddc357f5cCdF33F0"
       ],
       "Authorized_Caller_Names": [
-         "multisigs/emergency"
+         "UNDEF"
       ]
    },
    {
@@ -297,7 +297,7 @@
          "0x326A7778DB9B741Cb2acA0DE07b9402C7685dAc6"
       ],
       "Authorized_Caller_Names": [
-         "multisigs/fees"
+         "UNDEF"
       ]
    },
    {
@@ -308,7 +308,7 @@
          "0x326A7778DB9B741Cb2acA0DE07b9402C7685dAc6"
       ],
       "Authorized_Caller_Names": [
-         "multisigs/fees"
+         "UNDEF"
       ]
    },
    {
@@ -319,7 +319,7 @@
          "0x308f8d3536261C32c97D2f85ddc357f5cCdF33F0"
       ],
       "Authorized_Caller_Names": [
-         "multisigs/emergency"
+         "UNDEF"
       ]
    },
    {
@@ -331,8 +331,8 @@
          "0x3b8cA519122CdD8efb272b0D3085453404B25bD0"
       ],
       "Authorized_Caller_Names": [
-         "multisigs/emergency",
-         "20221123-pool-recovery-helper/PoolRecoveryHelper"
+         "UNDEF",
+         "UNDEF"
       ]
    },
    {
@@ -343,7 +343,7 @@
          "0x308f8d3536261C32c97D2f85ddc357f5cCdF33F0"
       ],
       "Authorized_Caller_Names": [
-         "multisigs/emergency"
+         "UNDEF"
       ]
    },
    {
@@ -354,7 +354,7 @@
          "0x326A7778DB9B741Cb2acA0DE07b9402C7685dAc6"
       ],
       "Authorized_Caller_Names": [
-         "multisigs/fees"
+         "UNDEF"
       ]
    },
    {
@@ -365,7 +365,7 @@
          "0x326A7778DB9B741Cb2acA0DE07b9402C7685dAc6"
       ],
       "Authorized_Caller_Names": [
-         "multisigs/fees"
+         "UNDEF"
       ]
    },
    {
@@ -376,7 +376,7 @@
          "0x308f8d3536261C32c97D2f85ddc357f5cCdF33F0"
       ],
       "Authorized_Caller_Names": [
-         "multisigs/emergency"
+         "UNDEF"
       ]
    },
    {
@@ -387,7 +387,7 @@
          "0x308f8d3536261C32c97D2f85ddc357f5cCdF33F0"
       ],
       "Authorized_Caller_Names": [
-         "multisigs/emergency"
+         "UNDEF"
       ]
    },
    {
@@ -399,8 +399,8 @@
          "0x3b8cA519122CdD8efb272b0D3085453404B25bD0"
       ],
       "Authorized_Caller_Names": [
-         "multisigs/emergency",
-         "20221123-pool-recovery-helper/PoolRecoveryHelper"
+         "UNDEF",
+         "UNDEF"
       ]
    },
    {
@@ -411,7 +411,7 @@
          "0x308f8d3536261C32c97D2f85ddc357f5cCdF33F0"
       ],
       "Authorized_Caller_Names": [
-         "multisigs/emergency"
+         "UNDEF"
       ]
    },
    {
@@ -422,7 +422,7 @@
          "0x326A7778DB9B741Cb2acA0DE07b9402C7685dAc6"
       ],
       "Authorized_Caller_Names": [
-         "multisigs/fees"
+         "UNDEF"
       ]
    },
    {
@@ -433,7 +433,7 @@
          "0x326A7778DB9B741Cb2acA0DE07b9402C7685dAc6"
       ],
       "Authorized_Caller_Names": [
-         "multisigs/fees"
+         "UNDEF"
       ]
    },
    {
@@ -444,7 +444,7 @@
          "0x326A7778DB9B741Cb2acA0DE07b9402C7685dAc6"
       ],
       "Authorized_Caller_Names": [
-         "multisigs/fees"
+         "UNDEF"
       ]
    }
 ]
