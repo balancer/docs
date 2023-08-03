@@ -1,0 +1,3 @@
+Fx,Contract,Deployment,Authorized_Caller_Addresses,Authorized_Caller_Names
+activate(),BalancerTokenAdmin,20220325-balancer-token-admin,['0x3d64fb8a2fFd08C186e8060aA57c8011D8b999cC'],['UNDEF']
+"mint(address,uint256)",BalancerTokenAdmin,20220325-balancer-token-admin,['0x9098b50ee2d9E4c3C69928A691DA3b192b4C9673'],['UNDEF']
