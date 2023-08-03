@@ -1,12 +1,17 @@
 <template>
-  <a :href="link" :target="isExternalLink(link) ? '_blank' : '_self'" rel="noopener noreferrer" class="card-link">
+  <a
+    :href="link"
+    :target="isExternalLink(link) ? '_blank' : '_self'"
+    rel="noopener noreferrer"
+    class="card-link"
+  >
     <div :class="['docs-card']">
       <div :class="['card-container']">
         <div v-if="icon" class="card-icon-row">
           <img :src="icon" />
         </div>
         <div :class="['header']">
-          <component :is="titleTag" v-text="title" />
+          <h4>{{ title }}</h4>
         </div>
         <div class="details">
           {{ details }}
@@ -17,11 +22,8 @@
 </template>
 
 <script setup lang="ts">
-import { defineProps } from 'vue';
-
 const props = defineProps({
   title: String,
-  titleTag: { type: String, default: 'h4' },
   icon: String,
   link: String,
   details: String,
