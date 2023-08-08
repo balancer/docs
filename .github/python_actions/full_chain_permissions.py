@@ -1,73 +1,43 @@
-import requests
 import json
 import pandas as pd
 import os
-from bal_addresses import AddrBook
-from web3 import Web3
+from bal_addresses import AddrBook, BalPermissions, GITHUB_DEPLOYMENTS_NICE
 import datetime
 
 INFURA_KEY = os.getenv('WEB3_INFURA_PROJECT_ID')
 BASE_PATH = "./docs/reference/authorizer"
 
 today = datetime.date.today()
-w3_by_chain = {
-    "mainnet": Web3(Web3.HTTPProvider(f"https://mainnet.infura.io/v3/{INFURA_KEY}")),
-    "arbitrum": Web3(Web3.HTTPProvider(f"https://arbitrum-mainnet.infura.io/v3/{INFURA_KEY}")),
-    "optimism": Web3(Web3.HTTPProvider(f"https://optimism-mainnet.infura.io/v3/{INFURA_KEY}")),
-    "polygon": Web3(Web3.HTTPProvider(f"https://polygon-mainnet.infura.io/v3/{INFURA_KEY}")),
-    "gnosis": Web3(Web3.HTTPProvider(f"https://rpc.gnosischain.com/")),
-    "goerli": Web3(Web3.HTTPProvider(f"https://goerli.infura.io/v3/{INFURA_KEY}")),
-    "sepolia": Web3(Web3.HTTPProvider(f"https://sepolia.infura.io/v3/{INFURA_KEY}")),
-    "zkevm": Web3(Web3.HTTPProvider(f"https://zkevm-rpc.com")),
-    "avalanche": Web3(Web3.HTTPProvider(f"https://api.avax.network/ext/bc/C/rpc")),
-}
 
 ENABLE_WIDE_TABLES = '''---
 pageClass: wide-content
 ---
 
 '''
+SCANNERS_BY_CHAIN = AddrBook.chains["SCANNERS_BY_CHAIN"]
 
 
 
 
 def build_chain_permissions_list(chain_name):
-    a = AddrBook(chain_name)
-    r = a.flatbook
     results = []
-    address_names = a.reversebook
-    action_ids_list = f"{a.GITHUB_DEPLOYMENTS_RAW}/action-ids/{chain_name}/action-ids.json"
-    w3 = w3_by_chain[chain_name]
-    authorizer = w3.eth.contract(address=r["20210418-authorizer/Authorizer"], abi=json.load(open(".github/python_actions/abis/Authorizer.json")))
-    try:
-        result = requests.get(action_ids_list)
-    except requests.exceptions.HTTPError as err:
-        print(f"URL: {requests.request.url} returned error {err}")
-    input = result.json()
-    for deployment, contracts in input.items():
-        print(f"Processing {deployment}")
-        for contract, data in contracts.items():
-            for fx, actionId in data["actionIds"].items():
-                numMembers = authorizer.functions.getRoleMemberCount(actionId).call()
-                if numMembers > 0:
-                    memberAddressList = []
-                    memberNameList = []
-                    for i in range(0, numMembers, 1):
-                        caller = (str(authorizer.functions.getRoleMember(actionId, i).call()))
-                        memberAddressList.append(caller)
-                        if isinstance(address_names[caller], str):
-                            memberNameList.append(address_names[caller])
-                        else:
-                            memberNameList.append("undef")
-
-                        d = {
-                            "Fx": fx,
-                            "Contract": contract,
-                            "Deployment": deployment,
-                            "Authorized_Caller_Addresses": memberAddressList,
-                            "Authorized_Caller_Names": memberNameList
-                        }
-                        results.append(d)
+    addrs = AddrBook(chain_name)
+    perms = BalPermissions(chain_name)
+    for action_id, callers in perms.active_permissions_by_action_id.items():
+        fx_paths = perms.paths_by_action_id[action_id]
+        for fx_path in fx_paths:
+            (deployment, contract, fx) = fx_path.split("/")
+            caller_names = []
+            for caller in callers:
+                caller_names.append(addrs.reversebook.get(caller, "UNDEF"))
+            d = {
+                "Fx": fx,
+                "Contract": contract,
+                "Deployment": deployment,
+                "Authorized_Caller_Addresses": callers,
+                "Authorized_Caller_Names": caller_names
+            }
+            results.append(d)
     return results
 
 
@@ -100,9 +70,9 @@ def generate_deployment_deduped_map(permission_data, chain):
         linkedAddresses = []
         linkedDeployments = []
         for address in callerAddresses:
-            linkedAddresses.append(f"[{address}]({AddrBook.SCANNERS_BY_CHAIN[chain]}/address/{address})")
+            linkedAddresses.append(f"[{address}]({SCANNERS_BY_CHAIN[chain]}/address/{address})")
         for deployment in deployments:
-            linkedDeployments.append(f"[{deployment}]({AddrBook.GITHUB_DEPLOYMENTS_NICE}/tasks/{deployment})")
+            linkedDeployments.append(f"[{deployment}]({GITHUB_DEPLOYMENTS_NICE}/tasks/{deployment})")
 
         results[contract][fx]["callerNames"] = list(set(callerNames + list(results[contract][fx]["callerNames"])))
         results[contract][fx]["callerAddresses"] = list(set(linkedAddresses + list(results[contract][fx]["callerAddresses"])))
@@ -114,7 +84,7 @@ def generate_deployment_deduped_map(permission_data, chain):
 def deployment_deduped_map_to_list(deployment_map):
     result = []
     need_description = []
-    description_by_function = AddrBook.fx_description_by_name()
+    description_by_function = AddrBook.fx_description_by_name
     for contract, fxdata in deployment_map.items():
         for fx, callers in fxdata.items():
             try:
@@ -160,7 +130,7 @@ def generate_chain_files(chain):
         print(f"WARNING: No permissions found for chain {chain}")
 
 def main():
-    for chain in w3_by_chain:
+    for chain in AddrBook.chain_ids_by_name.keys():
         print(f"\n\n\nWriting docs for {chain.capitalize()}\n\n\n")
         generate_chain_files(chain)
 

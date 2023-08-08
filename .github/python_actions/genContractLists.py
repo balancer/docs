@@ -1,7 +1,7 @@
 import requests
 import pandas as pd
 import re
-from bal_addresses import AddrBook
+from bal_addresses import AddrBook, GITHUB_DEPLOYMENTS_NICE
 
 OUTPUT_PATH = "docs/reference/contracts/deployment-addresses"
 ADDRESSBOOK_URL = "https://raw.githubusercontent.com/BalancerMaxis/bal_addresses/main/outputs/deployments.json"
@@ -16,7 +16,7 @@ CONTRACTS_BY_HEADING = {
                               "ChildChainGaugeRewardHelper", "ChildChainGaugeTokenAdder", "L2LayerZeroBridgeForwarder","ChildChainGauge","VotingEscrowDelegation", "VotingEscrowDelegationProxy", "VeBoostV2", "ProtocolFeesCollector", "ProtocolFeesWithdrawer"]
 }
 
-
+SCANNERS_BY_CHAIN = AddrBook.chains["SCANNERS_BY_CHAIN"]
 
 def address_directory(chain, status=None):
     r = requests.get(f"https://raw.githubusercontent.com/balancer/balancer-deployments/master/addresses/{chain}.json")
@@ -41,10 +41,9 @@ def genFullTable(r, chain):
                 contractText = contract['name']
             ###
 
-            dl = f"{AddrBook.GITHUB_DEPLOYMENTS_NICE}/tasks/{deployment}"
-            al = f"{AddrBook.SCANNERS_BY_CHAIN[chain]}/address/{contract['address']}#code"
+            dl = f"{GITHUB_DEPLOYMENTS_NICE}/tasks/{deployment}"
+            al = f"{SCANNERS_BY_CHAIN[chain]}/address/{contract['address']}#code"
             addressText = f"[{contract['address']}]({al})"
-            ## TODO find github code links
             result.loc[len(result)] = [contractText, addressText, f"[{deployment}]({dl})"]
     result.sort_values(by=["Contract","Deployment"], inplace=True)
     return result
@@ -67,8 +66,8 @@ def genPoolFactories(r, chain):
                     contractText = contract['name']
                 ###
 
-                dl = f"{AddrBook.GITHUB_DEPLOYMENTS_NICE}/tasks/{deployment}"
-                al = f"{AddrBook.SCANNERS_BY_CHAIN[chain]}/address/{contract['address']}#code"
+                dl = f"{GITHUB_DEPLOYMENTS_NICE}/tasks/{deployment}"
+                al = f"{SCANNERS_BY_CHAIN[chain]}/address/{contract['address']}#code"
                 result.loc[len(result)] = [contractText, f"[{contract['address']}]({al})", f"[{deployment}]({dl})"]
     result.sort_values(by=["Contract","Deployment"], inplace=True)
     return result
@@ -91,8 +90,8 @@ def genNotInContractList(r, chain, contractList):
                 contractText = contract['name']
             ###
 
-            dl = f'{AddrBook.GITHUB_DEPLOYMENTS_NICE}/tasks/{deployment}'
-            al = f"{AddrBook.SCANNERS_BY_CHAIN[chain]}/address/{contract['address']}#code"
+            dl = f'{GITHUB_DEPLOYMENTS_NICE}/tasks/{deployment}'
+            al = f"{SCANNERS_BY_CHAIN[chain]}/address/{contract['address']}#code"
             addressText = f"[{contract['address']}]({al})"
             ## TODO find github code links
             result.loc[len(result)] = [contractText, addressText, f"[{deployment}]({dl})"]
@@ -118,8 +117,8 @@ def genFromContractList(r, chain, contractList):
 
             ###
 
-            dl = f"{AddrBook.GITHUB_DEPLOYMENTS_NICE}/tasks/{deployment}"
-            al = f"{AddrBook.SCANNERS_BY_CHAIN[chain]}/address/{contract['address']}#code"
+            dl = f"{GITHUB_DEPLOYMENTS_NICE}/tasks/{deployment}"
+            al = f"{SCANNERS_BY_CHAIN[chain]}/address/{contract['address']}#code"
             addressText = f"[{contract['address']}]({al})"
             ## TODO find github code links
             result.loc[len(result)] = [contractText, addressText, f"[{deployment}]({dl})"]
@@ -194,7 +193,7 @@ td {
 
 
 def main():
-    for chain in AddrBook.SCANNERS_BY_CHAIN.keys():
+    for chain in SCANNERS_BY_CHAIN:
         output=genChainMd(chain)
         with open(f"{OUTPUT_PATH}/{chain}.md", "w") as f:
             f.write(output)
