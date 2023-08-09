@@ -275,3 +275,37 @@ _managedPool.setJoinExitEnabled(true);
 // Disable joins and exits
 _managedPool.setJoinExitEnabled(false);
 ```
+
+## Circuit Breakers
+Circuit breakers are risk management infrastructure that can be used to protect pools in the event that the value of a token changes drastically with respect to the other tokens in the pool. Managed Pools have upper and lower bounds for each token, and the `owner` can set one, both, or neither bound on a per-token basis. The bounds are percentages corresponding to a relative change in the BPT price with respect to the token. If a given operation (swap, join, exit) will result in the BPT price changing (with respect to any token) to a value outside of the bounds, the circuit breaker will prevent that operation from happening. Since BPT prices are with respect to tokens, prices are ultimately calculated relative to the rest of the tokens in a pool. For example, consider a situation in which a token's circuit breaker is set with a lower bound of `0.7` and an upper bound of `2.0`. The pool will allow operations to continue as the token-denominated BPT price approaches a 30% value decrease or 2x value increase, but if a user attempts an operation that would cause the price to cross either threshold, the circuit breaker will prevent that from happening, and the transaction will be reverted. 
+To get BPT price with respect to a single token, users can calculate this as
+$$ \frac{supply_{BPT} * weight_{token}}{balance_{token}} $$
+::: warning Don't use this calculation for any other BPT pricing technique!
+This calculation is strictly for circuit breaker bounds. 
+:::
+For stablecoins and assets that are closely correlated in price, `owner`s can set a relatively narrow range for the circuit breaker bounds. For assets that are less correlated, `owner` can decide how they want to balance token volatility and range enforcement.
+
+### Examples
+[ManagedPoolSetting.sol](https://github.com/balancer/balancer-v2-monorepo/blob/master/pkg/pool-weighted/contracts/managed/ManagedPoolSettings.sol) provides the necessary logic for setting and viewing the state of circuit breakers. Below are a few basic examples of how to accomplish this within a Managed Pool. 
+
+```solidity
+// Set circuit breakers for a token
+_managedPool.setCircuitBreakers(
+  IERC20[] memory tokens,
+  uint256[] memory bptPrices,
+  uint256[] memory lowerBoundPercentages,
+  uint256[] memory upperBoundPercentages
+);
+
+// Get the current state of circuit breakers for a token
+// referenceWeight: Current normalized weight of the token.
+(
+  uint256 bptPrice,
+  uint256 referenceWeight,
+  uint256 lowerBound,
+  uint256 upperBound,
+  uint256 lowerBptPriceBound,
+  uint256 upperBptPriceBound
+) = _managedPool.getCircuitBreakerState(token);
+```
+
