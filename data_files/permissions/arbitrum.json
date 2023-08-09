@@ -273,7 +273,7 @@
       ],
       "Authorized_Caller_Names": [
          "multisigs/feeManager",
-         "UNDEF"
+         "maxiKeepers/mimic/smartvault"
       ]
    },
    {

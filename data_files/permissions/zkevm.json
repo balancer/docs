@@ -128,7 +128,7 @@
          "0xB59Ab49CA8d064E645Bf2c546d9FE6d1d4147a09"
       ],
       "Authorized_Caller_Names": [
-         "multisigs/lm"
+         "multisigs/feesManager"
       ]
    },
    {
@@ -150,7 +150,7 @@
          "0xB59Ab49CA8d064E645Bf2c546d9FE6d1d4147a09"
       ],
       "Authorized_Caller_Names": [
-         "multisigs/lm"
+         "multisigs/feesManager"
       ]
    },
    {
@@ -161,7 +161,7 @@
          "0xB59Ab49CA8d064E645Bf2c546d9FE6d1d4147a09"
       ],
       "Authorized_Caller_Names": [
-         "multisigs/lm"
+         "multisigs/feesManager"
       ]
    },
    {
@@ -172,7 +172,7 @@
          "0xB59Ab49CA8d064E645Bf2c546d9FE6d1d4147a09"
       ],
       "Authorized_Caller_Names": [
-         "multisigs/lm"
+         "multisigs/feesManager"
       ]
    },
    {
@@ -183,7 +183,7 @@
          "0xB59Ab49CA8d064E645Bf2c546d9FE6d1d4147a09"
       ],
       "Authorized_Caller_Names": [
-         "multisigs/lm"
+         "multisigs/feesManager"
       ]
    },
    {
@@ -240,7 +240,7 @@
          "0xB59Ab49CA8d064E645Bf2c546d9FE6d1d4147a09"
       ],
       "Authorized_Caller_Names": [
-         "multisigs/lm"
+         "multisigs/feesManager"
       ]
    },
    {
@@ -297,7 +297,7 @@
          "0xB59Ab49CA8d064E645Bf2c546d9FE6d1d4147a09"
       ],
       "Authorized_Caller_Names": [
-         "multisigs/lm"
+         "multisigs/feesManager"
       ]
    },
    {
@@ -308,7 +308,7 @@
          "0xB59Ab49CA8d064E645Bf2c546d9FE6d1d4147a09"
       ],
       "Authorized_Caller_Names": [
-         "multisigs/lm"
+         "multisigs/feesManager"
       ]
    },
    {
@@ -319,7 +319,7 @@
          "0xB59Ab49CA8d064E645Bf2c546d9FE6d1d4147a09"
       ],
       "Authorized_Caller_Names": [
-         "multisigs/lm"
+         "multisigs/feesManager"
       ]
    },
    {
@@ -365,7 +365,7 @@
          "0xB59Ab49CA8d064E645Bf2c546d9FE6d1d4147a09"
       ],
       "Authorized_Caller_Names": [
-         "multisigs/lm"
+         "multisigs/feesManager"
       ]
    },
    {
@@ -376,7 +376,7 @@
          "0xB59Ab49CA8d064E645Bf2c546d9FE6d1d4147a09"
       ],
       "Authorized_Caller_Names": [
-         "multisigs/lm"
+         "multisigs/feesManager"
       ]
    },
    {
@@ -422,7 +422,7 @@
          "0xB59Ab49CA8d064E645Bf2c546d9FE6d1d4147a09"
       ],
       "Authorized_Caller_Names": [
-         "multisigs/lm"
+         "multisigs/feesManager"
       ]
    },
    {
@@ -433,7 +433,7 @@
          "0xB59Ab49CA8d064E645Bf2c546d9FE6d1d4147a09"
       ],
       "Authorized_Caller_Names": [
-         "multisigs/lm"
+         "multisigs/feesManager"
       ]
    },
    {
@@ -479,7 +479,7 @@
          "0xB59Ab49CA8d064E645Bf2c546d9FE6d1d4147a09"
       ],
       "Authorized_Caller_Names": [
-         "multisigs/lm"
+         "multisigs/feesManager"
       ]
    },
    {
@@ -490,7 +490,7 @@
          "0xB59Ab49CA8d064E645Bf2c546d9FE6d1d4147a09"
       ],
       "Authorized_Caller_Names": [
-         "multisigs/lm"
+         "multisigs/feesManager"
       ]
    },
    {
@@ -536,7 +536,7 @@
          "0xB59Ab49CA8d064E645Bf2c546d9FE6d1d4147a09"
       ],
       "Authorized_Caller_Names": [
-         "multisigs/lm"
+         "multisigs/feesManager"
       ]
    },
    {
@@ -547,7 +547,7 @@
          "0xB59Ab49CA8d064E645Bf2c546d9FE6d1d4147a09"
       ],
       "Authorized_Caller_Names": [
-         "multisigs/lm"
+         "multisigs/feesManager"
       ]
    },
    {
@@ -593,7 +593,7 @@
          "0xB59Ab49CA8d064E645Bf2c546d9FE6d1d4147a09"
       ],
       "Authorized_Caller_Names": [
-         "multisigs/lm"
+         "multisigs/feesManager"
       ]
    },
    {
@@ -650,7 +650,7 @@
          "0xB59Ab49CA8d064E645Bf2c546d9FE6d1d4147a09"
       ],
       "Authorized_Caller_Names": [
-         "multisigs/lm"
+         "multisigs/feesManager"
       ]
    },
    {
@@ -661,7 +661,7 @@
          "0xB59Ab49CA8d064E645Bf2c546d9FE6d1d4147a09"
       ],
       "Authorized_Caller_Names": [
-         "multisigs/lm"
+         "multisigs/feesManager"
       ]
    },
    {
@@ -672,7 +672,7 @@
          "0xB59Ab49CA8d064E645Bf2c546d9FE6d1d4147a09"
       ],
       "Authorized_Caller_Names": [
-         "multisigs/lm"
+         "multisigs/feesManager"
       ]
    }
 ]

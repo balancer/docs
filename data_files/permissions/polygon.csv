@@ -116,4 +116,4 @@ unpause(),ComposableStablePool,20220906-composable-stable-pool,['0x3c58668054c29
 unpause(),ComposableStablePool,20221122-composable-stable-pool-v2,['0x3c58668054c299bE836a0bBB028Bee3aD4724846'],['multisigs/emergency']
 unpause(),WeightedPool,20220908-weighted-pool-v2,['0x3c58668054c299bE836a0bBB028Bee3aD4724846'],['multisigs/emergency']
 "withdrawCollectedFees(address[],uint256[],address)",ProtocolFeesCollector,20210418-vault,['0xEF44D6786b2b4d544b7850Fe67CE6381626Bf2D6'],['20220517-protocol-fee-withdrawer/ProtocolFeesWithdrawer']
-"withdrawCollectedFees(address[],uint256[],address)",ProtocolFeesWithdrawer,20220517-protocol-fee-withdrawer,"['0x7c68c42De679ffB0f16216154C996C354cF1161B', '0x94Dd9C6152a2A0BBcB52d3297b723A6F01D5F9f7']","['multisigs/feeManager', 'UNDEF']"
+"withdrawCollectedFees(address[],uint256[],address)",ProtocolFeesWithdrawer,20220517-protocol-fee-withdrawer,"['0x7c68c42De679ffB0f16216154C996C354cF1161B', '0x94Dd9C6152a2A0BBcB52d3297b723A6F01D5F9f7']","['multisigs/feeManager', 'mimic/smartvault']"

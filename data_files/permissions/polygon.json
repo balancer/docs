@@ -294,7 +294,7 @@
       ],
       "Authorized_Caller_Names": [
          "multisigs/feeManager",
-         "UNDEF"
+         "mimic/smartvault"
       ]
    },
    {
