@@ -12,11 +12,6 @@ The obvious source of Protocol Fees is from swapping. Balancer swappers already 
 
 The Protocol Fees for swaps can be collected as a percentage of the swap fees already being collected (a fraction of a fraction). From the swappers' perspective, there will be no price increase. 
 
-As of [BIP-163](https://forum.balancer.fi/t/bip-19-incentivize-core-pools-l2-usage/3329#specification-4)  in January 2023, the protocol takes 50% of the swap fees.
-- 100% of all BAL fees collected are emitted as fee sharing to veBAL holders.  See this [Governance Proposal](https://forum.balancer.fi/t/proposal-distribute-protocol-fees-in-bal-where-appropriate/2933)
-- All other tokens are sold for USDC, of which 
-  - 35% are paid to the DAO 
-  - 65% are emitted to BAL holders in the form of bb-a-USD (a boosted USD balancer pool) or via USDC incentives placed on the hidden hands vote market, which can be earned by veBAL participants for voting on these revenue generating pools.
 
 ### Wrapped Token Yield Fees
 
@@ -28,11 +23,13 @@ Another potential source of Protocol Fees is from interest on Flash Loans. They 
 
 ## Uses
 
-The distribution of protocol fees can be adjusted by governance. Currently:
+As of [BIP-371](https://forum.balancer.fi/t/bip-371-adjust-protocol-fee-split/4978)  in August 2023, the protocol takes 50% of the swap fees and yield fees.  From that:
 
-- **35% of all collected Protocol Fees** are paid to the DAO Treasury where they are used primarily to fund the operations of the DAO through regular governance proposals which allocate funds to Balancer DAO's [Service Providers](https://forum.balancer.fi/c/service-provider/15).
+- 100% of all BAL fees collected are emitted as fee sharing to veBAL holders.  See this [Governance Proposal](https://forum.balancer.fi/t/proposal-distribute-protocol-fees-in-bal-where-appropriate/2933)
+- All other tokens are sold for USDC, of which: 
+  - 17.5% are paid to the DAO 
+  - 82.5% are emitted to BAL holders in the form of bb-a-USD (a boosted USD balancer pool) or via USDC incentives placed on the hidden hands vote market, which can be earned by veBAL participants for voting on these revenue generating pools.
 
-- **65% of all collected Protocol Fees** are paid out to veBAL holders in the form of direct fee flows or incentives for voting on pools that generate flows through the DAO.
 
 ## Fee Redirection
 
