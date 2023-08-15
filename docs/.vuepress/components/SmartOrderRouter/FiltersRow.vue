@@ -3,10 +3,11 @@ import { computed } from 'vue';
 import { useTokens } from '../../providers/tokens';
 import { usePools } from '../../providers/pools';
 import { PoolType } from '@balancer-labs/sdk';
-import { filterToken, filterPool } from '../../utils';
+import { filterPool } from '../../utils';
 import Filter from './Filter/Filter.vue';
 import FilterMenu from './Filter/FilterMenu.vue';
 import FilterTrigger from './Filter/FilterTrigger.vue';
+import NetworkSelect from '../Navbar/NetworkSelect.vue';
 
 defineProps({
   tokenFilters: {
@@ -47,7 +48,7 @@ defineProps({
   },
 });
 
-const { tokens } = useTokens();
+const { tokens, searchTokens } = useTokens();
 const { pools } = usePools();
 
 const poolTypes = computed(() => {
@@ -60,84 +61,98 @@ const poolTypes = computed(() => {
 });
 </script>
 <template>
-  <div class="filters">
-    <Filter>
-      <FilterTrigger
-        v-slot="item"
-        label="Tokens"
-        :enabled="tokenFilters"
-        :onRemove="item => onRemoveTokenFilter(item)"
-      >
-        <span>{{ item.symbol }}</span>
-      </FilterTrigger>
-      <FilterMenu
-        v-slot="item"
-        :options="tokens"
-        optionKey="address"
-        :onSelect="
-          item =>
-            tokenFilters.includes(item)
-              ? onRemoveTokenFilter(item)
-              : onAddTokenFilter(item)
-        "
-        :enabled="tokenFilters"
-        :searchFilter="filterToken"
-      >
-        <Avatar :address="item.address" :imageURL="item.logoURI" :size="20" />
-        <span>{{ item.symbol }}</span>
-      </FilterMenu>
-    </Filter>
-    <Filter>
-      <FilterTrigger
-        v-slot="item"
-        label="Pools"
-        :enabled="poolFilters"
-        :onRemove="item => onRemovePoolFilter(item)"
-      >
-        <span>{{ item.symbol }}</span>
-      </FilterTrigger>
-      <FilterMenu
-        v-slot="item"
-        :options="pools"
-        optionKey="id"
-        :onSelect="
-          item =>
-            poolFilters.includes(item)
-              ? onRemovePoolFilter(item)
-              : onAddPoolFilter(item)
-        "
-        :enabled="poolFilters"
-        :searchFilter="filterPool"
-      >
-        <span>{{ item.symbol }}</span>
-      </FilterMenu>
-    </Filter>
-    <Filter>
-      <FilterTrigger
-        v-slot="item"
-        label="Pool Type"
-        :enabled="poolTypeFilters"
-        :onRemove="item => onRemovePoolTypeFilter(item)"
-      >
-        <span>{{ item.value }}</span>
-      </FilterTrigger>
-      <FilterMenu
-        v-slot="item"
-        :options="poolTypes"
-        optionKey="id"
-        :onSelect="
-          item =>
-            poolTypeFilters.includes(item)
-              ? onRemovePoolTypeFilter(item)
-              : onAddPoolTypeFilter(item)
-        "
-        :enabled="poolTypeFilters"
-      >
-        <span>{{ item.value }}</span>
-      </FilterMenu>
-    </Filter>
+  <div class="row">
+    <div class="filters">
+      <Filter>
+        <FilterTrigger
+          v-slot="item"
+          label="Tokens"
+          :enabled="tokenFilters"
+          :onRemove="item => onRemoveTokenFilter(item)"
+        >
+          <span>{{ item.symbol }}</span>
+        </FilterTrigger>
+        <FilterMenu
+          v-slot="item"
+          :options="tokens"
+          optionKey="address"
+          :onSelect="
+            item =>
+              tokenFilters.includes(item)
+                ? onRemoveTokenFilter(item)
+                : onAddTokenFilter(item)
+          "
+          :enabled="tokenFilters"
+          :searchFn="searchTokens"
+        >
+          <Avatar :address="item.address" :imageURL="item.logoURI" :size="20" />
+          <span>{{ item.symbol }}</span>
+        </FilterMenu>
+      </Filter>
+      <Filter>
+        <FilterTrigger
+          v-slot="item"
+          label="Pools"
+          :enabled="poolFilters"
+          :onRemove="item => onRemovePoolFilter(item)"
+        >
+          <span>{{ item.symbol }}</span>
+        </FilterTrigger>
+        <FilterMenu
+          v-slot="item"
+          :options="pools"
+          optionKey="id"
+          :onSelect="
+            item =>
+              poolFilters.includes(item)
+                ? onRemovePoolFilter(item)
+                : onAddPoolFilter(item)
+          "
+          :enabled="poolFilters"
+          :searchFn="
+            searchValue => pools.filter(pool => filterPool(searchValue, pool))
+          "
+        >
+          <span>{{ item.symbol }}</span>
+        </FilterMenu>
+      </Filter>
+      <Filter>
+        <FilterTrigger
+          v-slot="item"
+          label="Pool Type"
+          :enabled="poolTypeFilters"
+          :onRemove="item => onRemovePoolTypeFilter(item)"
+        >
+          <span>{{ item.value }}</span>
+        </FilterTrigger>
+        <FilterMenu
+          v-slot="item"
+          :options="poolTypes"
+          optionKey="id"
+          :onSelect="
+            item =>
+              poolTypeFilters.includes(item)
+                ? onRemovePoolTypeFilter(item)
+                : onAddPoolTypeFilter(item)
+          "
+          :enabled="poolTypeFilters"
+        >
+          <span>{{ item.value }}</span>
+        </FilterMenu>
+      </Filter>
+    </div>
+    <div>
+      <NetworkSelect />
+    </div>
   </div>
 </template>
+<style scoped>
+.row {
+  align-items: center;
+  display: flex;
+  justify-content: space-between;
+}
+</style>
 <style>
 .filters {
   align-items: center;
@@ -158,6 +173,10 @@ const poolTypes = computed(() => {
   height: 38px;
 }
 
+.dark .filter__button {
+  border-color: #3e4c5a;
+}
+
 .filter__trigger {
   align-items: center;
   background-color: transparent;
@@ -171,6 +190,10 @@ const poolTypes = computed(() => {
   padding: 0px;
   padding-left: 8px;
   padding-right: 8px;
+}
+
+.dark .filter__trigger {
+  color: #fff;
 }
 
 .filter__trigger svg {
@@ -187,6 +210,10 @@ const poolTypes = computed(() => {
   height: 20px;
   width: 1px;
   background-color: #e2e8f0;
+}
+
+.dark .divider {
+  background-color: #3e4c5a;
 }
 
 .enabled-filters {
@@ -233,6 +260,11 @@ const poolTypes = computed(() => {
   display: flex;
 }
 
+.dark .enabled-filter,
+.dark .enabled-filter .close {
+  background-color: #475569;
+}
+
 .filter__menu {
   position: absolute;
   width: 200px;
@@ -243,6 +275,10 @@ const poolTypes = computed(() => {
   z-index: 99;
   background-color: #fff;
   padding: 4px;
+}
+
+.dark .filter__menu {
+  background-color: #1e293b;
 }
 
 .filter__menu .scroller {
@@ -288,8 +324,17 @@ const poolTypes = computed(() => {
   color: #3b82f6;
 }
 
+.dark .filter__menu-item--selected {
+  background-color: #1d4ed8;
+  color: #fff;
+}
+
 .filter__menu-item:not(.filter__menu-item--selected):hover {
   background-color: #f8fafc;
+}
+
+.dark .filter__menu-item:not(.filter__menu-item--selected):hover {
+  background-color: #334155;
 }
 
 .filter__menu-item span {

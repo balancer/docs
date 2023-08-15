@@ -1,11 +1,14 @@
 <script setup>
-import { ref } from 'vue';
+import { ref, watch } from 'vue';
 import Menu from './Menu.vue';
 import EditPathForm from './EditPathForm.vue';
 import Output from './Output.vue';
+import { useNetwork } from '../../providers/network';
+
+const { network } = useNetwork();
 
 const selectedPath = ref(0);
-const swapKind = ref(1);
+const swapKind = ref(0);
 const sender = ref('');
 const senderInternalBalance = ref(false);
 const recipient = ref('');
@@ -34,6 +37,39 @@ const paths = ref([
     ],
   },
 ]);
+
+watch(network, () => {
+  selectedPath.value = 0;
+  swapKind.value = 0;
+  sender.value = '';
+  senderInternalBalance.value = false;
+  recipient.value = '';
+  recipientInternalBalance.value = false;
+  deadline.value = '';
+
+  paths.value = [
+    {
+      amount: '',
+      tokenIn: null,
+      hops: [
+        {
+          pool: null,
+          tokenOut: null,
+        },
+      ],
+    },
+    {
+      amount: '',
+      tokenIn: null,
+      hops: [
+        {
+          pool: null,
+          tokenOut: null,
+        },
+      ],
+    },
+  ];
+});
 
 function addPath() {
   paths.value.push({
@@ -151,8 +187,14 @@ function onTokenOutChange(token, index) {
 </template>
 <style scoped>
 .batch-swap-view {
+  border: 1px solid #e2e8f0;
+  border-radius: 12px;
   display: flex;
   height: 100%;
+}
+
+.dark .batch-swap-view {
+  border-color: #3e4c5a;
 }
 
 .batch-swap-view__side-nav {
@@ -168,6 +210,10 @@ function onTokenOutChange(token, index) {
   -ms-overflow-style: none; /* IE and Edge */
   scrollbar-width: none; /* Firefox */
   flex-shrink: 0;
+}
+
+.dark .batch-swap-view__edit-path {
+  border-color: #3e4c5a;
 }
 
 .batch-swap-view__edit-path::-webkit-scrollbar {

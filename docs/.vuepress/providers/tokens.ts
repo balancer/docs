@@ -2,6 +2,9 @@ import { ref, provide, onBeforeMount, InjectionKey, computed } from 'vue';
 import axios from 'axios';
 import { safeInject } from './inject';
 import { useNetwork } from './network';
+import { ethers } from 'ethers';
+import { ERC20ABI } from '../abis/ERC20';
+import { filterToken } from '../utils';
 
 export interface TokenList {
   readonly name: string;
@@ -66,6 +69,54 @@ export const tokensProvider = () => {
     );
   }
 
+  async function getTokenFromChain(address) {
+    const provider = new ethers.JsonRpcProvider(selectedNetwork.value.rpcUrl);
+
+    const tokenContract = new ethers.Contract(address, ERC20ABI, provider);
+
+    try {
+      const name = await tokenContract.name();
+      const symbol = await tokenContract.symbol();
+      const decimals: bigint = await tokenContract.decimals();
+
+      const token = {
+        chainId: selectedNetwork.value.id,
+        address,
+        name,
+        decimals: Number(decimals),
+        symbol,
+      };
+
+      return token;
+    } catch {
+      return null;
+    }
+  }
+
+  async function searchTokens(value) {
+    const results = tokens.value.filter(token => {
+      return filterToken(value, token);
+    });
+
+    if (results.length > 0) {
+      return results;
+    }
+
+    if (ethers.isAddress(value)) {
+      const token = await getTokenFromChain(value);
+
+      if (token) {
+        if (!allTokens.value.find(t => t.address === token.address)) {
+          allTokens.value.push(token);
+        }
+
+        return [token];
+      }
+    }
+
+    return [];
+  }
+
   function getTokens(addresses: string[]) {
     return addresses.map(address => getToken(address)).filter(Boolean);
   }
@@ -74,6 +125,8 @@ export const tokensProvider = () => {
     tokens,
     getToken,
     getTokens,
+    getTokenFromChain,
+    searchTokens,
   };
 };
 

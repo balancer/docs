@@ -63,6 +63,14 @@ const searchValue = ref('');
   border-radius: 6px;
 }
 
+.dark .search-button button {
+  background-color: #384aff;
+}
+
+.dark .search-button button:hover {
+  background-color: #2436eb;
+}
+
 .search-button svg {
   height: 20px;
   width: 20px;

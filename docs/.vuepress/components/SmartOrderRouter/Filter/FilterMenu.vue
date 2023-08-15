@@ -1,5 +1,5 @@
 <script setup>
-import { computed, ref } from 'vue';
+import { watch, ref } from 'vue';
 import { PopoverPanel } from '@headlessui/vue';
 import { RecycleScroller } from 'vue-virtual-scroller';
 import FilterSearch from './FilterSearch.vue';
@@ -20,31 +20,46 @@ const props = defineProps({
     type: Function,
     required: true,
   },
-  searchFilter: {
+  searchFn: {
     type: Function,
   },
 });
 
 const searchValue = ref('');
+const filteredOptions = ref(props.options ?? []);
 
-const filteredOptions = computed(() => {
-  if (!searchValue.value || !props.searchFilter) {
-    return props.options;
+watch(
+  () => props.options,
+  () => {
+    filteredOptions.value = props.options;
+  }
+);
+
+async function updateSearch() {
+  if (!props.searchFn) {
+    return;
   }
 
-  return props.options.filter(token => {
-    return props.searchFilter(searchValue.value, token);
-  });
+  let result = props.searchFn(searchValue.value);
+  if (result instanceof Promise) {
+    result = await result;
+  }
+
+  filteredOptions.value = result;
+}
+
+watch(searchValue, () => {
+  updateSearch();
 });
 </script>
 <template>
   <PopoverPanel class="filter__menu">
     <FilterSearch
-      v-if="searchFilter"
+      v-if="searchFn"
       :searchValue="searchValue"
       :onChange="newValue => (searchValue = newValue)"
     />
-    <div v-if="searchFilter" class="filter-menu__divider-wrapper">
+    <div v-if="searchFn" class="filter-menu__divider-wrapper">
       <hr class="filter-menu__divider" />
     </div>
     <RecycleScroller

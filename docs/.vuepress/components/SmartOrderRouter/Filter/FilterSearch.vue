@@ -41,4 +41,9 @@ onUnmounted(() => {
   line-height: 20px;
   width: 100%;
 }
+
+.dark .filter-search {
+  background-color: #0f172a;
+  border-color: #3e4c5a;
+}
 </style>

@@ -1,8 +1,8 @@
 <script setup>
 import { useTokens } from '../../providers/tokens';
 import { Select, SelectTrigger, SelectOptions } from '../Select';
-import { filterToken } from '../../utils';
-const { tokens } = useTokens();
+
+const { tokens, searchTokens } = useTokens();
 
 defineProps({
   amountIn: {
@@ -63,7 +63,7 @@ defineProps({
               v-slot="token"
               :options="tokens"
               optionKey="address"
-              :searchFilter="filterToken"
+              :searchFn="searchTokens"
             >
               <Avatar
                 :address="token.address"
@@ -98,7 +98,7 @@ defineProps({
               v-slot="token"
               :options="tokens"
               optionKey="address"
-              :searchFilter="filterToken"
+              :searchFn="searchTokens"
             >
               <Avatar
                 :address="token.address"

@@ -32,6 +32,7 @@ onUnmounted(() => {
 }
 
 .search {
+  background-color: transparent;
   border: 1px solid #e2e8f0;
   border-radius: 6px;
   padding: 12px 8px;
@@ -39,5 +40,10 @@ onUnmounted(() => {
   font-weight: 600;
   line-height: 20px;
   width: 100%;
+}
+
+.dark .search {
+  background-color: #0f172a;
+  border-color: #3e4c5a;
 }
 </style>

@@ -6,7 +6,6 @@ import InputLabel from '../InputLabel.vue';
 import Input from '../Input.vue';
 import HopForm from './HopForm.vue';
 import { Select, SelectTrigger, SelectOptions } from '../Select';
-import { filterToken } from '../../utils';
 
 const props = defineProps({
   path: {
@@ -43,7 +42,7 @@ const props = defineProps({
   },
 });
 
-const { tokens, getToken } = useTokens();
+const { tokens, getToken, searchTokens } = useTokens();
 
 const tokenIn = computed(() => {
   if (!props.path.tokenIn) {
@@ -82,7 +81,7 @@ const tokenIn = computed(() => {
           v-slot="token"
           :options="tokens"
           optionKey="address"
-          :searchFilter="filterToken"
+          :searchFn="searchTokens"
         >
           <Avatar
             :address="token.address"
@@ -141,6 +140,11 @@ const tokenIn = computed(() => {
   width: 100%;
 }
 
+.dark .add-hop-button {
+  background-color: #384aff;
+  color: #fff;
+}
+
 .add-hop-button svg {
   height: 20px;
   width: 20px;
@@ -149,5 +153,10 @@ const tokenIn = computed(() => {
 .add-hop-button:hover {
   background-color: #dbeafe;
   color: #2563eb;
+}
+
+.dark .add-hop-button:hover {
+  background-color: #2436eb;
+  color: #fff;
 }
 </style>

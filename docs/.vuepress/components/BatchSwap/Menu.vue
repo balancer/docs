@@ -72,9 +72,17 @@ defineProps({
 <style scoped>
 .menu {
   background-color: #f8fafc;
+  border-right: 1px solid transparent;
   padding: 24px 8px;
   height: 100%;
   width: 100%;
+  border-top-left-radius: 12px;
+  border-bottom-left-radius: 12px;
+}
+
+.dark .menu {
+  background-color: #1e293b;
+  border-color: #3e4c5a;
 }
 
 .menu-items > * + * {
@@ -101,14 +109,33 @@ defineProps({
   width: 100%;
 }
 
+.dark .menu-item {
+  color: #e2e8f0;
+}
+
 .menu-item--active,
 .menu-item__wrapper:hover .menu-item {
   background-color: #eaf0f6;
 }
 
+.dark .menu-item--active,
+.dark .menu-item__wrapper:hover .menu-item {
+  background-color: #334155;
+}
+
 .add-path-button {
   background-color: #eff6ff;
   color: #2563eb;
+}
+
+.dark .add-path-button {
+  background-color: #384aff;
+  color: #fff;
+}
+
+.dark .add-path-button:hover {
+  background-color: #2436eb;
+  color: #fff;
 }
 
 .add-path-button:hover {

@@ -87,6 +87,10 @@ const { network } = useNetwork();
   border-radius: 8px;
 }
 
+.dark .details {
+  background-color: #162031;
+}
+
 .heading {
   font-size: 16px;
   font-weight: 600;
@@ -112,7 +116,10 @@ const { network } = useNetwork();
 
 .value {
   font-size: 14px;
-  /* font-weight: 600; */
   line-height: 20px;
+}
+
+.dark .value {
+  color: #cbd5e1;
 }
 </style>

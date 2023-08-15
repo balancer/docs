@@ -1,5 +1,5 @@
 <script setup>
-import { computed } from 'vue';
+import { computed, watch } from 'vue';
 import { usePools } from '../../providers/pools';
 import { useTokens } from '../../providers/tokens';
 
@@ -26,13 +26,25 @@ const props = defineProps({
   isLoading: {
     type: Boolean,
   },
+  noRouteAvailable: {
+    type: Boolean,
+  },
 });
 
+watch(
+  () => [props.route, props.isLoading, props.noRouteAvailable],
+  () => {
+    console.log('route', props.route);
+    console.log('isLoading', props.isLoading);
+    console.log('noRouteAvailable', props.noRouteAvailable);
+  }
+);
+
 const { getToken } = useTokens();
-const { getPoolByID } = usePools();
+const { getPoolByID, isLoading } = usePools();
 
 const paths = computed(() => {
-  if (!props.route) {
+  if (!props.route || isLoading.value) {
     return [];
   }
 
@@ -89,17 +101,17 @@ const paths = computed(() => {
           />
         </div>
       </div>
-      <div v-if="isLoading" class="path">
-        <div class="hops">
-          <div class="hop">
-            <Spinner />
-          </div>
-        </div>
-      </div>
-      <div v-if="!isLoading && !route" class="path">
+      <div v-if="noRouteAvailable" class="path">
         <div class="hops">
           <div class="hop">
             <span class="no-route">No Route Found</span>
+          </div>
+        </div>
+      </div>
+      <div v-else-if="isLoading || paths.length === 0" class="path">
+        <div class="hops">
+          <div class="hop">
+            <Spinner />
           </div>
         </div>
       </div>
@@ -131,7 +143,11 @@ const paths = computed(() => {
   padding-bottom: 48px;
   border-radius: 12px;
   border: 1px solid #e2e8f0;
-  aspect-ratio: 21 / 9;
+}
+
+.dark .route-display {
+  background-color: #162031;
+  border-color: #3e4c5a;
 }
 
 .route-display > * + * {
@@ -182,6 +198,10 @@ const paths = computed(() => {
   margin-right: 20px;
 }
 
+.dark .path {
+  border-color: #64748b;
+}
+
 .hops {
   position: absolute;
   bottom: -17px;
@@ -199,6 +219,11 @@ const paths = computed(() => {
   border-radius: 6px;
   display: inline-flex;
   padding: 6px 12px;
+}
+
+.dark .hop {
+  background-color: #1e293b;
+  border-color: #475569;
 }
 
 .hop > * + * {

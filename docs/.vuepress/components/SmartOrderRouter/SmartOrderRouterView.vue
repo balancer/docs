@@ -14,6 +14,7 @@ import { useTokens } from '../../providers/tokens';
 import InputsRow from './InputsRow.vue';
 import RouteDisplay from './RouteDisplay.vue';
 import FiltersRow from './FiltersRow.vue';
+import Output from './Output.vue';
 
 const { network } = useNetwork();
 const { tokens } = useTokens();
@@ -31,8 +32,27 @@ const tokenIn = ref(tokens.value.length > 0 ? tokens.value[0] : null);
 const tokenOut = ref(tokens.value.length > 1 ? tokens.value[1] : null);
 
 const route = ref(null);
+const noRouteAvailable = ref(false);
 
 const isLoading = ref(false);
+
+// reset values when network changes
+watch(network, () => {
+  swapKind.value = SwapKind.GivenIn;
+
+  amountIn.value = '1.0';
+  amountOut.value = '';
+
+  tokenIn.value = tokens.value.length > 0 ? tokens.value[0] : null;
+  tokenOut.value = tokens.value.length > 1 ? tokens.value[1] : null;
+
+  route.value = null;
+  noRouteAvailable.value = false;
+
+  tokenFilters.value = [];
+  poolFilters.value = [];
+  poolTypeFilters.value = [];
+});
 
 function debounce(fn, wait) {
   let timer;
@@ -111,6 +131,7 @@ function onTokenOutChange(value) {
 async function updateRoute() {
   isLoading.value = true;
   route.value = null;
+  noRouteAvailable.value = false;
 
   try {
     const tIn = new Token(
@@ -218,6 +239,8 @@ async function updateRoute() {
     }
 
     route.value = response;
+  } catch {
+    noRouteAvailable.value = true;
   } finally {
     isLoading.value = false;
   }
@@ -242,7 +265,7 @@ async function updateRoute() {
       :onAddPoolTypeFilter="poolType => poolTypeFilters.push(poolType)"
       :onRemovePoolTypeFilter="
         poolType =>
-          (poolTypeFilters = poolTypeFilters.filter(p => p !== poolType))
+          (poolTypeFilters = poolTypeFilters.filter(p => p.id !== poolType.id))
       "
     />
     <InputsRow
@@ -262,12 +285,14 @@ async function updateRoute() {
       :tokenOut="tokenOut"
       :route="route"
       :isLoading="isLoading"
+      :noRouteAvailable="noRouteAvailable"
     />
+    <Output :route="route" />
   </div>
 </template>
 <style scoped>
 .sor-view {
-  padding: 24px 64px;
+  padding: 24px 0;
 }
 
 .sor-view > * + * {

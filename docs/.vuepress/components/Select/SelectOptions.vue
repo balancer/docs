@@ -1,6 +1,6 @@
 <script setup>
 import 'vue-virtual-scroller/dist/vue-virtual-scroller.css';
-import { computed, ref } from 'vue';
+import { ref, watch } from 'vue';
 import { ListboxOptions, ListboxOption } from '@headlessui/vue';
 import { RecycleScroller } from 'vue-virtual-scroller';
 import SelectSearch from './SelectSearch.vue';
@@ -14,35 +14,46 @@ const props = defineProps({
     type: String,
     required: true,
   },
-  searchKeys: {
-    type: Array,
-    default: () => [],
-  },
-  searchFilter: {
+  searchFn: {
     type: Function,
   },
 });
 
 const searchValue = ref('');
+const filteredOptions = ref(props.options ?? []);
 
-const filteredOptions = computed(() => {
-  if (!searchValue.value || !props.searchFilter) {
-    return props.options;
+watch(
+  () => props.options,
+  () => {
+    filteredOptions.value = props.options;
+  }
+);
+
+async function updateSearch() {
+  if (!props.searchFn) {
+    return;
   }
 
-  return props.options.filter(token => {
-    return props.searchFilter(searchValue.value, token);
-  });
+  let result = props.searchFn(searchValue.value);
+  if (result instanceof Promise) {
+    result = await result;
+  }
+
+  filteredOptions.value = result;
+}
+
+watch(searchValue, () => {
+  updateSearch();
 });
 </script>
 <template>
   <ListboxOptions class="menu">
     <SelectSearch
-      v-if="searchFilter"
+      v-if="searchFn"
       :searchValue="searchValue"
       :onChange="newValue => (searchValue = newValue)"
     />
-    <div v-if="searchFilter" class="menu-divider">
+    <div v-if="searchFn" class="menu-divider">
       <hr />
     </div>
     <RecycleScroller
@@ -74,6 +85,11 @@ ul {
   z-index: 99;
   background-color: #fff;
   min-width: 200px;
+}
+
+.dark .menu {
+  background-color: #1e293b;
+  border-color: #3e4c5a;
 }
 
 .menu .scroller {
@@ -109,10 +125,19 @@ ul {
   background-color: #f8fafc;
 }
 
+.dark .menu-item:hover {
+  background-color: #334155;
+}
+
 .menu-divider {
   background-color: #fff;
   padding: 0px 8px;
+  padding-bottom: 8px;
   width: 100%;
+}
+
+.dark .menu-divider {
+  background-color: #1e293b;
 }
 
 .menu-divider hr {

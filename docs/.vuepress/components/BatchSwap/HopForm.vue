@@ -3,7 +3,6 @@ import { computed } from 'vue';
 import { usePools } from '../../providers/pools';
 import { useTokens } from '../../providers/tokens';
 import { Select, SelectTrigger, SelectOptions } from '../Select';
-import { filterToken } from '../../utils';
 
 const { getToken, getTokens } = useTokens();
 const { pools, getPoolByID } = usePools();
@@ -50,8 +49,6 @@ const pool = computed(() => {
   }
 
   const _p = getPoolByID(props.hop.pool);
-
-  console.log(_p);
 
   return _p;
 });
@@ -134,7 +131,6 @@ const tokenOut = computed(() => {
               : []
           "
           optionKey="address"
-          :searchFilter="filterToken"
         >
           <Avatar :address="item.address" :imageURL="item.logoURI" :size="20" />
           <span class="truncate">{{ item.symbol }}</span>
@@ -150,12 +146,15 @@ const tokenOut = computed(() => {
   padding: 12px;
 }
 
+.dark .hop-form {
+  border-color: #3e4c5a;
+}
+
 .hop-form > * + * {
   margin-top: 16px;
 }
 
 .hop-form hr {
-  border-color: #e2e8f0;
   margin-bottom: 0;
 }
 

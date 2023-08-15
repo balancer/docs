@@ -52,22 +52,18 @@ defineProps({
   width: 100%;
 }
 
-.select-trigger {
-  /* overflow: hidden; */
-  /* text-overflow: ellipsis; */
-  /* white-space: nowrap; */
-}
-
-.select-trigger span {
-  /* flex: 1;
-  overflow: hidden;
-  text-overflow: ellipsis;
-  white-space: nowrap; */
+.dark .select-trigger {
+  background-color: transparent;
+  border-color: #3e4c5a;
 }
 
 .select-trigger--disabled {
   background-color: #f8fafc;
   cursor: not-allowed;
+}
+
+.dark .select-trigger--disabled {
+  background-color: #1e293b;
 }
 
 .icon-wrapper {
