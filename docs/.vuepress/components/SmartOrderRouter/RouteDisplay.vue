@@ -1,5 +1,5 @@
 <script setup>
-import { computed, watch } from 'vue';
+import { computed } from 'vue';
 import { usePools } from '../../providers/pools';
 import { useTokens } from '../../providers/tokens';
 
@@ -30,15 +30,6 @@ const props = defineProps({
     type: Boolean,
   },
 });
-
-watch(
-  () => [props.route, props.isLoading, props.noRouteAvailable],
-  () => {
-    console.log('route', props.route);
-    console.log('isLoading', props.isLoading);
-    console.log('noRouteAvailable', props.noRouteAvailable);
-  }
-);
 
 const { getToken } = useTokens();
 const { getPoolByID, isLoading } = usePools();
