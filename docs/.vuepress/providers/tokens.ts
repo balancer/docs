@@ -67,7 +67,7 @@ export const tokensProvider = () => {
   }
 
   function getTokens(addresses: string[]) {
-    return addresses.map(address => getToken(address));
+    return addresses.map(address => getToken(address)).filter(Boolean);
   }
 
   return {

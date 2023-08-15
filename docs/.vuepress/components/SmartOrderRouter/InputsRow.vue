@@ -1,7 +1,7 @@
 <script setup>
 import { useTokens } from '../../providers/tokens';
 import { Select, SelectTrigger, SelectOptions } from '../Select';
-
+import { filterToken } from '../../utils';
 const { tokens } = useTokens();
 
 defineProps({
@@ -59,7 +59,12 @@ defineProps({
               />
               <span>{{ tokenIn.symbol }}</span>
             </SelectTrigger>
-            <SelectOptions v-slot="token" :options="tokens" optionKey="address">
+            <SelectOptions
+              v-slot="token"
+              :options="tokens"
+              optionKey="address"
+              :searchFilter="filterToken"
+            >
               <Avatar
                 :address="token.address"
                 :imageURL="token.logoURI"
@@ -89,7 +94,12 @@ defineProps({
               />
               <span>{{ tokenOut.symbol }}</span>
             </SelectTrigger>
-            <SelectOptions v-slot="token" :options="tokens" optionKey="address">
+            <SelectOptions
+              v-slot="token"
+              :options="tokens"
+              optionKey="address"
+              :searchFilter="filterToken"
+            >
               <Avatar
                 :address="token.address"
                 :imageURL="token.logoURI"

@@ -175,7 +175,7 @@ async function updateRoute() {
 
       if (
         poolTypeFilters.value.length > 0 &&
-        !poolTypeFilters.value.includes(pool.poolType)
+        !poolTypeFilters.value.map(v => v.id).includes(pool.poolType)
       ) {
         return false;
       }

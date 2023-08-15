@@ -6,6 +6,7 @@ import InputLabel from '../InputLabel.vue';
 import Input from '../Input.vue';
 import HopForm from './HopForm.vue';
 import { Select, SelectTrigger, SelectOptions } from '../Select';
+import { filterToken } from '../../utils';
 
 const props = defineProps({
   path: {
@@ -77,7 +78,12 @@ const tokenIn = computed(() => {
           />
           <span v-if="tokenIn">{{ tokenIn.symbol }}</span>
         </SelectTrigger>
-        <SelectOptions v-slot="token" :options="tokens" optionKey="address">
+        <SelectOptions
+          v-slot="token"
+          :options="tokens"
+          optionKey="address"
+          :searchFilter="filterToken"
+        >
           <Avatar
             :address="token.address"
             :imageURL="token.logoURI"

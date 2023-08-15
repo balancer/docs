@@ -1,11 +1,12 @@
 <script setup>
-import 'vue-virtual-scroller/dist/vue-virtual-scroller.css';
-import { Popover, PopoverButton, PopoverPanel } from '@headlessui/vue';
-import { RecycleScroller } from 'vue-virtual-scroller';
+import { computed } from 'vue';
 import { useTokens } from '../../providers/tokens';
 import { usePools } from '../../providers/pools';
-// import { PoolType } from "@balancer/sdk";
 import { PoolType } from '@balancer-labs/sdk';
+import { filterToken, filterPool } from '../../utils';
+import Filter from './Filter/Filter.vue';
+import FilterMenu from './Filter/FilterMenu.vue';
+import FilterTrigger from './Filter/FilterTrigger.vue';
 
 defineProps({
   tokenFilters: {
@@ -48,239 +49,93 @@ defineProps({
 
 const { tokens } = useTokens();
 const { pools } = usePools();
+
+const poolTypes = computed(() => {
+  return Object.values(PoolType).map(poolType => {
+    return {
+      id: poolType,
+      value: poolType,
+    };
+  });
+});
 </script>
 <template>
   <div class="filters">
-    <Popover class="filter">
-      <div class="filter__button">
-        <PopoverButton class="filter__trigger">
-          <svg
-            xmlns="http://www.w3.org/2000/svg"
-            viewBox="0 0 20 20"
-            fill="currentColor"
-            class="w-5 h-5"
-          >
-            <path
-              d="M10 3.75a2 2 0 10-4 0 2 2 0 004 0zM17.25 4.5a.75.75 0 000-1.5h-5.5a.75.75 0 000 1.5h5.5zM5 3.75a.75.75 0 01-.75.75h-1.5a.75.75 0 010-1.5h1.5a.75.75 0 01.75.75zM4.25 17a.75.75 0 000-1.5h-1.5a.75.75 0 000 1.5h1.5zM17.25 17a.75.75 0 000-1.5h-5.5a.75.75 0 000 1.5h5.5zM9 10a.75.75 0 01-.75.75h-5.5a.75.75 0 010-1.5h5.5A.75.75 0 019 10zM17.25 10.75a.75.75 0 000-1.5h-1.5a.75.75 0 000 1.5h1.5zM14 10a2 2 0 10-4 0 2 2 0 004 0zM10 16.25a2 2 0 10-4 0 2 2 0 004 0z"
-            />
-          </svg>
-          <span>Tokens</span>
-        </PopoverButton>
-        <div v-if="tokenFilters.length > 0" class="divider" />
-        <div
-          v-if="tokenFilters.length > 0 && tokenFilters.length < 3"
-          class="enabled-filters"
-        >
-          <button
-            v-for="token in tokenFilters"
-            :key="token.address"
-            class="enabled-filter"
-            @click="() => onRemoveTokenFilter(token)"
-          >
-            <span>{{ token.symbol }}</span>
-            <span class="close">
-              <svg
-                xmlns="http://www.w3.org/2000/svg"
-                viewBox="0 0 20 20"
-                fill="currentColor"
-              >
-                <path
-                  d="M6.28 5.22a.75.75 0 00-1.06 1.06L8.94 10l-3.72 3.72a.75.75 0 101.06 1.06L10 11.06l3.72 3.72a.75.75 0 101.06-1.06L11.06 10l3.72-3.72a.75.75 0 00-1.06-1.06L10 8.94 6.28 5.22z"
-                />
-              </svg>
-            </span>
-          </button>
-        </div>
-        <div
-          v-if="tokenFilters.length > 0 && tokenFilters.length >= 3"
-          class="enabled-filters"
-        >
-          <button class="enabled-filter">
-            <span>{{ tokenFilters.length }} Selected</span>
-          </button>
-        </div>
-      </div>
-      <PopoverPanel class="filter__menu">
-        <RecycleScroller
-          v-slot="{ item }"
-          class="scroller"
-          itemClass="filter__menu-item-wrapper"
-          :items="tokens"
-          :itemSize="40"
-          keyField="address"
-        >
-          <button
-            :class="`filter__menu-item ${
-              tokenFilters.includes(item) ? 'filter__menu-item--selected' : ''
-            }`"
-            @click="
-              () =>
-                tokenFilters.includes(item)
-                  ? onRemoveTokenFilter(item)
-                  : onAddTokenFilter(item)
-            "
-          >
-            <Avatar
-              :address="item.address"
-              :imageURL="item.logoURI"
-              :size="20"
-            />
-            <span>{{ item.symbol }}</span>
-          </button>
-        </RecycleScroller>
-      </PopoverPanel>
-    </Popover>
-    <Popover class="filter">
-      <div class="filter__button">
-        <PopoverButton class="filter__trigger">
-          <svg
-            xmlns="http://www.w3.org/2000/svg"
-            viewBox="0 0 20 20"
-            fill="currentColor"
-            class="w-5 h-5"
-          >
-            <path
-              d="M10 3.75a2 2 0 10-4 0 2 2 0 004 0zM17.25 4.5a.75.75 0 000-1.5h-5.5a.75.75 0 000 1.5h5.5zM5 3.75a.75.75 0 01-.75.75h-1.5a.75.75 0 010-1.5h1.5a.75.75 0 01.75.75zM4.25 17a.75.75 0 000-1.5h-1.5a.75.75 0 000 1.5h1.5zM17.25 17a.75.75 0 000-1.5h-5.5a.75.75 0 000 1.5h5.5zM9 10a.75.75 0 01-.75.75h-5.5a.75.75 0 010-1.5h5.5A.75.75 0 019 10zM17.25 10.75a.75.75 0 000-1.5h-1.5a.75.75 0 000 1.5h1.5zM14 10a2 2 0 10-4 0 2 2 0 004 0zM10 16.25a2 2 0 10-4 0 2 2 0 004 0z"
-            />
-          </svg>
-          <span>Pools</span>
-        </PopoverButton>
-        <div v-if="poolFilters.length > 0" class="divider" />
-        <div
-          v-if="poolFilters.length > 0 && poolFilters.length < 3"
-          class="enabled-filters"
-        >
-          <button
-            v-for="pool in poolFilters.slice(0, 3)"
-            :key="pool.address"
-            class="enabled-filter"
-            @click="() => onRemovePoolFilter(pool)"
-          >
-            <span>{{ pool.symbol }}</span>
-            <span class="close">
-              <svg
-                xmlns="http://www.w3.org/2000/svg"
-                viewBox="0 0 20 20"
-                fill="currentColor"
-              >
-                <path
-                  d="M6.28 5.22a.75.75 0 00-1.06 1.06L8.94 10l-3.72 3.72a.75.75 0 101.06 1.06L10 11.06l3.72 3.72a.75.75 0 101.06-1.06L11.06 10l3.72-3.72a.75.75 0 00-1.06-1.06L10 8.94 6.28 5.22z"
-                />
-              </svg>
-            </span>
-          </button>
-        </div>
-        <div
-          v-if="poolFilters.length > 0 && poolFilters.length >= 3"
-          class="enabled-filters"
-        >
-          <button class="enabled-filter">
-            <span>{{ poolFilters.length }} Selected</span>
-          </button>
-        </div>
-      </div>
-      <PopoverPanel class="filter__menu">
-        <RecycleScroller
-          v-slot="{ item }"
-          class="scroller"
-          itemClass="filter__menu-item-wrapper"
-          :items="pools"
-          :itemSize="40"
-          keyField="id"
-        >
-          <button
-            :class="`filter__menu-item ${
-              poolFilters.includes(item) ? 'filter__menu-item--selected' : ''
-            }`"
-            @click="
-              () =>
-                poolFilters.includes(item)
-                  ? onRemovePoolFilter(item)
-                  : onAddPoolFilter(item)
-            "
-          >
-            <span>{{ item.symbol }}</span>
-          </button>
-        </RecycleScroller>
-      </PopoverPanel>
-    </Popover>
-    <Popover class="filter">
-      <div class="filter__button">
-        <PopoverButton class="filter__trigger">
-          <svg
-            xmlns="http://www.w3.org/2000/svg"
-            viewBox="0 0 20 20"
-            fill="currentColor"
-            class="w-5 h-5"
-          >
-            <path
-              d="M10 3.75a2 2 0 10-4 0 2 2 0 004 0zM17.25 4.5a.75.75 0 000-1.5h-5.5a.75.75 0 000 1.5h5.5zM5 3.75a.75.75 0 01-.75.75h-1.5a.75.75 0 010-1.5h1.5a.75.75 0 01.75.75zM4.25 17a.75.75 0 000-1.5h-1.5a.75.75 0 000 1.5h1.5zM17.25 17a.75.75 0 000-1.5h-5.5a.75.75 0 000 1.5h5.5zM9 10a.75.75 0 01-.75.75h-5.5a.75.75 0 010-1.5h5.5A.75.75 0 019 10zM17.25 10.75a.75.75 0 000-1.5h-1.5a.75.75 0 000 1.5h1.5zM14 10a2 2 0 10-4 0 2 2 0 004 0zM10 16.25a2 2 0 10-4 0 2 2 0 004 0z"
-            />
-          </svg>
-          <span>Pool Type</span>
-        </PopoverButton>
-        <div v-if="poolTypeFilters.length > 0" class="divider" />
-        <div
-          v-if="poolTypeFilters.length > 0 && poolTypeFilters.length < 3"
-          class="enabled-filters"
-        >
-          <button
-            v-for="poolType in poolTypeFilters"
-            :key="poolType"
-            class="enabled-filter"
-            @click="() => onRemovePoolTypeFilter(poolType)"
-          >
-            <span>{{ poolType }}</span>
-            <span class="close">
-              <svg
-                xmlns="http://www.w3.org/2000/svg"
-                viewBox="0 0 20 20"
-                fill="currentColor"
-              >
-                <path
-                  d="M6.28 5.22a.75.75 0 00-1.06 1.06L8.94 10l-3.72 3.72a.75.75 0 101.06 1.06L10 11.06l3.72 3.72a.75.75 0 101.06-1.06L11.06 10l3.72-3.72a.75.75 0 00-1.06-1.06L10 8.94 6.28 5.22z"
-                />
-              </svg>
-            </span>
-          </button>
-        </div>
-        <div
-          v-if="poolTypeFilters.length > 0 && poolTypeFilters.length >= 3"
-          class="enabled-filters"
-        >
-          <button class="enabled-filter">
-            <span>{{ poolTypeFilters.length }} Selected</span>
-          </button>
-        </div>
-      </div>
-      <PopoverPanel class="filter__menu">
-        <div class="scroller">
-          <div class="filter__menu-items">
-            <div
-              v-for="poolType of PoolType"
-              :key="poolType"
-              class="filter__menu-item-wrapper"
-            >
-              <button
-                :class="`filter__menu-item ${
-                  poolTypeFilters.includes(poolType)
-                    ? 'filter__menu-item--selected'
-                    : ''
-                }`"
-                @click="
-                  () =>
-                    poolTypeFilters.includes(poolType)
-                      ? onRemovePoolTypeFilter(poolType)
-                      : onAddPoolTypeFilter(poolType)
-                "
-              >
-                <span>{{ poolType }}</span>
-              </button>
-            </div>
-          </div>
-        </div>
-      </PopoverPanel>
-    </Popover>
+    <Filter>
+      <FilterTrigger
+        v-slot="item"
+        label="Tokens"
+        :enabled="tokenFilters"
+        :onRemove="item => onRemoveTokenFilter(item)"
+      >
+        <span>{{ item.symbol }}</span>
+      </FilterTrigger>
+      <FilterMenu
+        v-slot="item"
+        :options="tokens"
+        optionKey="address"
+        :onSelect="
+          item =>
+            tokenFilters.includes(item)
+              ? onRemoveTokenFilter(item)
+              : onAddTokenFilter(item)
+        "
+        :enabled="tokenFilters"
+        :searchFilter="filterToken"
+      >
+        <Avatar :address="item.address" :imageURL="item.logoURI" :size="20" />
+        <span>{{ item.symbol }}</span>
+      </FilterMenu>
+    </Filter>
+    <Filter>
+      <FilterTrigger
+        v-slot="item"
+        label="Pools"
+        :enabled="poolFilters"
+        :onRemove="item => onRemovePoolFilter(item)"
+      >
+        <span>{{ item.symbol }}</span>
+      </FilterTrigger>
+      <FilterMenu
+        v-slot="item"
+        :options="pools"
+        optionKey="id"
+        :onSelect="
+          item =>
+            poolFilters.includes(item)
+              ? onRemovePoolFilter(item)
+              : onAddPoolFilter(item)
+        "
+        :enabled="poolFilters"
+        :searchFilter="filterPool"
+      >
+        <span>{{ item.symbol }}</span>
+      </FilterMenu>
+    </Filter>
+    <Filter>
+      <FilterTrigger
+        v-slot="item"
+        label="Pool Type"
+        :enabled="poolTypeFilters"
+        :onRemove="item => onRemovePoolTypeFilter(item)"
+      >
+        <span>{{ item.value }}</span>
+      </FilterTrigger>
+      <FilterMenu
+        v-slot="item"
+        :options="poolTypes"
+        optionKey="id"
+        :onSelect="
+          item =>
+            poolTypeFilters.includes(item)
+              ? onRemovePoolTypeFilter(item)
+              : onAddPoolTypeFilter(item)
+        "
+        :enabled="poolTypeFilters"
+      >
+        <span>{{ item.value }}</span>
+      </FilterMenu>
+    </Filter>
   </div>
 </template>
 <style>
