@@ -1,8 +1,5 @@
 ---
 title: Overview
-references:
-  - details: StablePool BPT as Collateral
-    link: /concepts/advanced/valuing-bpt/bpt-as-collateral.html
 ---
 
 # Valuing BPT
@@ -76,10 +73,6 @@ A few examples:
 
 - The `WETH/wstETH` pool will return a rate relative to `WETH`
 - `bb-a-USD` will return a rate relative to USD, calculated as a weighted average of the underlying stablecoins (`DAI`, `USDC`, `USDT`) in the nested linear pools (`bb-a-DAI`, `bb-a-USDC`, `bb-a-USDT`)
-
-#### Using Stable Pool BPT as Collateral
-
-Note that the method above does not account for price divergence from the assumed peg. If `stETH` depegs from `ETH` or any stablecoin depegs from USD, `pool.getRate()` will suffer inaccuracies. To price Stable Pool BPT for more mission-critical use cases such as money market collateral, please refer to [this page](./bpt-as-collateral.md).
 
 ### Linear Pools
 

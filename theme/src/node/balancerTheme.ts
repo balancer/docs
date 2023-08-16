@@ -141,10 +141,13 @@ export const balancerTheme = ({
           })
         : [],
 
+      // #headlessui-listbox-button-1 > img
+
       // @vuepress/plugin-medium-zoom
       themePlugins.mediumZoom !== false
         ? mediumZoomPlugin({
-            selector: '.theme-default-content :not(a, .card-icon-row) > img',
+            selector:
+              '.theme-default-content :not(a, .card-icon-row, .NetworkSelect__button) > img',
             zoomOptions: {},
             // should greater than page transition duration
             delay: 300,

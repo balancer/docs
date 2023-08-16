@@ -22,6 +22,126 @@ Managed Pools are feature rich. Some of the features include:
   - Change token weights
 - Circuit Breakers to protect from malicious/compromised tokens
 
+## Weights
+
+An important feature of Managed Pools that makes them distinct from standard Weighted Pools is that they allow the pool `owner` to update token weights. This allows `owner`s to adjust the distributions of assets within a pool, in order to shift to different DeFi strategies. An example of this is modifying token weights in response to changes in market conditions.
+
+### Gradual Updates
+
+The recommended technique for updating weights in a Managed Pool is to do so gradually. In a gradual weight update, the pool calculates each weight by linearly interpolating between the start and end weights for the specified time. This steady weight update slowly adjusts token prices, encouraging arbitrageurs to rebalance pool balances in line with the desired weights.
+
+### Risks
+
+There are pricing risks that liquidity providers are exposed to during weight changes. If token weights are adjusted too quickly, prices can become unfavorable for the pool (and its Liquidity Providers). Arbitrageurs are able to extract more value when there is a sharper price discrepancy, so it is important for `owner`s to allow ample time for the pool to change weights in order to mitigate this risk. This ensures that sufficient time is given for market/arbitrage corrections, lowering the price impact of the pool rebalancing.
+
+### Examples
+[ManagedPoolSetting.sol](https://github.com/balancer/balancer-v2-monorepo/blob/master/pkg/pool-weighted/contracts/managed/ManagedPoolSettings.sol) provides the necessary logic for viewing and updating token weights within a Managed Pool. Only an `owner` can call `updateWeightsGradually`, but anyone can call the getters.
+
+```solidity
+// Time for weight change to finalize
+uint256 private constant _REWEIGHT_DURATION = 7 days;
+
+// Adjust pool weights in a pool with 3 tokens
+function changeWeights() public {
+  uint256[] memory newWeights = new uint256[](3);
+
+  // Weights must add up to 100% or 1e18
+  newWeights[0] = 30e16 // 30%
+  newWeights[1] = 30e16 // 30%
+  newWeights[2] = 40e16 // 40%
+
+  _managedPool.updateWeightsGradually(
+    block.timestamp, 
+    block.timestamp + _REWEIGHT_DURATION, 
+    _poolTokens, 
+    newWeights
+  );
+}
+```
+```solidity
+// View current weights of tokens in a Managed Pool
+uint256[] memory tokenWeights = _managedPool.getNormalizedWeights();
+
+// View the current gradual weight change update parameters
+(
+  uint256 startTime,
+  uint256 endTime,
+  uint256[] memory startWeights,
+  uint256[] memory endWeights
+) = _managedPool.getGradualWeightUpdateParams();
+```
+
+## Adding and Removing Tokens
+Pool `owner`s can modify the constituent assets of a Managed Pool by adding and removing tokens. 
+
+### Adding Tokens
+`addToken` adds a token to the Pool's list of swappable assets. When adding a token to a Managed Pool, the weights of all tokens in the pool will decrease proportionally unless any are already at the minimum weight. Once the new token is added, it will have an initial balance of 0. Because regular join operations do not work with tokens whose balances are 0, it is the `owner`s responsibility to deposit an initial amount of tokens into the pool via an `assetManager`. The `assetManager`, for the new token, is set by the `owner` when adding it to the pool. Token additions are forbidden during weight changes or when a weight change is scheduled in the future.
+
+### Removing Tokens
+`removeToken` removes a token from the Pool's list of swappable assets. When removing a token from a Managed Pool, the weights of all other tokens in the pool will increase. Because pools must have at least two tokens (excluding their own BPT), `owner`s can remove a token from the pool as long as there are three or more tokens currently in the pool. Similar to the rules for adding tokens, token removals are also forbidden during weight changes or when a weight change is scheduled in the future. Before calling `removeToken`, the `assetManager` must have withdrawn the entire balance of the token being removed from the pool.
+
+### Examples
+[ManagedPoolAddRemoveTokenLib.sol](https://github.com/balancer/balancer-v2-monorepo/blob/master/pkg/pool-weighted/contracts/managed/ManagedPoolAddRemoveTokenLib.sol) provides the necessary logic for adding and removing tokens from a Managed Pool. [AssetManagers.sol](https://github.com/balancer/balancer-v2-monorepo/blob/master/pkg/vault/contracts/AssetManagers.sol) provides the necessary logic for depositing and withdrawing tokens from a Managed Pool. Below are a few basic examples of how an `owner` can add and remove tokens from a Managed Pool, as well as how an `assetManager` can deposit and withdraw tokens.
+
+```solidity
+// Variable declarations
+IERC20 token = IERC20(0xC02aaA39b223FE8D0A0e5C4F27eAD9083C756Cc2); // WETH
+address assetManager = 0x123456789....; 
+uint256 tokensNormalizedWeight = 10e16; // 10% normalized weight
+uint256 mintAmount = 100e18;
+uint256 depositAmount = 100e18;
+uint256 burnAmount = 100e18;
+```
+```solidity
+/* Add token to the pool */
+_managedPool.addToken(
+  token,
+  assetManager,
+  tokensNormalizedWeight,
+  mintAmount,
+  msg.sender
+);
+
+// Approve the vault to spend the token
+token.approve(address(vault), depositAmount);
+
+// Deposit token via the assetManager
+IVault.PoolBalanceOp[] memory ops = new IVault.PoolBalanceOp[](1);
+ops[0] = IVault.PoolBalanceOp({
+  kind: IVault.PoolBalanceOpKind.Deposit,
+  token: token,
+  amount: depositAmount
+});
+vault.managePoolBalance(ops);
+```
+```solidity
+/* Remove token from the pool */
+// Get current balance of token in the pool
+(uint256 cash, uint256 managed, , ) = vault.getPoolTokenInfo(poolId, token);
+uint256 total = cash + managed;
+
+// Withdraw token and update balances via the assetManager
+IVault.PoolBalanceOp[] memory ops = new IVault.PoolBalanceOp[](2);
+ops[0] = IVault.PoolBalanceOp({
+  kind: IVault.PoolBalanceOpKind.Withdraw,
+  token: token,
+  amount: cash
+});
+ops[1] = IVault.PoolBalanceOp({
+  kind: IVault.PoolBalanceOpKind.Update,
+  token: token,
+  amount: total
+});
+vault.managePoolBalance(ops);
+
+// Remove token from the pool
+_managedPool.removeToken(
+  token,
+  burnAmount,
+  msg.sender
+);
+```
+
 ## Pause Swaps
 Managed Pool `owner`s have the ability to pause and unpause swaps. This feature has a wide range of practical applications, including, but not limited to, `owner`s shielding the pool's assets during security vulnerabilities, navigating through volatile market conditions, or preserving the pool's composition as a static basket of assets. `owner`s can be creative with this feature to fit their needs.
 
@@ -104,3 +224,88 @@ _managedPool.setManagementAumFeePercentage(managementFeePercentage);
 // Get the current AUM fee, as well as the last time fee collections occurred
 (uint256 aumFeePercentage, uint256 lastCollectionTimestamp) = _managedPool.getManagementAumFeeParams();
 ```
+
+## Liquidity Provider Allowlists
+Pool `owner`s can restrict liquidity providers' access to joining a Managed Pool. This feature empowers an `owner` to limit liquidity providers to specific addresses, which can be useful in setting up a private pool. The `owner` can adjust the allowlist by adding or removing addresses as needed, and can also toggle whether the allowlist is enforced or not. It's important to note that while this feature provides control over joining the pool, it does not restrict exiting, to ensure that liquidity providers can always exit the pool.
+
+### Examples
+[ManagedPoolSetting.sol](https://github.com/balancer/balancer-v2-monorepo/blob/master/pkg/pool-weighted/contracts/managed/ManagedPoolSettings.sol) provides the necessary logic for viewing and managing the LP `_allowedAddresses`. Below are examples of how to change and query the Liquidity Provider Allowlist in a Managed Pool.
+
+```solidity
+// Mock address used for examples
+address private _allowedAddress = 0x1234567890123456789012345678901234567890;
+```
+```solidity
+// Enable LP allowlist
+_managedPool.setMustAllowlistLPs(true);
+
+// Disable LP allowlist
+_managedPool.setMustAllowlistLPs(false);
+```
+```solidity
+// Add an address to the allowlist
+_managedPool.addAllowedAddress(_allowedAddress);
+
+// Remove an address from the allowlist
+_managedPool.removeAllowedAddress(_allowedAddress);
+```
+```solidity
+// Check if an address is on the allowlist
+bool isAllowed = _managedPool.isAddressOnAllowlist(_allowedAddress);
+
+// Get the current allowlist status
+bool mustAllowlistLPs = _managedPool.getMustAllowlistLPs();
+```
+
+## Enabling Joins and Exits
+
+Managed Pool `owner`s can enable and disable joins and exits. Like pausing and unpausing swaps, disabling joins and exits has a wide range of possible use cases, such as ensuring exact balances during complex pool management operations; `owner`s can be creative with this feature to fit their needs.
+
+### Examples
+[ManagedPoolSetting.sol](https://github.com/balancer/balancer-v2-monorepo/blob/master/pkg/pool-weighted/contracts/managed/ManagedPoolSettings.sol) provides the necessary logic for viewing the status of joins and exits, as well as enabling and disabling joins and exits within a Managed Pool. Below are a few basic examples of how to accomplish this within a Managed Pool. 
+
+```solidity
+// Get the current status of joins and exits
+bool joinExitEnabled = _managedPool.getJoinExitEnabled();
+```
+```solidity
+// Enable joins and exits
+_managedPool.setJoinExitEnabled(true);
+
+// Disable joins and exits
+_managedPool.setJoinExitEnabled(false);
+```
+
+## Circuit Breakers
+Circuit breakers are risk management infrastructure that can be used to protect pools in the event that the value of a token changes drastically with respect to the other tokens in the pool. Managed Pools have upper and lower bounds for each token, and the `owner` can set one, both, or neither bound on a per-token basis. The bounds are percentages corresponding to a relative change in the BPT price with respect to the token. If a given operation (swap, join, exit) will result in the BPT price changing (with respect to any token) to a value outside of the bounds, the circuit breaker will prevent that operation from happening. Since BPT prices are with respect to tokens, prices are ultimately calculated relative to the rest of the tokens in a pool. For example, consider a situation in which a token's circuit breaker is set with a lower bound of `0.7` and an upper bound of `2.0`. The pool will allow operations to continue as the token-denominated BPT price approaches a 30% value decrease or 2x value increase, but if a user attempts an operation that would cause the price to cross either threshold, the circuit breaker will prevent that from happening, and the transaction will be reverted. 
+To get BPT price with respect to a single token, users can calculate this as
+$$ \frac{supply_{BPT} * weight_{token}}{balance_{token}} $$
+::: warning Don't use this calculation for any other BPT pricing technique!
+This calculation is strictly for circuit breaker bounds. 
+:::
+For stablecoins and assets that are closely correlated in price, `owner`s can set a relatively narrow range for the circuit breaker bounds. For assets that are less correlated, `owner` can decide how they want to balance token volatility and range enforcement.
+
+### Examples
+[ManagedPoolSetting.sol](https://github.com/balancer/balancer-v2-monorepo/blob/master/pkg/pool-weighted/contracts/managed/ManagedPoolSettings.sol) provides the necessary logic for setting and viewing the state of circuit breakers. Below are a few basic examples of how to accomplish this within a Managed Pool. 
+
+```solidity
+// Set circuit breakers for a token
+_managedPool.setCircuitBreakers(
+  IERC20[] memory tokens,
+  uint256[] memory bptPrices,
+  uint256[] memory lowerBoundPercentages,
+  uint256[] memory upperBoundPercentages
+);
+
+// Get the current state of circuit breakers for a token
+// referenceWeight: Current normalized weight of the token.
+(
+  uint256 bptPrice,
+  uint256 referenceWeight,
+  uint256 lowerBound,
+  uint256 upperBound,
+  uint256 lowerBptPriceBound,
+  uint256 upperBptPriceBound
+) = _managedPool.getCircuitBreakerState(token);
+```
+

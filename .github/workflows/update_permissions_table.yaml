@@ -2,7 +2,7 @@ name: Update Permissions Tables
 
 on:
   schedule:
-    - cron: "0 0 * * 0"
+    - cron: "0 0 * * 3"
   workflow_dispatch:
 
 jobs:
@@ -21,8 +21,6 @@ jobs:
 
     - name: Update Files
       id: update
-      env:
-        WEB3_INFURA_PROJECT_ID: ${{ secrets.INFURA_KEY }}
       run: |
         pip3 install -r .github/python_actions/requirements.txt
         python3 .github/python_actions/full_chain_permissions.py
@@ -33,7 +31,7 @@ jobs:
       with:
         commit-message: "BOT: Update to permissions tables based on onchain changes."
         title: "BOT: Automatic update to permissions tables based on onchain changes."
-
+        branch: gha-permissions
         reviewers: "Tritum-VLK"
         assignees: "Tritum-VLK"
         labels: "Automatic"

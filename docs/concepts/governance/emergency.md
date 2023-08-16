@@ -22,13 +22,17 @@ The Balancer Emergency subDAO is a 4-of-7 multisig with the following members as
 
 The Balancer Emergency subDAO operates through the following multsigs which are authorized to kill gauges.
 
-| Gauge    | Address                                                                                                                                                            |
-|:---------|:-------------------------------------------------------------------------------------------------------------------------------------------------------------------|
-| Ethereum | <span class="address-link">[0xA29F61256e948F3FB707b4b3B138C5cCb9EF9888](https://etherscan.io/address/0xA29F61256e948F3FB707b4b3B138C5cCb9EF9888)</span>            |
-| Polygon  | <span class="address-link">[0x3c58668054c299bE836a0bBB028Bee3aD4724846](https://polygonscan.com/address/0x3c58668054c299bE836a0bBB028Bee3aD4724846)</span>         |
-| Arbitrum | <span class="address-link">[0xf404C5a0c02397f0908A3524fc5eb84e68Bbe60D](https://arbiscan.io/address/0xf404C5a0c02397f0908A3524fc5eb84e68Bbe60D)</span>             |
-| Optimism | <span class="address-link">[0xd4c87b33afcE39F1E3F4aF1ce8fFFF7241d9128B](https://optimistic.etherscan.io/address/0xd4c87b33afcE39F1E3F4aF1ce8fFFF7241d9128B)</span> |
- | Gnosis   | <span class="address-link">[0xd6110A7756080a4e3BCF4e7EBBCA8E8aDFBC9962](https://gnosisscan.io/address/0xd6110A7756080a4e3BCF4e7EBBCA8E8aDFBC9962)</span>           |
+| Gauge     | Address                                                                                                                                                                                    |
+|:----------|:-------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------|
+| Ethereum  | <span class="address-link">[0xA29F61256e948F3FB707b4b3B138C5cCb9EF9888](https://etherscan.io/address/0xA29F61256e948F3FB707b4b3B138C5cCb9EF9888)</span>                                    |
+| Polygon   | <span class="address-link">[0x3c58668054c299bE836a0bBB028Bee3aD4724846](https://polygonscan.com/address/0x3c58668054c299bE836a0bBB028Bee3aD4724846)</span>                                 |
+| Arbitrum  | <span class="address-link">[0xf404C5a0c02397f0908A3524fc5eb84e68Bbe60D](https://arbiscan.io/address/0xf404C5a0c02397f0908A3524fc5eb84e68Bbe60D)</span>                                     |
+| Optimism  | <span class="address-link">[0xd4c87b33afcE39F1E3F4aF1ce8fFFF7241d9128B](https://optimistic.etherscan.io/address/0xd4c87b33afcE39F1E3F4aF1ce8fFFF7241d9128B)</span>                         |
+ | Gnosis    | <span class="address-link">[0xd6110A7756080a4e3BCF4e7EBBCA8E8aDFBC9962](https://gnosisscan.io/address/0xd6110A7756080a4e3BCF4e7EBBCA8E8aDFBC9962)</span>                                   |
+ | Avalanche | <span class="address-link">[0x308f8d3536261C32c97D2f85ddc357f5cCdF33F0](https://app.safe.global/transactions/queue?safe=avax:0x308f8d3536261C32c97D2f85ddc357f5cCdF33F0)</span>            |
+ | zkEVM     | <span class="address-link">[0x79b131498355daa2cC740936fcb9A7dF76A86223](https://zksafe.quickswap.exchange/transactions/queue?safe=zkEVM:0x79b131498355daa2cC740936fcb9A7dF76A86223)</span> |
+
+
 ## Specifications
 
 As per [this vote](https://forum.balancer.fi/t/form-the-emergency-subdao/3197)
@@ -45,3 +49,9 @@ The Emergency DAO Multsigis are authorized to make the following calls to protoc
 | :----------------- | :--------------------- | :------------------------------------------------------------------------------------------------------------------------------------ |
 | enableRecoveryMode | Pool contracts         | for Pools to provide a simple way to exit pools proportionally at the cost of disabling protocol fees(swaps, joins, etc. still work). |
 | disable            | Pool factory contracts | to shutdown pool factories. This is to prevent further pools from being created, existing pools remain unaffected.                    |
+
+As per [BIP-353](https://forum.balancer.fi/t/bip-353-grant-permissions-for-composable-stable-pool-factory-v5/4974) the Emergency DAO multisig are authorized to make the following calls to protocol contracts:
+
+| Call                | Contract(s)            | Purpose                                                        |
+| :-----------------  | :--------------------- |:---------------------------------------------------------------|
+| disableRecoveryMode | Pool contracts         | Remove a pool from recovery mode, restoring normal operations. |
