@@ -1097,10 +1097,12 @@
       "Contract": "YearnLinearPool",
       "Deployment": "20230409-yearn-linear-pool-v2",
       "Authorized_Caller_Addresses": [
-         "0x26743984e3357eFC59f2fd6C1aFDC310335a61c9"
+         "0x26743984e3357eFC59f2fd6C1aFDC310335a61c9",
+         "0xd4c87b33afcE39F1E3F4aF1ce8fFFF7241d9128B"
       ],
       "Authorized_Caller_Names": [
-         "20221123-pool-recovery-helper/PoolRecoveryHelper"
+         "20221123-pool-recovery-helper/PoolRecoveryHelper",
+         "multisigs/emergency"
       ]
    },
    {
@@ -1116,6 +1118,17 @@
    },
    {
       "Fx": "setSwapFeePercentage(uint256)",
+      "Contract": "YearnLinearPool",
+      "Deployment": "20230409-yearn-linear-pool-v2",
+      "Authorized_Caller_Addresses": [
+         "0x09Df1626110803C7b3b07085Ef1E053494155089"
+      ],
+      "Authorized_Caller_Names": [
+         "multisigs/lm"
+      ]
+   },
+   {
+      "Fx": "setTargets(uint256,uint256)",
       "Contract": "YearnLinearPool",
       "Deployment": "20230409-yearn-linear-pool-v2",
       "Authorized_Caller_Addresses": [
@@ -1141,10 +1154,12 @@
       "Contract": "ERC4626LinearPool",
       "Deployment": "20230409-erc4626-linear-pool-v4",
       "Authorized_Caller_Addresses": [
-         "0x26743984e3357eFC59f2fd6C1aFDC310335a61c9"
+         "0x26743984e3357eFC59f2fd6C1aFDC310335a61c9",
+         "0xd4c87b33afcE39F1E3F4aF1ce8fFFF7241d9128B"
       ],
       "Authorized_Caller_Names": [
-         "20221123-pool-recovery-helper/PoolRecoveryHelper"
+         "20221123-pool-recovery-helper/PoolRecoveryHelper",
+         "multisigs/emergency"
       ]
    },
    {
@@ -1170,6 +1185,17 @@
       ]
    },
    {
+      "Fx": "setTargets(uint256,uint256)",
+      "Contract": "ERC4626LinearPool",
+      "Deployment": "20230409-erc4626-linear-pool-v4",
+      "Authorized_Caller_Addresses": [
+         "0x09Df1626110803C7b3b07085Ef1E053494155089"
+      ],
+      "Authorized_Caller_Names": [
+         "multisigs/lm"
+      ]
+   },
+   {
       "Fx": "disable()",
       "Contract": "AaveLinearPoolFactory",
       "Deployment": "20230410-aave-linear-pool-v5",
@@ -1185,10 +1211,12 @@
       "Contract": "AaveLinearPool",
       "Deployment": "20230410-aave-linear-pool-v5",
       "Authorized_Caller_Addresses": [
-         "0x26743984e3357eFC59f2fd6C1aFDC310335a61c9"
+         "0x26743984e3357eFC59f2fd6C1aFDC310335a61c9",
+         "0xd4c87b33afcE39F1E3F4aF1ce8fFFF7241d9128B"
       ],
       "Authorized_Caller_Names": [
-         "20221123-pool-recovery-helper/PoolRecoveryHelper"
+         "20221123-pool-recovery-helper/PoolRecoveryHelper",
+         "multisigs/emergency"
       ]
    },
    {
@@ -1204,6 +1232,17 @@
    },
    {
       "Fx": "setSwapFeePercentage(uint256)",
+      "Contract": "AaveLinearPool",
+      "Deployment": "20230410-aave-linear-pool-v5",
+      "Authorized_Caller_Addresses": [
+         "0x09Df1626110803C7b3b07085Ef1E053494155089"
+      ],
+      "Authorized_Caller_Names": [
+         "multisigs/lm"
+      ]
+   },
+   {
+      "Fx": "setTargets(uint256,uint256)",
       "Contract": "AaveLinearPool",
       "Deployment": "20230410-aave-linear-pool-v5",
       "Authorized_Caller_Addresses": [
