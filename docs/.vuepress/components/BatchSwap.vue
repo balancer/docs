@@ -18,7 +18,9 @@ const GlobalProvider = createProviderComponent(() => {
     <GlobalProvider>
       <div class="ToolboxWidget">
         <div class="ToolboxWidget__content">
-          <NetworkSelect />
+          <div style="display: inline-block">
+            <NetworkSelect />
+          </div>
           <BatchSwapView />
         </div>
       </div>
@@ -63,14 +65,19 @@ const GlobalProvider = createProviderComponent(() => {
 </style>
 <style scoped>
 .ToolboxWidget {
-  background-color: #fff;
   display: flex;
   flex-direction: column;
-  border-radius: 6px;
-  box-shadow: 0 10px 15px -3px rgb(0 0 0 / 0.1), 0 4px 6px -4px rgb(0 0 0 / 0.1);
+}
+
+.dark .ToolboxWidget {
+  color: #fff;
 }
 
 .ToolboxWidget__content {
   flex: 1;
+}
+
+.ToolboxWidget__content > * + * {
+  margin-top: 24px;
 }
 </style>

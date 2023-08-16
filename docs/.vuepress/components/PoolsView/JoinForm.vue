@@ -175,6 +175,12 @@ async function onSubmit() {
   padding: 12px;
   text-align: left;
   width: 125px;
+  cursor: not-allowed;
+}
+
+.dark .select__button {
+  background-color: transparent;
+  border-color: #3e4c5a;
 }
 
 .submit-button {
@@ -210,6 +216,10 @@ async function onSubmit() {
   border-radius: 8px;
 }
 
+.dark .output {
+  background-color: #162031;
+}
+
 .bpt-out {
   align-items: center;
   display: flex;
@@ -225,6 +235,10 @@ async function onSubmit() {
 .bpt-out__pool-name {
   font-size: 14px;
   line-height: 20px;
+}
+
+.dark .bpt-out__pool-name {
+  color: #cbd5e1;
 }
 
 .bpt-out__value {

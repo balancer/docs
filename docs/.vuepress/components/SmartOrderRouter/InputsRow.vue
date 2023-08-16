@@ -2,7 +2,7 @@
 import { useTokens } from '../../providers/tokens';
 import { Select, SelectTrigger, SelectOptions } from '../Select';
 
-const { tokens } = useTokens();
+const { tokens, searchTokens } = useTokens();
 
 defineProps({
   amountIn: {
@@ -59,7 +59,12 @@ defineProps({
               />
               <span>{{ tokenIn.symbol }}</span>
             </SelectTrigger>
-            <SelectOptions v-slot="token" :options="tokens" optionKey="address">
+            <SelectOptions
+              v-slot="token"
+              :options="tokens"
+              optionKey="address"
+              :searchFn="searchTokens"
+            >
               <Avatar
                 :address="token.address"
                 :imageURL="token.logoURI"
@@ -89,7 +94,12 @@ defineProps({
               />
               <span>{{ tokenOut.symbol }}</span>
             </SelectTrigger>
-            <SelectOptions v-slot="token" :options="tokens" optionKey="address">
+            <SelectOptions
+              v-slot="token"
+              :options="tokens"
+              optionKey="address"
+              :searchFn="searchTokens"
+            >
               <Avatar
                 :address="token.address"
                 :imageURL="token.logoURI"

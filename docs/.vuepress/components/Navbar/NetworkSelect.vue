@@ -75,7 +75,6 @@ ul {
 }
 
 .network-select__trigger {
-  margin-left: auto;
   align-items: center;
   background-color: #334155;
   border: 0;

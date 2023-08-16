@@ -3,7 +3,6 @@ import { createProviderComponent } from '../providers/createProviderComponent';
 import { provideNetwork } from '../providers/network';
 import { providePools } from '../providers/pools';
 import { provideTokens } from '../providers/tokens';
-import NetworkSelect from './Navbar/NetworkSelect.vue';
 import PoolsView from './PoolsView/PoolsView.vue';
 
 const NetworkProvider = createProviderComponent(() => provideNetwork());
@@ -18,7 +17,6 @@ const GlobalProvider = createProviderComponent(() => {
     <GlobalProvider>
       <div class="ToolboxWidget">
         <div class="ToolboxWidget__content">
-          <NetworkSelect />
           <PoolsView />
         </div>
       </div>
@@ -63,11 +61,12 @@ const GlobalProvider = createProviderComponent(() => {
 </style>
 <style scoped>
 .ToolboxWidget {
-  background-color: #fff;
   display: flex;
   flex-direction: column;
-  border-radius: 6px;
-  box-shadow: 0 10px 15px -3px rgb(0 0 0 / 0.1), 0 4px 6px -4px rgb(0 0 0 / 0.1);
+}
+
+.dark .ToolboxWidget {
+  color: #fff;
 }
 
 .ToolboxWidget__content {

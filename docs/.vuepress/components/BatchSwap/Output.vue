@@ -319,6 +319,10 @@ pre {
   scrollbar-width: none; /* Firefox */
 }
 
+.dark .code pre {
+  background: #1e293b;
+}
+
 .controls {
   align-items: center;
   display: flex;
@@ -342,14 +346,30 @@ pre {
   padding: 8px 12px;
 }
 
+.dark .tab {
+  background-color: transparent;
+  border-color: #3e4c5a;
+  color: #fff;
+}
+
 .tab:not(.tab--active):hover {
   border-color: #cbd5e1;
+}
+
+.dark .tab:not(.tab--active):hover {
+  border-color: #64748b;
 }
 
 .tab--active {
   background-color: #eff6ff;
   border-color: transparent;
   color: #2563eb;
+}
+
+.dark .tab--active {
+  background-color: #384aff;
+  border-color: transparent;
+  color: #fff;
 }
 
 .settings > * + * {

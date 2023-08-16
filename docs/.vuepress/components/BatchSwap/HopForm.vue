@@ -48,7 +48,9 @@ const pool = computed(() => {
     return null;
   }
 
-  return getPoolByID(props.hop.pool);
+  const _p = getPoolByID(props.hop.pool);
+
+  return _p;
 });
 
 const tokenOut = computed(() => {
@@ -144,12 +146,15 @@ const tokenOut = computed(() => {
   padding: 12px;
 }
 
+.dark .hop-form {
+  border-color: #3e4c5a;
+}
+
 .hop-form > * + * {
   margin-top: 16px;
 }
 
 .hop-form hr {
-  border-color: #e2e8f0;
   margin-bottom: 0;
 }
 
