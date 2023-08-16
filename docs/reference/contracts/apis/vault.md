@@ -162,7 +162,7 @@ Returns a Pool's registered tokens, the total balance for each, and the most rec
 ## Joins and Exits
 
 ::: info
-For a more in-depth explanation check out [Joins and Exits](/reference/joins-and-exits/) in the Resources.
+For a more in-depth explanation check out [Joins](/reference/joins-and-exits/pool-joins) and [Exits](/reference/joins-and-exits/pool-exits) in the Resources.
 :::
 
 ::: warning
