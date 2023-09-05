@@ -15,6 +15,8 @@ Balancer Governance Token \(BAL\) is the core token behind the Balancer protocol
 | Ethereum | <span class="address-link">[0xba100000625a3754423978a60c9317c58a424e3d](https://etherscan.io/address/0xba100000625a3754423978a60c9317c58a424e3d)</span>        |
 | Polygon  | <span class="address-link">[0x9a71012b13ca4d3d0cdc72a177df3ef03b0e76a3](https://polygonscan.com/address/0x9a71012b13ca4d3d0cdc72a177df3ef03b0e76a3)</span>     |
 | Arbitrum | <span class="address-link">[0x040d1EdC9569d4Bab2D15287Dc5A4F10F56a56B8](https://arbiscan.io/address/0x040d1EdC9569d4Bab2D15287Dc5A4F10F56a56B8)</span>         |
+| Optimism | <span class="address-link">[0xFE8B128bA8C78aabC59d4c64cEE7fF28e9379921](https://optimistic.etherscan.io/token/0xfe8b128ba8c78aabc59d4c64cee7ff28e9379921)</span>|
+| Base     | <span class="address-link">[0x7c6b91D9Be155A6Db01f749217d76fF02A7227F2](https://basescan.org/address/0x7c6b91d9be155a6db01f749217d76ff02a7227f2)</span>        |
 | Goerli   | <span class="address-link">[0xfA8449189744799aD2AcE7e0EBAC8BB7575eff47](https://goerli.etherscan.io/address/0xfA8449189744799aD2AcE7e0EBAC8BB7575eff47)</span> |
 
 ## Supply & Inflation Schedule
