@@ -22,8 +22,8 @@ disableRecoveryMode(),ComposableStablePool,20230320-composable-stable-pool-v4,['
 disableRecoveryMode(),ComposableStablePool,20230711-composable-stable-pool-v5,['0xd6110A7756080a4e3BCF4e7EBBCA8E8aDFBC9962'],['multisigs/emergency']
 disableRecoveryMode(),WeightedPool,20230206-weighted-pool-v3,['0xd6110A7756080a4e3BCF4e7EBBCA8E8aDFBC9962'],['multisigs/emergency']
 disableRecoveryMode(),WeightedPool,20230320-weighted-pool-v4,['0xd6110A7756080a4e3BCF4e7EBBCA8E8aDFBC9962'],['multisigs/emergency']
-enableRecoveryMode(),AaveLinearPool,20221207-aave-rebalanced-linear-pool-v3,['0xc3ccacE87f6d3A81724075ADcb5ddd85a8A1bB68'],['20221123-pool-recovery-helper/PoolRecoveryHelper']
-enableRecoveryMode(),AaveLinearPool,20230206-aave-rebalanced-linear-pool-v4,['0xc3ccacE87f6d3A81724075ADcb5ddd85a8A1bB68'],['20221123-pool-recovery-helper/PoolRecoveryHelper']
+enableRecoveryMode(),AaveLinearPool,20221207-aave-rebalanced-linear-pool-v3,"['0xc3ccacE87f6d3A81724075ADcb5ddd85a8A1bB68', '0x2a5AEcE0bb9EfFD7608213AE1745873385515c18']","['20221123-pool-recovery-helper/PoolRecoveryHelper', 'multisigs/dao']"
+enableRecoveryMode(),AaveLinearPool,20230206-aave-rebalanced-linear-pool-v4,"['0xc3ccacE87f6d3A81724075ADcb5ddd85a8A1bB68', '0x2a5AEcE0bb9EfFD7608213AE1745873385515c18']","['20221123-pool-recovery-helper/PoolRecoveryHelper', 'multisigs/dao']"
 enableRecoveryMode(),AaveLinearPool,20230410-aave-linear-pool-v5,"['0xc3ccacE87f6d3A81724075ADcb5ddd85a8A1bB68', '0xd6110A7756080a4e3BCF4e7EBBCA8E8aDFBC9962']","['20221123-pool-recovery-helper/PoolRecoveryHelper', 'multisigs/emergency']"
 enableRecoveryMode(),ComposableStablePool,20221122-composable-stable-pool-v2,['0xc3ccacE87f6d3A81724075ADcb5ddd85a8A1bB68'],['20221123-pool-recovery-helper/PoolRecoveryHelper']
 enableRecoveryMode(),ComposableStablePool,20230206-composable-stable-pool-v3,"['0xd6110A7756080a4e3BCF4e7EBBCA8E8aDFBC9962', '0xc3ccacE87f6d3A81724075ADcb5ddd85a8A1bB68']","['multisigs/emergency', '20221123-pool-recovery-helper/PoolRecoveryHelper']"
@@ -65,6 +65,8 @@ setSwapFeePercentage(uint256),WeightedPool,20230206-weighted-pool-v3,['0x14969B5
 setSwapFeePercentage(uint256),WeightedPool,20230320-weighted-pool-v4,['0x14969B55a675d13a1700F71A37511bc22D90155a'],['multisigs/lm']
 "setTargets(uint256,uint256)",AaveLinearPool,20230206-aave-rebalanced-linear-pool-v4,['0x14969B55a675d13a1700F71A37511bc22D90155a'],['multisigs/lm']
 "setTargets(uint256,uint256)",AaveLinearPool,20230410-aave-linear-pool-v5,['0x14969B55a675d13a1700F71A37511bc22D90155a'],['multisigs/lm']
+"setTokenRateCacheDuration(address,uint256)",ComposableStablePool,20230206-composable-stable-pool-v3,['0x2a5AEcE0bb9EfFD7608213AE1745873385515c18'],['multisigs/dao']
+"setTokenRateCacheDuration(address,uint256)",ComposableStablePool,20230320-composable-stable-pool-v4,['0x2a5AEcE0bb9EfFD7608213AE1745873385515c18'],['multisigs/dao']
 "startAmplificationParameterUpdate(uint256,uint256)",ComposableStablePool,20221122-composable-stable-pool-v2,['0x14969B55a675d13a1700F71A37511bc22D90155a'],['multisigs/lm']
 "startAmplificationParameterUpdate(uint256,uint256)",ComposableStablePool,20230206-composable-stable-pool-v3,['0x14969B55a675d13a1700F71A37511bc22D90155a'],['multisigs/lm']
 "startAmplificationParameterUpdate(uint256,uint256)",ComposableStablePool,20230320-composable-stable-pool-v4,['0x14969B55a675d13a1700F71A37511bc22D90155a'],['multisigs/lm']

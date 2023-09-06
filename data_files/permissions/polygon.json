@@ -495,6 +495,17 @@
       ]
    },
    {
+      "Fx": "setTokenRateCacheDuration(address,uint256)",
+      "Contract": "ComposableStablePool",
+      "Deployment": "20220906-composable-stable-pool",
+      "Authorized_Caller_Addresses": [
+         "0xeE071f4B516F69a1603dA393CdE8e76C40E5Be85"
+      ],
+      "Authorized_Caller_Names": [
+         "multisigs/dao"
+      ]
+   },
+   {
       "Fx": "startAmplificationParameterUpdate(uint256,uint256)",
       "Contract": "ComposableStablePool",
       "Deployment": "20220906-composable-stable-pool",
@@ -866,6 +877,17 @@
       ]
    },
    {
+      "Fx": "setTokenRateCacheDuration(address,uint256)",
+      "Contract": "ComposableStablePool",
+      "Deployment": "20230206-composable-stable-pool-v3",
+      "Authorized_Caller_Addresses": [
+         "0xeE071f4B516F69a1603dA393CdE8e76C40E5Be85"
+      ],
+      "Authorized_Caller_Names": [
+         "multisigs/dao"
+      ]
+   },
+   {
       "Fx": "startAmplificationParameterUpdate(uint256,uint256)",
       "Contract": "ComposableStablePool",
       "Deployment": "20230206-composable-stable-pool-v3",
@@ -901,6 +923,17 @@
       ]
    },
    {
+      "Fx": "enableRecoveryMode()",
+      "Contract": "AaveLinearPool",
+      "Deployment": "20230206-aave-rebalanced-linear-pool-v4",
+      "Authorized_Caller_Addresses": [
+         "0xeE071f4B516F69a1603dA393CdE8e76C40E5Be85"
+      ],
+      "Authorized_Caller_Names": [
+         "multisigs/dao"
+      ]
+   },
+   {
       "Fx": "setSwapFeePercentage(uint256)",
       "Contract": "AaveLinearPool",
       "Deployment": "20230206-aave-rebalanced-linear-pool-v4",
@@ -920,6 +953,17 @@
       ],
       "Authorized_Caller_Names": [
          "multisigs/feeManager"
+      ]
+   },
+   {
+      "Fx": "enableRecoveryMode()",
+      "Contract": "ERC4626LinearPool",
+      "Deployment": "20230206-erc4626-linear-pool-v3",
+      "Authorized_Caller_Addresses": [
+         "0xeE071f4B516F69a1603dA393CdE8e76C40E5Be85"
+      ],
+      "Authorized_Caller_Names": [
+         "multisigs/dao"
       ]
    },
    {
@@ -967,6 +1011,17 @@
       ],
       "Authorized_Caller_Names": [
          "multisigs/emergency",
+         "multisigs/dao"
+      ]
+   },
+   {
+      "Fx": "enableRecoveryMode()",
+      "Contract": "YearnLinearPool",
+      "Deployment": "20230213-yearn-linear-pool",
+      "Authorized_Caller_Addresses": [
+         "0xeE071f4B516F69a1603dA393CdE8e76C40E5Be85"
+      ],
+      "Authorized_Caller_Names": [
          "multisigs/dao"
       ]
    },

@@ -333,10 +333,12 @@
       "Contract": "StablePhantomPool",
       "Deployment": "20211208-stable-phantom-pool",
       "Authorized_Caller_Addresses": [
-         "0x75a52c0e32397A3FC0c052E2CeB3479802713Cf4"
+         "0x75a52c0e32397A3FC0c052E2CeB3479802713Cf4",
+         "0x10A19e7eE7d7F8a52822f6817de8ea18204F2e4f"
       ],
       "Authorized_Caller_Names": [
-         "multisigs/linearPoolController"
+         "multisigs/linearPoolController",
+         "multisigs/dao"
       ]
    },
    {
@@ -396,8 +398,73 @@
    },
    {
       "Fx": "checkpoint()",
+      "Contract": "VotingEscrow",
+      "Deployment": "20220325-gauge-controller",
+      "Authorized_Caller_Addresses": [
+         "0x02f35dA6A02017154367Bc4d47bb6c7D06C7533B",
+         "0x343688C5cB92115a52cA485af7f62B4B7A2e9CcC"
+      ],
+      "Authorized_Caller_Names": [
+         "multisigs/blabs_ops",
+         "20230527-l2-gauge-checkpointer/L2GaugeCheckpointer"
+      ]
+   },
+   {
+      "Fx": "checkpoint()",
+      "Contract": "PolygonRootGauge",
+      "Deployment": "20220413-polygon-root-gauge-factory",
+      "Authorized_Caller_Addresses": [
+         "0x02f35dA6A02017154367Bc4d47bb6c7D06C7533B",
+         "0x343688C5cB92115a52cA485af7f62B4B7A2e9CcC"
+      ],
+      "Authorized_Caller_Names": [
+         "multisigs/blabs_ops",
+         "20230527-l2-gauge-checkpointer/L2GaugeCheckpointer"
+      ]
+   },
+   {
+      "Fx": "checkpoint()",
+      "Contract": "PolygonRootGauge",
+      "Deployment": "20220823-polygon-root-gauge-factory-v2",
+      "Authorized_Caller_Addresses": [
+         "0x02f35dA6A02017154367Bc4d47bb6c7D06C7533B",
+         "0x343688C5cB92115a52cA485af7f62B4B7A2e9CcC"
+      ],
+      "Authorized_Caller_Names": [
+         "multisigs/blabs_ops",
+         "20230527-l2-gauge-checkpointer/L2GaugeCheckpointer"
+      ]
+   },
+   {
+      "Fx": "checkpoint()",
+      "Contract": "GnosisRootGauge",
+      "Deployment": "20230217-gnosis-root-gauge-factory",
+      "Authorized_Caller_Addresses": [
+         "0x02f35dA6A02017154367Bc4d47bb6c7D06C7533B",
+         "0x343688C5cB92115a52cA485af7f62B4B7A2e9CcC"
+      ],
+      "Authorized_Caller_Names": [
+         "multisigs/blabs_ops",
+         "20230527-l2-gauge-checkpointer/L2GaugeCheckpointer"
+      ]
+   },
+   {
+      "Fx": "checkpoint()",
+      "Contract": "AvalancheRootGauge",
+      "Deployment": "20230529-avalanche-root-gauge-factory",
+      "Authorized_Caller_Addresses": [
+         "0x02f35dA6A02017154367Bc4d47bb6c7D06C7533B",
+         "0x343688C5cB92115a52cA485af7f62B4B7A2e9CcC"
+      ],
+      "Authorized_Caller_Names": [
+         "multisigs/blabs_ops",
+         "20230527-l2-gauge-checkpointer/L2GaugeCheckpointer"
+      ]
+   },
+   {
+      "Fx": "checkpoint()",
       "Contract": "OptimismRootGauge",
-      "Deployment": "20220628-optimism-root-gauge-factory",
+      "Deployment": "20220823-optimism-root-gauge-factory-v2",
       "Authorized_Caller_Addresses": [
          "0x02f35dA6A02017154367Bc4d47bb6c7D06C7533B",
          "0x343688C5cB92115a52cA485af7f62B4B7A2e9CcC"
@@ -422,125 +489,8 @@
    },
    {
       "Fx": "checkpoint()",
-      "Contract": "FeeDistributor",
-      "Deployment": "20220420-fee-distributor",
-      "Authorized_Caller_Addresses": [
-         "0x02f35dA6A02017154367Bc4d47bb6c7D06C7533B",
-         "0x343688C5cB92115a52cA485af7f62B4B7A2e9CcC"
-      ],
-      "Authorized_Caller_Names": [
-         "multisigs/blabs_ops",
-         "20230527-l2-gauge-checkpointer/L2GaugeCheckpointer"
-      ]
-   },
-   {
-      "Fx": "checkpoint()",
-      "Contract": "PolygonRootGauge",
-      "Deployment": "20220413-polygon-root-gauge-factory",
-      "Authorized_Caller_Addresses": [
-         "0x02f35dA6A02017154367Bc4d47bb6c7D06C7533B",
-         "0x343688C5cB92115a52cA485af7f62B4B7A2e9CcC"
-      ],
-      "Authorized_Caller_Names": [
-         "multisigs/blabs_ops",
-         "20230527-l2-gauge-checkpointer/L2GaugeCheckpointer"
-      ]
-   },
-   {
-      "Fx": "checkpoint()",
-      "Contract": "GaugeController",
-      "Deployment": "20220325-gauge-controller",
-      "Authorized_Caller_Addresses": [
-         "0x02f35dA6A02017154367Bc4d47bb6c7D06C7533B",
-         "0x343688C5cB92115a52cA485af7f62B4B7A2e9CcC"
-      ],
-      "Authorized_Caller_Names": [
-         "multisigs/blabs_ops",
-         "20230527-l2-gauge-checkpointer/L2GaugeCheckpointer"
-      ]
-   },
-   {
-      "Fx": "checkpoint()",
-      "Contract": "PolygonRootGauge",
-      "Deployment": "20220823-polygon-root-gauge-factory-v2",
-      "Authorized_Caller_Addresses": [
-         "0x02f35dA6A02017154367Bc4d47bb6c7D06C7533B",
-         "0x343688C5cB92115a52cA485af7f62B4B7A2e9CcC"
-      ],
-      "Authorized_Caller_Names": [
-         "multisigs/blabs_ops",
-         "20230527-l2-gauge-checkpointer/L2GaugeCheckpointer"
-      ]
-   },
-   {
-      "Fx": "checkpoint()",
-      "Contract": "AvalancheRootGauge",
-      "Deployment": "20230529-avalanche-root-gauge-factory",
-      "Authorized_Caller_Addresses": [
-         "0x02f35dA6A02017154367Bc4d47bb6c7D06C7533B",
-         "0x343688C5cB92115a52cA485af7f62B4B7A2e9CcC"
-      ],
-      "Authorized_Caller_Names": [
-         "multisigs/blabs_ops",
-         "20230527-l2-gauge-checkpointer/L2GaugeCheckpointer"
-      ]
-   },
-   {
-      "Fx": "checkpoint()",
-      "Contract": "OptimismRootGauge",
-      "Deployment": "20220823-optimism-root-gauge-factory-v2",
-      "Authorized_Caller_Addresses": [
-         "0x02f35dA6A02017154367Bc4d47bb6c7D06C7533B",
-         "0x343688C5cB92115a52cA485af7f62B4B7A2e9CcC"
-      ],
-      "Authorized_Caller_Names": [
-         "multisigs/blabs_ops",
-         "20230527-l2-gauge-checkpointer/L2GaugeCheckpointer"
-      ]
-   },
-   {
-      "Fx": "checkpoint()",
-      "Contract": "ArbitrumRootGauge",
-      "Deployment": "20220823-arbitrum-root-gauge-factory-v2",
-      "Authorized_Caller_Addresses": [
-         "0x02f35dA6A02017154367Bc4d47bb6c7D06C7533B",
-         "0x343688C5cB92115a52cA485af7f62B4B7A2e9CcC"
-      ],
-      "Authorized_Caller_Names": [
-         "multisigs/blabs_ops",
-         "20230527-l2-gauge-checkpointer/L2GaugeCheckpointer"
-      ]
-   },
-   {
-      "Fx": "checkpoint()",
       "Contract": "SingleRecipientGauge",
-      "Deployment": "20230215-single-recipient-gauge-factory-v2",
-      "Authorized_Caller_Addresses": [
-         "0x02f35dA6A02017154367Bc4d47bb6c7D06C7533B",
-         "0x343688C5cB92115a52cA485af7f62B4B7A2e9CcC"
-      ],
-      "Authorized_Caller_Names": [
-         "multisigs/blabs_ops",
-         "20230527-l2-gauge-checkpointer/L2GaugeCheckpointer"
-      ]
-   },
-   {
-      "Fx": "checkpoint()",
-      "Contract": "PolygonZkEVMRootGauge",
-      "Deployment": "20230526-zkevm-root-gauge-factory",
-      "Authorized_Caller_Addresses": [
-         "0x02f35dA6A02017154367Bc4d47bb6c7D06C7533B",
-         "0x343688C5cB92115a52cA485af7f62B4B7A2e9CcC"
-      ],
-      "Authorized_Caller_Names": [
-         "multisigs/blabs_ops",
-         "20230527-l2-gauge-checkpointer/L2GaugeCheckpointer"
-      ]
-   },
-   {
-      "Fx": "checkpoint()",
-      "Contract": "GnosisRootGauge",
-      "Deployment": "20230217-gnosis-root-gauge-factory",
+      "Deployment": "20220325-single-recipient-gauge-factory",
       "Authorized_Caller_Addresses": [
          "0x02f35dA6A02017154367Bc4d47bb6c7D06C7533B",
          "0x343688C5cB92115a52cA485af7f62B4B7A2e9CcC"
@@ -565,7 +515,46 @@
    },
    {
       "Fx": "checkpoint()",
-      "Contract": "VotingEscrow",
+      "Contract": "SingleRecipientGauge",
+      "Deployment": "20230215-single-recipient-gauge-factory-v2",
+      "Authorized_Caller_Addresses": [
+         "0x02f35dA6A02017154367Bc4d47bb6c7D06C7533B",
+         "0x343688C5cB92115a52cA485af7f62B4B7A2e9CcC"
+      ],
+      "Authorized_Caller_Names": [
+         "multisigs/blabs_ops",
+         "20230527-l2-gauge-checkpointer/L2GaugeCheckpointer"
+      ]
+   },
+   {
+      "Fx": "checkpoint()",
+      "Contract": "ArbitrumRootGauge",
+      "Deployment": "20220823-arbitrum-root-gauge-factory-v2",
+      "Authorized_Caller_Addresses": [
+         "0x02f35dA6A02017154367Bc4d47bb6c7D06C7533B",
+         "0x343688C5cB92115a52cA485af7f62B4B7A2e9CcC"
+      ],
+      "Authorized_Caller_Names": [
+         "multisigs/blabs_ops",
+         "20230527-l2-gauge-checkpointer/L2GaugeCheckpointer"
+      ]
+   },
+   {
+      "Fx": "checkpoint()",
+      "Contract": "PolygonZkEVMRootGauge",
+      "Deployment": "20230526-zkevm-root-gauge-factory",
+      "Authorized_Caller_Addresses": [
+         "0x02f35dA6A02017154367Bc4d47bb6c7D06C7533B",
+         "0x343688C5cB92115a52cA485af7f62B4B7A2e9CcC"
+      ],
+      "Authorized_Caller_Names": [
+         "multisigs/blabs_ops",
+         "20230527-l2-gauge-checkpointer/L2GaugeCheckpointer"
+      ]
+   },
+   {
+      "Fx": "checkpoint()",
+      "Contract": "GaugeController",
       "Deployment": "20220325-gauge-controller",
       "Authorized_Caller_Addresses": [
          "0x02f35dA6A02017154367Bc4d47bb6c7D06C7533B",
@@ -578,8 +567,34 @@
    },
    {
       "Fx": "checkpoint()",
-      "Contract": "SingleRecipientGauge",
-      "Deployment": "20220325-single-recipient-gauge-factory",
+      "Contract": "FeeDistributor",
+      "Deployment": "20220420-fee-distributor",
+      "Authorized_Caller_Addresses": [
+         "0x02f35dA6A02017154367Bc4d47bb6c7D06C7533B",
+         "0x343688C5cB92115a52cA485af7f62B4B7A2e9CcC"
+      ],
+      "Authorized_Caller_Names": [
+         "multisigs/blabs_ops",
+         "20230527-l2-gauge-checkpointer/L2GaugeCheckpointer"
+      ]
+   },
+   {
+      "Fx": "checkpoint()",
+      "Contract": "OptimismRootGauge",
+      "Deployment": "20220628-optimism-root-gauge-factory",
+      "Authorized_Caller_Addresses": [
+         "0x02f35dA6A02017154367Bc4d47bb6c7D06C7533B",
+         "0x343688C5cB92115a52cA485af7f62B4B7A2e9CcC"
+      ],
+      "Authorized_Caller_Names": [
+         "multisigs/blabs_ops",
+         "20230527-l2-gauge-checkpointer/L2GaugeCheckpointer"
+      ]
+   },
+   {
+      "Fx": "checkpoint()",
+      "Contract": "AvalancheRootGauge",
+      "Deployment": "20230811-avalanche-root-gauge-factory-v2",
       "Authorized_Caller_Addresses": [
          "0x02f35dA6A02017154367Bc4d47bb6c7D06C7533B",
          "0x343688C5cB92115a52cA485af7f62B4B7A2e9CcC"
@@ -603,7 +618,7 @@
    {
       "Fx": "add_reward(address,address)",
       "Contract": "LiquidityGaugeV5",
-      "Deployment": "20220325-mainnet-gauge-factory",
+      "Deployment": "20220822-mainnet-gauge-factory-v2",
       "Authorized_Caller_Addresses": [
          "0xc38c5f97B34E175FFd35407fc91a937300E33860"
       ],
@@ -614,7 +629,7 @@
    {
       "Fx": "add_reward(address,address)",
       "Contract": "LiquidityGaugeV5",
-      "Deployment": "20220822-mainnet-gauge-factory-v2",
+      "Deployment": "20220325-mainnet-gauge-factory",
       "Authorized_Caller_Addresses": [
          "0xc38c5f97B34E175FFd35407fc91a937300E33860"
       ],
@@ -624,8 +639,34 @@
    },
    {
       "Fx": "killGauge()",
+      "Contract": "OptimismRootGauge",
+      "Deployment": "20220628-optimism-root-gauge-factory",
+      "Authorized_Caller_Addresses": [
+         "0x10A19e7eE7d7F8a52822f6817de8ea18204F2e4f",
+         "0xA29F61256e948F3FB707b4b3B138C5cCb9EF9888"
+      ],
+      "Authorized_Caller_Names": [
+         "multisigs/dao",
+         "multisigs/emergency"
+      ]
+   },
+   {
+      "Fx": "killGauge()",
+      "Contract": "AvalancheRootGauge",
+      "Deployment": "20230529-avalanche-root-gauge-factory",
+      "Authorized_Caller_Addresses": [
+         "0x10A19e7eE7d7F8a52822f6817de8ea18204F2e4f",
+         "0xA29F61256e948F3FB707b4b3B138C5cCb9EF9888"
+      ],
+      "Authorized_Caller_Names": [
+         "multisigs/dao",
+         "multisigs/emergency"
+      ]
+   },
+   {
+      "Fx": "killGauge()",
       "Contract": "ArbitrumRootGauge",
-      "Deployment": "20220413-arbitrum-root-gauge-factory",
+      "Deployment": "20220823-arbitrum-root-gauge-factory-v2",
       "Authorized_Caller_Addresses": [
          "0x10A19e7eE7d7F8a52822f6817de8ea18204F2e4f",
          "0xA29F61256e948F3FB707b4b3B138C5cCb9EF9888"
@@ -637,34 +678,8 @@
    },
    {
       "Fx": "killGauge()",
-      "Contract": "SingleRecipientGauge",
-      "Deployment": "20230215-single-recipient-gauge-factory-v2",
-      "Authorized_Caller_Addresses": [
-         "0x10A19e7eE7d7F8a52822f6817de8ea18204F2e4f",
-         "0xA29F61256e948F3FB707b4b3B138C5cCb9EF9888"
-      ],
-      "Authorized_Caller_Names": [
-         "multisigs/dao",
-         "multisigs/emergency"
-      ]
-   },
-   {
-      "Fx": "killGauge()",
-      "Contract": "PolygonRootGauge",
-      "Deployment": "20220823-polygon-root-gauge-factory-v2",
-      "Authorized_Caller_Addresses": [
-         "0x10A19e7eE7d7F8a52822f6817de8ea18204F2e4f",
-         "0xA29F61256e948F3FB707b4b3B138C5cCb9EF9888"
-      ],
-      "Authorized_Caller_Names": [
-         "multisigs/dao",
-         "multisigs/emergency"
-      ]
-   },
-   {
-      "Fx": "killGauge()",
-      "Contract": "GnosisRootGauge",
-      "Deployment": "20230217-gnosis-root-gauge-factory",
+      "Contract": "LiquidityGaugeV5",
+      "Deployment": "20220325-mainnet-gauge-factory",
       "Authorized_Caller_Addresses": [
          "0x10A19e7eE7d7F8a52822f6817de8ea18204F2e4f",
          "0xA29F61256e948F3FB707b4b3B138C5cCb9EF9888"
@@ -702,8 +717,8 @@
    },
    {
       "Fx": "killGauge()",
-      "Contract": "OptimismRootGauge",
-      "Deployment": "20220628-optimism-root-gauge-factory",
+      "Contract": "ArbitrumRootGauge",
+      "Deployment": "20220413-arbitrum-root-gauge-factory",
       "Authorized_Caller_Addresses": [
          "0x10A19e7eE7d7F8a52822f6817de8ea18204F2e4f",
          "0xA29F61256e948F3FB707b4b3B138C5cCb9EF9888"
@@ -728,19 +743,6 @@
    },
    {
       "Fx": "killGauge()",
-      "Contract": "LiquidityGaugeV5",
-      "Deployment": "20220325-mainnet-gauge-factory",
-      "Authorized_Caller_Addresses": [
-         "0x10A19e7eE7d7F8a52822f6817de8ea18204F2e4f",
-         "0xA29F61256e948F3FB707b4b3B138C5cCb9EF9888"
-      ],
-      "Authorized_Caller_Names": [
-         "multisigs/dao",
-         "multisigs/emergency"
-      ]
-   },
-   {
-      "Fx": "killGauge()",
       "Contract": "OptimismRootGauge",
       "Deployment": "20220823-optimism-root-gauge-factory-v2",
       "Authorized_Caller_Addresses": [
@@ -754,8 +756,47 @@
    },
    {
       "Fx": "killGauge()",
+      "Contract": "PolygonRootGauge",
+      "Deployment": "20220823-polygon-root-gauge-factory-v2",
+      "Authorized_Caller_Addresses": [
+         "0x10A19e7eE7d7F8a52822f6817de8ea18204F2e4f",
+         "0xA29F61256e948F3FB707b4b3B138C5cCb9EF9888"
+      ],
+      "Authorized_Caller_Names": [
+         "multisigs/dao",
+         "multisigs/emergency"
+      ]
+   },
+   {
+      "Fx": "killGauge()",
+      "Contract": "GnosisRootGauge",
+      "Deployment": "20230217-gnosis-root-gauge-factory",
+      "Authorized_Caller_Addresses": [
+         "0x10A19e7eE7d7F8a52822f6817de8ea18204F2e4f",
+         "0xA29F61256e948F3FB707b4b3B138C5cCb9EF9888"
+      ],
+      "Authorized_Caller_Names": [
+         "multisigs/dao",
+         "multisigs/emergency"
+      ]
+   },
+   {
+      "Fx": "killGauge()",
       "Contract": "AvalancheRootGauge",
-      "Deployment": "20230529-avalanche-root-gauge-factory",
+      "Deployment": "20230811-avalanche-root-gauge-factory-v2",
+      "Authorized_Caller_Addresses": [
+         "0x10A19e7eE7d7F8a52822f6817de8ea18204F2e4f",
+         "0xA29F61256e948F3FB707b4b3B138C5cCb9EF9888"
+      ],
+      "Authorized_Caller_Names": [
+         "multisigs/dao",
+         "multisigs/emergency"
+      ]
+   },
+   {
+      "Fx": "killGauge()",
+      "Contract": "SingleRecipientGauge",
+      "Deployment": "20230215-single-recipient-gauge-factory-v2",
       "Authorized_Caller_Addresses": [
          "0x10A19e7eE7d7F8a52822f6817de8ea18204F2e4f",
          "0xA29F61256e948F3FB707b4b3B138C5cCb9EF9888"
@@ -769,19 +810,6 @@
       "Fx": "killGauge()",
       "Contract": "PolygonRootGauge",
       "Deployment": "20220413-polygon-root-gauge-factory",
-      "Authorized_Caller_Addresses": [
-         "0x10A19e7eE7d7F8a52822f6817de8ea18204F2e4f",
-         "0xA29F61256e948F3FB707b4b3B138C5cCb9EF9888"
-      ],
-      "Authorized_Caller_Names": [
-         "multisigs/dao",
-         "multisigs/emergency"
-      ]
-   },
-   {
-      "Fx": "killGauge()",
-      "Contract": "ArbitrumRootGauge",
-      "Deployment": "20220823-arbitrum-root-gauge-factory-v2",
       "Authorized_Caller_Addresses": [
          "0x10A19e7eE7d7F8a52822f6817de8ea18204F2e4f",
          "0xA29F61256e948F3FB707b4b3B138C5cCb9EF9888"
@@ -1100,6 +1128,17 @@
          "gauntlet/GauntletFeeSetter",
          "cow/settlement",
          "UNDEF"
+      ]
+   },
+   {
+      "Fx": "setTokenRateCacheDuration(address,uint256)",
+      "Contract": "ComposableStablePool",
+      "Deployment": "20220906-composable-stable-pool",
+      "Authorized_Caller_Addresses": [
+         "0x10A19e7eE7d7F8a52822f6817de8ea18204F2e4f"
+      ],
+      "Authorized_Caller_Names": [
+         "multisigs/dao"
       ]
    },
    {
@@ -1570,6 +1609,17 @@
       ]
    },
    {
+      "Fx": "setTokenRateCacheDuration(address,uint256)",
+      "Contract": "ComposableStablePool",
+      "Deployment": "20230206-composable-stable-pool-v3",
+      "Authorized_Caller_Addresses": [
+         "0x10A19e7eE7d7F8a52822f6817de8ea18204F2e4f"
+      ],
+      "Authorized_Caller_Names": [
+         "multisigs/dao"
+      ]
+   },
+   {
       "Fx": "startAmplificationParameterUpdate(uint256,uint256)",
       "Contract": "ComposableStablePool",
       "Deployment": "20230206-composable-stable-pool-v3",
@@ -1605,6 +1655,17 @@
       ]
    },
    {
+      "Fx": "enableRecoveryMode()",
+      "Contract": "AaveLinearPool",
+      "Deployment": "20230206-aave-rebalanced-linear-pool-v4",
+      "Authorized_Caller_Addresses": [
+         "0x10A19e7eE7d7F8a52822f6817de8ea18204F2e4f"
+      ],
+      "Authorized_Caller_Names": [
+         "multisigs/dao"
+      ]
+   },
+   {
       "Fx": "setSwapFeePercentage(uint256)",
       "Contract": "AaveLinearPool",
       "Deployment": "20230206-aave-rebalanced-linear-pool-v4",
@@ -1636,6 +1697,17 @@
       ],
       "Authorized_Caller_Names": [
          "multisigs/emergency",
+         "multisigs/dao"
+      ]
+   },
+   {
+      "Fx": "enableRecoveryMode()",
+      "Contract": "ERC4626LinearPool",
+      "Deployment": "20230206-erc4626-linear-pool-v3",
+      "Authorized_Caller_Addresses": [
+         "0x10A19e7eE7d7F8a52822f6817de8ea18204F2e4f"
+      ],
+      "Authorized_Caller_Names": [
          "multisigs/dao"
       ]
    },
@@ -1732,6 +1804,17 @@
       ]
    },
    {
+      "Fx": "enableRecoveryMode()",
+      "Contract": "YearnLinearPool",
+      "Deployment": "20230213-yearn-linear-pool",
+      "Authorized_Caller_Addresses": [
+         "0x10A19e7eE7d7F8a52822f6817de8ea18204F2e4f"
+      ],
+      "Authorized_Caller_Names": [
+         "multisigs/dao"
+      ]
+   },
+   {
       "Fx": "setSwapFeePercentage(uint256)",
       "Contract": "YearnLinearPool",
       "Deployment": "20230213-yearn-linear-pool",
@@ -1763,6 +1846,17 @@
       ],
       "Authorized_Caller_Names": [
          "multisigs/emergency",
+         "multisigs/dao"
+      ]
+   },
+   {
+      "Fx": "enableRecoveryMode()",
+      "Contract": "GearboxLinearPool",
+      "Deployment": "20230213-gearbox-linear-pool",
+      "Authorized_Caller_Addresses": [
+         "0x10A19e7eE7d7F8a52822f6817de8ea18204F2e4f"
+      ],
+      "Authorized_Caller_Names": [
          "multisigs/dao"
       ]
    },
