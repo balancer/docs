@@ -301,6 +301,17 @@
       ]
    },
    {
+      "Fx": "setTokenRateCacheDuration(address,uint256)",
+      "Contract": "ComposableStablePool",
+      "Deployment": "20230320-composable-stable-pool-v4",
+      "Authorized_Caller_Addresses": [
+         "0x2f237e7643a3bF6Ef265dd6FCBcd26a7Cc38dbAa"
+      ],
+      "Authorized_Caller_Names": [
+         "multisigs/dao"
+      ]
+   },
+   {
       "Fx": "startAmplificationParameterUpdate(uint256,uint256)",
       "Contract": "ComposableStablePool",
       "Deployment": "20230320-composable-stable-pool-v4",

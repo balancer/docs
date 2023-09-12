@@ -273,10 +273,12 @@
       "Contract": "AaveLinearPool",
       "Deployment": "20221207-aave-rebalanced-linear-pool-v3",
       "Authorized_Caller_Addresses": [
-         "0xc3ccacE87f6d3A81724075ADcb5ddd85a8A1bB68"
+         "0xc3ccacE87f6d3A81724075ADcb5ddd85a8A1bB68",
+         "0x2a5AEcE0bb9EfFD7608213AE1745873385515c18"
       ],
       "Authorized_Caller_Names": [
-         "20221123-pool-recovery-helper/PoolRecoveryHelper"
+         "20221123-pool-recovery-helper/PoolRecoveryHelper",
+         "multisigs/dao"
       ]
    },
    {
@@ -442,6 +444,17 @@
       ]
    },
    {
+      "Fx": "setTokenRateCacheDuration(address,uint256)",
+      "Contract": "ComposableStablePool",
+      "Deployment": "20230206-composable-stable-pool-v3",
+      "Authorized_Caller_Addresses": [
+         "0x2a5AEcE0bb9EfFD7608213AE1745873385515c18"
+      ],
+      "Authorized_Caller_Names": [
+         "multisigs/dao"
+      ]
+   },
+   {
       "Fx": "startAmplificationParameterUpdate(uint256,uint256)",
       "Contract": "ComposableStablePool",
       "Deployment": "20230206-composable-stable-pool-v3",
@@ -481,10 +494,12 @@
       "Contract": "AaveLinearPool",
       "Deployment": "20230206-aave-rebalanced-linear-pool-v4",
       "Authorized_Caller_Addresses": [
-         "0xc3ccacE87f6d3A81724075ADcb5ddd85a8A1bB68"
+         "0xc3ccacE87f6d3A81724075ADcb5ddd85a8A1bB68",
+         "0x2a5AEcE0bb9EfFD7608213AE1745873385515c18"
       ],
       "Authorized_Caller_Names": [
-         "20221123-pool-recovery-helper/PoolRecoveryHelper"
+         "20221123-pool-recovery-helper/PoolRecoveryHelper",
+         "multisigs/dao"
       ]
    },
    {
@@ -676,6 +691,17 @@
       ],
       "Authorized_Caller_Names": [
          "multisigs/lm"
+      ]
+   },
+   {
+      "Fx": "setTokenRateCacheDuration(address,uint256)",
+      "Contract": "ComposableStablePool",
+      "Deployment": "20230320-composable-stable-pool-v4",
+      "Authorized_Caller_Addresses": [
+         "0x2a5AEcE0bb9EfFD7608213AE1745873385515c18"
+      ],
+      "Authorized_Caller_Names": [
+         "multisigs/dao"
       ]
    },
    {

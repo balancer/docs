@@ -187,6 +187,17 @@
       ]
    },
    {
+      "Fx": "enableRecoveryMode()",
+      "Contract": "WeightedPool",
+      "Deployment": "20230320-weighted-pool-v4",
+      "Authorized_Caller_Addresses": [
+         "0x17b11FF13e2d7bAb2648182dFD1f1cfa0E4C7cf3"
+      ],
+      "Authorized_Caller_Names": [
+         "multisigs/dao"
+      ]
+   },
+   {
       "Fx": "disableRecoveryMode()",
       "Contract": "ComposableStablePool",
       "Deployment": "20230320-composable-stable-pool-v4",
@@ -235,7 +246,7 @@
    {
       "Fx": "add_reward(address,address)",
       "Contract": "ChildChainGauge",
-      "Deployment": "20230316-child-chain-gauge-factory-v2",
+      "Deployment": "20230316-avax-child-chain-gauge-factory-v2",
       "Authorized_Caller_Addresses": [
          "0x326A7778DB9B741Cb2acA0DE07b9402C7685dAc6"
       ],
@@ -246,7 +257,7 @@
    {
       "Fx": "add_reward(address,address)",
       "Contract": "ChildChainGauge",
-      "Deployment": "20230316-avax-child-chain-gauge-factory-v2",
+      "Deployment": "20230316-child-chain-gauge-factory-v2",
       "Authorized_Caller_Addresses": [
          "0x326A7778DB9B741Cb2acA0DE07b9402C7685dAc6"
       ],
