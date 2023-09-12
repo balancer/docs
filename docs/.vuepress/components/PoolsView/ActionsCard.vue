@@ -50,6 +50,11 @@ const activeTab = ref('swap');
   padding: 0 16px;
 }
 
+.dark .card {
+  background-color: transparent;
+  border-color: #3e4c5a;
+}
+
 .tabs {
   align-items: center;
   display: flex;
@@ -67,14 +72,30 @@ const activeTab = ref('swap');
   width: 100%;
 }
 
+.dark .tab {
+  border-color: #3e4c5a;
+  color: #fff;
+}
+
 .tab:not(.tab--active):hover {
   background-color: #f8fafc;
   border-color: #cbd5e1;
   color: #475569;
 }
 
+.dark .tab:not(.tab--active):hover {
+  background-color: #1e293b;
+  border-color: #64748b;
+  color: #fff;
+}
+
 .tab--active {
   color: #384aff;
   border-color: #384aff;
+}
+
+.dark .tab--active {
+  color: #4c5eff;
+  border-color: #4c5eff;
 }
 </style>

@@ -8,7 +8,7 @@ title: Overview
 The Balancer Subgraph indexes data on the Balancer smart contracts with a GraphQL interface. It updates data in response to function calls and contract events to maintain data on the `Vault`, `Pools`, `AssetManagers` etc, to power front-end apps and integrations.
 
 | Network          | Subgraph URL                                                                                                                                                           |
-| ---------------- | ---------------------------------------------------------------------------------------------------------------------------------------------------------------------- |
+|------------------|------------------------------------------------------------------------------------------------------------------------------------------------------------------------|
 | Ethereum Mainnet | [https://api.thegraph.com/subgraphs/name/balancer-labs/balancer-v2](https://api.thegraph.com/subgraphs/name/balancer-labs/balancer-v2)                                 |
 | Polygon          | [https://api.thegraph.com/subgraphs/name/balancer-labs/balancer-polygon-v2](https://api.thegraph.com/subgraphs/name/balancer-labs/balancer-polygon-v2)                 |
 | Polygon zkEVM    | [https://api.studio.thegraph.com/query/24660/balancer-polygon-zk-v2/version/latest](https://api.studio.thegraph.com/query/24660/balancer-polygon-zk-v2/version/latest) |
@@ -16,6 +16,7 @@ The Balancer Subgraph indexes data on the Balancer smart contracts with a GraphQ
 | Optimism         | [https://api.thegraph.com/subgraphs/name/balancer-labs/balancer-optimism-v2](https://api.thegraph.com/subgraphs/name/balancer-labs/balancer-optimism-v2)               |
 | Gnosis Chain     | [https://api.thegraph.com/subgraphs/name/balancer-labs/balancer-gnosis-chain-v2](https://api.thegraph.com/subgraphs/name/balancer-labs/balancer-gnosis-chain-v2)       |
 | Avalanche        | [https://api.thegraph.com/subgraphs/name/balancer-labs/balancer-avalanche-v2](https://api.thegraph.com/subgraphs/name/balancer-labs/balancer-avalanche-v2)             |
+| Base             | [https://api.thegraph.com/subgraphs/name/balancer-labs/balancer-base-v2](https://api.thegraph.com/subgraphs/name/balancer-labs/balancer-base-v2)                       |
 | Goerli           | [https://api.thegraph.com/subgraphs/name/balancer-labs/balancer-goerli-v2](https://api.thegraph.com/subgraphs/name/balancer-labs/balancer-goerli-v2)                   |
 | Sepolia          | [https://api.studio.thegraph.com/query/24660/balancer-sepolia-v2/version/latest](https://api.studio.thegraph.com/query/24660/balancer-sepolia-v2/version/latest)       |
 

@@ -12,6 +12,10 @@ defineProps({
     required: true,
   },
 });
+
+async function copyToClipboard(value) {
+  await navigator.clipboard.writeText(value);
+}
 </script>
 <template>
   <div>
@@ -26,7 +30,7 @@ defineProps({
             <Avatar
               v-if="token"
               :address="token.address"
-              :imageURL="getToken(token.address).logoURI"
+              :imageURL="getToken(token.address)?.logoURI ?? ''"
               :size="36"
             />
           </div>
@@ -75,12 +79,50 @@ defineProps({
                 }).format(parseFloat(token.balance))
               }}
             </p>
+            <button
+              class="copy-btn"
+              @click="copyToClipboard(parseFloat(token.balance))"
+            >
+              <svg
+                xmlns="http://www.w3.org/2000/svg"
+                viewBox="0 0 20 20"
+                fill="currentColor"
+              >
+                <path
+                  d="M7 3.5A1.5 1.5 0 018.5 2h3.879a1.5 1.5 0 011.06.44l3.122 3.12A1.5 1.5 0 0117 6.622V12.5a1.5 1.5 0 01-1.5 1.5h-1v-3.379a3 3 0 00-.879-2.121L10.5 5.379A3 3 0 008.379 4.5H7v-1z"
+                />
+                <path
+                  d="M4.5 6A1.5 1.5 0 003 7.5v9A1.5 1.5 0 004.5 18h7a1.5 1.5 0 001.5-1.5v-5.879a1.5 1.5 0 00-.44-1.06L9.44 6.439A1.5 1.5 0 008.378 6H4.5z"
+                />
+              </svg>
+            </button>
           </div>
           <div class="stat">
             <p class="label">Balance (wei)</p>
             <p class="value">
               {{ ethers.parseUnits(token.balance, token.decimals) }}
             </p>
+            <button
+              class="copy-btn"
+              @click="
+                copyToClipboard(
+                  ethers.parseUnits(token.balance, token.decimals)
+                )
+              "
+            >
+              <svg
+                xmlns="http://www.w3.org/2000/svg"
+                viewBox="0 0 20 20"
+                fill="currentColor"
+              >
+                <path
+                  d="M7 3.5A1.5 1.5 0 018.5 2h3.879a1.5 1.5 0 011.06.44l3.122 3.12A1.5 1.5 0 0117 6.622V12.5a1.5 1.5 0 01-1.5 1.5h-1v-3.379a3 3 0 00-.879-2.121L10.5 5.379A3 3 0 008.379 4.5H7v-1z"
+                />
+                <path
+                  d="M4.5 6A1.5 1.5 0 003 7.5v9A1.5 1.5 0 004.5 18h7a1.5 1.5 0 001.5-1.5v-5.879a1.5 1.5 0 00-.44-1.06L9.44 6.439A1.5 1.5 0 008.378 6H4.5z"
+                />
+              </svg>
+            </button>
           </div>
           <div v-if="token.weight" class="stat">
             <p class="label">Token %</p>
@@ -158,17 +200,55 @@ defineProps({
 .stat {
   display: flex;
   align-items: center;
-  justify-content: space-between;
+  gap: 8px;
 }
 
 .label {
   font-size: 14px;
   font-weight: 600;
   line-height: 16px;
+  flex: 1;
 }
 
 .value {
   font-size: 14px;
   line-height: 16px;
+}
+
+.dark .value {
+  color: #cbd5e1;
+}
+
+.copy-btn {
+  background-color: #f8fafc;
+  border: 0;
+  color: #94a3b8;
+  padding: 0;
+  height: 20px;
+  width: 20px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  border-radius: 6px;
+  transition: background-color 0.2s ease-in-out color 0.2s ease-in-out;
+}
+
+.dark .copy-btn {
+  background-color: #334155;
+  color: #94a3b8;
+}
+
+.copy-btn:hover {
+  background-color: #eaf0f6;
+  color: #5668ff;
+}
+
+.dark .copy-btn:hover {
+  background-color: #1e293b;
+}
+
+.copy-btn svg {
+  height: 14px;
+  width: 14px;
 }
 </style>

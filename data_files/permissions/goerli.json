@@ -217,26 +217,15 @@
    },
    {
       "Fx": "add_reward(address,address)",
-      "Contract": "LiquidityGaugeV5",
-      "Deployment": "20220822-mainnet-gauge-factory-v2",
-      "Authorized_Caller_Addresses": [
-         "0xE0a171587b1Cae546E069A943EDa96916F5EE977",
-         "0x3bAbEBfD684506A5B47701ee231A53427Ad413Ef"
-      ],
-      "Authorized_Caller_Names": [
-         "UNDEF",
-         "UNDEF"
-      ]
-   },
-   {
-      "Fx": "add_reward(address,address)",
       "Contract": "ChildChainGauge",
       "Deployment": "20230316-child-chain-gauge-factory-v2",
       "Authorized_Caller_Addresses": [
          "0xE0a171587b1Cae546E069A943EDa96916F5EE977",
-         "0x3bAbEBfD684506A5B47701ee231A53427Ad413Ef"
+         "0x3bAbEBfD684506A5B47701ee231A53427Ad413Ef",
+         "0xeC576a26335dE1C360d2FC9A68cbA6BA37af4a13"
       ],
       "Authorized_Caller_Names": [
+         "UNDEF",
          "UNDEF",
          "UNDEF"
       ]
@@ -247,35 +236,26 @@
       "Deployment": "20220325-mainnet-gauge-factory",
       "Authorized_Caller_Addresses": [
          "0xE0a171587b1Cae546E069A943EDa96916F5EE977",
-         "0x3bAbEBfD684506A5B47701ee231A53427Ad413Ef"
+         "0x3bAbEBfD684506A5B47701ee231A53427Ad413Ef",
+         "0xeC576a26335dE1C360d2FC9A68cbA6BA37af4a13"
       ],
       "Authorized_Caller_Names": [
+         "UNDEF",
          "UNDEF",
          "UNDEF"
       ]
    },
    {
-      "Fx": "killGauge()",
-      "Contract": "ChildChainGauge",
-      "Deployment": "20230316-child-chain-gauge-factory-v2",
-      "Authorized_Caller_Addresses": [
-         "0xE0a171587b1Cae546E069A943EDa96916F5EE977",
-         "0x3b1836C09fdAe0A7C2848F99B2584aEBD6A36876"
-      ],
-      "Authorized_Caller_Names": [
-         "UNDEF",
-         "UNDEF"
-      ]
-   },
-   {
-      "Fx": "killGauge()",
+      "Fx": "add_reward(address,address)",
       "Contract": "LiquidityGaugeV5",
       "Deployment": "20220822-mainnet-gauge-factory-v2",
       "Authorized_Caller_Addresses": [
          "0xE0a171587b1Cae546E069A943EDa96916F5EE977",
-         "0x3b1836C09fdAe0A7C2848F99B2584aEBD6A36876"
+         "0x3bAbEBfD684506A5B47701ee231A53427Ad413Ef",
+         "0xeC576a26335dE1C360d2FC9A68cbA6BA37af4a13"
       ],
       "Authorized_Caller_Names": [
+         "UNDEF",
          "UNDEF",
          "UNDEF"
       ]
@@ -296,7 +276,7 @@
    {
       "Fx": "killGauge()",
       "Contract": "LiquidityGaugeV5",
-      "Deployment": "20220325-mainnet-gauge-factory",
+      "Deployment": "20220822-mainnet-gauge-factory-v2",
       "Authorized_Caller_Addresses": [
          "0xE0a171587b1Cae546E069A943EDa96916F5EE977",
          "0x3b1836C09fdAe0A7C2848F99B2584aEBD6A36876"
@@ -307,13 +287,28 @@
       ]
    },
    {
-      "Fx": "set_reward_distributor(address,address)",
+      "Fx": "killGauge()",
+      "Contract": "ChildChainGauge",
+      "Deployment": "20230316-child-chain-gauge-factory-v2",
+      "Authorized_Caller_Addresses": [
+         "0xE0a171587b1Cae546E069A943EDa96916F5EE977",
+         "0x3b1836C09fdAe0A7C2848F99B2584aEBD6A36876"
+      ],
+      "Authorized_Caller_Names": [
+         "UNDEF",
+         "UNDEF"
+      ]
+   },
+   {
+      "Fx": "killGauge()",
       "Contract": "LiquidityGaugeV5",
       "Deployment": "20220325-mainnet-gauge-factory",
       "Authorized_Caller_Addresses": [
-         "0xE0a171587b1Cae546E069A943EDa96916F5EE977"
+         "0xE0a171587b1Cae546E069A943EDa96916F5EE977",
+         "0x3b1836C09fdAe0A7C2848F99B2584aEBD6A36876"
       ],
       "Authorized_Caller_Names": [
+         "UNDEF",
          "UNDEF"
       ]
    },
@@ -330,17 +325,6 @@
    },
    {
       "Fx": "set_reward_distributor(address,address)",
-      "Contract": "ChildChainGauge",
-      "Deployment": "20230316-child-chain-gauge-factory-v2",
-      "Authorized_Caller_Addresses": [
-         "0xE0a171587b1Cae546E069A943EDa96916F5EE977"
-      ],
-      "Authorized_Caller_Names": [
-         "UNDEF"
-      ]
-   },
-   {
-      "Fx": "set_reward_distributor(address,address)",
       "Contract": "LiquidityGaugeV5",
       "Deployment": "20220822-mainnet-gauge-factory-v2",
       "Authorized_Caller_Addresses": [
@@ -351,9 +335,31 @@
       ]
    },
    {
+      "Fx": "set_reward_distributor(address,address)",
+      "Contract": "LiquidityGaugeV5",
+      "Deployment": "20220325-mainnet-gauge-factory",
+      "Authorized_Caller_Addresses": [
+         "0xE0a171587b1Cae546E069A943EDa96916F5EE977"
+      ],
+      "Authorized_Caller_Names": [
+         "UNDEF"
+      ]
+   },
+   {
+      "Fx": "set_reward_distributor(address,address)",
+      "Contract": "ChildChainGauge",
+      "Deployment": "20230316-child-chain-gauge-factory-v2",
+      "Authorized_Caller_Addresses": [
+         "0xE0a171587b1Cae546E069A943EDa96916F5EE977"
+      ],
+      "Authorized_Caller_Names": [
+         "UNDEF"
+      ]
+   },
+   {
       "Fx": "unkillGauge()",
-      "Contract": "SingleRecipientGauge",
-      "Deployment": "20230215-single-recipient-gauge-factory-v2",
+      "Contract": "ChildChainGauge",
+      "Deployment": "20230316-child-chain-gauge-factory-v2",
       "Authorized_Caller_Addresses": [
          "0x3b1836C09fdAe0A7C2848F99B2584aEBD6A36876"
       ],
@@ -374,8 +380,8 @@
    },
    {
       "Fx": "unkillGauge()",
-      "Contract": "ChildChainGauge",
-      "Deployment": "20230316-child-chain-gauge-factory-v2",
+      "Contract": "LiquidityGaugeV5",
+      "Deployment": "20220822-mainnet-gauge-factory-v2",
       "Authorized_Caller_Addresses": [
          "0x3b1836C09fdAe0A7C2848F99B2584aEBD6A36876"
       ],
@@ -385,10 +391,21 @@
    },
    {
       "Fx": "unkillGauge()",
-      "Contract": "LiquidityGaugeV5",
-      "Deployment": "20220822-mainnet-gauge-factory-v2",
+      "Contract": "SingleRecipientGauge",
+      "Deployment": "20230215-single-recipient-gauge-factory-v2",
       "Authorized_Caller_Addresses": [
          "0x3b1836C09fdAe0A7C2848F99B2584aEBD6A36876"
+      ],
+      "Authorized_Caller_Names": [
+         "UNDEF"
+      ]
+   },
+   {
+      "Fx": "add_reward(address,address,uint256)",
+      "Contract": "ChildChainStreamer",
+      "Deployment": "20220413-child-chain-gauge-factory",
+      "Authorized_Caller_Addresses": [
+         "0xeC576a26335dE1C360d2FC9A68cbA6BA37af4a13"
       ],
       "Authorized_Caller_Names": [
          "UNDEF"
