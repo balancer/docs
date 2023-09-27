@@ -73,6 +73,12 @@ Applies to:
 
 #### StablePool JoinKinds
 
+::: warning 
+ComposableStablePools have different `JoinKind` enums compared to StablePools and MetaStablePools 
+:::
+
+For **StablePool** and **MetaStablePool** the following `JoinKind` applies: 
+
 ```solidity
 enum JoinKind {
     INIT,
@@ -81,10 +87,17 @@ enum JoinKind {
  }
 ```
 
-Applies to:
+For **ComposableStablePool** the following `JoinKind` applies: 
 
-- StablePool
-- MetaStablePool
+```solidity
+enum JoinKind {
+    INIT,
+    EXACT_TOKENS_IN_FOR_BPT_OUT,
+    TOKEN_IN_FOR_EXACT_BPT_OUT,
+    ALL_TOKENS_IN_FOR_EXACT_BPT_OUT
+ }
+```
+
 
 #### JoinKinds Explained
 
