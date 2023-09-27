@@ -110,17 +110,6 @@
       ]
    },
    {
-      "Fx": "add_reward(address,address)",
-      "Contract": "ChildChainGauge",
-      "Deployment": "20230316-child-chain-gauge-factory-v2",
-      "Authorized_Caller_Addresses": [
-         "0x65226673F3D202E0f897C862590d7e1A992B2048"
-      ],
-      "Authorized_Caller_Names": [
-         "multisigs/lm"
-      ]
-   },
-   {
       "Fx": "setFeeTypePercentage(uint256,uint256)",
       "Contract": "ProtocolFeePercentagesProvider",
       "Deployment": "20220725-protocol-fee-percentages-provider",
@@ -572,6 +561,17 @@
       ],
       "Authorized_Caller_Names": [
          "multisigs/emergency"
+      ]
+   },
+   {
+      "Fx": "add_reward(address,address)",
+      "Contract": "ChildChainGauge",
+      "Deployment": "20230316-child-chain-gauge-factory-v2",
+      "Authorized_Caller_Addresses": [
+         "0x65226673F3D202E0f897C862590d7e1A992B2048"
+      ],
+      "Authorized_Caller_Names": [
+         "multisigs/lm"
       ]
    }
 ]
