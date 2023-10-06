@@ -1,6 +1,6 @@
 **Balancer Labs' data team** has been diligently working on rebuilding our Dune dashboards. The goal is to provide enhanced cross-chain analysis and more customizable filters.
 
-The rebuilt Dune dashboards will offer users the ability to perform in-depth analysis with improved filters and cross-chain analysis capabilities. These enhancements will empower users to gain deeper insights, make better-informed decisions, and maximize the value they can derive from the data.
+The rebuilt Dune dashboards will offer users the ability to perform in-depth analysis with improved filters and cross-chain analysis capabilities.
 
 Any feedback on the dashboards is greatly appreciated and can be provided by filling out this [form](https://docs.google.com/forms/d/e/1FAIpQLScHCgRxCGfyJp02Dl_nK6shDnXY1FDDXpsd-sqjTeIsv5EteQ/viewform) or by directly reaching out to us on [discord](https://discord.balancer.fi/).
 
