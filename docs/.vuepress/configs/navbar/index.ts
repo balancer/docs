@@ -133,6 +133,21 @@ export const navbar: NavbarConfig = [
         ],
       },
       {
+        text: 'Dune',
+        children: [
+          {
+            text: 'Overview',
+            link: '/reference/dune/',
+            children: [
+              {
+                text: 'Core',
+                link: '/reference/dune/dashboards',
+              },
+            ],
+          },
+        ],
+      },      
+      {
         text: 'Swaps / Joins / Exits',
         children: [
           '/reference/swaps/batch-swaps',
