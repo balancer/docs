@@ -140,7 +140,7 @@ export const navbar: NavbarConfig = [
             link: '/reference/dune/',
             children: [
               {
-                text: 'Core',
+                text: 'Dashboards',
                 link: '/reference/dune/dashboards',
               },
             ],
