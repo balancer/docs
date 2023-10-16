@@ -52,6 +52,9 @@ Let's say that you want to allow a 1% slippage. After computing how many tokens 
 ### `userData`
 
 userData is a highly versatile field; as such, it needs to be encoded for its specific use case. For exits, userData encodes a `ExitKind` to tell the pool what style of exit you're performing. Since pool types are customizable, not every pool necessarily uses the same `ExitKind`, so it's important to keep track of what each pool type can handle.
+::: info 
+When encoding `userData` for pools that include their own BPT as part of the pool's tokens, the BPT are not included in the `userData`.
+:::
 
 #### WeightedPool ExitKinds
 
