@@ -16,7 +16,7 @@ The Balancer Subgraph indexes data on the Balancer smart contracts with a GraphQ
 | Optimism         | [https://api.thegraph.com/subgraphs/name/balancer-labs/balancer-optimism-v2](https://api.thegraph.com/subgraphs/name/balancer-labs/balancer-optimism-v2)               |
 | Gnosis Chain     | [https://api.thegraph.com/subgraphs/name/balancer-labs/balancer-gnosis-chain-v2](https://api.thegraph.com/subgraphs/name/balancer-labs/balancer-gnosis-chain-v2)       |
 | Avalanche        | [https://api.thegraph.com/subgraphs/name/balancer-labs/balancer-avalanche-v2](https://api.thegraph.com/subgraphs/name/balancer-labs/balancer-avalanche-v2)             |
-| Base             | [https://api.thegraph.com/subgraphs/name/balancer-labs/balancer-base-v2](https://api.thegraph.com/subgraphs/name/balancer-labs/balancer-base-v2)                       |
+| Base             | [https://api.studio.thegraph.com/query/24660/balancer-base-v2/version/latest](https://api.studio.thegraph.com/query/24660/balancer-base-v2/version/latest)             |
 | Goerli           | [https://api.thegraph.com/subgraphs/name/balancer-labs/balancer-goerli-v2](https://api.thegraph.com/subgraphs/name/balancer-labs/balancer-goerli-v2)                   |
 | Sepolia          | [https://api.studio.thegraph.com/query/24660/balancer-sepolia-v2/version/latest](https://api.studio.thegraph.com/query/24660/balancer-sepolia-v2/version/latest)       |
 

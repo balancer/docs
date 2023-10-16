@@ -786,6 +786,17 @@
       ]
    },
    {
+      "Fx": "enableRecoveryMode()",
+      "Contract": "AaveLinearPool",
+      "Deployment": "20230206-aave-rebalanced-linear-pool-v4",
+      "Authorized_Caller_Addresses": [
+         "0x043f9687842771b3dF8852c1E9801DCAeED3f6bc"
+      ],
+      "Authorized_Caller_Names": [
+         "multisigs/dao"
+      ]
+   },
+   {
       "Fx": "setSwapFeePercentage(uint256)",
       "Contract": "AaveLinearPool",
       "Deployment": "20230206-aave-rebalanced-linear-pool-v4",
@@ -805,6 +816,17 @@
       ],
       "Authorized_Caller_Names": [
          "multisigs/lm"
+      ]
+   },
+   {
+      "Fx": "enableRecoveryMode()",
+      "Contract": "ERC4626LinearPool",
+      "Deployment": "20230206-erc4626-linear-pool-v3",
+      "Authorized_Caller_Addresses": [
+         "0x043f9687842771b3dF8852c1E9801DCAeED3f6bc"
+      ],
+      "Authorized_Caller_Names": [
+         "multisigs/dao"
       ]
    },
    {
@@ -852,6 +874,17 @@
       ],
       "Authorized_Caller_Names": [
          "multisigs/emergency",
+         "multisigs/dao"
+      ]
+   },
+   {
+      "Fx": "enableRecoveryMode()",
+      "Contract": "YearnLinearPool",
+      "Deployment": "20230213-yearn-linear-pool",
+      "Authorized_Caller_Addresses": [
+         "0x043f9687842771b3dF8852c1E9801DCAeED3f6bc"
+      ],
+      "Authorized_Caller_Names": [
          "multisigs/dao"
       ]
    },
