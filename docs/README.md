@@ -47,5 +47,4 @@ footer:
 
 - [DefiLlama](https://defillama.com/protocol/balancer)
 - [Analytics](https://balancer.defilytica.com/)
-- [Dune veBAL](https://dune.com/balancer/veBAL)
 - [Dune dashboards](https://dune.com/browse/dashboards?team=balancer)
