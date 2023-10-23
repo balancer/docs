@@ -71,6 +71,12 @@ const coreTools = [
     details: 'Query swap routes through the SOR ',
     link: '/tools/core/smart-order-router.html',
   },
+  {
+    title: 've8020 Launchpad',
+    icon: '/images/hero-circles.png',
+    details: 'Launch a ve8020 system',
+    link: '/tools/core/ve8020.html',
+  },
   // Add more Core Tools as needed
 ];
 
