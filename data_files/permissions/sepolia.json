@@ -1,5 +1,16 @@
 [
    {
+      "Fx": "setAuthorizer(address)",
+      "Contract": "Vault",
+      "Deployment": "20210418-vault",
+      "Authorized_Caller_Addresses": [
+         "0x6eaD84Af26E997D27998Fc9f8614e8a19BB93938"
+      ],
+      "Authorized_Caller_Names": [
+         "20230522-timelock-authorizer/TimelockAuthorizerMigrator"
+      ]
+   },
+   {
       "Fx": "activate()",
       "Contract": "BalancerTokenAdmin",
       "Deployment": "20220325-balancer-token-admin",
