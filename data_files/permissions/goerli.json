@@ -97,6 +97,17 @@
       ]
    },
    {
+      "Fx": "setAuthorizer(address)",
+      "Contract": "Vault",
+      "Deployment": "20210418-vault",
+      "Authorized_Caller_Addresses": [
+         "0xaD89051bEd8d96f045E8912aE1672c6C0bF8a85E"
+      ],
+      "Authorized_Caller_Names": [
+         "20230522-timelock-authorizer/TimelockAuthorizerMigrator"
+      ]
+   },
+   {
       "Fx": "setRelayerApproval(address,address,bool)",
       "Contract": "Vault",
       "Deployment": "20210418-vault",
@@ -262,8 +273,34 @@
    },
    {
       "Fx": "killGauge()",
+      "Contract": "ChildChainGauge",
+      "Deployment": "20230316-child-chain-gauge-factory-v2",
+      "Authorized_Caller_Addresses": [
+         "0xE0a171587b1Cae546E069A943EDa96916F5EE977",
+         "0x3b1836C09fdAe0A7C2848F99B2584aEBD6A36876"
+      ],
+      "Authorized_Caller_Names": [
+         "UNDEF",
+         "UNDEF"
+      ]
+   },
+   {
+      "Fx": "killGauge()",
       "Contract": "LiquidityGaugeV5",
       "Deployment": "20220822-mainnet-gauge-factory-v2",
+      "Authorized_Caller_Addresses": [
+         "0xE0a171587b1Cae546E069A943EDa96916F5EE977",
+         "0x3b1836C09fdAe0A7C2848F99B2584aEBD6A36876"
+      ],
+      "Authorized_Caller_Names": [
+         "UNDEF",
+         "UNDEF"
+      ]
+   },
+   {
+      "Fx": "killGauge()",
+      "Contract": "SingleRecipientGauge",
+      "Deployment": "20230215-single-recipient-gauge-factory-v2",
       "Authorized_Caller_Addresses": [
          "0xE0a171587b1Cae546E069A943EDa96916F5EE977",
          "0x3b1836C09fdAe0A7C2848F99B2584aEBD6A36876"
@@ -287,28 +324,24 @@
       ]
    },
    {
-      "Fx": "killGauge()",
+      "Fx": "set_reward_distributor(address,address)",
       "Contract": "ChildChainGauge",
       "Deployment": "20230316-child-chain-gauge-factory-v2",
       "Authorized_Caller_Addresses": [
-         "0xE0a171587b1Cae546E069A943EDa96916F5EE977",
-         "0x3b1836C09fdAe0A7C2848F99B2584aEBD6A36876"
+         "0xE0a171587b1Cae546E069A943EDa96916F5EE977"
       ],
       "Authorized_Caller_Names": [
-         "UNDEF",
          "UNDEF"
       ]
    },
    {
-      "Fx": "killGauge()",
-      "Contract": "SingleRecipientGauge",
-      "Deployment": "20230215-single-recipient-gauge-factory-v2",
+      "Fx": "set_reward_distributor(address,address)",
+      "Contract": "LiquidityGaugeV5",
+      "Deployment": "20220325-mainnet-gauge-factory",
       "Authorized_Caller_Addresses": [
-         "0xE0a171587b1Cae546E069A943EDa96916F5EE977",
-         "0x3b1836C09fdAe0A7C2848F99B2584aEBD6A36876"
+         "0xE0a171587b1Cae546E069A943EDa96916F5EE977"
       ],
       "Authorized_Caller_Names": [
-         "UNDEF",
          "UNDEF"
       ]
    },
@@ -325,30 +358,8 @@
    },
    {
       "Fx": "set_reward_distributor(address,address)",
-      "Contract": "ChildChainGauge",
-      "Deployment": "20230316-child-chain-gauge-factory-v2",
-      "Authorized_Caller_Addresses": [
-         "0xE0a171587b1Cae546E069A943EDa96916F5EE977"
-      ],
-      "Authorized_Caller_Names": [
-         "UNDEF"
-      ]
-   },
-   {
-      "Fx": "set_reward_distributor(address,address)",
       "Contract": "LiquidityGaugeV5",
       "Deployment": "20220822-mainnet-gauge-factory-v2",
-      "Authorized_Caller_Addresses": [
-         "0xE0a171587b1Cae546E069A943EDa96916F5EE977"
-      ],
-      "Authorized_Caller_Names": [
-         "UNDEF"
-      ]
-   },
-   {
-      "Fx": "set_reward_distributor(address,address)",
-      "Contract": "LiquidityGaugeV5",
-      "Deployment": "20220325-mainnet-gauge-factory",
       "Authorized_Caller_Addresses": [
          "0xE0a171587b1Cae546E069A943EDa96916F5EE977"
       ],
@@ -381,7 +392,7 @@
    {
       "Fx": "unkillGauge()",
       "Contract": "LiquidityGaugeV5",
-      "Deployment": "20220822-mainnet-gauge-factory-v2",
+      "Deployment": "20220325-mainnet-gauge-factory",
       "Authorized_Caller_Addresses": [
          "0x3b1836C09fdAe0A7C2848F99B2584aEBD6A36876"
       ],
@@ -392,7 +403,7 @@
    {
       "Fx": "unkillGauge()",
       "Contract": "LiquidityGaugeV5",
-      "Deployment": "20220325-mainnet-gauge-factory",
+      "Deployment": "20220822-mainnet-gauge-factory-v2",
       "Authorized_Caller_Addresses": [
          "0x3b1836C09fdAe0A7C2848F99B2584aEBD6A36876"
       ],
