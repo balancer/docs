@@ -160,13 +160,13 @@ This results in the following emissions schedule:
 
 This chart outlines the allocation amounts. More details below.
 
-| BAL Recipient/Fund                                                                                                                                                     | Original Allocation | State as of Feb 2023                         |
-| :--------------------------------------------------------------------------------------------------------------------------------------------------------------------- | :------------------ | :------------------------------------------- |
-| Community                                                                                                                                                              | 65M                 | 6M remain                                    |
-| Liquidity Providers(veBAL) - [allocated by community](https://snapshot.org/#/balancer.eth/proposal/0xc93aa02ea7153a53d124189567ba19aa28663c499cdbfa60fe9bf35bf574d2a7) | N/A                 | 47.5M From community fund allocated to veBAL |
-| Founders, Options, Advisors, Investors                                                                                                                                 | 25M                 | No Information Available                     |
-| Ecosystem Fund                                                                                                                                                         | 5M                  | Merged into Community Fund                   |
-| Fundraising Fund                                                                                                                                                       | 5M                  | Merged into Community Fund                   |
+| BAL Recipient/Fund                                                                                                                                                     | Original Allocation | State as of Oct 2023                                                                                                          |
+| :--------------------------------------------------------------------------------------------------------------------------------------------------------------------- | :------------------ | :---------------------------------------------------------------------------------------------------------------------------- |
+| Liquidity Providers - [allocated by the community](https://snapshot.org/#/balancer.eth/proposal/0xc93aa02ea7153a53d124189567ba19aa28663c499cdbfa60fe9bf35bf574d2a7)    | up to 65M           | ~25M                                                                                  |
+| Founders, Options, Advisors, Investors                                                                                                                                 | 22.5M               | Fully vested                                                                                                                  |
+| Ecosystem Fund (now DAO Multisig)                                                                                                                                      | 5M                  | [balance](https://etherscan.io/token/0xba100000625a3754423978a60c9317c58a424e3d?a=0x10A19e7eE7d7F8a52822f6817de8ea18204F2e4f) |
+| Balancer Labs Fundraising Fund                                                                                                                                         | 5M                  | [balance](https://etherscan.io/token/0xba100000625a3754423978a60c9317c58a424e3d?a=0xb129f73f1afd3a49c701241f374db17ae63b20eb) |
+| Balancer Labs Contributors Incentives Program                                                                                                                          | 2.5M                | [balance](https://etherscan.io/token/0xba100000625a3754423978a60c9317c58a424e3d?a=0xcdcebf1f28678eb4a1478403ba7f34c94f7ddbc5) |
 
 ::: chart BAL Token Distribution
 
@@ -220,11 +220,11 @@ Emissions to liquidty providers are decided by a combination of the emissions sc
 
 Note that as part of the veBAL conversion, the entire ecosystem fund was transferred into the [DAO multisig](https://etherscan.io/address/0x10A19e7eE7d7F8a52822f6817de8ea18204F2e4f)).
 
-Original Ecosystem Fund: <span class="address-link">[Mainnet](https://etherscan.io/address/0xb618F903ad1d00d6F7b92f5b0954DcdC056fC533)</span>, <span class="address-link">[Polygon]](https://etherscan.io/address/0xb618F903ad1d00d6F7b92f5b0954DcdC056fC533)</span>, <span class="address-link">[Arbitrum]](https://arbiscan.io/address/0xaF23DC5983230E9eEAf93280e312e57539D098D0)</span>
+Original Ecosystem Fund: <span class="address-link">[Mainnet](https://etherscan.io/address/0xb618F903ad1d00d6F7b92f5b0954DcdC056fC533)</span>, <span class="address-link">[Polygon](https://etherscan.io/address/0xb618F903ad1d00d6F7b92f5b0954DcdC056fC533)</span>, <span class="address-link">[Arbitrum](https://arbiscan.io/address/0xaF23DC5983230E9eEAf93280e312e57539D098D0)</span>
 
-#### Fundraising Fund
+#### Balancer Labs Fundraising Fund
 
-5M were allocated for the Fundraising Fund. Balancer Labs raised a pre-seed and seed round. This fund will be used for future fundraising rounds to support Balancer Labs' operations and growth. BAL tokens will never be sold to retail users. As part of the transition to the [Operating Framework Enacted by Governance in Q2 2022](https://forum.balancer.fi/t/bip-1-operating-framework-for-balancer-dao/3237), 1.9M BAL was [transferred](https://etherscan.io/tx/0xaa29cd251cdb024c415b0e13f67a0ca74fe5abc3de9a9fedd1ae26fd39be4025) from the Fundraising Fund back to the DAO Multisig to supplement the community controlled supply.
+5M were originally allocated for the Balancer Labs Fundraising Fund. This fund will be used for future fundraising rounds to support Balancer Labs' operations and growth. BAL tokens will never be sold to retail users. As part of the transition to the [Operating Framework Enacted by Governance in Q2 2022](https://forum.balancer.fi/t/bip-1-operating-framework-for-balancer-dao/3237), 1.9M BAL was [transferred](https://etherscan.io/tx/0xaa29cd251cdb024c415b0e13f67a0ca74fe5abc3de9a9fedd1ae26fd39be4025) from the Fundraising Fund to the DAO Multisig to supplement the community controlled supply.
 
 For full transparency, the seed series price of one BAL token was $0.60.
 
