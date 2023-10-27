@@ -1,16 +1,22 @@
 <script setup>
-import InputLabel from './InputLabel.vue';
+//import InputLabel from './InputLabel.vue';
+import TabsComponent from './ve8020/TabsComponent.vue';
 
-function handleSubmit(e) {
+/* function handleSubmit(e) {
   const formData = new FormData(e.target);
   for (let [name, value] of formData.entries()) {
     console.log(`${name}: ${value}`);
   }
-}
+} */
 </script>
 
 <template>
-  <form @submit.prevent="handleSubmit">
+  <div>
+    <TabsComponent />
+
+    <!-- El resto de tu contenido, como el formulario -->
+  </div>
+  <!--   <form @submit.prevent="handleSubmit">
     <InputLabel>
       BPT token address:
       <Input placeholder="0x..." name="bptAddress" />
@@ -32,7 +38,7 @@ function handleSubmit(e) {
       <Input placeholder="0x..." name="rewardTokens" />
     </InputLabel>
     <button type="submit" class="submit-button">Submit</button>
-  </form>
+  </form> -->
 </template>
 
 <style scoped>
