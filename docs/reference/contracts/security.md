@@ -29,6 +29,9 @@ Balancer has completed full audits with Certora, OpenZeppelin, Trail of Bits, an
 
 Audit reports can also be found in the [Balancer V2 Core repository](https://github.com/balancer/balancer-core-v2/tree/master/audits).
 
+## Code Immutability
+The core contracts that make up the Balancer V2 Protocol, such as the Vault and Pools (Weighted, Stable, LBP, Managed, Linear, etc), are immutable by design. Any pool updates are made by deploying brand new factories/pools and require users to electively migrate.
+
 ## Balancer x Certora Accelerator
 
 On the 10th [of October 2022](https://medium.com/balancer-protocol/balancer-and-certora-launch-security-accelerator-420d3b839a37), Balancer launched the Balancer Certora Security Accelerator in partnership with [Certora](https://www.certora.com/). The Security Accelerator helps projects building on Balancer increase their code security.
