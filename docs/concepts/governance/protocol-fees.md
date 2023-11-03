@@ -23,7 +23,7 @@ Another potential source of Protocol Fees is from interest on Flash Loans. They 
 
 ## Uses
 
-As of [BIP-371](https://forum.balancer.fi/t/bip-371-adjust-protocol-fee-split/4978)  in August 2023, the protocol takes 50% of the swap fees and yield fees.  From that:
+As of [BIP-371](https://forum.balancer.fi/t/bip-371-adjust-protocol-fee-split/4978)  in August 2023, the protocol takes 50% of the swap fees and 50% of wrapped token yield fees on non-exempt pools with rate providers.  From that:
 
 - 100% of all $BAL fees collected are emitted as fee sharing to veBAL holders.  See this [Governance Proposal](https://forum.balancer.fi/t/proposal-distribute-protocol-fees-in-bal-where-appropriate/2933)
 - All other tokens are sold for USDC, of which: 
