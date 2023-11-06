@@ -1,8 +1,14 @@
 <script setup>
 import Launchpad from './Launchpad.vue';
+import Overview from './Overview.vue';
+import NetworkSelect from '../Navbar/NetworkSelect.vue';
+import Configuration from './Configuration.vue';
 </script>
 
 <template>
+  <div class="network-select">
+    <NetworkSelect />
+  </div>
   <div class="main-container">
     <div class="head-container">
       <div
@@ -25,16 +31,16 @@ import Launchpad from './Launchpad.vue';
       </div>
     </div>
 
-    <div v-show="activeTab === 1">
+    <div v-show="activeTab === 1" class="body-container">
       <Launchpad />
     </div>
 
-    <div v-show="activeTab === 2">
-      <template2 />
+    <div v-show="activeTab === 2" class="body-container">
+      <Overview />
     </div>
 
-    <div v-show="activeTab === 3">
-      <template3 />
+    <div v-show="activeTab === 3" class="body-container">
+      <Configuration />
     </div>
   </div>
 </template>
@@ -55,21 +61,36 @@ export default {
 </script>
 
 <style scoped>
+.network-select {
+  width: 100%;
+  display: flex;
+  align-items: center;
+  justify-content: flex-end;
+}
+
 .main-container {
   width: 100%;
   margin-top: 16px;
-  border: 1px solid #3e4c5a;
+  border: 1px solid #e2e8f0;
   border-radius: 6px;
+}
+
+.dark .main-container {
+  border: 1px solid #3e4c5a;
 }
 
 .head-container {
   height: 48px;
   width: 100%;
-  background-color: #1e293b;
+  background-color: #f8fafc;
   border-radius: 6px;
   display: flex;
   align-items: center;
   justify-content: space-around;
+}
+
+.dark .head-container {
+  background-color: #1e293b;
 }
 
 .tab {
@@ -84,7 +105,20 @@ export default {
 }
 
 .tab.active-tab {
-  background-color: #384aff;
+  background-color: #eaf0f6;
   border-radius: 6px;
+  color: #384aff;
+}
+
+.dark .tab.active-tab {
+  background-color: #384aff;
+  color: #ffffff;
+}
+.body-container {
+  padding: 20px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  width: 100%;
 }
 </style>
