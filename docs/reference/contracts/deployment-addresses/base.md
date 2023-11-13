@@ -24,9 +24,7 @@ For more information on specific deployments as well as changelogs for different
 |:-------------------------------|:----------------------------------------------------------------------------------------------------------------------------|:------------------------------------------------------------------------------------------------------------------------------------------------------------|
 | BalancerQueries                | [0x300Ab2038EAc391f26D9F895dc61F8F66a548833](https://basescan.org//address/0x300Ab2038EAc391f26D9F895dc61F8F66a548833#code) | [20220721-balancer-queries](https://github.com/balancer/balancer-deployments/blob/master/tasks/20220721-balancer-queries)                                   |
 | BalancerRelayer                | [0x7B25d5712fB49627534012327E46455b3fF7b26C](https://basescan.org//address/0x7B25d5712fB49627534012327E46455b3fF7b26C#code) | [20230712-child-chain-gauge-checkpointer](https://github.com/balancer/balancer-deployments/blob/master/tasks/20230712-child-chain-gauge-checkpointer)       |
-| BalancerRelayer (v5)           | [0x76f7204B62f554b79d444588EDac9dfA7032c71a](https://basescan.org//address/0x76f7204B62f554b79d444588EDac9dfA7032c71a#code) | [20230314-batch-relayer-v5](https://github.com/balancer/balancer-deployments/blob/master/tasks/20230314-batch-relayer-v5)                                   |
 | BatchRelayerLibrary            | [0xaf779e58dafb4307b998C7b3C9D3f788DFc80632](https://basescan.org//address/0xaf779e58dafb4307b998C7b3C9D3f788DFc80632#code) | [20230712-child-chain-gauge-checkpointer](https://github.com/balancer/balancer-deployments/blob/master/tasks/20230712-child-chain-gauge-checkpointer)       |
-| BatchRelayerLibrary (v5)       | [0xDF9B5B00Ef9bca66e9902Bd813dB14e4343Be025](https://basescan.org//address/0xDF9B5B00Ef9bca66e9902Bd813dB14e4343Be025#code) | [20230314-batch-relayer-v5](https://github.com/balancer/balancer-deployments/blob/master/tasks/20230314-batch-relayer-v5)                                   |
 | ProtocolFeePercentagesProvider | [0xDEd7Fef7D8eCdcB74F22f0169e1A9EC696e6695d](https://basescan.org//address/0xDEd7Fef7D8eCdcB74F22f0169e1A9EC696e6695d#code) | [20220725-protocol-fee-percentages-provider](https://github.com/balancer/balancer-deployments/blob/master/tasks/20220725-protocol-fee-percentages-provider) |
 | Vault                          | [0xBA12222222228d8Ba445958a75a0704d566BF2C8](https://basescan.org//address/0xBA12222222228d8Ba445958a75a0704d566BF2C8#code) | [20210418-vault](https://github.com/balancer/balancer-deployments/blob/master/tasks/20210418-vault)                                                         |
 
@@ -74,8 +72,10 @@ These deployments were in use at some point, and may still be in active operatio
 #### If you can only find the contract you are looking for in the deprecated section and it is not an old pool, try checking the deployments tasks to find it or ask in the Discord before using a deprecated contract.
 
     
-No deprecated contracts found
-
+| Contract                 | Address                                                                                                                     | Deployment                                                                                                                |
+|:-------------------------|:----------------------------------------------------------------------------------------------------------------------------|:--------------------------------------------------------------------------------------------------------------------------|
+| BalancerRelayer (v5)     | [0x76f7204B62f554b79d444588EDac9dfA7032c71a](https://basescan.org//address/0x76f7204B62f554b79d444588EDac9dfA7032c71a#code) | [20230314-batch-relayer-v5](https://github.com/balancer/balancer-deployments/blob/master/tasks/20230314-batch-relayer-v5) |
+| BatchRelayerLibrary (v5) | [0xDF9B5B00Ef9bca66e9902Bd813dB14e4343Be025](https://basescan.org//address/0xDF9B5B00Ef9bca66e9902Bd813dB14e4343Be025#code) | [20230314-batch-relayer-v5](https://github.com/balancer/balancer-deployments/blob/master/tasks/20230314-batch-relayer-v5) |
     
 <style scoped>
 table {
