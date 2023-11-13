@@ -37,6 +37,7 @@ Embark on your journey through the world of Balancer's data by exploring our Spe
 ## Contribute to the Magic
 
 We invite you to not only explore but also contribute to the magic. As we strive for excellence, collaboration is at the heart of our mission. Your insights, feedback, and contributions are invaluable in shaping the future of Balancer's data analytics.
+To do so, you can create pull requests to Dune's spellbook or reach out to Balancer Labs' data team directly on [Discord](https://discord.balancer.fi/).
 
 **You can leverage our spells with queries such as:**
 
@@ -44,7 +45,6 @@ We invite you to not only explore but also contribute to the magic. As we strive
 ## 1, 7 and 30 day volume on Balancer
 
 ```dunesql
-{
 SELECT 
     SUM(amount_usd)/1e6 AS "Volume on Balancer"
     , 1 AS rn 
@@ -67,13 +67,11 @@ SELECT
 FROM balancer.trades 
 WHERE block_time >= CAST(NOW() AS TIMESTAMP) - INTERVAL '30' DAY
 ORDER BY rn ASC
-}
 ```
 
 ## All swaps on the last 24 hours
 
 ```dunesql
-{
 SELECT 
     block_date
     , tx_hash
@@ -89,13 +87,11 @@ SELECT
 FROM balancer.trades
 WHERE block_time >= now() - interval '24' hour
 ORDER BY 1 ASC
-}
 ```
 
 ## Daily TVL by Blockchain
 
 ```dunesql
-{
 SELECT 
     blockchain
     , CAST(day AS TIMESTAMP) AS day
@@ -103,13 +99,11 @@ SELECT
 FROM balancer.liquidity x
 GROUP BY 1, 2
 ORDER BY 2 DESC, 3 DESC
-}
 ```
 
 ## Current TVL by pool, from highest to lowest
 
 ```dunesql
-{
 SELECT 
     blockchain
     , pool_id
@@ -119,13 +113,11 @@ FROM balancer.liquidity x
 WHERE day >= current_date
 GROUP BY 1, 2, 3
 ORDER BY 4 DESC
-}
 ```
 
 ## Daily Liquidity Utilization
 
 ```dunesql
-{
 WITH 
     swaps AS (
         SELECT
@@ -151,5 +143,4 @@ SELECT
 FROM total_tvl t
 LEFT JOIN swaps s ON s.day = t.day
 ORDER BY 1
-}
 ```

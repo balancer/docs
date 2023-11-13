@@ -8,6 +8,8 @@ order: 3
 
 The rebuilt Dune dashboards will offer users the ability to perform in-depth analysis with improved filters and cross-chain analysis.
 
+If you have any questions/feedback on our dashboards, feel free to reach out by filling out this [form](https://docs.google.com/forms/d/e/1FAIpQLScHCgRxCGfyJp02Dl_nK6shDnXY1FDDXpsd-sqjTeIsv5EteQ/viewform) or directly on [Discord](https://discord.balancer.fi/).
+
 **Here are the updated dashboards:**
 
 | Dashboard Name                                      | Main information                                                                                                  | Filters                                  |
