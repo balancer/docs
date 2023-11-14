@@ -73,7 +73,7 @@ const coreTools = [
   },
   {
     title: 've8020 Launchpad',
-    icon: '/images/hero-circles.png',
+    icon: '/images/protofire.png',
     details: 'Launch a ve8020 system',
     link: '/tools/core/ve8020.html',
   },
