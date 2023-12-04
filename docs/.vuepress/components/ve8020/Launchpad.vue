@@ -1,9 +1,33 @@
 <script setup>
-import { ref } from 'vue';
+import { ref, watch, computed } from 'vue';
+import Calendar from './Calendar.vue';
+const selectedDate = ref(null);
+const openCalendar = ref(false);
+const lockTime = ref(0);
+const handleClickDate = date => {
+  selectedDate.value = date;
+};
+const handleClickContainer = () => {
+  openCalendar.value = !openCalendar.value;
+};
+const closeCalendar = () => {
+  openCalendar.value = false;
+};
+const date = new Date();
+const formatedDate = date => {
+  const formattedDate = date.toLocaleString('en-US', {
+    weekday: 'long',
+    year: 'numeric',
+    month: 'long',
+    day: 'numeric',
+    timeZone: 'GMT',
+  });
+  return formattedDate;
+};
 const formFields = [
   {
     label: '8020 BPT address',
-    placeholder: 'B-GNO80-WETH20',
+    placeholder: '0xa0b...6eb48',
     name: 'bptAddress',
   },
   {
@@ -16,25 +40,60 @@ const formFields = [
     placeholder: 'veGNO80-WETH20',
     name: 'veTokenSymbol',
   },
-  {
-    label: 'Reward Distribition Start-time',
-    type: 'date',
-    name: 'startTime',
-  },
-  {
-    label: 'Max Lock-time',
-    type: 'date',
-    name: 'lockTime',
-  },
 ];
+
+const selectedWeeks = ref(false);
+const selectedWeeksValue = ref('');
+const selectedMonths = ref(false);
+const selectedMonthsValue = ref('');
+const selectedYears = ref(false);
+const selectedYearsValue = ref('');
+
+const handleClickWeeks = () => {
+  selectedWeeks.value = !selectedWeeks.value;
+};
+
+const handleClickMonths = () => {
+  selectedMonths.value = !selectedMonths.value;
+};
+
+const handleClickYears = () => {
+  selectedYears.value = !selectedYears.value;
+};
+const computedLockTime = computed(() => {
+  let weeks = 0;
+  let months = 0;
+  let years = 0;
+  if (selectedWeeks.value) {
+    weeks = parseInt(selectedWeeksValue.value) || 0;
+  }
+  if (selectedMonths.value) {
+    months = parseInt(selectedMonthsValue.value) * 4 || 0;
+  }
+  if (selectedYears.value) {
+    years = parseInt(selectedYearsValue.value) * 48 || 0;
+  }
+
+  return weeks + months + years;
+});
 
 const isFormValid = ref(false);
 
 function validateForm() {
+  const currentDate = new Date();
   isFormValid.value = formFields.every(field => {
     const inputElement = document.querySelector(`[name="${field.name}"]`);
     return inputElement && inputElement.value;
   });
+  if (selectedDate.value === null) {
+    isFormValid.value = false;
+  } else if (selectedDate.value.getTime() < currentDate.getTime()) {
+    isFormValid.value = false;
+  }
+  if (lockTime.value < 1) {
+    isFormValid.value = false;
+  }
+  console.log(lockTime.value);
 }
 
 function handleSubmit(e) {
@@ -43,6 +102,10 @@ function handleSubmit(e) {
     console.log(`${name}: ${value}`);
   }
 }
+watch([selectedDate, computedLockTime], () => {
+  lockTime.value = computedLockTime.value;
+  validateForm();
+});
 </script>
 
 <template>
@@ -60,6 +123,104 @@ function handleSubmit(e) {
         />
       </div>
     </div>
+    <div class="item-row">
+      <p class="item-name">Reward Distribition Start-time</p>
+      <div class="input-group">
+        <div class="input">
+          <p
+            :class="{ disabled: !selectedDate }"
+            class="text"
+            @click="handleClickContainer"
+          >
+            {{ selectedDate ? formatedDate(selectedDate) : formatedDate(date) }}
+          </p>
+          <svg
+            width="16"
+            height="16"
+            class="icon"
+            @click="handleClickContainer"
+          >
+            <use href="/images/calendar.svg#icon"></use>
+          </svg>
+          <Calendar
+            :isOpen="openCalendar"
+            :date="selectedDate"
+            @update:date="handleClickDate"
+            @close-calendar="closeCalendar"
+          />
+          <input v-model="selectedDate" type="hidden" name="reward-start" />
+        </div>
+      </div>
+    </div>
+    <div class="item-row">
+      <p class="item-name">Max Lock-time</p>
+      <div class="lock-group">
+        <div class="time-group">
+          <div
+            class="check"
+            :class="{ select: selectedWeeks }"
+            @click="handleClickWeeks"
+          ></div>
+          <p
+            class="text"
+            :class="{ disabled: !selectedWeeks }"
+            @click="handleClickWeeks"
+          >
+            Weeks
+          </p>
+          <input
+            v-model="selectedWeeksValue"
+            type="number"
+            class="input"
+            placeholder="10"
+            @input="countLockedWeeks"
+          />
+        </div>
+        <div class="time-group">
+          <div
+            class="check"
+            :class="{ select: selectedMonths }"
+            @click="handleClickMonths"
+          ></div>
+          <p
+            class="text"
+            :class="{ disabled: !selectedMonths }"
+            @click="handleClickMonths"
+          >
+            Months
+          </p>
+          <input
+            v-model="selectedMonthsValue"
+            type="number"
+            class="input"
+            placeholder="3"
+            @input="countLockedWeeks"
+          />
+        </div>
+        <div class="time-group">
+          <div
+            class="check"
+            :class="{ select: selectedYears }"
+            @click="handleClickYears"
+          ></div>
+          <p
+            class="text"
+            :class="{ disabled: !selectedYears }"
+            @click="handleClickYears"
+          >
+            Years
+          </p>
+          <input
+            v-model="selectedYearsValue"
+            type="number"
+            class="input"
+            placeholder="1"
+            @input="countLockedWeeks"
+          />
+        </div>
+      </div>
+      <input v-model="lockTime" type="hidden" name="lock-time" />
+    </div>
     <button type="submit" class="submit-button" :disabled="!isFormValid">
       Deploy veSystem
     </button>
@@ -67,6 +228,16 @@ function handleSubmit(e) {
 </template>
 
 <style scoped>
+input[type='number']::-webkit-inner-spin-button,
+input[type='number']::-webkit-outer-spin-button {
+  -webkit-appearance: none;
+  margin: 0;
+}
+
+input[type='number'] {
+  -moz-appearance: textfield;
+  appearance: textfield;
+}
 .section-container {
   display: flex;
   flex-direction: column;
@@ -90,16 +261,19 @@ function handleSubmit(e) {
   margin: 0;
 }
 
-.item-row .input-group {
+.item-row .input-group,
+.item-row .lock-group {
   display: flex;
   align-items: center;
   height: 45px;
   width: 50%;
 }
 
-.item-row .input-group .input {
+.item-row .input-group .input,
+.item-row .lock-group .input {
   background-color: transparent;
   border: 1px solid #e2e8f0;
+  position: relative;
   border-radius: 6px;
   height: 100%;
   width: 100%;
@@ -107,14 +281,87 @@ function handleSubmit(e) {
   padding-inline: 20px;
   font-size: 14px;
   outline: none;
+  display: flex;
+  align-items: center;
 }
 
-.dark .item-row .input-group .input {
+.dark .item-row .input-group .input,
+.dark .item-row .lock-group .input {
   border: 1px solid #3e4c5a;
 }
 
-.item-row .input-group .input:focus {
+.item-row .input-group .input:focus,
+.item-row .lock-group .input:focus {
   border: 1px solid #384aff;
+}
+
+.item-row .input-group .input .icon {
+  fill: #2c3e50;
+  cursor: pointer;
+}
+.dark .item-row .input-group .input .icon {
+  fill: #ffffff;
+}
+.item-row .input-group .input .text {
+  font-size: 14px;
+  width: 100%;
+  height: 100%;
+  cursor: pointer;
+  display: flex;
+  align-items: center;
+  margin: 0;
+}
+.item-row .input-group .input .text.disabled {
+  color: #999;
+}
+
+.dark .item-row .input-group .input .text.disabled {
+  color: #666;
+}
+
+.item-row .lock-group {
+  gap: 8px;
+  min-width: 340px;
+}
+
+.item-row .lock-group .time-group {
+  display: flex;
+  align-items: center;
+  gap: 5px;
+  height: 100%;
+  min-width: 115px;
+}
+
+.time-group .check {
+  width: 14px;
+  height: 14px;
+  border: 1px solid #e2e8f0;
+  border-radius: 3px;
+  cursor: pointer;
+}
+
+.time-group .check.select {
+  background-color: #384aff;
+}
+
+.item-row .lock-group .time-group .input {
+  max-width: 45px;
+  padding: 0;
+  padding-left: 12px;
+}
+
+.dark .time-group .check {
+  border: 1px solid #3e4c5a;
+}
+
+.time-group .text {
+  margin: 0;
+  font-size: 12px;
+  cursor: pointer;
+}
+
+.time-group .text.disabled {
+  opacity: 0.5;
 }
 
 .submit-button {
