@@ -1,41 +1,13 @@
 <script setup>
 import Launchpad from './Launchpad.vue';
 import Overview from './Overview.vue';
-import NetworkSelect from '../Navbar/NetworkSelect.vue';
 import Configuration from './Configuration.vue';
-import { createWeb3Modal, defaultConfig } from '@web3modal/ethers/vue';
-import { NETWORKS } from '../../constants/networks';
-
-const projectId = 'c6317c5d201b5bf046ce39e781ce0e78';
-
-const chains = NETWORKS.map(n => ({
-  chainId: n.id,
-  name: n.name,
-  explorerUrl: n.explorer,
-  rpcUrl: n.rpcUrl,
-  currency: 'ETH',
-}));
-
-const metadata = {
-  name: 'My Website',
-  description: 'My Website description',
-  url: 'https://mywebsite.com',
-  icons: ['https://avatars.mywebsite.com/'],
-};
-
-createWeb3Modal({
-  ethersConfig: defaultConfig({ metadata }),
-  chains,
-  projectId,
-  defaultChain: chains[0],
-});
+import Wallet from '../Navbar/Wallet.vue';
 </script>
 
 <template>
   <div class="network-select">
-    <NetworkSelect />
-    <w3m-button />
-    <w3m-network-button />
+    <Wallet />
   </div>
   <div class="main-container">
     <div class="head-container">
