@@ -23,7 +23,7 @@ const chains = NETWORKS.map(n => ({
 const metadata = {
   name: 'Balancer Docs',
   description: 'Balancer Docs',
-  url: 'https://mywebsite.com',
+  url: 'https://docs.balancer.fi/',
   icons: ['https://avatars.mywebsite.com/'],
 };
 
