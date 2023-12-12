@@ -1,13 +1,13 @@
 <script setup>
 import Launchpad from './Launchpad.vue';
 import Overview from './Overview.vue';
-import NetworkSelect from '../Navbar/NetworkSelect.vue';
 import Configuration from './Configuration.vue';
+import Wallet from '../Navbar/Wallet.vue';
 </script>
 
 <template>
   <div class="network-select">
-    <NetworkSelect />
+    <Wallet />
   </div>
   <div class="main-container">
     <div class="head-container">
