@@ -27,7 +27,7 @@ Balancer has completed full audits with Certora, OpenZeppelin, Trail of Bits, an
 | Composable Stable Pool            | Trail of Bits | [2022-09-02](https://github.com/balancer/balancer-v2-monorepo/blob/master/audits/trail-of-bits/2022-09-02.pdf) |
 | Managed Pool                      | Trail Of Bits | [2022-10-25](https://github.com/balancer/balancer-v2-monorepo/blob/master/audits/trail-of-bits/2022-10-25.pdf) |
 
-Audit reports can also be found in the [Balancer V2 Core repository](https://github.com/balancer/balancer-core-v2/tree/master/audits).
+Audit reports can also be found in the [Balancer V2 Core repository](https://github.com/balancer/balancer-v2-monorepo/tree/master/audits).
 
 ## Code Immutability
 The core contracts that make up the Balancer V2 Protocol, such as the Vault and Pools (Weighted, Stable, LBP, Managed, Linear, etc), are immutable by design. Any pool updates are made by deploying brand new factories/pools and require users to electively migrate.
