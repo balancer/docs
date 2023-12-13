@@ -13,6 +13,9 @@ const handleClickContainer = () => {
 const closeCalendar = () => {
   openCalendar.value = false;
 };
+
+const weeksToSeconds = weeks => weeks * 7 * 24 * 60 * 60;
+
 const date = new Date();
 const formatedDate = date => {
   const formattedDate = date.toLocaleString('en-US', {
@@ -42,39 +45,16 @@ const formFields = [
   },
 ];
 
-const selectedWeeks = ref(false);
 const selectedWeeksValue = ref('');
-const selectedMonths = ref(false);
 const selectedMonthsValue = ref('');
-const selectedYears = ref(false);
 const selectedYearsValue = ref('');
 
-const handleClickWeeks = () => {
-  selectedWeeks.value = !selectedWeeks.value;
-};
-
-const handleClickMonths = () => {
-  selectedMonths.value = !selectedMonths.value;
-};
-
-const handleClickYears = () => {
-  selectedYears.value = !selectedYears.value;
-};
 const computedLockTime = computed(() => {
-  let weeks = 0;
-  let months = 0;
-  let years = 0;
-  if (selectedWeeks.value) {
-    weeks = parseInt(selectedWeeksValue.value) || 0;
-  }
-  if (selectedMonths.value) {
-    months = parseInt(selectedMonthsValue.value) * 4 || 0;
-  }
-  if (selectedYears.value) {
-    years = parseInt(selectedYearsValue.value) * 48 || 0;
-  }
+  let weeks = parseInt(selectedWeeksValue.value) || 0;
+  weeks += parseInt(selectedMonthsValue.value) * 4 || 0;
+  weeks += parseInt(selectedYearsValue.value) * 52 || 0;
 
-  return weeks + months + years;
+  return weeksToSeconds(weeks);
 });
 
 const isFormValid = ref(false);
@@ -93,7 +73,6 @@ function validateForm() {
   if (lockTime.value < 1) {
     isFormValid.value = false;
   }
-  console.log(lockTime.value);
 }
 
 function handleSubmit(e) {
@@ -156,18 +135,7 @@ watch([selectedDate, computedLockTime], () => {
       <p class="item-name">Max Lock-time</p>
       <div class="lock-group">
         <div class="time-group">
-          <div
-            class="check"
-            :class="{ select: selectedWeeks }"
-            @click="handleClickWeeks"
-          ></div>
-          <p
-            class="text"
-            :class="{ disabled: !selectedWeeks }"
-            @click="handleClickWeeks"
-          >
-            Weeks
-          </p>
+          <p class="text">Weeks</p>
           <input
             v-model="selectedWeeksValue"
             type="number"
@@ -177,18 +145,7 @@ watch([selectedDate, computedLockTime], () => {
           />
         </div>
         <div class="time-group">
-          <div
-            class="check"
-            :class="{ select: selectedMonths }"
-            @click="handleClickMonths"
-          ></div>
-          <p
-            class="text"
-            :class="{ disabled: !selectedMonths }"
-            @click="handleClickMonths"
-          >
-            Months
-          </p>
+          <p class="text">Months</p>
           <input
             v-model="selectedMonthsValue"
             type="number"
@@ -198,18 +155,7 @@ watch([selectedDate, computedLockTime], () => {
           />
         </div>
         <div class="time-group">
-          <div
-            class="check"
-            :class="{ select: selectedYears }"
-            @click="handleClickYears"
-          ></div>
-          <p
-            class="text"
-            :class="{ disabled: !selectedYears }"
-            @click="handleClickYears"
-          >
-            Years
-          </p>
+          <p class="text">Years</p>
           <input
             v-model="selectedYearsValue"
             type="number"
@@ -250,7 +196,8 @@ input[type='number'] {
   display: flex;
   width: 100%;
   align-items: center;
-  justify-content: center;
+  justify-content: space-between;
+  max-width: 700px;
 }
 
 .item-row .item-name {
@@ -265,6 +212,7 @@ input[type='number'] {
 .item-row .lock-group {
   display: flex;
   align-items: center;
+  justify-content: flex-end;
   height: 45px;
   width: 50%;
 }
@@ -321,47 +269,31 @@ input[type='number'] {
 
 .item-row .lock-group {
   gap: 8px;
-  min-width: 340px;
+  max-width: 340px;
+  width: 50%;
 }
 
 .item-row .lock-group .time-group {
   display: flex;
   align-items: center;
-  gap: 5px;
   height: 100%;
-  min-width: 115px;
-}
-
-.time-group .check {
-  width: 14px;
-  height: 14px;
-  border: 1px solid #e2e8f0;
-  border-radius: 3px;
-  cursor: pointer;
-}
-
-.time-group .check.select {
-  background-color: #384aff;
+  max-width: 75px;
+  width: 33%;
+  position: relative;
 }
 
 .item-row .lock-group .time-group .input {
-  max-width: 45px;
+  width: 100%;
   padding: 0;
   padding-left: 12px;
+  padding-top: 14px;
 }
-
-.dark .time-group .check {
-  border: 1px solid #3e4c5a;
-}
-
 .time-group .text {
   margin: 0;
   font-size: 12px;
-  cursor: pointer;
-}
-
-.time-group .text.disabled {
-  opacity: 0.5;
+  position: absolute;
+  top: 2px;
+  left: 10px;
 }
 
 .submit-button {
