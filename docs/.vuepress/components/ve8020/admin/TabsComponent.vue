@@ -1,7 +1,7 @@
 <script setup>
-import Overview from './Overview.vue';
-import Configuration from './Configuration.vue';
-import Wallet from '../Navbar/Wallet.vue';
+import Launchpad from '../Launchpad.vue';
+import Configuration from '../Configuration.vue';
+import Wallet from '../../Navbar/Wallet.vue';
 </script>
 
 <template>
@@ -14,22 +14,42 @@ import Wallet from '../Navbar/Wallet.vue';
         :class="{ tab: true, 'active-tab': activeTab === 1 }"
         @click="showTab(1)"
       >
-        veSystem Overview
+        Launchpad
       </div>
       <div
         :class="{ tab: true, 'active-tab': activeTab === 2 }"
         @click="showTab(2)"
       >
+        Admin Pools
+      </div>
+      <div
+        :class="{ tab: true, 'active-tab': activeTab === 3 }"
+        @click="showTab(3)"
+      >
         veSystem config
+      </div>
+      <div
+        :class="{ tab: true, 'active-tab': activeTab === 4 }"
+        @click="showTab(4)"
+      >
+        Rewards Distribution
       </div>
     </div>
 
     <div v-show="activeTab === 1" class="body-container">
-      <Overview />
+      <Launchpad />
     </div>
 
     <div v-show="activeTab === 2" class="body-container">
+      <p>Admin Pools</p>
+    </div>
+
+    <div v-show="activeTab === 3" class="body-container">
       <Configuration />
+    </div>
+
+    <div v-show="activeTab === 4" class="body-container">
+      <p>Rewards Distribution</p>
     </div>
   </div>
 </template>
