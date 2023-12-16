@@ -1,7 +1,7 @@
 import { Network } from '@balancer-labs/sdk';
 
 export interface NetworkConfig {
-  id: Network;
+  id: Network | 80001;
   name: string;
   logo: string;
   explorer: string;
@@ -36,5 +36,12 @@ export const NETWORKS: NetworkConfig[] = [
     logo: '/images/chains/arbitrum-logo.svg',
     explorer: 'https://arbiscan.io',
     rpcUrl: 'https://rpc.ankr.com/arbitrum',
+  },
+  {
+    id: 80001,
+    name: 'Mumbai',
+    logo: '/images/chains/polygon-pos-logo.svg',
+    explorer: 'https://mumbai.polygonscan.com',
+    rpcUrl: 'https://rpc-mumbai.maticvigil.com',
   },
 ];

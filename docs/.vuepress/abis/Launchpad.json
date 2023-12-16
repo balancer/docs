@@ -1,0 +1,138 @@
+[
+  {
+    "name": "VESystemCreated",
+    "inputs": [
+      {
+        "name": "token",
+        "type": "address",
+        "indexed": true
+      },
+      {
+        "name": "votingEscrow",
+        "type": "address",
+        "indexed": false
+      },
+      {
+        "name": "rewardDistributor",
+        "type": "address",
+        "indexed": false
+      },
+      {
+        "name": "rewardFaucet",
+        "type": "address",
+        "indexed": false
+      },
+      {
+        "name": "admin",
+        "type": "address",
+        "indexed": false
+      }
+    ],
+    "anonymous": false,
+    "type": "event"
+  },
+  {
+    "stateMutability": "nonpayable",
+    "type": "constructor",
+    "inputs": [
+      {
+        "name": "_votingEscrow",
+        "type": "address"
+      },
+      {
+        "name": "_rewardDistributor",
+        "type": "address"
+      },
+      {
+        "name": "_rewardFaucet",
+        "type": "address"
+      }
+    ],
+    "outputs": []
+  },
+  {
+    "stateMutability": "nonpayable",
+    "type": "function",
+    "name": "deploy",
+    "inputs": [
+      {
+        "name": "tokenBptAddr",
+        "type": "address"
+      },
+      {
+        "name": "name",
+        "type": "string"
+      },
+      {
+        "name": "symbol",
+        "type": "string"
+      },
+      {
+        "name": "maxLockTime",
+        "type": "uint256"
+      },
+      {
+        "name": "rewardDistributorStartTime",
+        "type": "uint256"
+      },
+      {
+        "name": "admin_unlock_all",
+        "type": "address"
+      },
+      {
+        "name": "admin_early_unlock",
+        "type": "address"
+      }
+    ],
+    "outputs": [
+      {
+        "name": "",
+        "type": "address"
+      },
+      {
+        "name": "",
+        "type": "address"
+      },
+      {
+        "name": "",
+        "type": "address"
+      }
+    ]
+  },
+  {
+    "stateMutability": "view",
+    "type": "function",
+    "name": "votingEscrow",
+    "inputs": [],
+    "outputs": [
+      {
+        "name": "",
+        "type": "address"
+      }
+    ]
+  },
+  {
+    "stateMutability": "view",
+    "type": "function",
+    "name": "rewardDistributor",
+    "inputs": [],
+    "outputs": [
+      {
+        "name": "",
+        "type": "address"
+      }
+    ]
+  },
+  {
+    "stateMutability": "view",
+    "type": "function",
+    "name": "rewardFaucet",
+    "inputs": [],
+    "outputs": [
+      {
+        "name": "",
+        "type": "address"
+      }
+    ]
+  }
+]

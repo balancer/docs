@@ -16,3 +16,4 @@ export function filterPool(searchValue, pool) {
 }
 
 export * from './LaunchpadSubgraph';
+export * from './LaunchpadController';
