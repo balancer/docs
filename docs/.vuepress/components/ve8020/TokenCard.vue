@@ -1,29 +1,36 @@
-<script>
-export default {
-  props: {
-    name: String,
-    vestedToken: String,
-    totalValueVested: String,
-    availableTokensForRewards: Array,
-  },
-};
+<script setup>
+import LabelToken from './LabelToken.vue';
+import { defineProps } from 'vue';
+
+const props = defineProps({
+  name: String,
+  vestedToken: String,
+  totalValueVested: String,
+  availableTokensForRewards: Array,
+});
 </script>
 
 <template>
   <div class="card-group">
-    <h2 class="name">{{ name }}</h2>
+    <h2 class="name">{{ props.name }}</h2>
     <div class="card">
       <article class="item-row">
         <p class="item-name">Vested Token</p>
-        <p class="item-value">{{ vestedToken }}</p>
+        <p class="item-value">{{ props.vestedToken }}</p>
       </article>
       <article class="item-row">
         <p class="item-name">Total Value Vested</p>
-        <p class="item-value">{{ totalValueVested }}</p>
+        <p class="item-value">{{ props.totalValueVested }}</p>
       </article>
-      <article class="item-row">
+      <article class="item-row labels-tokens">
         <p class="item-name">Available Tokens for Rewards</p>
-        <p class="item-value">{{ availableTokensForRewards.join(', ') }}</p>
+        <div class="label-group">
+          <LabelToken
+            v-for="label in props.availableTokensForRewards"
+            :key="label"
+            :label="label"
+          />
+        </div>
       </article>
     </div>
   </div>
@@ -68,6 +75,14 @@ export default {
   align-items: center;
   width: 100%;
   height: 45px;
+  gap: 5px;
+}
+
+.card .item-row.labels-tokens {
+  height: auto;
+  align-items: flex-start;
+  min-width: 45px;
+  margin-top: 5px;
 }
 
 .card .item-row .item-name,
@@ -78,6 +93,19 @@ export default {
   display: flex;
   align-items: center;
   margin: 0;
+}
+
+.card .item-row .label-group {
+  width: 50%;
+  display: flex;
+  flex-wrap: wrap;
+  gap: 5px;
+  justify-content: flex-end;
+}
+
+.card .item-row .item-value,
+.card .item-row .label-group {
+  min-width: 275px;
 }
 
 .card .item-row .item-name {

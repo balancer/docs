@@ -9,6 +9,7 @@ import { ethers, BigNumberish } from 'ethers';
 type RewardDistributor = {
   id: string;
   rewardTokens: string[];
+  rewardNames: string[];
 };
 
 type VotingEscrow = {
@@ -76,6 +77,7 @@ export class LaunchpadSubgraph {
           rewardDistributor {
             id
             rewardTokens
+            rewardNames
           }
         }
       }
