@@ -1,10 +1,31 @@
-<script setup>
+<script setup lang="ts">
 import { ref, watch, computed } from 'vue';
 import Calendar from './Calendar.vue';
-const selectedDate = ref(null);
+import { useWeb3ModalProvider } from '@web3modal/ethers/vue';
+import { useNetwork } from '../../providers/network';
+import { useController } from '../../utils';
+
+const { network } = useNetwork();
+const { walletProvider } = useWeb3ModalProvider();
+
+const isLoading = ref(false);
+
+const { deploy } = useController({
+  walletProvider,
+  network,
+});
+
+const bptAddress = ref('');
+const veTokenName = ref('');
+const veTokenSymbol = ref('');
+
+const selectedDate = ref<Date | undefined>(undefined);
 const openCalendar = ref(false);
 const lockTime = ref(0);
-const handleClickDate = date => {
+const startTime = computed(() =>
+  selectedDate.value ? selectedDate.value.getTime() / 1000 : 0
+);
+const handleClickDate = (date: Date) => {
   selectedDate.value = date;
 };
 const handleClickContainer = () => {
@@ -14,10 +35,10 @@ const closeCalendar = () => {
   openCalendar.value = false;
 };
 
-const weeksToSeconds = weeks => weeks * 7 * 24 * 60 * 60;
+const weeksToSeconds = (weeks: number) => weeks * 7 * 24 * 60 * 60;
 
 const date = new Date();
-const formatedDate = date => {
+const formatedDate = (date: Date) => {
   const formattedDate = date.toLocaleString('en-US', {
     weekday: 'long',
     year: 'numeric',
@@ -27,23 +48,6 @@ const formatedDate = date => {
   });
   return formattedDate;
 };
-const formFields = [
-  {
-    label: '8020 BPT address',
-    placeholder: '0xa0b...6eb48',
-    name: 'bptAddress',
-  },
-  {
-    label: 'veToken Name',
-    placeholder: 'Voting Escrow Balancer 80 GNO',
-    name: 'veTokenName',
-  },
-  {
-    label: 'veToken Symbol',
-    placeholder: 'veGNO80-WETH20',
-    name: 'veTokenSymbol',
-  },
-];
 
 const selectedWeeksValue = ref('');
 const selectedMonthsValue = ref('');
@@ -59,13 +63,24 @@ const computedLockTime = computed(() => {
 
 const isFormValid = ref(false);
 
+const clearForm = () => {
+  bptAddress.value = '';
+  veTokenName.value = '';
+  veTokenSymbol.value = '';
+  selectedDate.value = undefined;
+  selectedMonthsValue.value = '';
+  selectedWeeksValue.value = '';
+  selectedYearsValue.value = '';
+};
+
 function validateForm() {
   const currentDate = new Date();
-  isFormValid.value = formFields.every(field => {
-    const inputElement = document.querySelector(`[name="${field.name}"]`);
-    return inputElement && inputElement.value;
-  });
-  if (selectedDate.value === null) {
+
+  isFormValid.value = [bptAddress, veTokenName, veTokenSymbol].every(
+    ({ value }) => value.length > 0
+  );
+
+  if (selectedDate.value === undefined) {
     isFormValid.value = false;
   } else if (selectedDate.value.getTime() < currentDate.getTime()) {
     isFormValid.value = false;
@@ -75,12 +90,42 @@ function validateForm() {
   }
 }
 
-function handleSubmit(e) {
-  const formData = new FormData(e.target);
-  for (let [name, value] of formData.entries()) {
-    console.log(`${name}: ${value}`);
-  }
+async function handleSubmit() {
+  if (!selectedDate.value) return;
+
+  await deploy.value?.(
+    {
+      tokenBptAddr: bptAddress.value,
+      name: veTokenName.value,
+      symbol: veTokenSymbol.value,
+      maxLockTime: lockTime.value,
+      rewardDistributorStartTime: startTime.value,
+    },
+    {
+      onPrompt: () => {
+        console.log('OnPrompt');
+        isLoading.value = true;
+      },
+      onSubmitted: ({ tx }) => {
+        console.log('OnSubmitted', tx);
+      },
+      onSuccess: ({ receipt }) => {
+        console.log('OnSuccess', receipt);
+        isLoading.value = false;
+        clearForm();
+      },
+      onError: err => {
+        console.log('OnError', err);
+        isLoading.value = false;
+      },
+    }
+  );
 }
+
+watch([bptAddress, veTokenName, veTokenSymbol], () => {
+  validateForm();
+});
+
 watch([selectedDate, computedLockTime], () => {
   lockTime.value = computedLockTime.value;
   validateForm();
@@ -89,16 +134,39 @@ watch([selectedDate, computedLockTime], () => {
 
 <template>
   <form class="section-container" @submit.prevent="handleSubmit">
-    <div v-for="field in formFields" :key="field.label" class="item-row">
-      <p class="item-name">{{ field.label }}</p>
+    <div key="bptAddress" class="item-row">
+      <p class="item-name">8020 BPT address</p>
       <div class="input-group">
         <input
-          v-model="field.value"
-          :placeholder="field.placeholder"
-          :type="field.type || 'text'"
-          :name="field.name"
+          v-model="bptAddress"
+          placeholder="0xa0b...6eb48"
+          type="text"
+          name="bptAddress"
           class="input"
-          @input="validateForm"
+        />
+      </div>
+    </div>
+    <div key="veTokenName" class="item-row">
+      <p class="item-name">veToken Name</p>
+      <div class="input-group">
+        <input
+          v-model="veTokenName"
+          placeholder="Voting Escrow Balancer 80 GNO"
+          type="text"
+          name="veTokenName"
+          class="input"
+        />
+      </div>
+    </div>
+    <div key="veTokenName" class="item-row">
+      <p class="item-name">veToken Symbol</p>
+      <div class="input-group">
+        <input
+          v-model="veTokenSymbol"
+          placeholder="veGNO80-WETH20"
+          type="text"
+          name="veTokenSymbol"
+          class="input"
         />
       </div>
     </div>
@@ -141,7 +209,6 @@ watch([selectedDate, computedLockTime], () => {
             type="number"
             class="input"
             placeholder="10"
-            @input="countLockedWeeks"
           />
         </div>
         <div class="time-group">
@@ -151,7 +218,6 @@ watch([selectedDate, computedLockTime], () => {
             type="number"
             class="input"
             placeholder="3"
-            @input="countLockedWeeks"
           />
         </div>
         <div class="time-group">
@@ -161,14 +227,17 @@ watch([selectedDate, computedLockTime], () => {
             type="number"
             class="input"
             placeholder="1"
-            @input="countLockedWeeks"
           />
         </div>
       </div>
       <input v-model="lockTime" type="hidden" name="lock-time" />
     </div>
-    <button type="submit" class="submit-button" :disabled="!isFormValid">
-      Deploy veSystem
+    <button
+      type="submit"
+      class="submit-button"
+      :disabled="!isFormValid || isLoading"
+    >
+      {{ isLoading ? 'Deploying...' : 'Deploy veSystem' }}
     </button>
   </form>
 </template>

@@ -1,5 +1,5 @@
 <script setup>
-import { watch } from 'vue';
+import { watch, onMounted } from 'vue';
 import {
   createWeb3Modal,
   defaultConfig,
@@ -30,14 +30,20 @@ const metadata = {
 createWeb3Modal({
   ethersConfig: defaultConfig({ metadata }),
   chains,
+  optionalChains: [80001],
   projectId,
-  defaultChain: chains[0],
+  // defaultChain: chains[0],
 });
 
 const { chainId } = useWeb3ModalAccount();
 
 watch(chainId, value => {
   selectNetwork(NETWORKS.find(x => x.id === value));
+});
+
+onMounted(() => {
+  if (!chainId.value) return;
+  selectNetwork(NETWORKS.find(x => x.id === chainId.value));
 });
 </script>
 
