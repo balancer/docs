@@ -1,17 +1,21 @@
 <script setup>
 import { createProviderComponent } from '../providers/createProviderComponent';
-import { provideLaunchpad } from '../providers/launchpad';
 import { provideNetwork } from '../providers/network';
+import { provideVeSystem } from '../providers/veSystem';
+import { provideTabs } from '../providers/tabs';
 import TabsComponent from './ve8020/admin/TabsComponent.vue';
 
 const NetworkProvider = createProviderComponent(() => provideNetwork());
-const LaunchpadProvider = createProviderComponent(() => provideLaunchpad());
+const VeSystemProvider = createProviderComponent(() => provideVeSystem());
+const TabsProvider = createProviderComponent(() => provideTabs());
 </script>
 
 <template>
   <NetworkProvider>
-    <LaunchpadProvider>
-      <TabsComponent />
-    </LaunchpadProvider>
+    <VeSystemProvider>
+      <TabsProvider>
+        <TabsComponent />
+      </TabsProvider>
+    </VeSystemProvider>
   </NetworkProvider>
 </template>

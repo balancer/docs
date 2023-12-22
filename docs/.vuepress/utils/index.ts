@@ -15,5 +15,7 @@ export function filterPool(searchValue, pool) {
   );
 }
 
+export const weeksToSeconds = (weeks: number) => weeks * 7 * 24 * 60 * 60;
+
 export * from './LaunchpadSubgraph';
 export * from './LaunchpadController';

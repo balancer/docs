@@ -10,15 +10,15 @@ type DeployParamsType = {
   rewardDistributorStartTime: number;
 };
 
-type CallbackOptionsType = {
+export type CallbackOptionsType = {
   onPrompt?: () => void;
-  onSubmitted?: ({ tx }: { tx: ethers.ContractTransaction }) => void;
+  onSubmitted?: ({ tx }: { tx: ethers.ContractTransactionResponse }) => void;
   onSuccess?: ({
     tx,
     receipt,
   }: {
-    tx: ethers.ContractTransaction;
-    receipt: ethers.ContractTransactionReceipt;
+    tx: ethers.ContractTransactionResponse;
+    receipt: ethers.ContractTransactionReceipt | null;
   }) => void;
   onError?: (err: unknown) => void;
 };
@@ -37,6 +37,27 @@ const CONTRACT_ADDRESS = '0xDCa8bCd826708B2D780107A0FE72542395f2dB8E';
 const ABI = [
   'function deploy(address tokenBptAddr,string name,string symbol,uint256 maxLockTime,uint256 rewardDistributorStartTime,address admin_unlock_all,address admin_early_unlock) external returns (address,address,address)',
 ];
+
+export const submitAction = async (
+  action: () => Promise<ethers.ContractTransactionResponse>,
+  callbacks: CallbackOptionsType
+) => {
+  const { onSubmitted, onSuccess, onError, onPrompt } = callbacks;
+
+  if (onPrompt) onPrompt();
+
+  try {
+    const tx = await action();
+
+    if (onSubmitted) onSubmitted({ tx });
+
+    const receipt = await tx.wait();
+
+    if (onSuccess) onSuccess({ tx, receipt });
+  } catch (error) {
+    if (onError) onError(error);
+  }
+};
 
 export const useController = ({
   walletProvider,
@@ -77,29 +98,19 @@ export const useController = ({
         rewardDistributorStartTime,
       } = data;
 
-      const { onSubmitted, onSuccess, onError, onPrompt } = callbacks;
-
-      if (onPrompt) onPrompt();
-
-      try {
-        const tx = await contract.deploy(
-          tokenBptAddr,
-          name,
-          symbol,
-          maxLockTime,
-          rewardDistributorStartTime,
-          admin,
-          admin
-        );
-
-        if (onSubmitted) onSubmitted({ tx });
-
-        const receipt = await tx.wait();
-
-        if (onSuccess) onSuccess({ tx, receipt });
-      } catch (error) {
-        if (onError) onError(error);
-      }
+      await submitAction(
+        async () =>
+          await contract.deploy(
+            tokenBptAddr,
+            name,
+            symbol,
+            maxLockTime,
+            rewardDistributorStartTime,
+            admin,
+            admin
+          ),
+        callbacks
+      );
     };
   };
 
