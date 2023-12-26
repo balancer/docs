@@ -21,7 +21,7 @@ const props = defineProps<ModalPropsType>();
       <div class="head">
         <div class="item-row">
           <p class="item-name">Token</p>
-          <p class="item-value">Rewards</p>
+          <p class="item-value">Distribution Rewards</p>
         </div>
       </div>
       <div class="body">
