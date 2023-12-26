@@ -1,8 +1,13 @@
-<script setup>
+<script setup lang="ts">
 import { ethers } from 'ethers';
-import { useLaunchpad } from '../../providers/launchpad';
+import { useVeSystem } from '../../providers/veSystem';
 import TokenCard from './TokenCard.vue';
-const { data: veSystems } = useLaunchpad();
+import { onBeforeMount } from 'vue';
+const { data: veSystems, fetch } = useVeSystem();
+
+onBeforeMount(() => {
+  fetch();
+});
 </script>
 
 <template>
