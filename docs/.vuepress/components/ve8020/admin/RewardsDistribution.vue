@@ -3,6 +3,20 @@ import SetAvailableRewardsForm from './SetAvailableRewardsForm.vue';
 import AddRewardsCurrentWeek from './AddRewardsCurrentWeek.vue';
 import AddRewardsNWeeks from './AddRewardsNWeeks.vue';
 import AddRewardsExactWeek from './AddRewardsExactWeek.vue';
+import { ref } from 'vue';
+import AvailableRewardsModal from './AvailableRewardsModal.vue';
+
+const isModalOpen = ref<boolean>(false);
+
+const handleCloseAvailableRewardsModal = () => {
+  isModalOpen.value = false;
+};
+
+const handleOpenAvailableRewardsModal = () => {
+  isModalOpen.value = true;
+};
+
+const data = [{ token: 'tk1', amount: 100 }];
 </script>
 
 <template>
@@ -13,8 +27,16 @@ import AddRewardsExactWeek from './AddRewardsExactWeek.vue';
     <AddRewardsExactWeek />
   </div>
   <div class="btn-group">
-    <button class="available-button">Available Rewards</button>
+    <button class="available-button" @click="handleOpenAvailableRewardsModal">
+      Available Rewards
+    </button>
   </div>
+  <AvailableRewardsModal
+    :open="isModalOpen"
+    :onClose="handleCloseAvailableRewardsModal"
+    :rewards="data"
+  >
+  </AvailableRewardsModal>
 </template>
 
 <style scoped>
