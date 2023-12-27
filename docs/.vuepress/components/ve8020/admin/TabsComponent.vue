@@ -1,6 +1,6 @@
 <script setup lang="ts">
 import Launchpad from '../Launchpad.vue';
-import Configuration from '../Configuration.vue';
+import Configuration from './Configuration.vue';
 import RewardsDistribution from './RewardsDistribution.vue';
 import AdminPools from './AdminPools.vue';
 import Wallet from '../../Navbar/Wallet.vue';

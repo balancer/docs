@@ -10,6 +10,7 @@ type RewardDistributor = {
   id: string;
   rewardTokens: string[];
   rewardNames: string[];
+  rewardStartTime: BigNumberish;
 };
 
 type VotingEscrow = {
@@ -28,6 +29,7 @@ export type VeSystem = {
   rewardDistributor: RewardDistributor;
   rewardDistributorAddress: string;
   rewardFaucetAddress: string;
+  admin: string;
 };
 
 type RawVotingEscrow = {
@@ -46,6 +48,7 @@ type RawVeSystem = {
   rewardDistributor: RewardDistributor;
   rewardDistributorAddress: string;
   rewardFaucetAddress: string;
+  admin: string;
 };
 
 type GetVeSystemsResponse = {
@@ -118,6 +121,7 @@ export class LaunchpadSubgraph {
           id
           bptToken
           bptTokenName
+          admin
           votingEscrow {
             id
             address
@@ -131,6 +135,7 @@ export class LaunchpadSubgraph {
             id
             rewardTokens
             rewardNames
+            rewardStartTime
           }
         }
       }
