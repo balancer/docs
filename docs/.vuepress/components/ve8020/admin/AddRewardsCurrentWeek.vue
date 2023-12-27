@@ -191,67 +191,6 @@ input[type='number'] {
   gap: 10px;
 }
 
-.item-row .current-week {
-  height: 100%;
-  width: calc(100% - 150px);
-  position: relative;
-}
-
-.item-row .current-week .selected-token {
-  width: 100%;
-  height: 100%;
-  display: flex;
-  align-items: center;
-  padding-inline: 20px;
-  border: 1px solid #e2e8f0;
-  border-radius: 6px;
-  cursor: pointer;
-}
-
-.item-row .current-week .selected-token .value {
-  font-size: 14px;
-  margin: 0;
-}
-
-.item-row .current-week .selected-token .icon {
-  position: absolute;
-  right: 20px;
-  fill: #cccccc;
-  transition: all 0.3s;
-}
-
-.item-row .current-week .selected-token .icon.open {
-  transform: rotate(180deg);
-}
-
-.item-row .current-week .token-list {
-  position: absolute;
-  top: 115%;
-  left: 0;
-  width: 100%;
-  background-color: #eaf0f6;
-  border: 1px solid #e2e8f0;
-  border-top: none;
-  border-radius: 6px;
-  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
-  z-index: 2;
-}
-
-.token-list .value {
-  padding: 5px 20px;
-  margin: 0;
-  cursor: pointer;
-}
-
-.token-list .value:hover {
-  background-color: rgba(56, 74, 255, 0.2);
-}
-
-.dark .item-row .current-week .token-list {
-  background-color: #1e293b;
-  border: 1px solid #3e4c5a;
-}
-
 .item-row .item-action .input-amount {
   background-color: transparent;
   border: 1px solid #e2e8f0;
@@ -271,7 +210,6 @@ input[type='number'] {
   padding-inline: 10px;
 }
 
-.dark .item-row .current-week .selected-token,
 .dark .item-row .item-action .input-amount {
   border: 1px solid #3e4c5a;
 }
@@ -281,7 +219,7 @@ input[type='number'] {
 }
 
 .submit-button {
-  width: 60px;
+  min-width: 60px;
   height: 45px;
   background-color: #eaf0f6;
   border-radius: 6px;

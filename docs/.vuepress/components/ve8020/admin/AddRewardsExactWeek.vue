@@ -209,15 +209,10 @@ input[type='number'] {
 
 .item-row .input-group {
   height: 100%;
-  width: calc(100% - 70px);
-}
-
-.item-row .input-group.calendar-group {
-  width: calc(100% - 260px);
 }
 
 .item-row .input-group.calendar-container {
-  width: 110px;
+  width: 130px;
   position: relative;
 }
 
@@ -252,7 +247,7 @@ input[type='number'] {
 }
 
 .item-row .item-action .input-group.calendar-container .input {
-  width: 110px;
+  width: 130px;
   padding-inline: 10px;
   padding-top: 10px;
 }
@@ -267,7 +262,7 @@ input[type='number'] {
 }
 
 .submit-button {
-  width: 60px;
+  min-width: 60px;
   height: 45px;
   background-color: #eaf0f6;
   border-radius: 6px;

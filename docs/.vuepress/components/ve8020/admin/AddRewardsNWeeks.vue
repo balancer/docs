@@ -210,11 +210,6 @@ input[type='number'] {
 
 .item-row .input-group {
   height: 100%;
-  width: calc(100% - 70px);
-}
-
-.item-row .input-group.n-week {
-  width: calc(100% - 200px);
 }
 
 .item-row .input-group.weeks-container {
@@ -270,7 +265,7 @@ input[type='number'] {
 }
 
 .submit-button {
-  width: 60px;
+  min-width: 60px;
   height: 45px;
   background-color: #eaf0f6;
   border-radius: 6px;
