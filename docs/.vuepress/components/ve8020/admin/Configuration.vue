@@ -4,6 +4,7 @@ import { useVeSystem } from '../../../providers/veSystem';
 import { CONTRACT_ADDRESS } from '../../../utils/LaunchpadController';
 import { secondsToDate } from '../../../utils';
 import UnlockAllModal from './UnlockAllModal.vue';
+import EarlyUnlockModal from './EarlyUnlockModal.vue';
 import { useWeb3ModalProvider } from '@web3modal/ethers/vue';
 import { useNetwork } from '../../../providers/network';
 import { useController } from '../../../utils/VotingEscrowController';
@@ -11,18 +12,23 @@ import { useController } from '../../../utils/VotingEscrowController';
 const { walletProvider } = useWeb3ModalProvider();
 const { network } = useNetwork();
 const { selected: veSystem } = useVeSystem();
-const { allUnlock, setAllUnlock } = useController({
+const { allUnlock, setAllUnlock, earlyUnlock, setEarlyUnlock } = useController({
   walletProvider,
   network,
   veSystem,
 });
 
 const allUnlockStatus = ref<boolean>(false);
+const earlyUnlockStatus = ref<boolean>(false);
+
 const isLoading = ref<boolean>(false);
 const isUnlockAllModalOpen = ref<boolean>(false);
+const isEarlyUnlockModalOpen = ref<boolean>(false);
+const isLoadingEarlyUnlock = ref<boolean>(false);
 
 watch(veSystem, async () => {
   await fetchUnlockStatus();
+  await fetchEarlyUnlockStatus();
 });
 
 const fetchUnlockStatus = async () => {
@@ -31,12 +37,48 @@ const fetchUnlockStatus = async () => {
   allUnlockStatus.value = allUnlockResult ?? false;
 };
 
+const fetchEarlyUnlockStatus = async () => {
+  const result = await earlyUnlock.value?.();
+
+  earlyUnlockStatus.value = result ?? false;
+};
+
 const handleUnlockModalClose = () => {
   isUnlockAllModalOpen.value = false;
 };
 
 const handleUnlockModalOpen = () => {
   isUnlockAllModalOpen.value = true;
+};
+
+const handleEarlyUnlockModalClose = () => {
+  isEarlyUnlockModalOpen.value = false;
+};
+
+const handleEarlyUnlockModalOpen = () => {
+  isEarlyUnlockModalOpen.value = true;
+};
+
+const handleEarlyUnlock = async () => {
+  await setEarlyUnlock.value?.(!earlyUnlockStatus.value, {
+    onPrompt: () => {
+      console.log('onPrompt');
+      isEarlyUnlockModalOpen.value = false;
+    },
+    onSubmitted: ({ tx }) => {
+      console.log('onSubmitted', tx);
+      isLoadingEarlyUnlock.value = true;
+    },
+    onSuccess: async ({ receipt }) => {
+      console.log('onSuccess', receipt);
+      isLoadingEarlyUnlock.value = false;
+      fetchEarlyUnlockStatus();
+    },
+    onError: err => {
+      console.log('err', err);
+      isLoadingEarlyUnlock.value = false;
+    },
+  });
 };
 
 const handleUnlock = async () => {
@@ -153,8 +195,20 @@ const formFields = computed(() => {
           </button>
         </div>
         <div>
-          <p>Status: enabled</p>
-          <button class="btn">Early Unlock</button>
+          <EarlyUnlockModal
+            :open="isEarlyUnlockModalOpen"
+            :onClose="handleEarlyUnlockModalClose"
+            :onUnlock="handleEarlyUnlock"
+            :earlyUnlock="earlyUnlockStatus"
+          />
+          <p>Status: {{ earlyUnlockStatus }}</p>
+          <button
+            class="btn"
+            :disabled="isLoadingEarlyUnlock"
+            @click="handleEarlyUnlockModalOpen"
+          >
+            {{ isLoadingEarlyUnlock ? 'Processing...' : 'Early Unlock' }}
+          </button>
         </div>
         <div>
           <p>Early Penalty: 30</p>
