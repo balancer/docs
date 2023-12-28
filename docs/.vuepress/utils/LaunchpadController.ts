@@ -32,7 +32,7 @@ type UseControllerReturnType = {
   deploy: Ref<DeployFunctionType | undefined>;
 };
 
-const CONTRACT_ADDRESS = '0xDCa8bCd826708B2D780107A0FE72542395f2dB8E';
+export const CONTRACT_ADDRESS = '0xdca8bcd826708b2d780107a0fe72542395f2db8e';
 
 const ABI = [
   'function deploy(address tokenBptAddr,string name,string symbol,uint256 maxLockTime,uint256 rewardDistributorStartTime,address admin_unlock_all,address admin_early_unlock) external returns (address,address,address)',
