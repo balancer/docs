@@ -1,10 +1,65 @@
 <script setup lang="ts">
-import { computed } from 'vue';
+import { computed, ref, watch } from 'vue';
 import { useVeSystem } from '../../../providers/veSystem';
 import { CONTRACT_ADDRESS } from '../../../utils/LaunchpadController';
 import { secondsToDate } from '../../../utils';
+import UnlockAllModal from './UnlockAllModal.vue';
+import { useWeb3ModalProvider } from '@web3modal/ethers/vue';
+import { useNetwork } from '../../../providers/network';
+import { useController } from '../../../utils/VotingEscrowController';
 
+const { walletProvider } = useWeb3ModalProvider();
+const { network } = useNetwork();
 const { selected: veSystem } = useVeSystem();
+const { allUnlock, setAllUnlock } = useController({
+  walletProvider,
+  network,
+  veSystem,
+});
+
+const allUnlockStatus = ref<boolean>(false);
+const isLoading = ref<boolean>(false);
+const isUnlockAllModalOpen = ref<boolean>(false);
+
+watch(veSystem, async () => {
+  await fetchUnlockStatus();
+});
+
+const fetchUnlockStatus = async () => {
+  const allUnlockResult = await allUnlock.value?.();
+
+  allUnlockStatus.value = allUnlockResult ?? false;
+};
+
+const handleUnlockModalClose = () => {
+  isUnlockAllModalOpen.value = false;
+};
+
+const handleUnlockModalOpen = () => {
+  isUnlockAllModalOpen.value = true;
+};
+
+const handleUnlock = async () => {
+  await setAllUnlock.value?.({
+    onPrompt: () => {
+      console.log('onPrompt');
+    },
+    onSubmitted: ({ tx }) => {
+      console.log('onSubmitted', tx);
+      isUnlockAllModalOpen.value = false;
+      isLoading.value = true;
+    },
+    onSuccess: async ({ receipt }) => {
+      console.log('onSuccess', receipt);
+      isLoading.value = false;
+      fetchUnlockStatus();
+    },
+    onError: err => {
+      console.log('err', err);
+      isLoading.value = false;
+    },
+  });
+};
 
 const formFields = computed(() => {
   const startTime = veSystem.value
@@ -82,9 +137,29 @@ const formFields = computed(() => {
         </div>
       </div>
       <article class="group-btn">
-        <button class="btn">Unlock All</button>
-        <button class="btn">Early Unlock</button>
-        <button class="btn">Set Early Penalty</button>
+        <div>
+          <UnlockAllModal
+            :open="isUnlockAllModalOpen"
+            :onClose="handleUnlockModalClose"
+            :onUnlock="handleUnlock"
+          />
+          <p>Status: {{ allUnlockStatus }}</p>
+          <button
+            class="btn"
+            :disabled="allUnlockStatus || isLoading"
+            @click="handleUnlockModalOpen"
+          >
+            {{ isLoading ? 'Unlocking...' : 'Unlock All' }}
+          </button>
+        </div>
+        <div>
+          <p>Status: enabled</p>
+          <button class="btn">Early Unlock</button>
+        </div>
+        <div>
+          <p>Early Penalty: 30</p>
+          <button class="btn">Set Early Penalty</button>
+        </div>
       </article>
     </section>
   </main>
@@ -216,5 +291,11 @@ const formFields = computed(() => {
   font-weight: 600;
   font-size: 14px;
   color: #ffffff;
+}
+
+.btn:disabled {
+  cursor: not-allowed;
+  background-color: rgba(56, 74, 255, 0.2);
+  color: grey;
 }
 </style>
