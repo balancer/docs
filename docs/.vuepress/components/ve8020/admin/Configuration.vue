@@ -225,67 +225,11 @@ const formFields = computed(() => {
   flex-direction: column;
   width: 100%;
 }
-
-.section-head {
-  border-bottom: 1px solid #e2e8f0;
-  padding-bottom: 16px;
-  display: flex;
-  align-items: center;
-  justify-content: space-between;
-}
-.dark .section-head {
-  border-bottom: 1px solid #3e4c5a;
-}
-
-.section-head .address-group {
-  display: flex;
-  align-items: center;
-  gap: 16px;
-  height: 30px;
-}
-
-.section-head .address-group .text {
-  margin: 0;
-  font-size: 14px;
-  font-weight: 500;
-}
-
-.section-head .address-group .input-group {
-  height: 100%;
-  position: relative;
-}
-
-.section-head .address-group .input {
-  background-color: transparent;
-  border: 1px solid #e2e8f0;
-  border-radius: 6px;
-  height: 100%;
-  width: 100%;
-  max-width: 340px;
-  padding-left: 30px;
-  font-size: 14px;
-  outline: none;
-}
-
-.dark .section-head .address-group .input {
-  border: 1px solid #3e4c5a;
-}
 .item-row {
   display: flex;
   width: 100%;
   align-items: center;
   justify-content: center;
-}
-
-.section-head .address-group .icon {
-  position: absolute;
-  top: 7px;
-  left: 10px;
-  fill: #eaf0f6;
-}
-
-.dark .section-head .address-group .icon {
-  fill: #3e4c5a;
 }
 
 .section-body {
