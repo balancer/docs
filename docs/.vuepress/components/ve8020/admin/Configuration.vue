@@ -5,14 +5,23 @@ import { CONTRACT_ADDRESS } from '../../../utils/LaunchpadController';
 import { secondsToDate } from '../../../utils';
 import UnlockAllModal from './UnlockAllModal.vue';
 import EarlyUnlockModal from './EarlyUnlockModal.vue';
+import EarlyPenaltyModal from './EarlyPenaltyModal.vue';
 import { useWeb3ModalProvider } from '@web3modal/ethers/vue';
 import { useNetwork } from '../../../providers/network';
 import { useController } from '../../../utils/VotingEscrowController';
+import { ethers } from 'ethers';
 
 const { walletProvider } = useWeb3ModalProvider();
 const { network } = useNetwork();
 const { selected: veSystem } = useVeSystem();
-const { allUnlock, setAllUnlock, earlyUnlock, setEarlyUnlock } = useController({
+const {
+  allUnlock,
+  setAllUnlock,
+  earlyUnlock,
+  setEarlyUnlock,
+  getEarlyUnlockPenalty,
+  setEarlyUnlockPenalty,
+} = useController({
   walletProvider,
   network,
   veSystem,
@@ -20,16 +29,25 @@ const { allUnlock, setAllUnlock, earlyUnlock, setEarlyUnlock } = useController({
 
 const allUnlockStatus = ref<boolean>(false);
 const earlyUnlockStatus = ref<boolean>(false);
+const earlyPenalty = ref<number>(0);
 
-const isLoading = ref<boolean>(false);
+const isLoadingAllUnlock = ref<boolean>(false);
+const isEarlyPenaltyModalOpen = ref<boolean>(false);
 const isUnlockAllModalOpen = ref<boolean>(false);
 const isEarlyUnlockModalOpen = ref<boolean>(false);
 const isLoadingEarlyUnlock = ref<boolean>(false);
+const isLoadingEarlyPenalty = ref<boolean>(false);
 
 watch(veSystem, async () => {
+  await fetchEarlyPenalty();
   await fetchUnlockStatus();
   await fetchEarlyUnlockStatus();
 });
+
+const fetchEarlyPenalty = async () => {
+  const result = await getEarlyUnlockPenalty.value?.();
+  earlyPenalty.value = result ? ethers.toNumber(result) : 0;
+};
 
 const fetchUnlockStatus = async () => {
   const allUnlockResult = await allUnlock.value?.();
@@ -57,6 +75,14 @@ const handleEarlyUnlockModalClose = () => {
 
 const handleEarlyUnlockModalOpen = () => {
   isEarlyUnlockModalOpen.value = true;
+};
+
+const handleEarlyPenaltyModalClose = () => {
+  isEarlyPenaltyModalOpen.value = false;
+};
+
+const handleEarlyPenaltyModalOpen = () => {
+  isEarlyPenaltyModalOpen.value = true;
 };
 
 const handleEarlyUnlock = async () => {
@@ -89,16 +115,40 @@ const handleUnlock = async () => {
     onSubmitted: ({ tx }) => {
       console.log('onSubmitted', tx);
       isUnlockAllModalOpen.value = false;
-      isLoading.value = true;
+      isLoadingAllUnlock.value = true;
     },
     onSuccess: async ({ receipt }) => {
       console.log('onSuccess', receipt);
-      isLoading.value = false;
+      isLoadingAllUnlock.value = false;
       fetchUnlockStatus();
     },
     onError: err => {
       console.log('err', err);
-      isLoading.value = false;
+      isLoadingAllUnlock.value = false;
+    },
+  });
+};
+
+const handleSetEarlyPenalty = async (penalty: number) => {
+  console.log('set penalty', penalty);
+
+  await setEarlyUnlockPenalty.value?.(ethers.toBigInt(penalty), {
+    onPrompt: () => {
+      console.log('onPrompt');
+    },
+    onSubmitted: ({ tx }) => {
+      console.log('onSubmitted', tx);
+      isEarlyPenaltyModalOpen.value = false;
+      isLoadingEarlyPenalty.value = true;
+    },
+    onSuccess: async ({ receipt }) => {
+      console.log('onSuccess', receipt);
+      isLoadingEarlyPenalty.value = false;
+      fetchEarlyPenalty();
+    },
+    onError: err => {
+      console.log('err', err);
+      isLoadingEarlyPenalty.value = false;
     },
   });
 };
@@ -188,10 +238,10 @@ const formFields = computed(() => {
           <p>Status: {{ allUnlockStatus }}</p>
           <button
             class="btn"
-            :disabled="allUnlockStatus || isLoading"
+            :disabled="allUnlockStatus || isLoadingAllUnlock"
             @click="handleUnlockModalOpen"
           >
-            {{ isLoading ? 'Unlocking...' : 'Unlock All' }}
+            {{ isLoadingAllUnlock ? 'Unlocking...' : 'Unlock All' }}
           </button>
         </div>
         <div>
@@ -211,8 +261,20 @@ const formFields = computed(() => {
           </button>
         </div>
         <div>
-          <p>Early Penalty: 30</p>
-          <button class="btn">Set Early Penalty</button>
+          <EarlyPenaltyModal
+            :open="isEarlyPenaltyModalOpen"
+            :onClose="handleEarlyPenaltyModalClose"
+            :onSubmit="handleSetEarlyPenalty"
+            :earlyPenalty="earlyPenalty"
+          />
+          <p>Early Penalty: {{ earlyPenalty }}</p>
+          <button
+            class="btn"
+            :disabled="isLoadingEarlyPenalty"
+            @click="handleEarlyPenaltyModalOpen"
+          >
+            {{ isLoadingEarlyPenalty ? 'Processing...' : 'Set Early Penalty' }}
+          </button>
         </div>
       </article>
     </section>

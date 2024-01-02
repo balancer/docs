@@ -1,4 +1,4 @@
-import { ethers, BrowserProvider } from 'ethers';
+import { ethers, BrowserProvider, toBigInt } from 'ethers';
 import { Ref, watch, ref } from 'vue';
 import { NetworkConfig } from '../constants/networks';
 import { CallbackOptionsType, submitAction } from './LaunchpadController';
@@ -17,11 +17,20 @@ type AllUnlockFunctionType = () => Promise<boolean>;
 
 type EarlyUnlockFunctionType = AllUnlockFunctionType;
 
+type SetEarlyUnlockPenaltyFunctionType = (
+  value: bigint,
+  callbacks: CallbackOptionsType
+) => Promise<void>;
+
+type GetEarlyUnlockPenaltyFunctionType = () => Promise<bigint>;
+
 type UseControllerReturnType = {
   setAllUnlock: Ref<SetAllUnlockFunctionType | undefined>;
   allUnlock: Ref<AllUnlockFunctionType | undefined>;
   setEarlyUnlock: Ref<SetEarlyUnlockFunctionType | undefined>;
   earlyUnlock: Ref<EarlyUnlockFunctionType | undefined>;
+  setEarlyUnlockPenalty: Ref<SetEarlyUnlockPenaltyFunctionType | undefined>;
+  getEarlyUnlockPenalty: Ref<GetEarlyUnlockPenaltyFunctionType | undefined>;
 };
 
 const ABI = [
@@ -29,6 +38,8 @@ const ABI = [
   'function all_unlock() view external returns(bool)',
   'function set_early_unlock(bool _early_unlock) external',
   'function early_unlock() view external returns (bool)',
+  'function set_early_unlock_penalty_speed(uint256 _penalty_k) external',
+  'function penalty_k() view external returns (uint256)',
 ];
 
 export const useController = ({
@@ -52,6 +63,8 @@ export const useController = ({
   const allUnlock = ref<AllUnlockFunctionType>();
   const setEarlyUnlock = ref<SetEarlyUnlockFunctionType>();
   const earlyUnlock = ref<EarlyUnlockFunctionType>();
+  const setEarlyUnlockPenalty = ref<SetEarlyUnlockPenaltyFunctionType>();
+  const getEarlyUnlockPenalty = ref<GetEarlyUnlockPenaltyFunctionType>();
 
   const initialize = () => {
     setAllUnlock.value = async (
@@ -128,6 +141,44 @@ export const useController = ({
 
       return await contract.early_unlock();
     };
+
+    setEarlyUnlockPenalty.value = async (
+      value: bigint,
+      callbacks: CallbackOptionsType
+    ): Promise<void> => {
+      if (!walletProvider.value) return;
+      if (!veSystem.value) return;
+
+      const contractAddress = veSystem.value.votingEscrow.address;
+
+      const provider = new BrowserProvider(
+        walletProvider.value,
+        network.value.id
+      );
+      const signer = await provider.getSigner();
+      const contract = new ethers.Contract(contractAddress, ABI, signer);
+
+      await submitAction(
+        async () => await contract.set_early_unlock_penalty_speed(value),
+        callbacks
+      );
+    };
+
+    getEarlyUnlockPenalty.value = async (): Promise<bigint> => {
+      if (!walletProvider.value) return toBigInt(0);
+      if (!veSystem.value) return toBigInt(0);
+
+      const contractAddress = veSystem.value.votingEscrow.address;
+
+      const provider = new BrowserProvider(
+        walletProvider.value,
+        network.value.id
+      );
+      const signer = await provider.getSigner();
+      const contract = new ethers.Contract(contractAddress, ABI, signer);
+
+      return await contract.penalty_k();
+    };
   };
 
   watch([network], initialize);
@@ -137,5 +188,7 @@ export const useController = ({
     allUnlock,
     setEarlyUnlock,
     earlyUnlock,
+    setEarlyUnlockPenalty,
+    getEarlyUnlockPenalty,
   };
 };

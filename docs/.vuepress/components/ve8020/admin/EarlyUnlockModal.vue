@@ -48,11 +48,17 @@ const props = defineProps<ModalPropsType>();
   box-shadow: 0px 4px 20px 0px rgba(51, 65, 85, 0.5);
   width: 90%;
   max-width: 320px;
-  left: calc(50% - 320px);
+  left: calc(50% - 160px);
   padding: 16px 24px;
 }
 
 @media (max-width: 1520px) {
+  .modal-popup {
+    left: calc(50%);
+  }
+}
+
+@media (max-width: 720px) {
   .modal-popup {
     left: calc(50% - 160px);
   }
