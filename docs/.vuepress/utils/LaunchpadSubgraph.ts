@@ -82,6 +82,43 @@ export class LaunchpadSubgraph {
     });
   }
 
+  public async getWithFilter(filter: {
+    tokenAddress: string;
+  }): Promise<VeSystem[]> {
+    const query = gql`
+      query GetVeSystems($bptToken: String!) {
+        vesystems(where: { bptToken: $bptToken }) {
+          id
+          bptToken
+          bptTokenName
+          votingEscrow {
+            id
+            address
+            name
+            symbol
+            lockedAmount
+          }
+          rewardDistributorAddress
+          rewardFaucetAddress
+          rewardDistributor {
+            id
+            rewardTokens
+            rewardNames
+          }
+        }
+      }
+    `;
+
+    const {
+      data: { vesystems },
+    } = (await this.client.query({
+      query,
+      variables: { bptToken: filter.tokenAddress },
+    })) as GetVeSystemsResponse;
+
+    return vesystems.map(vesystem => format(vesystem));
+  }
+
   public async getVeSystems(): Promise<VeSystem[]> {
     const query = gql(`
       query GetVeSystems {

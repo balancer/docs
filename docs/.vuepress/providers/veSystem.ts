@@ -31,12 +31,23 @@ export const veSystemProvider = () => {
     isLoading.value = false;
   };
 
+  const updateByTokenAddress = async (tokenAddress: string) => {
+    isLoading.value = true;
+
+    const filteredVeSystems = await graph.getWithFilter({ tokenAddress });
+
+    data.value = filteredVeSystems;
+
+    isLoading.value = false;
+  };
+
   return {
     data,
     selected,
     isLoading,
     fetch,
     select,
+    updateByTokenAddress,
   };
 };
 
