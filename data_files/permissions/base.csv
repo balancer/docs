@@ -49,4 +49,4 @@ setSwapFeePercentage(uint256),YearnLinearPool,20230409-yearn-linear-pool-v2,['0x
 stopAmplificationParameterUpdate(),ComposableStablePool,20230711-composable-stable-pool-v5,['0x65226673F3D202E0f897C862590d7e1A992B2048'],['multisigs/lm']
 "swap((bytes32,uint8,address,address,uint256,bytes),(address,bool,address,bool),uint256,uint256)",Vault,20210418-vault,['0x76f7204B62f554b79d444588EDac9dfA7032c71a'],['20230314-batch-relayer-v5/BalancerRelayer']
 "withdrawCollectedFees(address[],uint256[],address)",ProtocolFeesCollector,20210418-vault,['0xAcf05BE5134d64d150d153818F8C67EE36996650'],['20220517-protocol-fee-withdrawer/ProtocolFeesWithdrawer']
-"withdrawCollectedFees(address[],uint256[],address)",ProtocolFeesWithdrawer,20220517-protocol-fee-withdrawer,['0x65226673F3D202E0f897C862590d7e1A992B2048'],['multisigs/lm']
+"withdrawCollectedFees(address[],uint256[],address)",ProtocolFeesWithdrawer,20220517-protocol-fee-withdrawer,"['0x65226673F3D202E0f897C862590d7e1A992B2048', '0x9e5D6427D2cdaDC68870197b099C2Df535Ec3c97']","['multisigs/lm', 'mimic/smartVaultV2']"

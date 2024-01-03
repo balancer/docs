@@ -5,18 +5,18 @@ addPoolFactory(address),PoolRecoveryHelper,20221123-pool-recovery-helper,['0xB59
 denylistToken(address),ProtocolFeesWithdrawer,20220517-protocol-fee-withdrawer,['0x79b131498355daa2cC740936fcb9A7dF76A86223'],['multisigs/emergency']
 disable(),AaveLinearPoolFactory,20230410-aave-linear-pool-v5,['0x79b131498355daa2cC740936fcb9A7dF76A86223'],['multisigs/emergency']
 disable(),ComposableStablePoolFactory,20230320-composable-stable-pool-v4,['0x79b131498355daa2cC740936fcb9A7dF76A86223'],['multisigs/emergency']
-disable(),ComposableStablePoolFactory,20230711-composable-stable-pool-v5,['0x79b131498355daa2cC740936fcb9A7dF76A86223'],['multisigs/emergency']
+disable(),ComposableStablePoolFactory,20230711-zkevm-composable-stable-pool-v5,['0x79b131498355daa2cC740936fcb9A7dF76A86223'],['multisigs/emergency']
 disable(),ERC4626LinearPoolFactory,20230409-erc4626-linear-pool-v4,['0x79b131498355daa2cC740936fcb9A7dF76A86223'],['multisigs/emergency']
 disable(),GearboxLinearPoolFactory,20230409-gearbox-linear-pool-v2,['0x79b131498355daa2cC740936fcb9A7dF76A86223'],['multisigs/emergency']
 disable(),ManagedPoolFactory,20230411-managed-pool-v2,['0x79b131498355daa2cC740936fcb9A7dF76A86223'],['multisigs/emergency']
 disable(),WeightedPoolFactory,20230320-weighted-pool-v4,['0x79b131498355daa2cC740936fcb9A7dF76A86223'],['multisigs/emergency']
 disable(),YearnLinearPoolFactory,20230409-yearn-linear-pool-v2,['0x79b131498355daa2cC740936fcb9A7dF76A86223'],['multisigs/emergency']
 disableRecoveryMode(),ComposableStablePool,20230320-composable-stable-pool-v4,['0x79b131498355daa2cC740936fcb9A7dF76A86223'],['multisigs/emergency']
-disableRecoveryMode(),ComposableStablePool,20230711-composable-stable-pool-v5,['0x79b131498355daa2cC740936fcb9A7dF76A86223'],['multisigs/emergency']
+disableRecoveryMode(),ComposableStablePool,20230711-zkevm-composable-stable-pool-v5,['0x79b131498355daa2cC740936fcb9A7dF76A86223'],['multisigs/emergency']
 disableRecoveryMode(),WeightedPool,20230320-weighted-pool-v4,['0x79b131498355daa2cC740936fcb9A7dF76A86223'],['multisigs/emergency']
 enableRecoveryMode(),AaveLinearPool,20230410-aave-linear-pool-v5,"['0x79b131498355daa2cC740936fcb9A7dF76A86223', '0xf7D5DcE55E6D47852F054697BAB6A1B48A00ddbd']","['multisigs/emergency', '20221123-pool-recovery-helper/PoolRecoveryHelper']"
 enableRecoveryMode(),ComposableStablePool,20230320-composable-stable-pool-v4,"['0x79b131498355daa2cC740936fcb9A7dF76A86223', '0xf7D5DcE55E6D47852F054697BAB6A1B48A00ddbd']","['multisigs/emergency', '20221123-pool-recovery-helper/PoolRecoveryHelper']"
-enableRecoveryMode(),ComposableStablePool,20230711-composable-stable-pool-v5,"['0x79b131498355daa2cC740936fcb9A7dF76A86223', '0xf7D5DcE55E6D47852F054697BAB6A1B48A00ddbd']","['multisigs/emergency', '20221123-pool-recovery-helper/PoolRecoveryHelper']"
+enableRecoveryMode(),ComposableStablePool,20230711-zkevm-composable-stable-pool-v5,"['0x79b131498355daa2cC740936fcb9A7dF76A86223', '0xf7D5DcE55E6D47852F054697BAB6A1B48A00ddbd']","['multisigs/emergency', '20221123-pool-recovery-helper/PoolRecoveryHelper']"
 enableRecoveryMode(),ERC4626LinearPool,20230409-erc4626-linear-pool-v4,"['0x79b131498355daa2cC740936fcb9A7dF76A86223', '0xf7D5DcE55E6D47852F054697BAB6A1B48A00ddbd']","['multisigs/emergency', '20221123-pool-recovery-helper/PoolRecoveryHelper']"
 enableRecoveryMode(),GearboxLinearPool,20230409-gearbox-linear-pool-v2,"['0x79b131498355daa2cC740936fcb9A7dF76A86223', '0xf7D5DcE55E6D47852F054697BAB6A1B48A00ddbd']","['multisigs/emergency', '20221123-pool-recovery-helper/PoolRecoveryHelper']"
 enableRecoveryMode(),ManagedPool,20230411-managed-pool-v2,"['0x79b131498355daa2cC740936fcb9A7dF76A86223', '0xf7D5DcE55E6D47852F054697BAB6A1B48A00ddbd']","['multisigs/emergency', '20221123-pool-recovery-helper/PoolRecoveryHelper']"
@@ -27,7 +27,7 @@ enableRecoveryMode(),YearnLinearPool,20230409-yearn-linear-pool-v2,"['0x79b13149
 "manageUserBalance((uint8,address,uint256,address,address)[])",Vault,20210418-vault,['0x4678731DC41142A902a114aC5B2F77b63f4a259D'],['20230314-batch-relayer-v5/BalancerRelayer']
 pause(),AaveLinearPool,20230410-aave-linear-pool-v5,['0x79b131498355daa2cC740936fcb9A7dF76A86223'],['multisigs/emergency']
 pause(),ComposableStablePool,20230320-composable-stable-pool-v4,['0x79b131498355daa2cC740936fcb9A7dF76A86223'],['multisigs/emergency']
-pause(),ComposableStablePool,20230711-composable-stable-pool-v5,['0x79b131498355daa2cC740936fcb9A7dF76A86223'],['multisigs/emergency']
+pause(),ComposableStablePool,20230711-zkevm-composable-stable-pool-v5,['0x79b131498355daa2cC740936fcb9A7dF76A86223'],['multisigs/emergency']
 pause(),ERC4626LinearPool,20230409-erc4626-linear-pool-v4,['0x79b131498355daa2cC740936fcb9A7dF76A86223'],['multisigs/emergency']
 pause(),GearboxLinearPool,20230409-gearbox-linear-pool-v2,['0x79b131498355daa2cC740936fcb9A7dF76A86223'],['multisigs/emergency']
 pause(),ManagedPool,20230411-managed-pool-v2,['0x79b131498355daa2cC740936fcb9A7dF76A86223'],['multisigs/emergency']
@@ -42,7 +42,7 @@ setPaused(bool),Vault,20210418-vault,['0x79b131498355daa2cC740936fcb9A7dF76A8622
 "setRelayerApproval(address,address,bool)",Vault,20210418-vault,['0x4678731DC41142A902a114aC5B2F77b63f4a259D'],['20230314-batch-relayer-v5/BalancerRelayer']
 setSwapFeePercentage(uint256),AaveLinearPool,20230410-aave-linear-pool-v5,['0xB59Ab49CA8d064E645Bf2c546d9FE6d1d4147a09'],['multisigs/feesManager']
 setSwapFeePercentage(uint256),ComposableStablePool,20230320-composable-stable-pool-v4,['0xB59Ab49CA8d064E645Bf2c546d9FE6d1d4147a09'],['multisigs/feesManager']
-setSwapFeePercentage(uint256),ComposableStablePool,20230711-composable-stable-pool-v5,['0xB59Ab49CA8d064E645Bf2c546d9FE6d1d4147a09'],['multisigs/feesManager']
+setSwapFeePercentage(uint256),ComposableStablePool,20230711-zkevm-composable-stable-pool-v5,['0xB59Ab49CA8d064E645Bf2c546d9FE6d1d4147a09'],['multisigs/feesManager']
 setSwapFeePercentage(uint256),ERC4626LinearPool,20230409-erc4626-linear-pool-v4,['0xB59Ab49CA8d064E645Bf2c546d9FE6d1d4147a09'],['multisigs/feesManager']
 setSwapFeePercentage(uint256),GearboxLinearPool,20230409-gearbox-linear-pool-v2,['0xB59Ab49CA8d064E645Bf2c546d9FE6d1d4147a09'],['multisigs/feesManager']
 setSwapFeePercentage(uint256),ProtocolFeesCollector,20210418-vault,['0x1802953277FD955f9a254B80Aa0582f193cF1d77'],['20220725-protocol-fee-percentages-provider/ProtocolFeePercentagesProvider']
@@ -54,9 +54,9 @@ setSwapFeePercentage(uint256),YearnLinearPool,20230409-yearn-linear-pool-v2,['0x
 "setTargets(uint256,uint256)",YearnLinearPool,20230409-yearn-linear-pool-v2,['0xB59Ab49CA8d064E645Bf2c546d9FE6d1d4147a09'],['multisigs/feesManager']
 "setTokenRateCacheDuration(address,uint256)",ComposableStablePool,20230320-composable-stable-pool-v4,['0x2f237e7643a3bF6Ef265dd6FCBcd26a7Cc38dbAa'],['multisigs/dao']
 "startAmplificationParameterUpdate(uint256,uint256)",ComposableStablePool,20230320-composable-stable-pool-v4,['0xB59Ab49CA8d064E645Bf2c546d9FE6d1d4147a09'],['multisigs/feesManager']
-"startAmplificationParameterUpdate(uint256,uint256)",ComposableStablePool,20230711-composable-stable-pool-v5,['0xB59Ab49CA8d064E645Bf2c546d9FE6d1d4147a09'],['multisigs/feesManager']
+"startAmplificationParameterUpdate(uint256,uint256)",ComposableStablePool,20230711-zkevm-composable-stable-pool-v5,['0xB59Ab49CA8d064E645Bf2c546d9FE6d1d4147a09'],['multisigs/feesManager']
 stopAmplificationParameterUpdate(),ComposableStablePool,20230320-composable-stable-pool-v4,['0xB59Ab49CA8d064E645Bf2c546d9FE6d1d4147a09'],['multisigs/feesManager']
-stopAmplificationParameterUpdate(),ComposableStablePool,20230711-composable-stable-pool-v5,['0xB59Ab49CA8d064E645Bf2c546d9FE6d1d4147a09'],['multisigs/feesManager']
+stopAmplificationParameterUpdate(),ComposableStablePool,20230711-zkevm-composable-stable-pool-v5,['0xB59Ab49CA8d064E645Bf2c546d9FE6d1d4147a09'],['multisigs/feesManager']
 "swap((bytes32,uint8,address,address,uint256,bytes),(address,bool,address,bool),uint256,uint256)",Vault,20210418-vault,['0x4678731DC41142A902a114aC5B2F77b63f4a259D'],['20230314-batch-relayer-v5/BalancerRelayer']
 "withdrawCollectedFees(address[],uint256[],address)",ProtocolFeesCollector,20210418-vault,['0x230a59F4d9ADc147480f03B0D3fFfeCd56c3289a'],['20220517-protocol-fee-withdrawer/ProtocolFeesWithdrawer']
 "withdrawCollectedFees(address[],uint256[],address)",ProtocolFeesWithdrawer,20220517-protocol-fee-withdrawer,['0xB59Ab49CA8d064E645Bf2c546d9FE6d1d4147a09'],['multisigs/feesManager']

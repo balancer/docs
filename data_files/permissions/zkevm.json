@@ -610,7 +610,7 @@
    {
       "Fx": "disable()",
       "Contract": "ComposableStablePoolFactory",
-      "Deployment": "20230711-composable-stable-pool-v5",
+      "Deployment": "20230711-zkevm-composable-stable-pool-v5",
       "Authorized_Caller_Addresses": [
          "0x79b131498355daa2cC740936fcb9A7dF76A86223"
       ],
@@ -621,7 +621,7 @@
    {
       "Fx": "disableRecoveryMode()",
       "Contract": "ComposableStablePool",
-      "Deployment": "20230711-composable-stable-pool-v5",
+      "Deployment": "20230711-zkevm-composable-stable-pool-v5",
       "Authorized_Caller_Addresses": [
          "0x79b131498355daa2cC740936fcb9A7dF76A86223"
       ],
@@ -632,7 +632,7 @@
    {
       "Fx": "enableRecoveryMode()",
       "Contract": "ComposableStablePool",
-      "Deployment": "20230711-composable-stable-pool-v5",
+      "Deployment": "20230711-zkevm-composable-stable-pool-v5",
       "Authorized_Caller_Addresses": [
          "0x79b131498355daa2cC740936fcb9A7dF76A86223",
          "0xf7D5DcE55E6D47852F054697BAB6A1B48A00ddbd"
@@ -645,7 +645,7 @@
    {
       "Fx": "pause()",
       "Contract": "ComposableStablePool",
-      "Deployment": "20230711-composable-stable-pool-v5",
+      "Deployment": "20230711-zkevm-composable-stable-pool-v5",
       "Authorized_Caller_Addresses": [
          "0x79b131498355daa2cC740936fcb9A7dF76A86223"
       ],
@@ -656,7 +656,7 @@
    {
       "Fx": "setSwapFeePercentage(uint256)",
       "Contract": "ComposableStablePool",
-      "Deployment": "20230711-composable-stable-pool-v5",
+      "Deployment": "20230711-zkevm-composable-stable-pool-v5",
       "Authorized_Caller_Addresses": [
          "0xB59Ab49CA8d064E645Bf2c546d9FE6d1d4147a09"
       ],
@@ -667,7 +667,7 @@
    {
       "Fx": "startAmplificationParameterUpdate(uint256,uint256)",
       "Contract": "ComposableStablePool",
-      "Deployment": "20230711-composable-stable-pool-v5",
+      "Deployment": "20230711-zkevm-composable-stable-pool-v5",
       "Authorized_Caller_Addresses": [
          "0xB59Ab49CA8d064E645Bf2c546d9FE6d1d4147a09"
       ],
@@ -678,7 +678,7 @@
    {
       "Fx": "stopAmplificationParameterUpdate()",
       "Contract": "ComposableStablePool",
-      "Deployment": "20230711-composable-stable-pool-v5",
+      "Deployment": "20230711-zkevm-composable-stable-pool-v5",
       "Authorized_Caller_Addresses": [
          "0xB59Ab49CA8d064E645Bf2c546d9FE6d1d4147a09"
       ],

@@ -205,4 +205,4 @@ unpause(),ComposableStablePool,20220906-composable-stable-pool,['0xA29F61256e948
 unpause(),ComposableStablePool,20221122-composable-stable-pool-v2,['0xA29F61256e948F3FB707b4b3B138C5cCb9EF9888'],['multisigs/emergency']
 unpause(),WeightedPool,20220908-weighted-pool-v2,['0xA29F61256e948F3FB707b4b3B138C5cCb9EF9888'],['multisigs/emergency']
 "withdrawCollectedFees(address[],uint256[],address)",ProtocolFeesCollector,20210418-vault,['0x5ef4c5352882b10893b70DbcaA0C000965bd23c5'],['20220517-protocol-fee-withdrawer/ProtocolFeesWithdrawer']
-"withdrawCollectedFees(address[],uint256[],address)",ProtocolFeesWithdrawer,20220517-protocol-fee-withdrawer,['0x7c68c42De679ffB0f16216154C996C354cF1161B'],['multisigs/fees']
+"withdrawCollectedFees(address[],uint256[],address)",ProtocolFeesWithdrawer,20220517-protocol-fee-withdrawer,"['0x7c68c42De679ffB0f16216154C996C354cF1161B', '0x9e5D6427D2cdaDC68870197b099C2Df535Ec3c97']","['multisigs/fees', 'mimic/smartVaultV2']"

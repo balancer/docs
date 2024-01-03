@@ -250,10 +250,12 @@
       "Contract": "ProtocolFeesWithdrawer",
       "Deployment": "20220517-protocol-fee-withdrawer",
       "Authorized_Caller_Addresses": [
-         "0x65226673F3D202E0f897C862590d7e1A992B2048"
+         "0x65226673F3D202E0f897C862590d7e1A992B2048",
+         "0x9e5D6427D2cdaDC68870197b099C2Df535Ec3c97"
       ],
       "Authorized_Caller_Names": [
-         "multisigs/lm"
+         "multisigs/lm",
+         "mimic/smartVaultV2"
       ]
    },
    {
