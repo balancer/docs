@@ -1,125 +1,196 @@
-<script setup>
-import { ref } from 'vue';
-import Modal from './Modal.vue';
+<script setup lang="ts">
+import { computed, ref, watch } from 'vue';
+import { useVeSystem } from '../../providers/veSystem';
+import { VeSystem, secondsToDate } from '../../utils';
+import { useWeb3ModalProvider } from '@web3modal/ethers/vue';
+import { useNetwork } from '../../providers/network';
+import { useController } from '../../utils/VotingEscrowController';
+import { useController as useTokenController } from '../../utils/TokenController';
+import LockModal from './LockModal.vue';
+import { ethers } from 'ethers';
 
-const typeModal = ref('');
+const { walletProvider } = useWeb3ModalProvider();
+const { network } = useNetwork();
+const { selected: veSystem } = useVeSystem();
+const { createLock } = useController({
+  walletProvider,
+  network,
+  veSystem,
+});
 
-const handleClickClose = () => {
-  typeModal.value = '';
+const { allowance, approve } = useTokenController({
+  walletProvider,
+  network,
+});
+
+const tokenAllowance = ref<number>(0);
+
+const fetchAllowance = async (ve: VeSystem) => {
+  const result = await allowance.value?.(ve.bptToken, ve.votingEscrow.address);
+
+  tokenAllowance.value = result ? parseFloat(ethers.formatEther(result)) : 0;
 };
 
-const handleClickLock = () => {
-  typeModal.value = 'lock';
+watch(veSystem, async ve => {
+  if (!ve) return;
+
+  await fetchAllowance(ve);
+});
+
+const isLoadingLock = ref<boolean>(false);
+const isLoadingApprove = ref<boolean>(false);
+const isLockModalOpen = ref<boolean>(false);
+
+const handleLockModalClose = () => {
+  isLockModalOpen.value = false;
 };
 
-const handleClickClaim = () => {
-  typeModal.value = 'claim';
+const handleLockModalOpen = () => {
+  isLockModalOpen.value = true;
 };
 
-const formFields = [
-  {
-    label: 'Underlying 8020 BPT address',
-    placeholder: 'B-GNO80-WETH20',
-    name: 'bptAddress',
-  },
-  {
-    label: 'veToken Name',
-    placeholder: 'Voting Escrow Balancer 80 GNO',
-    name: 'veTokenName',
-  },
-  {
-    label: 'veToken Symbol',
-    placeholder: 'veGNO80-WETH20',
-    name: 'veTokenSymbol',
-  },
-  {
-    label: 'Factory used',
-    placeholder: '0x67c3...9a65c',
-    name: 'factoryUsed',
-  },
-  {
-    label: 'Rewards Distribution Address',
-    placeholder: '0x67c3...9a65c',
-    name: 'rewardsAddress',
-  },
-  {
-    label: 'Distribution Start-time',
-    type: 'date',
-    name: 'distribution',
-  },
-  {
-    label: 'Supply % vested',
-    placeholder: '37%',
-    name: 'supplyVested',
-  },
-  {
-    label: 'Rewards Distribution Admin',
-    placeholder: '0xb76f3...987b5',
-    name: 'rewardsDistribution',
-  },
-  {
-    label: 'Pending Rewards',
-    placeholder: '235600',
-    name: 'pendingRewards',
-  },
-];
+const handleApprove = async (amount: number) => {
+  if (!veSystem.value) return;
 
-const claims = [
-  {
-    token: 'GNO',
-    claimable: '23564',
-  },
-  {
-    token: 'TKN2',
-    claimable: '6589',
-  },
-  {
-    token: 'TKN3',
-    claimable: '10',
-  },
-  {
-    token: 'TKN4',
-    claimable: '500',
-  },
-];
+  await approve.value?.(
+    {
+      token: veSystem.value.bptToken,
+      amount: ethers.parseEther(amount.toString()),
+      spender: veSystem.value.votingEscrow.address,
+    },
+    {
+      onPrompt: () => {
+        console.log('onPrompt');
+      },
+      onSubmitted: ({ tx }) => {
+        console.log('onSubmitted', tx);
+        isLoadingApprove.value = true;
+      },
+      onSuccess: async ({ receipt }) => {
+        console.log('onSuccess', receipt);
+        veSystem.value && (await fetchAllowance(veSystem.value));
+        isLoadingApprove.value = false;
+      },
+      onError: err => {
+        console.log('err', err);
+        isLoadingApprove.value = false;
+      },
+    }
+  );
+};
+
+const handleLock = async (amount: number, lockTime: number) => {
+  console.log('create lock', amount, lockTime);
+
+  await createLock.value?.(
+    {
+      value: ethers.parseEther(amount.toString()),
+      lockTime: ethers.toBigInt(lockTime),
+    },
+    {
+      onPrompt: () => {
+        console.log('onPrompt');
+        isLockModalOpen.value = false;
+      },
+      onSubmitted: ({ tx }) => {
+        console.log('onSubmitted', tx);
+        isLoadingLock.value = true;
+      },
+      onSuccess: async ({ receipt }) => {
+        console.log('onSuccess', receipt);
+        isLoadingLock.value = false;
+      },
+      onError: err => {
+        console.log('err', err);
+        isLoadingLock.value = false;
+      },
+    }
+  );
+};
+
+const formFields = computed(() => {
+  const startTime = veSystem.value
+    ? secondsToDate(
+        parseInt(veSystem.value.rewardDistributor.rewardStartTime.toString())
+      ).toLocaleDateString()
+    : '';
+
+  return [
+    {
+      label: 'Underlying 8020 BPT address',
+      placeholder: 'B-GNO80-WETH20',
+      name: 'bptAddress',
+      value: veSystem.value?.bptToken,
+    },
+    {
+      label: 'veToken Name',
+      placeholder: 'Voting Escrow Balancer 80 GNO',
+      name: 'veTokenName',
+      value: veSystem.value?.votingEscrow.name,
+    },
+    {
+      label: 'veToken Symbol',
+      placeholder: 'veGNO80-WETH20',
+      name: 'veTokenSymbol',
+      value: veSystem.value?.votingEscrow.symbol,
+    },
+    {
+      label: 'Distribution Start-time',
+      type: 'date',
+      name: 'distribution',
+      value: startTime,
+    },
+    {
+      label: 'Supply % vested',
+      placeholder: '37%',
+      name: 'supplyVested',
+      value: '',
+    },
+  ];
+});
 </script>
 
 <template>
   <main class="section-container">
-    <section class="section-head">
-      <div class="address-group">
-        <p class="text">veToken Adddress/name</p>
-        <div class="input-group">
-          <svg width="16" height="16" class="icon">
-            <use href="/images/search.svg#icon"></use>
-          </svg>
-          <input class="input" placeholder="Search" />
-        </div>
-      </div>
-      <button class="search-btn btn">Search veSystem</button>
-    </section>
-
     <section class="section-body">
       <div v-for="field in formFields" :key="field.label" class="item-row">
         <p class="item-name">{{ field.label }}</p>
         <div class="input-group">
           <input
-            v-model="field.value"
+            :value="field.value"
             :placeholder="field.placeholder"
-            :type="field.type || 'text'"
-            :name="field.name"
+            type="text"
             class="input"
+            disabled="true"
           />
         </div>
       </div>
       <article class="group-btn">
-        <button class="lock-button btn" @click="handleClickLock">Lock</button>
-        <button class="claim-button btn" @click="handleClickClaim">
-          Claim
-        </button>
+        <div>
+          <LockModal
+            :open="isLockModalOpen"
+            :onClose="handleLockModalClose"
+            :onSubmit="handleLock"
+            :allowance="tokenAllowance"
+            :onApprove="handleApprove"
+            :isLoadingApprove="isLoadingApprove"
+          />
+          <button
+            class="btn"
+            :disabled="isLoadingLock"
+            @click="handleLockModalOpen"
+          >
+            {{ isLoadingLock ? 'Locking...' : 'Lock' }}
+          </button>
+        </div>
+        <div>
+          <button class="btn">Withdraw</button>
+        </div>
+        <div>
+          <button class="btn">Claim</button>
+        </div>
       </article>
     </section>
-    <Modal :type="typeModal" :claim="claims" @close="handleClickClose" />
   </main>
 </template>
 
@@ -129,67 +200,11 @@ const claims = [
   flex-direction: column;
   width: 100%;
 }
-
-.section-head {
-  border-bottom: 1px solid #e2e8f0;
-  padding-bottom: 16px;
-  display: flex;
-  align-items: center;
-  justify-content: space-between;
-}
-.dark .section-head {
-  border-bottom: 1px solid #3e4c5a;
-}
-
-.section-head .address-group {
-  display: flex;
-  align-items: center;
-  gap: 16px;
-  height: 30px;
-}
-
-.section-head .address-group .text {
-  margin: 0;
-  font-size: 14px;
-  font-weight: 500;
-}
-
-.section-head .address-group .input-group {
-  height: 100%;
-  position: relative;
-}
-
-.section-head .address-group .input {
-  background-color: transparent;
-  border: 1px solid #e2e8f0;
-  border-radius: 6px;
-  height: 100%;
-  width: 100%;
-  max-width: 340px;
-  padding-left: 30px;
-  font-size: 14px;
-  outline: none;
-}
-
-.dark .section-head .address-group .input {
-  border: 1px solid #3e4c5a;
-}
 .item-row {
   display: flex;
   width: 100%;
   align-items: center;
   justify-content: center;
-}
-
-.section-head .address-group .icon {
-  position: absolute;
-  top: 7px;
-  left: 10px;
-  fill: #eaf0f6;
-}
-
-.dark .section-head .address-group .icon {
-  fill: #3e4c5a;
 }
 
 .section-body {
@@ -249,5 +264,11 @@ const claims = [
   font-weight: 600;
   font-size: 14px;
   color: #ffffff;
+}
+
+.btn:disabled {
+  cursor: not-allowed;
+  background-color: rgba(56, 74, 255, 0.2);
+  color: grey;
 }
 </style>

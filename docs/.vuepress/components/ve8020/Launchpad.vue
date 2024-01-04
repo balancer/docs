@@ -3,7 +3,7 @@ import { ref, watch, computed } from 'vue';
 import Calendar from './Calendar.vue';
 import { useWeb3ModalProvider } from '@web3modal/ethers/vue';
 import { useNetwork } from '../../providers/network';
-import { useController, weeksToSeconds } from '../../utils';
+import { dateToSeconds, useController, weeksToSeconds } from '../../utils';
 
 const { network } = useNetwork();
 const { walletProvider } = useWeb3ModalProvider();
@@ -23,7 +23,7 @@ const selectedDate = ref<Date | undefined>(undefined);
 const openCalendar = ref(false);
 const lockTime = ref(0);
 const startTime = computed(() =>
-  selectedDate.value ? selectedDate.value.getTime() / 1000 : 0
+  selectedDate.value ? dateToSeconds(selectedDate.value) : 0
 );
 const handleClickDate = (date: Date) => {
   selectedDate.value = date;

@@ -6,10 +6,12 @@ export enum Tab {
   ADMIN_POOLS,
   VE_SYSTEM_CONFIG,
   REWARDS_DISTRIBUTION,
+  OVERVIEW,
+  POOL_DETAILS,
 }
 
-export const tabsProvider = () => {
-  const tab = ref<Tab>(Tab.LAUNCHPAD);
+export const tabsProvider = (defaultTab: Tab) => {
+  const tab = ref<Tab>(defaultTab);
 
   watch(tab, value => console.log('Selected Tab: ', value));
 
@@ -26,10 +28,10 @@ export const tabsProvider = () => {
 export type TabsProviderType = ReturnType<typeof tabsProvider>;
 
 export const TabsProviderSymbol: InjectionKey<TabsProviderType> =
-  Symbol('providers.vesystem');
+  Symbol('providers.tabs');
 
-export function provideTabs(): TabsProviderType {
-  const data = tabsProvider();
+export function provideTabs(defaultTab: Tab): TabsProviderType {
+  const data = tabsProvider(defaultTab);
   provide(TabsProviderSymbol, data);
   return data;
 }

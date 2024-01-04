@@ -3,12 +3,15 @@ import { ethers } from 'ethers';
 import { useVeSystem } from '../../providers/veSystem';
 import TokenCard from './TokenCard.vue';
 import { onBeforeMount, ref } from 'vue';
+import { useTabs, Tab } from '../../providers/tabs';
 const {
   data: veSystems,
   fetch,
   updateByTokenAddress,
   isLoading,
+  select,
 } = useVeSystem();
+const { select: selectTab } = useTabs();
 
 const searchTerm = ref<string>('');
 
@@ -22,6 +25,11 @@ const handleSearch = async () => {
   } else {
     await fetch();
   }
+};
+
+const showConfig = async (id: string) => {
+  await select(id);
+  selectTab(Tab.POOL_DETAILS);
 };
 </script>
 
@@ -49,14 +57,21 @@ const handleSearch = async () => {
       </button>
     </section>
     <section class="section-body">
-      <TokenCard
-        v-for="token in veSystems"
-        :key="token.id"
-        :name="token.id"
-        :vestedToken="token.bptTokenName"
-        :totalValueVested="ethers.formatEther(token.votingEscrow.lockedAmount)"
-        :availableTokensForRewards="token.rewardDistributor.rewardNames || []"
-      />
+      <div v-for="token in veSystems" :key="token.id">
+        <TokenCard
+          :name="token.id"
+          :vestedToken="token.bptTokenName"
+          :totalValueVested="
+            ethers.formatEther(token.votingEscrow.lockedAmount)
+          "
+          :availableTokensForRewards="token.rewardDistributor.rewardNames || []"
+        />
+        <div class="group-buttons">
+          <button class="btn-config" @click="showConfig(token.id)">
+            See Pool
+          </button>
+        </div>
+      </div>
     </section>
   </section>
 </template>
@@ -152,5 +167,31 @@ const handleSearch = async () => {
   gap: 24px;
   max-height: 800px;
   overflow: auto;
+}
+
+.group-buttons {
+  display: flex;
+  gap: 10px;
+  justify-content: flex-end;
+  max-width: 560px;
+  margin-top: 10px;
+  margin-bottom: 20px;
+  width: 90%;
+  margin-inline: auto;
+}
+.group-buttons .btn-rewards,
+.group-buttons .btn-config {
+  width: 150px;
+  height: 40px;
+  border-radius: 6px;
+  border: none;
+  background-color: #eaf0f6;
+  font-weight: 600;
+  cursor: pointer;
+}
+
+.dark .group-buttons .btn-rewards,
+.dark .group-buttons .btn-config {
+  background-color: #384aff;
 }
 </style>

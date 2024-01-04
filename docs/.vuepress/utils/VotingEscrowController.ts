@@ -4,6 +4,16 @@ import { NetworkConfig } from '../constants/networks';
 import { CallbackOptionsType, submitAction } from './LaunchpadController';
 import { VeSystem } from './LaunchpadSubgraph';
 
+type CreateLockDataType = {
+  value: bigint;
+  lockTime: bigint;
+};
+
+type CreateLockFunctionType = (
+  data: CreateLockDataType,
+  callbacks: CallbackOptionsType
+) => Promise<void>;
+
 type SetAllUnlockFunctionType = (
   callbacks: CallbackOptionsType
 ) => Promise<void>;
@@ -31,6 +41,7 @@ type UseControllerReturnType = {
   earlyUnlock: Ref<EarlyUnlockFunctionType | undefined>;
   setEarlyUnlockPenalty: Ref<SetEarlyUnlockPenaltyFunctionType | undefined>;
   getEarlyUnlockPenalty: Ref<GetEarlyUnlockPenaltyFunctionType | undefined>;
+  createLock: Ref<CreateLockFunctionType | undefined>;
 };
 
 const ABI = [
@@ -40,6 +51,7 @@ const ABI = [
   'function early_unlock() view external returns (bool)',
   'function set_early_unlock_penalty_speed(uint256 _penalty_k) external',
   'function penalty_k() view external returns (uint256)',
+  'function create_lock(uint256 _value, uint256 _unlock_time) external',
 ];
 
 export const useController = ({
@@ -65,6 +77,7 @@ export const useController = ({
   const earlyUnlock = ref<EarlyUnlockFunctionType>();
   const setEarlyUnlockPenalty = ref<SetEarlyUnlockPenaltyFunctionType>();
   const getEarlyUnlockPenalty = ref<GetEarlyUnlockPenaltyFunctionType>();
+  const createLock = ref<CreateLockFunctionType>();
 
   const initialize = () => {
     setAllUnlock.value = async (
@@ -179,6 +192,30 @@ export const useController = ({
 
       return await contract.penalty_k();
     };
+
+    createLock.value = async (
+      data: CreateLockDataType,
+      callbacks: CallbackOptionsType
+    ): Promise<void> => {
+      if (!walletProvider.value) return;
+      if (!veSystem.value) return;
+
+      const contractAddress = veSystem.value.votingEscrow.address;
+
+      const provider = new BrowserProvider(
+        walletProvider.value,
+        network.value.id
+      );
+      const signer = await provider.getSigner();
+      const contract = new ethers.Contract(contractAddress, ABI, signer);
+
+      const { value, lockTime } = data;
+
+      await submitAction(
+        async () => await contract.create_lock(value, lockTime),
+        callbacks
+      );
+    };
   };
 
   watch([network], initialize);
@@ -190,5 +227,6 @@ export const useController = ({
     earlyUnlock,
     setEarlyUnlockPenalty,
     getEarlyUnlockPenalty,
+    createLock,
   };
 };

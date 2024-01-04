@@ -21,5 +21,9 @@ export const secondsToDate = (seconds: number) => {
   return new Date(seconds * 1000);
 };
 
+export const dateToSeconds = (d: Date) => {
+  return d.getTime() / 1000;
+};
+
 export * from './LaunchpadSubgraph';
 export * from './LaunchpadController';

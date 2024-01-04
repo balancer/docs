@@ -1,7 +1,12 @@
-<script setup>
+<script setup lang="ts">
 import Overview from './Overview.vue';
 import Configuration from './Configuration.vue';
 import Wallet from '../Navbar/Wallet.vue';
+import { useTabs, Tab } from '../../providers/tabs';
+import { useVeSystem } from '../../providers/veSystem';
+
+const { tab, select } = useTabs();
+const { selected: veSystem } = useVeSystem();
 </script>
 
 <template>
@@ -11,43 +16,32 @@ import Wallet from '../Navbar/Wallet.vue';
   <div class="main-container">
     <div class="head-container">
       <div
-        :class="{ tab: true, 'active-tab': activeTab === 1 }"
-        @click="showTab(1)"
+        :class="{ tab: true, 'active-tab': tab === Tab.OVERVIEW }"
+        @click="select(Tab.OVERVIEW)"
       >
         veSystem Overview
       </div>
       <div
-        :class="{ tab: true, 'active-tab': activeTab === 2 }"
-        @click="showTab(2)"
+        :class="{
+          tab: true,
+          'active-tab': tab === Tab.POOL_DETAILS,
+          disabled: !veSystem,
+        }"
+        @click="veSystem && select(Tab.POOL_DETAILS)"
       >
-        veSystem config
+        Pool Details
       </div>
     </div>
 
-    <div v-show="activeTab === 1" class="body-container">
+    <div v-show="tab === Tab.OVERVIEW" class="body-container">
       <Overview />
     </div>
 
-    <div v-show="activeTab === 2" class="body-container">
+    <div v-show="tab === Tab.POOL_DETAILS" class="body-container">
       <Configuration />
     </div>
   </div>
 </template>
-
-<script>
-export default {
-  data() {
-    return {
-      activeTab: 1,
-    };
-  },
-  methods: {
-    showTab(tabNumber) {
-      this.activeTab = tabNumber;
-    },
-  },
-};
-</script>
 
 <style scoped>
 .network-select {
@@ -109,5 +103,8 @@ export default {
   flex-direction: column;
   align-items: center;
   width: 100%;
+}
+.tab.disabled {
+  cursor: not-allowed;
 }
 </style>
