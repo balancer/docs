@@ -14,6 +14,8 @@ type CreateLockFunctionType = (
   callbacks: CallbackOptionsType
 ) => Promise<void>;
 
+type WithdrawFunctionType = (callbacks: CallbackOptionsType) => Promise<void>;
+
 type SetAllUnlockFunctionType = (
   callbacks: CallbackOptionsType
 ) => Promise<void>;
@@ -42,6 +44,7 @@ type UseControllerReturnType = {
   setEarlyUnlockPenalty: Ref<SetEarlyUnlockPenaltyFunctionType | undefined>;
   getEarlyUnlockPenalty: Ref<GetEarlyUnlockPenaltyFunctionType | undefined>;
   createLock: Ref<CreateLockFunctionType | undefined>;
+  withdraw: Ref<WithdrawFunctionType | undefined>;
 };
 
 const ABI = [
@@ -52,6 +55,7 @@ const ABI = [
   'function set_early_unlock_penalty_speed(uint256 _penalty_k) external',
   'function penalty_k() view external returns (uint256)',
   'function create_lock(uint256 _value, uint256 _unlock_time) external',
+  'function withdraw() external',
 ];
 
 export const useController = ({
@@ -78,6 +82,7 @@ export const useController = ({
   const setEarlyUnlockPenalty = ref<SetEarlyUnlockPenaltyFunctionType>();
   const getEarlyUnlockPenalty = ref<GetEarlyUnlockPenaltyFunctionType>();
   const createLock = ref<CreateLockFunctionType>();
+  const withdraw = ref<WithdrawFunctionType>();
 
   const initialize = () => {
     setAllUnlock.value = async (
@@ -216,6 +221,22 @@ export const useController = ({
         callbacks
       );
     };
+
+    withdraw.value = async (callbacks: CallbackOptionsType): Promise<void> => {
+      if (!walletProvider.value) return;
+      if (!veSystem.value) return;
+
+      const contractAddress = veSystem.value.votingEscrow.address;
+
+      const provider = new BrowserProvider(
+        walletProvider.value,
+        network.value.id
+      );
+      const signer = await provider.getSigner();
+      const contract = new ethers.Contract(contractAddress, ABI, signer);
+
+      await submitAction(async () => await contract.withdraw(), callbacks);
+    };
   };
 
   watch([network], initialize);
@@ -228,5 +249,6 @@ export const useController = ({
     setEarlyUnlockPenalty,
     getEarlyUnlockPenalty,
     createLock,
+    withdraw,
   };
 };

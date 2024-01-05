@@ -7,12 +7,13 @@ import { useNetwork } from '../../providers/network';
 import { useController } from '../../utils/VotingEscrowController';
 import { useController as useTokenController } from '../../utils/TokenController';
 import LockModal from './LockModal.vue';
+import WithdrawModal from './WithdrawModal.vue';
 import { ethers } from 'ethers';
 
 const { walletProvider } = useWeb3ModalProvider();
 const { network } = useNetwork();
 const { selected: veSystem } = useVeSystem();
-const { createLock } = useController({
+const { createLock, withdraw } = useController({
   walletProvider,
   network,
   veSystem,
@@ -39,7 +40,9 @@ watch(veSystem, async ve => {
 
 const isLoadingLock = ref<boolean>(false);
 const isLoadingApprove = ref<boolean>(false);
+const isLoadingWithdraw = ref<boolean>(false);
 const isLockModalOpen = ref<boolean>(false);
+const isWithdrawModalOpen = ref<boolean>(false);
 
 const handleLockModalClose = () => {
   isLockModalOpen.value = false;
@@ -47,6 +50,35 @@ const handleLockModalClose = () => {
 
 const handleLockModalOpen = () => {
   isLockModalOpen.value = true;
+};
+
+const handleWithdrawModalClose = () => {
+  isWithdrawModalOpen.value = false;
+};
+
+const handleWithdrawModalOpen = () => {
+  isWithdrawModalOpen.value = true;
+};
+
+const handleWithdraw = async () => {
+  await withdraw.value?.({
+    onPrompt: () => {
+      console.log('onPrompt');
+      isWithdrawModalOpen.value = false;
+    },
+    onSubmitted: ({ tx }) => {
+      console.log('onSubmitted', tx);
+      isLoadingWithdraw.value = true;
+    },
+    onSuccess: async ({ receipt }) => {
+      console.log('onSuccess', receipt);
+      isLoadingWithdraw.value = false;
+    },
+    onError: err => {
+      console.log('err', err);
+      isLoadingWithdraw.value = false;
+    },
+  });
 };
 
 const handleApprove = async (amount: number) => {
@@ -184,7 +216,18 @@ const formFields = computed(() => {
           </button>
         </div>
         <div>
-          <button class="btn">Withdraw</button>
+          <WithdrawModal
+            :open="isWithdrawModalOpen"
+            :onClose="handleWithdrawModalClose"
+            :onSubmit="handleWithdraw"
+          />
+          <button
+            class="btn"
+            :disabled="isLoadingWithdraw"
+            @click="handleWithdrawModalOpen"
+          >
+            {{ isLoadingWithdraw ? 'Withdrawing...' : 'Withdraw' }}
+          </button>
         </div>
         <div>
           <button class="btn">Claim</button>
