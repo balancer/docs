@@ -2,7 +2,7 @@ Fx,Contract,Deployment,Authorized_Caller_Addresses,Authorized_Caller_Names
 addPoolFactory(address),PoolRecoveryHelper,20221123-pool-recovery-helper,['0x326A7778DB9B741Cb2acA0DE07b9402C7685dAc6'],['multisigs/fees']
 "add_reward(address,address)",ChildChainGauge,20230316-avax-child-chain-gauge-factory-v2,['0x326A7778DB9B741Cb2acA0DE07b9402C7685dAc6'],['multisigs/fees']
 "add_reward(address,address)",ChildChainGauge,20230316-child-chain-gauge-factory-v2,['0x326A7778DB9B741Cb2acA0DE07b9402C7685dAc6'],['multisigs/fees']
-"batchSwap(uint8,(bytes32,uint256,uint256,uint256,bytes)[],address[],(address,bool,address,bool),int256[],uint256)",Vault,20210418-vault,['0x03F1ab8b19bcE21EB06C364aEc9e40322572a1e9'],['20230314-batch-relayer-v5/BalancerRelayer']
+"batchSwap(uint8,(bytes32,uint256,uint256,uint256,bytes)[],address[],(address,bool,address,bool),int256[],uint256)",Vault,20210418-vault,"['0x03F1ab8b19bcE21EB06C364aEc9e40322572a1e9', '0xA084c11cb55e67C9becf9607f1DBB20ec4D5E7b2']","['20230314-batch-relayer-v5/BalancerRelayer', '20231031-batch-relayer-v6/BalancerRelayer']"
 denylistToken(address),ProtocolFeesWithdrawer,20220517-protocol-fee-withdrawer,['0x308f8d3536261C32c97D2f85ddc357f5cCdF33F0'],['multisigs/emergency']
 disable(),AaveLinearPoolFactory,20230410-aave-linear-pool-v5,['0x308f8d3536261C32c97D2f85ddc357f5cCdF33F0'],['multisigs/emergency']
 disable(),ComposableStablePoolFactory,20230711-composable-stable-pool-v5,['0x308f8d3536261C32c97D2f85ddc357f5cCdF33F0'],['multisigs/emergency']
@@ -18,9 +18,9 @@ enableRecoveryMode(),ComposableStablePool,20230711-composable-stable-pool-v5,"['
 enableRecoveryMode(),ERC4626LinearPool,20230409-erc4626-linear-pool-v4,"['0x308f8d3536261C32c97D2f85ddc357f5cCdF33F0', '0x3b8cA519122CdD8efb272b0D3085453404B25bD0']","['multisigs/emergency', '20221123-pool-recovery-helper/PoolRecoveryHelper']"
 enableRecoveryMode(),ManagedPool,20230411-managed-pool-v2,"['0x308f8d3536261C32c97D2f85ddc357f5cCdF33F0', '0x3b8cA519122CdD8efb272b0D3085453404B25bD0']","['multisigs/emergency', '20221123-pool-recovery-helper/PoolRecoveryHelper']"
 enableRecoveryMode(),WeightedPool,20230320-weighted-pool-v4,"['0x17b11FF13e2d7bAb2648182dFD1f1cfa0E4C7cf3', '0x3b8cA519122CdD8efb272b0D3085453404B25bD0', '0x308f8d3536261C32c97D2f85ddc357f5cCdF33F0']","['multisigs/dao', '20221123-pool-recovery-helper/PoolRecoveryHelper', 'multisigs/emergency']"
-"exitPool(bytes32,address,address,(address[],uint256[],bytes,bool))",Vault,20210418-vault,['0x03F1ab8b19bcE21EB06C364aEc9e40322572a1e9'],['20230314-batch-relayer-v5/BalancerRelayer']
-"joinPool(bytes32,address,address,(address[],uint256[],bytes,bool))",Vault,20210418-vault,['0x03F1ab8b19bcE21EB06C364aEc9e40322572a1e9'],['20230314-batch-relayer-v5/BalancerRelayer']
-"manageUserBalance((uint8,address,uint256,address,address)[])",Vault,20210418-vault,['0x03F1ab8b19bcE21EB06C364aEc9e40322572a1e9'],['20230314-batch-relayer-v5/BalancerRelayer']
+"exitPool(bytes32,address,address,(address[],uint256[],bytes,bool))",Vault,20210418-vault,"['0x03F1ab8b19bcE21EB06C364aEc9e40322572a1e9', '0xA084c11cb55e67C9becf9607f1DBB20ec4D5E7b2']","['20230314-batch-relayer-v5/BalancerRelayer', '20231031-batch-relayer-v6/BalancerRelayer']"
+"joinPool(bytes32,address,address,(address[],uint256[],bytes,bool))",Vault,20210418-vault,"['0x03F1ab8b19bcE21EB06C364aEc9e40322572a1e9', '0xA084c11cb55e67C9becf9607f1DBB20ec4D5E7b2']","['20230314-batch-relayer-v5/BalancerRelayer', '20231031-batch-relayer-v6/BalancerRelayer']"
+"manageUserBalance((uint8,address,uint256,address,address)[])",Vault,20210418-vault,"['0x03F1ab8b19bcE21EB06C364aEc9e40322572a1e9', '0xA084c11cb55e67C9becf9607f1DBB20ec4D5E7b2']","['20230314-batch-relayer-v5/BalancerRelayer', '20231031-batch-relayer-v6/BalancerRelayer']"
 pause(),AaveLinearPool,20230410-aave-linear-pool-v5,['0x308f8d3536261C32c97D2f85ddc357f5cCdF33F0'],['multisigs/emergency']
 pause(),ComposableStablePool,20230711-composable-stable-pool-v5,['0x308f8d3536261C32c97D2f85ddc357f5cCdF33F0'],['multisigs/emergency']
 pause(),ERC4626LinearPool,20230409-erc4626-linear-pool-v4,['0x308f8d3536261C32c97D2f85ddc357f5cCdF33F0'],['multisigs/emergency']
@@ -30,7 +30,7 @@ removePoolFactory(address),PoolRecoveryHelper,20221123-pool-recovery-helper,['0x
 "setFeeTypePercentage(uint256,uint256)",ProtocolFeePercentagesProvider,20220725-protocol-fee-percentages-provider,['0x17b11FF13e2d7bAb2648182dFD1f1cfa0E4C7cf3'],['multisigs/dao']
 setFlashLoanFeePercentage(uint256),ProtocolFeesCollector,20210418-vault,['0x239e55F427D44C3cc793f49bFB507ebe76638a2b'],['20220725-protocol-fee-percentages-provider/ProtocolFeePercentagesProvider']
 setPaused(bool),Vault,20210418-vault,['0x308f8d3536261C32c97D2f85ddc357f5cCdF33F0'],['multisigs/emergency']
-"setRelayerApproval(address,address,bool)",Vault,20210418-vault,['0x03F1ab8b19bcE21EB06C364aEc9e40322572a1e9'],['20230314-batch-relayer-v5/BalancerRelayer']
+"setRelayerApproval(address,address,bool)",Vault,20210418-vault,"['0x03F1ab8b19bcE21EB06C364aEc9e40322572a1e9', '0xA084c11cb55e67C9becf9607f1DBB20ec4D5E7b2']","['20230314-batch-relayer-v5/BalancerRelayer', '20231031-batch-relayer-v6/BalancerRelayer']"
 setSwapFeePercentage(uint256),AaveLinearPool,20230410-aave-linear-pool-v5,['0x326A7778DB9B741Cb2acA0DE07b9402C7685dAc6'],['multisigs/fees']
 setSwapFeePercentage(uint256),ComposableStablePool,20230711-composable-stable-pool-v5,['0x326A7778DB9B741Cb2acA0DE07b9402C7685dAc6'],['multisigs/fees']
 setSwapFeePercentage(uint256),ERC4626LinearPool,20230409-erc4626-linear-pool-v4,['0x326A7778DB9B741Cb2acA0DE07b9402C7685dAc6'],['multisigs/fees']
@@ -40,6 +40,6 @@ setSwapFeePercentage(uint256),WeightedPool,20230320-weighted-pool-v4,['0x326A777
 "setTargets(uint256,uint256)",ERC4626LinearPool,20230409-erc4626-linear-pool-v4,['0x326A7778DB9B741Cb2acA0DE07b9402C7685dAc6'],['multisigs/fees']
 "startAmplificationParameterUpdate(uint256,uint256)",ComposableStablePool,20230711-composable-stable-pool-v5,['0x326A7778DB9B741Cb2acA0DE07b9402C7685dAc6'],['multisigs/fees']
 stopAmplificationParameterUpdate(),ComposableStablePool,20230711-composable-stable-pool-v5,['0x326A7778DB9B741Cb2acA0DE07b9402C7685dAc6'],['multisigs/fees']
-"swap((bytes32,uint8,address,address,uint256,bytes),(address,bool,address,bool),uint256,uint256)",Vault,20210418-vault,['0x03F1ab8b19bcE21EB06C364aEc9e40322572a1e9'],['20230314-batch-relayer-v5/BalancerRelayer']
+"swap((bytes32,uint8,address,address,uint256,bytes),(address,bool,address,bool),uint256,uint256)",Vault,20210418-vault,"['0x03F1ab8b19bcE21EB06C364aEc9e40322572a1e9', '0xA084c11cb55e67C9becf9607f1DBB20ec4D5E7b2']","['20230314-batch-relayer-v5/BalancerRelayer', '20231031-batch-relayer-v6/BalancerRelayer']"
 "withdrawCollectedFees(address[],uint256[],address)",ProtocolFeesCollector,20210418-vault,['0x8F42aDBbA1B16EaAE3BB5754915E0D06059aDd75'],['20220517-protocol-fee-withdrawer/ProtocolFeesWithdrawer']
-"withdrawCollectedFees(address[],uint256[],address)",ProtocolFeesWithdrawer,20220517-protocol-fee-withdrawer,['0x326A7778DB9B741Cb2acA0DE07b9402C7685dAc6'],['multisigs/fees']
+"withdrawCollectedFees(address[],uint256[],address)",ProtocolFeesWithdrawer,20220517-protocol-fee-withdrawer,"['0x326A7778DB9B741Cb2acA0DE07b9402C7685dAc6', '0x9e5D6427D2cdaDC68870197b099C2Df535Ec3c97']","['multisigs/fees', 'mimic/smartVaultV2']"
