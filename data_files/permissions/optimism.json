@@ -6,12 +6,14 @@
       "Authorized_Caller_Addresses": [
          "0x195CcCBE464EF9073d1f7A1ba1C9Bf0f56dfFFff",
          "0x1a58897Ab366082028ced3740900ecBD765Af738",
-         "0x03F1ab8b19bcE21EB06C364aEc9e40322572a1e9"
+         "0x03F1ab8b19bcE21EB06C364aEc9e40322572a1e9",
+         "0x015ACA20a1422F3c729086c17f15F10e0CfbC75A"
       ],
       "Authorized_Caller_Names": [
          "20220720-batch-relayer-v3/BalancerRelayer",
          "20220916-batch-relayer-v4/BalancerRelayer",
-         "20230314-batch-relayer-v5/BalancerRelayer"
+         "20230314-batch-relayer-v5/BalancerRelayer",
+         "20231031-batch-relayer-v6/BalancerRelayer"
       ]
    },
    {
@@ -21,12 +23,14 @@
       "Authorized_Caller_Addresses": [
          "0x195CcCBE464EF9073d1f7A1ba1C9Bf0f56dfFFff",
          "0x1a58897Ab366082028ced3740900ecBD765Af738",
-         "0x03F1ab8b19bcE21EB06C364aEc9e40322572a1e9"
+         "0x03F1ab8b19bcE21EB06C364aEc9e40322572a1e9",
+         "0x015ACA20a1422F3c729086c17f15F10e0CfbC75A"
       ],
       "Authorized_Caller_Names": [
          "20220720-batch-relayer-v3/BalancerRelayer",
          "20220916-batch-relayer-v4/BalancerRelayer",
-         "20230314-batch-relayer-v5/BalancerRelayer"
+         "20230314-batch-relayer-v5/BalancerRelayer",
+         "20231031-batch-relayer-v6/BalancerRelayer"
       ]
    },
    {
@@ -36,12 +40,14 @@
       "Authorized_Caller_Addresses": [
          "0x195CcCBE464EF9073d1f7A1ba1C9Bf0f56dfFFff",
          "0x1a58897Ab366082028ced3740900ecBD765Af738",
-         "0x03F1ab8b19bcE21EB06C364aEc9e40322572a1e9"
+         "0x03F1ab8b19bcE21EB06C364aEc9e40322572a1e9",
+         "0x015ACA20a1422F3c729086c17f15F10e0CfbC75A"
       ],
       "Authorized_Caller_Names": [
          "20220720-batch-relayer-v3/BalancerRelayer",
          "20220916-batch-relayer-v4/BalancerRelayer",
-         "20230314-batch-relayer-v5/BalancerRelayer"
+         "20230314-batch-relayer-v5/BalancerRelayer",
+         "20231031-batch-relayer-v6/BalancerRelayer"
       ]
    },
    {
@@ -51,12 +57,14 @@
       "Authorized_Caller_Addresses": [
          "0x195CcCBE464EF9073d1f7A1ba1C9Bf0f56dfFFff",
          "0x1a58897Ab366082028ced3740900ecBD765Af738",
-         "0x03F1ab8b19bcE21EB06C364aEc9e40322572a1e9"
+         "0x03F1ab8b19bcE21EB06C364aEc9e40322572a1e9",
+         "0x015ACA20a1422F3c729086c17f15F10e0CfbC75A"
       ],
       "Authorized_Caller_Names": [
          "20220720-batch-relayer-v3/BalancerRelayer",
          "20220916-batch-relayer-v4/BalancerRelayer",
-         "20230314-batch-relayer-v5/BalancerRelayer"
+         "20230314-batch-relayer-v5/BalancerRelayer",
+         "20231031-batch-relayer-v6/BalancerRelayer"
       ]
    },
    {
@@ -66,12 +74,14 @@
       "Authorized_Caller_Addresses": [
          "0x195CcCBE464EF9073d1f7A1ba1C9Bf0f56dfFFff",
          "0x1a58897Ab366082028ced3740900ecBD765Af738",
-         "0x03F1ab8b19bcE21EB06C364aEc9e40322572a1e9"
+         "0x03F1ab8b19bcE21EB06C364aEc9e40322572a1e9",
+         "0x015ACA20a1422F3c729086c17f15F10e0CfbC75A"
       ],
       "Authorized_Caller_Names": [
          "20220720-batch-relayer-v3/BalancerRelayer",
          "20220916-batch-relayer-v4/BalancerRelayer",
-         "20230314-batch-relayer-v5/BalancerRelayer"
+         "20230314-batch-relayer-v5/BalancerRelayer",
+         "20231031-batch-relayer-v6/BalancerRelayer"
       ]
    },
    {
@@ -81,12 +91,14 @@
       "Authorized_Caller_Addresses": [
          "0x195CcCBE464EF9073d1f7A1ba1C9Bf0f56dfFFff",
          "0x1a58897Ab366082028ced3740900ecBD765Af738",
-         "0x03F1ab8b19bcE21EB06C364aEc9e40322572a1e9"
+         "0x03F1ab8b19bcE21EB06C364aEc9e40322572a1e9",
+         "0x015ACA20a1422F3c729086c17f15F10e0CfbC75A"
       ],
       "Authorized_Caller_Names": [
          "20220720-batch-relayer-v3/BalancerRelayer",
          "20220916-batch-relayer-v4/BalancerRelayer",
-         "20230314-batch-relayer-v5/BalancerRelayer"
+         "20230314-batch-relayer-v5/BalancerRelayer",
+         "20231031-batch-relayer-v6/BalancerRelayer"
       ]
    },
    {

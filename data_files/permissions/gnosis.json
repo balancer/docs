@@ -5,11 +5,13 @@
       "Deployment": "20210418-vault",
       "Authorized_Caller_Addresses": [
          "0xeF606F58A4FD0fCcb066c6203d0994694d3eB2D3",
-         "0x3536fD480CA495Ac91E698A703248A8915c137a3"
+         "0x3536fD480CA495Ac91E698A703248A8915c137a3",
+         "0x2163c2FcD0940e84B8a68991bF926eDfB0Cd926C"
       ],
       "Authorized_Caller_Names": [
          "20220916-batch-relayer-v4/BalancerRelayer",
-         "20230314-batch-relayer-v5/BalancerRelayer"
+         "20230314-batch-relayer-v5/BalancerRelayer",
+         "20231031-batch-relayer-v6/BalancerRelayer"
       ]
    },
    {
@@ -18,11 +20,13 @@
       "Deployment": "20210418-vault",
       "Authorized_Caller_Addresses": [
          "0xeF606F58A4FD0fCcb066c6203d0994694d3eB2D3",
-         "0x3536fD480CA495Ac91E698A703248A8915c137a3"
+         "0x3536fD480CA495Ac91E698A703248A8915c137a3",
+         "0x2163c2FcD0940e84B8a68991bF926eDfB0Cd926C"
       ],
       "Authorized_Caller_Names": [
          "20220916-batch-relayer-v4/BalancerRelayer",
-         "20230314-batch-relayer-v5/BalancerRelayer"
+         "20230314-batch-relayer-v5/BalancerRelayer",
+         "20231031-batch-relayer-v6/BalancerRelayer"
       ]
    },
    {
@@ -31,11 +35,13 @@
       "Deployment": "20210418-vault",
       "Authorized_Caller_Addresses": [
          "0xeF606F58A4FD0fCcb066c6203d0994694d3eB2D3",
-         "0x3536fD480CA495Ac91E698A703248A8915c137a3"
+         "0x3536fD480CA495Ac91E698A703248A8915c137a3",
+         "0x2163c2FcD0940e84B8a68991bF926eDfB0Cd926C"
       ],
       "Authorized_Caller_Names": [
          "20220916-batch-relayer-v4/BalancerRelayer",
-         "20230314-batch-relayer-v5/BalancerRelayer"
+         "20230314-batch-relayer-v5/BalancerRelayer",
+         "20231031-batch-relayer-v6/BalancerRelayer"
       ]
    },
    {
@@ -44,11 +50,13 @@
       "Deployment": "20210418-vault",
       "Authorized_Caller_Addresses": [
          "0xeF606F58A4FD0fCcb066c6203d0994694d3eB2D3",
-         "0x3536fD480CA495Ac91E698A703248A8915c137a3"
+         "0x3536fD480CA495Ac91E698A703248A8915c137a3",
+         "0x2163c2FcD0940e84B8a68991bF926eDfB0Cd926C"
       ],
       "Authorized_Caller_Names": [
          "20220916-batch-relayer-v4/BalancerRelayer",
-         "20230314-batch-relayer-v5/BalancerRelayer"
+         "20230314-batch-relayer-v5/BalancerRelayer",
+         "20231031-batch-relayer-v6/BalancerRelayer"
       ]
    },
    {
@@ -68,11 +76,13 @@
       "Deployment": "20210418-vault",
       "Authorized_Caller_Addresses": [
          "0xeF606F58A4FD0fCcb066c6203d0994694d3eB2D3",
-         "0x3536fD480CA495Ac91E698A703248A8915c137a3"
+         "0x3536fD480CA495Ac91E698A703248A8915c137a3",
+         "0x2163c2FcD0940e84B8a68991bF926eDfB0Cd926C"
       ],
       "Authorized_Caller_Names": [
          "20220916-batch-relayer-v4/BalancerRelayer",
-         "20230314-batch-relayer-v5/BalancerRelayer"
+         "20230314-batch-relayer-v5/BalancerRelayer",
+         "20231031-batch-relayer-v6/BalancerRelayer"
       ]
    },
    {
@@ -81,11 +91,13 @@
       "Deployment": "20210418-vault",
       "Authorized_Caller_Addresses": [
          "0xeF606F58A4FD0fCcb066c6203d0994694d3eB2D3",
-         "0x3536fD480CA495Ac91E698A703248A8915c137a3"
+         "0x3536fD480CA495Ac91E698A703248A8915c137a3",
+         "0x2163c2FcD0940e84B8a68991bF926eDfB0Cd926C"
       ],
       "Authorized_Caller_Names": [
          "20220916-batch-relayer-v4/BalancerRelayer",
-         "20230314-batch-relayer-v5/BalancerRelayer"
+         "20230314-batch-relayer-v5/BalancerRelayer",
+         "20231031-batch-relayer-v6/BalancerRelayer"
       ]
    },
    {

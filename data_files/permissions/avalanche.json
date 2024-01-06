@@ -4,10 +4,12 @@
       "Contract": "Vault",
       "Deployment": "20210418-vault",
       "Authorized_Caller_Addresses": [
-         "0x03F1ab8b19bcE21EB06C364aEc9e40322572a1e9"
+         "0x03F1ab8b19bcE21EB06C364aEc9e40322572a1e9",
+         "0xA084c11cb55e67C9becf9607f1DBB20ec4D5E7b2"
       ],
       "Authorized_Caller_Names": [
-         "20230314-batch-relayer-v5/BalancerRelayer"
+         "20230314-batch-relayer-v5/BalancerRelayer",
+         "20231031-batch-relayer-v6/BalancerRelayer"
       ]
    },
    {
@@ -15,10 +17,12 @@
       "Contract": "Vault",
       "Deployment": "20210418-vault",
       "Authorized_Caller_Addresses": [
-         "0x03F1ab8b19bcE21EB06C364aEc9e40322572a1e9"
+         "0x03F1ab8b19bcE21EB06C364aEc9e40322572a1e9",
+         "0xA084c11cb55e67C9becf9607f1DBB20ec4D5E7b2"
       ],
       "Authorized_Caller_Names": [
-         "20230314-batch-relayer-v5/BalancerRelayer"
+         "20230314-batch-relayer-v5/BalancerRelayer",
+         "20231031-batch-relayer-v6/BalancerRelayer"
       ]
    },
    {
@@ -26,10 +30,12 @@
       "Contract": "Vault",
       "Deployment": "20210418-vault",
       "Authorized_Caller_Addresses": [
-         "0x03F1ab8b19bcE21EB06C364aEc9e40322572a1e9"
+         "0x03F1ab8b19bcE21EB06C364aEc9e40322572a1e9",
+         "0xA084c11cb55e67C9becf9607f1DBB20ec4D5E7b2"
       ],
       "Authorized_Caller_Names": [
-         "20230314-batch-relayer-v5/BalancerRelayer"
+         "20230314-batch-relayer-v5/BalancerRelayer",
+         "20231031-batch-relayer-v6/BalancerRelayer"
       ]
    },
    {
@@ -37,10 +43,12 @@
       "Contract": "Vault",
       "Deployment": "20210418-vault",
       "Authorized_Caller_Addresses": [
-         "0x03F1ab8b19bcE21EB06C364aEc9e40322572a1e9"
+         "0x03F1ab8b19bcE21EB06C364aEc9e40322572a1e9",
+         "0xA084c11cb55e67C9becf9607f1DBB20ec4D5E7b2"
       ],
       "Authorized_Caller_Names": [
-         "20230314-batch-relayer-v5/BalancerRelayer"
+         "20230314-batch-relayer-v5/BalancerRelayer",
+         "20231031-batch-relayer-v6/BalancerRelayer"
       ]
    },
    {
@@ -59,10 +67,12 @@
       "Contract": "Vault",
       "Deployment": "20210418-vault",
       "Authorized_Caller_Addresses": [
-         "0x03F1ab8b19bcE21EB06C364aEc9e40322572a1e9"
+         "0x03F1ab8b19bcE21EB06C364aEc9e40322572a1e9",
+         "0xA084c11cb55e67C9becf9607f1DBB20ec4D5E7b2"
       ],
       "Authorized_Caller_Names": [
-         "20230314-batch-relayer-v5/BalancerRelayer"
+         "20230314-batch-relayer-v5/BalancerRelayer",
+         "20231031-batch-relayer-v6/BalancerRelayer"
       ]
    },
    {
@@ -70,10 +80,12 @@
       "Contract": "Vault",
       "Deployment": "20210418-vault",
       "Authorized_Caller_Addresses": [
-         "0x03F1ab8b19bcE21EB06C364aEc9e40322572a1e9"
+         "0x03F1ab8b19bcE21EB06C364aEc9e40322572a1e9",
+         "0xA084c11cb55e67C9becf9607f1DBB20ec4D5E7b2"
       ],
       "Authorized_Caller_Names": [
-         "20230314-batch-relayer-v5/BalancerRelayer"
+         "20230314-batch-relayer-v5/BalancerRelayer",
+         "20231031-batch-relayer-v6/BalancerRelayer"
       ]
    },
    {
@@ -125,10 +137,12 @@
       "Contract": "ProtocolFeesWithdrawer",
       "Deployment": "20220517-protocol-fee-withdrawer",
       "Authorized_Caller_Addresses": [
-         "0x326A7778DB9B741Cb2acA0DE07b9402C7685dAc6"
+         "0x326A7778DB9B741Cb2acA0DE07b9402C7685dAc6",
+         "0x9e5D6427D2cdaDC68870197b099C2Df535Ec3c97"
       ],
       "Authorized_Caller_Names": [
-         "multisigs/fees"
+         "multisigs/fees",
+         "mimic/smartVaultV2"
       ]
    },
    {
@@ -283,7 +297,7 @@
    {
       "Fx": "add_reward(address,address)",
       "Contract": "ChildChainGauge",
-      "Deployment": "20230316-child-chain-gauge-factory-v2",
+      "Deployment": "20230316-avax-child-chain-gauge-factory-v2",
       "Authorized_Caller_Addresses": [
          "0x326A7778DB9B741Cb2acA0DE07b9402C7685dAc6"
       ],
@@ -294,7 +308,7 @@
    {
       "Fx": "add_reward(address,address)",
       "Contract": "ChildChainGauge",
-      "Deployment": "20230316-avax-child-chain-gauge-factory-v2",
+      "Deployment": "20230316-child-chain-gauge-factory-v2",
       "Authorized_Caller_Addresses": [
          "0x326A7778DB9B741Cb2acA0DE07b9402C7685dAc6"
       ],

@@ -7,13 +7,15 @@
          "0x466262c2a275aB106E54D95B5B04603e12b58cA1",
          "0x42E49B48573c725ee32d2579060Ed06894f97002",
          "0x5bf3B7c14b10f16939d63Bd679264A1Aa951B4D5",
-         "0x598ce0f1ab64B27256759ef99d883EE51138b9bd"
+         "0x598ce0f1ab64B27256759ef99d883EE51138b9bd",
+         "0x9B892E515D2Ab8869F17488d64B3b918731cc70d"
       ],
       "Authorized_Caller_Names": [
          "20211203-batch-relayer/BalancerRelayer",
          "20220720-batch-relayer-v3/BalancerRelayer",
          "20220916-batch-relayer-v4/BalancerRelayer",
-         "20230314-batch-relayer-v5/BalancerRelayer"
+         "20230314-batch-relayer-v5/BalancerRelayer",
+         "20231031-batch-relayer-v6/BalancerRelayer"
       ]
    },
    {
@@ -24,13 +26,15 @@
          "0x466262c2a275aB106E54D95B5B04603e12b58cA1",
          "0x42E49B48573c725ee32d2579060Ed06894f97002",
          "0x5bf3B7c14b10f16939d63Bd679264A1Aa951B4D5",
-         "0x598ce0f1ab64B27256759ef99d883EE51138b9bd"
+         "0x598ce0f1ab64B27256759ef99d883EE51138b9bd",
+         "0x9B892E515D2Ab8869F17488d64B3b918731cc70d"
       ],
       "Authorized_Caller_Names": [
          "20211203-batch-relayer/BalancerRelayer",
          "20220720-batch-relayer-v3/BalancerRelayer",
          "20220916-batch-relayer-v4/BalancerRelayer",
-         "20230314-batch-relayer-v5/BalancerRelayer"
+         "20230314-batch-relayer-v5/BalancerRelayer",
+         "20231031-batch-relayer-v6/BalancerRelayer"
       ]
    },
    {
@@ -41,13 +45,15 @@
          "0x466262c2a275aB106E54D95B5B04603e12b58cA1",
          "0x42E49B48573c725ee32d2579060Ed06894f97002",
          "0x5bf3B7c14b10f16939d63Bd679264A1Aa951B4D5",
-         "0x598ce0f1ab64B27256759ef99d883EE51138b9bd"
+         "0x598ce0f1ab64B27256759ef99d883EE51138b9bd",
+         "0x9B892E515D2Ab8869F17488d64B3b918731cc70d"
       ],
       "Authorized_Caller_Names": [
          "20211203-batch-relayer/BalancerRelayer",
          "20220720-batch-relayer-v3/BalancerRelayer",
          "20220916-batch-relayer-v4/BalancerRelayer",
-         "20230314-batch-relayer-v5/BalancerRelayer"
+         "20230314-batch-relayer-v5/BalancerRelayer",
+         "20231031-batch-relayer-v6/BalancerRelayer"
       ]
    },
    {
@@ -58,13 +64,15 @@
          "0x466262c2a275aB106E54D95B5B04603e12b58cA1",
          "0x42E49B48573c725ee32d2579060Ed06894f97002",
          "0x5bf3B7c14b10f16939d63Bd679264A1Aa951B4D5",
-         "0x598ce0f1ab64B27256759ef99d883EE51138b9bd"
+         "0x598ce0f1ab64B27256759ef99d883EE51138b9bd",
+         "0x9B892E515D2Ab8869F17488d64B3b918731cc70d"
       ],
       "Authorized_Caller_Names": [
          "20211203-batch-relayer/BalancerRelayer",
          "20220720-batch-relayer-v3/BalancerRelayer",
          "20220916-batch-relayer-v4/BalancerRelayer",
-         "20230314-batch-relayer-v5/BalancerRelayer"
+         "20230314-batch-relayer-v5/BalancerRelayer",
+         "20231031-batch-relayer-v6/BalancerRelayer"
       ]
    },
    {
@@ -75,13 +83,15 @@
          "0x466262c2a275aB106E54D95B5B04603e12b58cA1",
          "0x42E49B48573c725ee32d2579060Ed06894f97002",
          "0x5bf3B7c14b10f16939d63Bd679264A1Aa951B4D5",
-         "0x598ce0f1ab64B27256759ef99d883EE51138b9bd"
+         "0x598ce0f1ab64B27256759ef99d883EE51138b9bd",
+         "0x9B892E515D2Ab8869F17488d64B3b918731cc70d"
       ],
       "Authorized_Caller_Names": [
          "20211203-batch-relayer/BalancerRelayer",
          "20220720-batch-relayer-v3/BalancerRelayer",
          "20220916-batch-relayer-v4/BalancerRelayer",
-         "20230314-batch-relayer-v5/BalancerRelayer"
+         "20230314-batch-relayer-v5/BalancerRelayer",
+         "20231031-batch-relayer-v6/BalancerRelayer"
       ]
    },
    {
@@ -92,13 +102,15 @@
          "0x466262c2a275aB106E54D95B5B04603e12b58cA1",
          "0x42E49B48573c725ee32d2579060Ed06894f97002",
          "0x5bf3B7c14b10f16939d63Bd679264A1Aa951B4D5",
-         "0x598ce0f1ab64B27256759ef99d883EE51138b9bd"
+         "0x598ce0f1ab64B27256759ef99d883EE51138b9bd",
+         "0x9B892E515D2Ab8869F17488d64B3b918731cc70d"
       ],
       "Authorized_Caller_Names": [
          "20211203-batch-relayer/BalancerRelayer",
          "20220720-batch-relayer-v3/BalancerRelayer",
          "20220916-batch-relayer-v4/BalancerRelayer",
-         "20230314-batch-relayer-v5/BalancerRelayer"
+         "20230314-batch-relayer-v5/BalancerRelayer",
+         "20231031-batch-relayer-v6/BalancerRelayer"
       ]
    },
    {
