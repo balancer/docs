@@ -6,7 +6,10 @@ import { useWeb3ModalProvider } from '@web3modal/ethers/vue';
 import { useNetwork } from '../../providers/network';
 import { useController } from '../../utils/VotingEscrowController';
 import { useController as useTokenController } from '../../utils/TokenController';
+import { useController as useLensRewardController } from '../../utils/LensRewardController';
+import { useController as useRewardsDistributorController } from '../../utils/RewardsDistributionController';
 import LockModal from './LockModal.vue';
+import ClaimModal from './ClaimModal.vue';
 import WithdrawModal from './WithdrawModal.vue';
 import { ethers } from 'ethers';
 
@@ -24,7 +27,20 @@ const { allowance, approve } = useTokenController({
   network,
 });
 
+const { getUserClaimableRewardsAll } = useLensRewardController({
+  walletProvider,
+  network,
+  veSystem,
+});
+
+const { claimTokens } = useRewardsDistributorController({
+  walletProvider,
+  network,
+  veSystem,
+});
+
 const tokenAllowance = ref<number>(0);
+const claimableRewards = ref<{ [key: string]: bigint }>();
 
 const fetchAllowance = async (ve: VeSystem) => {
   const result = await allowance.value?.(ve.bptToken, ve.votingEscrow.address);
@@ -32,17 +48,54 @@ const fetchAllowance = async (ve: VeSystem) => {
   tokenAllowance.value = result ? parseFloat(ethers.formatEther(result)) : 0;
 };
 
+const fetchClaimableRewards = async () => {
+  const result = await getUserClaimableRewardsAll.value?.();
+
+  claimableRewards.value = result?.reduce(
+    (m, v) => ({ ...m, [v[0].toLowerCase()]: v[1] }),
+    {}
+  );
+};
+
 watch(veSystem, async ve => {
   if (!ve) return;
 
   await fetchAllowance(ve);
+  await fetchClaimableRewards();
+});
+
+const tokens = computed(() => {
+  if (!veSystem.value) return [];
+  if (!claimableRewards.value) return [];
+
+  const claimableAmounts = claimableRewards.value;
+
+  if (Object.keys(claimableAmounts).length === 0) return [];
+
+  return veSystem.value.rewardDistributor.rewardTokens.map(
+    ({ address, name, decimals }) => {
+      const claimableAmount = ethers.formatUnits(
+        claimableAmounts[address],
+        decimals
+      );
+
+      return {
+        token: name,
+        claimableAmount,
+        address,
+      };
+    }
+  );
 });
 
 const isLoadingLock = ref<boolean>(false);
 const isLoadingApprove = ref<boolean>(false);
 const isLoadingWithdraw = ref<boolean>(false);
+const isLoadingClaim = ref<boolean>(false);
+
 const isLockModalOpen = ref<boolean>(false);
 const isWithdrawModalOpen = ref<boolean>(false);
+const isClaimModalOpen = ref<boolean>(false);
 
 const handleLockModalClose = () => {
   isLockModalOpen.value = false;
@@ -58,6 +111,35 @@ const handleWithdrawModalClose = () => {
 
 const handleWithdrawModalOpen = () => {
   isWithdrawModalOpen.value = true;
+};
+
+const handleClaimModalClose = () => {
+  isClaimModalOpen.value = false;
+};
+
+const handleClaimModalOpen = () => {
+  isClaimModalOpen.value = true;
+};
+
+const handleClaim = async (tokens: string[]) => {
+  await claimTokens.value?.(tokens, {
+    onPrompt: () => {
+      console.log('onPrompt');
+      isClaimModalOpen.value = false;
+    },
+    onSubmitted: ({ tx }) => {
+      console.log('onSubmitted', tx);
+      isLoadingClaim.value = true;
+    },
+    onSuccess: async ({ receipt }) => {
+      console.log('onSuccess', receipt);
+      isLoadingClaim.value = false;
+    },
+    onError: err => {
+      console.log('err', err);
+      isLoadingClaim.value = false;
+    },
+  });
 };
 
 const handleWithdraw = async () => {
@@ -230,7 +312,19 @@ const formFields = computed(() => {
           </button>
         </div>
         <div>
-          <button class="btn">Claim</button>
+          <ClaimModal
+            :open="isClaimModalOpen"
+            :tokens="tokens"
+            :onClose="handleClaimModalClose"
+            :onSubmit="handleClaim"
+          />
+          <button
+            class="btn"
+            :disabled="isLoadingClaim"
+            @click="handleClaimModalOpen"
+          >
+            {{ isLoadingClaim ? 'Claiming...' : 'Claim' }}
+          </button>
         </div>
       </article>
     </section>
