@@ -64,7 +64,7 @@ const showConfig = async (id: string) => {
           :totalValueVested="
             ethers.formatEther(token.votingEscrow.lockedAmount)
           "
-          :availableTokensForRewards="token.rewardDistributor.rewardNames || []"
+          :availableTokensForRewards="token.rewardDistributor.rewardTokens.map(rt => rt.name) || []"
         />
         <div class="group-buttons">
           <button class="btn-config" @click="showConfig(token.id)">

@@ -6,10 +6,17 @@ import {
 } from '@apollo/client/core/index';
 import { ethers, BigNumberish } from 'ethers';
 
+type RewardToken = {
+  id: string;
+  address: string;
+  name: string;
+  symbol: string;
+  decimals: string;
+};
+
 type RewardDistributor = {
   id: string;
-  rewardTokens: string[];
-  rewardNames: string[];
+  rewardTokens: RewardToken[];
   rewardStartTime: BigNumberish;
 };
 
@@ -102,8 +109,13 @@ export class LaunchpadSubgraph {
           rewardFaucetAddress
           rewardDistributor {
             id
-            rewardTokens
-            rewardNames
+            rewardTokens {
+              id
+              name
+              address
+              symbol
+              decimals
+            }
           }
         }
       }
@@ -137,8 +149,13 @@ export class LaunchpadSubgraph {
           rewardFaucetAddress
           rewardDistributor {
             id
-            rewardTokens
-            rewardNames
+            rewardTokens {
+              id
+              name
+              address
+              symbol
+              decimals
+            }
           }
         }
       }
@@ -170,8 +187,13 @@ export class LaunchpadSubgraph {
           rewardDistributorAddress
           rewardDistributor {
             id
-            rewardTokens
-            rewardNames
+            rewardTokens {
+              id
+              name
+              address
+              symbol
+              decimals
+            }
             rewardStartTime
           }
         }

@@ -6,6 +6,7 @@ import { useController } from '../../../utils/RewardsDistributionController';
 import { useVeSystem } from '../../../providers/veSystem';
 import { ethers, toBigInt } from 'ethers';
 import Selector from './Selector.vue';
+import { getSelectorTokenItems } from '../../../utils';
 
 const { walletProvider } = useWeb3ModalProvider();
 const { selected: veSystem } = useVeSystem();
@@ -111,10 +112,7 @@ const handleApprove = async () => {
 const tokens = computed<[string, string][]>(() => {
   if (veSystem.value === undefined) return [];
 
-  const addresses = veSystem.value.rewardDistributor.rewardTokens;
-  const names = veSystem.value.rewardDistributor.rewardNames;
-
-  return addresses.map((address, index) => [address, names[index]]);
+  return getSelectorTokenItems(veSystem.value);
 });
 </script>
 

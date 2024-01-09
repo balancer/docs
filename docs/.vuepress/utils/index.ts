@@ -1,3 +1,5 @@
+import { VeSystem } from './LaunchpadSubgraph';
+
 export function filterToken(searchValue, token) {
   return (
     token.address.toLowerCase().includes(searchValue.toLowerCase()) ||
@@ -23,6 +25,15 @@ export const secondsToDate = (seconds: number) => {
 
 export const dateToSeconds = (d: Date) => {
   return d.getTime() / 1000;
+};
+
+export const getSelectorTokenItems = (
+  veSystem: VeSystem
+): [string, string][] => {
+  return veSystem.rewardDistributor.rewardTokens.map(rt => [
+    rt.address,
+    rt.name,
+  ]);
 };
 
 export * from './LaunchpadSubgraph';

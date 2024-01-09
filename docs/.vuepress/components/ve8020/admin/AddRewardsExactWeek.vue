@@ -6,7 +6,7 @@ import { useNetwork } from '../../../providers/network';
 import { useController } from '../../../utils/RewardFaucetController';
 import { useVeSystem } from '../../../providers/veSystem';
 import { toBigInt, ethers } from 'ethers';
-import { weeksToSeconds } from '../../../utils';
+import { getSelectorTokenItems, weeksToSeconds } from '../../../utils';
 
 const { walletProvider } = useWeb3ModalProvider();
 const { selected: veSystem } = useVeSystem();
@@ -116,10 +116,7 @@ const handleApprove = async () => {
 const tokens = computed<[string, string][]>(() => {
   if (veSystem.value === undefined) return [];
 
-  const addresses = veSystem.value.rewardDistributor.rewardTokens;
-  const names = veSystem.value.rewardDistributor.rewardNames;
-
-  return addresses.map((address, index) => [address, names[index]]);
+  return getSelectorTokenItems(veSystem.value);
 });
 </script>
 

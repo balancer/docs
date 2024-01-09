@@ -35,7 +35,7 @@ const showRewards = async (id: string) => {
             ethers.formatEther(veSystem.votingEscrow.lockedAmount)
           "
           :availableTokensForRewards="
-            veSystem.rewardDistributor.rewardNames || []
+            veSystem.rewardDistributor.rewardTokens.map(rt => rt.name) || []
           "
         />
         <div class="group-buttons">
