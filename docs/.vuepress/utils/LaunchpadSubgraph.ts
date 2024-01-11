@@ -26,7 +26,8 @@ type VotingEscrow = {
   address: string;
   name: string;
   symbol: string;
-  lockedAmount: BigNumberish;
+  lockedAmount: string;
+  decimals: string;
 };
 
 export type VeSystem = {
@@ -40,43 +41,26 @@ export type VeSystem = {
   admin: string;
 };
 
-type RawVotingEscrow = {
-  id: string;
-  address: string;
-  name: string;
-  symbol: string;
-  lockedAmount: string;
-};
-
-type RawVeSystem = {
-  id: string;
-  bptToken: string;
-  bptTokenName: string;
-  votingEscrow: RawVotingEscrow;
-  rewardDistributor: RewardDistributor;
-  rewardDistributorAddress: string;
-  rewardFaucetAddress: string;
-  admin: string;
-};
-
 type GetVeSystemsResponse = {
   data: {
-    vesystems: RawVeSystem[];
+    vesystems: VeSystem[];
   };
 };
 
 type GetVeSystemResponse = {
   data: {
-    vesystem: RawVeSystem;
+    vesystem: VeSystem;
   };
 };
 
-const format = (vesystem: RawVeSystem): VeSystem => ({
+const format = (vesystem: VeSystem): VeSystem => ({
   ...vesystem,
   votingEscrow: {
     ...vesystem.votingEscrow,
-    // TODO: lockedAmount: ethers.parseUnits(vesystem.votingEscrow.lockedAmount, vesystem.votingEscrow.decimals),
-    lockedAmount: ethers.parseEther(vesystem.votingEscrow.lockedAmount),
+    lockedAmount: ethers.formatUnits(
+      vesystem.votingEscrow.lockedAmount,
+      vesystem.votingEscrow.decimals
+    ),
   },
 });
 

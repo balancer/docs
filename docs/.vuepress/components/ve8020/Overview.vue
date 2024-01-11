@@ -1,5 +1,4 @@
 <script setup lang="ts">
-import { ethers } from 'ethers';
 import { useVeSystem } from '../../providers/veSystem';
 import TokenCard from './TokenCard.vue';
 import { onBeforeMount, ref } from 'vue';
@@ -61,10 +60,10 @@ const showConfig = async (id: string) => {
         <TokenCard
           :name="token.id"
           :vestedToken="token.bptTokenName"
-          :totalValueVested="
-            ethers.formatEther(token.votingEscrow.lockedAmount)
+          :totalValueVested="token.votingEscrow.lockedAmount"
+          :availableTokensForRewards="
+            token.rewardDistributor.rewardTokens.map(rt => rt.name) || []
           "
-          :availableTokensForRewards="token.rewardDistributor.rewardTokens.map(rt => rt.name) || []"
         />
         <div class="group-buttons">
           <button class="btn-config" @click="showConfig(token.id)">

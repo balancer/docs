@@ -18,6 +18,7 @@ const { tokenAllowance, approveToken, depositExactWeek } = useController({
 });
 
 const token = ref<string>('');
+const decimals = ref<string>('');
 const amountInput = ref<string>('');
 const weekInput = ref<string>('');
 const allowance = ref<bigint>(toBigInt(0));
@@ -26,7 +27,7 @@ const isLoading = ref<boolean>(false);
 const amount = computed<bigint>(() => {
   if (amountInput.value === '') return toBigInt(0);
 
-  return ethers.parseEther(amountInput.value.toString());
+  return ethers.parseUnits(amountInput.value.toString(), decimals.value);
 });
 
 const week = computed<bigint>(() => {
@@ -57,6 +58,21 @@ watch(token, async value => {
 
   await fetchAllowance();
 });
+
+// set token address and decimals
+const handleSelectToken = (address: string) => {
+  if (!veSystem.value) return;
+
+  const rewardToken = veSystem.value.rewardDistributor.rewardTokens.find(
+    rt => rt.address === address
+  );
+
+  if (!rewardToken) return;
+
+  token.value = address;
+
+  decimals.value = rewardToken.decimals;
+};
 
 const handleSubmit = async () => {
   await depositExactWeek.value?.(
@@ -128,7 +144,7 @@ const tokens = computed<[string, string][]>(() => {
         :items="tokens"
         :selected="token"
         prompt="Select Token"
-        :onChange="value => (token = value)"
+        :onChange="handleSelectToken"
       />
       <input
         v-model="amountInput"

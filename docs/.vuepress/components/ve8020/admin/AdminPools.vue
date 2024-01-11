@@ -2,7 +2,6 @@
 import { onBeforeMount } from 'vue';
 import { useVeSystem } from '../../../providers/veSystem';
 import { useTabs, Tab } from '../../../providers/tabs';
-import { ethers } from 'ethers';
 import TokenCard from '../TokenCard.vue';
 
 const { data: veSystems, fetch, select, isLoading } = useVeSystem();
@@ -31,9 +30,7 @@ const showRewards = async (id: string) => {
         <TokenCard
           :name="veSystem.id"
           :vestedToken="veSystem.bptTokenName"
-          :totalValueVested="
-            ethers.formatEther(veSystem.votingEscrow.lockedAmount)
-          "
+          :totalValueVested="veSystem.votingEscrow.lockedAmount"
           :availableTokensForRewards="
             veSystem.rewardDistributor.rewardTokens.map(rt => rt.name) || []
           "

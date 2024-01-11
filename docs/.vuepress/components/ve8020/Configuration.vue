@@ -166,10 +166,12 @@ const handleWithdraw = async () => {
 const handleApprove = async (amount: number) => {
   if (!veSystem.value) return;
 
+  const decimals = veSystem.value.votingEscrow.decimals;
+
   await approve.value?.(
     {
       token: veSystem.value.bptToken,
-      amount: ethers.parseEther(amount.toString()),
+      amount: ethers.parseUnits(amount.toString(), decimals),
       spender: veSystem.value.votingEscrow.address,
     },
     {
@@ -194,11 +196,13 @@ const handleApprove = async (amount: number) => {
 };
 
 const handleLock = async (amount: number, lockTime: number) => {
-  console.log('create lock', amount, lockTime);
+  if (!veSystem.value) return;
+
+  const decimals = veSystem.value?.votingEscrow.decimals;
 
   await createLock.value?.(
     {
-      value: ethers.parseEther(amount.toString()),
+      value: ethers.parseUnits(amount.toString(), decimals),
       lockTime: ethers.toBigInt(lockTime),
     },
     {
