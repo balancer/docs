@@ -3,7 +3,7 @@ import { defineProps } from 'vue';
 
 type RewardDistributionType = {
   token: string;
-  amount: number;
+  amount: string;
 };
 
 type ModalPropsType = {

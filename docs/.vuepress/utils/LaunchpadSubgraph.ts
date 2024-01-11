@@ -12,6 +12,7 @@ type RewardToken = {
   name: string;
   symbol: string;
   decimals: string;
+  availableRewardAmount: string;
 };
 
 type RewardDistributor = {
@@ -115,6 +116,7 @@ export class LaunchpadSubgraph {
               address
               symbol
               decimals
+              availableRewardAmount
             }
           }
         }
@@ -155,6 +157,7 @@ export class LaunchpadSubgraph {
               address
               symbol
               decimals
+              availableRewardAmount
             }
           }
         }
@@ -193,6 +196,7 @@ export class LaunchpadSubgraph {
               address
               symbol
               decimals
+              availableRewardAmount
             }
             rewardStartTime
           }

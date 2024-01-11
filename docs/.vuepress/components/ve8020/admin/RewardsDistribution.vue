@@ -3,8 +3,12 @@ import SetAvailableRewardsForm from './SetAvailableRewardsForm.vue';
 import AddRewardsCurrentWeek from './AddRewardsCurrentWeek.vue';
 import AddRewardsNWeeks from './AddRewardsNWeeks.vue';
 import AddRewardsExactWeek from './AddRewardsExactWeek.vue';
-import { ref } from 'vue';
+import { ref, computed } from 'vue';
 import AvailableRewardsModal from './AvailableRewardsModal.vue';
+import { useVeSystem } from '../../../providers/veSystem';
+import { ethers } from 'ethers';
+
+const { selected: veSystem } = useVeSystem();
 
 const isModalOpen = ref<boolean>(false);
 
@@ -16,7 +20,14 @@ const handleOpenAvailableRewardsModal = () => {
   isModalOpen.value = true;
 };
 
-const data = [{ token: 'tk1', amount: 100 }];
+const availableRewards = computed(() => {
+  if (!veSystem.value) return [];
+
+  return veSystem.value.rewardDistributor.rewardTokens.map(rt => ({
+    token: rt.name,
+    amount: ethers.formatUnits(rt.availableRewardAmount || '0', rt.decimals),
+  }));
+});
 </script>
 
 <template>
@@ -34,7 +45,7 @@ const data = [{ token: 'tk1', amount: 100 }];
   <AvailableRewardsModal
     :open="isModalOpen"
     :onClose="handleCloseAvailableRewardsModal"
-    :rewards="data"
+    :rewards="availableRewards"
   >
   </AvailableRewardsModal>
 </template>
