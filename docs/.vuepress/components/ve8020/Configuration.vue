@@ -233,6 +233,10 @@ const formFields = computed(() => {
       ).toLocaleDateString()
     : '';
 
+  const supplyVested = veSystem.value
+    ? parseFloat(veSystem.value.votingEscrow.supplyVestedPercent) * 100
+    : 0;
+
   return [
     {
       label: 'Underlying 8020 BPT address',
@@ -262,7 +266,7 @@ const formFields = computed(() => {
       label: 'Supply % vested',
       placeholder: '37%',
       name: 'supplyVested',
-      value: '',
+      value: supplyVested.toString().concat('%'),
     },
   ];
 });

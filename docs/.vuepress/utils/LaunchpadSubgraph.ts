@@ -28,6 +28,7 @@ type VotingEscrow = {
   symbol: string;
   lockedAmount: string;
   decimals: string;
+  supplyVestedPercent: string;
 };
 
 export type VeSystem = {
@@ -89,6 +90,7 @@ export class LaunchpadSubgraph {
             name
             symbol
             lockedAmount
+            supplyVestedPercent
           }
           rewardDistributorAddress
           rewardFaucetAddress
@@ -130,6 +132,7 @@ export class LaunchpadSubgraph {
             name
             symbol
             lockedAmount
+            supplyVestedPercent
           }
           rewardDistributorAddress
           rewardFaucetAddress
@@ -169,6 +172,7 @@ export class LaunchpadSubgraph {
             name
             symbol
             lockedAmount
+            supplyVestedPercent
           }
           rewardFaucetAddress
           rewardDistributorAddress
