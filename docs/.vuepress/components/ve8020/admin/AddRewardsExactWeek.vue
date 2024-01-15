@@ -6,7 +6,7 @@ import { useNetwork } from '../../../providers/network';
 import { useController } from '../../../utils/RewardFaucetController';
 import { useVeSystem } from '../../../providers/veSystem';
 import { toBigInt, ethers } from 'ethers';
-import { getSelectorTokenItems, weeksToSeconds } from '../../../utils';
+import { dateToSeconds, getSelectorTokenItems } from '../../../utils';
 
 const { walletProvider } = useWeb3ModalProvider();
 const { selected: veSystem } = useVeSystem();
@@ -33,7 +33,9 @@ const amount = computed<bigint>(() => {
 const week = computed<bigint>(() => {
   if (weekInput.value === '') return toBigInt(0);
 
-  return toBigInt(weeksToSeconds(parseInt(weekInput.value)));
+  const d = new Date(weekInput.value);
+
+  return toBigInt(dateToSeconds(d));
 });
 
 const isAllowanceEnough = computed<boolean>(
@@ -154,12 +156,7 @@ const tokens = computed<[string, string][]>(() => {
       />
       <div class="input-group calendar-container">
         <p class="title-input">calendar</p>
-        <input
-          v-model="weekInput"
-          placeholder="2023/30/11"
-          type="date"
-          class="input"
-        />
+        <input v-model="weekInput" type="date" class="input" />
       </div>
       <button
         v-show="!showApprove"
