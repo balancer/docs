@@ -233,7 +233,7 @@ input[type='number'] {
 }
 
 .submit-button {
-  min-width: 60px;
+  min-width: 75px;
   height: 45px;
   background-color: #eaf0f6;
   border-radius: 6px;
