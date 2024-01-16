@@ -1,7 +1,7 @@
 import { Network } from '@balancer-labs/sdk';
 
 export interface NetworkConfig {
-  id: Network | 80001;
+  id: Network | 80001 | 1101;
   name: string;
   logo: string;
   explorer: string;
@@ -23,13 +23,13 @@ export const NETWORKS: NetworkConfig[] = [
     explorer: 'https://polygonscan.com',
     rpcUrl: 'https://polygon.llamarpc.com',
   },
-  // {
-  //   id: 1101,
-  //   name: 'Polygon zkEVM',
-  //   logo: 'https://app.balancer.fi/assets/zkevm-e64465b0.svg',
-  //   explorer: 'https://zkevm.polygonscan.com',
-  //   rpcUrl: 'https://rpc.ankr.com/polygon_zkevm',
-  // },
+  {
+    id: 1101,
+    name: 'Polygon zkEVM',
+    logo: 'https://app.balancer.fi/assets/zkevm-e64465b0.svg',
+    explorer: 'https://zkevm.polygonscan.com',
+    rpcUrl: 'https://rpc.ankr.com/polygon_zkevm',
+  },
   {
     id: 42161,
     name: 'Arbitrum',
