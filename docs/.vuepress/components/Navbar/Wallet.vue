@@ -33,6 +33,12 @@ createWeb3Modal({
   optionalChains: [80001],
   projectId,
   // defaultChain: chains[0],
+  themeVariables: {
+    '--w3m-accent': '#0EA5E9',
+    '--w3m-color-mix': '#000000',
+    '--w3m-color-mix-strength': 40,
+    '--wui-font-family': 'red',
+  },
 });
 
 const { chainId } = useWeb3ModalAccount();
@@ -48,6 +54,24 @@ onMounted(() => {
 </script>
 
 <template>
-  <w3m-button />
-  <w3m-network-button />
+  <div class="btn-connect">
+    <w3m-button />
+  </div>
+  <div class="network-selector">
+    <w3m-network-button />
+  </div>
 </template>
+
+<style scoped>
+.network-selector,
+.btn-connect {
+  margin-left: 5px;
+  background: #eaf0f6;
+  border-radius: 20px;
+}
+
+.dark .btn-connect,
+.dark .network-selector {
+  background: #1e293b;
+}
+</style>
