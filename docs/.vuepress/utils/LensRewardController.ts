@@ -2,6 +2,7 @@ import { ethers, BrowserProvider } from 'ethers';
 import { Ref, watch, ref } from 'vue';
 import { NetworkConfig } from '../constants/networks';
 import { VeSystem } from './LaunchpadSubgraph';
+import { CONFIG } from '../constants/config';
 
 export type ClaimableReward = [string, bigint];
 
@@ -16,8 +17,6 @@ type UseControllerReturnType = {
 const ABI = [
   'function getUserClaimableRewardsAll(address distributor, address user, address[] calldata tokens) external returns ((address,uint256)[])',
 ];
-
-const contractAddress = '0x4Eb9fdCe38e29D7b6aD61F9697A3B5E4f080E3F4';
 
 export const useController = ({
   walletProvider,
@@ -58,7 +57,16 @@ export const useController = ({
 
       const user = await signer.getAddress();
 
-      const contract = new ethers.Contract(contractAddress, ABI, provider);
+      const LENS_REWARD_CONTRACT = CONFIG.get(
+        network.value.id
+      )?.LENS_REWARD_CONTRACT;
+
+      if (!LENS_REWARD_CONTRACT) {
+        console.error('missing LensReward contract address');
+        return [];
+      }
+
+      const contract = new ethers.Contract(LENS_REWARD_CONTRACT, ABI, provider);
 
       return await contract.getUserClaimableRewardsAll.staticCall(
         distributor,

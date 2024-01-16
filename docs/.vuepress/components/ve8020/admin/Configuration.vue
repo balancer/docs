@@ -1,7 +1,7 @@
 <script setup lang="ts">
 import { computed, ref, watch } from 'vue';
 import { useVeSystem } from '../../../providers/veSystem';
-import { CONTRACT_ADDRESS } from '../../../utils/LaunchpadController';
+import { CONFIG } from '../../../constants/config';
 import { secondsToDate } from '../../../utils';
 import UnlockAllModal from './UnlockAllModal.vue';
 import EarlyUnlockModal from './EarlyUnlockModal.vue';
@@ -187,7 +187,7 @@ const formFields = computed(() => {
       label: 'Launchpad Address',
       placeholder: '0x67c3...9a65c',
       name: 'factoryUsed',
-      value: CONTRACT_ADDRESS,
+      value: CONFIG.get(network.value.id)?.LAUNCHPAD_CONTRACT,
     },
     {
       label: 'Rewards Distribution Address',
