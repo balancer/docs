@@ -1,6 +1,7 @@
 import { ethers, BrowserProvider } from 'ethers';
 import { Ref, watch, ref } from 'vue';
 import { NetworkConfig } from '../constants/networks';
+import { CONFIG } from '../constants/config';
 
 type DeployParamsType = {
   tokenBptAddr: string;
@@ -31,8 +32,6 @@ type DeployFunctionType = (
 type UseControllerReturnType = {
   deploy: Ref<DeployFunctionType | undefined>;
 };
-
-export const CONTRACT_ADDRESS = '0x4d1eC62d448853Ae53B48F78ec4FC7B26e819783';
 
 const ABI = [
   'function deploy(address tokenBptAddr,string name,string symbol,uint256 maxLockTime,uint256 rewardDistributorStartTime,address admin_unlock_all,address admin_early_unlock) external returns (address,address,address)',
@@ -82,6 +81,7 @@ export const useController = ({
       callbacks: CallbackOptionsType
     ): Promise<void> => {
       if (!walletProvider.value) return;
+      if (!network.value) return;
 
       const provider = new BrowserProvider(
         walletProvider.value,
@@ -89,7 +89,17 @@ export const useController = ({
       );
       const signer = await provider.getSigner();
       const admin = await signer.getAddress();
-      const contract = new ethers.Contract(CONTRACT_ADDRESS, ABI, signer);
+
+      const LAUNCHPAD_CONTRACT = CONFIG.get(
+        network.value.id
+      )?.LAUNCHPAD_CONTRACT;
+
+      if (!LAUNCHPAD_CONTRACT) {
+        console.error('missing Launchpad contract address');
+        return;
+      }
+
+      const contract = new ethers.Contract(LAUNCHPAD_CONTRACT, ABI, signer);
       const {
         tokenBptAddr,
         name,
