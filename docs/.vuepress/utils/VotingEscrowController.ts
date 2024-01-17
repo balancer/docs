@@ -35,6 +35,17 @@ type SetEarlyUnlockPenaltyFunctionType = (
 ) => Promise<void>;
 
 type GetEarlyUnlockPenaltyFunctionType = () => Promise<bigint>;
+type GetLockedFunctionType = () => Promise<[bigint, bigint]>;
+
+type IncreaseLockAmountFuctionType = (
+  amount: bigint,
+  callbacks: CallbackOptionsType
+) => Promise<void>;
+
+type IncreaseLockTimeFuctionType = (
+  unlockTime: bigint,
+  callbacks: CallbackOptionsType
+) => Promise<void>;
 
 type UseControllerReturnType = {
   setAllUnlock: Ref<SetAllUnlockFunctionType | undefined>;
@@ -45,6 +56,10 @@ type UseControllerReturnType = {
   getEarlyUnlockPenalty: Ref<GetEarlyUnlockPenaltyFunctionType | undefined>;
   createLock: Ref<CreateLockFunctionType | undefined>;
   withdraw: Ref<WithdrawFunctionType | undefined>;
+  getLocked: Ref<GetLockedFunctionType | undefined>;
+  withdrawEarly: Ref<WithdrawFunctionType | undefined>;
+  increaseLockAmount: Ref<IncreaseLockAmountFuctionType | undefined>;
+  increaseLockTime: Ref<IncreaseLockTimeFuctionType | undefined>;
 };
 
 const ABI = [
@@ -56,6 +71,10 @@ const ABI = [
   'function penalty_k() view external returns (uint256)',
   'function create_lock(uint256 _value, uint256 _unlock_time) external',
   'function withdraw() external',
+  'function locked(address _owner) view external returns (uint256, uint256)',
+  'function withdraw_early() external',
+  'function increase_amount(uint256 _amount) external',
+  'function increase_unlock_time(uint256 _unlock_time) external',
 ];
 
 export const useController = ({
@@ -83,6 +102,10 @@ export const useController = ({
   const getEarlyUnlockPenalty = ref<GetEarlyUnlockPenaltyFunctionType>();
   const createLock = ref<CreateLockFunctionType>();
   const withdraw = ref<WithdrawFunctionType>();
+  const withdrawEarly = ref<WithdrawFunctionType>();
+  const getLocked = ref<GetLockedFunctionType>();
+  const increaseLockAmount = ref<IncreaseLockAmountFuctionType>();
+  const increaseLockTime = ref<IncreaseLockTimeFuctionType>();
 
   const initialize = () => {
     setAllUnlock.value = async (
@@ -237,6 +260,89 @@ export const useController = ({
 
       await submitAction(async () => await contract.withdraw(), callbacks);
     };
+
+    withdrawEarly.value = async (
+      callbacks: CallbackOptionsType
+    ): Promise<void> => {
+      if (!walletProvider.value) return;
+      if (!veSystem.value) return;
+
+      const contractAddress = veSystem.value.votingEscrow.address;
+
+      const provider = new BrowserProvider(
+        walletProvider.value,
+        network.value.id
+      );
+      const signer = await provider.getSigner();
+      const contract = new ethers.Contract(contractAddress, ABI, signer);
+
+      await submitAction(
+        async () => await contract.withdraw_early(),
+        callbacks
+      );
+    };
+
+    getLocked.value = async (): Promise<[bigint, bigint]> => {
+      if (!walletProvider.value) return [toBigInt(0), toBigInt(0)];
+      if (!veSystem.value) return [toBigInt(0), toBigInt(0)];
+
+      const contractAddress = veSystem.value.votingEscrow.address;
+
+      const provider = new BrowserProvider(
+        walletProvider.value,
+        network.value.id
+      );
+      const signer = await provider.getSigner();
+      const contract = new ethers.Contract(contractAddress, ABI, signer);
+
+      const owner = await signer.getAddress();
+
+      return await contract.locked(owner);
+    };
+
+    increaseLockAmount.value = async (
+      amount: bigint,
+      callbacks: CallbackOptionsType
+    ): Promise<void> => {
+      if (!walletProvider.value) return;
+      if (!veSystem.value) return;
+
+      const contractAddress = veSystem.value.votingEscrow.address;
+
+      const provider = new BrowserProvider(
+        walletProvider.value,
+        network.value.id
+      );
+      const signer = await provider.getSigner();
+      const contract = new ethers.Contract(contractAddress, ABI, signer);
+
+      await submitAction(
+        async () => await contract.increase_amount(amount),
+        callbacks
+      );
+    };
+
+    increaseLockTime.value = async (
+      unlockTime: bigint,
+      callbacks: CallbackOptionsType
+    ): Promise<void> => {
+      if (!walletProvider.value) return;
+      if (!veSystem.value) return;
+
+      const contractAddress = veSystem.value.votingEscrow.address;
+
+      const provider = new BrowserProvider(
+        walletProvider.value,
+        network.value.id
+      );
+      const signer = await provider.getSigner();
+      const contract = new ethers.Contract(contractAddress, ABI, signer);
+
+      await submitAction(
+        async () => await contract.increase_unlock_time(unlockTime),
+        callbacks
+      );
+    };
   };
 
   watch([network], initialize);
@@ -250,5 +356,9 @@ export const useController = ({
     getEarlyUnlockPenalty,
     createLock,
     withdraw,
+    getLocked,
+    withdrawEarly,
+    increaseLockAmount,
+    increaseLockTime,
   };
 };

@@ -9,6 +9,7 @@ import { useController as useTokenController } from '../../utils/TokenController
 import { useController as useLensRewardController } from '../../utils/LensRewardController';
 import { useController as useRewardsDistributorController } from '../../utils/RewardsDistributionController';
 import LockModal from './LockModal.vue';
+import IncreaseLockModal from './IncreaseLockModal.vue';
 import ClaimModal from './ClaimModal.vue';
 import WithdrawModal from './WithdrawModal.vue';
 import { ethers } from 'ethers';
@@ -16,7 +17,15 @@ import { ethers } from 'ethers';
 const { walletProvider } = useWeb3ModalProvider();
 const { network } = useNetwork();
 const { selected: veSystem } = useVeSystem();
-const { createLock, withdraw } = useController({
+const {
+  createLock,
+  withdraw,
+  getLocked,
+  earlyUnlock: getEarlyUnlock,
+  withdrawEarly,
+  increaseLockAmount,
+  increaseLockTime,
+} = useController({
   walletProvider,
   network,
   veSystem,
@@ -39,6 +48,10 @@ const { claimTokens } = useRewardsDistributorController({
   veSystem,
 });
 
+const lockAmount = ref<bigint>(ethers.toBigInt(0));
+const lockEndTime = ref<bigint>(ethers.toBigInt(0));
+const earlyUnlock = ref<boolean>(false);
+
 const tokenAllowance = ref<number>(0);
 const claimableRewards = ref<{ [key: string]: bigint }>();
 
@@ -57,11 +70,40 @@ const fetchClaimableRewards = async () => {
   );
 };
 
+const fetchLocked = async () => {
+  const result = await getLocked.value?.();
+
+  if (result === undefined) return;
+
+  const [_lockAmount, _lockEndTime] = result;
+
+  lockAmount.value = _lockAmount;
+  lockEndTime.value = _lockEndTime;
+
+  console.log('lockAmount', _lockAmount);
+  console.log('lockEndTime', _lockEndTime);
+};
+
+const fetchEarlyUnlock = async () => {
+  const result = await getEarlyUnlock.value?.();
+
+  if (result === undefined) return;
+
+  earlyUnlock.value = result;
+};
+
 watch(veSystem, async ve => {
   if (!ve) return;
 
   await fetchAllowance(ve);
   await fetchClaimableRewards();
+  await fetchLocked();
+  await fetchEarlyUnlock();
+});
+
+const currentTimeInSeconds = computed(() => {
+  const d = new Date();
+  return d.getTime() / 1000;
 });
 
 const tokens = computed(() => {
@@ -94,8 +136,26 @@ const isLoadingWithdraw = ref<boolean>(false);
 const isLoadingClaim = ref<boolean>(false);
 
 const isLockModalOpen = ref<boolean>(false);
+const isIncreaseLockModalOpen = ref<boolean>(false);
 const isWithdrawModalOpen = ref<boolean>(false);
+const isEarlyWithdrawModalOpen = ref<boolean>(false);
 const isClaimModalOpen = ref<boolean>(false);
+
+const handleEarlyWithdrawModalClose = () => {
+  isEarlyWithdrawModalOpen.value = false;
+};
+
+const handleEarlyWithdrawModalOpen = () => {
+  isEarlyWithdrawModalOpen.value = true;
+};
+
+const handleIncreaseLockModalClose = () => {
+  isIncreaseLockModalOpen.value = false;
+};
+
+const handleIncreaseLockModalOpen = () => {
+  isIncreaseLockModalOpen.value = true;
+};
 
 const handleLockModalClose = () => {
   isLockModalOpen.value = false;
@@ -226,6 +286,81 @@ const handleLock = async (amount: number, lockTime: number) => {
   );
 };
 
+const handleIncreaseLock = async (amount: number) => {
+  console.log('increase', amount);
+  if (!veSystem.value) return;
+
+  const decimals = veSystem.value?.votingEscrow.decimals;
+
+  await increaseLockAmount.value?.(
+    ethers.parseUnits(amount.toString(), decimals),
+    {
+      onPrompt: () => {
+        console.log('onPrompt');
+        isIncreaseLockModalOpen.value = false;
+      },
+      onSubmitted: ({ tx }) => {
+        console.log('onSubmitted', tx);
+        isLoadingLock.value = true;
+      },
+      onSuccess: async ({ receipt }) => {
+        console.log('onSuccess', receipt);
+        isLoadingLock.value = false;
+      },
+      onError: err => {
+        console.log('err', err);
+        isLoadingLock.value = false;
+      },
+    }
+  );
+};
+
+const handleIncreaseReleaseTime = async (releaseTime: number) => {
+  console.log('releaseTime', releaseTime);
+  if (!veSystem.value) return;
+
+  await increaseLockTime.value?.(ethers.toBigInt(releaseTime), {
+    onPrompt: () => {
+      console.log('onPrompt');
+      isIncreaseLockModalOpen.value = false;
+    },
+    onSubmitted: ({ tx }) => {
+      console.log('onSubmitted', tx);
+      isLoadingLock.value = true;
+    },
+    onSuccess: async ({ receipt }) => {
+      console.log('onSuccess', receipt);
+      isLoadingLock.value = false;
+    },
+    onError: err => {
+      console.log('err', err);
+      isLoadingLock.value = false;
+    },
+  });
+};
+
+const handleEarlyWithdraw = async () => {
+  console.log('early withdraw');
+  await withdrawEarly.value?.({
+    onPrompt: () => {
+      console.log('onPrompt');
+      isEarlyWithdrawModalOpen.value = false;
+    },
+    onSubmitted: ({ tx }) => {
+      console.log('onSubmitted', tx);
+      isLoadingWithdraw.value = true;
+    },
+    onSuccess: async ({ receipt }) => {
+      console.log('onSuccess', receipt);
+      isLoadingWithdraw.value = false;
+    },
+    onError: err => {
+      console.log('err', err);
+      isLoadingWithdraw.value = false;
+    },
+  });
+};
+
 const formFields = computed(() => {
   const startTime = veSystem.value
     ? secondsToDate(
@@ -236,6 +371,8 @@ const formFields = computed(() => {
   const supplyVested = veSystem.value
     ? parseFloat(veSystem.value.votingEscrow.supplyVestedPercent) * 100
     : 0;
+
+  const lockedAmount = veSystem.value?.votingEscrow.lockedAmount;
 
   return [
     {
@@ -268,6 +405,22 @@ const formFields = computed(() => {
       name: 'supplyVested',
       value: supplyVested.toString().concat('%'),
     },
+    {
+      label: 'Token Lock Amount',
+      placeholder: '0',
+      name: 'lockedAmount',
+      value: lockedAmount,
+    },
+    {
+      label: 'Token Lock Finish Time',
+      name: 'lockedEndTime',
+      value:
+        lockEndTime.value === ethers.toBigInt(0)
+          ? ''
+          : secondsToDate(
+              parseInt(lockEndTime.value.toString())
+            ).toLocaleDateString(),
+    },
   ];
 });
 </script>
@@ -297,26 +450,65 @@ const formFields = computed(() => {
             :onApprove="handleApprove"
             :isLoadingApprove="isLoadingApprove"
           />
+          <IncreaseLockModal
+            :open="isIncreaseLockModalOpen"
+            :onClose="handleIncreaseLockModalClose"
+            :onIncreaseLock="handleIncreaseLock"
+            :onIncreaseReleaseTime="handleIncreaseReleaseTime"
+            :allowance="tokenAllowance"
+            :onApprove="handleApprove"
+            :isLoadingApprove="isLoadingApprove"
+          />
           <button
+            v-if="lockAmount === ethers.toBigInt(0)"
             class="btn"
             :disabled="isLoadingLock"
             @click="handleLockModalOpen"
           >
             {{ isLoadingLock ? 'Locking...' : 'Lock' }}
           </button>
+          <button
+            v-if="lockAmount > ethers.toBigInt(0)"
+            class="btn"
+            :disabled="
+              isLoadingLock ||
+              parseInt(lockEndTime.toString()) > currentTimeInSeconds
+            "
+            @click="handleIncreaseLockModalOpen"
+          >
+            Increase Lock
+          </button>
         </div>
         <div>
           <WithdrawModal
+            title="Withdraw"
+            body="You can withdraw your deposited tokens"
             :open="isWithdrawModalOpen"
             :onClose="handleWithdrawModalClose"
             :onSubmit="handleWithdraw"
           />
+          <WithdrawModal
+            title="Early Withdraw"
+            body="You can withdraw your deposited tokens"
+            :open="isEarlyWithdrawModalOpen"
+            :onClose="handleEarlyWithdrawModalClose"
+            :onSubmit="handleEarlyWithdraw"
+          />
           <button
+            v-if="lockEndTime <= currentTimeInSeconds"
             class="btn"
-            :disabled="isLoadingWithdraw"
+            :disabled="isLoadingWithdraw || lockAmount === ethers.toBigInt(0)"
             @click="handleWithdrawModalOpen"
           >
             {{ isLoadingWithdraw ? 'Withdrawing...' : 'Withdraw' }}
+          </button>
+          <button
+            v-if="lockEndTime > currentTimeInSeconds"
+            class="btn"
+            :disabled="isLoadingWithdraw || !earlyUnlock"
+            @click="handleEarlyWithdrawModalOpen"
+          >
+            {{ isLoadingWithdraw ? 'Withdrawing...' : 'Early Withdraw' }}
           </button>
         </div>
         <div>

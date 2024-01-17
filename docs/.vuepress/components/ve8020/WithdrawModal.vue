@@ -3,6 +3,8 @@ import { defineProps } from 'vue';
 
 type ModalPropsType = {
   open: boolean;
+  title: string;
+  body: string;
   onClose: () => void;
   onSubmit: () => void;
 };
@@ -13,9 +15,9 @@ const props = defineProps<ModalPropsType>();
 <template>
   <div v-if="props.open" class="modal-container">
     <div class="modal-popup early-unlock">
-      <h3 class="modal-title">Withdraw</h3>
+      <h3 class="modal-title">{{ title }}</h3>
       <div class="body">
-        <p class="text">You can withdraw your deposited tokens</p>
+        <p class="text">{{ body }}</p>
       </div>
       <div class="btn-group">
         <button class="btn close" @click="props.onClose">Close</button>
