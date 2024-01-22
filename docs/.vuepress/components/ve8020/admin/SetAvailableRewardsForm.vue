@@ -119,7 +119,7 @@ input[type='number'] {
   display: flex;
   flex-direction: column;
   gap: 16px;
-  width: calc(60% - 70px);
+  width: calc(65% - 80px);
 }
 
 .item-row .group-tokens .tokens {
@@ -128,7 +128,7 @@ input[type='number'] {
 }
 
 .item-row .item-name {
-  width: 40%;
+  width: 35%;
   max-width: 350px;
   font-size: 14px;
   font-weight: 500;

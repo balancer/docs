@@ -44,22 +44,25 @@ const releaseTime = computed<number>(() => {
       <div class="body">
         <div class="item-row">
           <p class="item-name">Amount</p>
-          <div class="input-group">
-            <input
-              v-model="amountInput"
-              type="number"
-              class="input"
-              placeholder="12000"
-            />
+          <div class="action-group">
+            <div class="input-group">
+              <input
+                v-model="amountInput"
+                type="number"
+                class="input"
+                placeholder="12000"
+              />
+            </div>
+            <button
+              v-show="allowance >= amount"
+              class="btn submit"
+              :disabled="amountInput === ''"
+              @click="onIncreaseLock(amount)"
+            >
+              Submit
+            </button>
           </div>
-          <button
-            v-show="allowance >= amount"
-            class="btn submit"
-            :disabled="amountInput === ''"
-            @click="onIncreaseLock(amount)"
-          >
-            Submit
-          </button>
+
           <button
             v-show="allowance < amount"
             class="btn submit approve"
@@ -71,20 +74,22 @@ const releaseTime = computed<number>(() => {
         </div>
         <div class="item-row">
           <p class="item-name">Release time</p>
-          <div class="input-group">
-            <input
-              v-model="releaseTimeInput"
-              type="datetime-local"
-              class="input"
-            />
+          <div class="action-group">
+            <div class="input-group">
+              <input
+                v-model="releaseTimeInput"
+                type="datetime-local"
+                class="input"
+              />
+            </div>
+            <button
+              class="btn submit"
+              :disabled="releaseTimeInput === ''"
+              @click="onIncreaseReleaseTime(releaseTime)"
+            >
+              Submit
+            </button>
           </div>
-          <button
-            class="btn submit"
-            :disabled="releaseTimeInput === ''"
-            @click="onIncreaseReleaseTime(releaseTime)"
-          >
-            Submit
-          </button>
         </div>
       </div>
       <div class="btn-group">
@@ -105,6 +110,7 @@ input[type='number'] {
   -moz-appearance: textfield;
   appearance: textfield;
 }
+
 .modal-container {
   position: fixed;
   height: 100%;
@@ -137,23 +143,23 @@ input[type='number'] {
 
 @media (max-width: 1200px) {
   .modal-popup {
-    left: 40%;
+    left: 35%;
   }
 }
 
 @media (max-width: 1000px) {
   .modal-popup {
-    max-width: 400px;
+    max-width: 450px;
   }
 }
 
 @media (max-width: 720px) {
   .modal-popup {
-    left: calc(50% - 200px);
+    left: calc(50% - 225px);
   }
 }
 
-@media (max-width: 460px) {
+@media (max-width: 480px) {
   .modal-popup {
     left: 5%;
   }
@@ -164,7 +170,7 @@ input[type='number'] {
 }
 
 .modal-popup.early-penalty {
-  top: 350px;
+  top: 300px;
   display: flex;
   flex-direction: column;
 }
@@ -177,6 +183,7 @@ input[type='number'] {
 .modal-popup .body {
   margin-block: 20px 32px;
 }
+
 .modal-popup .body .text {
   margin: 0;
   font-size: 14px;
@@ -187,10 +194,33 @@ input[type='number'] {
   display: flex;
   align-items: center;
   width: 100%;
-  justify-content: space-between;
+  justify-content: center;
   height: 40px;
   margin-bottom: 16px;
-  gap: 10px;
+  gap: 20px;
+}
+
+.modal-popup .body .item-row .action-group {
+  display: flex;
+  align-items: center;
+  height: 100%;
+  gap: 20px;
+  width: 100%;
+}
+
+@media (max-width: 470px) {
+  .modal-popup.early-penalty {
+    top: 250px;
+  }
+  .modal-popup .body {
+    margin-bottom: 10px;
+  }
+  .modal-popup .body .item-row {
+    flex-direction: column;
+    height: 80px;
+    align-items: flex-start;
+    gap: 5px;
+  }
 }
 
 .item-row .item-name {
@@ -211,11 +241,30 @@ input[type='number'] {
   border-radius: 6px;
   height: 100%;
   width: 100%;
-  padding-inline: 20px;
+  padding-inline: 10px;
   font-size: 14px;
   outline: none;
   border: 1px solid #384aff;
   background-color: rgba(56, 74, 255, 0.2);
+  min-width: 190px;
+}
+
+.item-row .btn.submit {
+  width: 90px;
+  height: 40px;
+  background-color: #384aff;
+  border-radius: 6px;
+  cursor: pointer;
+  border: none;
+  font-weight: 600;
+  font-size: 14px;
+  color: #ffffff;
+}
+
+.item-row .btn.submit:disabled {
+  cursor: not-allowed;
+  background-color: rgba(56, 74, 255, 0.2);
+  color: grey;
 }
 
 .modal-popup .btn-group {

@@ -21,7 +21,8 @@ watch(
   () => {
     amountInput.value = '';
     releaseTimeInput.value = '';
-});
+  }
+);
 
 const amount = computed<number>(() =>
   amountInput.value === '' ? 0 : parseFloat(amountInput.value)
@@ -129,23 +130,23 @@ input[type='number'] {
 
 @media (max-width: 1200px) {
   .modal-popup {
-    left: 40%;
+    left: 35%;
   }
 }
 
 @media (max-width: 1000px) {
   .modal-popup {
-    max-width: 400px;
+    max-width: 450px;
   }
 }
 
 @media (max-width: 720px) {
   .modal-popup {
-    left: calc(50% - 200px);
+    left: calc(50% - 225px);
   }
 }
 
-@media (max-width: 460px) {
+@media (max-width: 480px) {
   .modal-popup {
     left: 5%;
   }
@@ -156,7 +157,7 @@ input[type='number'] {
 }
 
 .modal-popup.early-penalty {
-  top: 350px;
+  top: 300px;
   display: flex;
   flex-direction: column;
 }
@@ -203,11 +204,28 @@ input[type='number'] {
   border-radius: 6px;
   height: 100%;
   width: 100%;
-  padding-inline: 20px;
+  padding-inline: 10px;
   font-size: 14px;
   outline: none;
   border: 1px solid #384aff;
   background-color: rgba(56, 74, 255, 0.2);
+  min-width: 190px;
+  max-width: 250px;
+}
+
+@media (max-width: 500px) {
+  .modal-popup .body .item-row {
+    flex-direction: column;
+    height: 80px;
+    align-items: flex-start;
+    gap: 5px;
+  }
+  .item-row .input-group .input {
+    max-width: none;
+  }
+  .item-row .input-group {
+    max-width: none;
+  }
 }
 
 .modal-popup .btn-group {
