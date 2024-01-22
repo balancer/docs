@@ -50,7 +50,7 @@ const handleSearch = async () => {
           <input
             v-model="searchTerm"
             class="input"
-            placeholder="Search by vested token address "
+            placeholder="Search by locked token address"
           />
         </div>
       </div>
