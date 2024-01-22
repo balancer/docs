@@ -27,7 +27,7 @@ const { selected: veSystem } = useVeSystem();
         :class="{ tab: true, 'active-tab': tab === Tab.ADMIN_POOLS }"
         @click="select(Tab.ADMIN_POOLS)"
       >
-        Admin Pools
+        Admin veSystems
       </div>
       <div
         :class="{

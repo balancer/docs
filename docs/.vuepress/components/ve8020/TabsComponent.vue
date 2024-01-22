@@ -29,7 +29,7 @@ const { selected: veSystem } = useVeSystem();
         }"
         @click="veSystem && select(Tab.POOL_DETAILS)"
       >
-        Pool Details
+        veSystem Details
       </div>
     </div>
 

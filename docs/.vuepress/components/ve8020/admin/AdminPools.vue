@@ -66,7 +66,7 @@ const handleSearch = async () => {
       <p>{{ isLoading ? 'loading' : '' }}</p>
       <div v-for="veSystem in veSystems" :key="veSystem.id">
         <TokenCard
-          :name="veSystem.id"
+          :name="veSystem.votingEscrow.name"
           :vestedToken="veSystem.bptTokenName"
           :totalValueVested="veSystem.votingEscrow.lockedAmount"
           :availableTokensForRewards="
@@ -74,11 +74,11 @@ const handleSearch = async () => {
           "
         />
         <div class="group-buttons">
+          <button class="btn-config" @click="showConfig(veSystem.id)">
+            veSystem config
+          </button>
           <button class="btn-rewards" @click="showRewards(veSystem.id)">
             Rewards Distribution
-          </button>
-          <button class="btn-config" @click="showConfig(veSystem.id)">
-            Pool configuration
           </button>
         </div>
       </div>

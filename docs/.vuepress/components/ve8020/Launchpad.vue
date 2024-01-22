@@ -133,7 +133,7 @@ watch([selectedDate, computedLockTime], () => {
 <template>
   <form class="section-container" @submit.prevent="handleSubmit">
     <div key="bptAddress" class="item-row">
-      <p class="item-name">8020 BPT address</p>
+      <p class="item-name">Locked Token Address</p>
       <div class="input-group">
         <input
           v-model="bptAddress"
@@ -145,7 +145,7 @@ watch([selectedDate, computedLockTime], () => {
       </div>
     </div>
     <div key="veTokenName" class="item-row">
-      <p class="item-name">veToken Name</p>
+      <p class="item-name">veSystem Name</p>
       <div class="input-group">
         <input
           v-model="veTokenName"
@@ -157,7 +157,7 @@ watch([selectedDate, computedLockTime], () => {
       </div>
     </div>
     <div key="veTokenName" class="item-row">
-      <p class="item-name">veToken Symbol</p>
+      <p class="item-name">veSystem Symbol</p>
       <div class="input-group">
         <input
           v-model="veTokenSymbol"

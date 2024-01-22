@@ -58,7 +58,7 @@ const showConfig = async (id: string) => {
     <section class="section-body">
       <div v-for="token in veSystems" :key="token.id">
         <TokenCard
-          :name="token.id"
+          :name="token.votingEscrow.name"
           :vestedToken="token.bptTokenName"
           :totalValueVested="token.votingEscrow.lockedAmount"
           :availableTokensForRewards="
@@ -67,7 +67,7 @@ const showConfig = async (id: string) => {
         />
         <div class="group-buttons">
           <button class="btn-config" @click="showConfig(token.id)">
-            See Pool
+            veSystem Details
           </button>
         </div>
       </div>
