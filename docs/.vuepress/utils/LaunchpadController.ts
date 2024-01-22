@@ -9,6 +9,8 @@ type DeployParamsType = {
   symbol: string;
   maxLockTime: number;
   rewardDistributorStartTime: number;
+  enableUnlockAll: boolean;
+  enableEarlyUnlock: boolean;
 };
 
 export type CallbackOptionsType = {
@@ -106,7 +108,12 @@ export const useController = ({
         symbol,
         maxLockTime,
         rewardDistributorStartTime,
+        enableEarlyUnlock,
+        enableUnlockAll,
       } = data;
+
+      const adminUnlockAll = enableUnlockAll ? admin : ethers.ZeroAddress;
+      const adminEarlyUnlock = enableEarlyUnlock ? admin : ethers.ZeroAddress;
 
       await submitAction(
         async () =>
@@ -116,8 +123,8 @@ export const useController = ({
             symbol,
             maxLockTime,
             rewardDistributorStartTime,
-            admin,
-            admin
+            adminUnlockAll,
+            adminEarlyUnlock
           ),
         callbacks
       );

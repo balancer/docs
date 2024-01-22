@@ -18,6 +18,8 @@ const { deploy } = useController({
 const bptAddress = ref('');
 const veTokenName = ref('');
 const veTokenSymbol = ref('');
+const enableUnlockAll = ref<boolean>(false);
+const enableEarlyUnlock = ref<boolean>(false);
 
 const selectedDate = ref<Date | undefined>(undefined);
 const openCalendar = ref(false);
@@ -69,6 +71,8 @@ const clearForm = () => {
   selectedMonthsValue.value = '';
   selectedWeeksValue.value = '';
   selectedYearsValue.value = '';
+  enableEarlyUnlock.value = false;
+  enableUnlockAll.value = false;
 };
 
 function validateForm() {
@@ -98,6 +102,8 @@ async function handleSubmit() {
       symbol: veTokenSymbol.value,
       maxLockTime: lockTime.value,
       rewardDistributorStartTime: startTime.value,
+      enableUnlockAll: enableUnlockAll.value,
+      enableEarlyUnlock: enableEarlyUnlock.value,
     },
     {
       onPrompt: () => {
@@ -229,6 +235,23 @@ watch([selectedDate, computedLockTime], () => {
         </div>
       </div>
       <input v-model="lockTime" type="hidden" name="lock-time" />
+    </div>
+    <div key="all-tokens" class="item-row">
+      <p class="item-name">
+        Enable the option for early unlocking of all tokens
+      </p>
+      <div class="input-group">
+        <input v-model="enableUnlockAll" type="checkbox" />
+      </div>
+    </div>
+    <div key="early-unlock" class="item-row">
+      <p class="item-name">
+        Enable the option for early unlocking of tokens with a penalty for early
+        unlock
+      </p>
+      <div class="input-group">
+        <input v-model="enableEarlyUnlock" type="checkbox" />
+      </div>
     </div>
     <button
       type="submit"
