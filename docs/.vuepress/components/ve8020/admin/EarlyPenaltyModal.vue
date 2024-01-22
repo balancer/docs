@@ -27,7 +27,7 @@ watch(
       <h3 class="modal-title">Set early penalty speed</h3>
       <div class="body">
         <div class="item-row">
-          <p class="item-name">Early Penalty</p>
+          <p class="item-name">Penalty</p>
           <div class="input-group">
             <input
               v-model="earlyPenaltyInput"

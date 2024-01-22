@@ -277,7 +277,7 @@ const formFields = computed(() => {
             :disabled="isLoadingEarlyPenalty"
             @click="handleEarlyPenaltyModalOpen"
           >
-            {{ isLoadingEarlyPenalty ? 'Processing...' : 'Set Early Penalty' }}
+            {{ isLoadingEarlyPenalty ? 'Processing...' : 'Set Early Penalty Speed' }}
           </button>
         </div>
       </article>
