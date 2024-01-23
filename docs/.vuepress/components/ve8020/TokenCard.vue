@@ -15,11 +15,11 @@ const props = defineProps({
     <h2 class="name">{{ props.name }}</h2>
     <div class="card">
       <article class="item-row">
-        <p class="item-name">Vested Token</p>
+        <p class="item-name">veSystem Locked Token</p>
         <p class="item-value">{{ props.vestedToken }}</p>
       </article>
       <article class="item-row">
-        <p class="item-name">Total Value Vested</p>
+        <p class="item-name">Total Value Locked</p>
         <p class="item-value">{{ props.totalValueVested }}</p>
       </article>
       <article class="item-row labels-tokens">
