@@ -44,7 +44,7 @@ const formatedDate = (date: Date) => {
     year: 'numeric',
     month: 'long',
     day: 'numeric',
-    timeZone: 'GMT',
+    timeZone: 'UTC',
   });
   return formattedDate;
 };
