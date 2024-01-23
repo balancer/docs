@@ -470,10 +470,7 @@ const formFields = computed(() => {
           <button
             v-if="lockAmount > ethers.toBigInt(0)"
             class="btn"
-            :disabled="
-              isLoadingLock ||
-              parseInt(lockEndTime.toString()) > currentTimeInSeconds
-            "
+            :disabled="isLoadingLock"
             @click="handleIncreaseLockModalOpen"
           >
             Increase Lock
