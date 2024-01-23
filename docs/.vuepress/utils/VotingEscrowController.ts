@@ -60,6 +60,7 @@ type UseControllerReturnType = {
   withdrawEarly: Ref<WithdrawFunctionType | undefined>;
   increaseLockAmount: Ref<IncreaseLockAmountFuctionType | undefined>;
   increaseLockTime: Ref<IncreaseLockTimeFuctionType | undefined>;
+  claimExternalRewards: Ref<WithdrawFunctionType | undefined>;
 };
 
 const ABI = [
@@ -75,6 +76,7 @@ const ABI = [
   'function withdraw_early() external',
   'function increase_amount(uint256 _amount) external',
   'function increase_unlock_time(uint256 _unlock_time) external',
+  'function claimExternalRewards() external',
 ];
 
 export const useController = ({
@@ -106,6 +108,7 @@ export const useController = ({
   const getLocked = ref<GetLockedFunctionType>();
   const increaseLockAmount = ref<IncreaseLockAmountFuctionType>();
   const increaseLockTime = ref<IncreaseLockTimeFuctionType>();
+  const claimExternalRewards = ref<WithdrawFunctionType>();
 
   const initialize = () => {
     setAllUnlock.value = async (
@@ -261,6 +264,27 @@ export const useController = ({
       await submitAction(async () => await contract.withdraw(), callbacks);
     };
 
+    claimExternalRewards.value = async (
+      callbacks: CallbackOptionsType
+    ): Promise<void> => {
+      if (!walletProvider.value) return;
+      if (!veSystem.value) return;
+
+      const contractAddress = veSystem.value.votingEscrow.address;
+
+      const provider = new BrowserProvider(
+        walletProvider.value,
+        network.value.id
+      );
+      const signer = await provider.getSigner();
+      const contract = new ethers.Contract(contractAddress, ABI, signer);
+
+      await submitAction(
+        async () => await contract.claimExternalRewards(),
+        callbacks
+      );
+    };
+
     withdrawEarly.value = async (
       callbacks: CallbackOptionsType
     ): Promise<void> => {
@@ -360,5 +384,6 @@ export const useController = ({
     withdrawEarly,
     increaseLockAmount,
     increaseLockTime,
+    claimExternalRewards,
   };
 };
