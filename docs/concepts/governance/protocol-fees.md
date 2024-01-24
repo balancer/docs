@@ -23,19 +23,19 @@ Another potential source of Protocol Fees is from interest on Flash Loans. They 
 
 ## Uses
 
-As of [BIP-371](https://forum.balancer.fi/t/bip-371-adjust-protocol-fee-split/4978)  in August 2023, the protocol takes 50% of the swap fees and yield fees.  From that:
+As of [BIP-371](https://forum.balancer.fi/t/bip-371-adjust-protocol-fee-split/4978)  in August 2023, the protocol takes 50% of the swap fees and 50% of wrapped token yield fees on non-exempt pools with rate providers.  From that:
 
-- 100% of all BAL fees collected are emitted as fee sharing to veBAL holders.  See this [Governance Proposal](https://forum.balancer.fi/t/proposal-distribute-protocol-fees-in-bal-where-appropriate/2933)
+- 100% of all $BAL fees collected are emitted as fee sharing to veBAL holders.  See this [Governance Proposal](https://forum.balancer.fi/t/proposal-distribute-protocol-fees-in-bal-where-appropriate/2933)
 - All other tokens are sold for USDC, of which: 
   - 17.5% are paid to the DAO 
-  - 82.5% are emitted to BAL holders in the form of bb-a-USD (a boosted USD balancer pool) or via USDC incentives placed on the hidden hands vote market, which can be earned by veBAL participants for voting on these revenue generating pools.
+  - 32.5% are emitted to veBAL holders in the form of direct USDC payments
+  - 50% are paid to veBAL holders in the form of vote incentives placed on [Core Pools](https://forum.balancer.fi/t/bip-457-core-pool-incentive-program-automation/5254)
 
+## Core Pool Fee Redirection
 
-## Fee Redirection
+[BIP-19](https://forum.balancer.fi/t/bip-19-incentivize-core-pools-l2-usage/3329), revised by [BIP-457](https://forum.balancer.fi/t/bip-457-core-pool-incentive-program-automation/5254) concerns redirecting fees destine for veBAL lockers. It's purpose is 2 fold:
 
-[BIP-19](https://forum.balancer.fi/t/bip-19-incentivize-core-pools-l2-usage/3329) concerns redirecting fees destine for veBAL lockers. It's purpose is 2 fold:
-
-1. Incentive/encourage veBAL voters to vote for pools that are generating revenue for the DAO by requiring them to do so to capture a decent portion of their share of the fees.
+1. Incentive/encourage veBAL voters to vote for pools that are generating revenue for the DAO by requiring them to do so to capture a portion of fee sharing.
 2. Create a compelling economic proposition for Liquid Staked Tokens(LSTs), Lending Protocols and other DAOs with interest baring assets by enabling pools that support their own yields with staking and trade fees.
 
 Pools have been designated as Core in the past for the following reasons:

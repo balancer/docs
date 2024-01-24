@@ -5,11 +5,13 @@
       "Deployment": "20210418-vault",
       "Authorized_Caller_Addresses": [
          "0xeF606F58A4FD0fCcb066c6203d0994694d3eB2D3",
-         "0x3536fD480CA495Ac91E698A703248A8915c137a3"
+         "0x3536fD480CA495Ac91E698A703248A8915c137a3",
+         "0x2163c2FcD0940e84B8a68991bF926eDfB0Cd926C"
       ],
       "Authorized_Caller_Names": [
          "20220916-batch-relayer-v4/BalancerRelayer",
-         "20230314-batch-relayer-v5/BalancerRelayer"
+         "20230314-batch-relayer-v5/BalancerRelayer",
+         "20231031-batch-relayer-v6/BalancerRelayer"
       ]
    },
    {
@@ -18,11 +20,13 @@
       "Deployment": "20210418-vault",
       "Authorized_Caller_Addresses": [
          "0xeF606F58A4FD0fCcb066c6203d0994694d3eB2D3",
-         "0x3536fD480CA495Ac91E698A703248A8915c137a3"
+         "0x3536fD480CA495Ac91E698A703248A8915c137a3",
+         "0x2163c2FcD0940e84B8a68991bF926eDfB0Cd926C"
       ],
       "Authorized_Caller_Names": [
          "20220916-batch-relayer-v4/BalancerRelayer",
-         "20230314-batch-relayer-v5/BalancerRelayer"
+         "20230314-batch-relayer-v5/BalancerRelayer",
+         "20231031-batch-relayer-v6/BalancerRelayer"
       ]
    },
    {
@@ -31,11 +35,13 @@
       "Deployment": "20210418-vault",
       "Authorized_Caller_Addresses": [
          "0xeF606F58A4FD0fCcb066c6203d0994694d3eB2D3",
-         "0x3536fD480CA495Ac91E698A703248A8915c137a3"
+         "0x3536fD480CA495Ac91E698A703248A8915c137a3",
+         "0x2163c2FcD0940e84B8a68991bF926eDfB0Cd926C"
       ],
       "Authorized_Caller_Names": [
          "20220916-batch-relayer-v4/BalancerRelayer",
-         "20230314-batch-relayer-v5/BalancerRelayer"
+         "20230314-batch-relayer-v5/BalancerRelayer",
+         "20231031-batch-relayer-v6/BalancerRelayer"
       ]
    },
    {
@@ -44,11 +50,13 @@
       "Deployment": "20210418-vault",
       "Authorized_Caller_Addresses": [
          "0xeF606F58A4FD0fCcb066c6203d0994694d3eB2D3",
-         "0x3536fD480CA495Ac91E698A703248A8915c137a3"
+         "0x3536fD480CA495Ac91E698A703248A8915c137a3",
+         "0x2163c2FcD0940e84B8a68991bF926eDfB0Cd926C"
       ],
       "Authorized_Caller_Names": [
          "20220916-batch-relayer-v4/BalancerRelayer",
-         "20230314-batch-relayer-v5/BalancerRelayer"
+         "20230314-batch-relayer-v5/BalancerRelayer",
+         "20231031-batch-relayer-v6/BalancerRelayer"
       ]
    },
    {
@@ -68,11 +76,13 @@
       "Deployment": "20210418-vault",
       "Authorized_Caller_Addresses": [
          "0xeF606F58A4FD0fCcb066c6203d0994694d3eB2D3",
-         "0x3536fD480CA495Ac91E698A703248A8915c137a3"
+         "0x3536fD480CA495Ac91E698A703248A8915c137a3",
+         "0x2163c2FcD0940e84B8a68991bF926eDfB0Cd926C"
       ],
       "Authorized_Caller_Names": [
          "20220916-batch-relayer-v4/BalancerRelayer",
-         "20230314-batch-relayer-v5/BalancerRelayer"
+         "20230314-batch-relayer-v5/BalancerRelayer",
+         "20231031-batch-relayer-v6/BalancerRelayer"
       ]
    },
    {
@@ -81,11 +91,13 @@
       "Deployment": "20210418-vault",
       "Authorized_Caller_Addresses": [
          "0xeF606F58A4FD0fCcb066c6203d0994694d3eB2D3",
-         "0x3536fD480CA495Ac91E698A703248A8915c137a3"
+         "0x3536fD480CA495Ac91E698A703248A8915c137a3",
+         "0x2163c2FcD0940e84B8a68991bF926eDfB0Cd926C"
       ],
       "Authorized_Caller_Names": [
          "20220916-batch-relayer-v4/BalancerRelayer",
-         "20230314-batch-relayer-v5/BalancerRelayer"
+         "20230314-batch-relayer-v5/BalancerRelayer",
+         "20231031-batch-relayer-v6/BalancerRelayer"
       ]
    },
    {
@@ -273,10 +285,12 @@
       "Contract": "AaveLinearPool",
       "Deployment": "20221207-aave-rebalanced-linear-pool-v3",
       "Authorized_Caller_Addresses": [
-         "0xc3ccacE87f6d3A81724075ADcb5ddd85a8A1bB68"
+         "0xc3ccacE87f6d3A81724075ADcb5ddd85a8A1bB68",
+         "0x2a5AEcE0bb9EfFD7608213AE1745873385515c18"
       ],
       "Authorized_Caller_Names": [
-         "20221123-pool-recovery-helper/PoolRecoveryHelper"
+         "20221123-pool-recovery-helper/PoolRecoveryHelper",
+         "multisigs/dao"
       ]
    },
    {
@@ -442,6 +456,17 @@
       ]
    },
    {
+      "Fx": "setTokenRateCacheDuration(address,uint256)",
+      "Contract": "ComposableStablePool",
+      "Deployment": "20230206-composable-stable-pool-v3",
+      "Authorized_Caller_Addresses": [
+         "0x2a5AEcE0bb9EfFD7608213AE1745873385515c18"
+      ],
+      "Authorized_Caller_Names": [
+         "multisigs/dao"
+      ]
+   },
+   {
       "Fx": "startAmplificationParameterUpdate(uint256,uint256)",
       "Contract": "ComposableStablePool",
       "Deployment": "20230206-composable-stable-pool-v3",
@@ -481,10 +506,12 @@
       "Contract": "AaveLinearPool",
       "Deployment": "20230206-aave-rebalanced-linear-pool-v4",
       "Authorized_Caller_Addresses": [
-         "0xc3ccacE87f6d3A81724075ADcb5ddd85a8A1bB68"
+         "0xc3ccacE87f6d3A81724075ADcb5ddd85a8A1bB68",
+         "0x2a5AEcE0bb9EfFD7608213AE1745873385515c18"
       ],
       "Authorized_Caller_Names": [
-         "20221123-pool-recovery-helper/PoolRecoveryHelper"
+         "20221123-pool-recovery-helper/PoolRecoveryHelper",
+         "multisigs/dao"
       ]
    },
    {
@@ -679,6 +706,17 @@
       ]
    },
    {
+      "Fx": "setTokenRateCacheDuration(address,uint256)",
+      "Contract": "ComposableStablePool",
+      "Deployment": "20230320-composable-stable-pool-v4",
+      "Authorized_Caller_Addresses": [
+         "0x2a5AEcE0bb9EfFD7608213AE1745873385515c18"
+      ],
+      "Authorized_Caller_Names": [
+         "multisigs/dao"
+      ]
+   },
+   {
       "Fx": "startAmplificationParameterUpdate(uint256,uint256)",
       "Contract": "ComposableStablePool",
       "Deployment": "20230320-composable-stable-pool-v4",
@@ -831,11 +869,13 @@
       "Deployment": "20230711-composable-stable-pool-v5",
       "Authorized_Caller_Addresses": [
          "0xd6110A7756080a4e3BCF4e7EBBCA8E8aDFBC9962",
-         "0xc3ccacE87f6d3A81724075ADcb5ddd85a8A1bB68"
+         "0xc3ccacE87f6d3A81724075ADcb5ddd85a8A1bB68",
+         "0x2a5AEcE0bb9EfFD7608213AE1745873385515c18"
       ],
       "Authorized_Caller_Names": [
          "multisigs/emergency",
-         "20221123-pool-recovery-helper/PoolRecoveryHelper"
+         "20221123-pool-recovery-helper/PoolRecoveryHelper",
+         "multisigs/dao"
       ]
    },
    {

@@ -52,6 +52,9 @@ Let's say that you want to allow a 1% slippage. After computing how many tokens 
 ### `userData`
 
 userData is a highly versatile field; as such, it needs to be encoded for its specific use case. For joins, userData encodes a `JoinKind` to tell the pool what style of join you're performing. Not every pool uses every `JoinKind`, so it's important to keep track of what each pool type can handle.
+::: info 
+When encoding `userData` for pools that include their own BPT as part of the pool's tokens, the BPT are not included in the `userData`, except for `INIT` joins where they need to be included.
+:::
 
 #### WeightedPool JoinKinds
 
@@ -73,6 +76,12 @@ Applies to:
 
 #### StablePool JoinKinds
 
+::: warning 
+ComposableStablePools have different `JoinKind` enums compared to StablePools and MetaStablePools 
+:::
+
+For **StablePool** and **MetaStablePool** the following `JoinKind` applies: 
+
 ```solidity
 enum JoinKind {
     INIT,
@@ -81,10 +90,17 @@ enum JoinKind {
  }
 ```
 
-Applies to:
+For **ComposableStablePool** the following `JoinKind` applies: 
 
-- StablePool
-- MetaStablePool
+```solidity
+enum JoinKind {
+    INIT,
+    EXACT_TOKENS_IN_FOR_BPT_OUT,
+    TOKEN_IN_FOR_EXACT_BPT_OUT,
+    ALL_TOKENS_IN_FOR_EXACT_BPT_OUT
+ }
+```
+
 
 #### JoinKinds Explained
 
