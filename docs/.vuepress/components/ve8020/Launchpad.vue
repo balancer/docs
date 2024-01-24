@@ -3,7 +3,7 @@ import { ref, watch, computed } from 'vue';
 import Calendar from './Calendar.vue';
 import { useWeb3ModalProvider } from '@web3modal/ethers/vue';
 import { useNetwork } from '../../providers/network';
-import { dateToSeconds, useController, weeksToSeconds } from '../../utils';
+import { dateToSeconds, useController } from '../../utils';
 
 const { network } = useNetwork();
 const { walletProvider } = useWeb3ModalProvider();
@@ -50,16 +50,26 @@ const formatedDate = (date: Date) => {
 };
 
 const selectedWeeksValue = ref('');
-const selectedMonthsValue = ref('');
+const selectedDaysValue = ref('');
 const selectedYearsValue = ref('');
 
 const computedLockTime = computed(() => {
-  let weeks = parseInt(selectedWeeksValue.value) || 0;
-  weeks += parseInt(selectedMonthsValue.value) * 4 || 0;
-  weeks += parseInt(selectedYearsValue.value) * 52 || 0;
+  const dayInSeconds = 24 * 60 * 60;
+  const weekInSeconds = dayInSeconds * 7;
+  const yearInSeconds = 365 * dayInSeconds;
 
-  return weeksToSeconds(weeks);
+  const daysInSeconds = parseInt(selectedDaysValue.value || '0') * dayInSeconds;
+  const weeksInSeconds =
+    parseInt(selectedWeeksValue.value || '0') * weekInSeconds;
+  const yearsInSeconds =
+    parseInt(selectedYearsValue.value || '0') * yearInSeconds;
+
+  const seconds = daysInSeconds + weeksInSeconds + yearsInSeconds;
+
+  return seconds;
 });
+
+watch(computedLockTime, value => console.log(value));
 
 const isFormValid = ref(false);
 
@@ -68,7 +78,7 @@ const clearForm = () => {
   veTokenName.value = '';
   veTokenSymbol.value = '';
   selectedDate.value = undefined;
-  selectedMonthsValue.value = '';
+  selectedDaysValue.value = '';
   selectedWeeksValue.value = '';
   selectedYearsValue.value = '';
   enableEarlyUnlock.value = false;
@@ -207,21 +217,21 @@ watch([selectedDate, computedLockTime], () => {
       <p class="item-name">Max Lock-time</p>
       <div class="lock-group">
         <div class="time-group">
+          <p class="text">Days</p>
+          <input
+            v-model="selectedDaysValue"
+            type="number"
+            class="input"
+            placeholder="1"
+          />
+        </div>
+        <div class="time-group">
           <p class="text">Weeks</p>
           <input
             v-model="selectedWeeksValue"
             type="number"
             class="input"
-            placeholder="10"
-          />
-        </div>
-        <div class="time-group">
-          <p class="text">Months</p>
-          <input
-            v-model="selectedMonthsValue"
-            type="number"
-            class="input"
-            placeholder="3"
+            placeholder="1"
           />
         </div>
         <div class="time-group">
