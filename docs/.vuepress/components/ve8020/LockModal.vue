@@ -33,8 +33,32 @@ const releaseTime = computed<number>(() => {
 
   const d = new Date(releaseTimeInput.value);
 
-  return dateToSeconds(d);
+  const utcDate = Date.UTC(
+    d.getFullYear(),
+    d.getMonth(),
+    d.getDate(),
+    d.getHours(),
+    d.getMinutes()
+  );
+
+  return dateToSeconds(new Date(utcDate));
 });
+
+// watch(releaseTimeInput, value => {
+//   const d = new Date(releaseTimeInput.value);
+//   const d3 = Date.UTC(
+//     d.getFullYear(),
+//     d.getMonth(),
+//     d.getDate(),
+//     d.getHours(),
+//     d.getMinutes()
+//   );
+
+//   console.log(d, d.getFullYear(),  d.getMonth(),d.getDate());
+//   console.log(new Date(d3));
+//   console.log('date 1', d.getTime());
+//   console.log('date 2', d3);
+// })
 </script>
 
 <template>
