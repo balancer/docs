@@ -63,16 +63,21 @@ const fetchAllowance = async (ve: VeSystem) => {
 };
 
 const fetchClaimableRewards = async () => {
-  const result = await getUserClaimableRewardsAll.value?.();
-
-  claimableRewards.value = result?.reduce(
-    (m, v) => ({ ...m, [v[0].toLowerCase()]: v[1] }),
-    {}
-  );
+  try {
+    const result = await getUserClaimableRewardsAll.value?.();
+    claimableRewards.value = result?.reduce(
+      (m, v) => ({ ...m, [v[0].toLowerCase()]: v[1] }),
+      {}
+    );
+  } catch (error) {
+    console.log(error);
+  }
 };
 
 const fetchLocked = async () => {
   const result = await getLocked.value?.();
+
+  console.log(result)
 
   if (result === undefined) return;
 
@@ -97,9 +102,9 @@ watch(veSystem, async ve => {
   if (!ve) return;
 
   await fetchAllowance(ve);
-  await fetchClaimableRewards();
   await fetchLocked();
   await fetchEarlyUnlock();
+  await fetchClaimableRewards();
 });
 
 const currentTimeInSeconds = computed(() => {
