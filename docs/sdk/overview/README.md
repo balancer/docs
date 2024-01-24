@@ -21,7 +21,7 @@ Install the package with
 @tab yarn
 
 ```bash
-yarn install @balancer-labs/sdk
+yarn add @balancer-labs/sdk
 ```
 
 @tab npm
