@@ -9,13 +9,13 @@ export interface NetworkConfig {
 }
 
 export const NETWORKS: NetworkConfig[] = [
-  // {
-  //   id: Network.MAINNET,
-  //   name: 'Ethereum',
-  //   logo: '/images/chains/ethereum-logo.svg',
-  //   explorer: 'https://etherscan.io',
-  //   rpcUrl: 'https://eth.llamarpc.com',
-  // },
+  {
+    id: Network.MAINNET,
+    name: 'Ethereum',
+    logo: '/images/chains/ethereum-logo.svg',
+    explorer: 'https://etherscan.io',
+    rpcUrl: 'https://eth.llamarpc.com',
+  },
   // {
   //   id: 137,
   //   name: 'Polygon PoS',
