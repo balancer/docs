@@ -36,5 +36,13 @@ export const getSelectorTokenItems = (
   ]);
 };
 
+export const locale2utc = (date: Date): number => {
+  if (date.getTimezoneOffset() < 0) {
+    return date.getTime() - date.getTimezoneOffset() * 60e3;
+  }
+
+  return date.getTime() + date.getTimezoneOffset() * 60e3;
+};
+
 export * from './LaunchpadSubgraph';
 export * from './LaunchpadController';

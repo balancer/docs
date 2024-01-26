@@ -1,6 +1,6 @@
 <script setup lang="ts">
 import { defineProps, ref, computed, watch } from 'vue';
-import { dateToSeconds } from '../../utils';
+import { locale2utc } from '../../utils';
 
 type ModalPropsType = {
   open: boolean;
@@ -31,9 +31,9 @@ const amount = computed<number>(() =>
 const releaseTime = computed<number>(() => {
   if (releaseTimeInput.value === '') return 0;
 
-  const d = new Date(releaseTimeInput.value);
+  const date = new Date(releaseTimeInput.value);
 
-  return dateToSeconds(d);
+  return locale2utc(date) / 1000;
 });
 </script>
 

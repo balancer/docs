@@ -159,7 +159,6 @@ const formFields = computed(() => {
         parseInt(veSystem.value.rewardDistributor.rewardStartTime.toString())
       ).toLocaleDateString()
     : '';
-
   const supplyVested = veSystem.value
     ? parseFloat(veSystem.value.votingEscrow.supplyVestedPercent) * 100
     : 0;

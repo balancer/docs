@@ -3,7 +3,7 @@ import { ref, watch, computed } from 'vue';
 import Calendar from './Calendar.vue';
 import { useWeb3ModalProvider } from '@web3modal/ethers/vue';
 import { useNetwork } from '../../providers/network';
-import { dateToSeconds, useController } from '../../utils';
+import { dateToSeconds, locale2utc, useController } from '../../utils';
 
 const { network } = useNetwork();
 const { walletProvider } = useWeb3ModalProvider();
@@ -25,7 +25,7 @@ const selectedDate = ref<Date | undefined>(undefined);
 const openCalendar = ref(false);
 const lockTime = ref(0);
 const startTime = computed(() =>
-  selectedDate.value ? dateToSeconds(selectedDate.value) : 0
+  selectedDate.value ? locale2utc(selectedDate.value) / 1000 : 0
 );
 const handleClickDate = (date: Date) => {
   selectedDate.value = date;
@@ -39,14 +39,25 @@ const closeCalendar = () => {
 
 const date = new Date();
 const formatedDate = (date: Date) => {
-  const formattedDate = date.toLocaleString('en-US', {
+  // const formattedDate = date.toLocaleString('en-US', {
+  //   weekday: 'long',
+  //   year: 'numeric',
+  //   month: 'long',
+  //   day: 'numeric',
+  //   timeZone: 'UTC',
+  // });
+
+  const utcDateInMillis = locale2utc(date);
+
+  const utcDate = new Date(utcDateInMillis);
+
+  return utcDate.toLocaleString('en-US', {
     weekday: 'long',
     year: 'numeric',
     month: 'long',
     day: 'numeric',
     timeZone: 'UTC',
   });
-  return formattedDate;
 };
 
 const selectedWeeksValue = ref('');
