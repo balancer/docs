@@ -19,7 +19,7 @@ export const CONFIG = new Map<number, Config>([
     {
       SUBGRAPH_URL:
         'https://thegraph.com/explorer/subgraph/maxkmyt/launchpad_arb',
-      LAUNCHPAD_CONTRACT: '0x6c9c2881b6e2fdb4e9e72896a4883049ad155b36',
+      LAUNCHPAD_CONTRACT: '0x562cb67c3259120273bb7b75b9414638ab453af6',
       LENS_REWARD_CONTRACT: '0xb422e74045f19d94ec62236efdcae4b13bac386b',
     },
   ],
@@ -37,7 +37,7 @@ export const CONFIG = new Map<number, Config>([
     {
       SUBGRAPH_URL:
         'https://thegraph.com/explorer/subgraph/maxkmyt/launchpad_polygon',
-      LAUNCHPAD_CONTRACT: '0x6c9c2881b6e2fdb4e9e72896a4883049ad155b36',
+      LAUNCHPAD_CONTRACT: '0x93a6a2c89022e60a94986621ca8a3cd45e31dc77',
       LENS_REWARD_CONTRACT: '0xb422e74045f19d94ec62236efdcae4b13bac386b',
     },
   ],
