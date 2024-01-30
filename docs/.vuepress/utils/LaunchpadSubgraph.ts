@@ -75,54 +75,10 @@ export class LaunchpadSubgraph {
     });
   }
 
-  public async getWithFilter(filter: {
-    tokenAddress: string;
-  }): Promise<VeSystem[]> {
-    const query = gql`
-      query GetVeSystems($bptToken: String!) {
-        vesystems(where: { bptToken: $bptToken }) {
-          id
-          bptToken
-          bptTokenName
-          votingEscrow {
-            id
-            address
-            name
-            symbol
-            lockedAmount
-            supplyVestedPercent
-          }
-          rewardDistributorAddress
-          rewardFaucetAddress
-          rewardDistributor {
-            id
-            rewardTokens {
-              id
-              name
-              address
-              symbol
-              decimals
-              availableRewardAmount
-            }
-          }
-        }
-      }
-    `;
-
-    const {
-      data: { vesystems },
-    } = (await this.client.query({
-      query,
-      variables: { bptToken: filter.tokenAddress },
-    })) as GetVeSystemsResponse;
-
-    return vesystems.map(vesystem => format(vesystem));
-  }
-
-  public async getVeSystems(): Promise<VeSystem[]> {
+  public async getVeSystems(bptToken?: string): Promise<VeSystem[]> {
     const query = gql(`
-      query GetVeSystems {
-        vesystems {
+      query GetVeSystems($bptToken: String) {
+        vesystems${bptToken ? `(where: { bptToken: $bptToken })` : ''} {
           id
           bptToken
           bptTokenName
@@ -153,7 +109,59 @@ export class LaunchpadSubgraph {
 
     const {
       data: { vesystems },
-    } = (await this.client.query({ query })) as GetVeSystemsResponse;
+    } = (await this.client.query({
+      query,
+      variables: { bptToken },
+    })) as GetVeSystemsResponse;
+
+    return vesystems.map(vesystem => format(vesystem));
+  }
+
+  public async getAdminVeSystems(
+    admin: string,
+    bptToken?: string
+  ): Promise<VeSystem[]> {
+    const query = gql(`
+      query GetVeSystemsByAdmin($admin: String!, $bptToken: String) {
+        vesystems${
+          bptToken
+            ? `(where: {admin: $admin, bptToken: $bptToken})`
+            : `(where: {admin: $admin})`
+        } {
+          id
+          bptToken
+          bptTokenName
+          votingEscrow {
+            id
+            address
+            name
+            symbol
+            lockedAmount
+            supplyVestedPercent
+          }
+          rewardDistributorAddress
+          rewardFaucetAddress
+          rewardDistributor {
+            id
+            rewardTokens {
+              id
+              name
+              address
+              symbol
+              decimals
+              availableRewardAmount
+            }
+          }
+        }
+      }
+    `);
+
+    const {
+      data: { vesystems },
+    } = (await this.client.query({
+      query,
+      variables: { admin, bptToken },
+    })) as GetVeSystemsResponse;
 
     return vesystems.map(vesystem => format(vesystem));
   }

@@ -21,7 +21,7 @@ export const NETWORKS: NetworkConfig[] = [
     name: 'Polygon PoS',
     logo: '/images/chains/polygon-pos-logo.svg',
     explorer: 'https://polygonscan.com',
-    rpcUrl: 'https://polygon.llamarpc.com',
+    rpcUrl: 'https://polygon-rpc.com',
   },
   // {
   //   id: 1101,

@@ -1,23 +1,38 @@
-import { InjectionKey, provide, ref, watch } from 'vue';
+import { InjectionKey, provide, ref, watch, computed } from 'vue';
 import { safeInject } from './inject';
 import { LaunchpadSubgraph, VeSystem } from '../utils/LaunchpadSubgraph';
-
-const SUBGRAPH_URL =
-  'https://api.thegraph.com/subgraphs/name/maxkmyt/launchpad_test_1';
-
-const graph = new LaunchpadSubgraph(SUBGRAPH_URL);
+import { CONFIG } from '../constants/config';
+import { useNetwork } from '../providers/network';
 
 export const veSystemProvider = () => {
+  const { network } = useNetwork();
+
+  const subgraphUrl = ref(CONFIG.get(network.value.id)?.SUBGRAPH_URL);
+
+  watch(network, value => {
+    subgraphUrl.value = CONFIG.get(value.id)?.SUBGRAPH_URL;
+  });
+
+  const graph = computed(() => new LaunchpadSubgraph(subgraphUrl.value));
+
   const data = ref<VeSystem[]>([]);
   const isLoading = ref<boolean>(false);
   const selected = ref<VeSystem | undefined>();
 
   watch(selected, value => console.log('Selected VeSystem: ', value));
 
-  const fetch = async () => {
+  const fetchByAdmin = async (admin: string, bptToken?: string) => {
     isLoading.value = true;
 
-    data.value = await graph.getVeSystems();
+    data.value = await graph.value.getAdminVeSystems(admin, bptToken);
+
+    isLoading.value = false;
+  };
+
+  const fetch = async (bptToken?: string) => {
+    isLoading.value = true;
+
+    data.value = await graph.value.getVeSystems(bptToken);
 
     isLoading.value = false;
   };
@@ -25,18 +40,8 @@ export const veSystemProvider = () => {
   const select = async (id: string) => {
     isLoading.value = true;
 
-    const veSystem = await graph.getVeSystem(id);
+    const veSystem = await graph.value.getVeSystem(id);
     selected.value = veSystem;
-
-    isLoading.value = false;
-  };
-
-  const updateByTokenAddress = async (tokenAddress: string) => {
-    isLoading.value = true;
-
-    const filteredVeSystems = await graph.getWithFilter({ tokenAddress });
-
-    data.value = filteredVeSystems;
 
     isLoading.value = false;
   };
@@ -47,7 +52,7 @@ export const veSystemProvider = () => {
     isLoading,
     fetch,
     select,
-    updateByTokenAddress,
+    fetchByAdmin,
   };
 };
 

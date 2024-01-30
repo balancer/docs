@@ -1,26 +1,24 @@
 <script setup lang="ts">
 import { useVeSystem } from '../../providers/veSystem';
 import TokenCard from './TokenCard.vue';
-import { onBeforeMount, ref } from 'vue';
+import { ref, watch } from 'vue';
 import { useTabs, Tab } from '../../providers/tabs';
-const {
-  data: veSystems,
-  fetch,
-  updateByTokenAddress,
-  isLoading,
-  select,
-} = useVeSystem();
+import { useNetwork } from '../../providers/network';
+
+const { network } = useNetwork();
+
+const { data: veSystems, fetch, isLoading, select } = useVeSystem();
 const { select: selectTab } = useTabs();
 
 const searchTerm = ref<string>('');
 
-onBeforeMount(() => {
+watch(network, () => {
   fetch();
 });
 
 const handleSearch = async () => {
   if (searchTerm.value !== '') {
-    await updateByTokenAddress(searchTerm.value);
+    await fetch(searchTerm.value);
   } else {
     await fetch();
   }

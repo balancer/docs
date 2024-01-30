@@ -1,23 +1,25 @@
 <script setup lang="ts">
-import { onBeforeMount, ref } from 'vue';
+import { ref, watch } from 'vue';
 import { useVeSystem } from '../../../providers/veSystem';
 import { useTabs, Tab } from '../../../providers/tabs';
 import TokenCard from '../TokenCard.vue';
+import { useWeb3ModalAccount } from '@web3modal/ethers/vue';
+import { useNetwork } from '../../../providers/network';
+
+const { address } = useWeb3ModalAccount();
+
+const { network } = useNetwork();
 
 const searchTerm = ref<string>('');
 
-const {
-  data: veSystems,
-  fetch,
-  select,
-  isLoading,
-  updateByTokenAddress,
-} = useVeSystem();
+const { data: veSystems, select, isLoading, fetchByAdmin } = useVeSystem();
 
 const { select: selectTab } = useTabs();
 
-onBeforeMount(() => {
-  fetch();
+watch([address, network], ([account]) => {
+  if (!account) return;
+
+  fetchByAdmin(account);
 });
 
 const showConfig = async (id: string) => {
@@ -31,10 +33,11 @@ const showRewards = async (id: string) => {
 };
 
 const handleSearch = async () => {
+  if (!address.value) return;
   if (searchTerm.value !== '') {
-    await updateByTokenAddress(searchTerm.value);
+    await fetchByAdmin(address.value, searchTerm.value);
   } else {
-    await fetch();
+    await fetchByAdmin(address.value);
   }
 };
 </script>
