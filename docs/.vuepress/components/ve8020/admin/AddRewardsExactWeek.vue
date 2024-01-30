@@ -7,6 +7,8 @@ import { useController } from '../../../utils/RewardFaucetController';
 import { useVeSystem } from '../../../providers/veSystem';
 import { toBigInt, ethers } from 'ethers';
 import { dateToSeconds, getSelectorTokenItems } from '../../../utils';
+import { addRewardsIntoExactWeekHint } from '../../../constants/hints';
+import Tooltip from './Tooltip.vue';
 
 const { walletProvider } = useWeb3ModalProvider();
 const { selected: veSystem } = useVeSystem();
@@ -140,7 +142,19 @@ const tokens = computed<[string, string][]>(() => {
 
 <template>
   <div key="exactWeek" class="item-row">
-    <p class="item-name">Add Rewards into Exact Week</p>
+    <p class="item-name">
+      Add Rewards into Exact Week
+      <Tooltip
+        :text="addRewardsIntoExactWeekHint"
+        :width="350"
+        position="left-bottom"
+        :fontSize="12"
+      >
+        <svg width="16" height="16" class="icon">
+          <use href="/images/exclamation-circle.svg#icon"></use>
+        </svg>
+      </Tooltip>
+    </p>
     <div class="item-action">
       <Selector
         :items="tokens"
@@ -206,9 +220,16 @@ input[type='number'] {
   max-width: 350px;
   font-size: 14px;
   font-weight: 500;
-  margin: 0;
+  display: flex;
+  align-items: center;
+  gap: 5px;
 }
-
+.item-row .item-name .icon {
+  fill: #2c3e50;
+}
+.dark .item-row .item-name .icon {
+  fill: #ffffff;
+}
 .item-row .item-action {
   display: flex;
   width: 65%;

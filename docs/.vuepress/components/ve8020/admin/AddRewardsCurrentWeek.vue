@@ -7,6 +7,8 @@ import { useVeSystem } from '../../../providers/veSystem';
 import { ethers, toBigInt } from 'ethers';
 import Selector from './Selector.vue';
 import { getSelectorTokenItems } from '../../../utils';
+import { addRewardsIntoCurrentWeekHint } from '../../../constants/hints';
+import Tooltip from './Tooltip.vue';
 
 const { walletProvider } = useWeb3ModalProvider();
 const { selected: veSystem } = useVeSystem();
@@ -134,7 +136,19 @@ const tokens = computed<[string, string][]>(() => {
 
 <template>
   <div key="currentWeek" class="item-row">
-    <p class="item-name">Add Rewards into Current Week</p>
+    <p class="item-name">
+      Add Rewards into Current Week
+      <Tooltip
+        :text="addRewardsIntoCurrentWeekHint"
+        :width="350"
+        position="left-bottom"
+        :fontSize="12"
+      >
+        <svg width="16" height="16" class="icon">
+          <use href="/images/exclamation-circle.svg#icon"></use>
+        </svg>
+      </Tooltip>
+    </p>
     <div class="item-action">
       <Selector
         prompt="Select Token"
@@ -195,6 +209,17 @@ input[type='number'] {
   font-size: 14px;
   font-weight: 500;
   margin: 0;
+  display: flex;
+  align-items: center;
+  gap: 5px;
+}
+
+.item-row .item-name .icon {
+  fill: #2c3e50;
+}
+
+.dark .item-row .item-name .icon {
+  fill: #ffffff;
 }
 
 .item-row .item-action {

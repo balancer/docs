@@ -10,6 +10,12 @@ import { useWeb3ModalProvider } from '@web3modal/ethers/vue';
 import { useNetwork } from '../../../providers/network';
 import { useController } from '../../../utils/VotingEscrowController';
 import { ethers } from 'ethers';
+import Tooltip from './Tooltip.vue';
+import {
+  earlyPenaltyHint,
+  earlyUnlockHint,
+  unlockAllHint,
+} from '../../../constants/hints';
 
 const { walletProvider } = useWeb3ModalProvider();
 const { network } = useNetwork();
@@ -232,13 +238,25 @@ const formFields = computed(() => {
         </div>
       </div>
       <article class="group-btn">
-        <div>
+        <div class="section-btn">
           <UnlockAllModal
             :open="isUnlockAllModalOpen"
             :onClose="handleUnlockModalClose"
             :onUnlock="handleUnlock"
           />
-          <p>Status: {{ allUnlockStatus }}</p>
+          <p class="status">
+            Status: {{ allUnlockStatus }}
+            <Tooltip
+              :text="unlockAllHint"
+              :width="400"
+              position="left-bottom"
+              :fontSize="12"
+            >
+              <svg width="16" height="16" class="icon">
+                <use href="/images/exclamation-circle.svg#icon"></use>
+              </svg>
+            </Tooltip>
+          </p>
           <button
             class="btn"
             :disabled="allUnlockStatus || isLoadingAllUnlock"
@@ -247,14 +265,26 @@ const formFields = computed(() => {
             {{ isLoadingAllUnlock ? 'Unlocking...' : 'Unlock All' }}
           </button>
         </div>
-        <div>
+        <div class="section-btn">
           <EarlyUnlockModal
             :open="isEarlyUnlockModalOpen"
             :onClose="handleEarlyUnlockModalClose"
             :onUnlock="handleEarlyUnlock"
             :earlyUnlock="earlyUnlockStatus"
           />
-          <p>Status: {{ earlyUnlockStatus }}</p>
+          <p class="status">
+            Status: {{ earlyUnlockStatus }}
+            <Tooltip
+              :text="earlyUnlockHint"
+              :width="400"
+              position="bottom"
+              :fontSize="12"
+            >
+              <svg width="16" height="16" class="icon">
+                <use href="/images/exclamation-circle.svg#icon"></use>
+              </svg>
+            </Tooltip>
+          </p>
           <button
             class="btn"
             :disabled="isLoadingEarlyUnlock"
@@ -263,14 +293,26 @@ const formFields = computed(() => {
             {{ isLoadingEarlyUnlock ? 'Processing...' : 'Early Unlock' }}
           </button>
         </div>
-        <div>
+        <div class="section-btn">
           <EarlyPenaltyModal
             :open="isEarlyPenaltyModalOpen"
             :onClose="handleEarlyPenaltyModalClose"
             :onSubmit="handleSetEarlyPenalty"
             :earlyPenalty="earlyPenalty"
           />
-          <p>Early Penalty: {{ earlyPenalty }}</p>
+          <div class="status">
+            Early Penalty: {{ earlyPenalty
+            }}<Tooltip
+              :text="earlyPenaltyHint"
+              :width="800"
+              position="right-bottom"
+              :fontSize="12"
+            >
+              <svg width="16" height="16" class="icon">
+                <use href="/images/exclamation-circle.svg#icon"></use>
+              </svg>
+            </Tooltip>
+          </div>
           <button
             class="btn"
             :disabled="isLoadingEarlyPenalty"
@@ -347,6 +389,27 @@ const formFields = computed(() => {
   display: flex;
   align-items: center;
   justify-content: space-between;
+}
+
+.group-btn .section-btn {
+  display: flex;
+  flex-direction: column;
+}
+
+.group-btn .section-btn .status {
+  margin: 0;
+  margin-bottom: 16px;
+  display: flex;
+  align-items: center;
+  gap: 5px;
+}
+
+.group-btn .section-btn .status .icon {
+  fill: #2c3e50;
+}
+
+.dark .group-btn .section-btn .status .icon {
+  fill: #ffffff;
 }
 .btn {
   width: 180px;

@@ -4,6 +4,8 @@ import { useWeb3ModalProvider } from '@web3modal/ethers/vue';
 import { useNetwork } from '../../../providers/network';
 import { useController } from '../../../utils/RewardsDistributionController';
 import { useVeSystem } from '../../../providers/veSystem';
+import { setAvailableRewardsHint } from '../../../constants/hints';
+import Tooltip from './Tooltip.vue';
 
 const { walletProvider } = useWeb3ModalProvider();
 const { selected: veSystem, select } = useVeSystem();
@@ -58,7 +60,19 @@ const removeToken = (index: number) => {
 
 <template>
   <div class="item-row">
-    <p class="item-name">Set Available Rewards</p>
+    <p class="item-name">
+      Set Available Rewards
+      <Tooltip
+        :text="setAvailableRewardsHint"
+        :width="350"
+        position="left-bottom"
+        :fontSize="12"
+      >
+        <svg width="16" height="16" class="icon">
+          <use href="/images/exclamation-circle.svg#icon"></use>
+        </svg>
+      </Tooltip>
+    </p>
     <div class="group-tokens">
       <div v-for="(_, index) in tokens" :key="`token-${index}`" class="tokens">
         <div class="item-action">
@@ -136,6 +150,15 @@ input[type='number'] {
   height: 45px;
   display: flex;
   align-items: center;
+  gap: 5px;
+}
+
+.item-row .item-name .icon {
+  fill: #2c3e50;
+}
+
+.dark .item-row .item-name .icon {
+  fill: #ffffff;
 }
 
 .group-tokens .item-action {

@@ -3,7 +3,9 @@ import { ref, watch, computed } from 'vue';
 import Calendar from './Calendar.vue';
 import { useWeb3ModalProvider } from '@web3modal/ethers/vue';
 import { useNetwork } from '../../providers/network';
-import { dateToSeconds, locale2utc, useController } from '../../utils';
+import { locale2utc, useController } from '../../utils';
+import Tooltip from './admin/Tooltip.vue';
+import { rewardDistributionStartTimeHint } from '../../constants/hints';
 
 const { network } = useNetwork();
 const { walletProvider } = useWeb3ModalProvider();
@@ -196,7 +198,19 @@ watch([selectedDate, computedLockTime], () => {
       </div>
     </div>
     <div class="item-row">
-      <p class="item-name">Reward Distribition Start-time</p>
+      <p class="item-name">
+        Reward Distribition Start-time
+        <Tooltip
+          :text="rewardDistributionStartTimeHint"
+          :width="300"
+          position="bottom"
+          :fontSize="12"
+        >
+          <svg width="16" height="16" class="icon">
+            <use href="/images/exclamation-circle.svg#icon"></use>
+          </svg>
+        </Tooltip>
+      </p>
       <div class="input-group">
         <div class="input">
           <p
@@ -317,6 +331,17 @@ input[type='number'] {
   font-size: 14px;
   font-weight: 500;
   margin: 0;
+  display: flex;
+  align-items: center;
+  gap: 5px;
+}
+
+.item-row .item-name .icon {
+  fill: #2c3e50;
+}
+
+.dark .item-row .item-name .icon {
+  fill: #ffffff;
 }
 
 .item-row .input-group,
