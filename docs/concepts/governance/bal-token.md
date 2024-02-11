@@ -10,14 +10,17 @@ Balancer Governance Token \(BAL\) is the core token behind the Balancer protocol
 
 ## Contract Address
 
-| Network  | BAL Token Address                                                                                                                                              |
-| :------- | :------------------------------------------------------------------------------------------------------------------------------------------------------------- |
-| Ethereum | <span class="address-link">[0xba100000625a3754423978a60c9317c58a424e3d](https://etherscan.io/address/0xba100000625a3754423978a60c9317c58a424e3d)</span>        |
-| Polygon  | <span class="address-link">[0x9a71012b13ca4d3d0cdc72a177df3ef03b0e76a3](https://polygonscan.com/address/0x9a71012b13ca4d3d0cdc72a177df3ef03b0e76a3)</span>     |
-| Arbitrum | <span class="address-link">[0x040d1EdC9569d4Bab2D15287Dc5A4F10F56a56B8](https://arbiscan.io/address/0x040d1EdC9569d4Bab2D15287Dc5A4F10F56a56B8)</span>         |
-| Optimism | <span class="address-link">[0xFE8B128bA8C78aabC59d4c64cEE7fF28e9379921](https://optimistic.etherscan.io/token/0xfe8b128ba8c78aabc59d4c64cee7ff28e9379921)</span>|
-| Base     | <span class="address-link">[0x4158734D47Fc9692176B5085E0F52ee0Da5d47F1](https://basescan.org/address/0x4158734d47fc9692176b5085e0f52ee0da5d47f1)</span>        |
-| Goerli   | <span class="address-link">[0xfA8449189744799aD2AcE7e0EBAC8BB7575eff47](https://goerli.etherscan.io/address/0xfA8449189744799aD2AcE7e0EBAC8BB7575eff47)</span> |
+| Network       | BAL Token Address                                                                                                                                                   |
+| :------------ | :------------------------------------------------------------------------------------------------------------------------------------------------------------------ |
+| Ethereum      | <span class="address-link">[0xba100000625a3754423978a60c9317c58a424e3d](https://etherscan.io/address/0xba100000625a3754423978a60c9317c58a424e3d)</span>             |
+| Polygon PoS   | <span class="address-link">[0x9a71012b13ca4d3d0cdc72a177df3ef03b0e76a3](https://polygonscan.com/address/0x9a71012b13ca4d3d0cdc72a177df3ef03b0e76a3)</span>          |
+| Polygon zkEVM | <span class="address-link">[0x120eF59b80774F02211563834d8E3b72cb1649d6](https://zkevm.polygonscan.com//address/0x120ef59b80774f02211563834d8e3b72cb1649d6)</span>   |
+| Arbitrum      | <span class="address-link">[0x040d1EdC9569d4Bab2D15287Dc5A4F10F56a56B8](https://arbiscan.io/address/0x040d1EdC9569d4Bab2D15287Dc5A4F10F56a56B8)</span>              |
+| Optimism      | <span class="address-link">[0xFE8B128bA8C78aabC59d4c64cEE7fF28e9379921](https://optimistic.etherscan.io/token/0xfe8b128ba8c78aabc59d4c64cee7ff28e9379921)</span>    |
+| Base          | <span class="address-link">[0x4158734D47Fc9692176B5085E0F52ee0Da5d47F1](https://basescan.org/address/0x4158734d47fc9692176b5085e0f52ee0da5d47f1)</span>             |
+| Goerli        | <span class="address-link">[0xfA8449189744799aD2AcE7e0EBAC8BB7575eff47](https://goerli.etherscan.io/address/0xfA8449189744799aD2AcE7e0EBAC8BB7575eff47)</span>      |
+| Avalanche     | <span class="address-link">[0xE15bCB9E0EA69e6aB9FA080c4c4A5632896298C3](https://snowtrace.io/token/0xE15bCB9E0EA69e6aB9FA080c4c4A5632896298C3?chainId=43114)</span> |
+| Gnosis        | <span class="address-link">[0x7eF541E2a22058048904fE5744f9c7E4C57AF717](https://gnosisscan.io/address/0x7ef541e2a22058048904fe5744f9c7e4c57af717)</span>            |
 
 ## Supply & Inflation Schedule
 
@@ -160,13 +163,13 @@ This results in the following emissions schedule:
 
 This chart outlines the allocation amounts. More details below.
 
-| BAL Recipient/Fund                                                                                                                                                     | Original Allocation | State as of Oct 2023                                                                                                          |
-| :--------------------------------------------------------------------------------------------------------------------------------------------------------------------- | :------------------ | :---------------------------------------------------------------------------------------------------------------------------- |
-| Liquidity Providers - [allocated by the community](https://snapshot.org/#/balancer.eth/proposal/0xc93aa02ea7153a53d124189567ba19aa28663c499cdbfa60fe9bf35bf574d2a7)    | up to 65M           | ~25M                                                                                  |
-| Founders, Options, Advisors, Investors                                                                                                                                 | 22.5M               | Fully vested                                                                                                                  |
-| Ecosystem Fund (now DAO Multisig)                                                                                                                                      | 5M                  | [balance](https://etherscan.io/token/0xba100000625a3754423978a60c9317c58a424e3d?a=0x10A19e7eE7d7F8a52822f6817de8ea18204F2e4f) |
-| Balancer Labs Fundraising Fund                                                                                                                                         | 5M                  | [balance](https://etherscan.io/token/0xba100000625a3754423978a60c9317c58a424e3d?a=0xb129f73f1afd3a49c701241f374db17ae63b20eb) |
-| Balancer Labs Contributors Incentives Program                                                                                                                          | 2.5M                | [balance](https://etherscan.io/token/0xba100000625a3754423978a60c9317c58a424e3d?a=0xcdcebf1f28678eb4a1478403ba7f34c94f7ddbc5) |
+| BAL Recipient/Fund                                                                                                                                                  | Original Allocation | State as of Oct 2023                                                                                                          |
+| :------------------------------------------------------------------------------------------------------------------------------------------------------------------ | :------------------ | :---------------------------------------------------------------------------------------------------------------------------- |
+| Liquidity Providers - [allocated by the community](https://snapshot.org/#/balancer.eth/proposal/0xc93aa02ea7153a53d124189567ba19aa28663c499cdbfa60fe9bf35bf574d2a7) | up to 65M           | ~25M                                                                                                                          |
+| Founders, Options, Advisors, Investors                                                                                                                              | 22.5M               | Fully vested                                                                                                                  |
+| Ecosystem Fund (now DAO Multisig)                                                                                                                                   | 5M                  | [balance](https://etherscan.io/token/0xba100000625a3754423978a60c9317c58a424e3d?a=0x10A19e7eE7d7F8a52822f6817de8ea18204F2e4f) |
+| Balancer Labs Fundraising Fund                                                                                                                                      | 5M                  | [balance](https://etherscan.io/token/0xba100000625a3754423978a60c9317c58a424e3d?a=0xb129f73f1afd3a49c701241f374db17ae63b20eb) |
+| Balancer Labs Contributors Incentives Program                                                                                                                       | 2.5M                | [balance](https://etherscan.io/token/0xba100000625a3754423978a60c9317c58a424e3d?a=0xcdcebf1f28678eb4a1478403ba7f34c94f7ddbc5) |
 
 ::: chart BAL Token Distribution
 
