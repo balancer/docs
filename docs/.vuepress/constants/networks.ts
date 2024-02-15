@@ -1,7 +1,7 @@
 import { Network } from '@balancer-labs/sdk';
 
 export interface NetworkConfig {
-  id: Network | 80001 | 1101 | 43114 | 8453 | 100;
+  id: Network | 1101 | 43114 | 8453 | 100 | 11155111;
   name: string;
   logo: string;
   explorer: string;
@@ -38,13 +38,6 @@ export const NETWORKS: NetworkConfig[] = [
     rpcUrl: 'https://rpc.ankr.com/arbitrum',
   },
   {
-    id: 80001,
-    name: 'Mumbai',
-    logo: '/images/chains/polygon-pos-logo.svg',
-    explorer: 'https://mumbai.polygonscan.com',
-    rpcUrl: 'https://rpc-mumbai.maticvigil.com',
-  },
-  {
     id: Network.OPTIMISM,
     name: 'Optimism',
     logo: '',
@@ -71,5 +64,12 @@ export const NETWORKS: NetworkConfig[] = [
     logo: '',
     explorer: 'https://gnosisscan.io/',
     rpcUrl: 'https://gnosis-pokt.nodies.app',
+  },
+  {
+    id: 11155111,
+    name: 'Sepolia',
+    logo: '',
+    explorer: 'https://sepolia.etherscan.io',
+    rpcUrl: 'https://eth-sepolia-public.unifra.io',
   },
 ];

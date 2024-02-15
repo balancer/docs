@@ -30,7 +30,6 @@ const metadata = {
 createWeb3Modal({
   ethersConfig: defaultConfig({ metadata }),
   chains,
-  optionalChains: [80001],
   projectId,
   // defaultChain: chains[0],
   themeVariables: {
