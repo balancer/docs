@@ -167,6 +167,18 @@ export const navbar: NavbarConfig = [
           '/reference/vebal-and-gauges/vebal',
         ],
       },
+      {
+        text: 'Vote Escrow Launchpad',
+        children: [
+          '/reference/vote-escrow-launchpad/1_launchpad',
+          '/reference/vote-escrow-launchpad/2_VotingEscrow',
+          '/reference/vote-escrow-launchpad/3_RewardDistributor',
+          '/reference/vote-escrow-launchpad/4_RewardFaucet',
+          '/reference/vote-escrow-launchpad/5_Troubleshooting',
+          '/reference/vote-escrow-launchpad/6_LensReward',
+          '/reference/vote-escrow-launchpad/7_SmartWalletWhitelist',
+        ],
+      },
     ],
   },
   {

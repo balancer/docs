@@ -247,7 +247,7 @@ watch([selectedDate, computedLockTime], () => {
             v-model="selectedDaysValue"
             type="number"
             class="input"
-            placeholder="1"
+            placeholder="0"
           />
         </div>
         <div class="time-group">
@@ -256,7 +256,7 @@ watch([selectedDate, computedLockTime], () => {
             v-model="selectedWeeksValue"
             type="number"
             class="input"
-            placeholder="1"
+            placeholder="0"
           />
         </div>
         <div class="time-group">
@@ -265,7 +265,7 @@ watch([selectedDate, computedLockTime], () => {
             v-model="selectedYearsValue"
             type="number"
             class="input"
-            placeholder="1"
+            placeholder="0"
           />
         </div>
       </div>
