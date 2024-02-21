@@ -71,7 +71,7 @@ This error occurs when you want to start reward distribution for the current wee
 
 
 ### Launchpad Contract Verification 
-To verify Launchpad contract use [contract source code](../contracts/Launchpad.vy) and constructor arguments (ABI-encoded) which you will find after Launchpad deployment.
+To verify Launchpad contract use [contract source code](https://github.com/protofire/ve8020-launchpad/blob/main/contracts/Launchpad.vy) and constructor arguments (ABI-encoded) which you will find after Launchpad deployment.
 If you missed (or have lost) constructor arguments, you can build it manually by inserting addresses of VotingEscrow and RewardDistributor implementations without '0x' into following string:  
 ```
 000000000000000000000000<VotingEscrow_Impl_Address>0000000000000000000000000<RewardDistributor_Impl_Address>

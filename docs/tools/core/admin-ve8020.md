@@ -14,3 +14,6 @@ Use this Admin panel with the admin wallet to create your VE system. For direct 
 
 ### Step 3 - Add Your Own Reward Program
 Use the "Rewards Distribution" tab to set Reward Token and permisssions. For more detailed information see [Reward Distributor Guide](/reference/vote-escrow-launchpad/3_RewardDistributor) and the [Reward Faucet Guide](/reference/vote-escrow-launchpad/4_RewardFaucet)
+
+#### Risks
+Before using this tool, review [Specific Risks](/reference/vote-escrow-launchpad/8_risks) and [Balancer Terms of Use](https://app.balancer.fi/#/terms-of-use)
