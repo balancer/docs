@@ -17,3 +17,5 @@ Use the "Rewards Distribution" tab to set Reward Token and permisssions. For mor
 
 #### Risks
 Before using this tool, review [Specific Risks](/reference/vote-escrow-launchpad/8_risks) and [Balancer Terms of Use](https://app.balancer.fi/#/terms-of-use)
+
+Source code can be found at [Protofire's Github Repo](https://github.com/protofire/ve8020-launchpad/tree/main). This code has been audited by Certora - [read the report here](https://www.certora.com/reports/protofire).
