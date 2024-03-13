@@ -12,7 +12,7 @@ The RewardDistributor contract distributes rewards on a weekly basis, requiring 
 
 
 ## Code  
-[RewardDistributor.sol](../contracts/RewardDistributor.sol)
+[RewardDistributor.sol](https://github.com/protofire/ve8020-launchpad/blob/main/contracts/RewardDistributor.sol)
 
 
 ## View functions

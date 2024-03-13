@@ -7,7 +7,7 @@ order: 1
 The contract allows locking tokens for a selected period of time and receiving rewards from the RewardsDistribution contract in return. It utilizes the VotingEscrow contract from Curve as its implementation.
 
 ## Code  
-[VotingEscrow.vy](../contracts/VotingEscrow.vy)  
+[VotingEscrow.vy](https://github.com/protofire/ve8020-launchpad/blob/main/contracts/Launchpad.vy)  
 
 
 ## MaxLock Time and Lock Durations
@@ -17,7 +17,7 @@ When selecting `MAXTIME`, the VE-System creator should consider the planned rewa
 
 
 ### Interactions with other smart contracts (Smart-Wallets)
-By default, the VotingEscrow contract restricts locking for other smart contracts. If you want to configure access for other smart contracts, you need to use the functionality of the third-party `SmartWalletWhitelist` smart contract. With `SmartWalletWhitelist`, you can grant access to all possible smart contracts or only a specific list. [Refer to the instructions](./misc_docs/SmartWalletWhitelist.md) for deploying and configuring access for smart contracts to VotingEscrow.
+By default, the VotingEscrow contract restricts locking for other smart contracts. If you want to configure access for other smart contracts, you need to use the functionality of the third-party `SmartWalletWhitelist` smart contract. With `SmartWalletWhitelist`, you can grant access to all possible smart contracts or only a specific list. [Refer to the instructions](./SmartWalletWhitelist.md) for deploying and configuring access for smart contracts to VotingEscrow.
 
 
 ## View functions
@@ -150,7 +150,7 @@ functions apply_transfer_ownership() external();
 Applies ownership transfer  
   
 
-### [Adding smart wallet checker](./misc_docs/SmartWalletWhitelist.md)  
+### [Adding smart wallet checker](../7_SmartWalletWhitelist.md)  
 ```sh
 function commit_smart_wallet_checker(address smartChecker) external;
 ```

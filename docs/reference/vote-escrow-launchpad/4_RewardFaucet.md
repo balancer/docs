@@ -8,7 +8,7 @@ The contract allows for scheduling reward distributions at specific time interva
 
 
 ## Code  
-[RewardFaucet.sol](../contracts/RewardFaucet.sol)
+[RewardFaucet.sol](https://github.com/protofire/ve8020-launchpad/blob/main/contracts/RewardFaucet.sol)
 
 
 ## View functions
