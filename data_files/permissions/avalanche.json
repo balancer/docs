@@ -142,7 +142,7 @@
       ],
       "Authorized_Caller_Names": [
          "multisigs/fees",
-         "mimic/smartVaultV2"
+         "mimic/smartVaultV3"
       ]
    },
    {
