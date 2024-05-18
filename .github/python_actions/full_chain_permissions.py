@@ -22,7 +22,11 @@ SCANNERS_BY_CHAIN = AddrBook.chains["SCANNERS_BY_CHAIN"]
 def build_chain_permissions_list(chain_name):
     results = []
     addrs = AddrBook(chain_name)
-    perms = BalPermissions(chain_name)
+    try:
+        perms = BalPermissions(chain_name)
+    except Exception as e:
+        print(f"WARNING: No permissions found for chain {chain_name}: {e}")
+        return []
     for action_id, callers in perms.active_permissions_by_action_id.items():
         fx_paths = perms.paths_by_action_id[action_id]
         for fx_path in fx_paths:
@@ -128,6 +132,7 @@ def generate_chain_files(chain):
         output_list(permissions, f"{chain}", chain)
     else:
         print(f"WARNING: No permissions found for chain {chain}")
+
 
 def main():
     for chain in AddrBook.chain_ids_by_name.keys():
