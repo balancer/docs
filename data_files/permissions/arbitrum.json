@@ -1424,10 +1424,12 @@
       "Contract": "ComposableStablePoolFactory",
       "Deployment": "20230711-composable-stable-pool-v5",
       "Authorized_Caller_Addresses": [
-         "0xf404C5a0c02397f0908A3524fc5eb84e68Bbe60D"
+         "0xf404C5a0c02397f0908A3524fc5eb84e68Bbe60D",
+         "0xc38c5f97B34E175FFd35407fc91a937300E33860"
       ],
       "Authorized_Caller_Names": [
-         "multisigs/emergency"
+         "multisigs/emergency",
+         "multisigs/lm"
       ]
    },
    {
@@ -1493,6 +1495,87 @@
       "Fx": "stopAmplificationParameterUpdate()",
       "Contract": "ComposableStablePool",
       "Deployment": "20230711-composable-stable-pool-v5",
+      "Authorized_Caller_Addresses": [
+         "0xc38c5f97B34E175FFd35407fc91a937300E33860"
+      ],
+      "Authorized_Caller_Names": [
+         "multisigs/lm"
+      ]
+   },
+   {
+      "Fx": "disable()",
+      "Contract": "ComposableStablePoolFactory",
+      "Deployment": "20240223-composable-stable-pool-v6",
+      "Authorized_Caller_Addresses": [
+         "0xf404C5a0c02397f0908A3524fc5eb84e68Bbe60D"
+      ],
+      "Authorized_Caller_Names": [
+         "multisigs/emergency"
+      ]
+   },
+   {
+      "Fx": "disableRecoveryMode()",
+      "Contract": "ComposableStablePool",
+      "Deployment": "20240223-composable-stable-pool-v6",
+      "Authorized_Caller_Addresses": [
+         "0xf404C5a0c02397f0908A3524fc5eb84e68Bbe60D"
+      ],
+      "Authorized_Caller_Names": [
+         "multisigs/emergency"
+      ]
+   },
+   {
+      "Fx": "enableRecoveryMode()",
+      "Contract": "ComposableStablePool",
+      "Deployment": "20240223-composable-stable-pool-v6",
+      "Authorized_Caller_Addresses": [
+         "0xf404C5a0c02397f0908A3524fc5eb84e68Bbe60D",
+         "0xb5e56CC3d2e38e53b1166175C59e921A37cDC1E2"
+      ],
+      "Authorized_Caller_Names": [
+         "multisigs/emergency",
+         "20221123-pool-recovery-helper/PoolRecoveryHelper"
+      ]
+   },
+   {
+      "Fx": "pause()",
+      "Contract": "ComposableStablePool",
+      "Deployment": "20240223-composable-stable-pool-v6",
+      "Authorized_Caller_Addresses": [
+         "0xf404C5a0c02397f0908A3524fc5eb84e68Bbe60D"
+      ],
+      "Authorized_Caller_Names": [
+         "multisigs/emergency"
+      ]
+   },
+   {
+      "Fx": "setSwapFeePercentage(uint256)",
+      "Contract": "ComposableStablePool",
+      "Deployment": "20240223-composable-stable-pool-v6",
+      "Authorized_Caller_Addresses": [
+         "0xad3b67BCA8935Cb510C8D18bD45F0b94F54A968f",
+         "0xc38c5f97B34E175FFd35407fc91a937300E33860"
+      ],
+      "Authorized_Caller_Names": [
+         "UNDEF",
+         "multisigs/lm"
+      ]
+   },
+   {
+      "Fx": "startAmplificationParameterUpdate(uint256,uint256)",
+      "Contract": "ComposableStablePool",
+      "Deployment": "20240223-composable-stable-pool-v6",
+      "Authorized_Caller_Addresses": [
+         "0xc38c5f97B34E175FFd35407fc91a937300E33860"
+      ],
+      "Authorized_Caller_Names": [
+         "multisigs/lm"
+      ]
+   },
+   {
+      "Fx": "stopAmplificationParameterUpdate()",
+      "Contract": "ComposableStablePool",
+      "Deployment": "20240223-composable-stable-pool-v6",
       "Authorized_Caller_Addresses": [
          "0xc38c5f97B34E175FFd35407fc91a937300E33860"
       ],
