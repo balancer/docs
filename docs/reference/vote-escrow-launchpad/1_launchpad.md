@@ -5,8 +5,14 @@ order: 0
 
 ## Launchpad System Details
 
-The Launchpad system is a set of smart contracts used to lock BPT tokens (representing liquidity providers positions on Balancer) in a vote escrow system in order to gain voting power on a given project, and also being able to vote on rewards distribution to those who are locking their liquidity, incentivising governance and long term participation.  
-In addition to the BPT token lock, almost any token of any project can be used for locking. This way, users can independently create their own vote escrow systems, with their own reward tokens (incentives).
+The Launchpad system is a set of smart contracts used to create veSystems. Each veSystem is used to lock BPT tokens (representing liquidity provider positions on Balancer) in a vote escrow system to gain voting power on a specific project and participate in reward distribution to those who lock their liquidity, incentivizing governance and long-term participation.
+In addition to locking BPT tokens, almost any token from any project can be used for locking. Thus, users can independently create their own vote escrow systems with their own reward tokens (incentives).  
+Reward tokens (incentives) can be any tokens defined by the veSystem creator. 
+Additionally, veSystem participants may also receive BAL tokens as an extra reward if the locked token is part of the Balancer reward distribution system.
+The Launchpad system is a set of smart contracts used to create veSystems. Each veSystem is used to lock BPT tokens (representing liquidity provider positions on Balancer) in a vote escrow system to gain voting power on a specific project and participate in reward distribution to those who lock their liquidity, incentivizing governance and long-term participation.
+In addition to locking BPT tokens, almost any token from any project can be used for locking. Thus, users can independently create their own vote escrow systems with their own reward tokens (incentives).  
+Reward tokens (incentives) can be any tokens defined by the veSystem creator. 
+Additionally, veSystem participants may also receive BAL tokens as an extra reward if the locked token is part of the Balancer reward distribution system.
 
 Main parts of the system:  
 Launchpad - a contract factory for creating new VotingEscrow and RewardsDistribution contracts.  
@@ -20,7 +26,7 @@ The Launchpad contract uses the minimal-proxy pattern for deploying new VotingEs
 
 
 ### Code  
-[Launchpad.vy](../contracts/Launchpad.vy)
+[Launchpad.vy](https://github.com/protofire/ve8020-launchpad/blob/main/contracts/Launchpad.vy)
 
 ### Deploying new ve-system
 ```sh
@@ -122,4 +128,3 @@ def deploy(
 
     return (newVotingEscrow, newRewardDistributor, newRewardFaucet)
 ```
-

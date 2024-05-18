@@ -11,7 +11,7 @@ To deploy `SmartWalletWhitelist`, execute the following command:
 npx hardhat run ./scripts/utils/deploySmartAllowList.ts --network networkName
 ```  
 
-Don't forget to specify desired networkName (full list of network names can be found [hardhat.config.ts](../../hardhat.config.ts))
+Don't forget to specify desired networkName (full list of network names can be found [hardhat.config.ts](https://github.com/protofire/ve8020-launchpad/blob/main/hardhat.config.ts))
   
 
 After deploying the `SmartWalletWhitelist` smart contract, you need to add its address to the VotingEscrow contract. To do this, in the VotingEscrow contract, sequentially call the functions:  

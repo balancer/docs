@@ -14,3 +14,8 @@ Use this Admin panel with the admin wallet to create your VE system. For direct 
 
 ### Step 3 - Add Your Own Reward Program
 Use the "Rewards Distribution" tab to set Reward Token and permisssions. For more detailed information see [Reward Distributor Guide](/reference/vote-escrow-launchpad/3_RewardDistributor) and the [Reward Faucet Guide](/reference/vote-escrow-launchpad/4_RewardFaucet)
+
+#### Risks
+Before using this tool, review [Specific Risks](/reference/vote-escrow-launchpad/8_risks) and [Balancer Terms of Use](https://app.balancer.fi/#/terms-of-use)
+
+Source code can be found at [Protofire's Github Repo](https://github.com/protofire/ve8020-launchpad/tree/main). This code has been audited by Certora - [read the report here](https://www.certora.com/reports/protofire).
