@@ -49,7 +49,8 @@ disable(),ComposableStablePoolFactory,20220906-composable-stable-pool,"['0x02f35
 disable(),ComposableStablePoolFactory,20221122-composable-stable-pool-v2,"['0x02f35dA6A02017154367Bc4d47bb6c7D06C7533B', '0xA29F61256e948F3FB707b4b3B138C5cCb9EF9888']","['multisigs/blabs_ops', 'multisigs/emergency']"
 disable(),ComposableStablePoolFactory,20230206-composable-stable-pool-v3,"['0xA29F61256e948F3FB707b4b3B138C5cCb9EF9888', '0x10A19e7eE7d7F8a52822f6817de8ea18204F2e4f']","['multisigs/emergency', 'multisigs/dao']"
 disable(),ComposableStablePoolFactory,20230320-composable-stable-pool-v4,['0xA29F61256e948F3FB707b4b3B138C5cCb9EF9888'],['multisigs/emergency']
-disable(),ComposableStablePoolFactory,20230711-composable-stable-pool-v5,['0xA29F61256e948F3FB707b4b3B138C5cCb9EF9888'],['multisigs/emergency']
+disable(),ComposableStablePoolFactory,20230711-composable-stable-pool-v5,"['0xA29F61256e948F3FB707b4b3B138C5cCb9EF9888', '0xc38c5f97B34E175FFd35407fc91a937300E33860']","['multisigs/emergency', 'multisigs/lm']"
+disable(),ComposableStablePoolFactory,20240223-composable-stable-pool-v6,['0xA29F61256e948F3FB707b4b3B138C5cCb9EF9888'],['multisigs/emergency']
 disable(),ERC4626LinearPoolFactory,20230206-erc4626-linear-pool-v3,"['0xA29F61256e948F3FB707b4b3B138C5cCb9EF9888', '0x10A19e7eE7d7F8a52822f6817de8ea18204F2e4f']","['multisigs/emergency', 'multisigs/dao']"
 disable(),ERC4626LinearPoolFactory,20230409-erc4626-linear-pool-v4,['0xA29F61256e948F3FB707b4b3B138C5cCb9EF9888'],['multisigs/emergency']
 disable(),EulerLinearPoolFactory,20230208-euler-linear-pool,"['0xA29F61256e948F3FB707b4b3B138C5cCb9EF9888', '0x10A19e7eE7d7F8a52822f6817de8ea18204F2e4f']","['multisigs/emergency', 'multisigs/dao']"
@@ -69,6 +70,7 @@ disableRecoveryMode(),ComposableStablePool,20221122-composable-stable-pool-v2,['
 disableRecoveryMode(),ComposableStablePool,20230206-composable-stable-pool-v3,['0xA29F61256e948F3FB707b4b3B138C5cCb9EF9888'],['multisigs/emergency']
 disableRecoveryMode(),ComposableStablePool,20230320-composable-stable-pool-v4,['0xA29F61256e948F3FB707b4b3B138C5cCb9EF9888'],['multisigs/emergency']
 disableRecoveryMode(),ComposableStablePool,20230711-composable-stable-pool-v5,['0xA29F61256e948F3FB707b4b3B138C5cCb9EF9888'],['multisigs/emergency']
+disableRecoveryMode(),ComposableStablePool,20240223-composable-stable-pool-v6,['0xA29F61256e948F3FB707b4b3B138C5cCb9EF9888'],['multisigs/emergency']
 disableRecoveryMode(),WeightedPool,20230206-weighted-pool-v3,['0xA29F61256e948F3FB707b4b3B138C5cCb9EF9888'],['multisigs/emergency']
 disableRecoveryMode(),WeightedPool,20230320-weighted-pool-v4,['0xA29F61256e948F3FB707b4b3B138C5cCb9EF9888'],['multisigs/emergency']
 enableRecoveryMode(),AaveLinearPool,20220817-aave-rebalanced-linear-pool,['0xA29F61256e948F3FB707b4b3B138C5cCb9EF9888'],['multisigs/emergency']
@@ -80,6 +82,7 @@ enableRecoveryMode(),ComposableStablePool,20221122-composable-stable-pool-v2,"['
 enableRecoveryMode(),ComposableStablePool,20230206-composable-stable-pool-v3,"['0xA29F61256e948F3FB707b4b3B138C5cCb9EF9888', '0x1b300C86980a5195bCF49bD419A068D98dC133Db']","['multisigs/emergency', '20221123-pool-recovery-helper/PoolRecoveryHelper']"
 enableRecoveryMode(),ComposableStablePool,20230320-composable-stable-pool-v4,"['0xA29F61256e948F3FB707b4b3B138C5cCb9EF9888', '0x1b300C86980a5195bCF49bD419A068D98dC133Db']","['multisigs/emergency', '20221123-pool-recovery-helper/PoolRecoveryHelper']"
 enableRecoveryMode(),ComposableStablePool,20230711-composable-stable-pool-v5,"['0xA29F61256e948F3FB707b4b3B138C5cCb9EF9888', '0x1b300C86980a5195bCF49bD419A068D98dC133Db']","['multisigs/emergency', '20221123-pool-recovery-helper/PoolRecoveryHelper']"
+enableRecoveryMode(),ComposableStablePool,20240223-composable-stable-pool-v6,"['0xA29F61256e948F3FB707b4b3B138C5cCb9EF9888', '0x1b300C86980a5195bCF49bD419A068D98dC133Db']","['multisigs/emergency', '20221123-pool-recovery-helper/PoolRecoveryHelper']"
 enableRecoveryMode(),ERC4626LinearPool,20230206-erc4626-linear-pool-v3,['0x10A19e7eE7d7F8a52822f6817de8ea18204F2e4f'],['multisigs/dao']
 enableRecoveryMode(),ERC4626LinearPool,20230409-erc4626-linear-pool-v4,"['0x1b300C86980a5195bCF49bD419A068D98dC133Db', '0xA29F61256e948F3FB707b4b3B138C5cCb9EF9888']","['20221123-pool-recovery-helper/PoolRecoveryHelper', 'multisigs/emergency']"
 enableRecoveryMode(),EulerLinearPool,20230208-euler-linear-pool,['0x10A19e7eE7d7F8a52822f6817de8ea18204F2e4f'],['multisigs/dao']
@@ -120,6 +123,7 @@ pause(),ComposableStablePool,20221122-composable-stable-pool-v2,['0xA29F61256e94
 pause(),ComposableStablePool,20230206-composable-stable-pool-v3,['0xA29F61256e948F3FB707b4b3B138C5cCb9EF9888'],['multisigs/emergency']
 pause(),ComposableStablePool,20230320-composable-stable-pool-v4,['0xA29F61256e948F3FB707b4b3B138C5cCb9EF9888'],['multisigs/emergency']
 pause(),ComposableStablePool,20230711-composable-stable-pool-v5,['0xA29F61256e948F3FB707b4b3B138C5cCb9EF9888'],['multisigs/emergency']
+pause(),ComposableStablePool,20240223-composable-stable-pool-v6,['0xA29F61256e948F3FB707b4b3B138C5cCb9EF9888'],['multisigs/emergency']
 pause(),ERC4626LinearPool,20230409-erc4626-linear-pool-v4,['0xA29F61256e948F3FB707b4b3B138C5cCb9EF9888'],['multisigs/emergency']
 pause(),EulerLinearPool,20230208-euler-linear-pool,['0x10A19e7eE7d7F8a52822f6817de8ea18204F2e4f'],['multisigs/dao']
 pause(),GearboxLinearPool,20230409-gearbox-linear-pool-v2,['0xA29F61256e948F3FB707b4b3B138C5cCb9EF9888'],['multisigs/emergency']
@@ -153,6 +157,7 @@ setSwapFeePercentage(uint256),ComposableStablePool,20221122-composable-stable-po
 setSwapFeePercentage(uint256),ComposableStablePool,20230206-composable-stable-pool-v3,"['0xE4a8ed6c1D8d048bD29A00946BFcf2DB10E7923B', '0x9008D19f58AAbD9eD0D60971565AA8510560ab41', '0xad3b67BCA8935Cb510C8D18bD45F0b94F54A968f']","['gauntlet/GauntletFeeSetter', 'cow/settlement', 'UNDEF']"
 setSwapFeePercentage(uint256),ComposableStablePool,20230320-composable-stable-pool-v4,"['0xc38c5f97B34E175FFd35407fc91a937300E33860', '0x9008D19f58AAbD9eD0D60971565AA8510560ab41', '0xad3b67BCA8935Cb510C8D18bD45F0b94F54A968f']","['multisigs/lm', 'cow/settlement', 'UNDEF']"
 setSwapFeePercentage(uint256),ComposableStablePool,20230711-composable-stable-pool-v5,"['0xc38c5f97B34E175FFd35407fc91a937300E33860', '0xad3b67BCA8935Cb510C8D18bD45F0b94F54A968f', '0x9008D19f58AAbD9eD0D60971565AA8510560ab41']","['multisigs/lm', 'UNDEF', 'cow/settlement']"
+setSwapFeePercentage(uint256),ComposableStablePool,20240223-composable-stable-pool-v6,"['0x9008D19f58AAbD9eD0D60971565AA8510560ab41', '0xad3b67BCA8935Cb510C8D18bD45F0b94F54A968f', '0xc38c5f97B34E175FFd35407fc91a937300E33860']","['cow/settlement', 'UNDEF', 'multisigs/lm']"
 setSwapFeePercentage(uint256),ERC4626LinearPool,20230206-erc4626-linear-pool-v3,['0xE4a8ed6c1D8d048bD29A00946BFcf2DB10E7923B'],['gauntlet/GauntletFeeSetter']
 setSwapFeePercentage(uint256),ERC4626LinearPool,20230409-erc4626-linear-pool-v4,['0xE4a8ed6c1D8d048bD29A00946BFcf2DB10E7923B'],['gauntlet/GauntletFeeSetter']
 setSwapFeePercentage(uint256),EulerLinearPool,20230208-euler-linear-pool,['0xE4a8ed6c1D8d048bD29A00946BFcf2DB10E7923B'],['gauntlet/GauntletFeeSetter']
@@ -191,6 +196,7 @@ setSwapFeePercentage(uint256),YearnLinearPool,20230409-yearn-linear-pool-v2,['0x
 "startAmplificationParameterUpdate(uint256,uint256)",ComposableStablePool,20230206-composable-stable-pool-v3,['0xf4A80929163C5179Ca042E1B292F5EFBBE3D89e6'],['multisigs/feeManager']
 "startAmplificationParameterUpdate(uint256,uint256)",ComposableStablePool,20230320-composable-stable-pool-v4,['0xc38c5f97B34E175FFd35407fc91a937300E33860'],['multisigs/lm']
 "startAmplificationParameterUpdate(uint256,uint256)",ComposableStablePool,20230711-composable-stable-pool-v5,['0xc38c5f97B34E175FFd35407fc91a937300E33860'],['multisigs/lm']
+"startAmplificationParameterUpdate(uint256,uint256)",ComposableStablePool,20240223-composable-stable-pool-v6,['0xc38c5f97B34E175FFd35407fc91a937300E33860'],['multisigs/lm']
 "startAmplificationParameterUpdate(uint256,uint256)",StablePool,20210624-stable-pool,['0xf4A80929163C5179Ca042E1B292F5EFBBE3D89e6'],['multisigs/feeManager']
 "startAmplificationParameterUpdate(uint256,uint256)",StablePool,20220609-stable-pool-v2,['0xf4A80929163C5179Ca042E1B292F5EFBBE3D89e6'],['multisigs/feeManager']
 stopAmplificationParameterUpdate(),ComposableStablePool,20220906-composable-stable-pool,['0xf4A80929163C5179Ca042E1B292F5EFBBE3D89e6'],['multisigs/feeManager']
@@ -198,6 +204,7 @@ stopAmplificationParameterUpdate(),ComposableStablePool,20221122-composable-stab
 stopAmplificationParameterUpdate(),ComposableStablePool,20230206-composable-stable-pool-v3,['0xf4A80929163C5179Ca042E1B292F5EFBBE3D89e6'],['multisigs/feeManager']
 stopAmplificationParameterUpdate(),ComposableStablePool,20230320-composable-stable-pool-v4,['0xc38c5f97B34E175FFd35407fc91a937300E33860'],['multisigs/lm']
 stopAmplificationParameterUpdate(),ComposableStablePool,20230711-composable-stable-pool-v5,['0xc38c5f97B34E175FFd35407fc91a937300E33860'],['multisigs/lm']
+stopAmplificationParameterUpdate(),ComposableStablePool,20240223-composable-stable-pool-v6,['0xc38c5f97B34E175FFd35407fc91a937300E33860'],['multisigs/lm']
 stopAmplificationParameterUpdate(),StablePool,20210624-stable-pool,['0xf4A80929163C5179Ca042E1B292F5EFBBE3D89e6'],['multisigs/feeManager']
 stopAmplificationParameterUpdate(),StablePool,20220609-stable-pool-v2,['0xf4A80929163C5179Ca042E1B292F5EFBBE3D89e6'],['multisigs/feeManager']
 "swap((bytes32,uint8,address,address,uint256,bytes),(address,bool,address,bool),uint256,uint256)",Vault,20210418-vault,"['0xdcdbf71A870cc60C6F9B621E28a7D3Ffd6Dd4965', '0xAc9f49eF3ab0BbC929f7b1bb0A17E1Fca5786251', '0x886A3Ec7bcC508B8795990B60Fa21f85F9dB7948', '0x2536dfeeCB7A0397CF98eDaDA8486254533b1aFA', '0xfeA793Aa415061C483D2390414275AD314B3F621', '0xE0Ca4DAc40d44D737f0d02B1F2B2D969731eCda9', '0x35Cea9e57A393ac66Aaa7E25C391D52C74B5648f']","['20210812-lido-relayer/LidoRelayer', '20211203-batch-relayer/BalancerRelayer', '20220720-batch-relayer-v3/BalancerRelayer', '20220916-batch-relayer-v4/BalancerRelayer', '20230314-batch-relayer-v5/BalancerRelayer', 'UNDEF', '20231031-batch-relayer-v6/BalancerRelayer']"
