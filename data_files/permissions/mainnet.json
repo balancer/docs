@@ -13,13 +13,13 @@
          "0x35Cea9e57A393ac66Aaa7E25C391D52C74B5648f"
       ],
       "Authorized_Caller_Names": [
-         "20210812-lido-relayer/LidoRelayer",
-         "cow/vault_relayer",
-         "20211203-batch-relayer/BalancerRelayer",
-         "20220720-batch-relayer-v3/BalancerRelayer",
-         "20220916-batch-relayer-v4/BalancerRelayer",
-         "20230314-batch-relayer-v5/BalancerRelayer",
-         "20231031-batch-relayer-v6/BalancerRelayer"
+         "UNDEF",
+         "UNDEF",
+         "UNDEF",
+         "UNDEF",
+         "UNDEF",
+         "UNDEF",
+         "UNDEF"
       ]
    },
    {
@@ -36,13 +36,13 @@
          "0x35Cea9e57A393ac66Aaa7E25C391D52C74B5648f"
       ],
       "Authorized_Caller_Names": [
-         "20210812-lido-relayer/LidoRelayer",
-         "20211203-batch-relayer/BalancerRelayer",
-         "20220720-batch-relayer-v3/BalancerRelayer",
-         "20220916-batch-relayer-v4/BalancerRelayer",
-         "20230314-batch-relayer-v5/BalancerRelayer",
          "UNDEF",
-         "20231031-batch-relayer-v6/BalancerRelayer"
+         "UNDEF",
+         "UNDEF",
+         "UNDEF",
+         "UNDEF",
+         "UNDEF",
+         "UNDEF"
       ]
    },
    {
@@ -59,13 +59,13 @@
          "0x35Cea9e57A393ac66Aaa7E25C391D52C74B5648f"
       ],
       "Authorized_Caller_Names": [
-         "20210812-lido-relayer/LidoRelayer",
-         "20211203-batch-relayer/BalancerRelayer",
-         "20220720-batch-relayer-v3/BalancerRelayer",
-         "20220916-batch-relayer-v4/BalancerRelayer",
-         "20230314-batch-relayer-v5/BalancerRelayer",
          "UNDEF",
-         "20231031-batch-relayer-v6/BalancerRelayer"
+         "UNDEF",
+         "UNDEF",
+         "UNDEF",
+         "UNDEF",
+         "UNDEF",
+         "UNDEF"
       ]
    },
    {
@@ -82,13 +82,13 @@
          "0x35Cea9e57A393ac66Aaa7E25C391D52C74B5648f"
       ],
       "Authorized_Caller_Names": [
-         "20210812-lido-relayer/LidoRelayer",
-         "cow/vault_relayer",
-         "20211203-batch-relayer/BalancerRelayer",
-         "20220720-batch-relayer-v3/BalancerRelayer",
-         "20220916-batch-relayer-v4/BalancerRelayer",
-         "20230314-batch-relayer-v5/BalancerRelayer",
-         "20231031-batch-relayer-v6/BalancerRelayer"
+         "UNDEF",
+         "UNDEF",
+         "UNDEF",
+         "UNDEF",
+         "UNDEF",
+         "UNDEF",
+         "UNDEF"
       ]
    },
    {
@@ -99,7 +99,7 @@
          "0x170027069fd114BFF2f57B0FC796df93290C02a6"
       ],
       "Authorized_Caller_Names": [
-         "EOA/blabs_ops/EmergencyPauser"
+         "UNDEF"
       ]
    },
    {
@@ -114,11 +114,11 @@
          "0x35Cea9e57A393ac66Aaa7E25C391D52C74B5648f"
       ],
       "Authorized_Caller_Names": [
-         "20211203-batch-relayer/BalancerRelayer",
-         "20220720-batch-relayer-v3/BalancerRelayer",
-         "20220916-batch-relayer-v4/BalancerRelayer",
-         "20230314-batch-relayer-v5/BalancerRelayer",
-         "20231031-batch-relayer-v6/BalancerRelayer"
+         "UNDEF",
+         "UNDEF",
+         "UNDEF",
+         "UNDEF",
+         "UNDEF"
       ]
    },
    {
@@ -135,13 +135,13 @@
          "0x35Cea9e57A393ac66Aaa7E25C391D52C74B5648f"
       ],
       "Authorized_Caller_Names": [
-         "20210812-lido-relayer/LidoRelayer",
-         "20211203-batch-relayer/BalancerRelayer",
-         "20220720-batch-relayer-v3/BalancerRelayer",
-         "20220916-batch-relayer-v4/BalancerRelayer",
-         "20230314-batch-relayer-v5/BalancerRelayer",
          "UNDEF",
-         "20231031-batch-relayer-v6/BalancerRelayer"
+         "UNDEF",
+         "UNDEF",
+         "UNDEF",
+         "UNDEF",
+         "UNDEF",
+         "UNDEF"
       ]
    },
    {
@@ -152,7 +152,7 @@
          "0x97207B095e4D5C9a6e4cfbfcd2C3358E03B90c4A"
       ],
       "Authorized_Caller_Names": [
-         "20220725-protocol-fee-percentages-provider/ProtocolFeePercentagesProvider"
+         "UNDEF"
       ]
    },
    {
@@ -164,8 +164,8 @@
          "0x97207B095e4D5C9a6e4cfbfcd2C3358E03B90c4A"
       ],
       "Authorized_Caller_Names": [
-         "multisigs/dao",
-         "20220725-protocol-fee-percentages-provider/ProtocolFeePercentagesProvider"
+         "UNDEF",
+         "UNDEF"
       ]
    },
    {
@@ -176,7 +176,7 @@
          "0x5ef4c5352882b10893b70DbcaA0C000965bd23c5"
       ],
       "Authorized_Caller_Names": [
-         "20220517-protocol-fee-withdrawer/ProtocolFeesWithdrawer"
+         "UNDEF"
       ]
    },
    {
@@ -187,7 +187,7 @@
          "0x170027069fd114BFF2f57B0FC796df93290C02a6"
       ],
       "Authorized_Caller_Names": [
-         "EOA/blabs_ops/EmergencyPauser"
+         "UNDEF"
       ]
    },
    {
@@ -200,8 +200,8 @@
          "0xad3b67BCA8935Cb510C8D18bD45F0b94F54A968f"
       ],
       "Authorized_Caller_Names": [
-         "gauntlet/GauntletFeeSetter",
-         "cow/settlement",
+         "UNDEF",
+         "UNDEF",
          "UNDEF"
       ]
    },
@@ -215,8 +215,8 @@
          "0xad3b67BCA8935Cb510C8D18bD45F0b94F54A968f"
       ],
       "Authorized_Caller_Names": [
-         "gauntlet/GauntletFeeSetter",
-         "cow/settlement",
+         "UNDEF",
+         "UNDEF",
          "UNDEF"
       ]
    },
@@ -231,9 +231,9 @@
          "0xad3b67BCA8935Cb510C8D18bD45F0b94F54A968f"
       ],
       "Authorized_Caller_Names": [
-         "gauntlet/GauntletFeeSetter",
-         "multisigs/feeManager",
-         "cow/settlement",
+         "UNDEF",
+         "UNDEF",
+         "UNDEF",
          "UNDEF"
       ]
    },
@@ -245,7 +245,7 @@
          "0xf4A80929163C5179Ca042E1B292F5EFBBE3D89e6"
       ],
       "Authorized_Caller_Names": [
-         "multisigs/feeManager"
+         "UNDEF"
       ]
    },
    {
@@ -256,7 +256,7 @@
          "0xf4A80929163C5179Ca042E1B292F5EFBBE3D89e6"
       ],
       "Authorized_Caller_Names": [
-         "multisigs/feeManager"
+         "UNDEF"
       ]
    },
    {
@@ -269,8 +269,8 @@
          "0xad3b67BCA8935Cb510C8D18bD45F0b94F54A968f"
       ],
       "Authorized_Caller_Names": [
-         "gauntlet/GauntletFeeSetter",
-         "cow/settlement",
+         "UNDEF",
+         "UNDEF",
          "UNDEF"
       ]
    },
@@ -282,7 +282,7 @@
          "0x02f35dA6A02017154367Bc4d47bb6c7D06C7533B"
       ],
       "Authorized_Caller_Names": [
-         "multisigs/blabs_ops"
+         "UNDEF"
       ]
    },
    {
@@ -293,7 +293,7 @@
          "0x02f35dA6A02017154367Bc4d47bb6c7D06C7533B"
       ],
       "Authorized_Caller_Names": [
-         "multisigs/blabs_ops"
+         "UNDEF"
       ]
    },
    {
@@ -304,7 +304,7 @@
          "0x75a52c0e32397A3FC0c052E2CeB3479802713Cf4"
       ],
       "Authorized_Caller_Names": [
-         "multisigs/linearPoolController"
+         "UNDEF"
       ]
    },
    {
@@ -315,7 +315,7 @@
          "0x75a52c0e32397A3FC0c052E2CeB3479802713Cf4"
       ],
       "Authorized_Caller_Names": [
-         "multisigs/linearPoolController"
+         "UNDEF"
       ]
    },
    {
@@ -326,7 +326,7 @@
          "0x02f35dA6A02017154367Bc4d47bb6c7D06C7533B"
       ],
       "Authorized_Caller_Names": [
-         "multisigs/blabs_ops"
+         "UNDEF"
       ]
    },
    {
@@ -337,7 +337,7 @@
          "0xE4a8ed6c1D8d048bD29A00946BFcf2DB10E7923B"
       ],
       "Authorized_Caller_Names": [
-         "gauntlet/GauntletFeeSetter"
+         "UNDEF"
       ]
    },
    {
@@ -349,8 +349,8 @@
          "0x10A19e7eE7d7F8a52822f6817de8ea18204F2e4f"
       ],
       "Authorized_Caller_Names": [
-         "multisigs/linearPoolController",
-         "multisigs/dao"
+         "UNDEF",
+         "UNDEF"
       ]
    },
    {
@@ -361,7 +361,7 @@
          "0xeb151668006CD04DAdD098AFd0a82e78F77076c3"
       ],
       "Authorized_Caller_Names": [
-         "balancer/veBALDeploymentCoordinator"
+         "UNDEF"
       ]
    },
    {
@@ -372,7 +372,7 @@
          "0x239e55F427D44C3cc793f49bFB507ebe76638a2b"
       ],
       "Authorized_Caller_Names": [
-         "20220325-gauge-controller/BalancerMinter"
+         "UNDEF"
       ]
    },
    {
@@ -383,7 +383,7 @@
          "0xc38c5f97B34E175FFd35407fc91a937300E33860"
       ],
       "Authorized_Caller_Names": [
-         "multisigs/lm"
+         "UNDEF"
       ]
    },
    {
@@ -394,7 +394,7 @@
          "0xc38c5f97B34E175FFd35407fc91a937300E33860"
       ],
       "Authorized_Caller_Names": [
-         "multisigs/lm"
+         "UNDEF"
       ]
    },
    {
@@ -405,57 +405,12 @@
          "0xc38c5f97B34E175FFd35407fc91a937300E33860"
       ],
       "Authorized_Caller_Names": [
-         "multisigs/lm"
+         "UNDEF"
       ]
    },
    {
       "Fx": "checkpoint()",
-      "Contract": "PolygonZkEVMRootGauge",
-      "Deployment": "20230526-zkevm-root-gauge-factory",
-      "Authorized_Caller_Addresses": [
-         "0x02f35dA6A02017154367Bc4d47bb6c7D06C7533B",
-         "0x343688C5cB92115a52cA485af7f62B4B7A2e9CcC",
-         "0x0C8f71D19f87c0bD1b9baD2484EcC3388D5DbB98"
-      ],
-      "Authorized_Caller_Names": [
-         "multisigs/blabs_ops",
-         "20230527-l2-gauge-checkpointer/L2GaugeCheckpointer",
-         "20230915-stakeless-gauge-checkpointer-v2/StakelessGaugeCheckpointer"
-      ]
-   },
-   {
-      "Fx": "checkpoint()",
-      "Contract": "SingleRecipientGauge",
-      "Deployment": "20220325-single-recipient-gauge-factory",
-      "Authorized_Caller_Addresses": [
-         "0x02f35dA6A02017154367Bc4d47bb6c7D06C7533B",
-         "0x343688C5cB92115a52cA485af7f62B4B7A2e9CcC",
-         "0x0C8f71D19f87c0bD1b9baD2484EcC3388D5DbB98"
-      ],
-      "Authorized_Caller_Names": [
-         "multisigs/blabs_ops",
-         "20230527-l2-gauge-checkpointer/L2GaugeCheckpointer",
-         "20230915-stakeless-gauge-checkpointer-v2/StakelessGaugeCheckpointer"
-      ]
-   },
-   {
-      "Fx": "checkpoint()",
-      "Contract": "ArbitrumRootGauge",
-      "Deployment": "20220413-arbitrum-root-gauge-factory",
-      "Authorized_Caller_Addresses": [
-         "0x02f35dA6A02017154367Bc4d47bb6c7D06C7533B",
-         "0x343688C5cB92115a52cA485af7f62B4B7A2e9CcC",
-         "0x0C8f71D19f87c0bD1b9baD2484EcC3388D5DbB98"
-      ],
-      "Authorized_Caller_Names": [
-         "multisigs/blabs_ops",
-         "20230527-l2-gauge-checkpointer/L2GaugeCheckpointer",
-         "20230915-stakeless-gauge-checkpointer-v2/StakelessGaugeCheckpointer"
-      ]
-   },
-   {
-      "Fx": "checkpoint()",
-      "Contract": "VotingEscrow",
+      "Contract": "GaugeController",
       "Deployment": "20220325-gauge-controller",
       "Authorized_Caller_Addresses": [
          "0x02f35dA6A02017154367Bc4d47bb6c7D06C7533B",
@@ -463,69 +418,9 @@
          "0x0C8f71D19f87c0bD1b9baD2484EcC3388D5DbB98"
       ],
       "Authorized_Caller_Names": [
-         "multisigs/blabs_ops",
-         "20230527-l2-gauge-checkpointer/L2GaugeCheckpointer",
-         "20230915-stakeless-gauge-checkpointer-v2/StakelessGaugeCheckpointer"
-      ]
-   },
-   {
-      "Fx": "checkpoint()",
-      "Contract": "BaseRootGauge",
-      "Deployment": "20230911-base-root-gauge-factory",
-      "Authorized_Caller_Addresses": [
-         "0x02f35dA6A02017154367Bc4d47bb6c7D06C7533B",
-         "0x343688C5cB92115a52cA485af7f62B4B7A2e9CcC",
-         "0x0C8f71D19f87c0bD1b9baD2484EcC3388D5DbB98"
-      ],
-      "Authorized_Caller_Names": [
-         "multisigs/blabs_ops",
-         "20230527-l2-gauge-checkpointer/L2GaugeCheckpointer",
-         "20230915-stakeless-gauge-checkpointer-v2/StakelessGaugeCheckpointer"
-      ]
-   },
-   {
-      "Fx": "checkpoint()",
-      "Contract": "PolygonRootGauge",
-      "Deployment": "20220413-polygon-root-gauge-factory",
-      "Authorized_Caller_Addresses": [
-         "0x02f35dA6A02017154367Bc4d47bb6c7D06C7533B",
-         "0x343688C5cB92115a52cA485af7f62B4B7A2e9CcC",
-         "0x0C8f71D19f87c0bD1b9baD2484EcC3388D5DbB98"
-      ],
-      "Authorized_Caller_Names": [
-         "multisigs/blabs_ops",
-         "20230527-l2-gauge-checkpointer/L2GaugeCheckpointer",
-         "20230915-stakeless-gauge-checkpointer-v2/StakelessGaugeCheckpointer"
-      ]
-   },
-   {
-      "Fx": "checkpoint()",
-      "Contract": "ArbitrumRootGauge",
-      "Deployment": "20220823-arbitrum-root-gauge-factory-v2",
-      "Authorized_Caller_Addresses": [
-         "0x02f35dA6A02017154367Bc4d47bb6c7D06C7533B",
-         "0x343688C5cB92115a52cA485af7f62B4B7A2e9CcC",
-         "0x0C8f71D19f87c0bD1b9baD2484EcC3388D5DbB98"
-      ],
-      "Authorized_Caller_Names": [
-         "multisigs/blabs_ops",
-         "20230527-l2-gauge-checkpointer/L2GaugeCheckpointer",
-         "20230915-stakeless-gauge-checkpointer-v2/StakelessGaugeCheckpointer"
-      ]
-   },
-   {
-      "Fx": "checkpoint()",
-      "Contract": "PolygonRootGauge",
-      "Deployment": "20220823-polygon-root-gauge-factory-v2",
-      "Authorized_Caller_Addresses": [
-         "0x02f35dA6A02017154367Bc4d47bb6c7D06C7533B",
-         "0x343688C5cB92115a52cA485af7f62B4B7A2e9CcC",
-         "0x0C8f71D19f87c0bD1b9baD2484EcC3388D5DbB98"
-      ],
-      "Authorized_Caller_Names": [
-         "multisigs/blabs_ops",
-         "20230527-l2-gauge-checkpointer/L2GaugeCheckpointer",
-         "20230915-stakeless-gauge-checkpointer-v2/StakelessGaugeCheckpointer"
+         "UNDEF",
+         "UNDEF",
+         "UNDEF"
       ]
    },
    {
@@ -538,89 +433,29 @@
          "0x0C8f71D19f87c0bD1b9baD2484EcC3388D5DbB98"
       ],
       "Authorized_Caller_Names": [
-         "multisigs/blabs_ops",
-         "20230527-l2-gauge-checkpointer/L2GaugeCheckpointer",
-         "20230915-stakeless-gauge-checkpointer-v2/StakelessGaugeCheckpointer"
+         "UNDEF",
+         "UNDEF",
+         "UNDEF"
       ]
    },
    {
       "Fx": "checkpoint()",
-      "Contract": "OptimismRootGauge",
-      "Deployment": "20220823-optimism-root-gauge-factory-v2",
+      "Contract": "PolygonRootGauge",
+      "Deployment": "20220413-polygon-root-gauge-factory",
       "Authorized_Caller_Addresses": [
          "0x02f35dA6A02017154367Bc4d47bb6c7D06C7533B",
          "0x343688C5cB92115a52cA485af7f62B4B7A2e9CcC",
          "0x0C8f71D19f87c0bD1b9baD2484EcC3388D5DbB98"
       ],
       "Authorized_Caller_Names": [
-         "multisigs/blabs_ops",
-         "20230527-l2-gauge-checkpointer/L2GaugeCheckpointer",
-         "20230915-stakeless-gauge-checkpointer-v2/StakelessGaugeCheckpointer"
+         "UNDEF",
+         "UNDEF",
+         "UNDEF"
       ]
    },
    {
       "Fx": "checkpoint()",
-      "Contract": "SingleRecipientGauge",
-      "Deployment": "20230215-single-recipient-gauge-factory-v2",
-      "Authorized_Caller_Addresses": [
-         "0x02f35dA6A02017154367Bc4d47bb6c7D06C7533B",
-         "0x343688C5cB92115a52cA485af7f62B4B7A2e9CcC",
-         "0x0C8f71D19f87c0bD1b9baD2484EcC3388D5DbB98"
-      ],
-      "Authorized_Caller_Names": [
-         "multisigs/blabs_ops",
-         "20230527-l2-gauge-checkpointer/L2GaugeCheckpointer",
-         "20230915-stakeless-gauge-checkpointer-v2/StakelessGaugeCheckpointer"
-      ]
-   },
-   {
-      "Fx": "checkpoint()",
-      "Contract": "AvalancheRootGauge",
-      "Deployment": "20230529-avalanche-root-gauge-factory",
-      "Authorized_Caller_Addresses": [
-         "0x02f35dA6A02017154367Bc4d47bb6c7D06C7533B",
-         "0x343688C5cB92115a52cA485af7f62B4B7A2e9CcC",
-         "0x0C8f71D19f87c0bD1b9baD2484EcC3388D5DbB98"
-      ],
-      "Authorized_Caller_Names": [
-         "multisigs/blabs_ops",
-         "20230527-l2-gauge-checkpointer/L2GaugeCheckpointer",
-         "20230915-stakeless-gauge-checkpointer-v2/StakelessGaugeCheckpointer"
-      ]
-   },
-   {
-      "Fx": "checkpoint()",
-      "Contract": "AvalancheRootGauge",
-      "Deployment": "20230811-avalanche-root-gauge-factory-v2",
-      "Authorized_Caller_Addresses": [
-         "0x02f35dA6A02017154367Bc4d47bb6c7D06C7533B",
-         "0x343688C5cB92115a52cA485af7f62B4B7A2e9CcC",
-         "0x0C8f71D19f87c0bD1b9baD2484EcC3388D5DbB98"
-      ],
-      "Authorized_Caller_Names": [
-         "multisigs/blabs_ops",
-         "20230527-l2-gauge-checkpointer/L2GaugeCheckpointer",
-         "20230915-stakeless-gauge-checkpointer-v2/StakelessGaugeCheckpointer"
-      ]
-   },
-   {
-      "Fx": "checkpoint()",
-      "Contract": "OptimismRootGauge",
-      "Deployment": "20220628-optimism-root-gauge-factory",
-      "Authorized_Caller_Addresses": [
-         "0x02f35dA6A02017154367Bc4d47bb6c7D06C7533B",
-         "0x343688C5cB92115a52cA485af7f62B4B7A2e9CcC",
-         "0x0C8f71D19f87c0bD1b9baD2484EcC3388D5DbB98"
-      ],
-      "Authorized_Caller_Names": [
-         "multisigs/blabs_ops",
-         "20230527-l2-gauge-checkpointer/L2GaugeCheckpointer",
-         "20230915-stakeless-gauge-checkpointer-v2/StakelessGaugeCheckpointer"
-      ]
-   },
-   {
-      "Fx": "checkpoint()",
-      "Contract": "GaugeController",
+      "Contract": "VotingEscrow",
       "Deployment": "20220325-gauge-controller",
       "Authorized_Caller_Addresses": [
          "0x02f35dA6A02017154367Bc4d47bb6c7D06C7533B",
@@ -628,24 +463,9 @@
          "0x0C8f71D19f87c0bD1b9baD2484EcC3388D5DbB98"
       ],
       "Authorized_Caller_Names": [
-         "multisigs/blabs_ops",
-         "20230527-l2-gauge-checkpointer/L2GaugeCheckpointer",
-         "20230915-stakeless-gauge-checkpointer-v2/StakelessGaugeCheckpointer"
-      ]
-   },
-   {
-      "Fx": "checkpoint()",
-      "Contract": "GnosisRootGauge",
-      "Deployment": "20230217-gnosis-root-gauge-factory",
-      "Authorized_Caller_Addresses": [
-         "0x02f35dA6A02017154367Bc4d47bb6c7D06C7533B",
-         "0x343688C5cB92115a52cA485af7f62B4B7A2e9CcC",
-         "0x0C8f71D19f87c0bD1b9baD2484EcC3388D5DbB98"
-      ],
-      "Authorized_Caller_Names": [
-         "multisigs/blabs_ops",
-         "20230527-l2-gauge-checkpointer/L2GaugeCheckpointer",
-         "20230915-stakeless-gauge-checkpointer-v2/StakelessGaugeCheckpointer"
+         "UNDEF",
+         "UNDEF",
+         "UNDEF"
       ]
    },
    {
@@ -658,9 +478,189 @@
          "0x0C8f71D19f87c0bD1b9baD2484EcC3388D5DbB98"
       ],
       "Authorized_Caller_Names": [
-         "multisigs/blabs_ops",
-         "20230527-l2-gauge-checkpointer/L2GaugeCheckpointer",
-         "20230915-stakeless-gauge-checkpointer-v2/StakelessGaugeCheckpointer"
+         "UNDEF",
+         "UNDEF",
+         "UNDEF"
+      ]
+   },
+   {
+      "Fx": "checkpoint()",
+      "Contract": "SingleRecipientGauge",
+      "Deployment": "20230215-single-recipient-gauge-factory-v2",
+      "Authorized_Caller_Addresses": [
+         "0x02f35dA6A02017154367Bc4d47bb6c7D06C7533B",
+         "0x343688C5cB92115a52cA485af7f62B4B7A2e9CcC",
+         "0x0C8f71D19f87c0bD1b9baD2484EcC3388D5DbB98"
+      ],
+      "Authorized_Caller_Names": [
+         "UNDEF",
+         "UNDEF",
+         "UNDEF"
+      ]
+   },
+   {
+      "Fx": "checkpoint()",
+      "Contract": "AvalancheRootGauge",
+      "Deployment": "20230529-avalanche-root-gauge-factory",
+      "Authorized_Caller_Addresses": [
+         "0x02f35dA6A02017154367Bc4d47bb6c7D06C7533B",
+         "0x343688C5cB92115a52cA485af7f62B4B7A2e9CcC",
+         "0x0C8f71D19f87c0bD1b9baD2484EcC3388D5DbB98"
+      ],
+      "Authorized_Caller_Names": [
+         "UNDEF",
+         "UNDEF",
+         "UNDEF"
+      ]
+   },
+   {
+      "Fx": "checkpoint()",
+      "Contract": "BaseRootGauge",
+      "Deployment": "20230911-base-root-gauge-factory",
+      "Authorized_Caller_Addresses": [
+         "0x02f35dA6A02017154367Bc4d47bb6c7D06C7533B",
+         "0x343688C5cB92115a52cA485af7f62B4B7A2e9CcC",
+         "0x0C8f71D19f87c0bD1b9baD2484EcC3388D5DbB98"
+      ],
+      "Authorized_Caller_Names": [
+         "UNDEF",
+         "UNDEF",
+         "UNDEF"
+      ]
+   },
+   {
+      "Fx": "checkpoint()",
+      "Contract": "ArbitrumRootGauge",
+      "Deployment": "20220413-arbitrum-root-gauge-factory",
+      "Authorized_Caller_Addresses": [
+         "0x02f35dA6A02017154367Bc4d47bb6c7D06C7533B",
+         "0x343688C5cB92115a52cA485af7f62B4B7A2e9CcC",
+         "0x0C8f71D19f87c0bD1b9baD2484EcC3388D5DbB98"
+      ],
+      "Authorized_Caller_Names": [
+         "UNDEF",
+         "UNDEF",
+         "UNDEF"
+      ]
+   },
+   {
+      "Fx": "checkpoint()",
+      "Contract": "PolygonRootGauge",
+      "Deployment": "20220823-polygon-root-gauge-factory-v2",
+      "Authorized_Caller_Addresses": [
+         "0x02f35dA6A02017154367Bc4d47bb6c7D06C7533B",
+         "0x343688C5cB92115a52cA485af7f62B4B7A2e9CcC",
+         "0x0C8f71D19f87c0bD1b9baD2484EcC3388D5DbB98"
+      ],
+      "Authorized_Caller_Names": [
+         "UNDEF",
+         "UNDEF",
+         "UNDEF"
+      ]
+   },
+   {
+      "Fx": "checkpoint()",
+      "Contract": "AvalancheRootGauge",
+      "Deployment": "20230811-avalanche-root-gauge-factory-v2",
+      "Authorized_Caller_Addresses": [
+         "0x02f35dA6A02017154367Bc4d47bb6c7D06C7533B",
+         "0x343688C5cB92115a52cA485af7f62B4B7A2e9CcC",
+         "0x0C8f71D19f87c0bD1b9baD2484EcC3388D5DbB98"
+      ],
+      "Authorized_Caller_Names": [
+         "UNDEF",
+         "UNDEF",
+         "UNDEF"
+      ]
+   },
+   {
+      "Fx": "checkpoint()",
+      "Contract": "OptimismRootGauge",
+      "Deployment": "20220823-optimism-root-gauge-factory-v2",
+      "Authorized_Caller_Addresses": [
+         "0x02f35dA6A02017154367Bc4d47bb6c7D06C7533B",
+         "0x343688C5cB92115a52cA485af7f62B4B7A2e9CcC",
+         "0x0C8f71D19f87c0bD1b9baD2484EcC3388D5DbB98"
+      ],
+      "Authorized_Caller_Names": [
+         "UNDEF",
+         "UNDEF",
+         "UNDEF"
+      ]
+   },
+   {
+      "Fx": "checkpoint()",
+      "Contract": "GnosisRootGauge",
+      "Deployment": "20230217-gnosis-root-gauge-factory",
+      "Authorized_Caller_Addresses": [
+         "0x02f35dA6A02017154367Bc4d47bb6c7D06C7533B",
+         "0x343688C5cB92115a52cA485af7f62B4B7A2e9CcC",
+         "0x0C8f71D19f87c0bD1b9baD2484EcC3388D5DbB98"
+      ],
+      "Authorized_Caller_Names": [
+         "UNDEF",
+         "UNDEF",
+         "UNDEF"
+      ]
+   },
+   {
+      "Fx": "checkpoint()",
+      "Contract": "ArbitrumRootGauge",
+      "Deployment": "20220823-arbitrum-root-gauge-factory-v2",
+      "Authorized_Caller_Addresses": [
+         "0x02f35dA6A02017154367Bc4d47bb6c7D06C7533B",
+         "0x343688C5cB92115a52cA485af7f62B4B7A2e9CcC",
+         "0x0C8f71D19f87c0bD1b9baD2484EcC3388D5DbB98"
+      ],
+      "Authorized_Caller_Names": [
+         "UNDEF",
+         "UNDEF",
+         "UNDEF"
+      ]
+   },
+   {
+      "Fx": "checkpoint()",
+      "Contract": "OptimismRootGauge",
+      "Deployment": "20220628-optimism-root-gauge-factory",
+      "Authorized_Caller_Addresses": [
+         "0x02f35dA6A02017154367Bc4d47bb6c7D06C7533B",
+         "0x343688C5cB92115a52cA485af7f62B4B7A2e9CcC",
+         "0x0C8f71D19f87c0bD1b9baD2484EcC3388D5DbB98"
+      ],
+      "Authorized_Caller_Names": [
+         "UNDEF",
+         "UNDEF",
+         "UNDEF"
+      ]
+   },
+   {
+      "Fx": "checkpoint()",
+      "Contract": "SingleRecipientGauge",
+      "Deployment": "20220325-single-recipient-gauge-factory",
+      "Authorized_Caller_Addresses": [
+         "0x02f35dA6A02017154367Bc4d47bb6c7D06C7533B",
+         "0x343688C5cB92115a52cA485af7f62B4B7A2e9CcC",
+         "0x0C8f71D19f87c0bD1b9baD2484EcC3388D5DbB98"
+      ],
+      "Authorized_Caller_Names": [
+         "UNDEF",
+         "UNDEF",
+         "UNDEF"
+      ]
+   },
+   {
+      "Fx": "checkpoint()",
+      "Contract": "PolygonZkEVMRootGauge",
+      "Deployment": "20230526-zkevm-root-gauge-factory",
+      "Authorized_Caller_Addresses": [
+         "0x02f35dA6A02017154367Bc4d47bb6c7D06C7533B",
+         "0x343688C5cB92115a52cA485af7f62B4B7A2e9CcC",
+         "0x0C8f71D19f87c0bD1b9baD2484EcC3388D5DbB98"
+      ],
+      "Authorized_Caller_Names": [
+         "UNDEF",
+         "UNDEF",
+         "UNDEF"
       ]
    },
    {
@@ -671,18 +671,7 @@
          "0x5DbAd78818D4c8958EfF2d5b95b28385A22113Cd"
       ],
       "Authorized_Caller_Names": [
-         "20230519-gauge-adder-v4/GaugeAdder"
-      ]
-   },
-   {
-      "Fx": "add_reward(address,address)",
-      "Contract": "LiquidityGaugeV5",
-      "Deployment": "20220325-mainnet-gauge-factory",
-      "Authorized_Caller_Addresses": [
-         "0xc38c5f97B34E175FFd35407fc91a937300E33860"
-      ],
-      "Authorized_Caller_Names": [
-         "multisigs/lm"
+         "UNDEF"
       ]
    },
    {
@@ -693,111 +682,18 @@
          "0xc38c5f97B34E175FFd35407fc91a937300E33860"
       ],
       "Authorized_Caller_Names": [
-         "multisigs/lm"
+         "UNDEF"
       ]
    },
    {
-      "Fx": "killGauge()",
-      "Contract": "AvalancheRootGauge",
-      "Deployment": "20230529-avalanche-root-gauge-factory",
-      "Authorized_Caller_Addresses": [
-         "0x10A19e7eE7d7F8a52822f6817de8ea18204F2e4f",
-         "0xA29F61256e948F3FB707b4b3B138C5cCb9EF9888"
-      ],
-      "Authorized_Caller_Names": [
-         "multisigs/dao",
-         "multisigs/emergency"
-      ]
-   },
-   {
-      "Fx": "killGauge()",
-      "Contract": "BaseRootGauge",
-      "Deployment": "20230911-base-root-gauge-factory",
-      "Authorized_Caller_Addresses": [
-         "0x10A19e7eE7d7F8a52822f6817de8ea18204F2e4f",
-         "0xA29F61256e948F3FB707b4b3B138C5cCb9EF9888"
-      ],
-      "Authorized_Caller_Names": [
-         "multisigs/dao",
-         "multisigs/emergency"
-      ]
-   },
-   {
-      "Fx": "killGauge()",
-      "Contract": "PolygonRootGauge",
-      "Deployment": "20220823-polygon-root-gauge-factory-v2",
-      "Authorized_Caller_Addresses": [
-         "0x10A19e7eE7d7F8a52822f6817de8ea18204F2e4f",
-         "0xA29F61256e948F3FB707b4b3B138C5cCb9EF9888"
-      ],
-      "Authorized_Caller_Names": [
-         "multisigs/dao",
-         "multisigs/emergency"
-      ]
-   },
-   {
-      "Fx": "killGauge()",
-      "Contract": "PolygonZkEVMRootGauge",
-      "Deployment": "20230526-zkevm-root-gauge-factory",
-      "Authorized_Caller_Addresses": [
-         "0x10A19e7eE7d7F8a52822f6817de8ea18204F2e4f",
-         "0xA29F61256e948F3FB707b4b3B138C5cCb9EF9888"
-      ],
-      "Authorized_Caller_Names": [
-         "multisigs/dao",
-         "multisigs/emergency"
-      ]
-   },
-   {
-      "Fx": "killGauge()",
-      "Contract": "SingleRecipientGauge",
-      "Deployment": "20220325-single-recipient-gauge-factory",
-      "Authorized_Caller_Addresses": [
-         "0x10A19e7eE7d7F8a52822f6817de8ea18204F2e4f",
-         "0xA29F61256e948F3FB707b4b3B138C5cCb9EF9888"
-      ],
-      "Authorized_Caller_Names": [
-         "multisigs/dao",
-         "multisigs/emergency"
-      ]
-   },
-   {
-      "Fx": "killGauge()",
-      "Contract": "OptimismRootGauge",
-      "Deployment": "20220823-optimism-root-gauge-factory-v2",
-      "Authorized_Caller_Addresses": [
-         "0x10A19e7eE7d7F8a52822f6817de8ea18204F2e4f",
-         "0xA29F61256e948F3FB707b4b3B138C5cCb9EF9888"
-      ],
-      "Authorized_Caller_Names": [
-         "multisigs/dao",
-         "multisigs/emergency"
-      ]
-   },
-   {
-      "Fx": "killGauge()",
-      "Contract": "SingleRecipientGauge",
-      "Deployment": "20230215-single-recipient-gauge-factory-v2",
-      "Authorized_Caller_Addresses": [
-         "0x10A19e7eE7d7F8a52822f6817de8ea18204F2e4f",
-         "0xA29F61256e948F3FB707b4b3B138C5cCb9EF9888"
-      ],
-      "Authorized_Caller_Names": [
-         "multisigs/dao",
-         "multisigs/emergency"
-      ]
-   },
-   {
-      "Fx": "killGauge()",
+      "Fx": "add_reward(address,address)",
       "Contract": "LiquidityGaugeV5",
       "Deployment": "20220325-mainnet-gauge-factory",
       "Authorized_Caller_Addresses": [
-         "0x10A19e7eE7d7F8a52822f6817de8ea18204F2e4f",
-         "0xA29F61256e948F3FB707b4b3B138C5cCb9EF9888"
+         "0xc38c5f97B34E175FFd35407fc91a937300E33860"
       ],
       "Authorized_Caller_Names": [
-         "multisigs/dao",
-         "multisigs/emergency"
+         "UNDEF"
       ]
    },
    {
@@ -809,8 +705,8 @@
          "0xA29F61256e948F3FB707b4b3B138C5cCb9EF9888"
       ],
       "Authorized_Caller_Names": [
-         "multisigs/dao",
-         "multisigs/emergency"
+         "UNDEF",
+         "UNDEF"
       ]
    },
    {
@@ -822,21 +718,21 @@
          "0xA29F61256e948F3FB707b4b3B138C5cCb9EF9888"
       ],
       "Authorized_Caller_Names": [
-         "multisigs/dao",
-         "multisigs/emergency"
+         "UNDEF",
+         "UNDEF"
       ]
    },
    {
       "Fx": "killGauge()",
-      "Contract": "LiquidityGaugeV5",
-      "Deployment": "20220822-mainnet-gauge-factory-v2",
+      "Contract": "PolygonZkEVMRootGauge",
+      "Deployment": "20230526-zkevm-root-gauge-factory",
       "Authorized_Caller_Addresses": [
          "0x10A19e7eE7d7F8a52822f6817de8ea18204F2e4f",
          "0xA29F61256e948F3FB707b4b3B138C5cCb9EF9888"
       ],
       "Authorized_Caller_Names": [
-         "multisigs/dao",
-         "multisigs/emergency"
+         "UNDEF",
+         "UNDEF"
       ]
    },
    {
@@ -848,8 +744,60 @@
          "0xA29F61256e948F3FB707b4b3B138C5cCb9EF9888"
       ],
       "Authorized_Caller_Names": [
-         "multisigs/dao",
-         "multisigs/emergency"
+         "UNDEF",
+         "UNDEF"
+      ]
+   },
+   {
+      "Fx": "killGauge()",
+      "Contract": "SingleRecipientGauge",
+      "Deployment": "20220325-single-recipient-gauge-factory",
+      "Authorized_Caller_Addresses": [
+         "0x10A19e7eE7d7F8a52822f6817de8ea18204F2e4f",
+         "0xA29F61256e948F3FB707b4b3B138C5cCb9EF9888"
+      ],
+      "Authorized_Caller_Names": [
+         "UNDEF",
+         "UNDEF"
+      ]
+   },
+   {
+      "Fx": "killGauge()",
+      "Contract": "ArbitrumRootGauge",
+      "Deployment": "20220413-arbitrum-root-gauge-factory",
+      "Authorized_Caller_Addresses": [
+         "0x10A19e7eE7d7F8a52822f6817de8ea18204F2e4f",
+         "0xA29F61256e948F3FB707b4b3B138C5cCb9EF9888"
+      ],
+      "Authorized_Caller_Names": [
+         "UNDEF",
+         "UNDEF"
+      ]
+   },
+   {
+      "Fx": "killGauge()",
+      "Contract": "OptimismRootGauge",
+      "Deployment": "20220823-optimism-root-gauge-factory-v2",
+      "Authorized_Caller_Addresses": [
+         "0x10A19e7eE7d7F8a52822f6817de8ea18204F2e4f",
+         "0xA29F61256e948F3FB707b4b3B138C5cCb9EF9888"
+      ],
+      "Authorized_Caller_Names": [
+         "UNDEF",
+         "UNDEF"
+      ]
+   },
+   {
+      "Fx": "killGauge()",
+      "Contract": "LiquidityGaugeV5",
+      "Deployment": "20220325-mainnet-gauge-factory",
+      "Authorized_Caller_Addresses": [
+         "0x10A19e7eE7d7F8a52822f6817de8ea18204F2e4f",
+         "0xA29F61256e948F3FB707b4b3B138C5cCb9EF9888"
+      ],
+      "Authorized_Caller_Names": [
+         "UNDEF",
+         "UNDEF"
       ]
    },
    {
@@ -861,21 +809,73 @@
          "0xA29F61256e948F3FB707b4b3B138C5cCb9EF9888"
       ],
       "Authorized_Caller_Names": [
-         "multisigs/dao",
-         "multisigs/emergency"
+         "UNDEF",
+         "UNDEF"
       ]
    },
    {
       "Fx": "killGauge()",
-      "Contract": "ArbitrumRootGauge",
-      "Deployment": "20220413-arbitrum-root-gauge-factory",
+      "Contract": "LiquidityGaugeV5",
+      "Deployment": "20220822-mainnet-gauge-factory-v2",
       "Authorized_Caller_Addresses": [
          "0x10A19e7eE7d7F8a52822f6817de8ea18204F2e4f",
          "0xA29F61256e948F3FB707b4b3B138C5cCb9EF9888"
       ],
       "Authorized_Caller_Names": [
-         "multisigs/dao",
-         "multisigs/emergency"
+         "UNDEF",
+         "UNDEF"
+      ]
+   },
+   {
+      "Fx": "killGauge()",
+      "Contract": "PolygonRootGauge",
+      "Deployment": "20220823-polygon-root-gauge-factory-v2",
+      "Authorized_Caller_Addresses": [
+         "0x10A19e7eE7d7F8a52822f6817de8ea18204F2e4f",
+         "0xA29F61256e948F3FB707b4b3B138C5cCb9EF9888"
+      ],
+      "Authorized_Caller_Names": [
+         "UNDEF",
+         "UNDEF"
+      ]
+   },
+   {
+      "Fx": "killGauge()",
+      "Contract": "SingleRecipientGauge",
+      "Deployment": "20230215-single-recipient-gauge-factory-v2",
+      "Authorized_Caller_Addresses": [
+         "0x10A19e7eE7d7F8a52822f6817de8ea18204F2e4f",
+         "0xA29F61256e948F3FB707b4b3B138C5cCb9EF9888"
+      ],
+      "Authorized_Caller_Names": [
+         "UNDEF",
+         "UNDEF"
+      ]
+   },
+   {
+      "Fx": "killGauge()",
+      "Contract": "BaseRootGauge",
+      "Deployment": "20230911-base-root-gauge-factory",
+      "Authorized_Caller_Addresses": [
+         "0x10A19e7eE7d7F8a52822f6817de8ea18204F2e4f",
+         "0xA29F61256e948F3FB707b4b3B138C5cCb9EF9888"
+      ],
+      "Authorized_Caller_Names": [
+         "UNDEF",
+         "UNDEF"
+      ]
+   },
+   {
+      "Fx": "killGauge()",
+      "Contract": "AvalancheRootGauge",
+      "Deployment": "20230529-avalanche-root-gauge-factory",
+      "Authorized_Caller_Addresses": [
+         "0x10A19e7eE7d7F8a52822f6817de8ea18204F2e4f",
+         "0xA29F61256e948F3FB707b4b3B138C5cCb9EF9888"
+      ],
+      "Authorized_Caller_Names": [
+         "UNDEF",
+         "UNDEF"
       ]
    },
    {
@@ -887,8 +887,8 @@
          "0xA29F61256e948F3FB707b4b3B138C5cCb9EF9888"
       ],
       "Authorized_Caller_Names": [
-         "multisigs/dao",
-         "multisigs/emergency"
+         "UNDEF",
+         "UNDEF"
       ]
    },
    {
@@ -899,7 +899,7 @@
          "0x10A19e7eE7d7F8a52822f6817de8ea18204F2e4f"
       ],
       "Authorized_Caller_Names": [
-         "multisigs/dao"
+         "UNDEF"
       ]
    },
    {
@@ -910,7 +910,7 @@
          "0x02f35dA6A02017154367Bc4d47bb6c7D06C7533B"
       ],
       "Authorized_Caller_Names": [
-         "multisigs/blabs_ops"
+         "UNDEF"
       ]
    },
    {
@@ -921,7 +921,7 @@
          "0x10A19e7eE7d7F8a52822f6817de8ea18204F2e4f"
       ],
       "Authorized_Caller_Names": [
-         "multisigs/dao"
+         "UNDEF"
       ]
    },
    {
@@ -932,7 +932,7 @@
          "0x10A19e7eE7d7F8a52822f6817de8ea18204F2e4f"
       ],
       "Authorized_Caller_Names": [
-         "multisigs/dao"
+         "UNDEF"
       ]
    },
    {
@@ -943,7 +943,7 @@
          "0xA29F61256e948F3FB707b4b3B138C5cCb9EF9888"
       ],
       "Authorized_Caller_Names": [
-         "multisigs/emergency"
+         "UNDEF"
       ]
    },
    {
@@ -955,8 +955,8 @@
          "0x9e5D6427D2cdaDC68870197b099C2Df535Ec3c97"
       ],
       "Authorized_Caller_Names": [
-         "multisigs/fees",
-         "mimic/smartVaultV3"
+         "UNDEF",
+         "UNDEF"
       ]
    },
    {
@@ -967,7 +967,7 @@
          "0xA29F61256e948F3FB707b4b3B138C5cCb9EF9888"
       ],
       "Authorized_Caller_Names": [
-         "multisigs/emergency"
+         "UNDEF"
       ]
    },
    {
@@ -980,8 +980,8 @@
          "0xad3b67BCA8935Cb510C8D18bD45F0b94F54A968f"
       ],
       "Authorized_Caller_Names": [
-         "gauntlet/GauntletFeeSetter",
-         "cow/settlement",
+         "UNDEF",
+         "UNDEF",
          "UNDEF"
       ]
    },
@@ -993,7 +993,7 @@
          "0xf4A80929163C5179Ca042E1B292F5EFBBE3D89e6"
       ],
       "Authorized_Caller_Names": [
-         "multisigs/feeManager"
+         "UNDEF"
       ]
    },
    {
@@ -1004,7 +1004,7 @@
          "0xf4A80929163C5179Ca042E1B292F5EFBBE3D89e6"
       ],
       "Authorized_Caller_Names": [
-         "multisigs/feeManager"
+         "UNDEF"
       ]
    },
    {
@@ -1015,7 +1015,7 @@
          "0xc38c5f97B34E175FFd35407fc91a937300E33860"
       ],
       "Authorized_Caller_Names": [
-         "multisigs/lm"
+         "UNDEF"
       ]
    },
    {
@@ -1026,7 +1026,7 @@
          "0xc38c5f97B34E175FFd35407fc91a937300E33860"
       ],
       "Authorized_Caller_Names": [
-         "multisigs/lm"
+         "UNDEF"
       ]
    },
    {
@@ -1037,7 +1037,7 @@
          "0xc38c5f97B34E175FFd35407fc91a937300E33860"
       ],
       "Authorized_Caller_Names": [
-         "multisigs/lm"
+         "UNDEF"
       ]
    },
    {
@@ -1048,7 +1048,7 @@
          "0xc38c5f97B34E175FFd35407fc91a937300E33860"
       ],
       "Authorized_Caller_Names": [
-         "multisigs/lm"
+         "UNDEF"
       ]
    },
    {
@@ -1059,7 +1059,7 @@
          "0x02f35dA6A02017154367Bc4d47bb6c7D06C7533B"
       ],
       "Authorized_Caller_Names": [
-         "multisigs/blabs_ops"
+         "UNDEF"
       ]
    },
    {
@@ -1070,7 +1070,7 @@
          "0x10A19e7eE7d7F8a52822f6817de8ea18204F2e4f"
       ],
       "Authorized_Caller_Names": [
-         "multisigs/dao"
+         "UNDEF"
       ]
    },
    {
@@ -1082,8 +1082,8 @@
          "0xA29F61256e948F3FB707b4b3B138C5cCb9EF9888"
       ],
       "Authorized_Caller_Names": [
-         "multisigs/blabs_ops",
-         "multisigs/emergency"
+         "UNDEF",
+         "UNDEF"
       ]
    },
    {
@@ -1094,7 +1094,7 @@
          "0xA29F61256e948F3FB707b4b3B138C5cCb9EF9888"
       ],
       "Authorized_Caller_Names": [
-         "multisigs/emergency"
+         "UNDEF"
       ]
    },
    {
@@ -1105,7 +1105,7 @@
          "0xA29F61256e948F3FB707b4b3B138C5cCb9EF9888"
       ],
       "Authorized_Caller_Names": [
-         "multisigs/emergency"
+         "UNDEF"
       ]
    },
    {
@@ -1116,7 +1116,7 @@
          "0xf4A80929163C5179Ca042E1B292F5EFBBE3D89e6"
       ],
       "Authorized_Caller_Names": [
-         "multisigs/feeManager"
+         "UNDEF"
       ]
    },
    {
@@ -1127,7 +1127,7 @@
          "0xf4A80929163C5179Ca042E1B292F5EFBBE3D89e6"
       ],
       "Authorized_Caller_Names": [
-         "multisigs/feeManager"
+         "UNDEF"
       ]
    },
    {
@@ -1138,7 +1138,7 @@
          "0xA29F61256e948F3FB707b4b3B138C5cCb9EF9888"
       ],
       "Authorized_Caller_Names": [
-         "multisigs/emergency"
+         "UNDEF"
       ]
    },
    {
@@ -1150,8 +1150,8 @@
          "0xA29F61256e948F3FB707b4b3B138C5cCb9EF9888"
       ],
       "Authorized_Caller_Names": [
-         "multisigs/blabs_ops",
-         "multisigs/emergency"
+         "UNDEF",
+         "UNDEF"
       ]
    },
    {
@@ -1162,7 +1162,7 @@
          "0xA29F61256e948F3FB707b4b3B138C5cCb9EF9888"
       ],
       "Authorized_Caller_Names": [
-         "multisigs/emergency"
+         "UNDEF"
       ]
    },
    {
@@ -1174,8 +1174,8 @@
          "0xA29F61256e948F3FB707b4b3B138C5cCb9EF9888"
       ],
       "Authorized_Caller_Names": [
-         "20221123-pool-recovery-helper/PoolRecoveryHelper",
-         "multisigs/emergency"
+         "UNDEF",
+         "UNDEF"
       ]
    },
    {
@@ -1186,7 +1186,7 @@
          "0xA29F61256e948F3FB707b4b3B138C5cCb9EF9888"
       ],
       "Authorized_Caller_Names": [
-         "multisigs/emergency"
+         "UNDEF"
       ]
    },
    {
@@ -1199,8 +1199,8 @@
          "0xad3b67BCA8935Cb510C8D18bD45F0b94F54A968f"
       ],
       "Authorized_Caller_Names": [
-         "gauntlet/GauntletFeeSetter",
-         "cow/settlement",
+         "UNDEF",
+         "UNDEF",
          "UNDEF"
       ]
    },
@@ -1212,7 +1212,7 @@
          "0x10A19e7eE7d7F8a52822f6817de8ea18204F2e4f"
       ],
       "Authorized_Caller_Names": [
-         "multisigs/dao"
+         "UNDEF"
       ]
    },
    {
@@ -1223,7 +1223,7 @@
          "0xf4A80929163C5179Ca042E1B292F5EFBBE3D89e6"
       ],
       "Authorized_Caller_Names": [
-         "multisigs/feeManager"
+         "UNDEF"
       ]
    },
    {
@@ -1234,7 +1234,7 @@
          "0xf4A80929163C5179Ca042E1B292F5EFBBE3D89e6"
       ],
       "Authorized_Caller_Names": [
-         "multisigs/feeManager"
+         "UNDEF"
       ]
    },
    {
@@ -1245,7 +1245,7 @@
          "0xA29F61256e948F3FB707b4b3B138C5cCb9EF9888"
       ],
       "Authorized_Caller_Names": [
-         "multisigs/emergency"
+         "UNDEF"
       ]
    },
    {
@@ -1256,7 +1256,7 @@
          "0xc38c5f97B34E175FFd35407fc91a937300E33860"
       ],
       "Authorized_Caller_Names": [
-         "multisigs/lm"
+         "UNDEF"
       ]
    },
    {
@@ -1268,8 +1268,8 @@
          "0xc38c5f97B34E175FFd35407fc91a937300E33860"
       ],
       "Authorized_Caller_Names": [
-         "multisigs/blabs_ops",
-         "multisigs/lm"
+         "UNDEF",
+         "UNDEF"
       ]
    },
    {
@@ -1281,8 +1281,8 @@
          "0xA29F61256e948F3FB707b4b3B138C5cCb9EF9888"
       ],
       "Authorized_Caller_Names": [
-         "multisigs/blabs_ops",
-         "multisigs/emergency"
+         "UNDEF",
+         "UNDEF"
       ]
    },
    {
@@ -1294,8 +1294,8 @@
          "0xA29F61256e948F3FB707b4b3B138C5cCb9EF9888"
       ],
       "Authorized_Caller_Names": [
-         "20221123-pool-recovery-helper/PoolRecoveryHelper",
-         "multisigs/emergency"
+         "UNDEF",
+         "UNDEF"
       ]
    },
    {
@@ -1306,7 +1306,7 @@
          "0xA29F61256e948F3FB707b4b3B138C5cCb9EF9888"
       ],
       "Authorized_Caller_Names": [
-         "multisigs/emergency"
+         "UNDEF"
       ]
    },
    {
@@ -1319,8 +1319,8 @@
          "0xad3b67BCA8935Cb510C8D18bD45F0b94F54A968f"
       ],
       "Authorized_Caller_Names": [
-         "gauntlet/GauntletFeeSetter",
-         "cow/settlement",
+         "UNDEF",
+         "UNDEF",
          "UNDEF"
       ]
    },
@@ -1332,7 +1332,7 @@
          "0xA29F61256e948F3FB707b4b3B138C5cCb9EF9888"
       ],
       "Authorized_Caller_Names": [
-         "multisigs/emergency"
+         "UNDEF"
       ]
    },
    {
@@ -1343,7 +1343,7 @@
          "0xA29F61256e948F3FB707b4b3B138C5cCb9EF9888"
       ],
       "Authorized_Caller_Names": [
-         "multisigs/emergency"
+         "UNDEF"
       ]
    },
    {
@@ -1356,9 +1356,9 @@
          "0x10A19e7eE7d7F8a52822f6817de8ea18204F2e4f"
       ],
       "Authorized_Caller_Names": [
-         "multisigs/blabs_ops",
-         "multisigs/emergency",
-         "multisigs/dao"
+         "UNDEF",
+         "UNDEF",
+         "UNDEF"
       ]
    },
    {
@@ -1369,7 +1369,7 @@
          "0x02f35dA6A02017154367Bc4d47bb6c7D06C7533B"
       ],
       "Authorized_Caller_Names": [
-         "multisigs/blabs_ops"
+         "UNDEF"
       ]
    },
    {
@@ -1380,7 +1380,7 @@
          "0x02f35dA6A02017154367Bc4d47bb6c7D06C7533B"
       ],
       "Authorized_Caller_Names": [
-         "multisigs/blabs_ops"
+         "UNDEF"
       ]
    },
    {
@@ -1392,8 +1392,8 @@
          "0xA29F61256e948F3FB707b4b3B138C5cCb9EF9888"
       ],
       "Authorized_Caller_Names": [
-         "multisigs/blabs_ops",
-         "multisigs/emergency"
+         "UNDEF",
+         "UNDEF"
       ]
    },
    {
@@ -1404,7 +1404,7 @@
          "0xA29F61256e948F3FB707b4b3B138C5cCb9EF9888"
       ],
       "Authorized_Caller_Names": [
-         "multisigs/emergency"
+         "UNDEF"
       ]
    },
    {
@@ -1416,8 +1416,8 @@
          "0x1b300C86980a5195bCF49bD419A068D98dC133Db"
       ],
       "Authorized_Caller_Names": [
-         "multisigs/emergency",
-         "20221123-pool-recovery-helper/PoolRecoveryHelper"
+         "UNDEF",
+         "UNDEF"
       ]
    },
    {
@@ -1428,7 +1428,7 @@
          "0xA29F61256e948F3FB707b4b3B138C5cCb9EF9888"
       ],
       "Authorized_Caller_Names": [
-         "multisigs/emergency"
+         "UNDEF"
       ]
    },
    {
@@ -1441,8 +1441,8 @@
          "0xad3b67BCA8935Cb510C8D18bD45F0b94F54A968f"
       ],
       "Authorized_Caller_Names": [
-         "multisigs/feeManager",
-         "cow/settlement",
+         "UNDEF",
+         "UNDEF",
          "UNDEF"
       ]
    },
@@ -1454,7 +1454,7 @@
          "0xf4A80929163C5179Ca042E1B292F5EFBBE3D89e6"
       ],
       "Authorized_Caller_Names": [
-         "multisigs/feeManager"
+         "UNDEF"
       ]
    },
    {
@@ -1465,7 +1465,7 @@
          "0xf4A80929163C5179Ca042E1B292F5EFBBE3D89e6"
       ],
       "Authorized_Caller_Names": [
-         "multisigs/feeManager"
+         "UNDEF"
       ]
    },
    {
@@ -1476,7 +1476,7 @@
          "0xA29F61256e948F3FB707b4b3B138C5cCb9EF9888"
       ],
       "Authorized_Caller_Names": [
-         "multisigs/emergency"
+         "UNDEF"
       ]
    },
    {
@@ -1488,8 +1488,8 @@
          "0x10A19e7eE7d7F8a52822f6817de8ea18204F2e4f"
       ],
       "Authorized_Caller_Names": [
-         "multisigs/emergency",
-         "multisigs/dao"
+         "UNDEF",
+         "UNDEF"
       ]
    },
    {
@@ -1500,7 +1500,7 @@
          "0xA29F61256e948F3FB707b4b3B138C5cCb9EF9888"
       ],
       "Authorized_Caller_Names": [
-         "multisigs/emergency"
+         "UNDEF"
       ]
    },
    {
@@ -1511,7 +1511,7 @@
          "0xc38c5f97B34E175FFd35407fc91a937300E33860"
       ],
       "Authorized_Caller_Names": [
-         "multisigs/lm"
+         "UNDEF"
       ]
    },
    {
@@ -1522,7 +1522,7 @@
          "0xc38c5f97B34E175FFd35407fc91a937300E33860"
       ],
       "Authorized_Caller_Names": [
-         "multisigs/lm"
+         "UNDEF"
       ]
    },
    {
@@ -1533,7 +1533,7 @@
          "0xc38c5f97B34E175FFd35407fc91a937300E33860"
       ],
       "Authorized_Caller_Names": [
-         "multisigs/lm"
+         "UNDEF"
       ]
    },
    {
@@ -1544,7 +1544,7 @@
          "0xc38c5f97B34E175FFd35407fc91a937300E33860"
       ],
       "Authorized_Caller_Names": [
-         "multisigs/lm"
+         "UNDEF"
       ]
    },
    {
@@ -1555,7 +1555,7 @@
          "0xc38c5f97B34E175FFd35407fc91a937300E33860"
       ],
       "Authorized_Caller_Names": [
-         "multisigs/lm"
+         "UNDEF"
       ]
    },
    {
@@ -1566,7 +1566,7 @@
          "0xc38c5f97B34E175FFd35407fc91a937300E33860"
       ],
       "Authorized_Caller_Names": [
-         "multisigs/lm"
+         "UNDEF"
       ]
    },
    {
@@ -1578,8 +1578,8 @@
          "0x10A19e7eE7d7F8a52822f6817de8ea18204F2e4f"
       ],
       "Authorized_Caller_Names": [
-         "multisigs/emergency",
-         "multisigs/dao"
+         "UNDEF",
+         "UNDEF"
       ]
    },
    {
@@ -1590,7 +1590,7 @@
          "0xA29F61256e948F3FB707b4b3B138C5cCb9EF9888"
       ],
       "Authorized_Caller_Names": [
-         "multisigs/emergency"
+         "UNDEF"
       ]
    },
    {
@@ -1602,8 +1602,8 @@
          "0x1b300C86980a5195bCF49bD419A068D98dC133Db"
       ],
       "Authorized_Caller_Names": [
-         "multisigs/emergency",
-         "20221123-pool-recovery-helper/PoolRecoveryHelper"
+         "UNDEF",
+         "UNDEF"
       ]
    },
    {
@@ -1614,7 +1614,7 @@
          "0xA29F61256e948F3FB707b4b3B138C5cCb9EF9888"
       ],
       "Authorized_Caller_Names": [
-         "multisigs/emergency"
+         "UNDEF"
       ]
    },
    {
@@ -1627,8 +1627,8 @@
          "0xad3b67BCA8935Cb510C8D18bD45F0b94F54A968f"
       ],
       "Authorized_Caller_Names": [
-         "gauntlet/GauntletFeeSetter",
-         "cow/settlement",
+         "UNDEF",
+         "UNDEF",
          "UNDEF"
       ]
    },
@@ -1641,8 +1641,8 @@
          "0x10A19e7eE7d7F8a52822f6817de8ea18204F2e4f"
       ],
       "Authorized_Caller_Names": [
-         "multisigs/emergency",
-         "multisigs/dao"
+         "UNDEF",
+         "UNDEF"
       ]
    },
    {
@@ -1653,7 +1653,7 @@
          "0xA29F61256e948F3FB707b4b3B138C5cCb9EF9888"
       ],
       "Authorized_Caller_Names": [
-         "multisigs/emergency"
+         "UNDEF"
       ]
    },
    {
@@ -1665,8 +1665,8 @@
          "0x1b300C86980a5195bCF49bD419A068D98dC133Db"
       ],
       "Authorized_Caller_Names": [
-         "multisigs/emergency",
-         "20221123-pool-recovery-helper/PoolRecoveryHelper"
+         "UNDEF",
+         "UNDEF"
       ]
    },
    {
@@ -1677,7 +1677,7 @@
          "0xA29F61256e948F3FB707b4b3B138C5cCb9EF9888"
       ],
       "Authorized_Caller_Names": [
-         "multisigs/emergency"
+         "UNDEF"
       ]
    },
    {
@@ -1690,8 +1690,8 @@
          "0xad3b67BCA8935Cb510C8D18bD45F0b94F54A968f"
       ],
       "Authorized_Caller_Names": [
-         "gauntlet/GauntletFeeSetter",
-         "cow/settlement",
+         "UNDEF",
+         "UNDEF",
          "UNDEF"
       ]
    },
@@ -1703,7 +1703,7 @@
          "0x10A19e7eE7d7F8a52822f6817de8ea18204F2e4f"
       ],
       "Authorized_Caller_Names": [
-         "multisigs/dao"
+         "UNDEF"
       ]
    },
    {
@@ -1714,7 +1714,7 @@
          "0xf4A80929163C5179Ca042E1B292F5EFBBE3D89e6"
       ],
       "Authorized_Caller_Names": [
-         "multisigs/feeManager"
+         "UNDEF"
       ]
    },
    {
@@ -1725,7 +1725,7 @@
          "0xf4A80929163C5179Ca042E1B292F5EFBBE3D89e6"
       ],
       "Authorized_Caller_Names": [
-         "multisigs/feeManager"
+         "UNDEF"
       ]
    },
    {
@@ -1737,8 +1737,8 @@
          "0x10A19e7eE7d7F8a52822f6817de8ea18204F2e4f"
       ],
       "Authorized_Caller_Names": [
-         "multisigs/emergency",
-         "multisigs/dao"
+         "UNDEF",
+         "UNDEF"
       ]
    },
    {
@@ -1749,7 +1749,7 @@
          "0x10A19e7eE7d7F8a52822f6817de8ea18204F2e4f"
       ],
       "Authorized_Caller_Names": [
-         "multisigs/dao"
+         "UNDEF"
       ]
    },
    {
@@ -1760,7 +1760,7 @@
          "0xE4a8ed6c1D8d048bD29A00946BFcf2DB10E7923B"
       ],
       "Authorized_Caller_Names": [
-         "gauntlet/GauntletFeeSetter"
+         "UNDEF"
       ]
    },
    {
@@ -1771,7 +1771,7 @@
          "0xf4A80929163C5179Ca042E1B292F5EFBBE3D89e6"
       ],
       "Authorized_Caller_Names": [
-         "multisigs/feeManager"
+         "UNDEF"
       ]
    },
    {
@@ -1783,8 +1783,8 @@
          "0x10A19e7eE7d7F8a52822f6817de8ea18204F2e4f"
       ],
       "Authorized_Caller_Names": [
-         "multisigs/emergency",
-         "multisigs/dao"
+         "UNDEF",
+         "UNDEF"
       ]
    },
    {
@@ -1795,7 +1795,7 @@
          "0x10A19e7eE7d7F8a52822f6817de8ea18204F2e4f"
       ],
       "Authorized_Caller_Names": [
-         "multisigs/dao"
+         "UNDEF"
       ]
    },
    {
@@ -1806,7 +1806,7 @@
          "0xE4a8ed6c1D8d048bD29A00946BFcf2DB10E7923B"
       ],
       "Authorized_Caller_Names": [
-         "gauntlet/GauntletFeeSetter"
+         "UNDEF"
       ]
    },
    {
@@ -1817,7 +1817,7 @@
          "0xf4A80929163C5179Ca042E1B292F5EFBBE3D89e6"
       ],
       "Authorized_Caller_Names": [
-         "multisigs/feeManager"
+         "UNDEF"
       ]
    },
    {
@@ -1828,7 +1828,7 @@
          "0x10A19e7eE7d7F8a52822f6817de8ea18204F2e4f"
       ],
       "Authorized_Caller_Names": [
-         "multisigs/dao"
+         "UNDEF"
       ]
    },
    {
@@ -1839,7 +1839,7 @@
          "0x10A19e7eE7d7F8a52822f6817de8ea18204F2e4f"
       ],
       "Authorized_Caller_Names": [
-         "multisigs/dao"
+         "UNDEF"
       ]
    },
    {
@@ -1850,7 +1850,7 @@
          "0xE4a8ed6c1D8d048bD29A00946BFcf2DB10E7923B"
       ],
       "Authorized_Caller_Names": [
-         "gauntlet/GauntletFeeSetter"
+         "UNDEF"
       ]
    },
    {
@@ -1861,7 +1861,7 @@
          "0xf4A80929163C5179Ca042E1B292F5EFBBE3D89e6"
       ],
       "Authorized_Caller_Names": [
-         "multisigs/feeManager"
+         "UNDEF"
       ]
    },
    {
@@ -1873,8 +1873,8 @@
          "0x10A19e7eE7d7F8a52822f6817de8ea18204F2e4f"
       ],
       "Authorized_Caller_Names": [
-         "multisigs/emergency",
-         "multisigs/dao"
+         "UNDEF",
+         "UNDEF"
       ]
    },
    {
@@ -1886,8 +1886,8 @@
          "0x10A19e7eE7d7F8a52822f6817de8ea18204F2e4f"
       ],
       "Authorized_Caller_Names": [
-         "multisigs/emergency",
-         "multisigs/dao"
+         "UNDEF",
+         "UNDEF"
       ]
    },
    {
@@ -1898,7 +1898,7 @@
          "0x10A19e7eE7d7F8a52822f6817de8ea18204F2e4f"
       ],
       "Authorized_Caller_Names": [
-         "multisigs/dao"
+         "UNDEF"
       ]
    },
    {
@@ -1909,7 +1909,7 @@
          "0xE4a8ed6c1D8d048bD29A00946BFcf2DB10E7923B"
       ],
       "Authorized_Caller_Names": [
-         "gauntlet/GauntletFeeSetter"
+         "UNDEF"
       ]
    },
    {
@@ -1920,7 +1920,7 @@
          "0xf4A80929163C5179Ca042E1B292F5EFBBE3D89e6"
       ],
       "Authorized_Caller_Names": [
-         "multisigs/feeManager"
+         "UNDEF"
       ]
    },
    {
@@ -1932,8 +1932,8 @@
          "0x10A19e7eE7d7F8a52822f6817de8ea18204F2e4f"
       ],
       "Authorized_Caller_Names": [
-         "multisigs/emergency",
-         "multisigs/dao"
+         "UNDEF",
+         "UNDEF"
       ]
    },
    {
@@ -1944,7 +1944,7 @@
          "0x10A19e7eE7d7F8a52822f6817de8ea18204F2e4f"
       ],
       "Authorized_Caller_Names": [
-         "multisigs/dao"
+         "UNDEF"
       ]
    },
    {
@@ -1955,7 +1955,7 @@
          "0xE4a8ed6c1D8d048bD29A00946BFcf2DB10E7923B"
       ],
       "Authorized_Caller_Names": [
-         "gauntlet/GauntletFeeSetter"
+         "UNDEF"
       ]
    },
    {
@@ -1966,7 +1966,7 @@
          "0xf4A80929163C5179Ca042E1B292F5EFBBE3D89e6"
       ],
       "Authorized_Caller_Names": [
-         "multisigs/feeManager"
+         "UNDEF"
       ]
    },
    {
@@ -1977,7 +1977,7 @@
          "0xc38c5f97B34E175FFd35407fc91a937300E33860"
       ],
       "Authorized_Caller_Names": [
-         "multisigs/lm"
+         "UNDEF"
       ]
    },
    {
@@ -1988,7 +1988,7 @@
          "0xc38c5f97B34E175FFd35407fc91a937300E33860"
       ],
       "Authorized_Caller_Names": [
-         "multisigs/lm"
+         "UNDEF"
       ]
    },
    {
@@ -1999,7 +1999,7 @@
          "0xA29F61256e948F3FB707b4b3B138C5cCb9EF9888"
       ],
       "Authorized_Caller_Names": [
-         "multisigs/emergency"
+         "UNDEF"
       ]
    },
    {
@@ -2010,7 +2010,7 @@
          "0xA29F61256e948F3FB707b4b3B138C5cCb9EF9888"
       ],
       "Authorized_Caller_Names": [
-         "multisigs/emergency"
+         "UNDEF"
       ]
    },
    {
@@ -2022,8 +2022,8 @@
          "0x1b300C86980a5195bCF49bD419A068D98dC133Db"
       ],
       "Authorized_Caller_Names": [
-         "multisigs/emergency",
-         "20221123-pool-recovery-helper/PoolRecoveryHelper"
+         "UNDEF",
+         "UNDEF"
       ]
    },
    {
@@ -2034,7 +2034,7 @@
          "0xA29F61256e948F3FB707b4b3B138C5cCb9EF9888"
       ],
       "Authorized_Caller_Names": [
-         "multisigs/emergency"
+         "UNDEF"
       ]
    },
    {
@@ -2047,8 +2047,8 @@
          "0xad3b67BCA8935Cb510C8D18bD45F0b94F54A968f"
       ],
       "Authorized_Caller_Names": [
-         "multisigs/lm",
-         "cow/settlement",
+         "UNDEF",
+         "UNDEF",
          "UNDEF"
       ]
    },
@@ -2060,7 +2060,7 @@
          "0xA29F61256e948F3FB707b4b3B138C5cCb9EF9888"
       ],
       "Authorized_Caller_Names": [
-         "multisigs/emergency"
+         "UNDEF"
       ]
    },
    {
@@ -2071,7 +2071,7 @@
          "0xA29F61256e948F3FB707b4b3B138C5cCb9EF9888"
       ],
       "Authorized_Caller_Names": [
-         "multisigs/emergency"
+         "UNDEF"
       ]
    },
    {
@@ -2083,8 +2083,8 @@
          "0x1b300C86980a5195bCF49bD419A068D98dC133Db"
       ],
       "Authorized_Caller_Names": [
-         "multisigs/emergency",
-         "20221123-pool-recovery-helper/PoolRecoveryHelper"
+         "UNDEF",
+         "UNDEF"
       ]
    },
    {
@@ -2095,7 +2095,7 @@
          "0xA29F61256e948F3FB707b4b3B138C5cCb9EF9888"
       ],
       "Authorized_Caller_Names": [
-         "multisigs/emergency"
+         "UNDEF"
       ]
    },
    {
@@ -2108,8 +2108,8 @@
          "0xad3b67BCA8935Cb510C8D18bD45F0b94F54A968f"
       ],
       "Authorized_Caller_Names": [
-         "multisigs/lm",
-         "cow/settlement",
+         "UNDEF",
+         "UNDEF",
          "UNDEF"
       ]
    },
@@ -2121,7 +2121,7 @@
          "0xc38c5f97B34E175FFd35407fc91a937300E33860"
       ],
       "Authorized_Caller_Names": [
-         "multisigs/lm"
+         "UNDEF"
       ]
    },
    {
@@ -2132,7 +2132,7 @@
          "0xc38c5f97B34E175FFd35407fc91a937300E33860"
       ],
       "Authorized_Caller_Names": [
-         "multisigs/lm"
+         "UNDEF"
       ]
    },
    {
@@ -2143,7 +2143,7 @@
          "0xA29F61256e948F3FB707b4b3B138C5cCb9EF9888"
       ],
       "Authorized_Caller_Names": [
-         "multisigs/emergency"
+         "UNDEF"
       ]
    },
    {
@@ -2155,8 +2155,8 @@
          "0x1b300C86980a5195bCF49bD419A068D98dC133Db"
       ],
       "Authorized_Caller_Names": [
-         "multisigs/emergency",
-         "20221123-pool-recovery-helper/PoolRecoveryHelper"
+         "UNDEF",
+         "UNDEF"
       ]
    },
    {
@@ -2167,7 +2167,7 @@
          "0xA29F61256e948F3FB707b4b3B138C5cCb9EF9888"
       ],
       "Authorized_Caller_Names": [
-         "multisigs/emergency"
+         "UNDEF"
       ]
    },
    {
@@ -2178,7 +2178,7 @@
          "0xA29F61256e948F3FB707b4b3B138C5cCb9EF9888"
       ],
       "Authorized_Caller_Names": [
-         "multisigs/emergency"
+         "UNDEF"
       ]
    },
    {
@@ -2190,8 +2190,8 @@
          "0xA29F61256e948F3FB707b4b3B138C5cCb9EF9888"
       ],
       "Authorized_Caller_Names": [
-         "20221123-pool-recovery-helper/PoolRecoveryHelper",
-         "multisigs/emergency"
+         "UNDEF",
+         "UNDEF"
       ]
    },
    {
@@ -2202,7 +2202,7 @@
          "0xA29F61256e948F3FB707b4b3B138C5cCb9EF9888"
       ],
       "Authorized_Caller_Names": [
-         "multisigs/emergency"
+         "UNDEF"
       ]
    },
    {
@@ -2213,7 +2213,7 @@
          "0xE4a8ed6c1D8d048bD29A00946BFcf2DB10E7923B"
       ],
       "Authorized_Caller_Names": [
-         "gauntlet/GauntletFeeSetter"
+         "UNDEF"
       ]
    },
    {
@@ -2224,7 +2224,7 @@
          "0xc38c5f97B34E175FFd35407fc91a937300E33860"
       ],
       "Authorized_Caller_Names": [
-         "multisigs/lm"
+         "UNDEF"
       ]
    },
    {
@@ -2235,7 +2235,7 @@
          "0xA29F61256e948F3FB707b4b3B138C5cCb9EF9888"
       ],
       "Authorized_Caller_Names": [
-         "multisigs/emergency"
+         "UNDEF"
       ]
    },
    {
@@ -2247,8 +2247,8 @@
          "0xA29F61256e948F3FB707b4b3B138C5cCb9EF9888"
       ],
       "Authorized_Caller_Names": [
-         "20221123-pool-recovery-helper/PoolRecoveryHelper",
-         "multisigs/emergency"
+         "UNDEF",
+         "UNDEF"
       ]
    },
    {
@@ -2259,7 +2259,7 @@
          "0xA29F61256e948F3FB707b4b3B138C5cCb9EF9888"
       ],
       "Authorized_Caller_Names": [
-         "multisigs/emergency"
+         "UNDEF"
       ]
    },
    {
@@ -2270,7 +2270,7 @@
          "0xE4a8ed6c1D8d048bD29A00946BFcf2DB10E7923B"
       ],
       "Authorized_Caller_Names": [
-         "gauntlet/GauntletFeeSetter"
+         "UNDEF"
       ]
    },
    {
@@ -2281,7 +2281,7 @@
          "0xc38c5f97B34E175FFd35407fc91a937300E33860"
       ],
       "Authorized_Caller_Names": [
-         "multisigs/lm"
+         "UNDEF"
       ]
    },
    {
@@ -2292,7 +2292,7 @@
          "0xA29F61256e948F3FB707b4b3B138C5cCb9EF9888"
       ],
       "Authorized_Caller_Names": [
-         "multisigs/emergency"
+         "UNDEF"
       ]
    },
    {
@@ -2304,8 +2304,8 @@
          "0xA29F61256e948F3FB707b4b3B138C5cCb9EF9888"
       ],
       "Authorized_Caller_Names": [
-         "20221123-pool-recovery-helper/PoolRecoveryHelper",
-         "multisigs/emergency"
+         "UNDEF",
+         "UNDEF"
       ]
    },
    {
@@ -2316,7 +2316,7 @@
          "0xA29F61256e948F3FB707b4b3B138C5cCb9EF9888"
       ],
       "Authorized_Caller_Names": [
-         "multisigs/emergency"
+         "UNDEF"
       ]
    },
    {
@@ -2327,7 +2327,7 @@
          "0xE4a8ed6c1D8d048bD29A00946BFcf2DB10E7923B"
       ],
       "Authorized_Caller_Names": [
-         "gauntlet/GauntletFeeSetter"
+         "UNDEF"
       ]
    },
    {
@@ -2338,7 +2338,7 @@
          "0xc38c5f97B34E175FFd35407fc91a937300E33860"
       ],
       "Authorized_Caller_Names": [
-         "multisigs/lm"
+         "UNDEF"
       ]
    },
    {
@@ -2349,7 +2349,7 @@
          "0xA29F61256e948F3FB707b4b3B138C5cCb9EF9888"
       ],
       "Authorized_Caller_Names": [
-         "multisigs/emergency"
+         "UNDEF"
       ]
    },
    {
@@ -2361,8 +2361,8 @@
          "0xA29F61256e948F3FB707b4b3B138C5cCb9EF9888"
       ],
       "Authorized_Caller_Names": [
-         "20221123-pool-recovery-helper/PoolRecoveryHelper",
-         "multisigs/emergency"
+         "UNDEF",
+         "UNDEF"
       ]
    },
    {
@@ -2373,7 +2373,7 @@
          "0xA29F61256e948F3FB707b4b3B138C5cCb9EF9888"
       ],
       "Authorized_Caller_Names": [
-         "multisigs/emergency"
+         "UNDEF"
       ]
    },
    {
@@ -2384,7 +2384,7 @@
          "0xE4a8ed6c1D8d048bD29A00946BFcf2DB10E7923B"
       ],
       "Authorized_Caller_Names": [
-         "gauntlet/GauntletFeeSetter"
+         "UNDEF"
       ]
    },
    {
@@ -2395,7 +2395,7 @@
          "0xc38c5f97B34E175FFd35407fc91a937300E33860"
       ],
       "Authorized_Caller_Names": [
-         "multisigs/lm"
+         "UNDEF"
       ]
    },
    {
@@ -2407,8 +2407,8 @@
          "0xA29F61256e948F3FB707b4b3B138C5cCb9EF9888"
       ],
       "Authorized_Caller_Names": [
-         "20221123-pool-recovery-helper/PoolRecoveryHelper",
-         "multisigs/emergency"
+         "UNDEF",
+         "UNDEF"
       ]
    },
    {
@@ -2419,7 +2419,7 @@
          "0xA29F61256e948F3FB707b4b3B138C5cCb9EF9888"
       ],
       "Authorized_Caller_Names": [
-         "multisigs/emergency"
+         "UNDEF"
       ]
    },
    {
@@ -2430,7 +2430,7 @@
          "0xE4a8ed6c1D8d048bD29A00946BFcf2DB10E7923B"
       ],
       "Authorized_Caller_Names": [
-         "gauntlet/GauntletFeeSetter"
+         "UNDEF"
       ]
    },
    {
@@ -2441,7 +2441,7 @@
          "0xc38c5f97B34E175FFd35407fc91a937300E33860"
       ],
       "Authorized_Caller_Names": [
-         "multisigs/lm"
+         "UNDEF"
       ]
    },
    {
@@ -2452,7 +2452,7 @@
          "0xA29F61256e948F3FB707b4b3B138C5cCb9EF9888"
       ],
       "Authorized_Caller_Names": [
-         "multisigs/emergency"
+         "UNDEF"
       ]
    },
    {
@@ -2463,7 +2463,7 @@
          "0xc38c5f97B34E175FFd35407fc91a937300E33860"
       ],
       "Authorized_Caller_Names": [
-         "multisigs/lm"
+         "UNDEF"
       ]
    },
    {
@@ -2474,7 +2474,7 @@
          "0xc38c5f97B34E175FFd35407fc91a937300E33860"
       ],
       "Authorized_Caller_Names": [
-         "multisigs/lm"
+         "UNDEF"
       ]
    },
    {
@@ -2486,8 +2486,8 @@
          "0xc38c5f97B34E175FFd35407fc91a937300E33860"
       ],
       "Authorized_Caller_Names": [
-         "multisigs/emergency",
-         "multisigs/lm"
+         "UNDEF",
+         "UNDEF"
       ]
    },
    {
@@ -2498,7 +2498,7 @@
          "0xA29F61256e948F3FB707b4b3B138C5cCb9EF9888"
       ],
       "Authorized_Caller_Names": [
-         "multisigs/emergency"
+         "UNDEF"
       ]
    },
    {
@@ -2510,8 +2510,8 @@
          "0x1b300C86980a5195bCF49bD419A068D98dC133Db"
       ],
       "Authorized_Caller_Names": [
-         "multisigs/emergency",
-         "20221123-pool-recovery-helper/PoolRecoveryHelper"
+         "UNDEF",
+         "UNDEF"
       ]
    },
    {
@@ -2522,7 +2522,7 @@
          "0xA29F61256e948F3FB707b4b3B138C5cCb9EF9888"
       ],
       "Authorized_Caller_Names": [
-         "multisigs/emergency"
+         "UNDEF"
       ]
    },
    {
@@ -2535,9 +2535,9 @@
          "0x9008D19f58AAbD9eD0D60971565AA8510560ab41"
       ],
       "Authorized_Caller_Names": [
-         "multisigs/lm",
          "UNDEF",
-         "cow/settlement"
+         "UNDEF",
+         "UNDEF"
       ]
    },
    {
@@ -2548,7 +2548,7 @@
          "0xc38c5f97B34E175FFd35407fc91a937300E33860"
       ],
       "Authorized_Caller_Names": [
-         "multisigs/lm"
+         "UNDEF"
       ]
    },
    {
@@ -2559,7 +2559,7 @@
          "0xc38c5f97B34E175FFd35407fc91a937300E33860"
       ],
       "Authorized_Caller_Names": [
-         "multisigs/lm"
+         "UNDEF"
       ]
    },
    {
@@ -2570,7 +2570,7 @@
          "0xc38c5f97B34E175FFd35407fc91a937300E33860"
       ],
       "Authorized_Caller_Names": [
-         "multisigs/lm"
+         "UNDEF"
       ]
    },
    {
@@ -2581,7 +2581,7 @@
          "0xA29F61256e948F3FB707b4b3B138C5cCb9EF9888"
       ],
       "Authorized_Caller_Names": [
-         "multisigs/emergency"
+         "UNDEF"
       ]
    },
    {
@@ -2593,8 +2593,8 @@
          "0x1b300C86980a5195bCF49bD419A068D98dC133Db"
       ],
       "Authorized_Caller_Names": [
-         "multisigs/emergency",
-         "20221123-pool-recovery-helper/PoolRecoveryHelper"
+         "UNDEF",
+         "UNDEF"
       ]
    },
    {
@@ -2605,7 +2605,7 @@
          "0xA29F61256e948F3FB707b4b3B138C5cCb9EF9888"
       ],
       "Authorized_Caller_Names": [
-         "multisigs/emergency"
+         "UNDEF"
       ]
    },
    {
@@ -2618,9 +2618,9 @@
          "0xc38c5f97B34E175FFd35407fc91a937300E33860"
       ],
       "Authorized_Caller_Names": [
-         "cow/settlement",
          "UNDEF",
-         "multisigs/lm"
+         "UNDEF",
+         "UNDEF"
       ]
    },
    {
@@ -2631,7 +2631,7 @@
          "0xc38c5f97B34E175FFd35407fc91a937300E33860"
       ],
       "Authorized_Caller_Names": [
-         "multisigs/lm"
+         "UNDEF"
       ]
    },
    {
@@ -2642,7 +2642,7 @@
          "0xc38c5f97B34E175FFd35407fc91a937300E33860"
       ],
       "Authorized_Caller_Names": [
-         "multisigs/lm"
+         "UNDEF"
       ]
    },
    {
@@ -2653,7 +2653,7 @@
          "0xA29F61256e948F3FB707b4b3B138C5cCb9EF9888"
       ],
       "Authorized_Caller_Names": [
-         "multisigs/emergency"
+         "UNDEF"
       ]
    }
 ]
