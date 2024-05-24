@@ -9,9 +9,9 @@
          "0x2163c2FcD0940e84B8a68991bF926eDfB0Cd926C"
       ],
       "Authorized_Caller_Names": [
-         "20220916-batch-relayer-v4/BalancerRelayer",
-         "20230314-batch-relayer-v5/BalancerRelayer",
-         "20231031-batch-relayer-v6/BalancerRelayer"
+         "UNDEF",
+         "UNDEF",
+         "UNDEF"
       ]
    },
    {
@@ -24,9 +24,9 @@
          "0x2163c2FcD0940e84B8a68991bF926eDfB0Cd926C"
       ],
       "Authorized_Caller_Names": [
-         "20220916-batch-relayer-v4/BalancerRelayer",
-         "20230314-batch-relayer-v5/BalancerRelayer",
-         "20231031-batch-relayer-v6/BalancerRelayer"
+         "UNDEF",
+         "UNDEF",
+         "UNDEF"
       ]
    },
    {
@@ -39,9 +39,9 @@
          "0x2163c2FcD0940e84B8a68991bF926eDfB0Cd926C"
       ],
       "Authorized_Caller_Names": [
-         "20220916-batch-relayer-v4/BalancerRelayer",
-         "20230314-batch-relayer-v5/BalancerRelayer",
-         "20231031-batch-relayer-v6/BalancerRelayer"
+         "UNDEF",
+         "UNDEF",
+         "UNDEF"
       ]
    },
    {
@@ -54,9 +54,9 @@
          "0x2163c2FcD0940e84B8a68991bF926eDfB0Cd926C"
       ],
       "Authorized_Caller_Names": [
-         "20220916-batch-relayer-v4/BalancerRelayer",
-         "20230314-batch-relayer-v5/BalancerRelayer",
-         "20231031-batch-relayer-v6/BalancerRelayer"
+         "UNDEF",
+         "UNDEF",
+         "UNDEF"
       ]
    },
    {
@@ -67,7 +67,7 @@
          "0xd6110A7756080a4e3BCF4e7EBBCA8E8aDFBC9962"
       ],
       "Authorized_Caller_Names": [
-         "multisigs/emergency"
+         "UNDEF"
       ]
    },
    {
@@ -80,9 +80,9 @@
          "0x2163c2FcD0940e84B8a68991bF926eDfB0Cd926C"
       ],
       "Authorized_Caller_Names": [
-         "20220916-batch-relayer-v4/BalancerRelayer",
-         "20230314-batch-relayer-v5/BalancerRelayer",
-         "20231031-batch-relayer-v6/BalancerRelayer"
+         "UNDEF",
+         "UNDEF",
+         "UNDEF"
       ]
    },
    {
@@ -95,9 +95,9 @@
          "0x2163c2FcD0940e84B8a68991bF926eDfB0Cd926C"
       ],
       "Authorized_Caller_Names": [
-         "20220916-batch-relayer-v4/BalancerRelayer",
-         "20230314-batch-relayer-v5/BalancerRelayer",
-         "20231031-batch-relayer-v6/BalancerRelayer"
+         "UNDEF",
+         "UNDEF",
+         "UNDEF"
       ]
    },
    {
@@ -108,7 +108,7 @@
          "0x41B953164995c11C81DA73D212ED8Af25741b7Ac"
       ],
       "Authorized_Caller_Names": [
-         "20220725-protocol-fee-percentages-provider/ProtocolFeePercentagesProvider"
+         "UNDEF"
       ]
    },
    {
@@ -119,7 +119,7 @@
          "0x41B953164995c11C81DA73D212ED8Af25741b7Ac"
       ],
       "Authorized_Caller_Names": [
-         "20220725-protocol-fee-percentages-provider/ProtocolFeePercentagesProvider"
+         "UNDEF"
       ]
    },
    {
@@ -130,7 +130,7 @@
          "0xdAE7e32ADc5d490a43cCba1f0c736033F2b4eFca"
       ],
       "Authorized_Caller_Names": [
-         "20220517-protocol-fee-withdrawer/ProtocolFeesWithdrawer"
+         "UNDEF"
       ]
    },
    {
@@ -141,7 +141,7 @@
          "0xd6110A7756080a4e3BCF4e7EBBCA8E8aDFBC9962"
       ],
       "Authorized_Caller_Names": [
-         "multisigs/emergency"
+         "UNDEF"
       ]
    },
    {
@@ -154,9 +154,9 @@
          "0x9e5D6427D2cdaDC68870197b099C2Df535Ec3c97"
       ],
       "Authorized_Caller_Names": [
-         "multisigs/lm",
-         "mimic/smartvault",
-         "mimic/smartVaultV3"
+         "UNDEF",
+         "UNDEF",
+         "UNDEF"
       ]
    },
    {
@@ -167,7 +167,7 @@
          "0x2a5AEcE0bb9EfFD7608213AE1745873385515c18"
       ],
       "Authorized_Caller_Names": [
-         "multisigs/dao"
+         "UNDEF"
       ]
    },
    {
@@ -178,7 +178,7 @@
          "0xd6110A7756080a4e3BCF4e7EBBCA8E8aDFBC9962"
       ],
       "Authorized_Caller_Names": [
-         "multisigs/emergency"
+         "UNDEF"
       ]
    },
    {
@@ -189,7 +189,7 @@
          "0xd6110A7756080a4e3BCF4e7EBBCA8E8aDFBC9962"
       ],
       "Authorized_Caller_Names": [
-         "multisigs/emergency"
+         "UNDEF"
       ]
    },
    {
@@ -200,7 +200,7 @@
          "0xd6110A7756080a4e3BCF4e7EBBCA8E8aDFBC9962"
       ],
       "Authorized_Caller_Names": [
-         "multisigs/emergency"
+         "UNDEF"
       ]
    },
    {
@@ -211,7 +211,7 @@
          "0xd6110A7756080a4e3BCF4e7EBBCA8E8aDFBC9962"
       ],
       "Authorized_Caller_Names": [
-         "multisigs/emergency"
+         "UNDEF"
       ]
    },
    {
@@ -222,7 +222,7 @@
          "0xc3ccacE87f6d3A81724075ADcb5ddd85a8A1bB68"
       ],
       "Authorized_Caller_Names": [
-         "20221123-pool-recovery-helper/PoolRecoveryHelper"
+         "UNDEF"
       ]
    },
    {
@@ -233,7 +233,7 @@
          "0xd6110A7756080a4e3BCF4e7EBBCA8E8aDFBC9962"
       ],
       "Authorized_Caller_Names": [
-         "multisigs/emergency"
+         "UNDEF"
       ]
    },
    {
@@ -244,7 +244,7 @@
          "0x14969B55a675d13a1700F71A37511bc22D90155a"
       ],
       "Authorized_Caller_Names": [
-         "multisigs/lm"
+         "UNDEF"
       ]
    },
    {
@@ -255,7 +255,7 @@
          "0x14969B55a675d13a1700F71A37511bc22D90155a"
       ],
       "Authorized_Caller_Names": [
-         "multisigs/lm"
+         "UNDEF"
       ]
    },
    {
@@ -266,7 +266,7 @@
          "0x14969B55a675d13a1700F71A37511bc22D90155a"
       ],
       "Authorized_Caller_Names": [
-         "multisigs/lm"
+         "UNDEF"
       ]
    },
    {
@@ -278,8 +278,8 @@
          "0x2a5AEcE0bb9EfFD7608213AE1745873385515c18"
       ],
       "Authorized_Caller_Names": [
-         "multisigs/emergency",
-         "multisigs/dao"
+         "UNDEF",
+         "UNDEF"
       ]
    },
    {
@@ -291,8 +291,8 @@
          "0x2a5AEcE0bb9EfFD7608213AE1745873385515c18"
       ],
       "Authorized_Caller_Names": [
-         "20221123-pool-recovery-helper/PoolRecoveryHelper",
-         "multisigs/dao"
+         "UNDEF",
+         "UNDEF"
       ]
    },
    {
@@ -303,7 +303,7 @@
          "0xd6110A7756080a4e3BCF4e7EBBCA8E8aDFBC9962"
       ],
       "Authorized_Caller_Names": [
-         "multisigs/emergency"
+         "UNDEF"
       ]
    },
    {
@@ -314,7 +314,7 @@
          "0x14969B55a675d13a1700F71A37511bc22D90155a"
       ],
       "Authorized_Caller_Names": [
-         "multisigs/lm"
+         "UNDEF"
       ]
    },
    {
@@ -325,7 +325,7 @@
          "0x955556b002d05c7B31a9394c10897c1DA19eAEab"
       ],
       "Authorized_Caller_Names": [
-         "multisigs/blabs_ops"
+         "UNDEF"
       ]
    },
    {
@@ -336,7 +336,7 @@
          "0x955556b002d05c7B31a9394c10897c1DA19eAEab"
       ],
       "Authorized_Caller_Names": [
-         "multisigs/blabs_ops"
+         "UNDEF"
       ]
    },
    {
@@ -348,8 +348,8 @@
          "0x2a5AEcE0bb9EfFD7608213AE1745873385515c18"
       ],
       "Authorized_Caller_Names": [
-         "multisigs/emergency",
-         "multisigs/dao"
+         "UNDEF",
+         "UNDEF"
       ]
    },
    {
@@ -360,7 +360,7 @@
          "0xd6110A7756080a4e3BCF4e7EBBCA8E8aDFBC9962"
       ],
       "Authorized_Caller_Names": [
-         "multisigs/emergency"
+         "UNDEF"
       ]
    },
    {
@@ -372,8 +372,8 @@
          "0xc3ccacE87f6d3A81724075ADcb5ddd85a8A1bB68"
       ],
       "Authorized_Caller_Names": [
-         "multisigs/emergency",
-         "20221123-pool-recovery-helper/PoolRecoveryHelper"
+         "UNDEF",
+         "UNDEF"
       ]
    },
    {
@@ -384,7 +384,7 @@
          "0xd6110A7756080a4e3BCF4e7EBBCA8E8aDFBC9962"
       ],
       "Authorized_Caller_Names": [
-         "multisigs/emergency"
+         "UNDEF"
       ]
    },
    {
@@ -395,7 +395,7 @@
          "0x14969B55a675d13a1700F71A37511bc22D90155a"
       ],
       "Authorized_Caller_Names": [
-         "multisigs/lm"
+         "UNDEF"
       ]
    },
    {
@@ -407,8 +407,8 @@
          "0x2a5AEcE0bb9EfFD7608213AE1745873385515c18"
       ],
       "Authorized_Caller_Names": [
-         "multisigs/emergency",
-         "multisigs/dao"
+         "UNDEF",
+         "UNDEF"
       ]
    },
    {
@@ -419,7 +419,7 @@
          "0xd6110A7756080a4e3BCF4e7EBBCA8E8aDFBC9962"
       ],
       "Authorized_Caller_Names": [
-         "multisigs/emergency"
+         "UNDEF"
       ]
    },
    {
@@ -431,8 +431,8 @@
          "0xc3ccacE87f6d3A81724075ADcb5ddd85a8A1bB68"
       ],
       "Authorized_Caller_Names": [
-         "multisigs/emergency",
-         "20221123-pool-recovery-helper/PoolRecoveryHelper"
+         "UNDEF",
+         "UNDEF"
       ]
    },
    {
@@ -443,7 +443,7 @@
          "0xd6110A7756080a4e3BCF4e7EBBCA8E8aDFBC9962"
       ],
       "Authorized_Caller_Names": [
-         "multisigs/emergency"
+         "UNDEF"
       ]
    },
    {
@@ -454,7 +454,7 @@
          "0x14969B55a675d13a1700F71A37511bc22D90155a"
       ],
       "Authorized_Caller_Names": [
-         "multisigs/lm"
+         "UNDEF"
       ]
    },
    {
@@ -465,7 +465,7 @@
          "0x2a5AEcE0bb9EfFD7608213AE1745873385515c18"
       ],
       "Authorized_Caller_Names": [
-         "multisigs/dao"
+         "UNDEF"
       ]
    },
    {
@@ -476,7 +476,7 @@
          "0x14969B55a675d13a1700F71A37511bc22D90155a"
       ],
       "Authorized_Caller_Names": [
-         "multisigs/lm"
+         "UNDEF"
       ]
    },
    {
@@ -487,7 +487,7 @@
          "0x14969B55a675d13a1700F71A37511bc22D90155a"
       ],
       "Authorized_Caller_Names": [
-         "multisigs/lm"
+         "UNDEF"
       ]
    },
    {
@@ -499,8 +499,8 @@
          "0x2a5AEcE0bb9EfFD7608213AE1745873385515c18"
       ],
       "Authorized_Caller_Names": [
-         "multisigs/emergency",
-         "multisigs/dao"
+         "UNDEF",
+         "UNDEF"
       ]
    },
    {
@@ -512,8 +512,8 @@
          "0x2a5AEcE0bb9EfFD7608213AE1745873385515c18"
       ],
       "Authorized_Caller_Names": [
-         "20221123-pool-recovery-helper/PoolRecoveryHelper",
-         "multisigs/dao"
+         "UNDEF",
+         "UNDEF"
       ]
    },
    {
@@ -524,7 +524,7 @@
          "0xd6110A7756080a4e3BCF4e7EBBCA8E8aDFBC9962"
       ],
       "Authorized_Caller_Names": [
-         "multisigs/emergency"
+         "UNDEF"
       ]
    },
    {
@@ -535,7 +535,7 @@
          "0x14969B55a675d13a1700F71A37511bc22D90155a"
       ],
       "Authorized_Caller_Names": [
-         "multisigs/lm"
+         "UNDEF"
       ]
    },
    {
@@ -546,7 +546,7 @@
          "0x14969B55a675d13a1700F71A37511bc22D90155a"
       ],
       "Authorized_Caller_Names": [
-         "multisigs/lm"
+         "UNDEF"
       ]
    },
    {
@@ -557,7 +557,7 @@
          "0x955556b002d05c7B31a9394c10897c1DA19eAEab"
       ],
       "Authorized_Caller_Names": [
-         "multisigs/blabs_ops"
+         "UNDEF"
       ]
    },
    {
@@ -568,7 +568,7 @@
          "0x14969B55a675d13a1700F71A37511bc22D90155a"
       ],
       "Authorized_Caller_Names": [
-         "multisigs/lm"
+         "UNDEF"
       ]
    },
    {
@@ -579,7 +579,7 @@
          "0x14969B55a675d13a1700F71A37511bc22D90155a"
       ],
       "Authorized_Caller_Names": [
-         "multisigs/lm"
+         "UNDEF"
       ]
    },
    {
@@ -590,7 +590,7 @@
          "0x14969B55a675d13a1700F71A37511bc22D90155a"
       ],
       "Authorized_Caller_Names": [
-         "multisigs/lm"
+         "UNDEF"
       ]
    },
    {
@@ -601,7 +601,7 @@
          "0xd6110A7756080a4e3BCF4e7EBBCA8E8aDFBC9962"
       ],
       "Authorized_Caller_Names": [
-         "multisigs/emergency"
+         "UNDEF"
       ]
    },
    {
@@ -612,7 +612,7 @@
          "0xd6110A7756080a4e3BCF4e7EBBCA8E8aDFBC9962"
       ],
       "Authorized_Caller_Names": [
-         "multisigs/emergency"
+         "UNDEF"
       ]
    },
    {
@@ -624,8 +624,8 @@
          "0xc3ccacE87f6d3A81724075ADcb5ddd85a8A1bB68"
       ],
       "Authorized_Caller_Names": [
-         "multisigs/emergency",
-         "20221123-pool-recovery-helper/PoolRecoveryHelper"
+         "UNDEF",
+         "UNDEF"
       ]
    },
    {
@@ -636,7 +636,7 @@
          "0xd6110A7756080a4e3BCF4e7EBBCA8E8aDFBC9962"
       ],
       "Authorized_Caller_Names": [
-         "multisigs/emergency"
+         "UNDEF"
       ]
    },
    {
@@ -647,7 +647,7 @@
          "0x14969B55a675d13a1700F71A37511bc22D90155a"
       ],
       "Authorized_Caller_Names": [
-         "multisigs/lm"
+         "UNDEF"
       ]
    },
    {
@@ -658,7 +658,7 @@
          "0xd6110A7756080a4e3BCF4e7EBBCA8E8aDFBC9962"
       ],
       "Authorized_Caller_Names": [
-         "multisigs/emergency"
+         "UNDEF"
       ]
    },
    {
@@ -669,7 +669,7 @@
          "0xd6110A7756080a4e3BCF4e7EBBCA8E8aDFBC9962"
       ],
       "Authorized_Caller_Names": [
-         "multisigs/emergency"
+         "UNDEF"
       ]
    },
    {
@@ -681,8 +681,8 @@
          "0xc3ccacE87f6d3A81724075ADcb5ddd85a8A1bB68"
       ],
       "Authorized_Caller_Names": [
-         "multisigs/emergency",
-         "20221123-pool-recovery-helper/PoolRecoveryHelper"
+         "UNDEF",
+         "UNDEF"
       ]
    },
    {
@@ -693,7 +693,7 @@
          "0xd6110A7756080a4e3BCF4e7EBBCA8E8aDFBC9962"
       ],
       "Authorized_Caller_Names": [
-         "multisigs/emergency"
+         "UNDEF"
       ]
    },
    {
@@ -704,7 +704,7 @@
          "0x14969B55a675d13a1700F71A37511bc22D90155a"
       ],
       "Authorized_Caller_Names": [
-         "multisigs/lm"
+         "UNDEF"
       ]
    },
    {
@@ -715,7 +715,7 @@
          "0x2a5AEcE0bb9EfFD7608213AE1745873385515c18"
       ],
       "Authorized_Caller_Names": [
-         "multisigs/dao"
+         "UNDEF"
       ]
    },
    {
@@ -726,7 +726,7 @@
          "0x14969B55a675d13a1700F71A37511bc22D90155a"
       ],
       "Authorized_Caller_Names": [
-         "multisigs/lm"
+         "UNDEF"
       ]
    },
    {
@@ -737,7 +737,7 @@
          "0x14969B55a675d13a1700F71A37511bc22D90155a"
       ],
       "Authorized_Caller_Names": [
-         "multisigs/lm"
+         "UNDEF"
       ]
    },
    {
@@ -748,7 +748,7 @@
          "0x14969B55a675d13a1700F71A37511bc22D90155a"
       ],
       "Authorized_Caller_Names": [
-         "multisigs/lm"
+         "UNDEF"
       ]
    },
    {
@@ -759,7 +759,7 @@
          "0xd6110A7756080a4e3BCF4e7EBBCA8E8aDFBC9962"
       ],
       "Authorized_Caller_Names": [
-         "multisigs/emergency"
+         "UNDEF"
       ]
    },
    {
@@ -771,8 +771,8 @@
          "0xc3ccacE87f6d3A81724075ADcb5ddd85a8A1bB68"
       ],
       "Authorized_Caller_Names": [
-         "multisigs/emergency",
-         "20221123-pool-recovery-helper/PoolRecoveryHelper"
+         "UNDEF",
+         "UNDEF"
       ]
    },
    {
@@ -783,7 +783,7 @@
          "0xd6110A7756080a4e3BCF4e7EBBCA8E8aDFBC9962"
       ],
       "Authorized_Caller_Names": [
-         "multisigs/emergency"
+         "UNDEF"
       ]
    },
    {
@@ -794,7 +794,7 @@
          "0xd6110A7756080a4e3BCF4e7EBBCA8E8aDFBC9962"
       ],
       "Authorized_Caller_Names": [
-         "multisigs/emergency"
+         "UNDEF"
       ]
    },
    {
@@ -806,8 +806,8 @@
          "0xd6110A7756080a4e3BCF4e7EBBCA8E8aDFBC9962"
       ],
       "Authorized_Caller_Names": [
-         "20221123-pool-recovery-helper/PoolRecoveryHelper",
-         "multisigs/emergency"
+         "UNDEF",
+         "UNDEF"
       ]
    },
    {
@@ -818,7 +818,7 @@
          "0xd6110A7756080a4e3BCF4e7EBBCA8E8aDFBC9962"
       ],
       "Authorized_Caller_Names": [
-         "multisigs/emergency"
+         "UNDEF"
       ]
    },
    {
@@ -829,7 +829,7 @@
          "0x14969B55a675d13a1700F71A37511bc22D90155a"
       ],
       "Authorized_Caller_Names": [
-         "multisigs/lm"
+         "UNDEF"
       ]
    },
    {
@@ -840,7 +840,7 @@
          "0x14969B55a675d13a1700F71A37511bc22D90155a"
       ],
       "Authorized_Caller_Names": [
-         "multisigs/lm"
+         "UNDEF"
       ]
    },
    {
@@ -852,8 +852,8 @@
          "0x14969B55a675d13a1700F71A37511bc22D90155a"
       ],
       "Authorized_Caller_Names": [
-         "multisigs/emergency",
-         "multisigs/lm"
+         "UNDEF",
+         "UNDEF"
       ]
    },
    {
@@ -864,7 +864,7 @@
          "0xd6110A7756080a4e3BCF4e7EBBCA8E8aDFBC9962"
       ],
       "Authorized_Caller_Names": [
-         "multisigs/emergency"
+         "UNDEF"
       ]
    },
    {
@@ -877,9 +877,9 @@
          "0x2a5AEcE0bb9EfFD7608213AE1745873385515c18"
       ],
       "Authorized_Caller_Names": [
-         "multisigs/emergency",
-         "20221123-pool-recovery-helper/PoolRecoveryHelper",
-         "multisigs/dao"
+         "UNDEF",
+         "UNDEF",
+         "UNDEF"
       ]
    },
    {
@@ -890,7 +890,7 @@
          "0xd6110A7756080a4e3BCF4e7EBBCA8E8aDFBC9962"
       ],
       "Authorized_Caller_Names": [
-         "multisigs/emergency"
+         "UNDEF"
       ]
    },
    {
@@ -901,7 +901,7 @@
          "0x14969B55a675d13a1700F71A37511bc22D90155a"
       ],
       "Authorized_Caller_Names": [
-         "multisigs/lm"
+         "UNDEF"
       ]
    },
    {
@@ -912,7 +912,7 @@
          "0x14969B55a675d13a1700F71A37511bc22D90155a"
       ],
       "Authorized_Caller_Names": [
-         "multisigs/lm"
+         "UNDEF"
       ]
    },
    {
@@ -923,7 +923,7 @@
          "0x14969B55a675d13a1700F71A37511bc22D90155a"
       ],
       "Authorized_Caller_Names": [
-         "multisigs/lm"
+         "UNDEF"
       ]
    },
    {
@@ -934,7 +934,7 @@
          "0xd6110A7756080a4e3BCF4e7EBBCA8E8aDFBC9962"
       ],
       "Authorized_Caller_Names": [
-         "multisigs/emergency"
+         "UNDEF"
       ]
    },
    {
@@ -946,8 +946,8 @@
          "0xc3ccacE87f6d3A81724075ADcb5ddd85a8A1bB68"
       ],
       "Authorized_Caller_Names": [
-         "multisigs/emergency",
-         "20221123-pool-recovery-helper/PoolRecoveryHelper"
+         "UNDEF",
+         "UNDEF"
       ]
    },
    {
@@ -958,7 +958,7 @@
          "0xd6110A7756080a4e3BCF4e7EBBCA8E8aDFBC9962"
       ],
       "Authorized_Caller_Names": [
-         "multisigs/emergency"
+         "UNDEF"
       ]
    },
    {
@@ -969,7 +969,7 @@
          "0x14969B55a675d13a1700F71A37511bc22D90155a"
       ],
       "Authorized_Caller_Names": [
-         "multisigs/lm"
+         "UNDEF"
       ]
    },
    {
@@ -980,7 +980,7 @@
          "0x14969B55a675d13a1700F71A37511bc22D90155a"
       ],
       "Authorized_Caller_Names": [
-         "multisigs/lm"
+         "UNDEF"
       ]
    },
    {
@@ -991,7 +991,7 @@
          "0x14969B55a675d13a1700F71A37511bc22D90155a"
       ],
       "Authorized_Caller_Names": [
-         "multisigs/lm"
+         "UNDEF"
       ]
    },
    {
@@ -1002,7 +1002,7 @@
          "0xd6110A7756080a4e3BCF4e7EBBCA8E8aDFBC9962"
       ],
       "Authorized_Caller_Names": [
-         "multisigs/emergency"
+         "UNDEF"
       ]
    }
 ]
