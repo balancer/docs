@@ -1,6 +1,7 @@
 import requests
 import pandas as pd
 import re
+import os
 from bal_addresses import AddrBook, GITHUB_DEPLOYMENTS_NICE
 
 OUTPUT_PATH = "docs/reference/contracts/deployment-addresses"
@@ -19,8 +20,13 @@ CONTRACTS_BY_HEADING = {
 SCANNERS_BY_CHAIN = AddrBook.chains["SCANNERS_BY_CHAIN"]
 
 def address_directory(chain, status=None):
-    r = requests.get(f"https://raw.githubusercontent.com/balancer/balancer-deployments/master/addresses/{chain}.json")
-    r=r.json()
+    try:
+        r = requests.get(f"https://raw.githubusercontent.com/balancer/balancer-deployments/master/addresses/{chain}.json")
+        r.raise_for_status()
+        r=r.json()
+    except:
+        print (f"Error fetching deployments {chain} addresses, returning empty dict dict")
+        return {}
     if isinstance(status, str):
         return {k: v for k, v in r.items() if v['status'] == status}
     else:
@@ -51,7 +57,6 @@ def genFullTable(r, chain):
 
 def genPoolFactories(r, chain):
     result = pd.DataFrame(columns=["Contract", "Address", "Deployment"])
-    print(f"Generating pools for {chain}")
     for deployment, depdata in r.items():
         if "-pool" not in deployment:
             continue
@@ -126,6 +131,7 @@ def genFromContractList(r, chain, contractList):
     return result
 
 def genChainMd(chain):
+    print(f"Generating md for {chain}")
     groupedContracts = []
     for contracts in CONTRACTS_BY_HEADING.values():
         groupedContracts += contracts
@@ -194,9 +200,16 @@ td {
 
 def main():
     for chain in SCANNERS_BY_CHAIN:
-        output=genChainMd(chain)
-        with open(f"{OUTPUT_PATH}/{chain}.md", "w") as f:
-            f.write(output)
+        if AddrBook(chain).deployments:
+            output=genChainMd(chain)
+            with open(f"{OUTPUT_PATH}/{chain}.md", "w") as f:
+                f.write(output)
+        else:
+            #Remove old files if they exist
+            try:
+                os.remove(f"{OUTPUT_PATH}/{chain}.md")
+            except:
+                pass
 
 if __name__ == "__main__":
    main()
