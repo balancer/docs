@@ -12,12 +12,12 @@
          "0xB1ED8d3b5059b3281D43306cC9D043cE8B22599b"
       ],
       "Authorized_Caller_Names": [
-         "UNDEF",
-         "UNDEF",
-         "UNDEF",
-         "UNDEF",
-         "UNDEF",
-         "UNDEF"
+         "20211203-batch-relayer/BalancerRelayer",
+         "20220318-batch-relayer-v2/BalancerRelayer",
+         "20220720-batch-relayer-v3/BalancerRelayer",
+         "20220916-batch-relayer-v4/BalancerRelayer",
+         "20230314-batch-relayer-v5/BalancerRelayer",
+         "20231031-batch-relayer-v6/BalancerRelayer"
       ]
    },
    {
@@ -33,12 +33,12 @@
          "0xB1ED8d3b5059b3281D43306cC9D043cE8B22599b"
       ],
       "Authorized_Caller_Names": [
-         "UNDEF",
-         "UNDEF",
-         "UNDEF",
-         "UNDEF",
-         "UNDEF",
-         "UNDEF"
+         "20211203-batch-relayer/BalancerRelayer",
+         "20220318-batch-relayer-v2/BalancerRelayer",
+         "20220720-batch-relayer-v3/BalancerRelayer",
+         "20220916-batch-relayer-v4/BalancerRelayer",
+         "20230314-batch-relayer-v5/BalancerRelayer",
+         "20231031-batch-relayer-v6/BalancerRelayer"
       ]
    },
    {
@@ -54,12 +54,12 @@
          "0xB1ED8d3b5059b3281D43306cC9D043cE8B22599b"
       ],
       "Authorized_Caller_Names": [
-         "UNDEF",
-         "UNDEF",
-         "UNDEF",
-         "UNDEF",
-         "UNDEF",
-         "UNDEF"
+         "20211203-batch-relayer/BalancerRelayer",
+         "20220318-batch-relayer-v2/BalancerRelayer",
+         "20220720-batch-relayer-v3/BalancerRelayer",
+         "20220916-batch-relayer-v4/BalancerRelayer",
+         "20230314-batch-relayer-v5/BalancerRelayer",
+         "20231031-batch-relayer-v6/BalancerRelayer"
       ]
    },
    {
@@ -75,12 +75,12 @@
          "0xB1ED8d3b5059b3281D43306cC9D043cE8B22599b"
       ],
       "Authorized_Caller_Names": [
-         "UNDEF",
-         "UNDEF",
-         "UNDEF",
-         "UNDEF",
-         "UNDEF",
-         "UNDEF"
+         "20211203-batch-relayer/BalancerRelayer",
+         "20220318-batch-relayer-v2/BalancerRelayer",
+         "20220720-batch-relayer-v3/BalancerRelayer",
+         "20220916-batch-relayer-v4/BalancerRelayer",
+         "20230314-batch-relayer-v5/BalancerRelayer",
+         "20231031-batch-relayer-v6/BalancerRelayer"
       ]
    },
    {
@@ -96,12 +96,12 @@
          "0xB1ED8d3b5059b3281D43306cC9D043cE8B22599b"
       ],
       "Authorized_Caller_Names": [
-         "UNDEF",
-         "UNDEF",
-         "UNDEF",
-         "UNDEF",
-         "UNDEF",
-         "UNDEF"
+         "20211203-batch-relayer/BalancerRelayer",
+         "20220318-batch-relayer-v2/BalancerRelayer",
+         "20220720-batch-relayer-v3/BalancerRelayer",
+         "20220916-batch-relayer-v4/BalancerRelayer",
+         "20230314-batch-relayer-v5/BalancerRelayer",
+         "20231031-batch-relayer-v6/BalancerRelayer"
       ]
    },
    {
@@ -117,12 +117,12 @@
          "0xB1ED8d3b5059b3281D43306cC9D043cE8B22599b"
       ],
       "Authorized_Caller_Names": [
-         "UNDEF",
-         "UNDEF",
-         "UNDEF",
-         "UNDEF",
-         "UNDEF",
-         "UNDEF"
+         "20211203-batch-relayer/BalancerRelayer",
+         "20220318-batch-relayer-v2/BalancerRelayer",
+         "20220720-batch-relayer-v3/BalancerRelayer",
+         "20220916-batch-relayer-v4/BalancerRelayer",
+         "20230314-batch-relayer-v5/BalancerRelayer",
+         "20231031-batch-relayer-v6/BalancerRelayer"
       ]
    },
    {
@@ -133,7 +133,7 @@
          "0x42AC0e6FA47385D55Aff070d79eF0079868C48a6"
       ],
       "Authorized_Caller_Names": [
-         "UNDEF"
+         "20220725-protocol-fee-percentages-provider/ProtocolFeePercentagesProvider"
       ]
    },
    {
@@ -146,7 +146,7 @@
       ],
       "Authorized_Caller_Names": [
          "UNDEF",
-         "UNDEF"
+         "20220725-protocol-fee-percentages-provider/ProtocolFeePercentagesProvider"
       ]
    },
    {
@@ -157,7 +157,7 @@
          "0xEF44D6786b2b4d544b7850Fe67CE6381626Bf2D6"
       ],
       "Authorized_Caller_Names": [
-         "UNDEF"
+         "20220517-protocol-fee-withdrawer/ProtocolFeesWithdrawer"
       ]
    },
    {
@@ -168,7 +168,7 @@
          "0xad3b67BCA8935Cb510C8D18bD45F0b94F54A968f"
       ],
       "Authorized_Caller_Names": [
-         "UNDEF"
+         "one_inch/settlement"
       ]
    },
    {
@@ -179,7 +179,7 @@
          "0xad3b67BCA8935Cb510C8D18bD45F0b94F54A968f"
       ],
       "Authorized_Caller_Names": [
-         "UNDEF"
+         "one_inch/settlement"
       ]
    },
    {
@@ -191,8 +191,8 @@
          "0xad3b67BCA8935Cb510C8D18bD45F0b94F54A968f"
       ],
       "Authorized_Caller_Names": [
-         "UNDEF",
-         "UNDEF"
+         "multisigs/feeManager",
+         "one_inch/settlement"
       ]
    },
    {
@@ -203,7 +203,7 @@
          "0x7c68c42De679ffB0f16216154C996C354cF1161B"
       ],
       "Authorized_Caller_Names": [
-         "UNDEF"
+         "multisigs/feeManager"
       ]
    },
    {
@@ -214,7 +214,7 @@
          "0x7c68c42De679ffB0f16216154C996C354cF1161B"
       ],
       "Authorized_Caller_Names": [
-         "UNDEF"
+         "multisigs/feeManager"
       ]
    },
    {
@@ -225,7 +225,7 @@
          "0xad3b67BCA8935Cb510C8D18bD45F0b94F54A968f"
       ],
       "Authorized_Caller_Names": [
-         "UNDEF"
+         "one_inch/settlement"
       ]
    },
    {
@@ -237,8 +237,8 @@
          "0x3c58668054c299bE836a0bBB028Bee3aD4724846"
       ],
       "Authorized_Caller_Names": [
-         "UNDEF",
-         "UNDEF"
+         "multisigs/blabs_ops",
+         "multisigs/emergency"
       ]
    },
    {
@@ -249,7 +249,7 @@
          "0xad3b67BCA8935Cb510C8D18bD45F0b94F54A968f"
       ],
       "Authorized_Caller_Names": [
-         "UNDEF"
+         "one_inch/settlement"
       ]
    },
    {
@@ -260,7 +260,7 @@
          "0x1554ee754707D5C93b7934AF404747Aba521Aaf2"
       ],
       "Authorized_Caller_Names": [
-         "UNDEF"
+         "20220527-child-chain-gauge-token-adder/ChildChainGaugeTokenAdder"
       ]
    },
    {
@@ -271,7 +271,7 @@
          "0x1554ee754707D5C93b7934AF404747Aba521Aaf2"
       ],
       "Authorized_Caller_Names": [
-         "UNDEF"
+         "20220527-child-chain-gauge-token-adder/ChildChainGaugeTokenAdder"
       ]
    },
    {
@@ -282,7 +282,7 @@
          "0xf9D6BdE5c2eef334AC88204CB2eEc07111DCBA97"
       ],
       "Authorized_Caller_Names": [
-         "UNDEF"
+         "multisigs/blabs_ops"
       ]
    },
    {
@@ -293,7 +293,7 @@
          "0x3c58668054c299bE836a0bBB028Bee3aD4724846"
       ],
       "Authorized_Caller_Names": [
-         "UNDEF"
+         "multisigs/emergency"
       ]
    },
    {
@@ -306,9 +306,9 @@
          "0x9e5D6427D2cdaDC68870197b099C2Df535Ec3c97"
       ],
       "Authorized_Caller_Names": [
-         "UNDEF",
-         "UNDEF",
-         "UNDEF"
+         "multisigs/feeManager",
+         "mimic/smartvault",
+         "mimic/smartVaultV3"
       ]
    },
    {
@@ -319,7 +319,7 @@
          "0xc38c5f97B34E175FFd35407fc91a937300E33860"
       ],
       "Authorized_Caller_Names": [
-         "UNDEF"
+         "multisigs/lm"
       ]
    },
    {
@@ -330,7 +330,7 @@
          "0x3c58668054c299bE836a0bBB028Bee3aD4724846"
       ],
       "Authorized_Caller_Names": [
-         "UNDEF"
+         "multisigs/emergency"
       ]
    },
    {
@@ -342,8 +342,8 @@
          "0xad3b67BCA8935Cb510C8D18bD45F0b94F54A968f"
       ],
       "Authorized_Caller_Names": [
-         "UNDEF",
-         "UNDEF"
+         "multisigs/feeManager",
+         "one_inch/settlement"
       ]
    },
    {
@@ -354,7 +354,7 @@
          "0x7c68c42De679ffB0f16216154C996C354cF1161B"
       ],
       "Authorized_Caller_Names": [
-         "UNDEF"
+         "multisigs/feeManager"
       ]
    },
    {
@@ -365,7 +365,7 @@
          "0x7c68c42De679ffB0f16216154C996C354cF1161B"
       ],
       "Authorized_Caller_Names": [
-         "UNDEF"
+         "multisigs/feeManager"
       ]
    },
    {
@@ -388,8 +388,8 @@
          "0x3c58668054c299bE836a0bBB028Bee3aD4724846"
       ],
       "Authorized_Caller_Names": [
-         "UNDEF",
-         "UNDEF"
+         "multisigs/blabs_ops",
+         "multisigs/emergency"
       ]
    },
    {
@@ -400,7 +400,7 @@
          "0x3c58668054c299bE836a0bBB028Bee3aD4724846"
       ],
       "Authorized_Caller_Names": [
-         "UNDEF"
+         "multisigs/emergency"
       ]
    },
    {
@@ -411,7 +411,7 @@
          "0x3c58668054c299bE836a0bBB028Bee3aD4724846"
       ],
       "Authorized_Caller_Names": [
-         "UNDEF"
+         "multisigs/emergency"
       ]
    },
    {
@@ -422,7 +422,7 @@
          "0x7c68c42De679ffB0f16216154C996C354cF1161B"
       ],
       "Authorized_Caller_Names": [
-         "UNDEF"
+         "multisigs/feeManager"
       ]
    },
    {
@@ -433,7 +433,7 @@
          "0x7c68c42De679ffB0f16216154C996C354cF1161B"
       ],
       "Authorized_Caller_Names": [
-         "UNDEF"
+         "multisigs/feeManager"
       ]
    },
    {
@@ -444,7 +444,7 @@
          "0x3c58668054c299bE836a0bBB028Bee3aD4724846"
       ],
       "Authorized_Caller_Names": [
-         "UNDEF"
+         "multisigs/emergency"
       ]
    },
    {
@@ -456,8 +456,8 @@
          "0x3c58668054c299bE836a0bBB028Bee3aD4724846"
       ],
       "Authorized_Caller_Names": [
-         "UNDEF",
-         "UNDEF"
+         "multisigs/blabs_ops",
+         "multisigs/emergency"
       ]
    },
    {
@@ -468,7 +468,7 @@
          "0x3c58668054c299bE836a0bBB028Bee3aD4724846"
       ],
       "Authorized_Caller_Names": [
-         "UNDEF"
+         "multisigs/emergency"
       ]
    },
    {
@@ -480,8 +480,8 @@
          "0x3c58668054c299bE836a0bBB028Bee3aD4724846"
       ],
       "Authorized_Caller_Names": [
-         "UNDEF",
-         "UNDEF"
+         "20221123-pool-recovery-helper/PoolRecoveryHelper",
+         "multisigs/emergency"
       ]
    },
    {
@@ -492,7 +492,7 @@
          "0x3c58668054c299bE836a0bBB028Bee3aD4724846"
       ],
       "Authorized_Caller_Names": [
-         "UNDEF"
+         "multisigs/emergency"
       ]
    },
    {
@@ -504,8 +504,8 @@
          "0xad3b67BCA8935Cb510C8D18bD45F0b94F54A968f"
       ],
       "Authorized_Caller_Names": [
-         "UNDEF",
-         "UNDEF"
+         "multisigs/feeManager",
+         "one_inch/settlement"
       ]
    },
    {
@@ -516,7 +516,7 @@
          "0xeE071f4B516F69a1603dA393CdE8e76C40E5Be85"
       ],
       "Authorized_Caller_Names": [
-         "UNDEF"
+         "multisigs/dao"
       ]
    },
    {
@@ -527,7 +527,7 @@
          "0x7c68c42De679ffB0f16216154C996C354cF1161B"
       ],
       "Authorized_Caller_Names": [
-         "UNDEF"
+         "multisigs/feeManager"
       ]
    },
    {
@@ -538,7 +538,7 @@
          "0x7c68c42De679ffB0f16216154C996C354cF1161B"
       ],
       "Authorized_Caller_Names": [
-         "UNDEF"
+         "multisigs/feeManager"
       ]
    },
    {
@@ -549,7 +549,7 @@
          "0x3c58668054c299bE836a0bBB028Bee3aD4724846"
       ],
       "Authorized_Caller_Names": [
-         "UNDEF"
+         "multisigs/emergency"
       ]
    },
    {
@@ -561,8 +561,8 @@
          "0x3c58668054c299bE836a0bBB028Bee3aD4724846"
       ],
       "Authorized_Caller_Names": [
-         "UNDEF",
-         "UNDEF"
+         "multisigs/blabs_ops",
+         "multisigs/emergency"
       ]
    },
    {
@@ -574,8 +574,8 @@
          "0x3c58668054c299bE836a0bBB028Bee3aD4724846"
       ],
       "Authorized_Caller_Names": [
-         "UNDEF",
-         "UNDEF"
+         "20221123-pool-recovery-helper/PoolRecoveryHelper",
+         "multisigs/emergency"
       ]
    },
    {
@@ -586,7 +586,7 @@
          "0x3c58668054c299bE836a0bBB028Bee3aD4724846"
       ],
       "Authorized_Caller_Names": [
-         "UNDEF"
+         "multisigs/emergency"
       ]
    },
    {
@@ -598,8 +598,8 @@
          "0xad3b67BCA8935Cb510C8D18bD45F0b94F54A968f"
       ],
       "Authorized_Caller_Names": [
-         "UNDEF",
-         "UNDEF"
+         "multisigs/feeManager",
+         "one_inch/settlement"
       ]
    },
    {
@@ -610,7 +610,7 @@
          "0x3c58668054c299bE836a0bBB028Bee3aD4724846"
       ],
       "Authorized_Caller_Names": [
-         "UNDEF"
+         "multisigs/emergency"
       ]
    },
    {
@@ -621,7 +621,7 @@
          "0xf9D6BdE5c2eef334AC88204CB2eEc07111DCBA97"
       ],
       "Authorized_Caller_Names": [
-         "UNDEF"
+         "multisigs/blabs_ops"
       ]
    },
    {
@@ -632,7 +632,7 @@
          "0xf9D6BdE5c2eef334AC88204CB2eEc07111DCBA97"
       ],
       "Authorized_Caller_Names": [
-         "UNDEF"
+         "multisigs/blabs_ops"
       ]
    },
    {
@@ -644,8 +644,8 @@
          "0x3c58668054c299bE836a0bBB028Bee3aD4724846"
       ],
       "Authorized_Caller_Names": [
-         "UNDEF",
-         "UNDEF"
+         "multisigs/blabs_ops",
+         "multisigs/emergency"
       ]
    },
    {
@@ -656,7 +656,7 @@
          "0x3c58668054c299bE836a0bBB028Bee3aD4724846"
       ],
       "Authorized_Caller_Names": [
-         "UNDEF"
+         "multisigs/emergency"
       ]
    },
    {
@@ -668,8 +668,8 @@
          "0x495F696430F4A51F7fcB98FbE68a9Cb7A07fB1bA"
       ],
       "Authorized_Caller_Names": [
-         "UNDEF",
-         "UNDEF"
+         "multisigs/emergency",
+         "20221123-pool-recovery-helper/PoolRecoveryHelper"
       ]
    },
    {
@@ -680,7 +680,7 @@
          "0x3c58668054c299bE836a0bBB028Bee3aD4724846"
       ],
       "Authorized_Caller_Names": [
-         "UNDEF"
+         "multisigs/emergency"
       ]
    },
    {
@@ -692,8 +692,8 @@
          "0xad3b67BCA8935Cb510C8D18bD45F0b94F54A968f"
       ],
       "Authorized_Caller_Names": [
-         "UNDEF",
-         "UNDEF"
+         "multisigs/feeManager",
+         "one_inch/settlement"
       ]
    },
    {
@@ -704,7 +704,7 @@
          "0x7c68c42De679ffB0f16216154C996C354cF1161B"
       ],
       "Authorized_Caller_Names": [
-         "UNDEF"
+         "multisigs/feeManager"
       ]
    },
    {
@@ -715,7 +715,7 @@
          "0x7c68c42De679ffB0f16216154C996C354cF1161B"
       ],
       "Authorized_Caller_Names": [
-         "UNDEF"
+         "multisigs/feeManager"
       ]
    },
    {
@@ -726,7 +726,7 @@
          "0x3c58668054c299bE836a0bBB028Bee3aD4724846"
       ],
       "Authorized_Caller_Names": [
-         "UNDEF"
+         "multisigs/emergency"
       ]
    },
    {
@@ -739,9 +739,9 @@
          "0xeE071f4B516F69a1603dA393CdE8e76C40E5Be85"
       ],
       "Authorized_Caller_Names": [
-         "UNDEF",
-         "UNDEF",
-         "UNDEF"
+         "multisigs/blabs_ops",
+         "multisigs/emergency",
+         "multisigs/dao"
       ]
    },
    {
@@ -753,8 +753,8 @@
          "0xeE071f4B516F69a1603dA393CdE8e76C40E5Be85"
       ],
       "Authorized_Caller_Names": [
-         "UNDEF",
-         "UNDEF"
+         "multisigs/emergency",
+         "multisigs/dao"
       ]
    },
    {
@@ -765,7 +765,7 @@
          "0x3c58668054c299bE836a0bBB028Bee3aD4724846"
       ],
       "Authorized_Caller_Names": [
-         "UNDEF"
+         "multisigs/emergency"
       ]
    },
    {
@@ -777,8 +777,8 @@
          "0xeE071f4B516F69a1603dA393CdE8e76C40E5Be85"
       ],
       "Authorized_Caller_Names": [
-         "UNDEF",
-         "UNDEF"
+         "multisigs/emergency",
+         "multisigs/dao"
       ]
    },
    {
@@ -789,7 +789,7 @@
          "0x3c58668054c299bE836a0bBB028Bee3aD4724846"
       ],
       "Authorized_Caller_Names": [
-         "UNDEF"
+         "multisigs/emergency"
       ]
    },
    {
@@ -801,8 +801,8 @@
          "0x495F696430F4A51F7fcB98FbE68a9Cb7A07fB1bA"
       ],
       "Authorized_Caller_Names": [
-         "UNDEF",
-         "UNDEF"
+         "multisigs/emergency",
+         "20221123-pool-recovery-helper/PoolRecoveryHelper"
       ]
    },
    {
@@ -813,7 +813,7 @@
          "0x3c58668054c299bE836a0bBB028Bee3aD4724846"
       ],
       "Authorized_Caller_Names": [
-         "UNDEF"
+         "multisigs/emergency"
       ]
    },
    {
@@ -825,8 +825,8 @@
          "0xad3b67BCA8935Cb510C8D18bD45F0b94F54A968f"
       ],
       "Authorized_Caller_Names": [
-         "UNDEF",
-         "UNDEF"
+         "multisigs/feeManager",
+         "one_inch/settlement"
       ]
    },
    {
@@ -838,8 +838,8 @@
          "0xeE071f4B516F69a1603dA393CdE8e76C40E5Be85"
       ],
       "Authorized_Caller_Names": [
-         "UNDEF",
-         "UNDEF"
+         "multisigs/emergency",
+         "multisigs/dao"
       ]
    },
    {
@@ -850,7 +850,7 @@
          "0x3c58668054c299bE836a0bBB028Bee3aD4724846"
       ],
       "Authorized_Caller_Names": [
-         "UNDEF"
+         "multisigs/emergency"
       ]
    },
    {
@@ -862,8 +862,8 @@
          "0x495F696430F4A51F7fcB98FbE68a9Cb7A07fB1bA"
       ],
       "Authorized_Caller_Names": [
-         "UNDEF",
-         "UNDEF"
+         "multisigs/emergency",
+         "20221123-pool-recovery-helper/PoolRecoveryHelper"
       ]
    },
    {
@@ -874,7 +874,7 @@
          "0x3c58668054c299bE836a0bBB028Bee3aD4724846"
       ],
       "Authorized_Caller_Names": [
-         "UNDEF"
+         "multisigs/emergency"
       ]
    },
    {
@@ -886,8 +886,8 @@
          "0xad3b67BCA8935Cb510C8D18bD45F0b94F54A968f"
       ],
       "Authorized_Caller_Names": [
-         "UNDEF",
-         "UNDEF"
+         "multisigs/feeManager",
+         "one_inch/settlement"
       ]
    },
    {
@@ -898,7 +898,7 @@
          "0xeE071f4B516F69a1603dA393CdE8e76C40E5Be85"
       ],
       "Authorized_Caller_Names": [
-         "UNDEF"
+         "multisigs/dao"
       ]
    },
    {
@@ -909,7 +909,7 @@
          "0x7c68c42De679ffB0f16216154C996C354cF1161B"
       ],
       "Authorized_Caller_Names": [
-         "UNDEF"
+         "multisigs/feeManager"
       ]
    },
    {
@@ -920,7 +920,7 @@
          "0x7c68c42De679ffB0f16216154C996C354cF1161B"
       ],
       "Authorized_Caller_Names": [
-         "UNDEF"
+         "multisigs/feeManager"
       ]
    },
    {
@@ -932,8 +932,8 @@
          "0xeE071f4B516F69a1603dA393CdE8e76C40E5Be85"
       ],
       "Authorized_Caller_Names": [
-         "UNDEF",
-         "UNDEF"
+         "multisigs/emergency",
+         "multisigs/dao"
       ]
    },
    {
@@ -944,7 +944,7 @@
          "0xeE071f4B516F69a1603dA393CdE8e76C40E5Be85"
       ],
       "Authorized_Caller_Names": [
-         "UNDEF"
+         "multisigs/dao"
       ]
    },
    {
@@ -955,7 +955,7 @@
          "0x7c68c42De679ffB0f16216154C996C354cF1161B"
       ],
       "Authorized_Caller_Names": [
-         "UNDEF"
+         "multisigs/feeManager"
       ]
    },
    {
@@ -966,7 +966,7 @@
          "0x7c68c42De679ffB0f16216154C996C354cF1161B"
       ],
       "Authorized_Caller_Names": [
-         "UNDEF"
+         "multisigs/feeManager"
       ]
    },
    {
@@ -977,7 +977,7 @@
          "0xeE071f4B516F69a1603dA393CdE8e76C40E5Be85"
       ],
       "Authorized_Caller_Names": [
-         "UNDEF"
+         "multisigs/dao"
       ]
    },
    {
@@ -988,7 +988,7 @@
          "0x7c68c42De679ffB0f16216154C996C354cF1161B"
       ],
       "Authorized_Caller_Names": [
-         "UNDEF"
+         "multisigs/feeManager"
       ]
    },
    {
@@ -999,7 +999,7 @@
          "0x7c68c42De679ffB0f16216154C996C354cF1161B"
       ],
       "Authorized_Caller_Names": [
-         "UNDEF"
+         "multisigs/feeManager"
       ]
    },
    {
@@ -1011,8 +1011,8 @@
          "0xeE071f4B516F69a1603dA393CdE8e76C40E5Be85"
       ],
       "Authorized_Caller_Names": [
-         "UNDEF",
-         "UNDEF"
+         "multisigs/emergency",
+         "multisigs/dao"
       ]
    },
    {
@@ -1024,8 +1024,8 @@
          "0xeE071f4B516F69a1603dA393CdE8e76C40E5Be85"
       ],
       "Authorized_Caller_Names": [
-         "UNDEF",
-         "UNDEF"
+         "multisigs/emergency",
+         "multisigs/dao"
       ]
    },
    {
@@ -1036,7 +1036,7 @@
          "0xeE071f4B516F69a1603dA393CdE8e76C40E5Be85"
       ],
       "Authorized_Caller_Names": [
-         "UNDEF"
+         "multisigs/dao"
       ]
    },
    {
@@ -1047,7 +1047,7 @@
          "0x7c68c42De679ffB0f16216154C996C354cF1161B"
       ],
       "Authorized_Caller_Names": [
-         "UNDEF"
+         "multisigs/feeManager"
       ]
    },
    {
@@ -1058,7 +1058,7 @@
          "0x7c68c42De679ffB0f16216154C996C354cF1161B"
       ],
       "Authorized_Caller_Names": [
-         "UNDEF"
+         "multisigs/feeManager"
       ]
    },
    {
@@ -1069,7 +1069,7 @@
          "0xc38c5f97B34E175FFd35407fc91a937300E33860"
       ],
       "Authorized_Caller_Names": [
-         "UNDEF"
+         "multisigs/lm"
       ]
    },
    {
@@ -1080,7 +1080,7 @@
          "0xc38c5f97B34E175FFd35407fc91a937300E33860"
       ],
       "Authorized_Caller_Names": [
-         "UNDEF"
+         "multisigs/lm"
       ]
    },
    {
@@ -1091,7 +1091,7 @@
          "0x3c58668054c299bE836a0bBB028Bee3aD4724846"
       ],
       "Authorized_Caller_Names": [
-         "UNDEF"
+         "multisigs/emergency"
       ]
    },
    {
@@ -1102,7 +1102,7 @@
          "0x3c58668054c299bE836a0bBB028Bee3aD4724846"
       ],
       "Authorized_Caller_Names": [
-         "UNDEF"
+         "multisigs/emergency"
       ]
    },
    {
@@ -1114,8 +1114,8 @@
          "0x495F696430F4A51F7fcB98FbE68a9Cb7A07fB1bA"
       ],
       "Authorized_Caller_Names": [
-         "UNDEF",
-         "UNDEF"
+         "multisigs/emergency",
+         "20221123-pool-recovery-helper/PoolRecoveryHelper"
       ]
    },
    {
@@ -1126,7 +1126,7 @@
          "0x3c58668054c299bE836a0bBB028Bee3aD4724846"
       ],
       "Authorized_Caller_Names": [
-         "UNDEF"
+         "multisigs/emergency"
       ]
    },
    {
@@ -1138,8 +1138,8 @@
          "0xad3b67BCA8935Cb510C8D18bD45F0b94F54A968f"
       ],
       "Authorized_Caller_Names": [
-         "UNDEF",
-         "UNDEF"
+         "multisigs/lm",
+         "one_inch/settlement"
       ]
    },
    {
@@ -1150,7 +1150,7 @@
          "0x3c58668054c299bE836a0bBB028Bee3aD4724846"
       ],
       "Authorized_Caller_Names": [
-         "UNDEF"
+         "multisigs/emergency"
       ]
    },
    {
@@ -1161,7 +1161,7 @@
          "0x3c58668054c299bE836a0bBB028Bee3aD4724846"
       ],
       "Authorized_Caller_Names": [
-         "UNDEF"
+         "multisigs/emergency"
       ]
    },
    {
@@ -1173,8 +1173,8 @@
          "0x495F696430F4A51F7fcB98FbE68a9Cb7A07fB1bA"
       ],
       "Authorized_Caller_Names": [
-         "UNDEF",
-         "UNDEF"
+         "multisigs/emergency",
+         "20221123-pool-recovery-helper/PoolRecoveryHelper"
       ]
    },
    {
@@ -1185,7 +1185,7 @@
          "0x3c58668054c299bE836a0bBB028Bee3aD4724846"
       ],
       "Authorized_Caller_Names": [
-         "UNDEF"
+         "multisigs/emergency"
       ]
    },
    {
@@ -1197,8 +1197,8 @@
          "0xad3b67BCA8935Cb510C8D18bD45F0b94F54A968f"
       ],
       "Authorized_Caller_Names": [
-         "UNDEF",
-         "UNDEF"
+         "multisigs/lm",
+         "one_inch/settlement"
       ]
    },
    {
@@ -1209,7 +1209,7 @@
          "0xc38c5f97B34E175FFd35407fc91a937300E33860"
       ],
       "Authorized_Caller_Names": [
-         "UNDEF"
+         "multisigs/lm"
       ]
    },
    {
@@ -1220,7 +1220,7 @@
          "0xc38c5f97B34E175FFd35407fc91a937300E33860"
       ],
       "Authorized_Caller_Names": [
-         "UNDEF"
+         "multisigs/lm"
       ]
    },
    {
@@ -1231,7 +1231,7 @@
          "0xc38c5f97B34E175FFd35407fc91a937300E33860"
       ],
       "Authorized_Caller_Names": [
-         "UNDEF"
+         "multisigs/lm"
       ]
    },
    {
@@ -1242,7 +1242,7 @@
          "0x3c58668054c299bE836a0bBB028Bee3aD4724846"
       ],
       "Authorized_Caller_Names": [
-         "UNDEF"
+         "multisigs/emergency"
       ]
    },
    {
@@ -1254,8 +1254,8 @@
          "0x495F696430F4A51F7fcB98FbE68a9Cb7A07fB1bA"
       ],
       "Authorized_Caller_Names": [
-         "UNDEF",
-         "UNDEF"
+         "multisigs/emergency",
+         "20221123-pool-recovery-helper/PoolRecoveryHelper"
       ]
    },
    {
@@ -1266,7 +1266,7 @@
          "0x3c58668054c299bE836a0bBB028Bee3aD4724846"
       ],
       "Authorized_Caller_Names": [
-         "UNDEF"
+         "multisigs/emergency"
       ]
    },
    {
@@ -1278,8 +1278,8 @@
          "0x3c58668054c299bE836a0bBB028Bee3aD4724846"
       ],
       "Authorized_Caller_Names": [
-         "UNDEF",
-         "UNDEF"
+         "20221123-pool-recovery-helper/PoolRecoveryHelper",
+         "multisigs/emergency"
       ]
    },
    {
@@ -1290,7 +1290,7 @@
          "0x3c58668054c299bE836a0bBB028Bee3aD4724846"
       ],
       "Authorized_Caller_Names": [
-         "UNDEF"
+         "multisigs/emergency"
       ]
    },
    {
@@ -1301,7 +1301,7 @@
          "0xc38c5f97B34E175FFd35407fc91a937300E33860"
       ],
       "Authorized_Caller_Names": [
-         "UNDEF"
+         "multisigs/lm"
       ]
    },
    {
@@ -1312,7 +1312,7 @@
          "0xc38c5f97B34E175FFd35407fc91a937300E33860"
       ],
       "Authorized_Caller_Names": [
-         "UNDEF"
+         "multisigs/lm"
       ]
    },
    {
@@ -1323,7 +1323,7 @@
          "0x3c58668054c299bE836a0bBB028Bee3aD4724846"
       ],
       "Authorized_Caller_Names": [
-         "UNDEF"
+         "multisigs/emergency"
       ]
    },
    {
@@ -1334,7 +1334,7 @@
          "0x3c58668054c299bE836a0bBB028Bee3aD4724846"
       ],
       "Authorized_Caller_Names": [
-         "UNDEF"
+         "multisigs/emergency"
       ]
    },
    {
@@ -1346,8 +1346,8 @@
          "0x3c58668054c299bE836a0bBB028Bee3aD4724846"
       ],
       "Authorized_Caller_Names": [
-         "UNDEF",
-         "UNDEF"
+         "20221123-pool-recovery-helper/PoolRecoveryHelper",
+         "multisigs/emergency"
       ]
    },
    {
@@ -1358,7 +1358,7 @@
          "0x3c58668054c299bE836a0bBB028Bee3aD4724846"
       ],
       "Authorized_Caller_Names": [
-         "UNDEF"
+         "multisigs/emergency"
       ]
    },
    {
@@ -1369,7 +1369,7 @@
          "0xc38c5f97B34E175FFd35407fc91a937300E33860"
       ],
       "Authorized_Caller_Names": [
-         "UNDEF"
+         "multisigs/lm"
       ]
    },
    {
@@ -1380,7 +1380,7 @@
          "0xc38c5f97B34E175FFd35407fc91a937300E33860"
       ],
       "Authorized_Caller_Names": [
-         "UNDEF"
+         "multisigs/lm"
       ]
    },
    {
@@ -1391,7 +1391,7 @@
          "0x3c58668054c299bE836a0bBB028Bee3aD4724846"
       ],
       "Authorized_Caller_Names": [
-         "UNDEF"
+         "multisigs/emergency"
       ]
    },
    {
@@ -1403,8 +1403,8 @@
          "0x3c58668054c299bE836a0bBB028Bee3aD4724846"
       ],
       "Authorized_Caller_Names": [
-         "UNDEF",
-         "UNDEF"
+         "20221123-pool-recovery-helper/PoolRecoveryHelper",
+         "multisigs/emergency"
       ]
    },
    {
@@ -1415,7 +1415,7 @@
          "0x3c58668054c299bE836a0bBB028Bee3aD4724846"
       ],
       "Authorized_Caller_Names": [
-         "UNDEF"
+         "multisigs/emergency"
       ]
    },
    {
@@ -1426,7 +1426,7 @@
          "0xc38c5f97B34E175FFd35407fc91a937300E33860"
       ],
       "Authorized_Caller_Names": [
-         "UNDEF"
+         "multisigs/lm"
       ]
    },
    {
@@ -1437,7 +1437,7 @@
          "0xc38c5f97B34E175FFd35407fc91a937300E33860"
       ],
       "Authorized_Caller_Names": [
-         "UNDEF"
+         "multisigs/lm"
       ]
    },
    {
@@ -1449,8 +1449,8 @@
          "0xc38c5f97B34E175FFd35407fc91a937300E33860"
       ],
       "Authorized_Caller_Names": [
-         "UNDEF",
-         "UNDEF"
+         "multisigs/emergency",
+         "multisigs/lm"
       ]
    },
    {
@@ -1461,7 +1461,7 @@
          "0x3c58668054c299bE836a0bBB028Bee3aD4724846"
       ],
       "Authorized_Caller_Names": [
-         "UNDEF"
+         "multisigs/emergency"
       ]
    },
    {
@@ -1473,8 +1473,8 @@
          "0x495F696430F4A51F7fcB98FbE68a9Cb7A07fB1bA"
       ],
       "Authorized_Caller_Names": [
-         "UNDEF",
-         "UNDEF"
+         "multisigs/emergency",
+         "20221123-pool-recovery-helper/PoolRecoveryHelper"
       ]
    },
    {
@@ -1485,7 +1485,7 @@
          "0x3c58668054c299bE836a0bBB028Bee3aD4724846"
       ],
       "Authorized_Caller_Names": [
-         "UNDEF"
+         "multisigs/emergency"
       ]
    },
    {
@@ -1497,8 +1497,8 @@
          "0xad3b67BCA8935Cb510C8D18bD45F0b94F54A968f"
       ],
       "Authorized_Caller_Names": [
-         "UNDEF",
-         "UNDEF"
+         "multisigs/lm",
+         "one_inch/settlement"
       ]
    },
    {
@@ -1509,7 +1509,7 @@
          "0xc38c5f97B34E175FFd35407fc91a937300E33860"
       ],
       "Authorized_Caller_Names": [
-         "UNDEF"
+         "multisigs/lm"
       ]
    },
    {
@@ -1520,7 +1520,7 @@
          "0xc38c5f97B34E175FFd35407fc91a937300E33860"
       ],
       "Authorized_Caller_Names": [
-         "UNDEF"
+         "multisigs/lm"
       ]
    },
    {
@@ -1531,7 +1531,7 @@
          "0x3c58668054c299bE836a0bBB028Bee3aD4724846"
       ],
       "Authorized_Caller_Names": [
-         "UNDEF"
+         "multisigs/emergency"
       ]
    },
    {
@@ -1542,7 +1542,7 @@
          "0x3c58668054c299bE836a0bBB028Bee3aD4724846"
       ],
       "Authorized_Caller_Names": [
-         "UNDEF"
+         "multisigs/emergency"
       ]
    },
    {
@@ -1554,8 +1554,8 @@
          "0x495F696430F4A51F7fcB98FbE68a9Cb7A07fB1bA"
       ],
       "Authorized_Caller_Names": [
-         "UNDEF",
-         "UNDEF"
+         "multisigs/emergency",
+         "20221123-pool-recovery-helper/PoolRecoveryHelper"
       ]
    },
    {
@@ -1566,7 +1566,7 @@
          "0x3c58668054c299bE836a0bBB028Bee3aD4724846"
       ],
       "Authorized_Caller_Names": [
-         "UNDEF"
+         "multisigs/emergency"
       ]
    },
    {
@@ -1578,8 +1578,8 @@
          "0xc38c5f97B34E175FFd35407fc91a937300E33860"
       ],
       "Authorized_Caller_Names": [
-         "UNDEF",
-         "UNDEF"
+         "one_inch/settlement",
+         "multisigs/lm"
       ]
    },
    {
@@ -1590,7 +1590,7 @@
          "0xc38c5f97B34E175FFd35407fc91a937300E33860"
       ],
       "Authorized_Caller_Names": [
-         "UNDEF"
+         "multisigs/lm"
       ]
    },
    {
@@ -1601,7 +1601,7 @@
          "0xc38c5f97B34E175FFd35407fc91a937300E33860"
       ],
       "Authorized_Caller_Names": [
-         "UNDEF"
+         "multisigs/lm"
       ]
    }
 ]
