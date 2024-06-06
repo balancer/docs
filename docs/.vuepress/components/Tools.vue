@@ -83,6 +83,12 @@ const coreTools = [
     details: 'User panel for ve8020 system',
     link: '/tools/core/ve8020.html',
   },
+  {
+    title: 'Balancer Pool Buy Bot',
+    icon: '/images/toolshub/bleu-logo.svg',
+    details: 'Buy Alert Bot for tokens in Balancer Pools',
+    link: '/tools/core/buy-bot.html',
+  },
   
   // Add more Core Tools as needed
 ];
