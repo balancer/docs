@@ -99,7 +99,7 @@ const calculatorsAndDApps = [
     icon: '/images/logo-light.svg',
     details:
       'veBAL, Impermanent Loss and Price Impact Calculators - created by Xeonus and Zen Dragon',
-    link: 'https://balancer.tools/veBAL',
+    link: 'https://balancer-legacy.defilytica.tools/veBAL',
   },
   {
     title: 'veBAL Gauge Multivoter',
