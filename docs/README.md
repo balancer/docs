@@ -23,7 +23,7 @@ features:
     link: /guides
   - title: Boosted Pools
     icon: /images/quick-link-boosted.svg
-    details: Learn how they work and how to contruct them
+    details: Learn how they work and how to construct them
     link: /concepts/pools/boosted.html
   - title: Liquidity Bootstrapping Pools
     icon: /images/quick-link-lbp.svg
