@@ -60,6 +60,7 @@ For more information on specific deployments as well as changelogs for different
 | L2BalancerPseudoMinter                         | [0x85a80afee867aDf27B50BdB7b76DA70f1E853062](https://snowtrace.io//address/0x85a80afee867aDf27B50BdB7b76DA70f1E853062#code) | [20230316-l2-balancer-pseudo-minter](https://github.com/balancer/balancer-deployments/blob/master/tasks/20230316-l2-balancer-pseudo-minter)             |
 | NoProtocolFeeLiquidityBootstrappingPoolFactory | [0x0F3e0c4218b7b0108a3643cFe9D3ec0d4F57c54e](https://snowtrace.io//address/0x0F3e0c4218b7b0108a3643cFe9D3ec0d4F57c54e#code) | [20211202-no-protocol-fee-lbp](https://github.com/balancer/balancer-deployments/blob/master/tasks/20211202-no-protocol-fee-lbp)                         |
 | NullVotingEscrow                               | [0x6B1Da720Be2D11d95177ccFc40A917c2688f396c](https://snowtrace.io//address/0x6B1Da720Be2D11d95177ccFc40A917c2688f396c#code) | [20230316-l2-ve-delegation-proxy](https://github.com/balancer/balancer-deployments/blob/master/tasks/20230316-l2-ve-delegation-proxy)                   |
+| OmniVotingEscrowChild                          | [0xE241C6e48CA045C7f631600a0f1403b2bFea05ad](https://snowtrace.io//address/0xE241C6e48CA045C7f631600a0f1403b2bFea05ad#code) | [20230524-lz-omni-voting-escrow-child](https://github.com/balancer/balancer-deployments/blob/master/tasks/20230524-lz-omni-voting-escrow-child)         |
     
     
 # Deprecated Contracts
