@@ -31,6 +31,7 @@ The Balancer Emergency subDAO operates through the following multsigs which are 
  | Gnosis    | <span class="address-link">[0xd6110A7756080a4e3BCF4e7EBBCA8E8aDFBC9962](https://gnosisscan.io/address/0xd6110A7756080a4e3BCF4e7EBBCA8E8aDFBC9962)</span>                                   |
  | Avalanche | <span class="address-link">[0x308f8d3536261C32c97D2f85ddc357f5cCdF33F0](https://app.safe.global/transactions/queue?safe=avax:0x308f8d3536261C32c97D2f85ddc357f5cCdF33F0)</span>            |
  | zkEVM     | <span class="address-link">[0x79b131498355daa2cC740936fcb9A7dF76A86223](https://zksafe.quickswap.exchange/transactions/queue?safe=zkEVM:0x79b131498355daa2cC740936fcb9A7dF76A86223)</span> |
+| Base      | <span class="address-link">[0x183C55A0dc7A7Da0f3581997e764D85Fd9E9f63a](https://app.safe.global/transactions/queue?safe=base:0x183C55A0dc7A7Da0f3581997e764D85Fd9E9f63a)</span>            |
 
 
 ## Specifications
