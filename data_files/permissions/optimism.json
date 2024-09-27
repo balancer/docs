@@ -199,11 +199,13 @@
       "Deployment": "20220517-protocol-fee-withdrawer",
       "Authorized_Caller_Addresses": [
          "0xdCB017f63aCd34DD032A702315459ceCc05536DD",
-         "0x94Dd9C6152a2A0BBcB52d3297b723A6F01D5F9f7"
+         "0x94Dd9C6152a2A0BBcB52d3297b723A6F01D5F9f7",
+         "0x9e5D6427D2cdaDC68870197b099C2Df535Ec3c97"
       ],
       "Authorized_Caller_Names": [
          "UNDEF",
-         "mimic/smartvault"
+         "mimic/smartvault",
+         "mimic/smartVaultV3"
       ]
    },
    {
