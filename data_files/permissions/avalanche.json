@@ -297,7 +297,7 @@
    {
       "Fx": "add_reward(address,address)",
       "Contract": "ChildChainGauge",
-      "Deployment": "20230316-avax-child-chain-gauge-factory-v2",
+      "Deployment": "20230316-child-chain-gauge-factory-v2",
       "Authorized_Caller_Addresses": [
          "0x326A7778DB9B741Cb2acA0DE07b9402C7685dAc6"
       ],
@@ -308,7 +308,7 @@
    {
       "Fx": "add_reward(address,address)",
       "Contract": "ChildChainGauge",
-      "Deployment": "20230316-child-chain-gauge-factory-v2",
+      "Deployment": "20230316-avax-child-chain-gauge-factory-v2",
       "Authorized_Caller_Addresses": [
          "0x326A7778DB9B741Cb2acA0DE07b9402C7685dAc6"
       ],
