@@ -561,6 +561,28 @@
       ]
    },
    {
+      "Fx": "set_reward_distributor(address,address)",
+      "Contract": "ChildChainStreamer",
+      "Deployment": "20220413-child-chain-gauge-factory",
+      "Authorized_Caller_Addresses": [
+         "0x14969B55a675d13a1700F71A37511bc22D90155a"
+      ],
+      "Authorized_Caller_Names": [
+         "multisigs/lm"
+      ]
+   },
+   {
+      "Fx": "set_reward_distributor(address,address)",
+      "Contract": "ChildChainGauge",
+      "Deployment": "20230316-child-chain-gauge-factory-v2",
+      "Authorized_Caller_Addresses": [
+         "0x14969B55a675d13a1700F71A37511bc22D90155a"
+      ],
+      "Authorized_Caller_Names": [
+         "multisigs/lm"
+      ]
+   },
+   {
       "Fx": "addTokenToGauge(address,address,address)",
       "Contract": "ChildChainGaugeTokenAdder",
       "Deployment": "20220527-child-chain-gauge-token-adder",

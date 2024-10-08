@@ -72,6 +72,8 @@ setSwapFeePercentage(uint256),WeightedPool,20230320-weighted-pool-v4,['0x14969B5
 "setTargets(uint256,uint256)",AaveLinearPool,20230410-aave-linear-pool-v5,['0x14969B55a675d13a1700F71A37511bc22D90155a'],['multisigs/lm']
 "setTokenRateCacheDuration(address,uint256)",ComposableStablePool,20230206-composable-stable-pool-v3,['0x2a5AEcE0bb9EfFD7608213AE1745873385515c18'],['multisigs/dao']
 "setTokenRateCacheDuration(address,uint256)",ComposableStablePool,20230320-composable-stable-pool-v4,['0x2a5AEcE0bb9EfFD7608213AE1745873385515c18'],['multisigs/dao']
+"set_reward_distributor(address,address)",ChildChainGauge,20230316-child-chain-gauge-factory-v2,['0x14969B55a675d13a1700F71A37511bc22D90155a'],['multisigs/lm']
+"set_reward_distributor(address,address)",ChildChainStreamer,20220413-child-chain-gauge-factory,['0x14969B55a675d13a1700F71A37511bc22D90155a'],['multisigs/lm']
 "startAmplificationParameterUpdate(uint256,uint256)",ComposableStablePool,20221122-composable-stable-pool-v2,['0x14969B55a675d13a1700F71A37511bc22D90155a'],['multisigs/lm']
 "startAmplificationParameterUpdate(uint256,uint256)",ComposableStablePool,20230206-composable-stable-pool-v3,['0x14969B55a675d13a1700F71A37511bc22D90155a'],['multisigs/lm']
 "startAmplificationParameterUpdate(uint256,uint256)",ComposableStablePool,20230320-composable-stable-pool-v4,['0x14969B55a675d13a1700F71A37511bc22D90155a'],['multisigs/lm']

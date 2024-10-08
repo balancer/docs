@@ -193,6 +193,8 @@ setSwapFeePercentage(uint256),YearnLinearPool,20230409-yearn-linear-pool-v2,['0x
 "setTokenRateCacheDuration(address,uint256)",ComposableStablePool,20220906-composable-stable-pool,['0x10A19e7eE7d7F8a52822f6817de8ea18204F2e4f'],['multisigs/dao']
 "setTokenRateCacheDuration(address,uint256)",ComposableStablePool,20230206-composable-stable-pool-v3,['0x10A19e7eE7d7F8a52822f6817de8ea18204F2e4f'],['multisigs/dao']
 "setTokenRateCacheDuration(address,uint256)",StablePhantomPool,20211208-stable-phantom-pool,"['0x75a52c0e32397A3FC0c052E2CeB3479802713Cf4', '0x10A19e7eE7d7F8a52822f6817de8ea18204F2e4f']","['multisigs/linearPoolController', 'multisigs/dao']"
+"set_reward_distributor(address,address)",LiquidityGaugeV5,20220325-mainnet-gauge-factory,['0xc38c5f97B34E175FFd35407fc91a937300E33860'],['multisigs/lm']
+"set_reward_distributor(address,address)",LiquidityGaugeV5,20220822-mainnet-gauge-factory-v2,['0xc38c5f97B34E175FFd35407fc91a937300E33860'],['multisigs/lm']
 "startAmplificationParameterUpdate(uint256,uint256)",ComposableStablePool,20220906-composable-stable-pool,['0xf4A80929163C5179Ca042E1B292F5EFBBE3D89e6'],['multisigs/feeManager']
 "startAmplificationParameterUpdate(uint256,uint256)",ComposableStablePool,20221122-composable-stable-pool-v2,['0xf4A80929163C5179Ca042E1B292F5EFBBE3D89e6'],['multisigs/feeManager']
 "startAmplificationParameterUpdate(uint256,uint256)",ComposableStablePool,20230206-composable-stable-pool-v3,['0xf4A80929163C5179Ca042E1B292F5EFBBE3D89e6'],['multisigs/feeManager']
