@@ -50,6 +50,7 @@ setSwapFeePercentage(uint256),YearnLinearPool,20230409-yearn-linear-pool-v2,['0x
 "setTargets(uint256,uint256)",ERC4626LinearPool,20230409-erc4626-linear-pool-v4,['0x65226673F3D202E0f897C862590d7e1A992B2048'],['multisigs/lm']
 "setTargets(uint256,uint256)",GearboxLinearPool,20230409-gearbox-linear-pool-v2,['0x65226673F3D202E0f897C862590d7e1A992B2048'],['multisigs/lm']
 "setTargets(uint256,uint256)",YearnLinearPool,20230409-yearn-linear-pool-v2,['0x65226673F3D202E0f897C862590d7e1A992B2048'],['multisigs/lm']
+"set_reward_distributor(address,address)",ChildChainGauge,20230316-child-chain-gauge-factory-v2,['0x65226673F3D202E0f897C862590d7e1A992B2048'],['multisigs/lm']
 "startAmplificationParameterUpdate(uint256,uint256)",ComposableStablePool,20230711-composable-stable-pool-v5,['0x65226673F3D202E0f897C862590d7e1A992B2048'],['multisigs/lm']
 "startAmplificationParameterUpdate(uint256,uint256)",ComposableStablePool,20240223-composable-stable-pool-v6,['0x65226673F3D202E0f897C862590d7e1A992B2048'],['multisigs/lm']
 stopAmplificationParameterUpdate(),ComposableStablePool,20230711-composable-stable-pool-v5,['0x65226673F3D202E0f897C862590d7e1A992B2048'],['multisigs/lm']

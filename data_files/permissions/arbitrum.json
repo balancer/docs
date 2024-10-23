@@ -266,8 +266,8 @@
    },
    {
       "Fx": "set_reward_distributor(address,address)",
-      "Contract": "ChildChainStreamer",
-      "Deployment": "20220413-child-chain-gauge-factory",
+      "Contract": "ChildChainGauge",
+      "Deployment": "20230316-child-chain-gauge-factory-v2",
       "Authorized_Caller_Addresses": [
          "0xc38c5f97B34E175FFd35407fc91a937300E33860"
       ],
@@ -277,8 +277,8 @@
    },
    {
       "Fx": "set_reward_distributor(address,address)",
-      "Contract": "ChildChainGauge",
-      "Deployment": "20230316-child-chain-gauge-factory-v2",
+      "Contract": "ChildChainStreamer",
+      "Deployment": "20220413-child-chain-gauge-factory",
       "Authorized_Caller_Addresses": [
          "0xc38c5f97B34E175FFd35407fc91a937300E33860"
       ],
