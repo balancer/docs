@@ -591,6 +591,17 @@
       ]
    },
    {
+      "Fx": "set_reward_distributor(address,address)",
+      "Contract": "ChildChainGauge",
+      "Deployment": "20230316-child-chain-gauge-factory-v2",
+      "Authorized_Caller_Addresses": [
+         "0x65226673F3D202E0f897C862590d7e1A992B2048"
+      ],
+      "Authorized_Caller_Names": [
+         "multisigs/lm"
+      ]
+   },
+   {
       "Fx": "disableRecoveryMode()",
       "Contract": "ComposableStablePool",
       "Deployment": "20240223-composable-stable-pool-v6",
