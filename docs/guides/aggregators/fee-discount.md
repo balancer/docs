@@ -34,7 +34,7 @@ The following pool factory types are supported across networks:
 - WeightedPool (v1-v4)
 - WeightedPool2Tokens
 - StablePool (v1-v2)
-- ComposableStablePool (v1-v4)
+- ComposableStablePool (v1-v5)
 - MetaStablePool (where applicable)
 
 ## Approved Contracts
