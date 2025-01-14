@@ -1,4 +1,4 @@
-# Fee Discount for 1inch and CoW solvers
+# Fee Discount for 1inch and CoW
 
 ## Introduction
 
@@ -35,7 +35,7 @@ The following pool factory types are supported across networks:
 - WeightedPool2Tokens
 - StablePool (v1-v2)
 - ComposableStablePool (v1-v4)
-- MetaStable pools (where applicable)
+- MetaStablePool (where applicable)
 
 ## Approved Contracts
 
@@ -44,8 +44,8 @@ The following contracts have been granted the swap fee discount permissions:
 ### 1inch Labs Fusion Resolver
 
 - Ethereum: `0xad3b67bca8935cb510c8d18bd45f0b94f54a968f`
-- Polygon: `0xad3b67bca8935cb510c8d18bd45f0b94f54a968f`
 - Arbitrum: `0xad3b67bca8935cb510c8d18bd45f0b94f54a968f`
+- Polygon: `0xad3b67bca8935cb510c8d18bd45f0b94f54a968f`
 
 ### CoW Protocol Settlement (Ethereum Only)
 
@@ -58,7 +58,7 @@ Each approved integrator must implement the following pattern for every interact
 1. First Interaction: Set Reduced Swap Fee
 ```solidity
 // Call on the target pool
-function setSwapFeePercentage(uint256 swapFeePercentage)
+function setSwapFeePercentage(uint256 reducedSwapFeePercentage)
 ```
 
 2. Execute the swap(s)
