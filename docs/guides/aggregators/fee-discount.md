@@ -37,6 +37,10 @@ The following pool factory types are supported across networks:
 - ComposableStablePool (v1-v5)
 - MetaStablePool (where applicable)
 
+### Pool Requirements
+
+Pools must have `getOwner()` equal to `0xBA1BA1ba1BA1bA1bA1Ba1BA1ba1BA1bA1ba1ba1B` 
+
 ## Approved Contracts
 
 The following contracts have been granted the swap fee discount permissions:
