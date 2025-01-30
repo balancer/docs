@@ -109,10 +109,10 @@ enum ExitKind {
 
 - **Single Asset Exit** (`EXACT_BPT_IN_FOR_ONE_TOKEN_OUT`)
   - User sends a precise quantity of BPT, and receives an estimated but unknown (computed at run time) quantity of a single token.
-- **Proportional Exit** (`EXACT_BPT_IN_FOR_TOKENS_OUT`)
-  - User sends a precise quantity of BPT, and receives an estimated but unknown (computed at run time) quantities of all tokens.
-- **Custom Exit** (`BPT_IN_FOR_EXACT_TOKENS_OUT`)
-  - User sends an estimated but unknown (computed at run time) quantity of BPT, and receives precise quantities of specified tokens.
+- **Proportional Exit** (`BPT_IN_FOR_EXACT_TOKENS_OUT`)
+  - User sends a precise quantity of BPT, and receives an estimated but unknown (computed at run time) quantities of specified tokens.
+- **Custom Exit** (`EXACT_BPT_IN_FOR_TOKENS_OUT`)
+  - User sends an estimated but unknown (computed at run time) quantity of BPT, and receives precise quantities of all tokens.
 
 #### Encoding
 
@@ -123,11 +123,11 @@ enum ExitKind {
     - `[EXACT_BPT_IN_FOR_ONE_TOKEN_OUT, bptAmountIn, exitTokenIndex]`
 - Proportional Exit
   - userData ABI
-    - `['uint256', 'uint256']`
-  - userData
-    - `[EXACT_BPT_IN_FOR_TOKENS_OUT, bptAmountIn]`
-- Custom Exit
-  - userData ABI
     - `['uint256', 'uint256[]', 'uint256']`
   - userData
     - `[BPT_IN_FOR_EXACT_TOKENS_OUT, amountsOut, maxBPTAmountIn]`
+- Custom Exit
+  - userData ABI
+    - `['uint256', 'uint256']`
+  - userData
+    - `[EXACT_BPT_IN_FOR_TOKENS_OUT, bptAmountIn]`
