@@ -129,18 +129,7 @@
          "0x326A7778DB9B741Cb2acA0DE07b9402C7685dAc6"
       ],
       "Authorized_Caller_Names": [
-         "multisigs/fees"
-      ]
-   },
-   {
-      "Fx": "set_reward_distributor(address,address)",
-      "Contract": "ChildChainStreamer",
-      "Deployment": "20220413-child-chain-gauge-factory",
-      "Authorized_Caller_Addresses": [
-         "0x326A7778DB9B741Cb2acA0DE07b9402C7685dAc6"
-      ],
-      "Authorized_Caller_Names": [
-         "multisigs/fees"
+         "multisigs/lm"
       ]
    },
    {
@@ -151,7 +140,18 @@
          "0x326A7778DB9B741Cb2acA0DE07b9402C7685dAc6"
       ],
       "Authorized_Caller_Names": [
-         "multisigs/fees"
+         "multisigs/lm"
+      ]
+   },
+   {
+      "Fx": "set_reward_distributor(address,address)",
+      "Contract": "ChildChainStreamer",
+      "Deployment": "20220413-child-chain-gauge-factory",
+      "Authorized_Caller_Addresses": [
+         "0x326A7778DB9B741Cb2acA0DE07b9402C7685dAc6"
+      ],
+      "Authorized_Caller_Names": [
+         "multisigs/lm"
       ]
    },
    {
@@ -174,7 +174,7 @@
          "0x9e5D6427D2cdaDC68870197b099C2Df535Ec3c97"
       ],
       "Authorized_Caller_Names": [
-         "multisigs/fees",
+         "multisigs/lm",
          "mimic/smartVaultV3"
       ]
    },
@@ -197,7 +197,7 @@
          "0x326A7778DB9B741Cb2acA0DE07b9402C7685dAc6"
       ],
       "Authorized_Caller_Names": [
-         "multisigs/fees"
+         "multisigs/lm"
       ]
    },
    {
@@ -208,7 +208,7 @@
          "0x326A7778DB9B741Cb2acA0DE07b9402C7685dAc6"
       ],
       "Authorized_Caller_Names": [
-         "multisigs/fees"
+         "multisigs/lm"
       ]
    },
    {
@@ -278,7 +278,7 @@
          "0x326A7778DB9B741Cb2acA0DE07b9402C7685dAc6"
       ],
       "Authorized_Caller_Names": [
-         "multisigs/fees"
+         "multisigs/lm"
       ]
    },
    {
@@ -330,23 +330,27 @@
    {
       "Fx": "add_reward(address,address)",
       "Contract": "ChildChainGauge",
-      "Deployment": "20230316-avax-child-chain-gauge-factory-v2",
+      "Deployment": "20230316-child-chain-gauge-factory-v2",
       "Authorized_Caller_Addresses": [
-         "0x326A7778DB9B741Cb2acA0DE07b9402C7685dAc6"
+         "0x326A7778DB9B741Cb2acA0DE07b9402C7685dAc6",
+         "0x9ff471F9f98F42E5151C7855fD1b5aa906b1AF7e"
       ],
       "Authorized_Caller_Names": [
-         "multisigs/fees"
+         "multisigs/lm",
+         "multisigs/maxi_omni"
       ]
    },
    {
       "Fx": "add_reward(address,address)",
       "Contract": "ChildChainGauge",
-      "Deployment": "20230316-child-chain-gauge-factory-v2",
+      "Deployment": "20230316-avax-child-chain-gauge-factory-v2",
       "Authorized_Caller_Addresses": [
-         "0x326A7778DB9B741Cb2acA0DE07b9402C7685dAc6"
+         "0x326A7778DB9B741Cb2acA0DE07b9402C7685dAc6",
+         "0x9ff471F9f98F42E5151C7855fD1b5aa906b1AF7e"
       ],
       "Authorized_Caller_Names": [
-         "multisigs/fees"
+         "multisigs/lm",
+         "multisigs/maxi_omni"
       ]
    },
    {
@@ -392,7 +396,7 @@
          "0x326A7778DB9B741Cb2acA0DE07b9402C7685dAc6"
       ],
       "Authorized_Caller_Names": [
-         "multisigs/fees"
+         "multisigs/lm"
       ]
    },
    {
@@ -403,7 +407,7 @@
          "0x326A7778DB9B741Cb2acA0DE07b9402C7685dAc6"
       ],
       "Authorized_Caller_Names": [
-         "multisigs/fees"
+         "multisigs/lm"
       ]
    },
    {
@@ -449,7 +453,7 @@
          "0x326A7778DB9B741Cb2acA0DE07b9402C7685dAc6"
       ],
       "Authorized_Caller_Names": [
-         "multisigs/fees"
+         "multisigs/lm"
       ]
    },
    {
@@ -460,7 +464,7 @@
          "0x326A7778DB9B741Cb2acA0DE07b9402C7685dAc6"
       ],
       "Authorized_Caller_Names": [
-         "multisigs/fees"
+         "multisigs/lm"
       ]
    },
    {
@@ -473,7 +477,7 @@
       ],
       "Authorized_Caller_Names": [
          "multisigs/emergency",
-         "multisigs/fees"
+         "multisigs/lm"
       ]
    },
    {
@@ -519,7 +523,7 @@
          "0x326A7778DB9B741Cb2acA0DE07b9402C7685dAc6"
       ],
       "Authorized_Caller_Names": [
-         "multisigs/fees"
+         "multisigs/lm"
       ]
    },
    {
@@ -530,7 +534,7 @@
          "0x326A7778DB9B741Cb2acA0DE07b9402C7685dAc6"
       ],
       "Authorized_Caller_Names": [
-         "multisigs/fees"
+         "multisigs/lm"
       ]
    },
    {
@@ -541,7 +545,7 @@
          "0x326A7778DB9B741Cb2acA0DE07b9402C7685dAc6"
       ],
       "Authorized_Caller_Names": [
-         "multisigs/fees"
+         "multisigs/lm"
       ]
    },
    {
@@ -598,7 +602,7 @@
          "0x326A7778DB9B741Cb2acA0DE07b9402C7685dAc6"
       ],
       "Authorized_Caller_Names": [
-         "multisigs/fees"
+         "multisigs/lm"
       ]
    },
    {
@@ -609,7 +613,7 @@
          "0x326A7778DB9B741Cb2acA0DE07b9402C7685dAc6"
       ],
       "Authorized_Caller_Names": [
-         "multisigs/fees"
+         "multisigs/lm"
       ]
    },
    {
@@ -620,7 +624,7 @@
          "0x326A7778DB9B741Cb2acA0DE07b9402C7685dAc6"
       ],
       "Authorized_Caller_Names": [
-         "multisigs/fees"
+         "multisigs/lm"
       ]
    }
 ]

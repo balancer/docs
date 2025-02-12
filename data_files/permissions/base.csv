@@ -1,6 +1,6 @@
 Fx,Contract,Deployment,Authorized_Caller_Addresses,Authorized_Caller_Names
 addPoolFactory(address),PoolRecoveryHelper,20221123-pool-recovery-helper,['0x65226673F3D202E0f897C862590d7e1A992B2048'],['multisigs/lm']
-"add_reward(address,address)",ChildChainGauge,20230316-child-chain-gauge-factory-v2,['0x65226673F3D202E0f897C862590d7e1A992B2048'],['multisigs/lm']
+"add_reward(address,address)",ChildChainGauge,20230316-child-chain-gauge-factory-v2,"['0x65226673F3D202E0f897C862590d7e1A992B2048', '0x9ff471F9f98F42E5151C7855fD1b5aa906b1AF7e']","['multisigs/lm', 'multisigs/maxi_omni']"
 "batchSwap(uint8,(bytes32,uint256,uint256,uint256,bytes)[],address[],(address,bool,address,bool),int256[],uint256)",Vault,20210418-vault,"['0x76f7204B62f554b79d444588EDac9dfA7032c71a', '0x7C3C773C878d2238a9b64d8CEE02377BF07ED06a']","['20230314-batch-relayer-v5/BalancerRelayer', '20231031-batch-relayer-v6/BalancerRelayer']"
 denylistToken(address),ProtocolFeesWithdrawer,20220517-protocol-fee-withdrawer,['0x183C55A0dc7A7Da0f3581997e764D85Fd9E9f63a'],['multisigs/emergency']
 disable(),AaveLinearPoolFactory,20230410-aave-linear-pool-v5,['0x183C55A0dc7A7Da0f3581997e764D85Fd9E9f63a'],['multisigs/emergency']
