@@ -7,4 +7,7 @@ This section includes all of the permissions currently setup in the Authorizer. 
 - [Optimism](optimism.md)
 - [Polygon](polygon.md)
 - [Gnosis](gnosis.md)
-- [Görli](goerli.md)
+- [Sepolia](sepolia.md)
+- [zkEVM](zkevm.md)
+- [Mode](mode.md)
+- [Fraxtal](fraxtal.md)

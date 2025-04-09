@@ -3,150 +3,49 @@
 # Optimism Deployment Addresses
 
 ::: info More Details
-For more information on specific deployments as well as changelogs for different contract versions, please see the [deployment tasks](https://github.com/balancer/balancer-deployments/tree/master/tasks).
+For more information on specific deployments as well as changelogs for different contract versions, please see the [deployment tasks](https://github.com/balancer/balancer-deployments/tree/master/v2/tasks).
 :::
 
-## Pool Factories
-
-| Contract                         | Address                                                                                                                               | Deployment                                                                                                                                  |
-|:---------------------------------|:--------------------------------------------------------------------------------------------------------------------------------------|:--------------------------------------------------------------------------------------------------------------------------------------------|
-| ComposableStablePoolFactory (v6) | [0x4bdCc2fb18AEb9e2d281b0278D946445070EAda7](https://optimistic.etherscan.io/address/0x4bdCc2fb18AEb9e2d281b0278D946445070EAda7#code) | [20240223-composable-stable-pool-v6](https://github.com/balancer/balancer-deployments/blob/master/tasks/20240223-composable-stable-pool-v6) |
-| ManagedPoolFactory (v2)          | [0x4C32a8a8fDa4E24139B51b456B42290f51d6A1c4](https://optimistic.etherscan.io/address/0x4C32a8a8fDa4E24139B51b456B42290f51d6A1c4#code) | [20230411-managed-pool-v2](https://github.com/balancer/balancer-deployments/blob/master/tasks/20230411-managed-pool-v2)                     |
-| WeightedPoolFactory (v4)         | [0x230a59F4d9ADc147480f03B0D3fFfeCd56c3289a](https://optimistic.etherscan.io/address/0x230a59F4d9ADc147480f03B0D3fFfeCd56c3289a#code) | [20230320-weighted-pool-v4](https://github.com/balancer/balancer-deployments/blob/master/tasks/20230320-weighted-pool-v4)                   |
-
 ## Core
+<DeploymentAddresses chain="optimism" :active="true" group="core" />
 
-| Contract                       | Address                                                                                                                               | Deployment                                                                                                                                                  |
-|:-------------------------------|:--------------------------------------------------------------------------------------------------------------------------------------|:------------------------------------------------------------------------------------------------------------------------------------------------------------|
-| BalancerQueries                | [0xE39B5e3B6D74016b2F6A9673D7d7493B6DF549d5](https://optimistic.etherscan.io/address/0xE39B5e3B6D74016b2F6A9673D7d7493B6DF549d5#code) | [20220721-balancer-queries](https://github.com/balancer/balancer-deployments/blob/master/tasks/20220721-balancer-queries)                                   |
-| BalancerRelayer                | [0xFE1862BdCAf17ADf2D83eEb0Da98dAE04492F4f7](https://optimistic.etherscan.io/address/0xFE1862BdCAf17ADf2D83eEb0Da98dAE04492F4f7#code) | [20230712-child-chain-gauge-checkpointer](https://github.com/balancer/balancer-deployments/blob/master/tasks/20230712-child-chain-gauge-checkpointer)       |
-| BalancerRelayer (v6)           | [0x015ACA20a1422F3c729086c17f15F10e0CfbC75A](https://optimistic.etherscan.io/address/0x015ACA20a1422F3c729086c17f15F10e0CfbC75A#code) | [20231031-batch-relayer-v6](https://github.com/balancer/balancer-deployments/blob/master/tasks/20231031-batch-relayer-v6)                                   |
-| BatchRelayerLibrary            | [0x96484f2aBF5e58b15176dbF1A799627B53F13B6d](https://optimistic.etherscan.io/address/0x96484f2aBF5e58b15176dbF1A799627B53F13B6d#code) | [20230712-child-chain-gauge-checkpointer](https://github.com/balancer/balancer-deployments/blob/master/tasks/20230712-child-chain-gauge-checkpointer)       |
-| BatchRelayerLibrary (v6)       | [0xA69E0Ccf150a29369D8Bbc0B3f510849dB7E8EEE](https://optimistic.etherscan.io/address/0xA69E0Ccf150a29369D8Bbc0B3f510849dB7E8EEE#code) | [20231031-batch-relayer-v6](https://github.com/balancer/balancer-deployments/blob/master/tasks/20231031-batch-relayer-v6)                                   |
-| ProtocolFeePercentagesProvider | [0xacAaC3e6D6Df918Bf3c809DFC7d42de0e4a72d4C](https://optimistic.etherscan.io/address/0xacAaC3e6D6Df918Bf3c809DFC7d42de0e4a72d4C#code) | [20220725-protocol-fee-percentages-provider](https://github.com/balancer/balancer-deployments/blob/master/tasks/20220725-protocol-fee-percentages-provider) |
-| Vault                          | [0xBA12222222228d8Ba445958a75a0704d566BF2C8](https://optimistic.etherscan.io/address/0xBA12222222228d8Ba445958a75a0704d566BF2C8#code) | [20210418-vault](https://github.com/balancer/balancer-deployments/blob/master/tasks/20210418-vault)                                                         |
+## Pool Factories
+<DeploymentAddresses chain="optimism" :active="true" group="poolfactory" />
 
 ## Authorization
+<DeploymentAddresses chain="optimism" :active="true" group="authorizations" />
 
-| Contract                        | Address                                                                                                                               | Deployment                                                                                                                                          |
-|:--------------------------------|:--------------------------------------------------------------------------------------------------------------------------------------|:----------------------------------------------------------------------------------------------------------------------------------------------------|
-| Authorizer                      | [0xA331D84eC860Bf466b4CdCcFb4aC09a1B43F3aE6](https://optimistic.etherscan.io/address/0xA331D84eC860Bf466b4CdCcFb4aC09a1B43F3aE6#code) | [20210418-authorizer](https://github.com/balancer/balancer-deployments/blob/master/tasks/20210418-authorizer)                                       |
-| AuthorizerAdaptor               | [0x8F42aDBbA1B16EaAE3BB5754915E0D06059aDd75](https://optimistic.etherscan.io/address/0x8F42aDBbA1B16EaAE3BB5754915E0D06059aDd75#code) | [20220325-authorizer-adaptor](https://github.com/balancer/balancer-deployments/blob/master/tasks/20220325-authorizer-adaptor)                       |
-| AuthorizerAdaptorEntrypoint     | [0xed86ff0c507D3AF5F35d3523B77C17415FCfFaCb](https://optimistic.etherscan.io/address/0xed86ff0c507D3AF5F35d3523B77C17415FCfFaCb#code) | [20221124-authorizer-adaptor-entrypoint](https://github.com/balancer/balancer-deployments/blob/master/tasks/20221124-authorizer-adaptor-entrypoint) |
-| AuthorizerWithAdaptorValidation | [0xAcf05BE5134d64d150d153818F8C67EE36996650](https://optimistic.etherscan.io/address/0xAcf05BE5134d64d150d153818F8C67EE36996650#code) | [20230414-authorizer-wrapper](https://github.com/balancer/balancer-deployments/blob/master/tasks/20230414-authorizer-wrapper)                       |
 
 ## Gauges and Governance
-
-| Contract                    | Address                                                                                                                               | Deployment                                                                                                                                        |
-|:----------------------------|:--------------------------------------------------------------------------------------------------------------------------------------|:--------------------------------------------------------------------------------------------------------------------------------------------------|
-| ChildChainGauge (v2)        | [0x81cFAE226343B24BA12EC6521Db2C79E7aeeb310](https://optimistic.etherscan.io/address/0x81cFAE226343B24BA12EC6521Db2C79E7aeeb310#code) | [20230316-child-chain-gauge-factory-v2](https://github.com/balancer/balancer-deployments/blob/master/tasks/20230316-child-chain-gauge-factory-v2) |
-| ChildChainGaugeFactory (v2) | [0xa523f47A933D5020b23629dDf689695AA94612Dc](https://optimistic.etherscan.io/address/0xa523f47A933D5020b23629dDf689695AA94612Dc#code) | [20230316-child-chain-gauge-factory-v2](https://github.com/balancer/balancer-deployments/blob/master/tasks/20230316-child-chain-gauge-factory-v2) |
-| L2LayerZeroBridgeForwarder  | [0xbef13D1e54D0c79DA8B0AD704883E1Cea7EB2100](https://optimistic.etherscan.io/address/0xbef13D1e54D0c79DA8B0AD704883E1Cea7EB2100#code) | [20230404-l2-layer0-bridge-forwarder](https://github.com/balancer/balancer-deployments/blob/master/tasks/20230404-l2-layer0-bridge-forwarder)     |
-| ProtocolFeesCollector       | [0xce88686553686DA562CE7Cea497CE749DA109f9F](https://optimistic.etherscan.io/address/0xce88686553686DA562CE7Cea497CE749DA109f9F#code) | [20210418-vault](https://github.com/balancer/balancer-deployments/blob/master/tasks/20210418-vault)                                               |
-| ProtocolFeesWithdrawer      | [0xC128a9954e6c874eA3d62ce62B468bA073093F25](https://optimistic.etherscan.io/address/0xC128a9954e6c874eA3d62ce62B468bA073093F25#code) | [20220517-protocol-fee-withdrawer](https://github.com/balancer/balancer-deployments/blob/master/tasks/20220517-protocol-fee-withdrawer)           |
-| VeBoostV2 (v2)              | [0x6817149cb753BF529565B4D023d7507eD2ff4Bc0](https://optimistic.etherscan.io/address/0x6817149cb753BF529565B4D023d7507eD2ff4Bc0#code) | [20230525-l2-veboost-v2](https://github.com/balancer/balancer-deployments/blob/master/tasks/20230525-l2-veboost-v2)                               |
-| VotingEscrowDelegationProxy | [0x9dA18982a33FD0c7051B19F0d7C76F2d5E7e017c](https://optimistic.etherscan.io/address/0x9dA18982a33FD0c7051B19F0d7C76F2d5E7e017c#code) | [20230316-l2-ve-delegation-proxy](https://github.com/balancer/balancer-deployments/blob/master/tasks/20230316-l2-ve-delegation-proxy)             |
+<DeploymentAddresses chain="optimism" :active="true" group="gaugesgovernance" />
 
 ## Ungrouped Active/Current Contracts
-    
-    
-| Contract                                       | Address                                                                                                                               | Deployment                                                                                                                                              |
-|:-----------------------------------------------|:--------------------------------------------------------------------------------------------------------------------------------------|:--------------------------------------------------------------------------------------------------------------------------------------------------------|
-| BalancerHelpers                                | [0x8E9aa87E45e92bad84D5F8DD1bff34Fb92637dE9](https://optimistic.etherscan.io/address/0x8E9aa87E45e92bad84D5F8DD1bff34Fb92637dE9#code) | [20210418-vault](https://github.com/balancer/balancer-deployments/blob/master/tasks/20210418-vault)                                                     |
-| BatchRelayerQueryLibrary (v6)                  | [0xA876B2DBcC73f28347677c4Be589E11910CC10Eb](https://optimistic.etherscan.io/address/0xA876B2DBcC73f28347677c4Be589E11910CC10Eb#code) | [20231031-batch-relayer-v6](https://github.com/balancer/balancer-deployments/blob/master/tasks/20231031-batch-relayer-v6)                               |
-| ChainlinkRateProviderFactory                   | [0x83E443EF4f9963C77bd860f94500075556668cb8](https://optimistic.etherscan.io/address/0x83E443EF4f9963C77bd860f94500075556668cb8#code) | [20230717-chainlink-rate-provider-factory](https://github.com/balancer/balancer-deployments/blob/master/tasks/20230717-chainlink-rate-provider-factory) |
-| DoubleEntrypointFixRelayer                     | [0x3b8cA519122CdD8efb272b0D3085453404B25bD0](https://optimistic.etherscan.io/address/0x3b8cA519122CdD8efb272b0D3085453404B25bD0#code) | [20220513-double-entrypoint-fix-relayer](https://github.com/balancer/balancer-deployments/blob/master/tasks/20220513-double-entrypoint-fix-relayer)     |
-| GaugeWorkingBalanceHelper                      | [0x9129E834e15eA19b6069e8f08a8EcFc13686B8dC](https://optimistic.etherscan.io/address/0x9129E834e15eA19b6069e8f08a8EcFc13686B8dC#code) | [20230526-gauge-working-balance-helper](https://github.com/balancer/balancer-deployments/blob/master/tasks/20230526-gauge-working-balance-helper)       |
-| L2BalancerPseudoMinter                         | [0x4fb47126Fa83A8734991E41B942Ac29A3266C968](https://optimistic.etherscan.io/address/0x4fb47126Fa83A8734991E41B942Ac29A3266C968#code) | [20230316-l2-balancer-pseudo-minter](https://github.com/balancer/balancer-deployments/blob/master/tasks/20230316-l2-balancer-pseudo-minter)             |
-| NoProtocolFeeLiquidityBootstrappingPoolFactory | [0xf302f9F50958c5593770FDf4d4812309fF77414f](https://optimistic.etherscan.io/address/0xf302f9F50958c5593770FDf4d4812309fF77414f#code) | [20211202-no-protocol-fee-lbp](https://github.com/balancer/balancer-deployments/blob/master/tasks/20211202-no-protocol-fee-lbp)                         |
-| NullVotingEscrow                               | [0xc3ccacE87f6d3A81724075ADcb5ddd85a8A1bB68](https://optimistic.etherscan.io/address/0xc3ccacE87f6d3A81724075ADcb5ddd85a8A1bB68#code) | [20230316-l2-ve-delegation-proxy](https://github.com/balancer/balancer-deployments/blob/master/tasks/20230316-l2-ve-delegation-proxy)                   |
-| OmniVotingEscrowChild                          | [0xE241C6e48CA045C7f631600a0f1403b2bFea05ad](https://optimistic.etherscan.io/address/0xE241C6e48CA045C7f631600a0f1403b2bFea05ad#code) | [20230524-lz-omni-voting-escrow-child](https://github.com/balancer/balancer-deployments/blob/master/tasks/20230524-lz-omni-voting-escrow-child)         |
-| ProtocolIdRegistry                             | [0x9805dcfD25e6De36bad8fe9D3Fe2c9b44B764102](https://optimistic.etherscan.io/address/0x9805dcfD25e6De36bad8fe9D3Fe2c9b44B764102#code) | [20230223-protocol-id-registry](https://github.com/balancer/balancer-deployments/blob/master/tasks/20230223-protocol-id-registry)                       |
-    
-    
-# Deprecated Contracts
+<DeploymentAddresses chain="optimism" :active="true" group="ungrouped" />
 
-These deployments were in use at some point, and may still be in active operation, for example in the case of pools created with old factories.  In general it's better to interact with newer versions when possible.
 
-#### If you can only find the contract you are looking for in the deprecated section and it is not an old pool, try checking the deployments tasks to find it or ask in the Discord before using a deprecated contract.
+## Deprecated Contracts
 
-    
-| Contract                         | Address                                                                                                                               | Deployment                                                                                                                                            |
-|:---------------------------------|:--------------------------------------------------------------------------------------------------------------------------------------|:------------------------------------------------------------------------------------------------------------------------------------------------------|
-| AaveLinearPoolFactory            | [0x994086630773dC6cB54D3A5E0Ef0963532789E75](https://optimistic.etherscan.io/address/0x994086630773dC6cB54D3A5E0Ef0963532789E75#code) | [20220817-aave-rebalanced-linear-pool](https://github.com/balancer/balancer-deployments/blob/master/tasks/20220817-aave-rebalanced-linear-pool)       |
-| AaveLinearPoolFactory (v3)       | [0xAd3CC7852382C09fdCE54784292c6aB7fb9Df917](https://optimistic.etherscan.io/address/0xAd3CC7852382C09fdCE54784292c6aB7fb9Df917#code) | [20221207-aave-rebalanced-linear-pool-v3](https://github.com/balancer/balancer-deployments/blob/master/tasks/20221207-aave-rebalanced-linear-pool-v3) |
-| AaveLinearPoolFactory (v4)       | [0xf23b4DB826DbA14c0e857029dfF076b1c0264843](https://optimistic.etherscan.io/address/0xf23b4DB826DbA14c0e857029dfF076b1c0264843#code) | [20230206-aave-rebalanced-linear-pool-v4](https://github.com/balancer/balancer-deployments/blob/master/tasks/20230206-aave-rebalanced-linear-pool-v4) |
-| AaveLinearPoolFactory (v5)       | [0x7396f99B48e7436b152427bfA3DD6Aa8C7C6d05B](https://optimistic.etherscan.io/address/0x7396f99B48e7436b152427bfA3DD6Aa8C7C6d05B#code) | [20230410-aave-linear-pool-v5](https://github.com/balancer/balancer-deployments/blob/master/tasks/20230410-aave-linear-pool-v5)                       |
-| BalancerRelayer (v3)             | [0x195CcCBE464EF9073d1f7A1ba1C9Bf0f56dfFFff](https://optimistic.etherscan.io/address/0x195CcCBE464EF9073d1f7A1ba1C9Bf0f56dfFFff#code) | [20220720-batch-relayer-v3](https://github.com/balancer/balancer-deployments/blob/master/tasks/20220720-batch-relayer-v3)                             |
-| BalancerRelayer (v4)             | [0x1a58897Ab366082028ced3740900ecBD765Af738](https://optimistic.etherscan.io/address/0x1a58897Ab366082028ced3740900ecBD765Af738#code) | [20220916-batch-relayer-v4](https://github.com/balancer/balancer-deployments/blob/master/tasks/20220916-batch-relayer-v4)                             |
-| BalancerRelayer (v5)             | [0x03F1ab8b19bcE21EB06C364aEc9e40322572a1e9](https://optimistic.etherscan.io/address/0x03F1ab8b19bcE21EB06C364aEc9e40322572a1e9#code) | [20230314-batch-relayer-v5](https://github.com/balancer/balancer-deployments/blob/master/tasks/20230314-batch-relayer-v5)                             |
-| BatchRelayerLibrary (v3)         | [0x5c89d9E1A668d0B39F4EC242F280bdDd445C633c](https://optimistic.etherscan.io/address/0x5c89d9E1A668d0B39F4EC242F280bdDd445C633c#code) | [20220720-batch-relayer-v3](https://github.com/balancer/balancer-deployments/blob/master/tasks/20220720-batch-relayer-v3)                             |
-| BatchRelayerLibrary (v4)         | [0x8E5698dC4897DC12243c8642e77B4f21349Db97C](https://optimistic.etherscan.io/address/0x8E5698dC4897DC12243c8642e77B4f21349Db97C#code) | [20220916-batch-relayer-v4](https://github.com/balancer/balancer-deployments/blob/master/tasks/20220916-batch-relayer-v4)                             |
-| BatchRelayerLibrary (v5)         | [0x45fFd460cC6642B8D8Fb12373DFd77Ceb0f4932B](https://optimistic.etherscan.io/address/0x45fFd460cC6642B8D8Fb12373DFd77Ceb0f4932B#code) | [20230314-batch-relayer-v5](https://github.com/balancer/balancer-deployments/blob/master/tasks/20230314-batch-relayer-v5)                             |
-| ChildChainGaugeRewardHelper      | [0x8aB784368A1883DA90D8513b48801e2Db1cb2D5D](https://optimistic.etherscan.io/address/0x8aB784368A1883DA90D8513b48801e2Db1cb2D5D#code) | [20220812-child-chain-reward-helper](https://github.com/balancer/balancer-deployments/blob/master/tasks/20220812-child-chain-reward-helper)           |
-| ChildChainGaugeTokenAdder        | [0x6f5a2eE11E7a772AeB5114A20d0D7c0ff61EB8A0](https://optimistic.etherscan.io/address/0x6f5a2eE11E7a772AeB5114A20d0D7c0ff61EB8A0#code) | [20220527-child-chain-gauge-token-adder](https://github.com/balancer/balancer-deployments/blob/master/tasks/20220527-child-chain-gauge-token-adder)   |
-| ChildChainLiquidityGaugeFactory  | [0x2E96068b3D5B5BAE3D7515da4A1D2E52d08A2647](https://optimistic.etherscan.io/address/0x2E96068b3D5B5BAE3D7515da4A1D2E52d08A2647#code) | [20220413-child-chain-gauge-factory](https://github.com/balancer/balancer-deployments/blob/master/tasks/20220413-child-chain-gauge-factory)           |
-| ChildChainStreamer               | [0x239e55F427D44C3cc793f49bFB507ebe76638a2b](https://optimistic.etherscan.io/address/0x239e55F427D44C3cc793f49bFB507ebe76638a2b#code) | [20220413-child-chain-gauge-factory](https://github.com/balancer/balancer-deployments/blob/master/tasks/20220413-child-chain-gauge-factory)           |
-| CircuitBreakerLib                | [0xE42FFA682A26EF8F25891db4882932711D42e467](https://optimistic.etherscan.io/address/0xE42FFA682A26EF8F25891db4882932711D42e467#code) | [20221021-managed-pool](https://github.com/balancer/balancer-deployments/blob/master/tasks/20221021-managed-pool)                                     |
-| ComposableStablePoolFactory      | [0xf145caFB67081895EE80eB7c04A30Cf87f07b745](https://optimistic.etherscan.io/address/0xf145caFB67081895EE80eB7c04A30Cf87f07b745#code) | [20220906-composable-stable-pool](https://github.com/balancer/balancer-deployments/blob/master/tasks/20220906-composable-stable-pool)                 |
-| ComposableStablePoolFactory (v2) | [0x85a80afee867aDf27B50BdB7b76DA70f1E853062](https://optimistic.etherscan.io/address/0x85a80afee867aDf27B50BdB7b76DA70f1E853062#code) | [20221122-composable-stable-pool-v2](https://github.com/balancer/balancer-deployments/blob/master/tasks/20221122-composable-stable-pool-v2)           |
-| ComposableStablePoolFactory (v3) | [0xe2E901AB09f37884BA31622dF3Ca7FC19AA443Be](https://optimistic.etherscan.io/address/0xe2E901AB09f37884BA31622dF3Ca7FC19AA443Be#code) | [20230206-composable-stable-pool-v3](https://github.com/balancer/balancer-deployments/blob/master/tasks/20230206-composable-stable-pool-v3)           |
-| ComposableStablePoolFactory (v4) | [0x1802953277FD955f9a254B80Aa0582f193cF1d77](https://optimistic.etherscan.io/address/0x1802953277FD955f9a254B80Aa0582f193cF1d77#code) | [20230320-composable-stable-pool-v4](https://github.com/balancer/balancer-deployments/blob/master/tasks/20230320-composable-stable-pool-v4)           |
-| ComposableStablePoolFactory (v5) | [0x043A2daD730d585C44FB79D2614F295D2d625412](https://optimistic.etherscan.io/address/0x043A2daD730d585C44FB79D2614F295D2d625412#code) | [20230711-composable-stable-pool-v5](https://github.com/balancer/balancer-deployments/blob/master/tasks/20230711-composable-stable-pool-v5)           |
-| ERC4626LinearPoolFactory (v2)    | [0x4C4287b07d293E361281bCeEe8715c8CDeB64E34](https://optimistic.etherscan.io/address/0x4C4287b07d293E361281bCeEe8715c8CDeB64E34#code) | [20220404-erc4626-linear-pool-v2](https://github.com/balancer/balancer-deployments/blob/master/tasks/20220404-erc4626-linear-pool-v2)                 |
-| ERC4626LinearPoolFactory (v3)    | [0xa3B9515A9c557455BC53F7a535A85219b59e8B2E](https://optimistic.etherscan.io/address/0xa3B9515A9c557455BC53F7a535A85219b59e8B2E#code) | [20230206-erc4626-linear-pool-v3](https://github.com/balancer/balancer-deployments/blob/master/tasks/20230206-erc4626-linear-pool-v3)                 |
-| ERC4626LinearPoolFactory (v4)    | [0x7ADbdabaA80F654568421887c12F09E0C7BD9629](https://optimistic.etherscan.io/address/0x7ADbdabaA80F654568421887c12F09E0C7BD9629#code) | [20230409-erc4626-linear-pool-v4](https://github.com/balancer/balancer-deployments/blob/master/tasks/20230409-erc4626-linear-pool-v4)                 |
-| ManagedPoolAddRemoveTokenLib     | [0xF24917fB88261a37Cc57F686eBC831a5c0B9fD39](https://optimistic.etherscan.io/address/0xF24917fB88261a37Cc57F686eBC831a5c0B9fD39#code) | [20221021-managed-pool](https://github.com/balancer/balancer-deployments/blob/master/tasks/20221021-managed-pool)                                     |
-| ManagedPoolFactory               | [0x956CCab09898C0AF2aCa5e6C229c3aD4E93d9288](https://optimistic.etherscan.io/address/0x956CCab09898C0AF2aCa5e6C229c3aD4E93d9288#code) | [20221021-managed-pool](https://github.com/balancer/balancer-deployments/blob/master/tasks/20221021-managed-pool)                                     |
-| MetaStablePoolFactory            | [0xb08E16cFc07C684dAA2f93C70323BAdb2A6CBFd2](https://optimistic.etherscan.io/address/0xb08E16cFc07C684dAA2f93C70323BAdb2A6CBFd2#code) | [20210727-meta-stable-pool](https://github.com/balancer/balancer-deployments/blob/master/tasks/20210727-meta-stable-pool)                             |
-| MockAaveLendingPool (v3)         | [0x56017074321ce77E2F88F2233830f5b29d4cf595](https://optimistic.etherscan.io/address/0x56017074321ce77E2F88F2233830f5b29d4cf595#code) | [20221207-aave-rebalanced-linear-pool-v3](https://github.com/balancer/balancer-deployments/blob/master/tasks/20221207-aave-rebalanced-linear-pool-v3) |
-| MockAaveLendingPool (v4)         | [0x76578ecf9a141296Ec657847fb45B0585bCDa3a6](https://optimistic.etherscan.io/address/0x76578ecf9a141296Ec657847fb45B0585bCDa3a6#code) | [20230206-aave-rebalanced-linear-pool-v4](https://github.com/balancer/balancer-deployments/blob/master/tasks/20230206-aave-rebalanced-linear-pool-v4) |
-| MockAaveLendingPool (v5)         | [0x533a16F90E7d3Ca31dbc608E5EC54967710F0D2A](https://optimistic.etherscan.io/address/0x533a16F90E7d3Ca31dbc608E5EC54967710F0D2A#code) | [20230410-aave-linear-pool-v5](https://github.com/balancer/balancer-deployments/blob/master/tasks/20230410-aave-linear-pool-v5)                       |
-| MockAaveLinearPool (v3)          | [0x5936497ffE0dBA0eF272D6301D65c0122862971A](https://optimistic.etherscan.io/address/0x5936497ffE0dBA0eF272D6301D65c0122862971A#code) | [20221207-aave-rebalanced-linear-pool-v3](https://github.com/balancer/balancer-deployments/blob/master/tasks/20221207-aave-rebalanced-linear-pool-v3) |
-| MockAaveLinearPool (v4)          | [0x11884dA90FB4221b3aa288a7741C51eC4Fc43B2f](https://optimistic.etherscan.io/address/0x11884dA90FB4221b3aa288a7741C51eC4Fc43B2f#code) | [20230206-aave-rebalanced-linear-pool-v4](https://github.com/balancer/balancer-deployments/blob/master/tasks/20230206-aave-rebalanced-linear-pool-v4) |
-| MockAaveLinearPool (v5)          | [0x45d37982784F022A9864748b4E8750e1e7019604](https://optimistic.etherscan.io/address/0x45d37982784F022A9864748b4E8750e1e7019604#code) | [20230410-aave-linear-pool-v5](https://github.com/balancer/balancer-deployments/blob/master/tasks/20230410-aave-linear-pool-v5)                       |
-| MockComposableStablePool (v2)    | [0x373b347bc87998b151A5E9B6bB6ca692b766648a](https://optimistic.etherscan.io/address/0x373b347bc87998b151A5E9B6bB6ca692b766648a#code) | [20221122-composable-stable-pool-v2](https://github.com/balancer/balancer-deployments/blob/master/tasks/20221122-composable-stable-pool-v2)           |
-| MockComposableStablePool (v3)    | [0x9BF7c3b63c77b4B4F2717776F15A4bec1b532a28](https://optimistic.etherscan.io/address/0x9BF7c3b63c77b4B4F2717776F15A4bec1b532a28#code) | [20230206-composable-stable-pool-v3](https://github.com/balancer/balancer-deployments/blob/master/tasks/20230206-composable-stable-pool-v3)           |
-| MockComposableStablePool (v4)    | [0x11A4cF51Bb0Bb4D925CAdFDA61FcDA952d64889C](https://optimistic.etherscan.io/address/0x11A4cF51Bb0Bb4D925CAdFDA61FcDA952d64889C#code) | [20230320-composable-stable-pool-v4](https://github.com/balancer/balancer-deployments/blob/master/tasks/20230320-composable-stable-pool-v4)           |
-| MockComposableStablePool (v5)    | [0x77A0Df59d1d73B12B07Bcded0611279D8801ee96](https://optimistic.etherscan.io/address/0x77A0Df59d1d73B12B07Bcded0611279D8801ee96#code) | [20230711-composable-stable-pool-v5](https://github.com/balancer/balancer-deployments/blob/master/tasks/20230711-composable-stable-pool-v5)           |
-| MockERC4626LinearPool (v3)       | [0xf984eb2B8a7eF780245a797A2fCcd82f346409ca](https://optimistic.etherscan.io/address/0xf984eb2B8a7eF780245a797A2fCcd82f346409ca#code) | [20230206-erc4626-linear-pool-v3](https://github.com/balancer/balancer-deployments/blob/master/tasks/20230206-erc4626-linear-pool-v3)                 |
-| MockERC4626LinearPool (v4)       | [0x2DA61Ef3Cdcb97efb0f7099c02527fabFe94Dee5](https://optimistic.etherscan.io/address/0x2DA61Ef3Cdcb97efb0f7099c02527fabFe94Dee5#code) | [20230409-erc4626-linear-pool-v4](https://github.com/balancer/balancer-deployments/blob/master/tasks/20230409-erc4626-linear-pool-v4)                 |
-| MockERC4626Token (v3)            | [0x62aaB12865d7281048c337D53a4dde9d770321E6](https://optimistic.etherscan.io/address/0x62aaB12865d7281048c337D53a4dde9d770321E6#code) | [20230206-erc4626-linear-pool-v3](https://github.com/balancer/balancer-deployments/blob/master/tasks/20230206-erc4626-linear-pool-v3)                 |
-| MockERC4626Token (v4)            | [0x4bE0E4d6184348c5BA845a4010528CFC779610b8](https://optimistic.etherscan.io/address/0x4bE0E4d6184348c5BA845a4010528CFC779610b8#code) | [20230409-erc4626-linear-pool-v4](https://github.com/balancer/balancer-deployments/blob/master/tasks/20230409-erc4626-linear-pool-v4)                 |
-| MockStaticAToken (v3)            | [0xcA96C4f198d343E251b1a01F3EBA061ef3DA73C1](https://optimistic.etherscan.io/address/0xcA96C4f198d343E251b1a01F3EBA061ef3DA73C1#code) | [20221207-aave-rebalanced-linear-pool-v3](https://github.com/balancer/balancer-deployments/blob/master/tasks/20221207-aave-rebalanced-linear-pool-v3) |
-| MockStaticAToken (v4)            | [0xb9F8AB3ED3F3aCBa64Bc6cd2DcA74B7F38fD7B88](https://optimistic.etherscan.io/address/0xb9F8AB3ED3F3aCBa64Bc6cd2DcA74B7F38fD7B88#code) | [20230206-aave-rebalanced-linear-pool-v4](https://github.com/balancer/balancer-deployments/blob/master/tasks/20230206-aave-rebalanced-linear-pool-v4) |
-| MockStaticAToken (v5)            | [0x8b7854708c0C54f9D7d1FF351D4F84E6dE0E134C](https://optimistic.etherscan.io/address/0x8b7854708c0C54f9D7d1FF351D4F84E6dE0E134C#code) | [20230410-aave-linear-pool-v5](https://github.com/balancer/balancer-deployments/blob/master/tasks/20230410-aave-linear-pool-v5)                       |
-| MockWeightedPool (v3)            | [0xbC99aa9bD55d3f8431Ecec24Da03AEc1D6e62754](https://optimistic.etherscan.io/address/0xbC99aa9bD55d3f8431Ecec24Da03AEc1D6e62754#code) | [20230206-weighted-pool-v3](https://github.com/balancer/balancer-deployments/blob/master/tasks/20230206-weighted-pool-v3)                             |
-| MockYearnLinearPool              | [0x81fC12C60ee5b753cf5fD0ADC342dFb5f3817E32](https://optimistic.etherscan.io/address/0x81fC12C60ee5b753cf5fD0ADC342dFb5f3817E32#code) | [20230213-yearn-linear-pool](https://github.com/balancer/balancer-deployments/blob/master/tasks/20230213-yearn-linear-pool)                           |
-| MockYearnLinearPool (v2)         | [0x34557eF500Bfc060B8e3f2DA58EF725Bb7D32202](https://optimistic.etherscan.io/address/0x34557eF500Bfc060B8e3f2DA58EF725Bb7D32202#code) | [20230409-yearn-linear-pool-v2](https://github.com/balancer/balancer-deployments/blob/master/tasks/20230409-yearn-linear-pool-v2)                     |
-| MockYearnTokenVault              | [0x1b986138a4F2aA538E79fdEC222dad93F8d66703](https://optimistic.etherscan.io/address/0x1b986138a4F2aA538E79fdEC222dad93F8d66703#code) | [20230213-yearn-linear-pool](https://github.com/balancer/balancer-deployments/blob/master/tasks/20230213-yearn-linear-pool)                           |
-| MockYearnTokenVault (v2)         | [0xb15608d28eb43378A7e7780aDD3fE9bC132bAf40](https://optimistic.etherscan.io/address/0xb15608d28eb43378A7e7780aDD3fE9bC132bAf40#code) | [20230409-yearn-linear-pool-v2](https://github.com/balancer/balancer-deployments/blob/master/tasks/20230409-yearn-linear-pool-v2)                     |
-| QueryProcessor                   | [0xD7FAD3bd59D6477cbe1BE7f646F7f1BA25b230f8](https://optimistic.etherscan.io/address/0xD7FAD3bd59D6477cbe1BE7f646F7f1BA25b230f8#code) | [20210727-meta-stable-pool](https://github.com/balancer/balancer-deployments/blob/master/tasks/20210727-meta-stable-pool)                             |
-| RewardsOnlyGauge                 | [0xC128468b7Ce63eA702C1f104D55A2566b13D3ABD](https://optimistic.etherscan.io/address/0xC128468b7Ce63eA702C1f104D55A2566b13D3ABD#code) | [20220413-child-chain-gauge-factory](https://github.com/balancer/balancer-deployments/blob/master/tasks/20220413-child-chain-gauge-factory)           |
-| StablePoolFactory                | [0x41B953164995c11C81DA73D212ED8Af25741b7Ac](https://optimistic.etherscan.io/address/0x41B953164995c11C81DA73D212ED8Af25741b7Ac#code) | [20210624-stable-pool](https://github.com/balancer/balancer-deployments/blob/master/tasks/20210624-stable-pool)                                       |
-| StablePoolFactory (v2)           | [0xeb151668006CD04DAdD098AFd0a82e78F77076c3](https://optimistic.etherscan.io/address/0xeb151668006CD04DAdD098AFd0a82e78F77076c3#code) | [20220609-stable-pool-v2](https://github.com/balancer/balancer-deployments/blob/master/tasks/20220609-stable-pool-v2)                                 |
-| UnbuttonAaveLinearPoolFactory    | [0x6d471c05f8A99Bd8f991467A8283e3DC968b8D7c](https://optimistic.etherscan.io/address/0x6d471c05f8A99Bd8f991467A8283e3DC968b8D7c#code) | [20220425-unbutton-aave-linear-pool](https://github.com/balancer/balancer-deployments/blob/master/tasks/20220425-unbutton-aave-linear-pool)           |
-| WeightedPool2TokensFactory       | [0x0F3e0c4218b7b0108a3643cFe9D3ec0d4F57c54e](https://optimistic.etherscan.io/address/0x0F3e0c4218b7b0108a3643cFe9D3ec0d4F57c54e#code) | [20210418-weighted-pool](https://github.com/balancer/balancer-deployments/blob/master/tasks/20210418-weighted-pool)                                   |
-| WeightedPoolFactory              | [0xdAE7e32ADc5d490a43cCba1f0c736033F2b4eFca](https://optimistic.etherscan.io/address/0xdAE7e32ADc5d490a43cCba1f0c736033F2b4eFca#code) | [20210418-weighted-pool](https://github.com/balancer/balancer-deployments/blob/master/tasks/20210418-weighted-pool)                                   |
-| WeightedPoolFactory (v2)         | [0xad901309d9e9DbC5Df19c84f729f429F0189a633](https://optimistic.etherscan.io/address/0xad901309d9e9DbC5Df19c84f729f429F0189a633#code) | [20220908-weighted-pool-v2](https://github.com/balancer/balancer-deployments/blob/master/tasks/20220908-weighted-pool-v2)                             |
-| WeightedPoolFactory (v3)         | [0xA0DAbEBAAd1b243BBb243f933013d560819eB66f](https://optimistic.etherscan.io/address/0xA0DAbEBAAd1b243BBb243f933013d560819eB66f#code) | [20230206-weighted-pool-v3](https://github.com/balancer/balancer-deployments/blob/master/tasks/20230206-weighted-pool-v3)                             |
-| YearnLinearPoolFactory           | [0xD8B6b96c88ad626EB6209c4876e3B14f45f8803A](https://optimistic.etherscan.io/address/0xD8B6b96c88ad626EB6209c4876e3B14f45f8803A#code) | [20230213-yearn-linear-pool](https://github.com/balancer/balancer-deployments/blob/master/tasks/20230213-yearn-linear-pool)                           |
-| YearnLinearPoolFactory (v2)      | [0x19DFEF0a828EEC0c85FbB335aa65437417390b85](https://optimistic.etherscan.io/address/0x19DFEF0a828EEC0c85FbB335aa65437417390b85#code) | [20230409-yearn-linear-pool-v2](https://github.com/balancer/balancer-deployments/blob/master/tasks/20230409-yearn-linear-pool-v2)                     |
-    
-<style scoped>
-table {
-    display: table;
-    width: 100%;
-}
-table th:first-of-type, td:first-of-type {
-    width: 30%;
-}
-table th:nth-of-type(2) {
-    width: 40%;
-}
-td {
-    max-width: 0;
-    overflow: hidden;
-}
-</style>
+These deployments were in use at some point, and may still be in active operation, for example in the case of pools created with old factories. In general it's better to interact with newer versions when possible.
+
+::: warning Note
+If you can only find the contract you are looking for in the deprecated section and it is not an old pool, try checking the deployments tasks to find it or ask in the Discord before using a deprecated contract.
+:::
+
+### Core Contracts
+<DeploymentAddresses chain="optimism" :active="false" group="core" />
+
+### Pool Factories
+<DeploymentAddresses chain="optimism" :active="false" group="poolfactory" />
+
+### Routers
+<DeploymentAddresses chain="optimism" :active="false" group="routers" />
+
+### Authorization Contracts
+
+<DeploymentAddresses chain="optimism" :active="false" group="authorizations" />
+### Gauges and Governance
+<DeploymentAddresses chain="optimism" :active="false" group="gaugesgovernance" />
+
+### Ungrouped Inactive Contracts
+<DeploymentAddresses chain="optimism" :active="false" group="ungrouped" />
 

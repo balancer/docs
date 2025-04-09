@@ -49,9 +49,11 @@
     "color": "^4.2.3",
     "ethereum-blockies": "^0.1.1",
     "ethers": "^6.9.0",
+    "highlight.js": "^11.10.0",
     "mersenne-twister": "^1.1.0",
     "vue-prism-component": "^2.0.0",
     "vue-virtual-scroller": "^2.0.0-beta.8",
-    "vue3-jazzicon": "^0.1.4"
+    "vue3-jazzicon": "^0.1.4",
+    "lucide-vue-next": "^0.468.0"
   }
 }
