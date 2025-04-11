@@ -3,138 +3,49 @@
 # Sepolia Deployment Addresses
 
 ::: info More Details
-For more information on specific deployments as well as changelogs for different contract versions, please see the [deployment tasks](https://github.com/balancer/balancer-deployments/tree/master/tasks).
+For more information on specific deployments as well as changelogs for different contract versions, please see the [deployment tasks](https://github.com/balancer/balancer-deployments/tree/master/v2/tasks).
 :::
 
-## Pool Factories
-
-| Contract                         | Address                                                                                                                             | Deployment                                                                                                                                  |
-|:---------------------------------|:------------------------------------------------------------------------------------------------------------------------------------|:--------------------------------------------------------------------------------------------------------------------------------------------|
-| ComposableStablePoolFactory (v6) | [0x05503B3aDE04aCA81c8D6F88eCB73Ba156982D2B](https://sepolia.etherscan.io//address/0x05503B3aDE04aCA81c8D6F88eCB73Ba156982D2B#code) | [20240223-composable-stable-pool-v6](https://github.com/balancer/balancer-deployments/blob/master/tasks/20240223-composable-stable-pool-v6) |
-| ManagedPoolFactory (v2)          | [0x63e179C5b6d54B2c2e36b9cE4085EF5A8C86D50c](https://sepolia.etherscan.io//address/0x63e179C5b6d54B2c2e36b9cE4085EF5A8C86D50c#code) | [20230411-managed-pool-v2](https://github.com/balancer/balancer-deployments/blob/master/tasks/20230411-managed-pool-v2)                     |
-| WeightedPoolFactory (v4)         | [0x7920BFa1b2041911b354747CA7A6cDD2dfC50Cfd](https://sepolia.etherscan.io//address/0x7920BFa1b2041911b354747CA7A6cDD2dfC50Cfd#code) | [20230320-weighted-pool-v4](https://github.com/balancer/balancer-deployments/blob/master/tasks/20230320-weighted-pool-v4)                   |
-
 ## Core
+<DeploymentAddresses chain="sepolia" :active="true" group="core" />
 
-| Contract                       | Address                                                                                                                             | Deployment                                                                                                                                                  |
-|:-------------------------------|:------------------------------------------------------------------------------------------------------------------------------------|:------------------------------------------------------------------------------------------------------------------------------------------------------------|
-| BalancerQueries                | [0x1802953277FD955f9a254B80Aa0582f193cF1d77](https://sepolia.etherscan.io//address/0x1802953277FD955f9a254B80Aa0582f193cF1d77#code) | [20220721-balancer-queries](https://github.com/balancer/balancer-deployments/blob/master/tasks/20220721-balancer-queries)                                   |
-| BalancerRelayer                | [0xBeA696c7761734d9e66f4F372EB35059C1aeD1e0](https://sepolia.etherscan.io//address/0xBeA696c7761734d9e66f4F372EB35059C1aeD1e0#code) | [20230712-child-chain-gauge-checkpointer](https://github.com/balancer/balancer-deployments/blob/master/tasks/20230712-child-chain-gauge-checkpointer)       |
-| BalancerRelayer (v6)           | [0x7852fB9d0895e6e8b3EedA553c03F6e2F9124dF9](https://sepolia.etherscan.io//address/0x7852fB9d0895e6e8b3EedA553c03F6e2F9124dF9#code) | [20231031-batch-relayer-v6](https://github.com/balancer/balancer-deployments/blob/master/tasks/20231031-batch-relayer-v6)                                   |
-| BatchRelayerLibrary            | [0x043A2daD730d585C44FB79D2614F295D2d625412](https://sepolia.etherscan.io//address/0x043A2daD730d585C44FB79D2614F295D2d625412#code) | [20230712-child-chain-gauge-checkpointer](https://github.com/balancer/balancer-deployments/blob/master/tasks/20230712-child-chain-gauge-checkpointer)       |
-| BatchRelayerLibrary (v6)       | [0xEDFd0A7005A7c72c44Ff13bEa370c86A9D11beE1](https://sepolia.etherscan.io//address/0xEDFd0A7005A7c72c44Ff13bEa370c86A9D11beE1#code) | [20231031-batch-relayer-v6](https://github.com/balancer/balancer-deployments/blob/master/tasks/20231031-batch-relayer-v6)                                   |
-| ProtocolFeePercentagesProvider | [0xf7D5DcE55E6D47852F054697BAB6A1B48A00ddbd](https://sepolia.etherscan.io//address/0xf7D5DcE55E6D47852F054697BAB6A1B48A00ddbd#code) | [20220725-protocol-fee-percentages-provider](https://github.com/balancer/balancer-deployments/blob/master/tasks/20220725-protocol-fee-percentages-provider) |
-| Vault                          | [0xBA12222222228d8Ba445958a75a0704d566BF2C8](https://sepolia.etherscan.io//address/0xBA12222222228d8Ba445958a75a0704d566BF2C8#code) | [20210418-vault](https://github.com/balancer/balancer-deployments/blob/master/tasks/20210418-vault)                                                         |
+## Pool Factories
+<DeploymentAddresses chain="sepolia" :active="true" group="poolfactory" />
 
 ## Authorization
+<DeploymentAddresses chain="sepolia" :active="true" group="authorizations" />
 
-| Contract                        | Address                                                                                                                             | Deployment                                                                                                                                          |
-|:--------------------------------|:------------------------------------------------------------------------------------------------------------------------------------|:----------------------------------------------------------------------------------------------------------------------------------------------------|
-| Authorizer                      | [0xA331D84eC860Bf466b4CdCcFb4aC09a1B43F3aE6](https://sepolia.etherscan.io//address/0xA331D84eC860Bf466b4CdCcFb4aC09a1B43F3aE6#code) | [20210418-authorizer](https://github.com/balancer/balancer-deployments/blob/master/tasks/20210418-authorizer)                                       |
-| AuthorizerAdaptor               | [0xdcdbf71A870cc60C6F9B621E28a7D3Ffd6Dd4965](https://sepolia.etherscan.io//address/0xdcdbf71A870cc60C6F9B621E28a7D3Ffd6Dd4965#code) | [20220325-authorizer-adaptor](https://github.com/balancer/balancer-deployments/blob/master/tasks/20220325-authorizer-adaptor)                       |
-| AuthorizerAdaptorEntrypoint     | [0xb9aD3466cdd42015cc05d4804DC68D562b6a2065](https://sepolia.etherscan.io//address/0xb9aD3466cdd42015cc05d4804DC68D562b6a2065#code) | [20221124-authorizer-adaptor-entrypoint](https://github.com/balancer/balancer-deployments/blob/master/tasks/20221124-authorizer-adaptor-entrypoint) |
-| AuthorizerWithAdaptorValidation | [0xb521dD5C8e13fE202626CaC98873FEA2b7760cE4](https://sepolia.etherscan.io//address/0xb521dD5C8e13fE202626CaC98873FEA2b7760cE4#code) | [20230414-authorizer-wrapper](https://github.com/balancer/balancer-deployments/blob/master/tasks/20230414-authorizer-wrapper)                       |
-| TimelockAuthorizer              | [0xDe615cc5712B4954BeB613BCF32E61C137Cc64f9](https://sepolia.etherscan.io//address/0xDe615cc5712B4954BeB613BCF32E61C137Cc64f9#code) | [20230522-timelock-authorizer](https://github.com/balancer/balancer-deployments/blob/master/tasks/20230522-timelock-authorizer)                     |
 
 ## Gauges and Governance
-
-| Contract                         | Address                                                                                                                             | Deployment                                                                                                                                                  |
-|:---------------------------------|:------------------------------------------------------------------------------------------------------------------------------------|:------------------------------------------------------------------------------------------------------------------------------------------------------------|
-| BALTokenHolderFactory            | [0xEF454a7B3f965D3f6723E462405246f8Cd865425](https://sepolia.etherscan.io//address/0xEF454a7B3f965D3f6723E462405246f8Cd865425#code) | [20220325-bal-token-holder-factory](https://github.com/balancer/balancer-deployments/blob/master/tasks/20220325-bal-token-holder-factory)                   |
-| BalancerMinter                   | [0x1783Cd84b3d01854A96B4eD5843753C2CcbD574A](https://sepolia.etherscan.io//address/0x1783Cd84b3d01854A96B4eD5843753C2CcbD574A#code) | [20220325-gauge-controller](https://github.com/balancer/balancer-deployments/blob/master/tasks/20220325-gauge-controller)                                   |
-| BalancerTokenAdmin               | [0x7d2248F194755DCa9A1887099394F39476d28C9a](https://sepolia.etherscan.io//address/0x7d2248F194755DCa9A1887099394F39476d28C9a#code) | [20220325-balancer-token-admin](https://github.com/balancer/balancer-deployments/blob/master/tasks/20220325-balancer-token-admin)                           |
-| ChildChainGauge (v2)             | [0xC49Ca921c4CD1117162eAEEc0ee969649997950c](https://sepolia.etherscan.io//address/0xC49Ca921c4CD1117162eAEEc0ee969649997950c#code) | [20230316-child-chain-gauge-factory-v2](https://github.com/balancer/balancer-deployments/blob/master/tasks/20230316-child-chain-gauge-factory-v2)           |
-| ChildChainGaugeFactory (v2)      | [0xC370cD86d5488c1788b62f11b09adb0C47F47440](https://sepolia.etherscan.io//address/0xC370cD86d5488c1788b62f11b09adb0C47F47440#code) | [20230316-child-chain-gauge-factory-v2](https://github.com/balancer/balancer-deployments/blob/master/tasks/20230316-child-chain-gauge-factory-v2)           |
-| FeeDistributor (v2)              | [0xA6971317Fb06c76Ef731601C64433a4846fCa707](https://sepolia.etherscan.io//address/0xA6971317Fb06c76Ef731601C64433a4846fCa707#code) | [20220714-fee-distributor-v2](https://github.com/balancer/balancer-deployments/blob/master/tasks/20220714-fee-distributor-v2)                               |
-| GaugeAdder (v4)                  | [0xE42FFA682A26EF8F25891db4882932711D42e467](https://sepolia.etherscan.io//address/0xE42FFA682A26EF8F25891db4882932711D42e467#code) | [20230519-gauge-adder-v4](https://github.com/balancer/balancer-deployments/blob/master/tasks/20230519-gauge-adder-v4)                                       |
-| GaugeController                  | [0x577e5993B9Cc480F07F98B5Ebd055604bd9071C4](https://sepolia.etherscan.io//address/0x577e5993B9Cc480F07F98B5Ebd055604bd9071C4#code) | [20220325-gauge-controller](https://github.com/balancer/balancer-deployments/blob/master/tasks/20220325-gauge-controller)                                   |
-| L2LayerZeroBridgeForwarder       | [0xc7E5ED1054A24Ef31D827E6F86caA58B3Bc168d7](https://sepolia.etherscan.io//address/0xc7E5ED1054A24Ef31D827E6F86caA58B3Bc168d7#code) | [20230404-l2-layer0-bridge-forwarder](https://github.com/balancer/balancer-deployments/blob/master/tasks/20230404-l2-layer0-bridge-forwarder)               |
-| ProtocolFeesCollector            | [0xce88686553686DA562CE7Cea497CE749DA109f9F](https://sepolia.etherscan.io//address/0xce88686553686DA562CE7Cea497CE749DA109f9F#code) | [20210418-vault](https://github.com/balancer/balancer-deployments/blob/master/tasks/20210418-vault)                                                         |
-| ProtocolFeesWithdrawer           | [0x809B79b53F18E9bc08A961ED4678B901aC93213a](https://sepolia.etherscan.io//address/0x809B79b53F18E9bc08A961ED4678B901aC93213a#code) | [20220517-protocol-fee-withdrawer](https://github.com/balancer/balancer-deployments/blob/master/tasks/20220517-protocol-fee-withdrawer)                     |
-| SingleRecipientGauge (v2)        | [0x9a5ddDE7056ceFFb03D9962c4549Ac1C4ad1F985](https://sepolia.etherscan.io//address/0x9a5ddDE7056ceFFb03D9962c4549Ac1C4ad1F985#code) | [20230215-single-recipient-gauge-factory-v2](https://github.com/balancer/balancer-deployments/blob/master/tasks/20230215-single-recipient-gauge-factory-v2) |
-| SingleRecipientGaugeFactory (v2) | [0x7EE4D172Ae50C627a1BFA9A99E1260C54dA26fdF](https://sepolia.etherscan.io//address/0x7EE4D172Ae50C627a1BFA9A99E1260C54dA26fdF#code) | [20230215-single-recipient-gauge-factory-v2](https://github.com/balancer/balancer-deployments/blob/master/tasks/20230215-single-recipient-gauge-factory-v2) |
-| SmartWalletChecker               | [0x230a59F4d9ADc147480f03B0D3fFfeCd56c3289a](https://sepolia.etherscan.io//address/0x230a59F4d9ADc147480f03B0D3fFfeCd56c3289a#code) | [20220420-smart-wallet-checker](https://github.com/balancer/balancer-deployments/blob/master/tasks/20220420-smart-wallet-checker)                           |
-| VeBoostV2 (v2)                   | [0x927906bbAc747c13c75F6447FE8abb490EAB456C](https://sepolia.etherscan.io//address/0x927906bbAc747c13c75F6447FE8abb490EAB456C#code) | [20221205-veboost-v2](https://github.com/balancer/balancer-deployments/blob/master/tasks/20221205-veboost-v2)                                               |
-| VotingEscrow                     | [0x150A72e4D4d81BbF045565E232c50Ed0931ad795](https://sepolia.etherscan.io//address/0x150A72e4D4d81BbF045565E232c50Ed0931ad795#code) | [20220325-gauge-controller](https://github.com/balancer/balancer-deployments/blob/master/tasks/20220325-gauge-controller)                                   |
-| VotingEscrowDelegation           | [0x0c5538098EBe88175078972F514C9e101D325D4F](https://sepolia.etherscan.io//address/0x0c5538098EBe88175078972F514C9e101D325D4F#code) | [20220325-ve-delegation](https://github.com/balancer/balancer-deployments/blob/master/tasks/20220325-ve-delegation)                                         |
-| VotingEscrowDelegationProxy      | [0x9f7E65887413a8497b87bA2058cE6E4Ef4B37013](https://sepolia.etherscan.io//address/0x9f7E65887413a8497b87bA2058cE6E4Ef4B37013#code) | [20220325-ve-delegation](https://github.com/balancer/balancer-deployments/blob/master/tasks/20220325-ve-delegation)                                         |
-| VotingEscrowDelegationProxy      | [0xD87F44Df0159DC78029AB9CA7D7e57E7249F5ACD](https://sepolia.etherscan.io//address/0xD87F44Df0159DC78029AB9CA7D7e57E7249F5ACD#code) | [20230316-l2-ve-delegation-proxy](https://github.com/balancer/balancer-deployments/blob/master/tasks/20230316-l2-ve-delegation-proxy)                       |
+<DeploymentAddresses chain="sepolia" :active="true" group="gaugesgovernance" />
 
 ## Ungrouped Active/Current Contracts
-    
-    
-| Contract                                       | Address                                                                                                                             | Deployment                                                                                                                                                    |
-|:-----------------------------------------------|:------------------------------------------------------------------------------------------------------------------------------------|:--------------------------------------------------------------------------------------------------------------------------------------------------------------|
-| BalancerHelpers                                | [0xdAE7e32ADc5d490a43cCba1f0c736033F2b4eFca](https://sepolia.etherscan.io//address/0xdAE7e32ADc5d490a43cCba1f0c736033F2b4eFca#code) | [20210418-vault](https://github.com/balancer/balancer-deployments/blob/master/tasks/20210418-vault)                                                           |
-| BatchRelayerQueryLibrary (v6)                  | [0xCD2A81Af5d5B485164709dCC4b3791B9f504cFc6](https://sepolia.etherscan.io//address/0xCD2A81Af5d5B485164709dCC4b3791B9f504cFc6#code) | [20231031-batch-relayer-v6](https://github.com/balancer/balancer-deployments/blob/master/tasks/20231031-batch-relayer-v6)                                     |
-| ChainlinkRateProviderFactory                   | [0xA8920455934Da4D853faac1f94Fe7bEf72943eF1](https://sepolia.etherscan.io//address/0xA8920455934Da4D853faac1f94Fe7bEf72943eF1#code) | [20230717-chainlink-rate-provider-factory](https://github.com/balancer/balancer-deployments/blob/master/tasks/20230717-chainlink-rate-provider-factory)       |
-| GaugeWorkingBalanceHelper                      | [0x2E4aBED3362A622C5f712bB183005A476b146bd3](https://sepolia.etherscan.io//address/0x2E4aBED3362A622C5f712bB183005A476b146bd3#code) | [20230526-gauge-working-balance-helper](https://github.com/balancer/balancer-deployments/blob/master/tasks/20230526-gauge-working-balance-helper)             |
-| L2BalancerPseudoMinter                         | [0xb51f7fFc97CeDFb6922e8B9Bbf3eF7575fafD630](https://sepolia.etherscan.io//address/0xb51f7fFc97CeDFb6922e8B9Bbf3eF7575fafD630#code) | [20230316-l2-balancer-pseudo-minter](https://github.com/balancer/balancer-deployments/blob/master/tasks/20230316-l2-balancer-pseudo-minter)                   |
-| LiquidityGaugeFactory (v2)                     | [0x2FF226CD12C80511a641A6101F071d853A4e5363](https://sepolia.etherscan.io//address/0x2FF226CD12C80511a641A6101F071d853A4e5363#code) | [20220822-mainnet-gauge-factory-v2](https://github.com/balancer/balancer-deployments/blob/master/tasks/20220822-mainnet-gauge-factory-v2)                     |
-| LiquidityGaugeV5 (v2)                          | [0x82416Ce6eA7dD4923d4A3ED70a79B4A432a382C4](https://sepolia.etherscan.io//address/0x82416Ce6eA7dD4923d4A3ED70a79B4A432a382C4#code) | [20220822-mainnet-gauge-factory-v2](https://github.com/balancer/balancer-deployments/blob/master/tasks/20220822-mainnet-gauge-factory-v2)                     |
-| MockLiquidityBootstrappingPool                 | [0xe90472ffc41D7Ddf8E3B456bBA748e3F22c59C6f](https://sepolia.etherscan.io//address/0xe90472ffc41D7Ddf8E3B456bBA748e3F22c59C6f#code) | [20211202-no-protocol-fee-lbp](https://github.com/balancer/balancer-deployments/blob/master/tasks/20211202-no-protocol-fee-lbp)                               |
-| NoProtocolFeeLiquidityBootstrappingPoolFactory | [0x45fFd460cC6642B8D8Fb12373DFd77Ceb0f4932B](https://sepolia.etherscan.io//address/0x45fFd460cC6642B8D8Fb12373DFd77Ceb0f4932B#code) | [20211202-no-protocol-fee-lbp](https://github.com/balancer/balancer-deployments/blob/master/tasks/20211202-no-protocol-fee-lbp)                               |
-| NullVotingEscrow                               | [0x475D18169BE8a89357A9ee3Ab00ca386d20fA229](https://sepolia.etherscan.io//address/0x475D18169BE8a89357A9ee3Ab00ca386d20fA229#code) | [20230316-l2-ve-delegation-proxy](https://github.com/balancer/balancer-deployments/blob/master/tasks/20230316-l2-ve-delegation-proxy)                         |
-| OmniVotingEscrowAdaptor                        | [0xE39B5e3B6D74016b2F6A9673D7d7493B6DF549d5](https://sepolia.etherscan.io//address/0xE39B5e3B6D74016b2F6A9673D7d7493B6DF549d5#code) | [20230504-vebal-remapper](https://github.com/balancer/balancer-deployments/blob/master/tasks/20230504-vebal-remapper)                                         |
-| PreseededVotingEscrowDelegation                | [0xb1a4FE1C6d25a0DDAb47431A92A723dd71d9021f](https://sepolia.etherscan.io//address/0xb1a4FE1C6d25a0DDAb47431A92A723dd71d9021f#code) | [20220530-preseeded-voting-escrow-delegation](https://github.com/balancer/balancer-deployments/blob/master/tasks/20220530-preseeded-voting-escrow-delegation) |
-| ProtocolIdRegistry                             | [0x6CaD2ea22BFA7F4C14Aae92E47F510Cd5C509bc7](https://sepolia.etherscan.io//address/0x6CaD2ea22BFA7F4C14Aae92E47F510Cd5C509bc7#code) | [20230223-protocol-id-registry](https://github.com/balancer/balancer-deployments/blob/master/tasks/20230223-protocol-id-registry)                             |
-| StakelessGaugeCheckpointer (v2)                | [0x268E2EE1413D768b6e2dc3F5a4ddc9Ae03d9AF42](https://sepolia.etherscan.io//address/0x268E2EE1413D768b6e2dc3F5a4ddc9Ae03d9AF42#code) | [20230915-stakeless-gauge-checkpointer-v2](https://github.com/balancer/balancer-deployments/blob/master/tasks/20230915-stakeless-gauge-checkpointer-v2)       |
-| TestBalancerToken                              | [0xb19382073c7A0aDdbb56Ac6AF1808Fa49e377B75](https://sepolia.etherscan.io//address/0xb19382073c7A0aDdbb56Ac6AF1808Fa49e377B75#code) | [20220325-test-balancer-token](https://github.com/balancer/balancer-deployments/blob/master/tasks/20220325-test-balancer-token)                               |
-| TimelockAuthorizerMigrator                     | [0x6eaD84Af26E997D27998Fc9f8614e8a19BB93938](https://sepolia.etherscan.io//address/0x6eaD84Af26E997D27998Fc9f8614e8a19BB93938#code) | [20230522-timelock-authorizer](https://github.com/balancer/balancer-deployments/blob/master/tasks/20230522-timelock-authorizer)                               |
-| VotingEscrowRemapper                           | [0xF24917fB88261a37Cc57F686eBC831a5c0B9fD39](https://sepolia.etherscan.io//address/0xF24917fB88261a37Cc57F686eBC831a5c0B9fD39#code) | [20230504-vebal-remapper](https://github.com/balancer/balancer-deployments/blob/master/tasks/20230504-vebal-remapper)                                         |
-    
-    
-# Deprecated Contracts
+<DeploymentAddresses chain="sepolia" :active="true" group="ungrouped" />
 
-These deployments were in use at some point, and may still be in active operation, for example in the case of pools created with old factories.  In general it's better to interact with newer versions when possible.
 
-#### If you can only find the contract you are looking for in the deprecated section and it is not an old pool, try checking the deployments tasks to find it or ask in the Discord before using a deprecated contract.
+## Deprecated Contracts
 
-    
-| Contract                         | Address                                                                                                                             | Deployment                                                                                                                                        |
-|:---------------------------------|:------------------------------------------------------------------------------------------------------------------------------------|:--------------------------------------------------------------------------------------------------------------------------------------------------|
-| AaveLinearPoolFactory (v5)       | [0xDF9B5B00Ef9bca66e9902Bd813dB14e4343Be025](https://sepolia.etherscan.io//address/0xDF9B5B00Ef9bca66e9902Bd813dB14e4343Be025#code) | [20230410-aave-linear-pool-v5](https://github.com/balancer/balancer-deployments/blob/master/tasks/20230410-aave-linear-pool-v5)                   |
-| BalancerRelayer (v5)             | [0x6d5342d716c13d9a3F072a2B11498624ADe27f90](https://sepolia.etherscan.io//address/0x6d5342d716c13d9a3F072a2B11498624ADe27f90#code) | [20230314-batch-relayer-v5](https://github.com/balancer/balancer-deployments/blob/master/tasks/20230314-batch-relayer-v5)                         |
-| BatchRelayerLibrary (v5)         | [0x5F6848976C2914403B425F18B589A65772F082E3](https://sepolia.etherscan.io//address/0x5F6848976C2914403B425F18B589A65772F082E3#code) | [20230314-batch-relayer-v5](https://github.com/balancer/balancer-deployments/blob/master/tasks/20230314-batch-relayer-v5)                         |
-| ComposableStablePoolFactory (v4) | [0xA3fd20E29358c056B727657E83DFd139abBC9924](https://sepolia.etherscan.io//address/0xA3fd20E29358c056B727657E83DFd139abBC9924#code) | [20230320-composable-stable-pool-v4](https://github.com/balancer/balancer-deployments/blob/master/tasks/20230320-composable-stable-pool-v4)       |
-| ComposableStablePoolFactory (v5) | [0xa523f47A933D5020b23629dDf689695AA94612Dc](https://sepolia.etherscan.io//address/0xa523f47A933D5020b23629dDf689695AA94612Dc#code) | [20230711-composable-stable-pool-v5](https://github.com/balancer/balancer-deployments/blob/master/tasks/20230711-composable-stable-pool-v5)       |
-| ERC4626LinearPoolFactory (v4)    | [0x59562f93c447656F6E4799fC1FC7c3d977C3324F](https://sepolia.etherscan.io//address/0x59562f93c447656F6E4799fC1FC7c3d977C3324F#code) | [20230409-erc4626-linear-pool-v4](https://github.com/balancer/balancer-deployments/blob/master/tasks/20230409-erc4626-linear-pool-v4)             |
-| GaugeAdder (v3)                  | [0x1DF32616fb1bBaEd07f42F1a1EfD1D0E232AcB4a](https://sepolia.etherscan.io//address/0x1DF32616fb1bBaEd07f42F1a1EfD1D0E232AcB4a#code) | [20230109-gauge-adder-v3](https://github.com/balancer/balancer-deployments/blob/master/tasks/20230109-gauge-adder-v3)                             |
-| GearboxLinearPoolFactory (v2)    | [0x8df317a729fcaA260306d7de28888932cb579b88](https://sepolia.etherscan.io//address/0x8df317a729fcaA260306d7de28888932cb579b88#code) | [20230409-gearbox-linear-pool-v2](https://github.com/balancer/balancer-deployments/blob/master/tasks/20230409-gearbox-linear-pool-v2)             |
-| MockAaveLendingPool (v5)         | [0x300Ab2038EAc391f26D9F895dc61F8F66a548833](https://sepolia.etherscan.io//address/0x300Ab2038EAc391f26D9F895dc61F8F66a548833#code) | [20230410-aave-linear-pool-v5](https://github.com/balancer/balancer-deployments/blob/master/tasks/20230410-aave-linear-pool-v5)                   |
-| MockAaveLinearPool (v5)          | [0xE4EfD99f3C03778ba913Eb578C599329634e2bd7](https://sepolia.etherscan.io//address/0xE4EfD99f3C03778ba913Eb578C599329634e2bd7#code) | [20230410-aave-linear-pool-v5](https://github.com/balancer/balancer-deployments/blob/master/tasks/20230410-aave-linear-pool-v5)                   |
-| MockComposableStablePool (v4)    | [0xA8D865FE1D68a405B29f884358468c9B52d4841d](https://sepolia.etherscan.io//address/0xA8D865FE1D68a405B29f884358468c9B52d4841d#code) | [20230320-composable-stable-pool-v4](https://github.com/balancer/balancer-deployments/blob/master/tasks/20230320-composable-stable-pool-v4)       |
-| MockComposableStablePool (v5)    | [0xE24Aba051aaeB07f981bD449f4B0b3250e08d4fB](https://sepolia.etherscan.io//address/0xE24Aba051aaeB07f981bD449f4B0b3250e08d4fB#code) | [20230711-composable-stable-pool-v5](https://github.com/balancer/balancer-deployments/blob/master/tasks/20230711-composable-stable-pool-v5)       |
-| MockERC4626LinearPool (v4)       | [0x0c2EAd6F2Dc2A9385187023F4cec5925337B330f](https://sepolia.etherscan.io//address/0x0c2EAd6F2Dc2A9385187023F4cec5925337B330f#code) | [20230409-erc4626-linear-pool-v4](https://github.com/balancer/balancer-deployments/blob/master/tasks/20230409-erc4626-linear-pool-v4)             |
-| MockERC4626Token (v4)            | [0x2498A2B0d6462d2260EAC50aE1C3e03F4829BA95](https://sepolia.etherscan.io//address/0x2498A2B0d6462d2260EAC50aE1C3e03F4829BA95#code) | [20230409-erc4626-linear-pool-v4](https://github.com/balancer/balancer-deployments/blob/master/tasks/20230409-erc4626-linear-pool-v4)             |
-| MockGearboxDieselToken (v2)      | [0x4C32a8a8fDa4E24139B51b456B42290f51d6A1c4](https://sepolia.etherscan.io//address/0x4C32a8a8fDa4E24139B51b456B42290f51d6A1c4#code) | [20230409-gearbox-linear-pool-v2](https://github.com/balancer/balancer-deployments/blob/master/tasks/20230409-gearbox-linear-pool-v2)             |
-| MockGearboxLinearPool (v2)       | [0x112a7b7ca66E6963C49BC523A415F7D8CDB806B9](https://sepolia.etherscan.io//address/0x112a7b7ca66E6963C49BC523A415F7D8CDB806B9#code) | [20230409-gearbox-linear-pool-v2](https://github.com/balancer/balancer-deployments/blob/master/tasks/20230409-gearbox-linear-pool-v2)             |
-| MockGearboxVault (v2)            | [0x3B1eb8EB7b43882b385aB30533D9A2BeF9052a98](https://sepolia.etherscan.io//address/0x3B1eb8EB7b43882b385aB30533D9A2BeF9052a98#code) | [20230409-gearbox-linear-pool-v2](https://github.com/balancer/balancer-deployments/blob/master/tasks/20230409-gearbox-linear-pool-v2)             |
-| MockShareToken (v2)              | [0x0c6052254551EAe3ECac77B01DFcf1025418828f](https://sepolia.etherscan.io//address/0x0c6052254551EAe3ECac77B01DFcf1025418828f#code) | [20230410-silo-linear-pool-v2](https://github.com/balancer/balancer-deployments/blob/master/tasks/20230410-silo-linear-pool-v2)                   |
-| MockSilo (v2)                    | [0x6B1Da720Be2D11d95177ccFc40A917c2688f396c](https://sepolia.etherscan.io//address/0x6B1Da720Be2D11d95177ccFc40A917c2688f396c#code) | [20230410-silo-linear-pool-v2](https://github.com/balancer/balancer-deployments/blob/master/tasks/20230410-silo-linear-pool-v2)                   |
-| MockSiloLinearPool (v2)          | [0xA149CF2D795AaB83a15673f5Beade9361e4e3F65](https://sepolia.etherscan.io//address/0xA149CF2D795AaB83a15673f5Beade9361e4e3F65#code) | [20230410-silo-linear-pool-v2](https://github.com/balancer/balancer-deployments/blob/master/tasks/20230410-silo-linear-pool-v2)                   |
-| MockSiloRepository (v2)          | [0xa7d524046ef89de9F8e4f2d7B029f66cCB738d48](https://sepolia.etherscan.io//address/0xa7d524046ef89de9F8e4f2d7B029f66cCB738d48#code) | [20230410-silo-linear-pool-v2](https://github.com/balancer/balancer-deployments/blob/master/tasks/20230410-silo-linear-pool-v2)                   |
-| MockStaticAToken (v5)            | [0x03F3Fb107e74F2EAC9358862E91ad3c692712054](https://sepolia.etherscan.io//address/0x03F3Fb107e74F2EAC9358862E91ad3c692712054#code) | [20230410-aave-linear-pool-v5](https://github.com/balancer/balancer-deployments/blob/master/tasks/20230410-aave-linear-pool-v5)                   |
-| MockYearnLinearPool (v2)         | [0x016B7366F76aa2794097798B90CF239796AEff8d](https://sepolia.etherscan.io//address/0x016B7366F76aa2794097798B90CF239796AEff8d#code) | [20230409-yearn-linear-pool-v2](https://github.com/balancer/balancer-deployments/blob/master/tasks/20230409-yearn-linear-pool-v2)                 |
-| MockYearnTokenVault (v2)         | [0x9129E834e15eA19b6069e8f08a8EcFc13686B8dC](https://sepolia.etherscan.io//address/0x9129E834e15eA19b6069e8f08a8EcFc13686B8dC#code) | [20230409-yearn-linear-pool-v2](https://github.com/balancer/balancer-deployments/blob/master/tasks/20230409-yearn-linear-pool-v2)                 |
-| SiloLinearPoolFactory (v2)       | [0x8eA89804145c007e7D226001A96955ad53836087](https://sepolia.etherscan.io//address/0x8eA89804145c007e7D226001A96955ad53836087#code) | [20230410-silo-linear-pool-v2](https://github.com/balancer/balancer-deployments/blob/master/tasks/20230410-silo-linear-pool-v2)                   |
-| StakelessGaugeCheckpointer       | [0x96484f2aBF5e58b15176dbF1A799627B53F13B6d](https://sepolia.etherscan.io//address/0x96484f2aBF5e58b15176dbF1A799627B53F13B6d#code) | [20230731-stakeless-gauge-checkpointer](https://github.com/balancer/balancer-deployments/blob/master/tasks/20230731-stakeless-gauge-checkpointer) |
-| YearnLinearPoolFactory (v2)      | [0xAcf05BE5134d64d150d153818F8C67EE36996650](https://sepolia.etherscan.io//address/0xAcf05BE5134d64d150d153818F8C67EE36996650#code) | [20230409-yearn-linear-pool-v2](https://github.com/balancer/balancer-deployments/blob/master/tasks/20230409-yearn-linear-pool-v2)                 |
-    
-<style scoped>
-table {
-    display: table;
-    width: 100%;
-}
-table th:first-of-type, td:first-of-type {
-    width: 30%;
-}
-table th:nth-of-type(2) {
-    width: 40%;
-}
-td {
-    max-width: 0;
-    overflow: hidden;
-}
-</style>
+These deployments were in use at some point, and may still be in active operation, for example in the case of pools created with old factories. In general it's better to interact with newer versions when possible.
+
+::: warning Note
+If you can only find the contract you are looking for in the deprecated section and it is not an old pool, try checking the deployments tasks to find it or ask in the Discord before using a deprecated contract.
+:::
+
+### Core Contracts
+<DeploymentAddresses chain="sepolia" :active="false" group="core" />
+
+### Pool Factories
+<DeploymentAddresses chain="sepolia" :active="false" group="poolfactory" />
+
+### Routers
+<DeploymentAddresses chain="sepolia" :active="false" group="routers" />
+
+### Authorization Contracts
+
+<DeploymentAddresses chain="sepolia" :active="false" group="authorizations" />
+### Gauges and Governance
+<DeploymentAddresses chain="sepolia" :active="false" group="gaugesgovernance" />
+
+### Ungrouped Inactive Contracts
+<DeploymentAddresses chain="sepolia" :active="false" group="ungrouped" />
 

@@ -53,10 +53,6 @@ export const navbar: NavbarConfig = [
                 link: '/reference/contracts/deployment-addresses/avalanche',
               },
               {
-                text: 'Goerli(testnet)',
-                link: '/reference/contracts/deployment-addresses/goerli',
-              },
-              {
                 text: 'Sepolia(testnet)',
                 link: '/reference/contracts/deployment-addresses/sepolia',
               },
@@ -88,15 +84,11 @@ export const navbar: NavbarConfig = [
               },
               {
                 text: 'Polygon zkEVM',
-                link: '/reference/authorizer/zkevm'
+                link: '/reference/authorizer/zkevm',
               },
               {
                 text: 'Avalanche',
-                link: '/reference/authorizer/avalanche'
-              },
-              {
-                text: 'Goerli(testnet)',
-                link: '/reference/authorizer/goerli',
+                link: '/reference/authorizer/avalanche',
               },
               {
                 text: 'Sepolia(testnet)',
@@ -140,7 +132,7 @@ export const navbar: NavbarConfig = [
             link: '/reference/dune/',
           },
         ],
-      },      
+      },
       {
         text: 'Swaps / Joins / Exits',
         children: [
