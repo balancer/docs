@@ -13,7 +13,11 @@ This program is available to:
 - 1inch Labs Fusion resolver
 - CoW Protocol solvers
 
-The program aims to increase non-toxic flow through the protocol by enabling these approved entities to execute trades with an 80% discount on swap fees. With Balancer V3 now launched, there are no plans to expand this V2-specific program to additional integrators.
+The program aims to increase non-toxic flow through the protocol by enabling these approved entities to execute trades with an 50% discount on swap fees. With Balancer V3 now launched, there are no plans to expand this V2-specific program to additional integrators.
+
+### Discount Update
+
+Effective May 2025, the discount rate has been reduced from 80% to 50% to maximize benefits for both liquidity providers and aggregators/solvers.
 
 ## How It Works
 
