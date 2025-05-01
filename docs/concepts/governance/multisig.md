@@ -69,17 +69,17 @@ The DAO Multisig Signer Set and associated Multisigs is reserved for major chang
 
 | Signer                                             | Association              | Address                                      |
 |----------------------------------------------------|--------------------------| -------------------------------------------- |
-| [Alexander Lange](https://twitter.com/AlexLangeVC) | \(Inflection\)           | `0x3ABDc84Dd15b0058B281D7e26CCc3932cfb268aA` |
-| [0xMaki](https://twitter.com/0xMaki)               | \(LayerZero, AURA, DCV\) | `0x285b7EEa81a5B66B62e7276a24c1e0F83F7409c1` |
-| [Tritium](https://twitter.com/Tritium_DAOist)      | \(Balancer Maxis\)       | `0xcf4fF1e03830D692F52EB094c52A5A6A2181Ab3F` |
-| [Evan](https://twitter.com/0xSausageDoge)          | \(Fjord\)                | `0x59693BA1A5764e087CE166ac0E0085Fc071B9ea7` |
-| [Ernesto](https://twitter.com/eboadom)             | \(BGD\)                  | `0xA39a62304d8d43B35114ad7bd1258B0E50e139b3` |
-| [Mounir](https://twitter.com/mounibec)             | \(Paraswap\)             | `0x0951FF0835302929d6c0162b3d2495A85e38ec3A` |
-| [Trent McConaghy](https://twitter.com/trentmc0)    | \(Ocean Protocol\)       | `0x478eC43c6867c2884f87B21c164f1fD1308bD9a3` |
-| [Stefan](https://twitter.com/StefanDGeorge)        | \(Gnosis\)               | `0x9F7dfAb2222A473284205cdDF08a677726d786A0` |
-| [bonustrack87](https://twitter.com/bonustrack87)   | \(Snapshot\)             | `0x9BE6ff2A1D5139Eda96339E2644dC1F05d803600` |
-| [nanexcool](https://twitter.com/nanexcool)         | \(Ethereum OG\)          | `0x823DF0278e4998cD0D06FB857fBD51e85b18A250` |
-| [David Gerai](https://twitter.com/davgarai)        | \(Raft\)                 | `0xAc1aA53108712d7f38093A67d380aD54B562a650` |
+| [Alexander Lange](https://x.com/AlexLangeVC) | \(Inflection\)           | `0x3ABDc84Dd15b0058B281D7e26CCc3932cfb268aA` |
+| [0xMaki](https://x.com/0xMaki)               | \(LayerZero, AURA, DCV\) | `0x285b7EEa81a5B66B62e7276a24c1e0F83F7409c1` |
+| [Tritium](https://x.com/Tritium_DAOist)      | \(Balancer Maxis\)       | `0xcf4fF1e03830D692F52EB094c52A5A6A2181Ab3F` |
+| [Evan](https://x.com/0xSausageDoge)          | \(Fjord\)                | `0x59693BA1A5764e087CE166ac0E0085Fc071B9ea7` |
+| [Ernesto](https://x.com/eboadom)             | \(BGD\)                  | `0xA39a62304d8d43B35114ad7bd1258B0E50e139b3` |
+| [Mounir](https://x.com/mounibec)             | \(Paraswap\)             | `0x0951FF0835302929d6c0162b3d2495A85e38ec3A` |
+| [Trent McConaghy](https://x.com/trentmc0)    | \(Ocean Protocol\)       | `0x478eC43c6867c2884f87B21c164f1fD1308bD9a3` |
+| [Stefan](https://x.com/StefanDGeorge)        | \(Gnosis\)               | `0x9F7dfAb2222A473284205cdDF08a677726d786A0` |
+| [bonustrack87](https://x.com/bonustrack87)   | \(Snapshot\)             | `0x9BE6ff2A1D5139Eda96339E2644dC1F05d803600` |
+| [nanexcool](https://x.com/nanexcool)         | \(Ethereum OG\)          | `0x823DF0278e4998cD0D06FB857fBD51e85b18A250` |
+| [David Gerai](https://x.com/davgarai)        | \(Raft\)                 | `0xAc1aA53108712d7f38093A67d380aD54B562a650` |
 
 **DAO Multisigs always require 6/11 signers to execute a transaction.**
 

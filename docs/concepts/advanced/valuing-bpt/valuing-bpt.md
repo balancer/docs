@@ -64,7 +64,7 @@ $$ Price*{BPT}=\frac{V}{Supply*{BPT}} \* \prod*{i=0\rightarrow n} \lparen \frac{
 Where V is the WeightedMath invariant calculated as:
 $$ V=\prod*{i=0\rightarrow n}{Balance_i^{weight_i}} $$
 
-Forumla derivation [here](https://twitter.com/0xa9a/status/1539227193808629761).
+Forumla derivation [here](https://x.com/0xa9a/status/1539227193808629761).
 
 ### Stable Pools
 
