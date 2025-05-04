@@ -3,49 +3,145 @@
 # Base Deployment Addresses
 
 ::: info More Details
-For more information on specific deployments as well as changelogs for different contract versions, please see the [deployment tasks](https://github.com/balancer/balancer-deployments/tree/master/v2/tasks).
+For more information on specific deployments as well as changelogs for different contract versions, please see the [deployment tasks](https://github.com/balancer/balancer-deployments/tree/master/tasks).
 :::
-
-## Core
-<DeploymentAddresses chain="base" :active="true" group="core" />
 
 ## Pool Factories
-<DeploymentAddresses chain="base" :active="true" group="poolfactory" />
+
+| Contract                         | Address                                                                                                                     | Deployment                                                                                                                                              |
+|:---------------------------------|:----------------------------------------------------------------------------------------------------------------------------|:--------------------------------------------------------------------------------------------------------------------------------------------------------|
+| ComposableStablePoolFactory (v6) | [0x956CCab09898C0AF2aCa5e6C229c3aD4E93d9288](https://basescan.org//address/0x956CCab09898C0AF2aCa5e6C229c3aD4E93d9288#code) | [20240223-composable-stable-pool-v6](https://github.com/balancer/balancer-deployments/blob/master/tasks/20240223-composable-stable-pool-v6)             |
+| LBPoolFactory                    | [0x662112B8CB18889e81459b92CA0f894a2ef2c1B8](https://basescan.org//address/0x662112B8CB18889e81459b92CA0f894a2ef2c1B8#code) | [20250307-v3-liquidity-bootstrapping-pool](https://github.com/balancer/balancer-deployments/blob/master/tasks/20250307-v3-liquidity-bootstrapping-pool) |
+| ManagedPoolFactory (v2)          | [0x9a62C91626d39D0216b3959112f9D4678E20134d](https://basescan.org//address/0x9a62C91626d39D0216b3959112f9D4678E20134d#code) | [20230411-managed-pool-v2](https://github.com/balancer/balancer-deployments/blob/master/tasks/20230411-managed-pool-v2)                                 |
+| StablePoolFactory (v2)           | [0xC49Ca921c4CD1117162eAEEc0ee969649997950c](https://basescan.org//address/0xC49Ca921c4CD1117162eAEEc0ee969649997950c#code) | [20250324-v3-stable-pool-v2](https://github.com/balancer/balancer-deployments/blob/master/tasks/20250324-v3-stable-pool-v2)                             |
+| StableSurgePoolFactory (v2)      | [0x8e3fEaAB11b7B351e3EA1E01247Ab6ccc847dD52](https://basescan.org//address/0x8e3fEaAB11b7B351e3EA1E01247Ab6ccc847dD52#code) | [20250404-v3-stable-surge-pool-factory-v2](https://github.com/balancer/balancer-deployments/blob/master/tasks/20250404-v3-stable-surge-pool-factory-v2) |
+| WeightedPoolFactory              | [0x5cF4928a3205728bd12830E1840F7DB85c62a4B9](https://basescan.org//address/0x5cF4928a3205728bd12830E1840F7DB85c62a4B9#code) | [20241205-v3-weighted-pool](https://github.com/balancer/balancer-deployments/blob/master/tasks/20241205-v3-weighted-pool)                               |
+| WeightedPoolFactory (v4)         | [0x4C32a8a8fDa4E24139B51b456B42290f51d6A1c4](https://basescan.org//address/0x4C32a8a8fDa4E24139B51b456B42290f51d6A1c4#code) | [20230320-weighted-pool-v4](https://github.com/balancer/balancer-deployments/blob/master/tasks/20230320-weighted-pool-v4)                               |
+
+## Core
+
+| Contract                       | Address                                                                                                                     | Deployment                                                                                                                                                  |
+|:-------------------------------|:----------------------------------------------------------------------------------------------------------------------------|:------------------------------------------------------------------------------------------------------------------------------------------------------------|
+| BalancerQueries                | [0x300Ab2038EAc391f26D9F895dc61F8F66a548833](https://basescan.org//address/0x300Ab2038EAc391f26D9F895dc61F8F66a548833#code) | [20220721-balancer-queries](https://github.com/balancer/balancer-deployments/blob/master/tasks/20220721-balancer-queries)                                   |
+| BalancerRelayer                | [0x7B25d5712fB49627534012327E46455b3fF7b26C](https://basescan.org//address/0x7B25d5712fB49627534012327E46455b3fF7b26C#code) | [20230712-child-chain-gauge-checkpointer](https://github.com/balancer/balancer-deployments/blob/master/tasks/20230712-child-chain-gauge-checkpointer)       |
+| BalancerRelayer (v6)           | [0x7C3C773C878d2238a9b64d8CEE02377BF07ED06a](https://basescan.org//address/0x7C3C773C878d2238a9b64d8CEE02377BF07ED06a#code) | [20231031-batch-relayer-v6](https://github.com/balancer/balancer-deployments/blob/master/tasks/20231031-batch-relayer-v6)                                   |
+| BatchRelayerLibrary            | [0xaf779e58dafb4307b998C7b3C9D3f788DFc80632](https://basescan.org//address/0xaf779e58dafb4307b998C7b3C9D3f788DFc80632#code) | [20230712-child-chain-gauge-checkpointer](https://github.com/balancer/balancer-deployments/blob/master/tasks/20230712-child-chain-gauge-checkpointer)       |
+| BatchRelayerLibrary (v6)       | [0x82416Ce6eA7dD4923d4A3ED70a79B4A432a382C4](https://basescan.org//address/0x82416Ce6eA7dD4923d4A3ED70a79B4A432a382C4#code) | [20231031-batch-relayer-v6](https://github.com/balancer/balancer-deployments/blob/master/tasks/20231031-batch-relayer-v6)                                   |
+| ProtocolFeePercentagesProvider | [0xDEd7Fef7D8eCdcB74F22f0169e1A9EC696e6695d](https://basescan.org//address/0xDEd7Fef7D8eCdcB74F22f0169e1A9EC696e6695d#code) | [20220725-protocol-fee-percentages-provider](https://github.com/balancer/balancer-deployments/blob/master/tasks/20220725-protocol-fee-percentages-provider) |
+| Vault                          | [0xBA12222222228d8Ba445958a75a0704d566BF2C8](https://basescan.org//address/0xBA12222222228d8Ba445958a75a0704d566BF2C8#code) | [20210418-vault](https://github.com/balancer/balancer-deployments/blob/master/tasks/20210418-vault)                                                         |
+| Vault                          | [0xbA1333333333a1BA1108E8412f11850A5C319bA9](https://basescan.org//address/0xbA1333333333a1BA1108E8412f11850A5C319bA9#code) | [20241204-v3-vault](https://github.com/balancer/balancer-deployments/blob/master/tasks/20241204-v3-vault)                                                   |
 
 ## Authorization
-<DeploymentAddresses chain="base" :active="true" group="authorizations" />
 
+| Contract                        | Address                                                                                                                     | Deployment                                                                                                                                          |
+|:--------------------------------|:----------------------------------------------------------------------------------------------------------------------------|:----------------------------------------------------------------------------------------------------------------------------------------------------|
+| Authorizer                      | [0x809B79b53F18E9bc08A961ED4678B901aC93213a](https://basescan.org//address/0x809B79b53F18E9bc08A961ED4678B901aC93213a#code) | [20210418-authorizer](https://github.com/balancer/balancer-deployments/blob/master/tasks/20210418-authorizer)                                       |
+| AuthorizerAdaptor               | [0x6CaD2ea22BFA7F4C14Aae92E47F510Cd5C509bc7](https://basescan.org//address/0x6CaD2ea22BFA7F4C14Aae92E47F510Cd5C509bc7#code) | [20220325-authorizer-adaptor](https://github.com/balancer/balancer-deployments/blob/master/tasks/20220325-authorizer-adaptor)                       |
+| AuthorizerAdaptorEntrypoint     | [0x9129E834e15eA19b6069e8f08a8EcFc13686B8dC](https://basescan.org//address/0x9129E834e15eA19b6069e8f08a8EcFc13686B8dC#code) | [20221124-authorizer-adaptor-entrypoint](https://github.com/balancer/balancer-deployments/blob/master/tasks/20221124-authorizer-adaptor-entrypoint) |
+| AuthorizerWithAdaptorValidation | [0xA69E0Ccf150a29369D8Bbc0B3f510849dB7E8EEE](https://basescan.org//address/0xA69E0Ccf150a29369D8Bbc0B3f510849dB7E8EEE#code) | [20230414-authorizer-wrapper](https://github.com/balancer/balancer-deployments/blob/master/tasks/20230414-authorizer-wrapper)                       |
 
 ## Gauges and Governance
-<DeploymentAddresses chain="base" :active="true" group="gaugesgovernance" />
+
+| Contract                    | Address                                                                                                                     | Deployment                                                                                                                                        |
+|:----------------------------|:----------------------------------------------------------------------------------------------------------------------------|:--------------------------------------------------------------------------------------------------------------------------------------------------|
+| ChildChainGauge (v2)        | [0x9f7E65887413a8497b87bA2058cE6E4Ef4B37013](https://basescan.org//address/0x9f7E65887413a8497b87bA2058cE6E4Ef4B37013#code) | [20230316-child-chain-gauge-factory-v2](https://github.com/balancer/balancer-deployments/blob/master/tasks/20230316-child-chain-gauge-factory-v2) |
+| ChildChainGaugeFactory (v2) | [0xb1a4FE1C6d25a0DDAb47431A92A723dd71d9021f](https://basescan.org//address/0xb1a4FE1C6d25a0DDAb47431A92A723dd71d9021f#code) | [20230316-child-chain-gauge-factory-v2](https://github.com/balancer/balancer-deployments/blob/master/tasks/20230316-child-chain-gauge-factory-v2) |
+| L2LayerZeroBridgeForwarder  | [0x8eA89804145c007e7D226001A96955ad53836087](https://basescan.org//address/0x8eA89804145c007e7D226001A96955ad53836087#code) | [20230404-l2-layer0-bridge-forwarder](https://github.com/balancer/balancer-deployments/blob/master/tasks/20230404-l2-layer0-bridge-forwarder)     |
+| ProtocolFeesCollector       | [0xce88686553686DA562CE7Cea497CE749DA109f9F](https://basescan.org//address/0xce88686553686DA562CE7Cea497CE749DA109f9F#code) | [20210418-vault](https://github.com/balancer/balancer-deployments/blob/master/tasks/20210418-vault)                                               |
+| ProtocolFeesWithdrawer      | [0xAcf05BE5134d64d150d153818F8C67EE36996650](https://basescan.org//address/0xAcf05BE5134d64d150d153818F8C67EE36996650#code) | [20220517-protocol-fee-withdrawer](https://github.com/balancer/balancer-deployments/blob/master/tasks/20220517-protocol-fee-withdrawer)           |
+| VeBoostV2 (v2)              | [0xE42FFA682A26EF8F25891db4882932711D42e467](https://basescan.org//address/0xE42FFA682A26EF8F25891db4882932711D42e467#code) | [20230525-l2-veboost-v2](https://github.com/balancer/balancer-deployments/blob/master/tasks/20230525-l2-veboost-v2)                               |
+| VotingEscrowDelegationProxy | [0xD87F44Df0159DC78029AB9CA7D7e57E7249F5ACD](https://basescan.org//address/0xD87F44Df0159DC78029AB9CA7D7e57E7249F5ACD#code) | [20230316-l2-ve-delegation-proxy](https://github.com/balancer/balancer-deployments/blob/master/tasks/20230316-l2-ve-delegation-proxy)             |
 
 ## Ungrouped Active/Current Contracts
-<DeploymentAddresses chain="base" :active="true" group="ungrouped" />
+    
+    
+| Contract                                       | Address                                                                                                                     | Deployment                                                                                                                                                |
+|:-----------------------------------------------|:----------------------------------------------------------------------------------------------------------------------------|:----------------------------------------------------------------------------------------------------------------------------------------------------------|
+| AggregatorRouter                               | [0x013D4382F291be5688AFBcc741Ee8A24C66B2C92](https://basescan.org//address/0x013D4382F291be5688AFBcc741Ee8A24C66B2C92#code) | [20250218-v3-aggregator-router](https://github.com/balancer/balancer-deployments/blob/master/tasks/20250218-v3-aggregator-router)                         |
+| BalancerContractRegistry                       | [0x81cFAE226343B24BA12EC6521Db2C79E7aeeb310](https://basescan.org//address/0x81cFAE226343B24BA12EC6521Db2C79E7aeeb310#code) | [20250117-v3-contract-registry](https://github.com/balancer/balancer-deployments/blob/master/tasks/20250117-v3-contract-registry)                         |
+| BalancerHelpers                                | [0x8E9aa87E45e92bad84D5F8DD1bff34Fb92637dE9](https://basescan.org//address/0x8E9aa87E45e92bad84D5F8DD1bff34Fb92637dE9#code) | [20210418-vault](https://github.com/balancer/balancer-deployments/blob/master/tasks/20210418-vault)                                                       |
+| BatchRelayerQueryLibrary (v6)                  | [0x41f59C2B8a4d16dBbd900162450FB2B3Bf35cDa6](https://basescan.org//address/0x41f59C2B8a4d16dBbd900162450FB2B3Bf35cDa6#code) | [20231031-batch-relayer-v6](https://github.com/balancer/balancer-deployments/blob/master/tasks/20231031-batch-relayer-v6)                                 |
+| BatchRouter                                    | [0x85a80afee867aDf27B50BdB7b76DA70f1E853062](https://basescan.org//address/0x85a80afee867aDf27B50BdB7b76DA70f1E853062#code) | [20241205-v3-batch-router](https://github.com/balancer/balancer-deployments/blob/master/tasks/20241205-v3-batch-router)                                   |
+| BufferRouter                                   | [0x4132f7AcC9dB7A6cF7BE2Dd3A9DC8b30C7E6E6c8](https://basescan.org//address/0x4132f7AcC9dB7A6cF7BE2Dd3A9DC8b30C7E6E6c8#code) | [20241205-v3-buffer-router](https://github.com/balancer/balancer-deployments/blob/master/tasks/20241205-v3-buffer-router)                                 |
+| ChainlinkRateProviderFactory                   | [0x0A973B6DB16C2ded41dC91691Cc347BEb0e2442B](https://basescan.org//address/0x0A973B6DB16C2ded41dC91691Cc347BEb0e2442B#code) | [20230717-chainlink-rate-provider-factory](https://github.com/balancer/balancer-deployments/blob/master/tasks/20230717-chainlink-rate-provider-factory)   |
+| CompositeLiquidityRouter (v2)                  | [0x9dA18982a33FD0c7051B19F0d7C76F2d5E7e017c](https://basescan.org//address/0x9dA18982a33FD0c7051B19F0d7C76F2d5E7e017c#code) | [20250123-v3-composite-liquidity-router-v2](https://github.com/balancer/balancer-deployments/blob/master/tasks/20250123-v3-composite-liquidity-router-v2) |
+| CowSwapFeeBurner                               | [0x5DbAd78818D4c8958EfF2d5b95b28385A22113Cd](https://basescan.org//address/0x5DbAd78818D4c8958EfF2d5b95b28385A22113Cd#code) | [20250221-v3-cow-swap-fee-burner](https://github.com/balancer/balancer-deployments/blob/master/tasks/20250221-v3-cow-swap-fee-burner)                     |
+| GaugeWorkingBalanceHelper                      | [0xa7d524046ef89de9F8e4f2d7B029f66cCB738d48](https://basescan.org//address/0xa7d524046ef89de9F8e4f2d7B029f66cCB738d48#code) | [20230526-gauge-working-balance-helper](https://github.com/balancer/balancer-deployments/blob/master/tasks/20230526-gauge-working-balance-helper)         |
+| Gyro2CLPPoolFactory                            | [0xf5CDdF6feD9C589f1Be04899F48f9738531daD59](https://basescan.org//address/0xf5CDdF6feD9C589f1Be04899F48f9738531daD59#code) | [20250120-v3-gyro-2clp](https://github.com/balancer/balancer-deployments/blob/master/tasks/20250120-v3-gyro-2clp)                                         |
+| GyroECLPPoolFactory                            | [0x5F6848976C2914403B425F18B589A65772F082E3](https://basescan.org//address/0x5F6848976C2914403B425F18B589A65772F082E3#code) | [20250124-v3-gyro-eclp](https://github.com/balancer/balancer-deployments/blob/master/tasks/20250124-v3-gyro-eclp)                                         |
+| L2BalancerPseudoMinter                         | [0x0c5538098EBe88175078972F514C9e101D325D4F](https://basescan.org//address/0x0c5538098EBe88175078972F514C9e101D325D4F#code) | [20230316-l2-balancer-pseudo-minter](https://github.com/balancer/balancer-deployments/blob/master/tasks/20230316-l2-balancer-pseudo-minter)               |
+| MevCaptureHook                                 | [0x7A2535f5fB47b8e44c02Ef5D9990588313fe8F05](https://basescan.org//address/0x7A2535f5fB47b8e44c02Ef5D9990588313fe8F05#code) | [20250212-v3-mev-capture-hook](https://github.com/balancer/balancer-deployments/blob/master/tasks/20250212-v3-mev-capture-hook)                           |
+| MockGyro2CLPPool                               | [0x1E919A507c9381119a4E9CF43795b100fc8c988b](https://basescan.org//address/0x1E919A507c9381119a4E9CF43795b100fc8c988b#code) | [20250120-v3-gyro-2clp](https://github.com/balancer/balancer-deployments/blob/master/tasks/20250120-v3-gyro-2clp)                                         |
+| MockGyroECLPPool                               | [0x2196Ddb2b51F706857A2934eE79D9FBB463C5372](https://basescan.org//address/0x2196Ddb2b51F706857A2934eE79D9FBB463C5372#code) | [20250124-v3-gyro-eclp](https://github.com/balancer/balancer-deployments/blob/master/tasks/20250124-v3-gyro-eclp)                                         |
+| MockLiquidityBootstrappingPool                 | [0x71528afe250438e184b2deAF7947f0f45931DF3b](https://basescan.org//address/0x71528afe250438e184b2deAF7947f0f45931DF3b#code) | [20211202-no-protocol-fee-lbp](https://github.com/balancer/balancer-deployments/blob/master/tasks/20211202-no-protocol-fee-lbp)                           |
+| MockWrappedBalancerPoolToken                   | [0x3Eae4a1c2E36870A006E816930d9f55DF0a72a13](https://basescan.org//address/0x3Eae4a1c2E36870A006E816930d9f55DF0a72a13#code) | [20250418-v3-wrapped-bpt](https://github.com/balancer/balancer-deployments/blob/master/tasks/20250418-v3-wrapped-bpt)                                     |
+| NoProtocolFeeLiquidityBootstrappingPoolFactory | [0x0c6052254551EAe3ECac77B01DFcf1025418828f](https://basescan.org//address/0x0c6052254551EAe3ECac77B01DFcf1025418828f#code) | [20211202-no-protocol-fee-lbp](https://github.com/balancer/balancer-deployments/blob/master/tasks/20211202-no-protocol-fee-lbp)                           |
+| NullVotingEscrow                               | [0x475D18169BE8a89357A9ee3Ab00ca386d20fA229](https://basescan.org//address/0x475D18169BE8a89357A9ee3Ab00ca386d20fA229#code) | [20230316-l2-ve-delegation-proxy](https://github.com/balancer/balancer-deployments/blob/master/tasks/20230316-l2-ve-delegation-proxy)                     |
+| OmniVotingEscrowChild                          | [0xE241C6e48CA045C7f631600a0f1403b2bFea05ad](https://basescan.org//address/0xE241C6e48CA045C7f631600a0f1403b2bFea05ad#code) | [20230524-base-lz-omni-voting-escrow-child](https://github.com/balancer/balancer-deployments/blob/master/tasks/20230524-base-lz-omni-voting-escrow-child) |
+| ProtocolFeeController                          | [0xa731C23D7c95436Baaae9D52782f966E1ed07cc8](https://basescan.org//address/0xa731C23D7c95436Baaae9D52782f966E1ed07cc8#code) | [20241204-v3-vault](https://github.com/balancer/balancer-deployments/blob/master/tasks/20241204-v3-vault)                                                 |
+| ProtocolFeeController (v2)                     | [0x2FF226CD12C80511a641A6101F071d853A4e5363](https://basescan.org//address/0x2FF226CD12C80511a641A6101F071d853A4e5363#code) | [20250214-v3-protocol-fee-controller-v2](https://github.com/balancer/balancer-deployments/blob/master/tasks/20250214-v3-protocol-fee-controller-v2)       |
+| ProtocolIdRegistry                             | [0x682f0dDBFd41D1272982f64a499Fb62d80e27589](https://basescan.org//address/0x682f0dDBFd41D1272982f64a499Fb62d80e27589#code) | [20230223-protocol-id-registry](https://github.com/balancer/balancer-deployments/blob/master/tasks/20230223-protocol-id-registry)                         |
+| Router (v2)                                    | [0x3f170631ed9821Ca51A59D996aB095162438DC10](https://basescan.org//address/0x3f170631ed9821Ca51A59D996aB095162438DC10#code) | [20250307-v3-router-v2](https://github.com/balancer/balancer-deployments/blob/master/tasks/20250307-v3-router-v2)                                         |
+| StableSurgeHook (v2)                           | [0xDB8d758BCb971e482B2C45f7F8a7740283A1bd3A](https://basescan.org//address/0xDB8d758BCb971e482B2C45f7F8a7740283A1bd3A#code) | [20250403-v3-stable-surge-hook-v2](https://github.com/balancer/balancer-deployments/blob/master/tasks/20250403-v3-stable-surge-hook-v2)                   |
+| TestBalancerToken                              | [0xA1Fa945425eD2e08Acb932E000bCc2f21B21588A](https://basescan.org//address/0xA1Fa945425eD2e08Acb932E000bCc2f21B21588A#code) | [20220325-test-balancer-token](https://github.com/balancer/balancer-deployments/blob/master/tasks/20220325-test-balancer-token)                           |
+| VaultAdmin                                     | [0x35fFB749B273bEb20F40f35EdeB805012C539864](https://basescan.org//address/0x35fFB749B273bEb20F40f35EdeB805012C539864#code) | [20241204-v3-vault](https://github.com/balancer/balancer-deployments/blob/master/tasks/20241204-v3-vault)                                                 |
+| VaultExplorer (v2)                             | [0xaD89051bEd8d96f045E8912aE1672c6C0bF8a85E](https://basescan.org//address/0xaD89051bEd8d96f045E8912aE1672c6C0bF8a85E#code) | [20250407-v3-vault-explorer-v2](https://github.com/balancer/balancer-deployments/blob/master/tasks/20250407-v3-vault-explorer-v2)                         |
+| VaultExtension                                 | [0x0E8B07657D719B86e06bF0806D6729e3D528C9A9](https://basescan.org//address/0x0E8B07657D719B86e06bF0806D6729e3D528C9A9#code) | [20241204-v3-vault](https://github.com/balancer/balancer-deployments/blob/master/tasks/20241204-v3-vault)                                                 |
+| VaultFactory                                   | [0xAc27df81663d139072E615855eF9aB0Af3FBD281](https://basescan.org//address/0xAc27df81663d139072E615855eF9aB0Af3FBD281#code) | [20241204-v3-vault](https://github.com/balancer/balancer-deployments/blob/master/tasks/20241204-v3-vault)                                                 |
+| WrappedBalancerPoolTokenFactory                | [0x22625eEDd92c81a219A83e1dc48f88d54786B017](https://basescan.org//address/0x22625eEDd92c81a219A83e1dc48f88d54786B017#code) | [20250418-v3-wrapped-bpt](https://github.com/balancer/balancer-deployments/blob/master/tasks/20250418-v3-wrapped-bpt)                                     |
+    
+    
+# Deprecated Contracts
 
+These deployments were in use at some point, and may still be in active operation, for example in the case of pools created with old factories.  In general it's better to interact with newer versions when possible.
 
-## Deprecated Contracts
+#### If you can only find the contract you are looking for in the deprecated section and it is not an old pool, try checking the deployments tasks to find it or ask in the Discord before using a deprecated contract.
 
-These deployments were in use at some point, and may still be in active operation, for example in the case of pools created with old factories. In general it's better to interact with newer versions when possible.
-
-::: warning Note
-If you can only find the contract you are looking for in the deprecated section and it is not an old pool, try checking the deployments tasks to find it or ask in the Discord before using a deprecated contract.
-:::
-
-### Core Contracts
-<DeploymentAddresses chain="base" :active="false" group="core" />
-
-### Pool Factories
-<DeploymentAddresses chain="base" :active="false" group="poolfactory" />
-
-### Routers
-<DeploymentAddresses chain="base" :active="false" group="routers" />
-
-### Authorization Contracts
-
-<DeploymentAddresses chain="base" :active="false" group="authorizations" />
-### Gauges and Governance
-<DeploymentAddresses chain="base" :active="false" group="gaugesgovernance" />
-
-### Ungrouped Inactive Contracts
-<DeploymentAddresses chain="base" :active="false" group="ungrouped" />
+    
+| Contract                         | Address                                                                                                                     | Deployment                                                                                                                                          |
+|:---------------------------------|:----------------------------------------------------------------------------------------------------------------------------|:----------------------------------------------------------------------------------------------------------------------------------------------------|
+| AaveLinearPoolFactory (v5)       | [0x687b8C9b41E01Be8B591725fac5d5f52D0564d79](https://basescan.org//address/0x687b8C9b41E01Be8B591725fac5d5f52D0564d79#code) | [20230410-aave-linear-pool-v5](https://github.com/balancer/balancer-deployments/blob/master/tasks/20230410-aave-linear-pool-v5)                     |
+| BalancerRelayer (v5)             | [0x76f7204B62f554b79d444588EDac9dfA7032c71a](https://basescan.org//address/0x76f7204B62f554b79d444588EDac9dfA7032c71a#code) | [20230314-batch-relayer-v5](https://github.com/balancer/balancer-deployments/blob/master/tasks/20230314-batch-relayer-v5)                           |
+| BatchRelayerLibrary (v5)         | [0xDF9B5B00Ef9bca66e9902Bd813dB14e4343Be025](https://basescan.org//address/0xDF9B5B00Ef9bca66e9902Bd813dB14e4343Be025#code) | [20230314-batch-relayer-v5](https://github.com/balancer/balancer-deployments/blob/master/tasks/20230314-batch-relayer-v5)                           |
+| ComposableStablePoolFactory (v5) | [0x8df317a729fcaA260306d7de28888932cb579b88](https://basescan.org//address/0x8df317a729fcaA260306d7de28888932cb579b88#code) | [20230711-composable-stable-pool-v5](https://github.com/balancer/balancer-deployments/blob/master/tasks/20230711-composable-stable-pool-v5)         |
+| CompositeLiquidityRouter         | [0xf23b4DB826DbA14c0e857029dfF076b1c0264843](https://basescan.org//address/0xf23b4DB826DbA14c0e857029dfF076b1c0264843#code) | [20241205-v3-composite-liquidity-router](https://github.com/balancer/balancer-deployments/blob/master/tasks/20241205-v3-composite-liquidity-router) |
+| ERC4626LinearPoolFactory (v4)    | [0x161f4014C27773840ccb4EC1957113e6DD028846](https://basescan.org//address/0x161f4014C27773840ccb4EC1957113e6DD028846#code) | [20230409-erc4626-linear-pool-v4](https://github.com/balancer/balancer-deployments/blob/master/tasks/20230409-erc4626-linear-pool-v4)               |
+| GearboxLinearPoolFactory (v2)    | [0x9Dd32684176638D977883448A4c914311c07bd62](https://basescan.org//address/0x9Dd32684176638D977883448A4c914311c07bd62#code) | [20230409-gearbox-linear-pool-v2](https://github.com/balancer/balancer-deployments/blob/master/tasks/20230409-gearbox-linear-pool-v2)               |
+| MockAaveLendingPool (v5)         | [0x88ED12A90142fDBFe2a28f7d5b48927254C7e760](https://basescan.org//address/0x88ED12A90142fDBFe2a28f7d5b48927254C7e760#code) | [20230410-aave-linear-pool-v5](https://github.com/balancer/balancer-deployments/blob/master/tasks/20230410-aave-linear-pool-v5)                     |
+| MockAaveLinearPool (v5)          | [0x712e23a9B91Aa30EE7997d1c7a1a285d4C7912D1](https://basescan.org//address/0x712e23a9B91Aa30EE7997d1c7a1a285d4C7912D1#code) | [20230410-aave-linear-pool-v5](https://github.com/balancer/balancer-deployments/blob/master/tasks/20230410-aave-linear-pool-v5)                     |
+| MockComposableStablePool (v5)    | [0x7F6E9d6a4093Af9d09bAE92d24bfE42Fc5369aE6](https://basescan.org//address/0x7F6E9d6a4093Af9d09bAE92d24bfE42Fc5369aE6#code) | [20230711-composable-stable-pool-v5](https://github.com/balancer/balancer-deployments/blob/master/tasks/20230711-composable-stable-pool-v5)         |
+| MockERC4626LinearPool (v4)       | [0x1CC2E10C486Ffb7228810B9c7C183d0CD92cdF44](https://basescan.org//address/0x1CC2E10C486Ffb7228810B9c7C183d0CD92cdF44#code) | [20230409-erc4626-linear-pool-v4](https://github.com/balancer/balancer-deployments/blob/master/tasks/20230409-erc4626-linear-pool-v4)               |
+| MockERC4626Token (v4)            | [0x4638ab64022927C9bD5947607459D13f57f1551C](https://basescan.org//address/0x4638ab64022927C9bD5947607459D13f57f1551C#code) | [20230409-erc4626-linear-pool-v4](https://github.com/balancer/balancer-deployments/blob/master/tasks/20230409-erc4626-linear-pool-v4)               |
+| MockGearboxDieselToken (v2)      | [0xb521dD5C8e13fE202626CaC98873FEA2b7760cE4](https://basescan.org//address/0xb521dD5C8e13fE202626CaC98873FEA2b7760cE4#code) | [20230409-gearbox-linear-pool-v2](https://github.com/balancer/balancer-deployments/blob/master/tasks/20230409-gearbox-linear-pool-v2)               |
+| MockGearboxLinearPool (v2)       | [0x3c28a59356B473847AAa5e0b6F561636079213A6](https://basescan.org//address/0x3c28a59356B473847AAa5e0b6F561636079213A6#code) | [20230409-gearbox-linear-pool-v2](https://github.com/balancer/balancer-deployments/blob/master/tasks/20230409-gearbox-linear-pool-v2)               |
+| MockGearboxVault (v2)            | [0x79e435875cCee3Cd9e8da23fE34F9A011d05EA6C](https://basescan.org//address/0x79e435875cCee3Cd9e8da23fE34F9A011d05EA6C#code) | [20230409-gearbox-linear-pool-v2](https://github.com/balancer/balancer-deployments/blob/master/tasks/20230409-gearbox-linear-pool-v2)               |
+| MockStablePool                   | [0xd64da6d2f39Afe68479e68c5bAaEA81FdA39C360](https://basescan.org//address/0xd64da6d2f39Afe68479e68c5bAaEA81FdA39C360#code) | [20241205-v3-stable-pool](https://github.com/balancer/balancer-deployments/blob/master/tasks/20241205-v3-stable-pool)                               |
+| MockStablePool                   | [0xf551bD21bc0E568F2a0f54F9213E3dA7336e5625](https://basescan.org//address/0xf551bD21bc0E568F2a0f54F9213E3dA7336e5625#code) | [20250121-v3-stable-surge](https://github.com/balancer/balancer-deployments/blob/master/tasks/20250121-v3-stable-surge)                             |
+| MockStaticAToken (v5)            | [0x698CaED853bE9cEA96C268f565e2b61D3b2BcDA4](https://basescan.org//address/0x698CaED853bE9cEA96C268f565e2b61D3b2BcDA4#code) | [20230410-aave-linear-pool-v5](https://github.com/balancer/balancer-deployments/blob/master/tasks/20230410-aave-linear-pool-v5)                     |
+| MockYearnLinearPool (v2)         | [0x369877467FC3B6774DE4E11E0c0AbBdE70Eb40FD](https://basescan.org//address/0x369877467FC3B6774DE4E11E0c0AbBdE70Eb40FD#code) | [20230409-yearn-linear-pool-v2](https://github.com/balancer/balancer-deployments/blob/master/tasks/20230409-yearn-linear-pool-v2)                   |
+| MockYearnTokenVault (v2)         | [0xDBf7B9F1d2Bfba14e42709f84dda3187eE410e38](https://basescan.org//address/0xDBf7B9F1d2Bfba14e42709f84dda3187eE410e38#code) | [20230409-yearn-linear-pool-v2](https://github.com/balancer/balancer-deployments/blob/master/tasks/20230409-yearn-linear-pool-v2)                   |
+| ProtocolFeeSweeper               | [0x83E443EF4f9963C77bd860f94500075556668cb8](https://basescan.org//address/0x83E443EF4f9963C77bd860f94500075556668cb8#code) | [20250228-v3-protocol-fee-sweeper](https://github.com/balancer/balancer-deployments/blob/master/tasks/20250228-v3-protocol-fee-sweeper)             |
+| Router                           | [0x76578ecf9a141296Ec657847fb45B0585bCDa3a6](https://basescan.org//address/0x76578ecf9a141296Ec657847fb45B0585bCDa3a6#code) | [20241205-v3-router](https://github.com/balancer/balancer-deployments/blob/master/tasks/20241205-v3-router)                                         |
+| StablePoolFactory                | [0xb9F8AB3ED3F3aCBa64Bc6cd2DcA74B7F38fD7B88](https://basescan.org//address/0xb9F8AB3ED3F3aCBa64Bc6cd2DcA74B7F38fD7B88#code) | [20241205-v3-stable-pool](https://github.com/balancer/balancer-deployments/blob/master/tasks/20241205-v3-stable-pool)                               |
+| StableSurgeHook                  | [0xb2007B8B7E0260042517f635CFd8E6dD2Dd7f007](https://basescan.org//address/0xb2007B8B7E0260042517f635CFd8E6dD2Dd7f007#code) | [20250121-v3-stable-surge](https://github.com/balancer/balancer-deployments/blob/master/tasks/20250121-v3-stable-surge)                             |
+| StableSurgePoolFactory           | [0x4fb47126Fa83A8734991E41B942Ac29A3266C968](https://basescan.org//address/0x4fb47126Fa83A8734991E41B942Ac29A3266C968#code) | [20250121-v3-stable-surge](https://github.com/balancer/balancer-deployments/blob/master/tasks/20250121-v3-stable-surge)                             |
+| VaultExplorer                    | [0x9805dcfD25e6De36bad8fe9D3Fe2c9b44B764102](https://basescan.org//address/0x9805dcfD25e6De36bad8fe9D3Fe2c9b44B764102#code) | [20241205-v3-vault-explorer](https://github.com/balancer/balancer-deployments/blob/master/tasks/20241205-v3-vault-explorer)                         |
+| YearnLinearPoolFactory (v2)      | [0x44d33798dddCdAbc93Fe6a40C80588033Dc502d3](https://basescan.org//address/0x44d33798dddCdAbc93Fe6a40C80588033Dc502d3#code) | [20230409-yearn-linear-pool-v2](https://github.com/balancer/balancer-deployments/blob/master/tasks/20230409-yearn-linear-pool-v2)                   |
+    
+<style scoped>
+table {
+    display: table;
+    width: 100%;
+}
+table th:first-of-type, td:first-of-type {
+    width: 30%;
+}
+table th:nth-of-type(2) {
+    width: 40%;
+}
+td {
+    max-width: 0;
+    overflow: hidden;
+}
+</style>
 
