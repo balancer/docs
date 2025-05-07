@@ -191,7 +191,7 @@
          "0xad3b67BCA8935Cb510C8D18bD45F0b94F54A968f"
       ],
       "Authorized_Caller_Names": [
-         "multisigs/feeManager",
+         "multisigs/fees",
          "one_inch/settlement"
       ]
    },
@@ -203,7 +203,7 @@
          "0x7c68c42De679ffB0f16216154C996C354cF1161B"
       ],
       "Authorized_Caller_Names": [
-         "multisigs/feeManager"
+         "multisigs/fees"
       ]
    },
    {
@@ -214,7 +214,7 @@
          "0x7c68c42De679ffB0f16216154C996C354cF1161B"
       ],
       "Authorized_Caller_Names": [
-         "multisigs/feeManager"
+         "multisigs/fees"
       ]
    },
    {
@@ -287,24 +287,28 @@
    },
    {
       "Fx": "set_reward_distributor(address,address)",
-      "Contract": "ChildChainGauge",
-      "Deployment": "20230316-child-chain-gauge-factory-v2",
+      "Contract": "ChildChainStreamer",
+      "Deployment": "20220413-child-chain-gauge-factory",
       "Authorized_Caller_Addresses": [
-         "0xc38c5f97B34E175FFd35407fc91a937300E33860"
+         "0xc38c5f97B34E175FFd35407fc91a937300E33860",
+         "0x9ff471F9f98F42E5151C7855fD1b5aa906b1AF7e"
       ],
       "Authorized_Caller_Names": [
-         "multisigs/lm"
+         "multisigs/lm",
+         "multisigs/maxi_omni"
       ]
    },
    {
       "Fx": "set_reward_distributor(address,address)",
-      "Contract": "ChildChainStreamer",
-      "Deployment": "20220413-child-chain-gauge-factory",
+      "Contract": "ChildChainGauge",
+      "Deployment": "20230316-child-chain-gauge-factory-v2",
       "Authorized_Caller_Addresses": [
-         "0xc38c5f97B34E175FFd35407fc91a937300E33860"
+         "0xc38c5f97B34E175FFd35407fc91a937300E33860",
+         "0x9ff471F9f98F42E5151C7855fD1b5aa906b1AF7e"
       ],
       "Authorized_Caller_Names": [
-         "multisigs/lm"
+         "multisigs/lm",
+         "multisigs/maxi_omni"
       ]
    },
    {
@@ -328,7 +332,7 @@
          "0x9e5D6427D2cdaDC68870197b099C2Df535Ec3c97"
       ],
       "Authorized_Caller_Names": [
-         "multisigs/feeManager",
+         "multisigs/fees",
          "mimic/smartvault",
          "mimic/smartVaultV3"
       ]
@@ -364,7 +368,7 @@
          "0xad3b67BCA8935Cb510C8D18bD45F0b94F54A968f"
       ],
       "Authorized_Caller_Names": [
-         "multisigs/feeManager",
+         "multisigs/fees",
          "one_inch/settlement"
       ]
    },
@@ -376,7 +380,7 @@
          "0x7c68c42De679ffB0f16216154C996C354cF1161B"
       ],
       "Authorized_Caller_Names": [
-         "multisigs/feeManager"
+         "multisigs/fees"
       ]
    },
    {
@@ -387,7 +391,7 @@
          "0x7c68c42De679ffB0f16216154C996C354cF1161B"
       ],
       "Authorized_Caller_Names": [
-         "multisigs/feeManager"
+         "multisigs/fees"
       ]
    },
    {
@@ -444,7 +448,7 @@
          "0x7c68c42De679ffB0f16216154C996C354cF1161B"
       ],
       "Authorized_Caller_Names": [
-         "multisigs/feeManager"
+         "multisigs/fees"
       ]
    },
    {
@@ -455,7 +459,7 @@
          "0x7c68c42De679ffB0f16216154C996C354cF1161B"
       ],
       "Authorized_Caller_Names": [
-         "multisigs/feeManager"
+         "multisigs/fees"
       ]
    },
    {
@@ -526,7 +530,7 @@
          "0xad3b67BCA8935Cb510C8D18bD45F0b94F54A968f"
       ],
       "Authorized_Caller_Names": [
-         "multisigs/feeManager",
+         "multisigs/fees",
          "one_inch/settlement"
       ]
    },
@@ -549,7 +553,7 @@
          "0x7c68c42De679ffB0f16216154C996C354cF1161B"
       ],
       "Authorized_Caller_Names": [
-         "multisigs/feeManager"
+         "multisigs/fees"
       ]
    },
    {
@@ -560,7 +564,7 @@
          "0x7c68c42De679ffB0f16216154C996C354cF1161B"
       ],
       "Authorized_Caller_Names": [
-         "multisigs/feeManager"
+         "multisigs/fees"
       ]
    },
    {
@@ -620,7 +624,7 @@
          "0xad3b67BCA8935Cb510C8D18bD45F0b94F54A968f"
       ],
       "Authorized_Caller_Names": [
-         "multisigs/feeManager",
+         "multisigs/fees",
          "one_inch/settlement"
       ]
    },
@@ -714,7 +718,7 @@
          "0xad3b67BCA8935Cb510C8D18bD45F0b94F54A968f"
       ],
       "Authorized_Caller_Names": [
-         "multisigs/feeManager",
+         "multisigs/fees",
          "one_inch/settlement"
       ]
    },
@@ -726,7 +730,7 @@
          "0x7c68c42De679ffB0f16216154C996C354cF1161B"
       ],
       "Authorized_Caller_Names": [
-         "multisigs/feeManager"
+         "multisigs/fees"
       ]
    },
    {
@@ -737,7 +741,7 @@
          "0x7c68c42De679ffB0f16216154C996C354cF1161B"
       ],
       "Authorized_Caller_Names": [
-         "multisigs/feeManager"
+         "multisigs/fees"
       ]
    },
    {
@@ -847,7 +851,7 @@
          "0xad3b67BCA8935Cb510C8D18bD45F0b94F54A968f"
       ],
       "Authorized_Caller_Names": [
-         "multisigs/feeManager",
+         "multisigs/fees",
          "one_inch/settlement"
       ]
    },
@@ -908,7 +912,7 @@
          "0xad3b67BCA8935Cb510C8D18bD45F0b94F54A968f"
       ],
       "Authorized_Caller_Names": [
-         "multisigs/feeManager",
+         "multisigs/fees",
          "one_inch/settlement"
       ]
    },
@@ -931,7 +935,7 @@
          "0x7c68c42De679ffB0f16216154C996C354cF1161B"
       ],
       "Authorized_Caller_Names": [
-         "multisigs/feeManager"
+         "multisigs/fees"
       ]
    },
    {
@@ -942,7 +946,7 @@
          "0x7c68c42De679ffB0f16216154C996C354cF1161B"
       ],
       "Authorized_Caller_Names": [
-         "multisigs/feeManager"
+         "multisigs/fees"
       ]
    },
    {
@@ -977,7 +981,7 @@
          "0x7c68c42De679ffB0f16216154C996C354cF1161B"
       ],
       "Authorized_Caller_Names": [
-         "multisigs/feeManager"
+         "multisigs/fees"
       ]
    },
    {
@@ -988,7 +992,7 @@
          "0x7c68c42De679ffB0f16216154C996C354cF1161B"
       ],
       "Authorized_Caller_Names": [
-         "multisigs/feeManager"
+         "multisigs/fees"
       ]
    },
    {
@@ -1010,7 +1014,7 @@
          "0x7c68c42De679ffB0f16216154C996C354cF1161B"
       ],
       "Authorized_Caller_Names": [
-         "multisigs/feeManager"
+         "multisigs/fees"
       ]
    },
    {
@@ -1021,7 +1025,7 @@
          "0x7c68c42De679ffB0f16216154C996C354cF1161B"
       ],
       "Authorized_Caller_Names": [
-         "multisigs/feeManager"
+         "multisigs/fees"
       ]
    },
    {
@@ -1069,7 +1073,7 @@
          "0x7c68c42De679ffB0f16216154C996C354cF1161B"
       ],
       "Authorized_Caller_Names": [
-         "multisigs/feeManager"
+         "multisigs/fees"
       ]
    },
    {
@@ -1080,7 +1084,7 @@
          "0x7c68c42De679ffB0f16216154C996C354cF1161B"
       ],
       "Authorized_Caller_Names": [
-         "multisigs/feeManager"
+         "multisigs/fees"
       ]
    },
    {
@@ -1250,10 +1254,12 @@
       "Contract": "ChildChainGauge",
       "Deployment": "20230316-child-chain-gauge-factory-v2",
       "Authorized_Caller_Addresses": [
-         "0xc38c5f97B34E175FFd35407fc91a937300E33860"
+         "0xc38c5f97B34E175FFd35407fc91a937300E33860",
+         "0x9ff471F9f98F42E5151C7855fD1b5aa906b1AF7e"
       ],
       "Authorized_Caller_Names": [
-         "multisigs/lm"
+         "multisigs/lm",
+         "multisigs/maxi_omni"
       ]
    },
    {
