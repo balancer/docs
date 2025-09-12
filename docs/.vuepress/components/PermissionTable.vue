@@ -143,7 +143,7 @@ export default defineComponent({
         avalanche: 'https://snowtrace.io/address/',
         mode: 'https://modescan.io/address/',
         fraxtal: 'https://fraxscan.io/address/',
-        polygon: 'https://polygonscan.io/address/',
+        polygon: 'https://polygonscan.com/address/',
       };
 
       const explorerUrl =
