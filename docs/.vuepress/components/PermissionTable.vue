@@ -166,10 +166,10 @@ export default defineComponent({
         const [permissionsRes, reverseAddressRes, actionIdsRes] =
           await Promise.all([
             fetch(
-              `https://raw.githubusercontent.com/BalancerMaxis/bal_addresses/main/outputs/permissions/active/${this.chain}.json`
+              `https://raw.githubusercontent.com/balancer/bal_addresses/main/outputs/permissions/active/${this.chain}.json`
             ),
             fetch(
-              `https://raw.githubusercontent.com/BalancerMaxis/bal_addresses/main/outputs/${this.chain}_reverse.json`
+              `https://raw.githubusercontent.com/balancer/bal_addresses/main/outputs/${this.chain}_reverse.json`
             ),
             fetch(
               `https://raw.githubusercontent.com/balancer/balancer-deployments/master/action-ids/${this.chain}/action-ids.json`

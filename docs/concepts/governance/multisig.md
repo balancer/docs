@@ -55,13 +55,13 @@ Further, fee collection and processing requires tokens to be swept from the vaul
 
 All Balancer Multisigs are deployed using [Gnosis Safe](https://gnosis-safe.io/), the most battle-tested Multisig contract on Ethereum. The DAO and Treasury Multisigs with the ability to change protocol operations or access to treasury funds are require 6-of-11 singers to process transactions. The signer structure of the Multisigs may change if voted on through the governance process.
 
-Over time, various functions have been delegated to different Multisigs. The Balancer Maxis working group is responsible for ensuring the application of governance on chain. The [Balancer Multisig Ops Repo](https://github.com/BalancerMaxis/Multisig-ops) describes all Multisigs and operations as well as the external touch-points available.
+Over time, various functions have been delegated to different Multisigs. The Balancer Maxis working group is responsible for ensuring the application of governance on chain. The [Balancer Multisig Ops Repo](https://github.com/balancer/Multisig-ops) describes all Multisigs and operations as well as the external touch-points available.
 
 ## The Signers
 
 Balancer’s Multisig signers are a diverse set of widely respected community members. These are the current signers as of February 2023:
 
-**Note that the list below was last updated in February 2023. The Maxis keep an up-to-date list of their signers and Multisigs [here](https://github.com/BalancerMaxis/Multisig-ops)**
+**Note that the list below was last updated in February 2023. The Maxis keep an up-to-date list of their signers and Multisigs [here](https://github.com/balancer/Multisig-ops)**
 
 ### DAO Multisig Signer Set
 
