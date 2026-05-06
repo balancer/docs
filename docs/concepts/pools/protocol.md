@@ -18,7 +18,7 @@ Even with strong technical teams and innovative iterations on Uniswap's concentr
 
 DEX aggregators have limited resources and limitless sources of liquidity so it can be difficult asking for an integration. 1inch, 0x, Paraswap, and Gnosis solvers all represent very meaningful sources of volume. Balancer has full integration with each aggregator and strong connections to the teams. Through the [Smart Order Router](/concepts/advanced/smart-order-router.md) or custom implementation logic, new pool types and logic can be accessed by aggregator volume in a matter of days after going live.
 
-A great real world example of an AMM built on Balancer seeing success after a quick aggregator integration: [Gyroscope volumes surge after 1inch integration on Polygon.](https://twitter.com/GyroStable/status/1605538356221251586)
+A great real world example of an AMM built on Balancer seeing success after a quick aggregator integration: [Gyroscope volumes surge after 1inch integration on Polygon.](https://x.com/GyroStable/status/1605538356221251586)
 
 ### Arbitrageurs
 
