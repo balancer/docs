@@ -181,6 +181,32 @@
       ]
    },
    {
+      "Fx": "set_reward_distributor(address,address)",
+      "Contract": "ChildChainGauge",
+      "Deployment": "20230316-child-chain-gauge-factory-v2",
+      "Authorized_Caller_Addresses": [
+         "0x09Df1626110803C7b3b07085Ef1E053494155089",
+         "0x9ff471F9f98F42E5151C7855fD1b5aa906b1AF7e"
+      ],
+      "Authorized_Caller_Names": [
+         "multisigs/maxi_beets_lm",
+         "multisigs/maxi_omni"
+      ]
+   },
+   {
+      "Fx": "set_reward_distributor(address,address)",
+      "Contract": "ChildChainStreamer",
+      "Deployment": "20220413-child-chain-gauge-factory",
+      "Authorized_Caller_Addresses": [
+         "0x09Df1626110803C7b3b07085Ef1E053494155089",
+         "0x9ff471F9f98F42E5151C7855fD1b5aa906b1AF7e"
+      ],
+      "Authorized_Caller_Names": [
+         "multisigs/maxi_beets_lm",
+         "multisigs/maxi_omni"
+      ]
+   },
+   {
       "Fx": "denylistToken(address)",
       "Contract": "ProtocolFeesWithdrawer",
       "Deployment": "20220517-protocol-fee-withdrawer",
@@ -205,7 +231,7 @@
       "Authorized_Caller_Names": [
          "UNDEF",
          "mimic/smartvault",
-         "mimic/smartVaultV3"
+         "mimic/smartVaultV2"
       ]
    },
    {
@@ -273,7 +299,7 @@
          "0x09Df1626110803C7b3b07085Ef1E053494155089"
       ],
       "Authorized_Caller_Names": [
-         "multisigs/lm"
+         "multisigs/maxi_beets_lm"
       ]
    },
    {
@@ -284,7 +310,7 @@
          "0x09Df1626110803C7b3b07085Ef1E053494155089"
       ],
       "Authorized_Caller_Names": [
-         "multisigs/lm"
+         "multisigs/maxi_beets_lm"
       ]
    },
    {
@@ -354,7 +380,7 @@
          "0x09Df1626110803C7b3b07085Ef1E053494155089"
       ],
       "Authorized_Caller_Names": [
-         "multisigs/lm"
+         "multisigs/maxi_beets_lm"
       ]
    },
    {
@@ -365,7 +391,7 @@
          "0x09Df1626110803C7b3b07085Ef1E053494155089"
       ],
       "Authorized_Caller_Names": [
-         "multisigs/lm"
+         "multisigs/maxi_beets_lm"
       ]
    },
    {
@@ -376,7 +402,7 @@
          "0x09Df1626110803C7b3b07085Ef1E053494155089"
       ],
       "Authorized_Caller_Names": [
-         "multisigs/lm"
+         "multisigs/maxi_beets_lm"
       ]
    },
    {
@@ -409,7 +435,7 @@
          "0x09Df1626110803C7b3b07085Ef1E053494155089"
       ],
       "Authorized_Caller_Names": [
-         "multisigs/lm"
+         "multisigs/maxi_beets_lm"
       ]
    },
    {
@@ -420,7 +446,7 @@
          "0x09Df1626110803C7b3b07085Ef1E053494155089"
       ],
       "Authorized_Caller_Names": [
-         "multisigs/lm"
+         "multisigs/maxi_beets_lm"
       ]
    },
    {
@@ -431,7 +457,7 @@
          "0x09Df1626110803C7b3b07085Ef1E053494155089"
       ],
       "Authorized_Caller_Names": [
-         "multisigs/lm"
+         "multisigs/maxi_beets_lm"
       ]
    },
    {
@@ -479,7 +505,7 @@
          "0x09Df1626110803C7b3b07085Ef1E053494155089"
       ],
       "Authorized_Caller_Names": [
-         "multisigs/lm"
+         "multisigs/maxi_beets_lm"
       ]
    },
    {
@@ -571,7 +597,7 @@
          "0x09Df1626110803C7b3b07085Ef1E053494155089"
       ],
       "Authorized_Caller_Names": [
-         "multisigs/lm"
+         "multisigs/maxi_beets_lm"
       ]
    },
    {
@@ -582,7 +608,7 @@
          "0x09Df1626110803C7b3b07085Ef1E053494155089"
       ],
       "Authorized_Caller_Names": [
-         "multisigs/lm"
+         "multisigs/maxi_beets_lm"
       ]
    },
    {
@@ -593,7 +619,7 @@
          "0x09Df1626110803C7b3b07085Ef1E053494155089"
       ],
       "Authorized_Caller_Names": [
-         "multisigs/lm"
+         "multisigs/maxi_beets_lm"
       ]
    },
    {
@@ -702,7 +728,7 @@
          "0x09Df1626110803C7b3b07085Ef1E053494155089"
       ],
       "Authorized_Caller_Names": [
-         "multisigs/lm"
+         "multisigs/maxi_beets_lm"
       ]
    },
    {
@@ -761,7 +787,7 @@
          "0x09Df1626110803C7b3b07085Ef1E053494155089"
       ],
       "Authorized_Caller_Names": [
-         "multisigs/lm"
+         "multisigs/maxi_beets_lm"
       ]
    },
    {
@@ -772,7 +798,7 @@
          "0x09Df1626110803C7b3b07085Ef1E053494155089"
       ],
       "Authorized_Caller_Names": [
-         "multisigs/lm"
+         "multisigs/maxi_beets_lm"
       ]
    },
    {
@@ -783,7 +809,7 @@
          "0x09Df1626110803C7b3b07085Ef1E053494155089"
       ],
       "Authorized_Caller_Names": [
-         "multisigs/lm"
+         "multisigs/maxi_beets_lm"
       ]
    },
    {
@@ -818,7 +844,7 @@
          "0x09Df1626110803C7b3b07085Ef1E053494155089"
       ],
       "Authorized_Caller_Names": [
-         "multisigs/lm"
+         "multisigs/maxi_beets_lm"
       ]
    },
    {
@@ -829,7 +855,7 @@
          "0x09Df1626110803C7b3b07085Ef1E053494155089"
       ],
       "Authorized_Caller_Names": [
-         "multisigs/lm"
+         "multisigs/maxi_beets_lm"
       ]
    },
    {
@@ -851,7 +877,7 @@
          "0x09Df1626110803C7b3b07085Ef1E053494155089"
       ],
       "Authorized_Caller_Names": [
-         "multisigs/lm"
+         "multisigs/maxi_beets_lm"
       ]
    },
    {
@@ -862,7 +888,7 @@
          "0x09Df1626110803C7b3b07085Ef1E053494155089"
       ],
       "Authorized_Caller_Names": [
-         "multisigs/lm"
+         "multisigs/maxi_beets_lm"
       ]
    },
    {
@@ -910,7 +936,7 @@
          "0x09Df1626110803C7b3b07085Ef1E053494155089"
       ],
       "Authorized_Caller_Names": [
-         "multisigs/lm"
+         "multisigs/maxi_beets_lm"
       ]
    },
    {
@@ -921,7 +947,7 @@
          "0x09Df1626110803C7b3b07085Ef1E053494155089"
       ],
       "Authorized_Caller_Names": [
-         "multisigs/lm"
+         "multisigs/maxi_beets_lm"
       ]
    },
    {
@@ -932,7 +958,7 @@
          "0x09Df1626110803C7b3b07085Ef1E053494155089"
       ],
       "Authorized_Caller_Names": [
-         "multisigs/lm"
+         "multisigs/maxi_beets_lm"
       ]
    },
    {
@@ -943,7 +969,7 @@
          "0x09Df1626110803C7b3b07085Ef1E053494155089"
       ],
       "Authorized_Caller_Names": [
-         "multisigs/lm"
+         "multisigs/maxi_beets_lm"
       ]
    },
    {
@@ -1000,7 +1026,7 @@
          "0x09Df1626110803C7b3b07085Ef1E053494155089"
       ],
       "Authorized_Caller_Names": [
-         "multisigs/lm"
+         "multisigs/maxi_beets_lm"
       ]
    },
    {
@@ -1057,7 +1083,7 @@
          "0x09Df1626110803C7b3b07085Ef1E053494155089"
       ],
       "Authorized_Caller_Names": [
-         "multisigs/lm"
+         "multisigs/maxi_beets_lm"
       ]
    },
    {
@@ -1068,7 +1094,7 @@
          "0x09Df1626110803C7b3b07085Ef1E053494155089"
       ],
       "Authorized_Caller_Names": [
-         "multisigs/lm"
+         "multisigs/maxi_beets_lm"
       ]
    },
    {
@@ -1079,7 +1105,7 @@
          "0x09Df1626110803C7b3b07085Ef1E053494155089"
       ],
       "Authorized_Caller_Names": [
-         "multisigs/lm"
+         "multisigs/maxi_beets_lm"
       ]
    },
    {
@@ -1087,10 +1113,12 @@
       "Contract": "ChildChainGauge",
       "Deployment": "20230316-child-chain-gauge-factory-v2",
       "Authorized_Caller_Addresses": [
-         "0x09Df1626110803C7b3b07085Ef1E053494155089"
+         "0x09Df1626110803C7b3b07085Ef1E053494155089",
+         "0x9ff471F9f98F42E5151C7855fD1b5aa906b1AF7e"
       ],
       "Authorized_Caller_Names": [
-         "multisigs/lm"
+         "multisigs/maxi_beets_lm",
+         "multisigs/maxi_omni"
       ]
    },
    {
@@ -1171,7 +1199,7 @@
          "0x09Df1626110803C7b3b07085Ef1E053494155089"
       ],
       "Authorized_Caller_Names": [
-         "multisigs/lm"
+         "multisigs/maxi_beets_lm"
       ]
    },
    {
@@ -1182,7 +1210,7 @@
          "0x09Df1626110803C7b3b07085Ef1E053494155089"
       ],
       "Authorized_Caller_Names": [
-         "multisigs/lm"
+         "multisigs/maxi_beets_lm"
       ]
    },
    {
@@ -1228,7 +1256,7 @@
          "0x09Df1626110803C7b3b07085Ef1E053494155089"
       ],
       "Authorized_Caller_Names": [
-         "multisigs/lm"
+         "multisigs/maxi_beets_lm"
       ]
    },
    {
@@ -1239,7 +1267,7 @@
          "0x09Df1626110803C7b3b07085Ef1E053494155089"
       ],
       "Authorized_Caller_Names": [
-         "multisigs/lm"
+         "multisigs/maxi_beets_lm"
       ]
    },
    {
@@ -1285,7 +1313,7 @@
          "0x09Df1626110803C7b3b07085Ef1E053494155089"
       ],
       "Authorized_Caller_Names": [
-         "multisigs/lm"
+         "multisigs/maxi_beets_lm"
       ]
    },
    {
@@ -1296,7 +1324,7 @@
          "0x09Df1626110803C7b3b07085Ef1E053494155089"
       ],
       "Authorized_Caller_Names": [
-         "multisigs/lm"
+         "multisigs/maxi_beets_lm"
       ]
    },
    {
@@ -1309,7 +1337,7 @@
       ],
       "Authorized_Caller_Names": [
          "multisigs/emergency",
-         "multisigs/lm"
+         "multisigs/maxi_beets_lm"
       ]
    },
    {
@@ -1355,7 +1383,7 @@
          "0x09Df1626110803C7b3b07085Ef1E053494155089"
       ],
       "Authorized_Caller_Names": [
-         "multisigs/lm"
+         "multisigs/maxi_beets_lm"
       ]
    },
    {
@@ -1366,7 +1394,7 @@
          "0x09Df1626110803C7b3b07085Ef1E053494155089"
       ],
       "Authorized_Caller_Names": [
-         "multisigs/lm"
+         "multisigs/maxi_beets_lm"
       ]
    },
    {
@@ -1377,7 +1405,7 @@
          "0x09Df1626110803C7b3b07085Ef1E053494155089"
       ],
       "Authorized_Caller_Names": [
-         "multisigs/lm"
+         "multisigs/maxi_beets_lm"
       ]
    },
    {
@@ -1434,7 +1462,7 @@
          "0x09Df1626110803C7b3b07085Ef1E053494155089"
       ],
       "Authorized_Caller_Names": [
-         "multisigs/lm"
+         "multisigs/maxi_beets_lm"
       ]
    },
    {
@@ -1445,7 +1473,7 @@
          "0x09Df1626110803C7b3b07085Ef1E053494155089"
       ],
       "Authorized_Caller_Names": [
-         "multisigs/lm"
+         "multisigs/maxi_beets_lm"
       ]
    },
    {
@@ -1456,7 +1484,612 @@
          "0x09Df1626110803C7b3b07085Ef1E053494155089"
       ],
       "Authorized_Caller_Names": [
-         "multisigs/lm"
+         "multisigs/maxi_beets_lm"
+      ]
+   },
+   {
+      "Fx": "setGlobalProtocolSwapFeePercentage(uint256)",
+      "Contract": "ProtocolFeeController",
+      "Deployment": "20250214-v3-protocol-fee-controller-v2",
+      "Authorized_Caller_Addresses": [
+         "0x09Df1626110803C7b3b07085Ef1E053494155089"
+      ],
+      "Authorized_Caller_Names": [
+         "multisigs/maxi_beets_lm"
+      ]
+   },
+   {
+      "Fx": "setGlobalProtocolSwapFeePercentage(uint256)",
+      "Contract": "ProtocolFeeController",
+      "Deployment": "20241204-v3-vault",
+      "Authorized_Caller_Addresses": [
+         "0x09Df1626110803C7b3b07085Ef1E053494155089"
+      ],
+      "Authorized_Caller_Names": [
+         "multisigs/maxi_beets_lm"
+      ]
+   },
+   {
+      "Fx": "setGlobalProtocolYieldFeePercentage(uint256)",
+      "Contract": "ProtocolFeeController",
+      "Deployment": "20250214-v3-protocol-fee-controller-v2",
+      "Authorized_Caller_Addresses": [
+         "0x09Df1626110803C7b3b07085Ef1E053494155089"
+      ],
+      "Authorized_Caller_Names": [
+         "multisigs/maxi_beets_lm"
+      ]
+   },
+   {
+      "Fx": "setGlobalProtocolYieldFeePercentage(uint256)",
+      "Contract": "ProtocolFeeController",
+      "Deployment": "20241204-v3-vault",
+      "Authorized_Caller_Addresses": [
+         "0x09Df1626110803C7b3b07085Ef1E053494155089"
+      ],
+      "Authorized_Caller_Names": [
+         "multisigs/maxi_beets_lm"
+      ]
+   },
+   {
+      "Fx": "setProtocolSwapFeePercentage(address,uint256)",
+      "Contract": "ProtocolFeeController",
+      "Deployment": "20241204-v3-vault",
+      "Authorized_Caller_Addresses": [
+         "0x09Df1626110803C7b3b07085Ef1E053494155089"
+      ],
+      "Authorized_Caller_Names": [
+         "multisigs/maxi_beets_lm"
+      ]
+   },
+   {
+      "Fx": "setProtocolSwapFeePercentage(address,uint256)",
+      "Contract": "ProtocolFeeController",
+      "Deployment": "20250214-v3-protocol-fee-controller-v2",
+      "Authorized_Caller_Addresses": [
+         "0x09Df1626110803C7b3b07085Ef1E053494155089"
+      ],
+      "Authorized_Caller_Names": [
+         "multisigs/maxi_beets_lm"
+      ]
+   },
+   {
+      "Fx": "setProtocolYieldFeePercentage(address,uint256)",
+      "Contract": "ProtocolFeeController",
+      "Deployment": "20241204-v3-vault",
+      "Authorized_Caller_Addresses": [
+         "0x09Df1626110803C7b3b07085Ef1E053494155089"
+      ],
+      "Authorized_Caller_Names": [
+         "multisigs/maxi_beets_lm"
+      ]
+   },
+   {
+      "Fx": "setProtocolYieldFeePercentage(address,uint256)",
+      "Contract": "ProtocolFeeController",
+      "Deployment": "20250214-v3-protocol-fee-controller-v2",
+      "Authorized_Caller_Addresses": [
+         "0x09Df1626110803C7b3b07085Ef1E053494155089"
+      ],
+      "Authorized_Caller_Names": [
+         "multisigs/maxi_beets_lm"
+      ]
+   },
+   {
+      "Fx": "withdrawProtocolFees(address,address)",
+      "Contract": "ProtocolFeeController",
+      "Deployment": "20250214-v3-protocol-fee-controller-v2",
+      "Authorized_Caller_Addresses": [
+         "0x09Df1626110803C7b3b07085Ef1E053494155089"
+      ],
+      "Authorized_Caller_Names": [
+         "multisigs/maxi_beets_lm"
+      ]
+   },
+   {
+      "Fx": "withdrawProtocolFees(address,address)",
+      "Contract": "ProtocolFeeController",
+      "Deployment": "20241204-v3-vault",
+      "Authorized_Caller_Addresses": [
+         "0x09Df1626110803C7b3b07085Ef1E053494155089"
+      ],
+      "Authorized_Caller_Names": [
+         "multisigs/maxi_beets_lm"
+      ]
+   },
+   {
+      "Fx": "withdrawProtocolFeesForToken(address,address,address)",
+      "Contract": "ProtocolFeeController",
+      "Deployment": "20250214-v3-protocol-fee-controller-v2",
+      "Authorized_Caller_Addresses": [
+         "0x09Df1626110803C7b3b07085Ef1E053494155089"
+      ],
+      "Authorized_Caller_Names": [
+         "multisigs/maxi_beets_lm"
+      ]
+   },
+   {
+      "Fx": "withdrawProtocolFeesForToken(address,address,address)",
+      "Contract": "ProtocolFeeController",
+      "Deployment": "20241204-v3-vault",
+      "Authorized_Caller_Addresses": [
+         "0x09Df1626110803C7b3b07085Ef1E053494155089"
+      ],
+      "Authorized_Caller_Names": [
+         "multisigs/maxi_beets_lm"
+      ]
+   },
+   {
+      "Fx": "disableQuery()",
+      "Contract": "VaultAdmin",
+      "Deployment": "20241204-v3-vault",
+      "Authorized_Caller_Addresses": [
+         "0xd4c87b33afcE39F1E3F4aF1ce8fFFF7241d9128B"
+      ],
+      "Authorized_Caller_Names": [
+         "multisigs/emergency"
+      ]
+   },
+   {
+      "Fx": "disableQueryPermanently()",
+      "Contract": "VaultAdmin",
+      "Deployment": "20241204-v3-vault",
+      "Authorized_Caller_Addresses": [
+         "0xd4c87b33afcE39F1E3F4aF1ce8fFFF7241d9128B"
+      ],
+      "Authorized_Caller_Names": [
+         "multisigs/emergency"
+      ]
+   },
+   {
+      "Fx": "disableRecoveryMode(address)",
+      "Contract": "VaultAdmin",
+      "Deployment": "20241204-v3-vault",
+      "Authorized_Caller_Addresses": [
+         "0xd4c87b33afcE39F1E3F4aF1ce8fFFF7241d9128B"
+      ],
+      "Authorized_Caller_Names": [
+         "multisigs/emergency"
+      ]
+   },
+   {
+      "Fx": "enableQuery()",
+      "Contract": "VaultAdmin",
+      "Deployment": "20241204-v3-vault",
+      "Authorized_Caller_Addresses": [
+         "0xd4c87b33afcE39F1E3F4aF1ce8fFFF7241d9128B"
+      ],
+      "Authorized_Caller_Names": [
+         "multisigs/emergency"
+      ]
+   },
+   {
+      "Fx": "enableRecoveryMode(address)",
+      "Contract": "VaultAdmin",
+      "Deployment": "20241204-v3-vault",
+      "Authorized_Caller_Addresses": [
+         "0xd4c87b33afcE39F1E3F4aF1ce8fFFF7241d9128B"
+      ],
+      "Authorized_Caller_Names": [
+         "multisigs/emergency"
+      ]
+   },
+   {
+      "Fx": "pausePool(address)",
+      "Contract": "VaultAdmin",
+      "Deployment": "20241204-v3-vault",
+      "Authorized_Caller_Addresses": [
+         "0xd4c87b33afcE39F1E3F4aF1ce8fFFF7241d9128B"
+      ],
+      "Authorized_Caller_Names": [
+         "multisigs/emergency"
+      ]
+   },
+   {
+      "Fx": "pauseVault()",
+      "Contract": "VaultAdmin",
+      "Deployment": "20241204-v3-vault",
+      "Authorized_Caller_Addresses": [
+         "0xd4c87b33afcE39F1E3F4aF1ce8fFFF7241d9128B"
+      ],
+      "Authorized_Caller_Names": [
+         "multisigs/emergency"
+      ]
+   },
+   {
+      "Fx": "pauseVaultBuffers()",
+      "Contract": "VaultAdmin",
+      "Deployment": "20241204-v3-vault",
+      "Authorized_Caller_Addresses": [
+         "0xd4c87b33afcE39F1E3F4aF1ce8fFFF7241d9128B"
+      ],
+      "Authorized_Caller_Names": [
+         "multisigs/emergency"
+      ]
+   },
+   {
+      "Fx": "setProtocolFeeController(address)",
+      "Contract": "VaultAdmin",
+      "Deployment": "20241204-v3-vault",
+      "Authorized_Caller_Addresses": [
+         "0x09Df1626110803C7b3b07085Ef1E053494155089"
+      ],
+      "Authorized_Caller_Names": [
+         "multisigs/maxi_beets_lm"
+      ]
+   },
+   {
+      "Fx": "setStaticSwapFeePercentage(address,uint256)",
+      "Contract": "VaultAdmin",
+      "Deployment": "20241204-v3-vault",
+      "Authorized_Caller_Addresses": [
+         "0x09Df1626110803C7b3b07085Ef1E053494155089"
+      ],
+      "Authorized_Caller_Names": [
+         "multisigs/maxi_beets_lm"
+      ]
+   },
+   {
+      "Fx": "unpausePool(address)",
+      "Contract": "VaultAdmin",
+      "Deployment": "20241204-v3-vault",
+      "Authorized_Caller_Addresses": [
+         "0xd4c87b33afcE39F1E3F4aF1ce8fFFF7241d9128B"
+      ],
+      "Authorized_Caller_Names": [
+         "multisigs/emergency"
+      ]
+   },
+   {
+      "Fx": "unpauseVault()",
+      "Contract": "VaultAdmin",
+      "Deployment": "20241204-v3-vault",
+      "Authorized_Caller_Addresses": [
+         "0xd4c87b33afcE39F1E3F4aF1ce8fFFF7241d9128B"
+      ],
+      "Authorized_Caller_Names": [
+         "multisigs/emergency"
+      ]
+   },
+   {
+      "Fx": "unpauseVaultBuffers()",
+      "Contract": "VaultAdmin",
+      "Deployment": "20241204-v3-vault",
+      "Authorized_Caller_Addresses": [
+         "0xd4c87b33afcE39F1E3F4aF1ce8fFFF7241d9128B"
+      ],
+      "Authorized_Caller_Names": [
+         "multisigs/emergency"
+      ]
+   },
+   {
+      "Fx": "disable()",
+      "Contract": "WeightedPoolFactory",
+      "Deployment": "20241205-v3-weighted-pool",
+      "Authorized_Caller_Addresses": [
+         "0xd4c87b33afcE39F1E3F4aF1ce8fFFF7241d9128B"
+      ],
+      "Authorized_Caller_Names": [
+         "multisigs/emergency"
+      ]
+   },
+   {
+      "Fx": "disable()",
+      "Contract": "GyroECLPPoolFactory",
+      "Deployment": "20250124-v3-gyro-eclp",
+      "Authorized_Caller_Addresses": [
+         "0xd4c87b33afcE39F1E3F4aF1ce8fFFF7241d9128B"
+      ],
+      "Authorized_Caller_Names": [
+         "multisigs/emergency"
+      ]
+   },
+   {
+      "Fx": "disable()",
+      "Contract": "LBPoolFactory",
+      "Deployment": "20250307-v3-liquidity-bootstrapping-pool",
+      "Authorized_Caller_Addresses": [
+         "0xd4c87b33afcE39F1E3F4aF1ce8fFFF7241d9128B"
+      ],
+      "Authorized_Caller_Names": [
+         "multisigs/emergency"
+      ]
+   },
+   {
+      "Fx": "disable()",
+      "Contract": "StablePoolFactory",
+      "Deployment": "20250324-v3-stable-pool-v2",
+      "Authorized_Caller_Addresses": [
+         "0xd4c87b33afcE39F1E3F4aF1ce8fFFF7241d9128B"
+      ],
+      "Authorized_Caller_Names": [
+         "multisigs/emergency"
+      ]
+   },
+   {
+      "Fx": "startAmplificationParameterUpdate(uint256,uint256)",
+      "Contract": "StablePool",
+      "Deployment": "20250324-v3-stable-pool-v2",
+      "Authorized_Caller_Addresses": [
+         "0x09Df1626110803C7b3b07085Ef1E053494155089"
+      ],
+      "Authorized_Caller_Names": [
+         "multisigs/maxi_beets_lm"
+      ]
+   },
+   {
+      "Fx": "stopAmplificationParameterUpdate()",
+      "Contract": "StablePool",
+      "Deployment": "20250324-v3-stable-pool-v2",
+      "Authorized_Caller_Addresses": [
+         "0x09Df1626110803C7b3b07085Ef1E053494155089"
+      ],
+      "Authorized_Caller_Names": [
+         "multisigs/maxi_beets_lm"
+      ]
+   },
+   {
+      "Fx": "addMevTaxExemptSenders(address[])",
+      "Contract": "MevCaptureHook",
+      "Deployment": "20250212-v3-mev-capture-hook",
+      "Authorized_Caller_Addresses": [
+         "0x09Df1626110803C7b3b07085Ef1E053494155089"
+      ],
+      "Authorized_Caller_Names": [
+         "multisigs/maxi_beets_lm"
+      ]
+   },
+   {
+      "Fx": "disableMevTax()",
+      "Contract": "MevCaptureHook",
+      "Deployment": "20250212-v3-mev-capture-hook",
+      "Authorized_Caller_Addresses": [
+         "0x09Df1626110803C7b3b07085Ef1E053494155089"
+      ],
+      "Authorized_Caller_Names": [
+         "multisigs/maxi_beets_lm"
+      ]
+   },
+   {
+      "Fx": "enableMevTax()",
+      "Contract": "MevCaptureHook",
+      "Deployment": "20250212-v3-mev-capture-hook",
+      "Authorized_Caller_Addresses": [
+         "0x09Df1626110803C7b3b07085Ef1E053494155089"
+      ],
+      "Authorized_Caller_Names": [
+         "multisigs/maxi_beets_lm"
+      ]
+   },
+   {
+      "Fx": "removeMevTaxExemptSenders(address[])",
+      "Contract": "MevCaptureHook",
+      "Deployment": "20250212-v3-mev-capture-hook",
+      "Authorized_Caller_Addresses": [
+         "0x09Df1626110803C7b3b07085Ef1E053494155089"
+      ],
+      "Authorized_Caller_Names": [
+         "multisigs/maxi_beets_lm"
+      ]
+   },
+   {
+      "Fx": "setDefaultMevTaxMultiplier(uint256)",
+      "Contract": "MevCaptureHook",
+      "Deployment": "20250212-v3-mev-capture-hook",
+      "Authorized_Caller_Addresses": [
+         "0x09Df1626110803C7b3b07085Ef1E053494155089"
+      ],
+      "Authorized_Caller_Names": [
+         "multisigs/maxi_beets_lm"
+      ]
+   },
+   {
+      "Fx": "setDefaultMevTaxThreshold(uint256)",
+      "Contract": "MevCaptureHook",
+      "Deployment": "20250212-v3-mev-capture-hook",
+      "Authorized_Caller_Addresses": [
+         "0x09Df1626110803C7b3b07085Ef1E053494155089"
+      ],
+      "Authorized_Caller_Names": [
+         "multisigs/maxi_beets_lm"
+      ]
+   },
+   {
+      "Fx": "setMaxMevSwapFeePercentage(uint256)",
+      "Contract": "MevCaptureHook",
+      "Deployment": "20250212-v3-mev-capture-hook",
+      "Authorized_Caller_Addresses": [
+         "0x09Df1626110803C7b3b07085Ef1E053494155089"
+      ],
+      "Authorized_Caller_Names": [
+         "multisigs/maxi_beets_lm"
+      ]
+   },
+   {
+      "Fx": "setPoolMevTaxMultiplier(address,uint256)",
+      "Contract": "MevCaptureHook",
+      "Deployment": "20250212-v3-mev-capture-hook",
+      "Authorized_Caller_Addresses": [
+         "0x09Df1626110803C7b3b07085Ef1E053494155089"
+      ],
+      "Authorized_Caller_Names": [
+         "multisigs/maxi_beets_lm"
+      ]
+   },
+   {
+      "Fx": "setPoolMevTaxThreshold(address,uint256)",
+      "Contract": "MevCaptureHook",
+      "Deployment": "20250212-v3-mev-capture-hook",
+      "Authorized_Caller_Addresses": [
+         "0x09Df1626110803C7b3b07085Ef1E053494155089"
+      ],
+      "Authorized_Caller_Names": [
+         "multisigs/maxi_beets_lm"
+      ]
+   },
+   {
+      "Fx": "disable()",
+      "Contract": "Gyro2CLPPoolFactory",
+      "Deployment": "20250120-v3-gyro-2clp",
+      "Authorized_Caller_Addresses": [
+         "0xd4c87b33afcE39F1E3F4aF1ce8fFFF7241d9128B"
+      ],
+      "Authorized_Caller_Names": [
+         "multisigs/emergency"
+      ]
+   },
+   {
+      "Fx": "setMaxSurgeFeePercentage(address,uint256)",
+      "Contract": "StableSurgeHook",
+      "Deployment": "20250403-v3-stable-surge-hook-v2",
+      "Authorized_Caller_Addresses": [
+         "0x09Df1626110803C7b3b07085Ef1E053494155089"
+      ],
+      "Authorized_Caller_Names": [
+         "multisigs/maxi_beets_lm"
+      ]
+   },
+   {
+      "Fx": "setSurgeThresholdPercentage(address,uint256)",
+      "Contract": "StableSurgeHook",
+      "Deployment": "20250403-v3-stable-surge-hook-v2",
+      "Authorized_Caller_Addresses": [
+         "0x09Df1626110803C7b3b07085Ef1E053494155089"
+      ],
+      "Authorized_Caller_Names": [
+         "multisigs/maxi_beets_lm"
+      ]
+   },
+   {
+      "Fx": "addOrUpdateBalancerContractAlias(string,address)",
+      "Contract": "BalancerContractRegistry",
+      "Deployment": "20250117-v3-contract-registry",
+      "Authorized_Caller_Addresses": [
+         "0x09Df1626110803C7b3b07085Ef1E053494155089"
+      ],
+      "Authorized_Caller_Names": [
+         "multisigs/maxi_beets_lm"
+      ]
+   },
+   {
+      "Fx": "deprecateBalancerContract(address)",
+      "Contract": "BalancerContractRegistry",
+      "Deployment": "20250117-v3-contract-registry",
+      "Authorized_Caller_Addresses": [
+         "0x09Df1626110803C7b3b07085Ef1E053494155089"
+      ],
+      "Authorized_Caller_Names": [
+         "multisigs/maxi_beets_lm"
+      ]
+   },
+   {
+      "Fx": "deregisterBalancerContract(string)",
+      "Contract": "BalancerContractRegistry",
+      "Deployment": "20250117-v3-contract-registry",
+      "Authorized_Caller_Addresses": [
+         "0x09Df1626110803C7b3b07085Ef1E053494155089"
+      ],
+      "Authorized_Caller_Names": [
+         "multisigs/maxi_beets_lm"
+      ]
+   },
+   {
+      "Fx": "registerBalancerContract(uint8,string,address)",
+      "Contract": "BalancerContractRegistry",
+      "Deployment": "20250117-v3-contract-registry",
+      "Authorized_Caller_Addresses": [
+         "0x09Df1626110803C7b3b07085Ef1E053494155089"
+      ],
+      "Authorized_Caller_Names": [
+         "multisigs/maxi_beets_lm"
+      ]
+   },
+   {
+      "Fx": "disable()",
+      "Contract": "StableSurgePoolFactory",
+      "Deployment": "20250404-v3-stable-surge-pool-factory-v2",
+      "Authorized_Caller_Addresses": [
+         "0xd4c87b33afcE39F1E3F4aF1ce8fFFF7241d9128B"
+      ],
+      "Authorized_Caller_Names": [
+         "multisigs/emergency"
+      ]
+   },
+   {
+      "Fx": "startAmplificationParameterUpdate(uint256,uint256)",
+      "Contract": "StablePool",
+      "Deployment": "20250404-v3-stable-surge-pool-factory-v2",
+      "Authorized_Caller_Addresses": [
+         "0x09Df1626110803C7b3b07085Ef1E053494155089"
+      ],
+      "Authorized_Caller_Names": [
+         "multisigs/maxi_beets_lm"
+      ]
+   },
+   {
+      "Fx": "stopAmplificationParameterUpdate()",
+      "Contract": "StablePool",
+      "Deployment": "20250404-v3-stable-surge-pool-factory-v2",
+      "Authorized_Caller_Addresses": [
+         "0x09Df1626110803C7b3b07085Ef1E053494155089"
+      ],
+      "Authorized_Caller_Names": [
+         "multisigs/maxi_beets_lm"
+      ]
+   },
+   {
+      "Fx": "disable()",
+      "Contract": "ReClammPoolFactory",
+      "Deployment": "20250409-v3-reclamm-pool",
+      "Authorized_Caller_Addresses": [
+         "0xd4c87b33afcE39F1E3F4aF1ce8fFFF7241d9128B"
+      ],
+      "Authorized_Caller_Names": [
+         "multisigs/emergency"
+      ]
+   },
+   {
+      "Fx": "setCenterednessMargin(uint256)",
+      "Contract": "ReClammPool",
+      "Deployment": "20250409-v3-reclamm-pool",
+      "Authorized_Caller_Addresses": [
+         "0x09Df1626110803C7b3b07085Ef1E053494155089"
+      ],
+      "Authorized_Caller_Names": [
+         "multisigs/maxi_beets_lm"
+      ]
+   },
+   {
+      "Fx": "setDailyPriceShiftExponent(uint256)",
+      "Contract": "ReClammPool",
+      "Deployment": "20250409-v3-reclamm-pool",
+      "Authorized_Caller_Addresses": [
+         "0x09Df1626110803C7b3b07085Ef1E053494155089"
+      ],
+      "Authorized_Caller_Names": [
+         "multisigs/maxi_beets_lm"
+      ]
+   },
+   {
+      "Fx": "startPriceRatioUpdate(uint256,uint256,uint256)",
+      "Contract": "ReClammPool",
+      "Deployment": "20250409-v3-reclamm-pool",
+      "Authorized_Caller_Addresses": [
+         "0x09Df1626110803C7b3b07085Ef1E053494155089"
+      ],
+      "Authorized_Caller_Names": [
+         "multisigs/maxi_beets_lm"
+      ]
+   },
+   {
+      "Fx": "stopPriceRatioUpdate()",
+      "Contract": "ReClammPool",
+      "Deployment": "20250409-v3-reclamm-pool",
+      "Authorized_Caller_Addresses": [
+         "0x09Df1626110803C7b3b07085Ef1E053494155089"
+      ],
+      "Authorized_Caller_Names": [
+         "multisigs/maxi_beets_lm"
       ]
    }
 ]
